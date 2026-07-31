@@ -4,593 +4,525 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brozonis Excavating | Union Dale, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0e1210;
-    --bg-alt: #151b18;
-    --amber: #ff8a3d;
-    --amber-soft: #ffb27a;
-    --steel: #7c8b86;
-    --text: #eef2ef;
-    --text-dim: #b7c2bd;
-    --border: rgba(255, 138, 61, 0.18);
+    --paper: #f1f3f1;
+    --paper-dim: #e6eae6;
+    --ink: #24302b;
+    --ink-soft: #5c6b63;
+    --safety: #e2621b;
+    --safety-deep: #b84c12;
+    --steel: #52625b;
+    --survey: #c9a227;
+    --line: #d7dbd6;
+    --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
 
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .glow-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
+    font-family: var(--body);
     background:
-      radial-gradient(circle at 15% 20%, rgba(255, 138, 61, 0.10), transparent 45%),
-      radial-gradient(circle at 85% 75%, rgba(255, 138, 61, 0.08), transparent 50%),
-      var(--bg);
+      linear-gradient(var(--paper) 0, var(--paper) 100%),
+      repeating-linear-gradient(0deg, rgba(82, 98, 91, 0.05) 0, rgba(82, 98, 91, 0.05) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(82, 98, 91, 0.05) 0, rgba(82, 98, 91, 0.05) 1px, transparent 1px, transparent 40px);
+    color: var(--ink);
+    line-height: 1.6;
   }
+
+  a { text-decoration: none; color: inherit; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+  }
+
+  :focus-visible { outline: 2.5px solid var(--safety); outline-offset: 3px; }
+
+  /* Signature: permit stamp badge, circular */
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 2px solid var(--safety);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--safety-deep);
+    background: rgba(226, 98, 27, 0.06);
+  }
+
+  .stamp.on-dark { border-color: rgba(241, 243, 241, 0.5); color: var(--paper); background: rgba(241, 243, 241, 0.08); }
 
   header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 6%;
-    background: rgba(14, 18, 16, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    background: rgba(241, 243, 241, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 3px solid var(--ink);
   }
 
-  .brand {
+  .nav-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 16px 28px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.5px;
   }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
 
   .brand-mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--amber), #c9531c);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    color: #1a1008;
-    box-shadow: 0 0 18px rgba(255, 138, 61, 0.45);
+    width: 36px; height: 36px;
+    background: var(--safety);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-weight: 700; font-size: 13px;
+    color: var(--paper);
+    transform: rotate(45deg);
     flex-shrink: 0;
   }
 
-  nav {
-    display: flex;
-    gap: 32px;
-    font-size: 0.95rem;
-    color: var(--text-dim);
+  .brand-mark span { transform: rotate(-45deg); }
+
+  .logo { font-family: var(--display); font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+
+  nav ul { list-style: none; display: flex; gap: 28px; }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
 
-  nav a:hover { color: var(--amber-soft); }
-
-  .nav-toggle { display: none; }
+  nav a:hover { color: var(--safety-deep); border-color: var(--safety); }
 
   .call-btn {
-    background: transparent;
-    border: 1px solid var(--amber);
-    color: var(--amber-soft);
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    font-family: var(--mono);
+    font-size: 12.5px;
     font-weight: 600;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    padding: 9px 16px;
+    border-radius: 3px;
     white-space: nowrap;
-    transition: all 0.2s ease;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
-  .call-btn:hover {
-    background: rgba(255, 138, 61, 0.12);
-    box-shadow: 0 0 16px rgba(255, 138, 61, 0.3);
-  }
+  .call-btn:hover { background: var(--ink); color: var(--paper); }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
+  .hero { padding: 70px 28px 0; }
+
+  .hero-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
     align-items: center;
-    text-align: center;
-    padding: 110px 6% 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-copy .stamp { margin-bottom: 24px; }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.4vw, 3.6rem);
+    line-height: 1.04;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .hero h1 span { color: var(--safety); }
+
+  .hero p {
+    font-family: var(--body);
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    max-width: 470px;
+    margin-bottom: 30px;
+  }
+
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn {
+    padding: 14px 26px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1.5px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-primary { background: var(--safety); color: var(--paper); border-color: var(--safety); }
+  .btn-primary:hover { background: var(--safety-deep); transform: translateY(-1px); }
+
+  .btn-secondary { border-color: var(--ink); color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  /* Work-order panel, hero right column */
+  .workorder {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 32px;
+    box-shadow: 6px 6px 0 var(--survey);
+  }
+
+  .workorder-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px dashed rgba(241, 243, 241, 0.25);
+  }
+
+  .workorder-head .t { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(241, 243, 241, 0.55); }
+  .workorder-head .n { font-family: var(--mono); font-size: 11px; color: var(--survey); }
+
+  .wo-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(241, 243, 241, 0.12);
+    gap: 12px;
+  }
+
+  .wo-row:last-of-type { border-bottom: none; }
+
+  .wo-row .k { font-family: var(--mono); font-size: 11.5px; color: rgba(241, 243, 241, 0.55); text-transform: uppercase; letter-spacing: 0.04em; }
+  .wo-row .v { font-family: var(--display); font-size: 16px; font-weight: 700; text-transform: uppercase; color: var(--paper); text-align: right; }
+
+  section { padding: 80px 28px; }
+
+  .section-inner { max-width: 1140px; margin: 0 auto; }
+
+  .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+
+  .section-head .stamp { margin-bottom: 18px; }
+
+  .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); color: var(--ink); margin-bottom: 10px; }
+
+  .section-head p { font-family: var(--body); color: var(--ink-soft); font-size: 15px; }
+
+  .about { background: var(--paper-dim); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+
+  .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 52px; align-items: start; }
+
+  .about-copy .stamp { margin-bottom: 16px; }
+
+  .about-copy h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--ink); margin-bottom: 14px; }
+
+  .about-copy p { font-family: var(--body); color: var(--ink-soft); margin-bottom: 14px; font-size: 15px; }
+
+  .about-copy strong { color: var(--ink); font-weight: 600; }
+
+  .checklist { display: flex; flex-direction: column; gap: 10px; }
+
+  .check-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    padding: 13px 16px;
+  }
+
+  .check-item .box {
+    width: 16px; height: 16px;
+    border: 2px solid var(--safety);
+    flex-shrink: 0;
+    margin-top: 2px;
     position: relative;
   }
 
-  .hero-tag {
-    display: inline-block;
-    padding: 8px 18px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--amber-soft);
-    margin-bottom: 28px;
-    background: rgba(255, 138, 61, 0.06);
+  .check-item .box::after {
+    content: '';
+    position: absolute;
+    left: 2px; top: -1px;
+    width: 8px; height: 4px;
+    border-left: 2px solid var(--safety);
+    border-bottom: 2px solid var(--safety);
+    transform: rotate(-45deg);
   }
 
-  .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.4rem);
-    font-weight: 800;
-    max-width: 900px;
-    line-height: 1.12;
-    letter-spacing: -1px;
-  }
+  .check-item p { font-family: var(--body); font-size: 13.5px; color: var(--ink-soft); }
 
-  .hero h1 span {
-    background: linear-gradient(120deg, var(--amber-soft), var(--amber));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 40px rgba(255, 138, 61, 0.25);
-  }
-
-  .hero p {
-    margin-top: 26px;
-    max-width: 620px;
-    color: var(--text-dim);
-    font-size: 1.1rem;
-  }
-
-  .hero-actions {
-    margin-top: 40px;
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--amber), #d9631f);
-    color: #1a0f06;
-    font-weight: 700;
-    padding: 15px 32px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(255, 138, 61, 0.35), 0 8px 20px rgba(0,0,0,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(255, 138, 61, 0.5), 0 10px 24px rgba(0,0,0,0.45);
-  }
-
-  .btn-secondary {
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 15px 32px;
-    border-radius: 10px;
-    font-weight: 600;
-  }
-
-  .btn-secondary:hover { border-color: var(--amber); }
-
-  .stat-strip {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    padding: 50px 6%;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: var(--bg-alt);
-  }
-
-  .stat { text-align: center; }
-
-  .stat .num {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--amber-soft);
-  }
-
-  .stat .label {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-  }
-
-  section { padding: 100px 6%; max-width: 1200px; margin: 0 auto; }
-
-  .section-head {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 60px;
-  }
-
-  .section-head .eyebrow {
-    color: var(--amber-soft);
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  .section-head h2 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    margin-top: 14px;
-    font-weight: 800;
-  }
-
-  .section-head p {
-    margin-top: 16px;
-    color: var(--text-dim);
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: center;
-  }
-
-  .about-grid h2 {
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    font-weight: 800;
-    margin-bottom: 20px;
-  }
-
-  .about-grid p { color: var(--text-dim); margin-bottom: 16px; }
-
-  .about-panel {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 36px;
-    box-shadow: 0 0 40px rgba(255, 138, 61, 0.06);
-  }
-
-  .about-panel ul { list-style: none; }
-
-  .about-panel li {
-    display: flex;
-    gap: 14px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-dim);
-  }
-
-  .about-panel li:last-child { border-bottom: none; }
-
-  .about-panel li::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--amber);
-    box-shadow: 0 0 10px var(--amber);
-    margin-top: 8px;
-    flex-shrink: 0;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+  /* Services grid with corner rivet detail */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
   .service-card {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 34px 28px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    padding: 26px 24px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
   }
 
-  .service-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--amber);
-    box-shadow: 0 12px 32px rgba(255, 138, 61, 0.15);
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--steel);
   }
 
-  .service-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
-    background: rgba(255, 138, 61, 0.1);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  .service-card:hover { border-color: var(--safety); transform: translateY(-3px); }
+
+  .service-card .num { font-family: var(--mono); font-size: 11px; color: var(--survey); letter-spacing: 0.08em; display: block; margin-bottom: 10px; }
+
+  .service-card h3 { font-family: var(--body); font-size: 16.5px; font-weight: 700; text-transform: none; color: var(--ink); margin-bottom: 8px; }
+
+  .service-card p { font-family: var(--body); color: var(--ink-soft); font-size: 13.5px; }
+
+  /* Service area as survey list */
+  .area { background: var(--paper-dim); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+
+  .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+
+  .area-copy .stamp { margin-bottom: 16px; }
+
+  .area-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--ink); margin-bottom: 12px; }
+
+  .area-copy p { font-family: var(--body); color: var(--ink-soft); font-size: 15px; margin-bottom: 20px; }
+
+  .survey-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .survey-item {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 10px 12px;
+    background: var(--paper);
+    border: 1px dashed var(--steel);
+    border-radius: 3px;
   }
 
-  .service-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-
-  .service-card p { color: var(--text-dim); font-size: 0.95rem; }
-
-  .area-section {
-    background: var(--bg-alt);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .area-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 6%;
-  }
-
-  .area-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 26px;
-  }
-
-  .area-list span {
-    padding: 12px 16px;
-    background: rgba(255, 138, 61, 0.06);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 0.92rem;
-    color: var(--text-dim);
-  }
+  .survey-item span { color: var(--safety-deep); font-weight: 600; }
 
   .quote-box {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 36px;
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 34px;
   }
 
-  .quote-box .quote-mark {
-    font-size: 3rem;
-    color: var(--amber);
-    line-height: 0.6;
-    display: block;
-    margin-bottom: 10px;
-  }
+  .quote-box .mark { font-family: var(--display); font-size: 44px; color: var(--safety); line-height: 0.5; display: block; margin-bottom: 10px; }
 
-  .quote-box p { color: var(--text-dim); font-size: 1.05rem; font-style: italic; }
+  .quote-box p { font-family: var(--body); color: rgba(241, 243, 241, 0.85); font-size: 15px; font-style: italic; }
 
-  .quote-box .who { margin-top: 18px; color: var(--amber-soft); font-weight: 600; font-style: normal; }
+  .quote-box .who { margin-top: 16px; font-family: var(--mono); font-size: 12.5px; color: var(--survey); font-style: normal; }
 
-  .contact-section {
-    text-align: center;
-  }
+  /* Contact as a work order / permit card */
+  .contact { padding: 80px 28px; }
 
-  .contact-card {
-    max-width: 780px;
+  .permit {
+    max-width: 760px;
     margin: 0 auto;
-    background: linear-gradient(160deg, rgba(255,138,61,0.10), rgba(21,27,24,0.6));
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 60px 40px;
-    box-shadow: 0 0 60px rgba(255, 138, 61, 0.10);
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    padding: 44px 40px;
+    position: relative;
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
+  .permit::before {
+    content: '';
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 70px; height: 70px;
+    border: 2px solid var(--safety);
+    border-radius: 50%;
+    opacity: 0.5;
   }
 
-  .contact-item {
-    background: rgba(14,18,16,0.5);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px 16px;
-  }
+  .permit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 32px; }
 
-  .contact-item .k {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--amber-soft);
-    margin-bottom: 8px;
-  }
+  .permit-item { border-top: 3px solid var(--safety); padding-top: 12px; }
 
-  .contact-item .v { font-size: 1rem; font-weight: 600; }
+  .permit-item .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+
+  .permit-item .v { font-family: var(--display); font-size: 19px; font-weight: 700; text-transform: uppercase; color: var(--ink); }
+
+  .permit-cta { margin-top: 30px; }
 
   footer {
     text-align: center;
-    padding: 40px 6%;
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    border-top: 1px solid var(--border);
+    padding: 30px 24px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-family: var(--mono);
+    border-top: 1.5px solid var(--line);
   }
 
-  footer .fbrand { color: var(--amber-soft); font-weight: 700; }
+  footer .foot-logo { color: var(--safety-deep); font-weight: 600; }
 
-  @media (max-width: 860px) {
-    nav { display: none; }
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
     .area-grid { grid-template-columns: 1fr; }
-    .area-list { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .stat-strip { gap: 32px; }
-    section { padding: 70px 6%; }
-    .hero { padding: 90px 6% 70px; }
+    .permit-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .survey-list { grid-template-columns: 1fr; }
+    section { padding: 56px 20px; }
+    .hero { padding: 52px 20px 0; }
+    .workorder { padding: 24px; }
+    .permit { padding: 30px 24px; }
   }
 </style>
 </head>
 <body>
 
-<div class="glow-bg"></div>
-
 <header>
-  <div class="brand">
-    <div class="brand-mark">BE</div>
-    <span>Brozonis Excavating</span>
+  <div class="nav-wrap">
+    <div class="brand">
+      <div class="brand-mark"><span>BE</span></div>
+      <span class="logo">Brozonis Excavating</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#area">Service Area</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="call-btn" href="tel:5702223810">(570) 222-3810</a>
   </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#area">Service Area</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="call-btn" href="tel:5702223810">(570) 222-3810</a>
 </header>
 
 <section class="hero">
-  <span class="hero-tag">Union Dale, PA &middot; Susquehanna County</span>
-  <h1>Excavation done right, <span>the first time.</span></h1>
-  <p>Site work, land clearing, and foundation excavation for homeowners and contractors across Susquehanna and Wayne County. Licensed, insured, and running heavy equipment out of Union Dale for years.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="tel:5702223810">Call for a Quote</a>
-    <a class="btn-secondary" href="#services">See Our Work</a>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="stamp">Union Dale, PA &middot; Susquehanna County</span>
+      <h1>Excavation done <span>right,</span> the first time.</h1>
+      <p>Site work, land clearing, and foundation excavation for homeowners and contractors across Susquehanna and Wayne County. Licensed, insured, and running heavy equipment out of Union Dale for years.</p>
+      <div class="btn-row">
+        <a href="tel:5702223810" class="btn btn-primary">Call for a Quote</a>
+        <a href="#services" class="btn btn-secondary">See Our Work</a>
+      </div>
+    </div>
+    <div class="workorder">
+      <div class="workorder-head"><span class="t">Carrier Record</span><span class="n">FILE No. 2026-UD</span></div>
+      <div class="wo-row"><span class="k">Status</span><span class="v">USDOT Registered</span></div>
+      <div class="wo-row"><span class="k">Ownership</span><span class="v">100% Local</span></div>
+      <div class="wo-row"><span class="k">Counties</span><span class="v">2 Served</span></div>
+      <div class="wo-row"><span class="k">Coverage</span><span class="v">Licensed &amp; Insured</span></div>
+    </div>
   </div>
 </section>
 
-<div class="stat-strip">
-  <div class="stat">
-    <div class="num">USDOT</div>
-    <div class="label">Registered Carrier</div>
-  </div>
-  <div class="stat">
-    <div class="num">100%</div>
-    <div class="label">Locally Owned</div>
-  </div>
-  <div class="stat">
-    <div class="num">2</div>
-    <div class="label">Counties Served</div>
-  </div>
-</div>
-
 <section id="about">
-  <div class="about-grid">
-    <div>
-      <div class="section-head" style="text-align:left; margin:0 0 20px;">
-        <span class="eyebrow">About the Business</span>
-      </div>
-      <h2>Family-run excavation, built on referrals.</h2>
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <span class="stamp">About the Business</span>
+      <h2>Family-run excavation, built on referrals</h2>
       <p>Brozonis Excavating is a Union Dale based excavation contractor handling everything from residential driveways to full commercial site prep. The business is registered as a commercial carrier, meaning the trucks, the equipment, and the crew are set up to handle real job sites, not just small backyard digs.</p>
-      <p>Most work comes from word of mouth across Susquehanna and Wayne County. Homeowners, builders, and township projects call because the last job got done on time and done right.</p>
+      <p>Most work comes from word of mouth across Susquehanna and Wayne County. Homeowners, builders, and township projects call because the <strong>last job got done on time and done right</strong>.</p>
     </div>
-    <div class="about-panel">
-      <ul>
-        <li>Owner-operated, on every job site</li>
-        <li>Fully licensed and insured commercial carrier</li>
-        <li>Serving Union Dale, Clifford, Herrick, and surrounding townships</li>
-        <li>Residential and commercial project experience</li>
-        <li>Equipment ready for grading, trenching, and demolition</li>
-      </ul>
+    <div class="checklist">
+      <div class="check-item"><span class="box"></span><p>Owner-operated, on every job site</p></div>
+      <div class="check-item"><span class="box"></span><p>Fully licensed and insured commercial carrier</p></div>
+      <div class="check-item"><span class="box"></span><p>Serving Union Dale, Clifford, Herrick &amp; surrounding townships</p></div>
+      <div class="check-item"><span class="box"></span><p>Residential and commercial project experience</p></div>
+      <div class="check-item"><span class="box"></span><p>Equipment ready for grading, trenching &amp; demolition</p></div>
     </div>
   </div>
 </section>
 
 <section id="services">
-  <div class="section-head">
-    <span class="eyebrow">What We Do</span>
-    <h2>Excavation and site work services</h2>
-    <p>From a single driveway to a full commercial pad, the equipment and experience are already on site in Union Dale.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">&#9881;</div>
-      <h3>Site Excavation</h3>
-      <p>Foundation digging, basement excavation, and grading for new construction of any size.</p>
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="stamp">What We Do</span>
+      <h2>Excavation and site work services</h2>
+      <p>From a single driveway to a full commercial pad, the equipment and experience are already on site in Union Dale.</p>
     </div>
-    <div class="service-card">
-      <div class="service-icon">&#128736;</div>
-      <h3>Land Clearing</h3>
-      <p>Clearing wooded or overgrown lots to get a property ready for building or development.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">&#128678;</div>
-      <h3>Driveway Installation</h3>
-      <p>New driveway grading, base work, and drainage for homes and rural properties.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">&#128167;</div>
-      <h3>Drainage &amp; Water Management</h3>
-      <p>French drains, culverts, and grading solutions to keep water off a property and out of a basement.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">&#128295;</div>
-      <h3>Utility Trenching</h3>
-      <p>Trenching for water, sewer, and electrical lines with careful attention to existing utilities.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">&#127959;</div>
-      <h3>Demolition &amp; Site Prep</h3>
-      <p>Structure demolition and full site prep to get a lot ready for its next build.</p>
+    <div class="services-grid">
+      <div class="service-card"><span class="num">Site Work</span><h3>Site Excavation</h3><p>Foundation digging, basement excavation, and grading for new construction of any size.</p></div>
+      <div class="service-card"><span class="num">Clearing</span><h3>Land Clearing</h3><p>Clearing wooded or overgrown lots to get a property ready for building or development.</p></div>
+      <div class="service-card"><span class="num">Driveways</span><h3>Driveway Installation</h3><p>New driveway grading, base work, and drainage for homes and rural properties.</p></div>
+      <div class="service-card"><span class="num">Drainage</span><h3>Drainage &amp; Water Management</h3><p>French drains, culverts, and grading solutions to keep water off a property and out of a basement.</p></div>
+      <div class="service-card"><span class="num">Utilities</span><h3>Utility Trenching</h3><p>Trenching for water, sewer, and electrical lines with careful attention to existing utilities.</p></div>
+      <div class="service-card"><span class="num">Demolition</span><h3>Demolition &amp; Site Prep</h3><p>Structure demolition and full site prep to get a lot ready for its next build.</p></div>
     </div>
   </div>
 </section>
 
-<section id="area" class="area-section">
-  <div class="area-grid">
-    <div>
-      <div class="section-head" style="text-align:left; margin:0;">
-        <span class="eyebrow">Service Area</span>
-        <h2>Working across Susquehanna and Wayne County</h2>
-        <p>Based in Union Dale and running jobs throughout the surrounding townships.</p>
-      </div>
-      <div class="area-list">
-        <span>Union Dale</span>
-        <span>Clifford</span>
-        <span>Herrick Center</span>
-        <span>Forest City</span>
-        <span>South Canaan</span>
-        <span>Uniondale &amp; beyond</span>
+<section id="area" class="area">
+  <div class="section-inner area-grid">
+    <div class="area-copy">
+      <span class="stamp">Service Area</span>
+      <h2>Working across Susquehanna and Wayne County</h2>
+      <p>Based in Union Dale and running jobs throughout the surrounding townships.</p>
+      <div class="survey-list">
+        <div class="survey-item"><span>&#9679;</span> Union Dale</div>
+        <div class="survey-item"><span>&#9679;</span> Clifford</div>
+        <div class="survey-item"><span>&#9679;</span> Herrick Center</div>
+        <div class="survey-item"><span>&#9679;</span> Forest City</div>
+        <div class="survey-item"><span>&#9679;</span> South Canaan</div>
+        <div class="survey-item"><span>&#9679;</span> Uniondale &amp; beyond</div>
       </div>
     </div>
     <div class="quote-box">
-      <span class="quote-mark">&ldquo;</span>
+      <span class="mark">&ldquo;</span>
       <p>Most of our work comes from the same families and contractors calling back year after year. Get the job done right and people remember it.</p>
-      <div class="who">Bernard Brozonis, Owner</div>
+      <div class="who">BERNARD BROZONIS, OWNER</div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <div class="contact-card">
-    <div class="section-head" style="margin:0;">
-      <span class="eyebrow">Get In Touch</span>
-      <h2>Ready to talk about your project?</h2>
-      <p>Call to walk through your site and get a straight answer on scope and timing.</p>
+<section id="contact" class="contact">
+  <div class="permit">
+    <span class="stamp">Get In Touch</span>
+    <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 14px; color: var(--ink);">Ready to talk about your project?</h2>
+    <p style="font-family: var(--body); color: var(--ink-soft); font-size: 15px; margin-top: 10px; max-width: 480px;">Call to walk through your site and get a straight answer on scope and timing.</p>
+    <div class="permit-grid">
+      <div class="permit-item"><span class="k">Phone</span><span class="v">(570) 222-3810</span></div>
+      <div class="permit-item"><span class="k">Location</span><span class="v">Union Dale, PA</span></div>
+      <div class="permit-item"><span class="k">Hours</span><span class="v">Mon&ndash;Sat, by Appt.</span></div>
     </div>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="k">Phone</div>
-        <div class="v">(570) 222-3810</div>
-      </div>
-      <div class="contact-item">
-        <div class="k">Location</div>
-        <div class="v">1 Ranch Rd, Union Dale, PA 18470</div>
-      </div>
-      <div class="contact-item">
-        <div class="k">Hours</div>
-        <div class="v">Mon &ndash; Sat, by appointment</div>
-      </div>
+    <div class="permit-cta">
+      <a href="tel:5702223810" class="btn btn-primary">Call for a Quote</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 Brozonis Excavating Inc. &middot; Union Dale, Pennsylvania</p>
-  <p style="margin-top:6px;">Sample site concept prepared by <span class="fbrand">Modularity Networks</span></p>
+  <p>&copy; 2026 Brozonis Excavating Inc. &middot; Union Dale, Pennsylvania &middot; Sample site concept by <span class="foot-logo">Modularity Networks</span></p>
 </footer>
 
 </body>
