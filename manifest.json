@@ -82,5 +82,11 @@
     "name": "Crossroads Auto Plus",
     "location": "Hawley, PA",
     "category": "Auto Repair & Inspections"
+  },
+  {
+    "slug": "reyes-landscaping",
+    "name": "Reyes Landscaping",
+    "location": "Erie, PA",
+    "category": "Landscaping & Snow Removal"
   }
 ]

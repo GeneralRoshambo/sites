@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reyes Landscaping | Landscape Design &amp; Snow Removal in Erie, PA</title>
+<meta name="description" content="Reyes Landscaping keeps Erie, PA properties sharp through the growing season and clear through the snow. Lawn care, mulch, outdoor design, plowing and salting from one local crew.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pine: #1f3a2e;
+    --pine-deep: #142720;
+    --clay: #7a4b32;
+    --frost: #d3e3e8;
+    --frost-deep: #a9c4d1;
+    --limestone: #f5f1e7;
+    --paper: #fbf9f3;
+    --gold: #a9791a;
+    --ink: #22231f;
+    --ink-soft: #55564e;
+    --line: #e2dcc9;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0;
+    color: var(--pine);
+  }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 0.04em;
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Top bar ---------- */
+  .top-bar {
+    background: var(--pine-deep);
+    color: rgba(255,255,255,0.82);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+  .top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .top-bar a { text-decoration: none; color: #e9c979; }
+  .top-bar a:hover { text-decoration: underline; }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 82px;
+  }
+  .brand { display: flex; flex-direction: column; line-height: 1.05; text-decoration: none; }
+  .brand-name {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    color: var(--pine);
+    letter-spacing: 0.01em;
+  }
+  .brand-sub {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+  }
+  nav.main-nav { display: flex; align-items: center; gap: 30px; }
+  nav.main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.94rem;
+    color: var(--ink);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  nav.main-nav a:hover { color: var(--pine); border-color: var(--gold); }
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pine);
+    color: var(--paper);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  .header-cta:hover { background: var(--pine-deep); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--pine); margin: 5px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(100deg, var(--pine) 0%, var(--pine) 52%, var(--frost) 52%, var(--frost-deep) 100%);
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 92px;
+    padding-bottom: 120px;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e9c979;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 26px;
+  }
+  .hero h1 {
+    color: #fbf9f3;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 0.98;
+    max-width: 780px;
+  }
+  .hero h1 span { color: var(--pine-deep); }
+  .hero p.lede {
+    max-width: 560px;
+    font-size: 1.12rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+    margin: 24px 0 34px;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 4px;
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn--gold { background: var(--gold); color: var(--pine-deep); }
+  .btn--gold:hover { background: #bd8b1f; }
+  .btn--outline { background: transparent; color: #fbf9f3; border: 1.5px solid rgba(255,255,255,0.55); }
+  .btn--outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  /* seam graphic across hero bottom */
+  .seam {
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 46px;
+    z-index: 1;
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip {
+    background: var(--limestone);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-strip .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  .trust-item { text-align: left; }
+  .trust-item .num {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--pine);
+    display: block;
+  }
+  .trust-item .label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Section shells ---------- */
+  .section { padding: 88px 0; }
+  .section-head { max-width: 640px; margin-bottom: 52px; }
+  .eyebrow {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 14px;
+  }
+  .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
+  .section-head p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.65; margin-top: 16px; }
+
+  /* ---------- Two-season services ---------- */
+  .seasons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .season-panel { padding: 42px 40px; }
+  .season-panel.growing { background: var(--pine); color: var(--paper); }
+  .season-panel.snow { background: var(--frost); color: var(--pine-deep); }
+  .season-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .season-icon { width: 30px; height: 30px; flex-shrink: 0; }
+  .season-panel h3 { font-size: 1.5rem; }
+  .season-panel.growing h3 { color: var(--paper); }
+  .season-panel.snow h3 { color: var(--pine-deep); }
+  .season-months {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+  .season-panel ul { list-style: none; margin: 0; padding: 0; }
+  .season-panel li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.98rem;
+    font-weight: 500;
+  }
+  .season-panel.growing li { border-top-color: rgba(255,255,255,0.16); }
+  .season-panel li:first-of-type { border-top: none; }
+  .season-panel li .mark { font-family: "JetBrains Mono", monospace; font-size: 0.85rem; opacity: 0.7; margin-top: 2px; }
+
+  /* ---------- Why section ---------- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .why-grid p { color: var(--ink-soft); font-size: 1.05rem; line-height: 1.7; margin: 0 0 18px; }
+  .why-card {
+    background: var(--limestone);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 32px;
+  }
+  .why-card .stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 10px; }
+  .why-card blockquote {
+    margin: 0 0 18px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .why-card cite {
+    font-style: normal;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Service area ---------- */
+  .area-band {
+    background: var(--pine-deep);
+    color: rgba(255,255,255,0.9);
+  }
+  .area-band .container { padding-top: 60px; padding-bottom: 60px; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .area-band h2 { color: var(--paper); font-size: clamp(1.8rem, 3.4vw, 2.4rem); max-width: 480px; }
+  .area-band .tags { display: flex; flex-wrap: wrap; gap: 10px; max-width: 420px; }
+  .area-band .tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 7px 14px;
+    border-radius: 100px;
+  }
+
+  /* ---------- Contact / CTA ---------- */
+  .cta-band { background: var(--gold); }
+  .cta-band .container {
+    padding-top: 68px;
+    padding-bottom: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-band h2 { color: var(--pine-deep); font-size: clamp(1.8rem, 3.6vw, 2.6rem); max-width: 520px; }
+  .cta-band .btn--outline { color: var(--pine-deep); border-color: var(--pine-deep); }
+  .cta-band .btn--outline:hover { background: rgba(31,58,46,0.08); }
+  .cta-band .btn--dark { background: var(--pine-deep); color: var(--paper); }
+  .cta-band .btn--dark:hover { background: var(--pine); }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer { background: var(--pine); color: rgba(255,255,255,0.75); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+  .footer-grid h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e9c979;
+    margin: 0 0 14px;
+  }
+  .footer-grid a { display: block; text-decoration: none; color: rgba(255,255,255,0.78); font-size: 0.94rem; margin-bottom: 8px; }
+  .footer-grid a:hover { color: #fff; }
+  .footer-brand .brand-name { color: var(--paper); }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.6; max-width: 320px; color: rgba(255,255,255,0.65); margin-top: 12px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding: 20px 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .trust-strip .container { grid-template-columns: repeat(2, 1fr); }
+    .seasons { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 760px) {
+    nav.main-nav { position: fixed; top: 82px; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: stretch; padding: 10px 24px 20px; border-bottom: 1px solid var(--line); transform: translateY(-130%); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; pointer-events: none; gap: 0; }
+    nav.main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    nav.main-nav a { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: block; }
+    .header-cta { display: none; }
+    .trust-strip .container { grid-template-columns: 1fr 1fr; }
+    .area-band .container { flex-direction: column; align-items: flex-start; }
+    .cta-band .container { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 520px) {
+    .trust-strip .container { grid-template-columns: 1fr; }
+    .season-panel { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <span>Erie &amp; Erie County, PA &middot; Growing-season &amp; snow-season service, same crew</span>
+    <a href="tel:18145661642">(814) 566-1642</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#top" class="brand">
+      <span class="brand-name">Reyes Landscaping</span>
+      <span class="brand-sub">Erie, PA</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#services">Services</a>
+      <a href="#seasons">Two Seasons</a>
+      <a href="#why">Reviews</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="header-cta" href="tel:18145661642">Call for a Quote</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="document.getElementById('main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <svg class="seam" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,46 L0,20 L60,32 L120,14 L180,30 L240,10 L300,26 L360,8 L420,24 L480,12 L540,28 L600,14 L660,30 L720,10 L780,26 L840,12 L900,28 L960,10 L1020,24 L1080,12 L1140,26 L1200,16 L1200,46 Z" fill="#fbf9f3"></path>
+  </svg>
+  <div class="container">
+    <span class="hero-eyebrow">Landscape Company &middot; Erie, PA</span>
+    <h1>Two seasons.<br>One crew<span>.</span></h1>
+    <p class="lede">Reyes Landscaping keeps Erie properties sharp through the growing season and clear through the snow. Same phone number, same crew, every month of the year.</p>
+    <div class="hero-actions">
+      <a class="btn btn--gold" href="tel:18145661642">Call (814) 566-1642</a>
+      <a class="btn btn--outline" href="#seasons">See What We Cover</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-item">
+      <span class="num">100%</span>
+      <span class="label">Recommended on Facebook</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">2</span>
+      <span class="label">Seasons Covered, Year-Round</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">301</span>
+      <span class="label">Reed St, Erie PA 16507</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">$$</span>
+      <span class="label">Straightforward Estimates</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Grounds work that doesn't stop when the leaves do.</h2>
+      <p>Most crews in Erie pick a season. Reyes Landscaping runs both sides of the calendar, so the same people who edge your beds in June are the ones clearing your driveway in January.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="seasons" style="padding-top:0;">
+  <div class="container">
+    <div class="seasons">
+      <div class="season-panel growing">
+        <div class="season-head">
+          <svg class="season-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21V10" stroke="#fbf9f3" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M12 13c0-4 -3-6-7-6 0 4 3 6 7 6Z" fill="#fbf9f3" opacity="0.9"/>
+            <path d="M12 10c0-4.5 3.2-7 7-7 0 4.5-3.2 7-7 7Z" fill="#fbf9f3" opacity="0.6"/>
+          </svg>
+          <h3>Growing Season</h3>
+        </div>
+        <div class="season-months mono">April &ndash; October</div>
+        <ul>
+          <li><span class="mark">&rsaquo;</span>Weekly lawn mowing &amp; edging</li>
+          <li><span class="mark">&rsaquo;</span>Mulch installation &amp; bed cleanups</li>
+          <li><span class="mark">&rsaquo;</span>Outdoor design &amp; hardscaping</li>
+          <li><span class="mark">&rsaquo;</span>Spring &amp; fall property cleanups</li>
+        </ul>
+      </div>
+      <div class="season-panel snow">
+        <div class="season-head">
+          <svg class="season-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v20M4 7l16 10M20 7L4 17" stroke="#142720" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <h3>Snow Season</h3>
+        </div>
+        <div class="season-months mono">November &ndash; March</div>
+        <ul>
+          <li><span class="mark">&rsaquo;</span>Driveway &amp; parking lot plowing</li>
+          <li><span class="mark">&rsaquo;</span>Salting &amp; ice treatment</li>
+          <li><span class="mark">&rsaquo;</span>Snow pile removal &amp; hauling</li>
+          <li><span class="mark">&rsaquo;</span>Storm standby service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="eyebrow">Why Erie Calls Reyes</span>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.5rem); margin-bottom:22px;">A crew, not a call center.</h2>
+        <p>Reyes Landscaping is run out of Erie by a crew that shows up together, season after season. There's no dispatcher routing you to whoever's closest, you get the same people who already know your property.</p>
+        <p>That's the whole pitch: fair pricing, a crew that's earned every one of its reviews, and one number to call whether the job is a mulch bed or a foot of lake-effect snow.</p>
+        <a class="btn btn--gold" href="tel:18145661642" style="margin-top:8px;">Call (814) 566-1642</a>
+      </div>
+      <div class="why-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&ldquo;Reyes Landscaping handling this outdoor design. We take pride in our work giving our customers a result they expect.&rdquo;</blockquote>
+        <cite>Reyes Landscaping, project note</cite>
+        <div style="margin-top:22px; padding-top:22px; border-top:1px solid var(--line); font-family:'JetBrains Mono', monospace; font-size:0.82rem; color:var(--ink-soft);">
+          100% recommended by neighbors on Facebook
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-band" id="area">
+  <div class="container">
+    <h2>Serving Erie &amp; the surrounding county, block by block.</h2>
+    <div class="tags">
+      <span class="tag">Erie</span>
+      <span class="tag">Millcreek</span>
+      <span class="tag">Harborcreek</span>
+      <span class="tag">Fairview</span>
+      <span class="tag">Wesleyville</span>
+      <span class="tag">Lawrence Park</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="container">
+    <h2>Get on the schedule before the season changes.</h2>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a class="btn btn--dark" href="tel:18145661642">Call (814) 566-1642</a>
+      <a class="btn btn--outline" href="https://www.facebook.com/p/Reyes-Landscaping-100054218272273/" target="_blank" rel="noopener">Message on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-name" style="font-family:'Big Shoulders Display',sans-serif; font-weight:900; font-size:1.5rem;">Reyes Landscaping</span>
+      <p>Landscape design, lawn care, and snow removal for Erie, PA properties, one crew, all year.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:18145661642">(814) 566-1642</a>
+      <a href="https://www.facebook.com/p/Reyes-Landscaping-100054218272273/" target="_blank" rel="noopener">Facebook</a>
+      <a href="#contact">Get a Quote</a>
+    </div>
+    <div>
+      <h4>Based At</h4>
+      <a href="#area" style="margin-bottom:0;">301 Reed St</a>
+      <a href="#area">Erie, PA 16507</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Reyes Landscaping &middot; Erie, PA &middot; Demo site</div>
+</footer>
+
+</body>
+</html>
