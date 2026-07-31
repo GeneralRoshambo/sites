@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayne County Auto Repair | Galilee, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f6f5;
+    --paper-dim: #e9edec;
+    --ink: #20282a;
+    --ink-soft: #5a6668;
+    --teal: #1f6f6b;
+    --teal-deep: #154f4c;
+    --amber: #c17a2e;
+    --line: #dde3e2;
+    --display: 'Saira Condensed', 'Arial Narrow', sans-serif;
+    --body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+  body { font-family: var(--body); background: var(--paper); color: var(--ink); line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  h1, h2, h3, h4 { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.01em; font-weight: 700; }
+  :focus-visible { outline: 2.5px solid var(--teal); outline-offset: 3px; }
+
+  /* Signature: inspection-sticker badge */
+  .sticker {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 74px; height: 74px;
+    border-radius: 50%;
+    border: 3px solid var(--teal);
+    background: var(--paper);
+    text-align: center;
+  }
+  .sticker .m { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--teal-deep); }
+  .sticker .b { font-family: var(--display); font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.05; }
+
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 16px; border: 1.5px solid var(--teal); border-radius: 3px;
+    font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--teal-deep); background: rgba(31, 111, 107, 0.06);
+  }
+  .tag.on-dark { border-color: rgba(244, 246, 245, 0.5); color: var(--paper); background: rgba(244, 246, 245, 0.08); }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(244, 246, 245, 0.94); backdrop-filter: blur(6px); border-bottom: 3px solid var(--ink); }
+  .nav-wrap { max-width: 1140px; margin: 0 auto; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: var(--display); font-size: 22px; font-weight: 700; text-transform: uppercase; }
+  .logo span { color: var(--teal); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 2px solid transparent; padding-bottom: 3px; transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: var(--teal-deep); border-color: var(--amber); }
+  .call-btn { font-family: var(--mono); font-size: 12.5px; font-weight: 600; color: var(--ink); border: 1.5px solid var(--ink); padding: 9px 16px; border-radius: 3px; white-space: nowrap; transition: background 0.15s ease, color 0.15s ease; }
+  .call-btn:hover { background: var(--ink); color: var(--paper); }
+
+  .hero { padding: 70px 28px 0; }
+  .hero-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; padding-bottom: 60px; }
+  .hero-copy .tag { margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(2.3rem, 5vw, 3.4rem); line-height: 1.06; margin-bottom: 18px; }
+  .hero h1 span { color: var(--teal); }
+  .hero p { font-family: var(--body); font-size: 16.5px; color: var(--ink-soft); max-width: 470px; margin-bottom: 30px; }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 26px; border-radius: 3px; font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; border: 1.5px solid transparent; transition: transform 0.15s ease, background 0.15s ease; }
+  .btn-primary { background: var(--teal); color: var(--paper); border-color: var(--teal); }
+  .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); }
+  .btn-secondary { border-color: var(--ink); color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  /* Service ticket panel */
+  .ticket { background: var(--ink); border-radius: 4px; padding: 32px; box-shadow: 6px 6px 0 var(--amber); }
+  .ticket-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 14px; margin-bottom: 6px; border-bottom: 1px dashed rgba(244, 246, 245, 0.25); }
+  .ticket-head .t { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244, 246, 245, 0.55); }
+  .ticket-head .n { font-family: var(--mono); font-size: 11px; color: var(--amber); }
+  .ticket-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(244, 246, 245, 0.12); gap: 12px; }
+  .ticket-row:last-of-type { border-bottom: none; }
+  .ticket-row .k { font-family: var(--mono); font-size: 11.5px; color: rgba(244, 246, 245, 0.55); text-transform: uppercase; letter-spacing: 0.04em; }
+  .ticket-row .v { font-family: var(--display); font-size: 16px; font-weight: 700; text-transform: uppercase; color: var(--paper); text-align: right; }
+
+  section { padding: 80px 28px; }
+  .section-inner { max-width: 1140px; margin: 0 auto; }
+  .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+  .section-head .tag { margin-bottom: 18px; }
+  .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin-bottom: 10px; }
+  .section-head p { font-family: var(--body); color: var(--ink-soft); font-size: 15px; }
+
+  .about { background: var(--paper-dim); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 52px; align-items: start; }
+  .about-copy .tag { margin-bottom: 16px; }
+  .about-copy h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 14px; }
+  .about-copy p { font-family: var(--body); color: var(--ink-soft); margin-bottom: 14px; font-size: 15px; }
+  .about-copy strong { color: var(--ink); font-weight: 600; }
+  .sticker-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; align-items: flex-start; padding-top: 8px; }
+  .sticker-item { text-align: center; width: 90px; }
+  .sticker-item p { font-family: var(--body); font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 4px; padding: 26px 24px; transition: border-color 0.15s ease, transform 0.15s ease; }
+  .service-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+  .service-card .cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 10px; }
+  .service-card h3 { font-family: var(--body); font-size: 16.5px; font-weight: 700; text-transform: none; margin-bottom: 8px; }
+  .service-card p { font-family: var(--body); color: var(--ink-soft); font-size: 13.5px; }
+
+  .quote { background: var(--paper-dim); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+  .quote-box { max-width: 720px; margin: 0 auto; text-align: center; }
+  .quote-box .mark { font-family: var(--display); font-size: 44px; color: var(--teal); line-height: 0.5; display: block; margin-bottom: 14px; }
+  .quote-box p { font-family: var(--body); font-size: 17px; color: var(--ink-soft); font-style: italic; }
+  .quote-box .who { margin-top: 16px; font-family: var(--mono); font-size: 12.5px; color: var(--teal-deep); font-style: normal; }
+
+  .contact { padding: 80px 28px; }
+  .contact-card { max-width: 640px; margin: 0 auto; background: var(--paper); border: 1.5px solid var(--ink); border-radius: 4px; padding: 44px 40px; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
+  .contact-item { border-top: 3px solid var(--teal); padding-top: 12px; }
+  .contact-item .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+  .contact-item .v { font-family: var(--display); font-size: 17px; font-weight: 700; text-transform: uppercase; }
+  .contact-cta { margin-top: 30px; }
+
+  footer { text-align: center; padding: 30px 24px; color: var(--ink-soft); font-size: 13px; font-family: var(--mono); border-top: 1.5px solid var(--line); }
+  footer .foot-logo { color: var(--teal-deep); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+  @media (max-width: 540px) {
+    .services-grid { grid-template-columns: 1fr; }
+    section { padding: 56px 20px; }
+    .hero { padding: 52px 20px 0; }
+    .ticket { padding: 24px; }
+    .contact-card { padding: 30px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">Wayne County <span>Auto Repair</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="call-btn" href="tel:5702246404">(570) 224-6404</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="tag">Galilee, PA &middot; Corner of Rt. 371</span>
+      <h1>Honest work, <span>right over the bridge.</span></h1>
+      <p>Inspections, oil changes, and snow tires for Wayne County and Sullivan County neighbors on both sides of the Delaware. Renovated waiting room, heat, wifi, and coffee while you wait.</p>
+      <div class="btn-row">
+        <a href="tel:5702246404" class="btn btn-primary">Call to Schedule</a>
+        <a href="#services" class="btn btn-secondary">See Our Services</a>
+      </div>
+    </div>
+    <div class="ticket">
+      <div class="ticket-head"><span class="t">Shop Status</span><span class="n">BAY 1&ndash;2</span></div>
+      <div class="ticket-row"><span class="k">Hours</span><span class="v">Mon&ndash;Fri, 8&ndash;5</span></div>
+      <div class="ticket-row"><span class="k">Inspections</span><span class="v">State &amp; Emissions</span></div>
+      <div class="ticket-row"><span class="k">Waiting Room</span><span class="v">Heat, Wifi, Coffee</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <span class="tag">About the Shop</span>
+      <h2>A community garage, not a chain</h2>
+      <p>Wayne County Auto Repair sits at the corner of Galilee Road and Route 371 in Damascus Township, just over the bridge from Cochecton, New York. The shop handles the everyday work that keeps a car on the road: <strong>state inspections, oil changes, and snow tire swaps</strong>, done by people who live in the area.</p>
+      <p>The waiting room was recently redone with heat, wifi, and coffee, a small thing that says a lot about how the shop treats the wait, not just the work.</p>
+    </div>
+    <div class="sticker-row">
+      <div class="sticker-item"><div class="sticker"><span class="m">PA STATE</span><span class="b">INSP</span></div><p>Inspections</p></div>
+      <div class="sticker-item"><div class="sticker"><span class="m">LOCAL</span><span class="b">OWNED</span></div><p>Community Shop</p></div>
+      <div class="sticker-item"><div class="sticker"><span class="m">HONEST</span><span class="b">WORK</span></div><p>No Upsell Pressure</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="tag">What We Do</span>
+      <h2>Everyday auto care, done right</h2>
+      <p>The routine work that keeps a car safe and legal on Pennsylvania roads.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="cat">Inspections</span><h3>State &amp; Emissions</h3><p>Full state inspection and emissions testing, done on schedule so nothing lapses.</p></div>
+      <div class="service-card"><span class="cat">Maintenance</span><h3>Oil Changes</h3><p>Routine oil and filter service to keep an engine running the way it should.</p></div>
+      <div class="service-card"><span class="cat">Seasonal</span><h3>Snow Tire Swaps</h3><p>Mounted and balanced before the first snow, and swapped back come spring.</p></div>
+      <div class="service-card"><span class="cat">Diagnostics</span><h3>General Repair</h3><p>Straightforward diagnosis and repair work, explained in plain terms before anything starts.</p></div>
+      <div class="service-card"><span class="cat">Comfort</span><h3>Renovated Waiting Room</h3><p>Heat, wifi, and coffee while your vehicle is in the bay.</p></div>
+      <div class="service-card"><span class="cat">Reach</span><h3>Serving Two States</h3><p>Trusted by neighbors in Wayne County, PA and Sullivan County, NY alike.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="section-inner quote-box">
+    <span class="mark">&ldquo;</span>
+    <p>People drive past two other shops to come here, because they know what they're going to get: a straight answer and a fair price.</p>
+    <div class="who">A LONGTIME CUSTOMER, GALILEE, PA</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-card">
+    <span class="tag">Get In Touch</span>
+    <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 14px;">Ready to book a service?</h2>
+    <p style="font-family: var(--body); color: var(--ink-soft); font-size: 15px; margin-top: 10px;">Call ahead to reserve a bay, or stop by during business hours.</p>
+    <div class="contact-grid">
+      <div class="contact-item"><span class="k">Phone</span><span class="v">(570) 224-6404</span></div>
+      <div class="contact-item"><span class="k">Location</span><span class="v">Galilee, PA</span></div>
+      <div class="contact-item"><span class="k">Hours</span><span class="v">Mon&ndash;Fri, 8&ndash;5</span></div>
+    </div>
+    <div class="contact-cta">
+      <a href="tel:5702246404" class="btn btn-primary">Call the Shop</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Wayne County Auto Repair &middot; Galilee, PA &middot; Sample site mockup by <span class="foot-logo">Modularity Networks</span></p>
+</footer>
+
+</body>
+</html>

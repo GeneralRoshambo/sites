@@ -1,0 +1,15 @@
+[
+  {"slug": "preston-country-market", "name": "Preston Country Market", "location": "Starrucca, PA"},
+  {"slug": "brozonis-excavating", "name": "Brozonis Excavating", "location": "Union Dale, PA"},
+  {"slug": "country-cafe-pizzeria", "name": "Country Cafe & Pizzeria", "location": "Beach Lake, PA"},
+  {"slug": "mctree-care-landscaping", "name": "McTree Care & Landscaping", "location": "Hawley, PA"},
+  {"slug": "slices-pizzeria-bistro", "name": "Slices Pizzeria & Bistro", "location": "Hamlin, PA"},
+  {"slug": "waymart-deli", "name": "The Waymart Deli", "location": "Waymart, PA"},
+  {"slug": "mikes-auto-services", "name": "Mike's Auto Services & Towing", "location": "Hawley, PA"},
+  {"slug": "old-rangers-inn", "name": "Old Ranger's Inn", "location": "Greentown, PA"},
+  {"slug": "fairview-lakefront-cottages", "name": "Fairview Lakefront Cottages", "location": "Hawley, PA"},
+  {"slug": "the-boathouse", "name": "The Boathouse", "location": "Hawley, PA"},
+  {"slug": "wayne-county-auto-repair", "name": "Wayne County Auto Repair", "location": "Galilee, PA"},
+  {"slug": "milanville-general-store", "name": "Milanville General Store", "location": "Milanville, PA"},
+  {"slug": "beach-lake-tire-and-auto", "name": "Beach Lake Tire and Auto", "location": "Beach Lake, PA"}
+]

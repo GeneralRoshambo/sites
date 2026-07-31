@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milanville General Store | Milanville, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f2e4;
+    --paper-dim: #eee5cc;
+    --ink: #332a1e;
+    --ink-soft: #6e6047;
+    --brass: #a9762c;
+    --brass-deep: #7f581f;
+    --river: #4a6b5c;
+    --stamp: #a13d32;
+    --line: #e4d9bb;
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+  body { font-family: var(--body); background: var(--paper); color: var(--ink); line-height: 1.65; }
+  a { text-decoration: none; color: inherit; }
+  h1, h2 { font-family: var(--display); font-weight: 600; }
+  h3, h4 { font-family: var(--body); font-weight: 700; }
+  :focus-visible { outline: 2.5px solid var(--stamp); outline-offset: 3px; }
+
+  /* Signature: canceled postmark badge */
+  .postmark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 76px; height: 76px; border-radius: 50%;
+    border: 2.5px solid var(--stamp); position: relative;
+    text-align: center;
+  }
+  .postmark::before, .postmark::after {
+    content: ''; position: absolute; left: 6px; right: 6px; height: 1.5px; background: var(--stamp); opacity: 0.55;
+  }
+  .postmark::before { top: 22px; transform: rotate(-8deg); }
+  .postmark::after { bottom: 22px; transform: rotate(8deg); }
+  .postmark span { font-family: var(--mono); font-size: 9.5px; font-weight: 600; color: var(--stamp); letter-spacing: 0.04em; line-height: 1.3; }
+
+  .tag { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border: 1.5px solid var(--river); border-radius: 3px; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--river); background: rgba(74, 107, 92, 0.06); }
+  .tag.on-dark { border-color: rgba(247, 242, 228, 0.5); color: var(--paper); background: rgba(247, 242, 228, 0.08); }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(247, 242, 228, 0.94); backdrop-filter: blur(6px); border-bottom: 3px solid var(--brass); }
+  .nav-wrap { max-width: 1120px; margin: 0 auto; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: var(--display); font-size: 23px; font-weight: 600; color: var(--ink); }
+  .logo span { color: var(--stamp); }
+  nav ul { list-style: none; display: flex; gap: 30px; }
+  nav a { font-family: var(--mono); font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 2px solid transparent; padding-bottom: 3px; transition: color 0.15s ease, border-color 0.15s ease; }
+  nav a:hover { color: var(--stamp); border-color: var(--brass); }
+
+  .hero { padding: 70px 28px 0; }
+  .hero-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 52px; align-items: center; padding-bottom: 64px; }
+  .hero-copy .tag { margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(2.2rem, 4.8vw, 3.2rem); line-height: 1.12; margin-bottom: 18px; }
+  .hero h1 em { font-style: italic; color: var(--stamp); }
+  .hero p { font-size: 16.5px; color: var(--ink-soft); max-width: 460px; margin-bottom: 30px; }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { padding: 14px 26px; border-radius: 4px; font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; border: 1.5px solid transparent; transition: transform 0.15s ease, background 0.15s ease; }
+  .btn-primary { background: var(--stamp); color: var(--paper); border-color: var(--stamp); }
+  .btn-primary:hover { background: #832f26; transform: translateY(-1px); }
+  .btn-secondary { border-color: var(--ink); color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  /* Historic register panel */
+  .register { background: var(--ink); border-radius: 6px; padding: 34px; box-shadow: 6px 6px 0 var(--brass); }
+  .register-head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247, 242, 228, 0.6); padding-bottom: 14px; margin-bottom: 6px; border-bottom: 1px solid rgba(247, 242, 228, 0.2); }
+  .register-row { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px dashed rgba(247, 242, 228, 0.2); gap: 16px; }
+  .register-row:last-of-type { border-bottom: none; }
+  .register-row .k { font-family: var(--mono); font-size: 12px; color: rgba(247, 242, 228, 0.6); }
+  .register-row .v { font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--paper); text-align: right; }
+
+  section { padding: 82px 28px; }
+  .section-inner { max-width: 1120px; margin: 0 auto; }
+  .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+  .section-head .tag { margin-bottom: 18px; }
+  .section-head h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin-bottom: 10px; }
+  .section-head p { color: var(--ink-soft); font-size: 15px; }
+
+  .about { background: var(--paper-dim); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 52px; align-items: start; }
+  .about-copy .tag { margin-bottom: 16px; }
+  .about-copy h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 14px; }
+  .about-copy p { color: var(--ink-soft); margin-bottom: 14px; font-size: 15px; }
+  .about-copy strong { color: var(--ink); font-weight: 600; }
+  .postmark-row { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .postmark-item { text-align: center; width: 96px; }
+  .postmark-item p { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+
+  .goods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .goods-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 24px; transition: border-color 0.15s ease, transform 0.15s ease; }
+  .goods-card:hover { border-color: var(--river); transform: translateY(-3px); }
+  .goods-card .cat { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brass-deep); display: block; margin-bottom: 10px; }
+  .goods-card h3 { font-size: 16.5px; margin-bottom: 8px; }
+  .goods-card p { color: var(--ink-soft); font-size: 13.5px; }
+  .goods-note { text-align: center; margin-top: 36px; color: var(--ink-soft); font-size: 14px; font-style: italic; }
+
+  .river-strip { background: var(--river); border-top: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); }
+  .river-box { max-width: 720px; margin: 0 auto; text-align: center; color: var(--paper); }
+  .river-box .mark { font-family: var(--display); font-size: 42px; line-height: 0.5; display: block; margin-bottom: 14px; opacity: 0.8; }
+  .river-box p { font-size: 17px; font-style: italic; opacity: 0.95; }
+  .river-box .who { margin-top: 16px; font-family: var(--mono); font-size: 12px; opacity: 0.75; font-style: normal; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .contact { padding: 82px 28px; }
+  .contact-card { max-width: 640px; margin: 0 auto; background: var(--paper); border: 1.5px solid var(--brass); border-radius: 6px; padding: 44px 40px; text-align: center; }
+  .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 30px; text-align: left; }
+  .contact-item { border-top: 3px solid var(--stamp); padding-top: 12px; }
+  .contact-item .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 6px; }
+  .contact-item .v { font-family: var(--display); font-size: 17px; font-weight: 600; }
+  .contact-cta { margin-top: 30px; }
+
+  footer { text-align: center; padding: 30px 24px; color: var(--ink-soft); font-size: 13px; font-family: var(--mono); border-top: 1.5px solid var(--line); }
+  footer .foot-logo { color: var(--stamp); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .goods-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+  @media (max-width: 540px) {
+    .goods-grid { grid-template-columns: 1fr; }
+    section { padding: 56px 20px; }
+    .hero { padding: 52px 20px 0; }
+    .register { padding: 24px; }
+    .contact-card { padding: 30px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">Milanville <span>General Store</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#goods">What We Carry</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="tag">Milanville, PA &middot; On the Delaware</span>
+      <h1>The store, the post office, <em>the village center.</em></h1>
+      <p>Family owned since 1979, the Milanville General Store has been the heart of a National Register village along the Delaware River, from morning coffee to a hot pizza pie at night.</p>
+      <div class="btn-row">
+        <a href="tel:5707298390" class="btn btn-primary">Call (570) 729-8390</a>
+        <a href="#goods" class="btn btn-secondary">See What We Carry</a>
+      </div>
+    </div>
+    <div class="register">
+      <div class="register-head">Village Record</div>
+      <div class="register-row"><span class="k">Established</span><span class="v">1979</span></div>
+      <div class="register-row"><span class="k">Register Status</span><span class="v">Historic District</span></div>
+      <div class="register-row"><span class="k">Also Serves As</span><span class="v">U.S. Post Office</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <span class="tag">Our Story</span>
+      <h2>Milanville's social center since 1979</h2>
+      <p>The Milanville General Store and Post Office sits along the idyllic Delaware River in the small enclave of Milanville, untouched by major highways and development. It is the <strong>business and social center of the Milanville Historic District</strong>, entered on the National Register of Historic Places.</p>
+      <p>Inside, the deli turns out made to order breakfast, lunch, and Rocco's famous pizza, while baker Vanessa keeps the case stocked with homemade sweets. It is still, after all these years, the kind of store where you can find nearly everything imaginable.</p>
+    </div>
+    <div class="postmark-row">
+      <div class="postmark-item"><div class="postmark"><span>EST.<br>1979</span></div><p>Family Owned</p></div>
+      <div class="postmark-item"><div class="postmark"><span>HISTORIC<br>REGISTER</span></div><p>National Register</p></div>
+      <div class="postmark-item"><div class="postmark"><span>U.S.<br>P.O.</span></div><p>Also the Post Office</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="goods">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="tag">What We Carry</span>
+      <h2>Everything a river village needs</h2>
+      <p>A sample of what is behind the counter and on the shelves today.</p>
+    </div>
+    <div class="goods-grid">
+      <div class="goods-card"><span class="cat">Deli</span><h3>Made-to-Order Breakfast &amp; Lunch</h3><p>Egg sandwiches, hero sandwiches, and daily specials built fresh at the counter.</p></div>
+      <div class="goods-card"><span class="cat">Kitchen</span><h3>Rocco's Famous Pizza</h3><p>Pies baked to order, great for a family dinner or a group gathering on the river.</p></div>
+      <div class="goods-card"><span class="cat">Bakery</span><h3>Vanessa's Sweet Treats</h3><p>Homemade cookies, chocolate covered goodies, and seasonal baked goods.</p></div>
+      <div class="goods-card"><span class="cat">Grocery</span><h3>Everyday Essentials</h3><p>A full stock of groceries and household items for the village and river visitors.</p></div>
+      <div class="goods-card"><span class="cat">Outdoors</span><h3>Camping &amp; River Supplies</h3><p>Forgot something for the trip? The store carries outdoor and camping essentials too.</p></div>
+      <div class="goods-card"><span class="cat">Gifts</span><h3>Local &amp; Personalized Gifts</h3><p>Hand made gifts, local photography, and country home decor for a keepsake of the river.</p></div>
+    </div>
+    <p class="goods-note">Stop by any day of the week, we're easy to find right on River Road.</p>
+  </div>
+</section>
+
+<section class="river-strip">
+  <div class="section-inner river-box">
+    <span class="mark">&ldquo;</span>
+    <p>Unlike most of the other river communities, Milanville has not been impacted by a major highway. It has kept its architectural integrity, and the store is still where everyone stops.</p>
+    <div class="who">Milanville Historic District</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-card">
+    <span class="tag">Visit Us</span>
+    <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 14px;">River Road, Milanville</h2>
+    <div class="contact-grid">
+      <div class="contact-item"><span class="k">Address</span><span class="v">1143 River Rd, Milanville, PA 18443</span></div>
+      <div class="contact-item"><span class="k">Phone</span><span class="v">(570) 729-8390</span></div>
+      <div class="contact-item"><span class="k">Hours</span><span class="v">Mon 7&ndash;4, Tue&ndash;Sat 7&ndash;8, Sun 7&ndash;3</span></div>
+      <div class="contact-item"><span class="k">Since</span><span class="v">1979</span></div>
+    </div>
+    <div class="contact-cta">
+      <a href="tel:5707298390" class="btn btn-primary">Call the Store</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Milanville General Store &middot; Milanville, PA &middot; Sample site mockup by <span class="foot-logo">Modularity Networks</span></p>
+</footer>
+
+</body>
+</html>
