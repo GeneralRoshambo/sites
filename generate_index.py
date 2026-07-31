@@ -90,7 +90,7 @@ html = f'''<!doctype html>
     display: flex; align-items: center; justify-content: center;
     font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 900;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
   }}
   .brand-word {{
     font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
