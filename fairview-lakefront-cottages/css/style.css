@@ -798,4 +798,5 @@ p {
   .footer-bottom { flex-direction: column; text-align: center; }
   .section { padding: 60px 0; }
   .stat-strip { grid-template-columns: 1fr 1fr; }
+  .header-cta .btn { display: none; }
 }
