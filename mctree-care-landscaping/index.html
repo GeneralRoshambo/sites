@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McTree Care & Landscaping | Hawley, PA</title>
+<style>
+  :root {
+    --green-dark: #2f4a34;
+    --green: #4c7a52;
+    --green-light: #eef3ea;
+    --cream: #faf8f3;
+    --wood: #6b4d33;
+    --text: #2b2b26;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  header {
+    background: var(--green-dark);
+    color: #fff;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  header .logo span { color: #a8d5a2; }
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 0.95rem;
+  }
+  header nav a:hover { text-decoration: underline; }
+  .hero {
+    background: linear-gradient(rgba(20,35,20,0.55), rgba(20,35,20,0.55)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600"><rect width="1200" height="600" fill="%23274430"/><circle cx="200" cy="500" r="180" fill="%233a5c3f"/><circle cx="500" cy="480" r="220" fill="%23345239"/><circle cx="900" cy="520" r="240" fill="%233a5c3f"/><circle cx="1100" cy="470" r="160" fill="%232f4a34"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 90px 5% 100px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: #eaf3e8;
+  }
+  .btn {
+    display: inline-block;
+    background: #a8d5a2;
+    color: #1d2e1f;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: #8ec488; }
+  .btn-outline {
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 11px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 12px;
+    font-weight: 600;
+  }
+  section { padding: 70px 5%; max-width: 1100px; margin: 0 auto; }
+  .about { text-align: center; }
+  .about h2 { color: var(--green-dark); font-size: 1.9rem; margin-bottom: 18px; }
+  .about p { max-width: 700px; margin: 0 auto; font-size: 1.05rem; }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: var(--green-light);
+    border: 1px solid #d5e3cf;
+    border-radius: 8px;
+    padding: 18px 24px;
+    text-align: center;
+    min-width: 150px;
+  }
+  .badge strong { display: block; font-size: 1.5rem; color: var(--green-dark); }
+  .badge span { font-size: 0.85rem; color: #566; }
+  .services { background: var(--green-light); }
+  .services h2 { text-align: center; color: var(--green-dark); font-size: 1.9rem; margin-bottom: 36px; }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 26px;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 28px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--green);
+  }
+  .service-card h3 { color: var(--green-dark); margin-bottom: 10px; font-size: 1.15rem; }
+  .service-card p { font-size: 0.95rem; color: #444; }
+  .gallery-note {
+    text-align: center;
+    background: var(--cream);
+  }
+  .gallery-note h2 { color: var(--green-dark); font-size: 1.7rem; margin-bottom: 14px; }
+  .quote-strip {
+    background: var(--wood);
+    color: #fff;
+    text-align: center;
+    padding: 46px 5%;
+  }
+  .quote-strip p { font-size: 1.25rem; font-style: italic; max-width: 700px; margin: 0 auto; }
+  .quote-strip span { display: block; margin-top: 12px; font-size: 0.95rem; opacity: 0.85; }
+  .contact { text-align: center; }
+  .contact h2 { color: var(--green-dark); font-size: 1.9rem; margin-bottom: 18px; }
+  .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    text-align: left;
+  }
+  .contact-item strong { color: var(--green-dark); display: block; margin-bottom: 4px; }
+  footer {
+    background: var(--green-dark);
+    color: #dce8da;
+    text-align: center;
+    padding: 24px 5%;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 600px) {
+    header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    header nav a { margin-left: 0; margin-right: 16px; }
+    .hero h1 { font-size: 1.9rem; }
+    .btn-outline { margin-left: 0; margin-top: 12px; display: block; width: fit-content; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">McTree <span>Care</span> & Landscaping</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Trusted Tree Care & Landscaping in Hawley, PA Since 1981</h1>
+  <p>Four decades of keeping properties around Lake Wallenpaupack safe, healthy, and beautiful — from tree removal to full landscape design.</p>
+  <a href="tel:5704931737" class="btn">Call (570) 493-1737</a>
+  <a href="#contact" class="btn-outline">Get a Free Estimate</a>
+</div>
+
+<section class="about" id="about">
+  <h2>Family-Owned, Locally Rooted</h2>
+  <p>McTree Care & Landscaping has served Hawley and the Lake Wallenpaupack area since 1981. Owner Michael Cortright and his crew handle everything from routine lawn and landscape maintenance to technical tree removal, patios, and vinyl fencing — with the kind of local knowledge you only get from 40+ years on the same hillsides.</p>
+  <div class="badge-row">
+    <div class="badge"><strong>40+</strong><span>Years in Business</span></div>
+    <div class="badge"><strong>PA</strong><span>Licensed & Insured</span></div>
+    <div class="badge"><strong>Local</strong><span>Hawley, PA Crew</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2>What We Do</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Tree Removal & Care</h3>
+      <p>Safe removal, pruning, and health assessments for trees of any size, including storm and hazard cleanup.</p>
+    </div>
+    <div class="service-card">
+      <h3>Landscape Design</h3>
+      <p>Full-property landscape planning and installation, from foundation plantings to full yard makeovers.</p>
+    </div>
+    <div class="service-card">
+      <h3>Patios & Hardscaping</h3>
+      <p>Custom patios, walkways, and stonework built to hold up to Poconos winters.</p>
+    </div>
+    <div class="service-card">
+      <h3>Decks & Porches</h3>
+      <p>Deck and porch construction and repair, built for lakeside living.</p>
+    </div>
+    <div class="service-card">
+      <h3>Vinyl Fencing</h3>
+      <p>Low-maintenance vinyl fence installation for privacy and property lines.</p>
+    </div>
+    <div class="service-card">
+      <h3>Sunrooms & Greenhouses</h3>
+      <p>Seasonal structures designed and installed to fit your property.</p>
+    </div>
+  </div>
+</section>
+
+<div class="quote-strip">
+  <p>"We treat every property like it's our own — that's how you last 40 years in this business."</p>
+  <span>— Michael Cortright, Owner</span>
+</div>
+
+<section class="contact" id="contact">
+  <h2>Get a Free Estimate</h2>
+  <p>Call, or reach out below — we'll get back to you within one business day.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <strong>Phone</strong>
+      (570) 493-1737
+    </div>
+    <div class="contact-item">
+      <strong>Address</strong>
+      150 Ledge Crest<br>Hawley, PA 18428
+    </div>
+    <div class="contact-item">
+      <strong>Service Area</strong>
+      Hawley, Lake Wallenpaupack &<br>surrounding Wayne County
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 McTree Care & Landscaping — Hawley, PA. Licensed PA Contractor (HIC# PA167021).
+  <br>Sample site mockup prepared by Ryan | Roshambo Industries.
+</footer>
+
+</body>
+</html>
