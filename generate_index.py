@@ -1,20 +1,52 @@
 #!/usr/bin/env python3
-"""Regenerates index.html (Modularity showcase style) from manifest.json.
+"""Regenerates index.html (Modularity showcase style, tabbed by region) from manifest.json.
 Run from the repo root: python3 generate_index.py
 """
 import json
+from collections import OrderedDict
 
 with open("manifest.json") as f:
     sites = json.load(f)
 
-cards = ""
+# Group sites by region, preserving first-seen region order.
+REGION_LABELS = {
+    "Wallenpaupack": "Wallenpaupack Area",
+    "Erie": "Erie Area",
+}
+REGION_ORDER = ["Wallenpaupack", "Erie"]
+
+by_region = OrderedDict()
 for s in sites:
-    cards += f'''        <a class="card" href="{s['slug']}/">
+    region = s.get("region") or "Wallenpaupack"
+    by_region.setdefault(region, []).append(s)
+
+# Make sure known regions appear even if empty, in a stable order; append any unexpected ones after.
+ordered_regions = [r for r in REGION_ORDER if r in by_region]
+ordered_regions += [r for r in by_region if r not in REGION_ORDER]
+
+def card_html(s):
+    return f'''        <a class="card" href="{s['slug']}/">
           <span class="card-tag">{s['category']}</span>
           <h3>{s['name']}</h3>
           <span class="card-loc">{s['location']}</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
+'''
+
+tab_buttons = ""
+tab_panels = ""
+for i, region in enumerate(ordered_regions):
+    region_sites = by_region[region]
+    label = REGION_LABELS.get(region, region)
+    active_btn = " active" if i == 0 else ""
+    active_panel = " active" if i == 0 else ""
+    tab_buttons += f'''        <button class="tab-btn{active_btn}" data-tab="{region}" role="tab" aria-selected="{"true" if i == 0 else "false"}">
+          {label} <span class="tab-count">{len(region_sites)}</span>
+        </button>
+'''
+    cards = "".join(card_html(s) for s in region_sites)
+    tab_panels += f'''      <div class="grid tab-panel{active_panel}" data-panel="{region}" role="tabpanel">
+{cards}      </div>
 '''
 
 count = len(sites)
@@ -180,7 +212,7 @@ html = f'''<!doctype html>
   }}
 
   .showcase {{ padding: 1rem 0 6rem; }}
-  .section-head {{ text-align: center; margin-bottom: 3rem; }}
+  .section-head {{ text-align: center; margin-bottom: 2.5rem; }}
   .eyebrow {{
     display: block;
     font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
@@ -204,6 +236,48 @@ html = f'''<!doctype html>
     margin: 0 auto;
     line-height: 1.6;
   }}
+
+  /* ---------- Tabs ---------- */
+  .tab-bar {{
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }}
+  .tab-btn {{
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    background: rgba(11,26,46,0.85);
+    border: 1px solid var(--border);
+    padding: 0.65rem 1.3rem;
+    border-radius: 100px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }}
+  .tab-btn:hover {{ color: var(--text); border-color: rgba(59,184,232,0.4); }}
+  .tab-btn.active {{
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+  }}
+  .tab-count {{
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.76rem;
+    background: rgba(255,255,255,0.14);
+    padding: 0.1rem 0.5rem;
+    border-radius: 100px;
+  }}
+  .tab-btn.active .tab-count {{ background: rgba(6,16,28,0.18); }}
+  .tab-panel {{ display: none; }}
+  .tab-panel.active {{ display: grid; }}
 
   .grid {{
     display: grid;
@@ -282,13 +356,13 @@ html = f'''<!doctype html>
         <span class="brand-mark">M</span>
         <span class="brand-word">MODULARITY<small>DEMO GALLERY</small></span>
       </div>
-      <a class="nav-cta" href="https://modularityhosting.com" target="_blank" rel="noopener">VISIT MODULARITY →</a>
+      <a class="nav-cta" href="https://modularityhosting.com" target="_blank" rel="noopener">VISIT MODULARITY &rarr;</a>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <span class="badge"><span class="badge-dot"></span> Client Demo Gallery · Modularity Networks</span>
+      <span class="badge"><span class="badge-dot"></span> Client Demo Gallery &middot; Modularity Networks</span>
       <h1>Real Businesses.<br><span class="accent">Real Websites.</span></h1>
       <p>Every site below was hand-built for a local business by our team, custom code, no page-builder templates, no stock layouts.</p>
       <div class="stats">
@@ -304,15 +378,35 @@ html = f'''<!doctype html>
         <h2>Browse The Builds.</h2>
         <p>Click any business below to view its live demo site, exactly what we'd hand a client on day one.</p>
       </div>
-      <div class="grid">
-{cards}      </div>
-    </section>
+      <div class="tab-bar" role="tablist">
+{tab_buttons}      </div>
+{tab_panels}    </section>
   </main>
 
   <footer>
     <p>Built by <a class="footer-link" href="https://modularitynet.com" target="_blank" rel="noopener">Modularity Networks</a></p>
     <p>info@modularitynet.com</p>
   </footer>
+
+  <script>
+    (function () {{
+      var buttons = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.tab-panel');
+      buttons.forEach(function (btn) {{
+        btn.addEventListener('click', function () {{
+          var target = btn.getAttribute('data-tab');
+          buttons.forEach(function (b) {{
+            var isActive = b === btn;
+            b.classList.toggle('active', isActive);
+            b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          }});
+          panels.forEach(function (p) {{
+            p.classList.toggle('active', p.getAttribute('data-panel') === target);
+          }});
+        }});
+      }});
+    }})();
+  </script>
 
 </body>
 </html>
@@ -321,4 +415,4 @@ html = f'''<!doctype html>
 with open("index.html", "w") as f:
     f.write(html)
 
-print(f"Regenerated index.html with {count} sites")
+print(f"Regenerated index.html with {count} sites across {len(ordered_regions)} region(s)")

@@ -3,90 +3,105 @@
     "slug": "preston-country-market",
     "name": "Preston Country Market",
     "location": "Starrucca, PA",
-    "category": "General Store"
+    "category": "General Store",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "brozonis-excavating",
     "name": "Brozonis Excavating",
     "location": "Union Dale, PA",
-    "category": "Excavation Contractor"
+    "category": "Excavation Contractor",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "country-cafe-pizzeria",
     "name": "Country Cafe & Pizzeria",
     "location": "Beach Lake, PA",
-    "category": "Diner & Pizzeria"
+    "category": "Diner & Pizzeria",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "mctree-care-landscaping",
     "name": "McTree Care & Landscaping",
     "location": "Hawley, PA",
-    "category": "Landscaping"
+    "category": "Landscaping",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "slices-pizzeria-bistro",
     "name": "Slices Pizzeria & Bistro",
     "location": "Hamlin, PA",
-    "category": "Pizzeria & Bistro"
+    "category": "Pizzeria & Bistro",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "waymart-deli",
     "name": "The Waymart Deli",
     "location": "Waymart, PA",
-    "category": "Deli & Sandwich Shop"
+    "category": "Deli & Sandwich Shop",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "mikes-auto-services",
     "name": "Mike's Auto Services & Towing",
     "location": "Hawley, PA",
-    "category": "Auto Repair & Towing"
+    "category": "Auto Repair & Towing",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "old-rangers-inn",
     "name": "Old Ranger's Inn",
     "location": "Greentown, PA",
-    "category": "Restaurant & Inn"
+    "category": "Restaurant & Inn",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "fairview-lakefront-cottages",
     "name": "Fairview Lakefront Cottages",
     "location": "Hawley, PA",
-    "category": "Cottage Rentals"
+    "category": "Cottage Rentals",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "the-boathouse",
     "name": "The Boathouse",
     "location": "Hawley, PA",
-    "category": "Restaurant"
+    "category": "Restaurant",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "wayne-county-auto-repair",
     "name": "Wayne County Auto Repair",
     "location": "Galilee, PA",
-    "category": "Auto Repair"
+    "category": "Auto Repair",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "milanville-general-store",
     "name": "Milanville General Store",
     "location": "Milanville, PA",
-    "category": "General Store"
+    "category": "General Store",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "beach-lake-tire-and-auto",
     "name": "Beach Lake Tire and Auto",
     "location": "Beach Lake, PA",
-    "category": "Tire & Auto"
+    "category": "Tire & Auto",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "crossroads-auto-plus",
     "name": "Crossroads Auto Plus",
     "location": "Hawley, PA",
-    "category": "Auto Repair & Inspections"
+    "category": "Auto Repair & Inspections",
+    "region": "Wallenpaupack"
   },
   {
     "slug": "reyes-landscaping",
     "name": "Reyes Landscaping",
     "location": "Erie, PA",
-    "category": "Landscaping & Snow Removal"
+    "category": "Landscaping & Snow Removal",
+    "region": "Erie"
   }
 ]
