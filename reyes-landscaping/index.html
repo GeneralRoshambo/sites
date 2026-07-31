@@ -85,13 +85,14 @@
     justify-content: space-between;
     height: 82px;
   }
-  .brand { display: flex; flex-direction: column; line-height: 1.05; text-decoration: none; }
+  .brand { display: flex; flex-direction: column; line-height: 1.05; text-decoration: none; flex-shrink: 0; }
   .brand-name {
     font-family: "Big Shoulders Display", sans-serif;
     font-weight: 900;
     font-size: 1.7rem;
     color: var(--pine);
     letter-spacing: 0.01em;
+    white-space: nowrap;
   }
   .brand-sub {
     font-family: "JetBrains Mono", monospace;
@@ -375,7 +376,7 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-brand { grid-column: 1 / -1; }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     nav.main-nav { position: fixed; top: 82px; left: 0; right: 0; background: var(--paper); flex-direction: column; align-items: stretch; padding: 10px 24px 20px; border-bottom: 1px solid var(--line); transform: translateY(-130%); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; pointer-events: none; gap: 0; }
     nav.main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
     nav.main-nav a { padding: 14px 4px; border-bottom: 1px solid var(--line); }
