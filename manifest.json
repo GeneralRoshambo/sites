@@ -2,71 +2,85 @@
   {
     "slug": "preston-country-market",
     "name": "Preston Country Market",
-    "location": "Starrucca, PA"
+    "location": "Starrucca, PA",
+    "category": "General Store"
   },
   {
     "slug": "brozonis-excavating",
     "name": "Brozonis Excavating",
-    "location": "Union Dale, PA"
+    "location": "Union Dale, PA",
+    "category": "Excavation Contractor"
   },
   {
     "slug": "country-cafe-pizzeria",
     "name": "Country Cafe & Pizzeria",
-    "location": "Beach Lake, PA"
+    "location": "Beach Lake, PA",
+    "category": "Diner & Pizzeria"
   },
   {
     "slug": "mctree-care-landscaping",
     "name": "McTree Care & Landscaping",
-    "location": "Hawley, PA"
+    "location": "Hawley, PA",
+    "category": "Landscaping"
   },
   {
     "slug": "slices-pizzeria-bistro",
     "name": "Slices Pizzeria & Bistro",
-    "location": "Hamlin, PA"
+    "location": "Hamlin, PA",
+    "category": "Pizzeria & Bistro"
   },
   {
     "slug": "waymart-deli",
     "name": "The Waymart Deli",
-    "location": "Waymart, PA"
+    "location": "Waymart, PA",
+    "category": "Deli & Sandwich Shop"
   },
   {
     "slug": "mikes-auto-services",
     "name": "Mike's Auto Services & Towing",
-    "location": "Hawley, PA"
+    "location": "Hawley, PA",
+    "category": "Auto Repair & Towing"
   },
   {
     "slug": "old-rangers-inn",
     "name": "Old Ranger's Inn",
-    "location": "Greentown, PA"
+    "location": "Greentown, PA",
+    "category": "Restaurant & Inn"
   },
   {
     "slug": "fairview-lakefront-cottages",
     "name": "Fairview Lakefront Cottages",
-    "location": "Hawley, PA"
+    "location": "Hawley, PA",
+    "category": "Cottage Rentals"
   },
   {
     "slug": "the-boathouse",
     "name": "The Boathouse",
-    "location": "Hawley, PA"
+    "location": "Hawley, PA",
+    "category": "Restaurant"
   },
   {
     "slug": "wayne-county-auto-repair",
     "name": "Wayne County Auto Repair",
-    "location": "Galilee, PA"
+    "location": "Galilee, PA",
+    "category": "Auto Repair"
   },
   {
     "slug": "milanville-general-store",
     "name": "Milanville General Store",
-    "location": "Milanville, PA"
+    "location": "Milanville, PA",
+    "category": "General Store"
   },
   {
     "slug": "beach-lake-tire-and-auto",
     "name": "Beach Lake Tire and Auto",
-    "location": "Beach Lake, PA"
+    "location": "Beach Lake, PA",
+    "category": "Tire & Auto"
   },
   {
     "slug": "crossroads-auto-plus",
     "name": "Crossroads Auto Plus",
-    "location": "Hawley, PA"
+    "location": "Hawley, PA",
+    "category": "Auto Repair & Inspections"
   }
 ]

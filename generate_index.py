@@ -1,0 +1,321 @@
+#!/usr/bin/env python3
+"""Regenerates index.html (Modularity showcase style) from manifest.json.
+Run from the repo root: python3 generate_index.py
+"""
+import json
+
+with open("manifest.json") as f:
+    sites = json.load(f)
+
+cards = ""
+for s in sites:
+    cards += f'''        <a class="card" href="{s['slug']}/">
+          <span class="card-tag">{s['category']}</span>
+          <h3>{s['name']}</h3>
+          <span class="card-loc">{s['location']}</span>
+          <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+'''
+
+count = len(sites)
+
+html = f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modularity Networks · Client Demo Gallery</title>
+<meta name="description" content="A showcase of custom demo websites built by Modularity Networks for local businesses." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {{
+    --bg: #06101c;
+    --bg-soft: #0b1a2e;
+    --accent: #3bb8e8;
+    --text: rgba(255,255,255,0.92);
+    --text-dim: rgba(255,255,255,0.55);
+    --border: rgba(59,184,232,0.16);
+  }}
+  * {{ box-sizing: border-box; }}
+  html {{ scroll-behavior: smooth; }}
+  body {{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }}
+  body::before {{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(rgba(59,184,232,0.35) 1px, transparent 1px),
+      radial-gradient(rgba(59,184,232,0.18) 1px, transparent 1px);
+    background-size: 140px 140px, 90px 90px;
+    background-position: 0 0, 45px 60px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }}
+  a {{ color: inherit; text-decoration: none; }}
+  .wrap {{ max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }}
+
+  header {{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(6,16,28,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }}
+  .nav {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto;
+  }}
+  .brand {{ display: flex; align-items: center; gap: 0.65rem; }}
+  .brand-mark {{
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+  }}
+  .brand-word {{
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: 1.05rem;
+    line-height: 1.1;
+  }}
+  .brand-word small {{
+    display: block;
+    font-size: 0.6rem;
+    color: var(--accent);
+    letter-spacing: 0.16em;
+    font-weight: 600;
+  }}
+  .nav-cta {{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 0.55rem 1.1rem;
+    border-radius: 100px;
+  }}
+
+  .hero {{ padding: 5rem 0 3.5rem; text-align: center; }}
+  .badge {{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    background: rgba(59,184,232,0.06);
+    color: var(--accent);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.75rem;
+  }}
+  .badge-dot {{
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 8px 1px var(--accent);
+  }}
+  h1 {{
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.02;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    letter-spacing: 0.01em;
+    margin: 0 0 1.4rem;
+  }}
+  h1 .accent {{ color: var(--accent); }}
+  .hero p {{
+    max-width: 560px;
+    margin: 0 auto 2.25rem;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }}
+  .stats {{
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.5rem, 5vw, 3.5rem);
+    flex-wrap: wrap;
+  }}
+  .stat-num {{
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    font-size: 1.9rem;
+    color: var(--accent);
+  }}
+  .stat-label {{
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+  }}
+
+  .showcase {{ padding: 1rem 0 6rem; }}
+  .section-head {{ text-align: center; margin-bottom: 3rem; }}
+  .eyebrow {{
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }}
+  .section-head h2 {{
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 0.9rem;
+  }}
+  .section-head p {{
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }}
+
+  .grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }}
+  .card {{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(11,26,46,0.85);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.6rem 1.5rem;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }}
+  .card:hover {{
+    border-color: rgba(59,184,232,0.55);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px -10px rgba(59,184,232,0.25);
+  }}
+  .card-tag {{
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(59,184,232,0.1);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.65rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }}
+  .card h3 {{
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 0.3rem;
+    letter-spacing: 0.01em;
+  }}
+  .card-loc {{
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }}
+  .card-cta {{
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--text);
+  }}
+  .card-cta svg {{ color: var(--accent); }}
+
+  footer {{
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0;
+    text-align: center;
+  }}
+  footer p {{
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+  }}
+  footer a.footer-link {{ color: var(--accent); }}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="brand-mark">M</span>
+        <span class="brand-word">MODULARITY<small>DEMO GALLERY</small></span>
+      </div>
+      <a class="nav-cta" href="https://modularityhosting.com" target="_blank" rel="noopener">VISIT MODULARITY →</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge"><span class="badge-dot"></span> Client Demo Gallery · Modularity Networks</span>
+      <h1>Real Businesses.<br><span class="accent">Real Websites.</span></h1>
+      <p>Every site below was hand-built for a local business by our team, custom code, no page-builder templates, no stock layouts.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-num">{count}</span><span class="stat-label">Sites Built</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Custom Code</span></div>
+        <div class="stat"><span class="stat-num">Zero</span><span class="stat-label">Templates Used</span></div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="section-head">
+        <span class="eyebrow">The Work</span>
+        <h2>Browse The Builds.</h2>
+        <p>Click any business below to view its live demo site, exactly what we'd hand a client on day one.</p>
+      </div>
+      <div class="grid">
+{cards}      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by <a class="footer-link" href="https://modularitynet.com" target="_blank" rel="noopener">Modularity Networks</a> · a <a class="footer-link" href="https://modularityhosting.com" target="_blank" rel="noopener">Modularity Hosting</a> company</p>
+    <p>info@modularitynet.com</p>
+  </footer>
+
+</body>
+</html>
+'''
+
+with open("index.html", "w") as f:
+    f.write(html)
+
+print(f"Regenerated index.html with {count} sites")
