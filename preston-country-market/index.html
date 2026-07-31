@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preston Country Market | Starrucca, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf7f1;
+    --paper-dim: #f2ecdf;
+    --ink: #2b2a24;
+    --ink-soft: #5c584c;
+    --pine: #2f4a3c;
+    --pine-deep: #23392e;
+    --oxblood: #7a2e24;
+    --mustard: #c99a3b;
+    --line: #e1dac9;
+    --display: 'Oswald', 'Arial Narrow', sans-serif;
+    --body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  h1, h2, h3, h4 { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.01em; }
+
+  :focus-visible {
+    outline: 2.5px solid var(--pine);
+    outline-offset: 3px;
+  }
+
+  /* Signature element: a hang-tag badge, like a string-tied price tag on the shelf */
+  .tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 16px 7px 24px;
+    background: var(--paper);
+    border: 1.5px solid var(--pine);
+    border-radius: 2px 10px 10px 2px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--pine);
+    transform: rotate(-1.4deg);
+  }
+
+  .tag::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--pine);
+    transform: translateY(-50%);
+  }
+
+  .tag.tag-light { border-color: rgba(250, 247, 241, 0.55); color: var(--paper); }
+  .tag.tag-light::before { border-color: rgba(250, 247, 241, 0.55); background: var(--pine); }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 241, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1.5px solid var(--line);
+  }
+
+  .nav-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--pine-deep);
+  }
+
+  .logo span { color: var(--oxblood); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid transparent;
+  }
+
+  nav a:hover { color: var(--pine); border-bottom-color: var(--mustard); }
+
+  /* Hero: storefront-sign split layout */
+  .hero {
+    padding: 76px 28px 0;
+    background: var(--paper);
+  }
+
+  .hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+    padding-bottom: 64px;
+  }
+
+  .hero-copy .tag { margin-bottom: 22px; }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.06;
+    color: var(--pine-deep);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em { font-style: normal; color: var(--oxblood); }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin-bottom: 32px;
+  }
+
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn {
+    padding: 14px 26px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-block;
+    border: 1.5px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--pine);
+    color: var(--paper);
+    border-color: var(--pine);
+  }
+
+  .btn-primary:hover { background: var(--pine-deep); transform: translateY(-1px); }
+
+  .btn-secondary {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  /* Price-board card, hero right column */
+  .board {
+    background: var(--pine);
+    border-radius: 6px;
+    padding: 34px;
+    position: relative;
+    box-shadow: 6px 6px 0 var(--mustard);
+  }
+
+  .board-head {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 247, 241, 0.65);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(250, 247, 241, 0.22);
+  }
+
+  .board-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 13px 0;
+    border-bottom: 1px dashed rgba(250, 247, 241, 0.22);
+    gap: 16px;
+  }
+
+  .board-row:last-of-type { border-bottom: none; }
+
+  .board-row .item {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+
+  .board-row .note {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: rgba(250, 247, 241, 0.65);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .board-foot {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(250, 247, 241, 0.22);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--mustard);
+    letter-spacing: 0.04em;
+  }
+
+  section { padding: 84px 28px; }
+
+  .section-inner { max-width: 1120px; margin: 0 auto; }
+
+  .section-head { max-width: 640px; margin: 0 auto 52px; text-align: center; }
+
+  .section-head .tag { margin-bottom: 18px; }
+
+  .section-head h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+    font-weight: 700;
+    color: var(--pine-deep);
+    margin-bottom: 12px;
+  }
+
+  .section-head p { color: var(--ink-soft); font-size: 15.5px; }
+
+  .about {
+    background: var(--paper-dim);
+    border-top: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .about-copy .tag { margin-bottom: 18px; }
+
+  .about-copy h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    font-weight: 700;
+    color: var(--pine-deep);
+    margin-bottom: 16px;
+  }
+
+  .about-copy p { color: var(--ink-soft); margin-bottom: 16px; font-size: 15.5px; }
+
+  .about-copy strong { color: var(--ink); font-weight: 600; }
+
+  .chip-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+
+  .chip {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 16px 18px;
+    flex: 1 1 200px;
+  }
+
+  .chip .chip-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .chip .chip-text { font-size: 14.5px; color: var(--ink-soft); }
+
+  /* What we carry: bin-label cards */
+  .goods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .goods-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 26px;
+    position: relative;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .goods-card:hover {
+    border-color: var(--pine);
+    transform: translateY(-3px);
+  }
+
+  .goods-card .cat {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mustard-dark, #96742a);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .goods-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--pine-deep);
+    margin-bottom: 8px;
+    text-transform: none;
+    font-family: var(--body);
+  }
+
+  .goods-card p { color: var(--ink-soft); font-size: 14px; }
+
+  .goods-note {
+    text-align: center;
+    margin-top: 36px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  /* Why us: tag chips, not a numbered sequence */
+  .why {
+    background: var(--paper-dim);
+    border-top: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .why-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 6px;
+    padding: 24px 20px;
+    text-align: left;
+  }
+
+  .why-card .tag { margin-bottom: 14px; font-size: 11px; padding: 5px 12px 5px 20px; }
+
+  .why-card h4 {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--pine-deep);
+    margin-bottom: 6px;
+    text-transform: none;
+    font-family: var(--body);
+  }
+
+  .why-card p { color: var(--ink-soft); font-size: 13.5px; }
+
+  /* Contact: solid signboard block */
+  .contact { padding: 0 28px 84px; }
+
+  .contact-board {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--pine);
+    border-radius: 8px;
+    padding: 52px 48px;
+    box-shadow: 8px 8px 0 var(--oxblood);
+  }
+
+  .contact-board .section-head .tag { margin-bottom: 16px; }
+
+  .contact-board .section-head h2 { color: var(--paper); }
+
+  .contact-board .section-head p { color: rgba(250, 247, 241, 0.72); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    margin-top: 36px;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 15px 0;
+    border-bottom: 1px dashed rgba(250, 247, 241, 0.22);
+    gap: 16px;
+  }
+
+  .contact-row .k {
+    font-family: var(--mono);
+    color: rgba(250, 247, 241, 0.6);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .contact-row .v { font-weight: 600; font-size: 15.5px; text-align: right; color: var(--paper); }
+
+  .contact-cta { margin-top: 32px; text-align: center; }
+
+  .contact-cta .btn-primary { background: var(--mustard); border-color: var(--mustard); color: var(--pine-deep); }
+
+  .contact-cta .btn-primary:hover { background: #dbae52; }
+
+  footer {
+    text-align: center;
+    padding: 30px 24px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-family: var(--mono);
+    border-top: 1.5px solid var(--line);
+  }
+
+  footer .foot-logo { color: var(--oxblood); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .goods-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav ul { display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .goods-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    section { padding: 58px 20px; }
+    .hero { padding: 56px 20px 0; }
+    .contact-board { padding: 36px 24px; }
+    .board { padding: 26px; }
+    .contact-row, .board-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .contact-row .v, .board-row .note { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">Preston <span>Country Market</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#goods">What We Carry</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="tag">Starrucca, PA &middot; Rt. 370</span>
+      <h1>One roof.<br>Deli, grocery,<br><em>hardware &amp; gas.</em></h1>
+      <p>Preston Country Market has been Shehawken Road's stop for a fresh sandwich, a full grocery run, or a fill-up, no detour required. Family owned and run, not a chain.</p>
+      <div class="btn-row">
+        <a href="tel:5707982871" class="btn btn-primary">Call (570) 798-2871</a>
+        <a href="#goods" class="btn btn-secondary">See What We Carry</a>
+      </div>
+    </div>
+    <div class="board">
+      <div class="board-head">On the shelf today</div>
+      <div class="board-row"><span class="item">Deli Counter</span><span class="note">made to order</span></div>
+      <div class="board-row"><span class="item">Groceries</span><span class="note">stocked daily</span></div>
+      <div class="board-row"><span class="item">Hardware</span><span class="note">quick fixes</span></div>
+      <div class="board-row"><span class="item">Fuel</span><span class="note">pumps on site</span></div>
+      <div class="board-foot">ALL UNDER ONE ROOF, SINCE DAY ONE</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <span class="tag">Our Story</span>
+      <h2>A true family general store</h2>
+      <p>Preston Country Market has been the place folks in Starrucca and Preston Park stop for a fresh sandwich, a full grocery run, or a tank of gas, all without leaving Shehawken Road. We are <strong>family owned and operated</strong>, and it shows in the deli case and on the shelves.</p>
+      <p>Our kitchen turns out <strong>hand-made sandwiches, salads, and stromboli</strong> every day, while our shelves stay stocked with groceries, produce, and hardware for whatever the week brings.</p>
+      <p>Whether you are a neighbor or just passing through Wayne County, we aim to make the stop worth it.</p>
+    </div>
+    <div class="chip-list">
+      <div class="chip"><span class="chip-label">Ownership</span><span class="chip-text">Family owned and run, not a chain</span></div>
+      <div class="chip"><span class="chip-label">Deli</span><span class="chip-text">Sandwiches, salads &amp; stromboli made fresh</span></div>
+      <div class="chip"><span class="chip-label">Fuel</span><span class="chip-text">Gas pumps on site</span></div>
+      <div class="chip"><span class="chip-label">Range</span><span class="chip-text">Groceries, produce &amp; hardware together</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="goods">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="tag">What We Carry</span>
+      <h2>Everything a country stop should have</h2>
+      <p>A sample of what is behind the counter and on the shelves. Full selection in store daily.</p>
+    </div>
+    <div class="goods-grid">
+      <div class="goods-card">
+        <span class="cat">Deli Case</span>
+        <h3>Made-to-order sandwiches</h3>
+        <p>Hot and cold subs, hoagies, and daily specials built while you wait.</p>
+      </div>
+      <div class="goods-card">
+        <span class="cat">Deli Case</span>
+        <h3>Store-made salads</h3>
+        <p>Macaroni, potato, and chicken salad made fresh in house, sold by the pound.</p>
+      </div>
+      <div class="goods-card">
+        <span class="cat">Hot Counter</span>
+        <h3>Stromboli &amp; dinners</h3>
+        <p>Fried food and hot dinners ready to grab on the way home from work.</p>
+      </div>
+      <div class="goods-card">
+        <span class="cat">Grocery</span>
+        <h3>Everyday essentials</h3>
+        <p>Groceries, fresh produce, and pantry staples stocked for the whole week.</p>
+      </div>
+      <div class="goods-card">
+        <span class="cat">Hardware</span>
+        <h3>Hardware &amp; tools</h3>
+        <p>The odds and ends for a quick fix, no need to drive out of town.</p>
+      </div>
+      <div class="goods-card">
+        <span class="cat">Fuel</span>
+        <h3>Gas &amp; tobacco</h3>
+        <p>Fill up and grab what you need in one stop on Route 370.</p>
+      </div>
+    </div>
+    <p class="goods-note">New to the area or just driving through? Stop in, we are easy to find on Shehawken Road.</p>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="tag">Why Preston Country Market</span>
+      <h2>A real general store, run by a real family</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="tag">Family</span>
+        <h4>Family owned</h4>
+        <p>Run by locals, for locals, since we opened our doors.</p>
+      </div>
+      <div class="why-card">
+        <span class="tag">Fresh</span>
+        <h4>Made fresh daily</h4>
+        <p>Sandwiches and salads made from scratch every morning.</p>
+      </div>
+      <div class="why-card">
+        <span class="tag">One Stop</span>
+        <h4>One-stop shop</h4>
+        <p>Groceries, deli, hardware, and fuel all in one place.</p>
+      </div>
+      <div class="why-card">
+        <span class="tag">Rt. 370</span>
+        <h4>Easy to find</h4>
+        <p>Right on Route 370 for locals and travelers alike.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-board">
+    <div class="section-head">
+      <span class="tag tag-light">Visit Us</span>
+      <h2>Shehawken Road, Starrucca</h2>
+      <p>Stop in for a sandwich, a grocery run, or a fill-up.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-row"><span class="k">Address</span><span class="v">530 Shehawken Rd<br>Starrucca, PA 18455</span></div>
+      <div class="contact-row"><span class="k">Phone</span><span class="v">(570) 798-2871</span></div>
+      <div class="contact-row"><span class="k">Hours</span><span class="v">Open daily<br>see in-store for hours</span></div>
+      <div class="contact-row"><span class="k">Service</span><span class="v">Deli, Grocery<br>Hardware &amp; Fuel</span></div>
+    </div>
+    <div class="contact-cta">
+      <a href="tel:5707982871" class="btn btn-primary">Call the Market</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Preston Country Market &middot; Starrucca, PA &middot; Sample site mockup by <span class="foot-logo">Modularity Networks</span></p>
+</footer>
+
+</body>
+</html>
