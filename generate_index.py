@@ -29,6 +29,7 @@ html = f'''<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/nevis">
 <style>
   :root {{
     --bg: #06101c;
@@ -87,12 +88,12 @@ html = f'''<!doctype html>
     background: #fff;
     color: var(--bg);
     display: flex; align-items: center; justify-content: center;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 900;
     font-size: 1.15rem;
   }}
   .brand-word {{
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 700;
     letter-spacing: 0.02em;
     font-size: 1.05rem;
@@ -111,7 +112,7 @@ html = f'''<!doctype html>
     gap: 0.4rem;
     background: var(--accent);
     color: var(--bg);
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.03em;
@@ -138,7 +139,7 @@ html = f'''<!doctype html>
     box-shadow: 0 0 8px 1px var(--accent);
   }}
   h1 {{
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1.02;
@@ -162,7 +163,7 @@ html = f'''<!doctype html>
   }}
   .stat-num {{
     display: block;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 900;
     font-size: 1.9rem;
     color: var(--accent);
@@ -180,7 +181,7 @@ html = f'''<!doctype html>
   .section-head {{ text-align: center; margin-bottom: 3rem; }}
   .eyebrow {{
     display: block;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -189,7 +190,7 @@ html = f'''<!doctype html>
     margin-bottom: 0.75rem;
   }}
   .section-head h2 {{
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 900;
     text-transform: uppercase;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -234,7 +235,7 @@ html = f'''<!doctype html>
     margin-bottom: 1rem;
   }}
   .card h3 {{
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
     margin: 0 0 0.3rem;
@@ -250,7 +251,7 @@ html = f'''<!doctype html>
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: "Barlow Condensed", sans-serif;
+    font-family: "Nevis", "Barlow Condensed", "Arial Black", sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.03em;
