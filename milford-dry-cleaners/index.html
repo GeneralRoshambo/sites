@@ -60,6 +60,17 @@
   .btn-secondary:hover{background:var(--navy);color:var(--white);}
 
   .steam-art{width:100%;height:auto;}
+  .photo-frame{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 20px 36px rgba(34,48,59,0.2);border:1px solid var(--line);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(34,48,59,0.55), rgba(63,108,134,0.35)), url('https://images.pexels.com/photos/10207554/pexels-photo-10207554.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#FAFAF7;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#9FD3E8;font-family:'Source Sans 3',sans-serif;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:300px;} }
 
   section{padding:84px 0;}
   .section-head{max-width:640px;margin-bottom:48px;}
@@ -134,17 +145,17 @@
         <a href="#services" class="btn-secondary">See our services</a>
       </div>
     </div>
-    <div>
-      <svg class="steam-art" viewBox="0 0 460 360" role="img" aria-label="Illustration of a pressed shirt with steam">
-        <rect width="460" height="360" rx="8" fill="#fff"/>
-        <path d="M170 60 C160 40, 180 30, 175 10" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.5"/>
-        <path d="M210 60 C200 40, 222 28, 215 6" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.6"/>
-        <path d="M250 60 C240 42, 262 30, 255 10" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.5"/>
-        <path d="M120 90 L150 70 L190 82 L230 68 L270 82 L310 70 L340 90 L340 260 L120 260 Z" fill="#EDE6D6" stroke="#22303B" stroke-width="2.5"/>
-        <line x1="230" y1="100" x2="230" y2="250" stroke="#22303B" stroke-width="1.5" stroke-dasharray="6 4"/>
-        <path d="M150 70 L165 130 L190 82 Z" fill="#D97B62"/>
-        <path d="M310 70 L295 130 L270 82 Z" fill="#D97B62"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/28576623/pexels-photo-28576623.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Neatly pressed white shirts and a modern iron" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Inside the laundromat">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Same careful work</span>
+      <h2>Pressed right, every single time.</h2>
     </div>
   </div>
 </section>
@@ -158,15 +169,8 @@
       <div class="fold-line"></div>
       <p>Alongside dry cleaning, the shop runs a coin-op laundromat, giving Milford one stop for everyday laundry and the garments that need a professional hand.</p>
     </div>
-    <div>
-      <svg viewBox="0 0 460 320" width="100%" role="img" aria-label="Illustration of a laundromat washing machine">
-        <rect width="460" height="320" rx="8" fill="#EDE6D6"/>
-        <rect x="130" y="40" width="200" height="240" rx="14" fill="#fff" stroke="#22303B" stroke-width="3"/>
-        <circle cx="230" cy="170" r="70" fill="none" stroke="#3F6C86" stroke-width="6"/>
-        <circle cx="230" cy="170" r="50" fill="none" stroke="#D97B62" stroke-width="2"/>
-        <circle cx="160" cy="70" r="6" fill="#22303B"/>
-        <circle cx="185" cy="70" r="6" fill="#22303B"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/10207554/pexels-photo-10207554.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A laundromat interior with washing machines" loading="lazy">
     </div>
   </div>
 </section>

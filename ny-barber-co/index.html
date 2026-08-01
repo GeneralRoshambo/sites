@@ -54,6 +54,17 @@
   .btn-secondary{border:1px solid var(--dove);color:var(--cream);padding:13px 28px;border-radius:2px;text-decoration:none;font-weight:700;letter-spacing:0.03em;}
   .btn-secondary:hover{border-color:var(--brass);color:var(--brass);}
 
+  .photo-frame{width:100%;border-radius:2px;overflow:hidden;box-shadow:0 20px 36px rgba(0,0,0,0.4);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;filter:grayscale(0.15);}
+  .photo-band{
+    position:relative;height:420px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(26,26,26,0.65), rgba(26,26,26,0.5)), url('https://images.pexels.com/photos/9992819/pexels-photo-9992819.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:40px;}
+  .photo-band .caption{color:#EDE7DC;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#A8823C;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:320px;} }
   .plaque{
     max-width:340px;margin:56px auto 0;border:1px solid var(--brass);padding:26px;text-align:center;
     background:#221f1f;
@@ -148,15 +159,17 @@
       <p>NY Barber Co. isn't set up like a walk-in shop. Edmond takes clients by appointment, largely through referral, keeping the schedule tight enough that every cut gets full attention.</p>
       <p>It's a deliberate choice: fewer chairs, fewer walk-ins, and a standard that regulars pass along quietly rather than advertise.</p>
     </div>
-    <div>
-      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of barber scissors and comb">
-        <rect width="420" height="300" rx="8" fill="#1A1A1A"/>
-        <circle cx="150" cy="200" r="18" stroke="#A8823C" stroke-width="2.5" fill="none"/>
-        <circle cx="150" cy="150" r="18" stroke="#A8823C" stroke-width="2.5" fill="none"/>
-        <line x1="164" y1="188" x2="290" y2="90" stroke="#A8823C" stroke-width="3"/>
-        <line x1="164" y1="162" x2="290" y2="90" stroke="#A8823C" stroke-width="3"/>
-        <rect x="90" y="230" width="140" height="14" rx="3" fill="#6B2737"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/27875190/pexels-photo-27875190.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A man sitting in a barber chair" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Inside the barbershop">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">One chair, undivided attention</span>
+      <h2>Every cut gets the full hour.</h2>
     </div>
   </div>
 </section>

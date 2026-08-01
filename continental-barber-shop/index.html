@@ -25,6 +25,17 @@
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
 
   header{position:sticky;top:0;z-index:50;background:var(--navy);}
+  .photo-frame{width:100%;border-radius:4px;overflow:hidden;box-shadow:0 20px 36px rgba(30,42,56,0.25);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(30,42,56,0.6), rgba(162,62,46,0.35)), url('https://images.pexels.com/photos/2262802/pexels-photo-2262802.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#F2ECE0;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#E7A38F;font-family:'PT Sans',sans-serif;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:300px;} }
   .stripe{height:6px;width:100%;background:repeating-linear-gradient(115deg,var(--brick) 0 22px, var(--cream) 22px 44px, var(--navy) 44px 66px);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
   .brand{font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;color:var(--cream);white-space:nowrap;display:flex;align-items:center;gap:10px;}
@@ -129,30 +140,25 @@
         <a href="#services" class="btn-secondary">Our services</a>
       </div>
     </div>
-    <div>
-      <svg viewBox="0 0 460 340" width="100%" role="img" aria-label="Illustration of a classic barbershop chair">
-        <rect width="460" height="340" rx="8" fill="#28374A"/>
-        <rect x="150" y="100" width="160" height="130" rx="10" fill="#F2ECE0"/>
-        <rect x="170" y="230" width="120" height="16" rx="4" fill="#A23E2E"/>
-        <circle cx="230" cy="90" r="30" fill="#F2ECE0" stroke="#A23E2E" stroke-width="3"/>
-        <rect x="220" y="250" width="20" height="60" fill="#8D857A"/>
-        <ellipse cx="230" cy="312" rx="70" ry="12" fill="#141c26"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/14034429/pexels-photo-14034429.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="An elderly barber shaving a man on a barber's chair" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Barbershop chair and mirror">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">On the block since day one</span>
+      <h2>Walk in, sit down, get a proper cut.</h2>
     </div>
   </div>
 </section>
 
 <section class="about-section" id="about">
   <div class="wrap about-grid">
-    <div>
-      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of barber tools on a counter">
-        <rect width="420" height="300" rx="10" fill="#F2ECE0"/>
-        <rect x="80" y="200" width="260" height="16" rx="4" fill="#1E2A38"/>
-        <rect x="110" y="120" width="14" height="80" rx="6" fill="#A23E2E"/>
-        <rect x="150" y="140" width="14" height="60" rx="6" fill="#35503F"/>
-        <rect x="190" y="100" width="14" height="100" rx="6" fill="#1E2A38"/>
-        <circle cx="280" cy="150" r="34" fill="none" stroke="#A23E2E" stroke-width="4"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/9992819/pexels-photo-9992819.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Bearded man in a barber shop" loading="lazy">
     </div>
     <div>
       <span class="eyebrow" style="color:var(--brick);">On the block since day one</span>

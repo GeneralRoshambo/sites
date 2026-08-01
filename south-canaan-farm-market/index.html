@@ -77,6 +77,17 @@
   .badge-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;}
   .badge{background:var(--cream);border:1px solid var(--line);padding:10px 18px;border-radius:30px;font-size:0.88rem;font-weight:700;color:var(--green);}
 
+  .photo-frame{width:100%;border-radius:10px;overflow:hidden;box-shadow:0 18px 34px rgba(43,38,32,0.18);border:1px solid var(--line);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.3;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(43,38,32,0.5), rgba(43,38,32,0.3)), url('https://images.pexels.com/photos/33554282/pexels-photo-33554282.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#F7F0DE;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#E8C77E;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:300px;} }
   .goods{background:var(--cream);}
   .goods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .goods-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 26px;}
@@ -167,20 +178,17 @@
         <span class="badge">Mail orders</span>
       </div>
     </div>
-    <div>
-      <svg viewBox="0 0 460 380" width="100%" role="img" aria-label="Illustration of a farm market crate of produce and jars">
-        <rect width="460" height="380" rx="10" fill="#F7F0DE"/>
-        <rect x="60" y="200" width="340" height="130" rx="6" fill="none" stroke="#8C3B2E" stroke-width="3"/>
-        <line x1="60" y1="230" x2="400" y2="230" stroke="#8C3B2E" stroke-width="3"/>
-        <line x1="140" y1="200" x2="140" y2="330" stroke="#8C3B2E" stroke-width="3"/>
-        <line x1="230" y1="200" x2="230" y2="330" stroke="#8C3B2E" stroke-width="3"/>
-        <line x1="320" y1="200" x2="320" y2="330" stroke="#8C3B2E" stroke-width="3"/>
-        <circle cx="100" cy="180" r="34" fill="#D9A441"/>
-        <circle cx="185" cy="170" r="28" fill="#3F5C3F"/>
-        <circle cx="270" cy="180" r="32" fill="#8C3B2E"/>
-        <rect x="330" y="140" width="42" height="56" rx="6" fill="#3F5C3F"/>
-        <rect x="330" y="140" width="42" height="14" rx="4" fill="#2B2620"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/31930012/pexels-photo-31930012.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Vibrant farmer's market fresh vegetables display" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Fresh produce at the market counter">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Fresh, every week</span>
+      <h2>Straight from the counter to your table.</h2>
     </div>
   </div>
 </section>

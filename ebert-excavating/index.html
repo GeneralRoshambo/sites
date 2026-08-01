@@ -115,6 +115,17 @@
   .btn-secondary:hover{background:var(--slate);color:var(--bone);}
 
   .contour-art{width:100%;height:auto;}
+  .photo-frame{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 22px 40px rgba(46,43,39,0.22);border:1px solid var(--line);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.3;}
+  .photo-band{
+    position:relative;height:420px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(46,43,39,0.55), rgba(46,43,39,0.35)), url('https://images.pexels.com/photos/6245621/pexels-photo-6245621.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:40px;}
+  .photo-band .caption{color:#F2EEE6;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#E3B08C;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:320px;} }
 
   .stats-row{
     display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;
@@ -234,24 +245,17 @@
         <div class="stat"><b>Insured</b><span>Fully licensed &amp; insured</span></div>
       </div>
     </div>
-    <div>
-      <svg class="contour-art" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Topographic contour illustration of excavated land">
-        <rect width="480" height="420" rx="10" fill="#EFE9DD"/>
-        <g stroke="#B5502D" stroke-width="2" fill="none" opacity="0.9">
-          <path d="M40 340 C 120 300, 160 260, 130 220 C 100 180, 160 160, 220 190 C 280 220, 320 190, 340 140 C 355 105, 400 90, 440 100"/>
-        </g>
-        <g stroke="#6B7A5E" stroke-width="2" fill="none" opacity="0.85">
-          <path d="M20 300 C 100 270, 150 235, 120 200 C 95 170, 150 145, 210 172 C 270 200, 315 168, 335 120 C 350 88, 395 72, 445 82"/>
-        </g>
-        <g stroke="#6B6560" stroke-width="1.6" fill="none" opacity="0.7">
-          <path d="M10 260 C 90 235, 135 205, 108 175 C 85 148, 138 128, 196 152 C 258 178, 305 148, 325 105 C 340 76, 385 58, 440 66"/>
-          <path d="M0 220 C 80 198, 120 172, 95 148 C 74 126, 122 108, 178 130 C 235 154, 285 128, 305 90 C 320 64, 365 48, 430 52"/>
-        </g>
-        <path d="M60 380 L110 320 L150 380 Z" fill="#2E2B27" opacity="0.12"/>
-        <path d="M300 380 L360 300 L410 380 Z" fill="#2E2B27" opacity="0.12"/>
-        <circle cx="440" cy="70" r="5" fill="#B5502D"/>
-        <text x="450" y="65" font-family="Public Sans, sans-serif" font-size="11" fill="#6B6560">site marker</text>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/13098128/pexels-photo-13098128.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Excavator working at a construction site with mountains in the background" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Excavator moving earth on a job site">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">On site</span>
+      <h2>Real machines, real dirt, every job.</h2>
     </div>
   </div>
 </section>

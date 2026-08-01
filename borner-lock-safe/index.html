@@ -59,7 +59,18 @@
     position:relative;width:100%;aspect-ratio:4/3.2;border-radius:8px;overflow:hidden;
     background:#16281f;border:2px solid #345b48;
   }
-  .keyhole-mask{width:100%;height:100%;}
+  .keyhole-mask{width:100%;height:100%;object-fit:cover;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 460 380%22><circle cx=%22230%22 cy=%22150%22 r=%2258%22 fill=%22white%22/><path d=%22M204 180 L256 180 L238 260 L222 260 Z%22 fill=%22white%22/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 460 380%22><circle cx=%22230%22 cy=%22150%22 r=%2258%22 fill=%22white%22/><path d=%22M204 180 L256 180 L238 260 L222 260 Z%22 fill=%22white%22/></svg>');-webkit-mask-size:cover;mask-size:cover;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}
+  .photo-frame{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 20px 36px rgba(38,35,33,0.2);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(31,61,46,0.65), rgba(38,35,33,0.5)), url('https://images.pexels.com/photos/615350/pexels-photo-615350.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#F3EEE1;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#D8B87C;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:300px;} }
 
   .est-badge{
     display:inline-flex;align-items:center;gap:10px;background:#16281f;border:1px solid var(--brass);
@@ -143,26 +154,16 @@
       </div>
     </div>
     <div class="keyhole-frame">
-      <svg class="keyhole-mask" viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a keyhole revealing a safe dial">
-        <defs>
-          <mask id="keyhole-cut">
-            <rect width="460" height="380" fill="white"/>
-            <circle cx="230" cy="150" r="58" fill="black"/>
-            <path d="M204 180 L256 180 L238 260 L222 260 Z" fill="black"/>
-          </mask>
-        </defs>
-        <rect width="460" height="380" fill="#16281f"/>
-        <g mask="url(#keyhole-cut)">
-          <rect width="460" height="380" fill="#0f1c15"/>
-          <circle cx="230" cy="210" r="140" fill="none" stroke="#B8935A" stroke-width="3"/>
-          <circle cx="230" cy="210" r="100" fill="none" stroke="#8B3A2B" stroke-width="2"/>
-          <circle cx="230" cy="210" r="60" fill="none" stroke="#B8935A" stroke-width="2"/>
-          <line x1="230" y1="70" x2="230" y2="100" stroke="#B8935A" stroke-width="3"/>
-          <line x1="230" y1="210" x2="230" y2="150" stroke="#B8935A" stroke-width="4"/>
-        </g>
-        <circle cx="230" cy="150" r="58" fill="none" stroke="#B8935A" stroke-width="3"/>
-        <path d="M204 180 L256 180 L238 260 L222 260 Z" fill="none" stroke="#B8935A" stroke-width="3"/>
-      </svg>
+      <img class="keyhole-mask" src="https://images.pexels.com/photos/20584418/pexels-photo-20584418.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Pile of metal keys, viewed through a keyhole shape" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Old keys and hardware on the workbench">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Sixty plus years</span>
+      <h2>Every lock has a story. We've heard most of them.</h2>
     </div>
   </div>
 </section>
@@ -175,14 +176,8 @@
       <p>William Borner has run this shop since 1961, building a reputation on the kind of work that doesn't get advertised much because it doesn't need to, referrals from neighbors who've trusted the same locksmith for decades.</p>
       <p>Veteran owned and locally operated, Borner Lock &amp; Safe still handles the full range of the trade: rekeying, safe work, and cut keys for home, auto, and commercial doors.</p>
     </div>
-    <div>
-      <svg viewBox="0 0 420 320" width="100%" role="img" aria-label="Illustration of a vintage safe">
-        <rect width="420" height="320" rx="12" fill="#F3EEE1"/>
-        <rect x="120" y="60" width="180" height="200" rx="10" fill="#1F3D2E" stroke="#262321" stroke-width="3"/>
-        <circle cx="210" cy="160" r="42" fill="none" stroke="#B8935A" stroke-width="4"/>
-        <circle cx="210" cy="160" r="6" fill="#B8935A"/>
-        <rect x="140" y="220" width="140" height="14" rx="4" fill="#B8935A"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/20584418/pexels-photo-20584418.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Pile of metal keys" loading="lazy">
     </div>
   </div>
 </section>

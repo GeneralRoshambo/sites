@@ -56,6 +56,17 @@
   .btn-secondary{border:2px solid var(--char);color:var(--char);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;}
   .btn-secondary:hover{background:var(--char);color:var(--semolina);}
 
+  .photo-frame{width:100%;border-radius:4px;overflow:hidden;box-shadow:0 20px 36px rgba(43,36,32,0.22);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(43,36,32,0.55), rgba(166,61,47,0.38)), url('https://images.pexels.com/photos/5903446/pexels-photo-5903446.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#F4E9D8;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#E3B65E;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);font-style:italic;}
+  @media (max-width:900px){ .photo-band{height:300px;} }
   .torn-card{
     background:#fff;padding:36px;position:relative;
     clip-path:polygon(0 0,100% 0,100% 96%,97% 100%,92% 97%,86% 100%,80% 97%,74% 100%,68% 97%,62% 100%,56% 97%,50% 100%,44% 97%,38% 100%,32% 97%,26% 100%,20% 97%,14% 100%,8% 97%,2% 100%,0 96%);
@@ -159,16 +170,17 @@
       <p>Mamma Grace opened as a family operation and has stayed one, gourmet pizzas and homemade Italian dishes built from quality ingredients rather than shortcuts.</p>
       <p>It's the kind of place Sparrow Bush and Port Jervis regulars order from without needing to check the menu first.</p>
     </div>
-    <div>
-      <svg viewBox="0 0 420 320" width="100%" role="img" aria-label="Illustration of a wood-fired pizza oven and peel">
-        <rect width="420" height="320" rx="12" fill="#F4E9D8"/>
-        <path d="M90 260 C 90 170, 330 170, 330 260 Z" fill="#8B5A3C"/>
-        <ellipse cx="210" cy="260" rx="120" ry="20" fill="#5C4530"/>
-        <rect x="150" y="200" width="120" height="60" rx="30" fill="#2B2420"/>
-        <ellipse cx="210" cy="230" rx="45" ry="20" fill="#C9A227" opacity="0.5"/>
-        <rect x="60" y="230" width="140" height="10" rx="5" fill="#A63D2F" transform="rotate(-8 130 235)"/>
-        <circle cx="60" cy="225" r="16" fill="#A63D2F" transform="rotate(-8 130 235)"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Baked pizza on a pizza peel fresh from the oven" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Hands kneading fresh pizza dough">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Made from scratch</span>
+      <h2>Same dough, same sauce, every single pie.</h2>
     </div>
   </div>
 </section>

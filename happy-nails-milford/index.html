@@ -56,6 +56,17 @@
   .btn-secondary:hover{background:var(--plum);color:var(--cream);}
 
   .brush-divider{width:100%;height:36px;margin:0 auto;display:block;}
+  .photo-frame{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 36px rgba(74,46,61,0.2);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(74,46,61,0.5), rgba(232,115,90,0.32)), url('https://images.pexels.com/photos/13068361/pexels-photo-13068361.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#FBF3EC;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#F0C49A;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);font-style:italic;}
+  @media (max-width:900px){ .photo-band{height:300px;} }
 
   section{padding:70px 0;}
   .section-head{max-width:640px;margin-bottom:48px;}
@@ -130,14 +141,17 @@
         <a href="#services" class="btn-secondary">See services</a>
       </div>
     </div>
-    <div>
-      <svg viewBox="0 0 440 340" width="100%" role="img" aria-label="Illustration of a nail polish brushstroke">
-        <rect width="440" height="340" rx="18" fill="#fff"/>
-        <path d="M80 220 C 140 120, 220 260, 280 150 C 320 80, 360 140, 380 100" stroke="#E8735A" stroke-width="26" stroke-linecap="round" fill="none"/>
-        <path d="M80 220 C 140 120, 220 260, 280 150 C 320 80, 360 140, 380 100" stroke="#C89B4D" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7"/>
-        <circle cx="120" cy="255" r="5" fill="#4A2E3D" opacity="0.5"/>
-        <circle cx="150" cy="270" r="3" fill="#4A2E3D" opacity="0.4"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/7755296/pexels-photo-7755296.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Woman having a manicure in a nail salon" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="Manicure station inside the studio">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Inside the studio</span>
+      <h2>A quiet chair, ten minutes to yourself.</h2>
     </div>
   </div>
 </section>
@@ -146,14 +160,8 @@
 
 <section class="about-section" id="about">
   <div class="wrap about-grid">
-    <div>
-      <svg viewBox="0 0 420 320" width="100%" role="img" aria-label="Illustration of manicure tools">
-        <rect width="420" height="320" rx="16" fill="#FBF3EC"/>
-        <rect x="150" y="60" width="18" height="130" rx="9" fill="#C89B4D"/>
-        <rect x="185" y="80" width="18" height="110" rx="9" fill="#E8735A"/>
-        <rect x="220" y="70" width="18" height="120" rx="9" fill="#A8B79A"/>
-        <ellipse cx="210" cy="230" rx="90" ry="14" fill="#4A2E3D" opacity="0.08"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/5484948/pexels-photo-5484948.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Person getting her nails done" loading="lazy">
     </div>
     <div>
       <span class="eyebrow">A neighborhood regular</span>

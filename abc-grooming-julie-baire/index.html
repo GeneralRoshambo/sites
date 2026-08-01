@@ -56,6 +56,17 @@
   .btn-secondary{border:2px solid var(--char);color:var(--char);padding:13px 26px;border-radius:24px;text-decoration:none;font-weight:700;font-family:'Nunito',sans-serif;}
   .btn-secondary:hover{background:var(--char);color:var(--butter);}
 
+  .photo-frame{width:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 36px rgba(50,44,38,0.2);}
+  .photo-frame img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .photo-band{
+    position:relative;height:400px;background-size:cover;background-position:center;
+    background-image:linear-gradient(180deg, rgba(47,107,107,0.55), rgba(226,116,90,0.35)), url('https://images.pexels.com/photos/17186345/pexels-photo-17186345.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  }
+  .photo-band .wrap{height:100%;display:flex;align-items:flex-end;padding-bottom:36px;}
+  .photo-band .caption{color:#FBF1DE;max-width:38ch;}
+  .photo-band .caption .eyebrow{color:#F0C9A0;font-family:'Nunito',sans-serif;}
+  .photo-band .caption h2{color:#fff;font-size:clamp(1.6rem,2.8vw,2.2rem);}
+  @media (max-width:900px){ .photo-band{height:300px;} }
   section{padding:78px 0;}
   .section-head{max-width:640px;margin-bottom:46px;}
   .section-head h2{font-size:clamp(1.9rem,3.2vw,2.5rem);}
@@ -131,30 +142,25 @@
         <a href="#services" class="btn-secondary">See services</a>
       </div>
     </div>
-    <div>
-      <svg viewBox="0 0 440 340" width="100%" role="img" aria-label="Illustration of a dog paw print with a ribbon bow">
-        <rect width="440" height="340" rx="20" fill="#fff"/>
-        <circle cx="220" cy="200" r="60" fill="#E2745A" opacity="0.15"/>
-        <ellipse cx="220" cy="210" rx="46" ry="38" fill="#2F6B6B"/>
-        <circle cx="180" cy="150" r="20" fill="#2F6B6B"/>
-        <circle cx="220" cy="135" r="22" fill="#2F6B6B"/>
-        <circle cx="262" cy="150" r="20" fill="#2F6B6B"/>
-        <path d="M300 120 C 320 110, 330 130, 320 140 C 335 138, 340 155, 322 158 C 330 170, 312 180, 300 168" fill="#D9A441"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/17186345/pexels-photo-17186345.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Golden retrievers, groomed and posing" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="photo-band" role="img" aria-label="A freshly groomed dog">
+  <div class="wrap">
+    <div class="caption">
+      <span class="eyebrow">Familiar faces</span>
+      <h2>Patient hands, one dog at a time.</h2>
     </div>
   </div>
 </section>
 
 <section class="about-section" id="about">
   <div class="wrap about-grid">
-    <div>
-      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of grooming tools and a bow">
-        <rect width="420" height="300" rx="16" fill="#FBF1DE"/>
-        <circle cx="150" cy="150" r="60" fill="none" stroke="#2F6B6B" stroke-width="6"/>
-        <circle cx="150" cy="150" r="60" fill="none" stroke="#E2745A" stroke-width="2" stroke-dasharray="6 6"/>
-        <rect x="260" y="110" width="80" height="20" rx="10" fill="#D9A441"/>
-        <rect x="260" y="150" width="60" height="20" rx="10" fill="#E2745A"/>
-      </svg>
+    <div class="photo-frame">
+      <img src="https://images.pexels.com/photos/17186345/pexels-photo-17186345.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Groomed dogs posing together" loading="lazy">
     </div>
     <div>
       <span class="eyebrow" style="color:var(--coral);">A familiar face</span>
