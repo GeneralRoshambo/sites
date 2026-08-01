@@ -28,7 +28,8 @@ ordered_regions = list(REGION_ORDER)
 ordered_regions += [r for r in by_region if r not in REGION_ORDER]
 
 def card_html(s):
-    return f'''        <a class="card" href="{s['slug']}/">
+    search_blob = f"{s['name']} {s['category']} {s['location']}".lower()
+    return f'''        <a class="card" href="{s['slug']}/" data-search="{search_blob}">
           <span class="card-tag">{s['category']}</span>
           <h3>{s['name']}</h3>
           <span class="card-loc">{s['location']}</span>
@@ -299,6 +300,49 @@ html = f'''<!doctype html>
     color: var(--text-dim);
     font-size: 0.98rem;
   }}
+
+  /* ---------- Search ---------- */
+  .search-bar {{
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto 1.75rem;
+  }}
+  .search-icon {{
+    position: absolute;
+    left: 1.15rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+  }}
+  .search-input {{
+    width: 100%;
+    background: rgba(11,26,46,0.85);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.85rem 1.4rem 0.85rem 2.75rem;
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.95rem;
+    -webkit-appearance: none;
+    appearance: none;
+  }}
+  .search-input::placeholder {{ color: var(--text-dim); }}
+  .search-input:focus-visible {{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }}
+  .search-status {{
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 0 0 1.75rem;
+  }}
+  .showcase.searching .tab-bar {{ display: none; }}
+  .showcase.searching .grid.tab-panel {{ display: grid; }}
+  .card.is-hidden,
+  .empty-state.is-hidden {{ display: none !important; }}
   .card {{
     display: flex;
     flex-direction: column;
@@ -393,6 +437,11 @@ html = f'''<!doctype html>
         <h2>Find Your Business.</h2>
         <p>Click any business below to see its live demo site, and let us know what you think.</p>
       </div>
+      <div class="search-bar">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="M11.2 11.2L14.5 14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="search" id="site-search" class="search-input" placeholder="Search all businesses by name, category, or town..." aria-label="Search all demo sites across every area" autocomplete="off">
+      </div>
+      <p class="search-status" id="search-status" aria-live="polite"></p>
       <div class="tab-bar" role="tablist">
 {tab_buttons}      </div>
 {tab_panels}    </section>
@@ -419,6 +468,39 @@ html = f'''<!doctype html>
             p.classList.toggle('active', p.getAttribute('data-panel') === target);
           }});
         }});
+      }});
+
+      var showcase = document.querySelector('.showcase');
+      var searchInput = document.getElementById('site-search');
+      var searchStatus = document.getElementById('search-status');
+      var cards = document.querySelectorAll('.card');
+      var emptyStates = document.querySelectorAll('.empty-state');
+
+      searchInput.addEventListener('input', function () {{
+        var query = searchInput.value.trim().toLowerCase();
+
+        if (!query) {{
+          showcase.classList.remove('searching');
+          cards.forEach(function (c) {{ c.classList.remove('is-hidden'); }});
+          emptyStates.forEach(function (e) {{ e.classList.remove('is-hidden'); }});
+          searchStatus.textContent = '';
+          return;
+        }}
+
+        showcase.classList.add('searching');
+        emptyStates.forEach(function (e) {{ e.classList.add('is-hidden'); }});
+
+        var matches = 0;
+        cards.forEach(function (c) {{
+          var hay = c.getAttribute('data-search') || '';
+          var isMatch = hay.indexOf(query) !== -1;
+          c.classList.toggle('is-hidden', !isMatch);
+          if (isMatch) matches++;
+        }});
+
+        searchStatus.textContent = matches === 0
+          ? 'No businesses found for "' + searchInput.value.trim() + '". Try a different name or town.'
+          : matches + (matches === 1 ? ' business' : ' businesses') + ' found across all areas.';
       }});
     }})();
   </script>

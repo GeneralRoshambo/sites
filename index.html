@@ -237,6 +237,49 @@
     color: var(--text-dim);
     font-size: 0.98rem;
   }
+
+  /* ---------- Search ---------- */
+  .search-bar {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto 1.75rem;
+  }
+  .search-icon {
+    position: absolute;
+    left: 1.15rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    background: rgba(11,26,46,0.85);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.85rem 1.4rem 0.85rem 2.75rem;
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.95rem;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .search-input::placeholder { color: var(--text-dim); }
+  .search-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .search-status {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 0 0 1.75rem;
+  }
+  .showcase.searching .tab-bar { display: none; }
+  .showcase.searching .grid.tab-panel { display: grid; }
+  .card.is-hidden,
+  .empty-state.is-hidden { display: none !important; }
   .card {
     display: flex;
     flex-direction: column;
@@ -331,6 +374,11 @@
         <h2>Find Your Business.</h2>
         <p>Click any business below to see its live demo site, and let us know what you think.</p>
       </div>
+      <div class="search-bar">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="M11.2 11.2L14.5 14.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="search" id="site-search" class="search-input" placeholder="Search all businesses by name, category, or town..." aria-label="Search all demo sites across every area" autocomplete="off">
+      </div>
+      <p class="search-status" id="search-status" aria-live="polite"></p>
       <div class="tab-bar" role="tablist">
         <button class="tab-btn active" data-tab="Wallenpaupack" role="tab" aria-selected="true">
           Wallenpaupack Area <span class="tab-count">15</span>
@@ -346,91 +394,91 @@
         </button>
       </div>
       <div class="grid tab-panel active" data-panel="Wallenpaupack" role="tabpanel">
-        <a class="card" href="preston-country-market/">
+        <a class="card" href="preston-country-market/" data-search="preston country market general store starrucca, pa">
           <span class="card-tag">General Store</span>
           <h3>Preston Country Market</h3>
           <span class="card-loc">Starrucca, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="brozonis-excavating/">
+        <a class="card" href="brozonis-excavating/" data-search="brozonis excavating excavation contractor union dale, pa">
           <span class="card-tag">Excavation Contractor</span>
           <h3>Brozonis Excavating</h3>
           <span class="card-loc">Union Dale, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="country-cafe-pizzeria/">
+        <a class="card" href="country-cafe-pizzeria/" data-search="country cafe & pizzeria diner & pizzeria beach lake, pa">
           <span class="card-tag">Diner & Pizzeria</span>
           <h3>Country Cafe & Pizzeria</h3>
           <span class="card-loc">Beach Lake, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="mctree-care-landscaping/">
+        <a class="card" href="mctree-care-landscaping/" data-search="mctree care & landscaping landscaping hawley, pa">
           <span class="card-tag">Landscaping</span>
           <h3>McTree Care & Landscaping</h3>
           <span class="card-loc">Hawley, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="slices-pizzeria-bistro/">
+        <a class="card" href="slices-pizzeria-bistro/" data-search="slices pizzeria & bistro pizzeria & bistro hamlin, pa">
           <span class="card-tag">Pizzeria & Bistro</span>
           <h3>Slices Pizzeria & Bistro</h3>
           <span class="card-loc">Hamlin, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="waymart-deli/">
+        <a class="card" href="waymart-deli/" data-search="the waymart deli deli & sandwich shop waymart, pa">
           <span class="card-tag">Deli & Sandwich Shop</span>
           <h3>The Waymart Deli</h3>
           <span class="card-loc">Waymart, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="mikes-auto-services/">
+        <a class="card" href="mikes-auto-services/" data-search="mike's auto services & towing auto repair & towing hawley, pa">
           <span class="card-tag">Auto Repair & Towing</span>
           <h3>Mike's Auto Services & Towing</h3>
           <span class="card-loc">Hawley, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="old-rangers-inn/">
+        <a class="card" href="old-rangers-inn/" data-search="old ranger's inn restaurant & inn greentown, pa">
           <span class="card-tag">Restaurant & Inn</span>
           <h3>Old Ranger's Inn</h3>
           <span class="card-loc">Greentown, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="fairview-lakefront-cottages/">
+        <a class="card" href="fairview-lakefront-cottages/" data-search="fairview lakefront cottages cottage rentals hawley, pa">
           <span class="card-tag">Cottage Rentals</span>
           <h3>Fairview Lakefront Cottages</h3>
           <span class="card-loc">Hawley, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="the-boathouse/">
+        <a class="card" href="the-boathouse/" data-search="the boathouse restaurant hawley, pa">
           <span class="card-tag">Restaurant</span>
           <h3>The Boathouse</h3>
           <span class="card-loc">Hawley, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="wayne-county-auto-repair/">
+        <a class="card" href="wayne-county-auto-repair/" data-search="wayne county auto repair auto repair galilee, pa">
           <span class="card-tag">Auto Repair</span>
           <h3>Wayne County Auto Repair</h3>
           <span class="card-loc">Galilee, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="milanville-general-store/">
+        <a class="card" href="milanville-general-store/" data-search="milanville general store general store milanville, pa">
           <span class="card-tag">General Store</span>
           <h3>Milanville General Store</h3>
           <span class="card-loc">Milanville, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="beach-lake-tire-and-auto/">
+        <a class="card" href="beach-lake-tire-and-auto/" data-search="beach lake tire and auto tire & auto beach lake, pa">
           <span class="card-tag">Tire & Auto</span>
           <h3>Beach Lake Tire and Auto</h3>
           <span class="card-loc">Beach Lake, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="crossroads-auto-plus/">
+        <a class="card" href="crossroads-auto-plus/" data-search="crossroads auto plus auto repair & inspections hawley, pa">
           <span class="card-tag">Auto Repair & Inspections</span>
           <h3>Crossroads Auto Plus</h3>
           <span class="card-loc">Hawley, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="lager-haus/">
+        <a class="card" href="lager-haus/" data-search="the lager haus pub & restaurant tafton, pa">
           <span class="card-tag">Pub & Restaurant</span>
           <h3>The Lager Haus</h3>
           <span class="card-loc">Tafton, PA</span>
@@ -438,55 +486,55 @@
         </a>
       </div>
       <div class="grid tab-panel" data-panel="DelawareValley" role="tabpanel">
-        <a class="card" href="chrissies-deli/">
+        <a class="card" href="chrissies-deli/" data-search="chrissie's deli deli & sandwich shop matamoras, pa">
           <span class="card-tag">Deli & Sandwich Shop</span>
           <h3>Chrissie's Deli</h3>
           <span class="card-loc">Matamoras, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="greening-landscape-design/">
+        <a class="card" href="greening-landscape-design/" data-search="greening landscape & design landscaping milford, pa">
           <span class="card-tag">Landscaping</span>
           <h3>Greening Landscape & Design</h3>
           <span class="card-loc">Milford, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="tri-state-tree-landscaping/">
+        <a class="card" href="tri-state-tree-landscaping/" data-search="tri-state tree & landscaping tree service milford, pa">
           <span class="card-tag">Tree Service</span>
           <h3>Tri-State Tree & Landscaping</h3>
           <span class="card-loc">Milford, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="top-notch-electric/">
+        <a class="card" href="top-notch-electric/" data-search="top notch electric electrician dingmans ferry, pa">
           <span class="card-tag">Electrician</span>
           <h3>Top Notch Electric</h3>
           <span class="card-loc">Dingmans Ferry, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="north-country-antiques/">
+        <a class="card" href="north-country-antiques/" data-search="north country antiques antiques & furniture dingmans ferry, pa">
           <span class="card-tag">Antiques & Furniture</span>
           <h3>North Country Antiques</h3>
           <span class="card-loc">Dingmans Ferry, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="pawesome-pooch-pet-salon/">
+        <a class="card" href="pawesome-pooch-pet-salon/" data-search="pawesome pooch pet salon mobile pet grooming dingmans ferry, pa">
           <span class="card-tag">Mobile Pet Grooming</span>
           <h3>Pawesome Pooch Pet Salon</h3>
           <span class="card-loc">Dingmans Ferry, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="legacy-salon-milford/">
+        <a class="card" href="legacy-salon-milford/" data-search="legacy salon hair & nail salon milford, pa">
           <span class="card-tag">Hair & Nail Salon</span>
           <h3>Legacy Salon</h3>
           <span class="card-loc">Milford, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="pike-pressure-washing/">
+        <a class="card" href="pike-pressure-washing/" data-search="pike pressure washing pressure washing milford, pa">
           <span class="card-tag">Pressure Washing</span>
           <h3>Pike Pressure Washing</h3>
           <span class="card-loc">Milford, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="wise-guys-barber-shop/">
+        <a class="card" href="wise-guys-barber-shop/" data-search="wise guys barber shop barber shop milford, pa">
           <span class="card-tag">Barber Shop</span>
           <h3>Wise Guys Barber Shop</h3>
           <span class="card-loc">Milford, PA</span>
@@ -494,55 +542,55 @@
         </a>
       </div>
       <div class="grid tab-panel" data-panel="HudsonValley" role="tabpanel">
-        <a class="card" href="paul-schochs-auto-repair/">
+        <a class="card" href="paul-schochs-auto-repair/" data-search="paul schoch's auto repair auto repair port jervis, ny">
           <span class="card-tag">Auto Repair</span>
           <h3>Paul Schoch's Auto Repair</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="tristate-barbershop/">
+        <a class="card" href="tristate-barbershop/" data-search="tristate barbershop barber shop port jervis, ny">
           <span class="card-tag">Barber Shop</span>
           <h3>TriState BarberShop</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="raksmey-nails/">
+        <a class="card" href="raksmey-nails/" data-search="raksmey nails nail salon port jervis, ny">
           <span class="card-tag">Nail Salon</span>
           <h3>Raksmey Nails</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="len-and-jos-restaurant/">
+        <a class="card" href="len-and-jos-restaurant/" data-search="len & jo's restaurant pizza restaurant port jervis, ny">
           <span class="card-tag">Pizza Restaurant</span>
           <h3>Len & Jo's Restaurant</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="broome-street-bargains/">
+        <a class="card" href="broome-street-bargains/" data-search="broome street bargains thrift store port jervis, ny">
           <span class="card-tag">Thrift Store</span>
           <h3>Broome Street Bargains</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="dv-cleaners/">
+        <a class="card" href="dv-cleaners/" data-search="dv cleaners dry cleaning & tailoring port jervis, ny">
           <span class="card-tag">Dry Cleaning & Tailoring</span>
           <h3>DV Cleaners</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="armandos-tailor-shop/">
+        <a class="card" href="armandos-tailor-shop/" data-search="armando's tailor shop tailor middletown, ny">
           <span class="card-tag">Tailor</span>
           <h3>Armando's Tailor Shop</h3>
           <span class="card-loc">Middletown, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="rosies-italian/">
+        <a class="card" href="rosies-italian/" data-search="rosie's italian italian specialty food port jervis, ny">
           <span class="card-tag">Italian Specialty Food</span>
           <h3>Rosie's Italian</h3>
           <span class="card-loc">Port Jervis, NY</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="olenick-plumbing-heating/">
+        <a class="card" href="olenick-plumbing-heating/" data-search="olenick plumbing and heating plumbing & heating port jervis, ny">
           <span class="card-tag">Plumbing & Heating</span>
           <h3>Olenick Plumbing and Heating</h3>
           <span class="card-loc">Port Jervis, NY</span>
@@ -550,73 +598,73 @@
         </a>
       </div>
       <div class="grid tab-panel" data-panel="Erie" role="tabpanel">
-        <a class="card" href="reyes-landscaping/">
+        <a class="card" href="reyes-landscaping/" data-search="reyes landscaping landscaping & snow removal erie, pa">
           <span class="card-tag">Landscaping & Snow Removal</span>
           <h3>Reyes Landscaping</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="cafe-7-10/">
+        <a class="card" href="cafe-7-10/" data-search="cafe 7-10 coffee & bakery erie, pa">
           <span class="card-tag">Coffee & Bakery</span>
           <h3>Cafe 7-10</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="cooper-cuts-pet-grooming/">
+        <a class="card" href="cooper-cuts-pet-grooming/" data-search="cooper cuts pet grooming pet grooming erie, pa">
           <span class="card-tag">Pet Grooming</span>
           <h3>Cooper Cuts Pet Grooming</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="bake-your-day-bakery/">
+        <a class="card" href="bake-your-day-bakery/" data-search="bake your day bakery bakery erie, pa">
           <span class="card-tag">Bakery</span>
           <h3>Bake Your Day Bakery</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="redus-auto-repair/">
+        <a class="card" href="redus-auto-repair/" data-search="redus auto repair auto repair erie, pa">
           <span class="card-tag">Auto Repair</span>
           <h3>Redus Auto Repair</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="roxies-nail-salon/">
+        <a class="card" href="roxies-nail-salon/" data-search="roxie's nail salon nail salon erie, pa">
           <span class="card-tag">Nail Salon</span>
           <h3>Roxie's Nail Salon</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="bayfront-tattoo-lounge/">
+        <a class="card" href="bayfront-tattoo-lounge/" data-search="bayfront tattoo lounge tattoo & piercing erie, pa">
           <span class="card-tag">Tattoo & Piercing</span>
           <h3>Bayfront Tattoo Lounge</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="affordable-plumbing-co/">
+        <a class="card" href="affordable-plumbing-co/" data-search="affordable plumbing co. plumbing contractor erie, pa">
           <span class="card-tag">Plumbing Contractor</span>
           <h3>Affordable Plumbing Co.</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="the-freezerie/">
+        <a class="card" href="the-freezerie/" data-search="the freezerie ice cream shop erie, pa">
           <span class="card-tag">Ice Cream Shop</span>
           <h3>The Freezerie</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="dorine-reeces-dry-cleaning/">
+        <a class="card" href="dorine-reeces-dry-cleaning/" data-search="dorine & reece's dry cleaning dry cleaning & tailoring erie, pa">
           <span class="card-tag">Dry Cleaning & Tailoring</span>
           <h3>Dorine & Reece's Dry Cleaning</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="walker-house-antiques/">
+        <a class="card" href="walker-house-antiques/" data-search="walker house antiques antiques shop erie, pa">
           <span class="card-tag">Antiques Shop</span>
           <h3>Walker House Antiques</h3>
           <span class="card-loc">Erie, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
-        <a class="card" href="lindquist-jewelers/">
+        <a class="card" href="lindquist-jewelers/" data-search="lindquist jewelers jewelry store erie, pa">
           <span class="card-tag">Jewelry Store</span>
           <h3>Lindquist Jewelers</h3>
           <span class="card-loc">Erie, PA</span>
@@ -647,6 +695,39 @@
             p.classList.toggle('active', p.getAttribute('data-panel') === target);
           });
         });
+      });
+
+      var showcase = document.querySelector('.showcase');
+      var searchInput = document.getElementById('site-search');
+      var searchStatus = document.getElementById('search-status');
+      var cards = document.querySelectorAll('.card');
+      var emptyStates = document.querySelectorAll('.empty-state');
+
+      searchInput.addEventListener('input', function () {
+        var query = searchInput.value.trim().toLowerCase();
+
+        if (!query) {
+          showcase.classList.remove('searching');
+          cards.forEach(function (c) { c.classList.remove('is-hidden'); });
+          emptyStates.forEach(function (e) { e.classList.remove('is-hidden'); });
+          searchStatus.textContent = '';
+          return;
+        }
+
+        showcase.classList.add('searching');
+        emptyStates.forEach(function (e) { e.classList.add('is-hidden'); });
+
+        var matches = 0;
+        cards.forEach(function (c) {
+          var hay = c.getAttribute('data-search') || '';
+          var isMatch = hay.indexOf(query) !== -1;
+          c.classList.toggle('is-hidden', !isMatch);
+          if (isMatch) matches++;
+        });
+
+        searchStatus.textContent = matches === 0
+          ? 'No businesses found for "' + searchInput.value.trim() + '". Try a different name or town.'
+          : matches + (matches === 1 ? ' business' : ' businesses') + ' found across all areas.';
       });
     })();
   </script>
