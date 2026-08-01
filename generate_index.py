@@ -40,7 +40,9 @@ def card_html(s):
 tab_buttons = ""
 tab_panels = ""
 for i, region in enumerate(ordered_regions):
-    region_sites = by_region.get(region, [])
+    # Newest-added first: manifest.json entries are appended in build order,
+    # so reversing shows the most recently built sites at the top of every view.
+    region_sites = list(reversed(by_region.get(region, [])))
     label = REGION_LABELS.get(region, region)
     active_btn = " active" if i == 0 else ""
     active_panel = " active" if i == 0 else ""
@@ -340,7 +342,18 @@ html = f'''<!doctype html>
     margin: 0 0 1.75rem;
   }}
   .showcase.searching .tab-bar {{ display: none; }}
-  .showcase.searching .grid.tab-panel {{ display: grid; }}
+  /* In search mode, every region's cards flow into ONE shared grid instead of
+     each tab-panel keeping its own column tracks (which left ragged gaps
+     whenever a panel had few matches). The wrapper becomes the real grid;
+     each panel collapses to display:contents so its cards join it directly. */
+  .showcase.searching .panels-wrap {{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }}
+  .showcase.searching .grid.tab-panel {{
+    display: contents;
+  }}
   .card.is-hidden,
   .empty-state.is-hidden {{ display: none !important; }}
   .card {{
@@ -444,7 +457,9 @@ html = f'''<!doctype html>
       <p class="search-status" id="search-status" aria-live="polite"></p>
       <div class="tab-bar" role="tablist">
 {tab_buttons}      </div>
-{tab_panels}    </section>
+      <div class="panels-wrap">
+{tab_panels}      </div>
+    </section>
   </main>
 
   <footer>
