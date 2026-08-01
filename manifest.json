@@ -110,5 +110,19 @@
     "location": "Tafton, PA",
     "category": "Pub & Restaurant",
     "region": "Wallenpaupack"
+  },
+  {
+    "slug": "cafe-7-10",
+    "name": "Cafe 7-10",
+    "location": "Erie, PA",
+    "category": "Coffee & Bakery",
+    "region": "Erie"
+  },
+  {
+    "slug": "cooper-cuts-pet-grooming",
+    "name": "Cooper Cuts Pet Grooming",
+    "location": "Erie, PA",
+    "category": "Pet Grooming",
+    "region": "Erie"
   }
 ]

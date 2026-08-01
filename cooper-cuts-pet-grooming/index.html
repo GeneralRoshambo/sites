@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooper Cuts Pet Grooming | Erie, PA</title>
+<meta name="description" content="Cooper Cuts Pet Grooming in Erie, PA. Women-owned, 9+ years of experience, walk-in nail trims, full grooms, and gentle care in a clean, new-equipment facility.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Mulish:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cloud: #f7f2ec;
+    --card: #ffffff;
+    --charcoal: #2e2a28;
+    --sage: #7c9a82;
+    --sage-deep: #5e7d64;
+    --blush: #e8a0a0;
+    --butter: #f0c869;
+    --denim: #6488a6;
+    --line: rgba(46,42,40,0.12);
+    --text-dim: rgba(46,42,40,0.62);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cloud);
+    color: var(--charcoal);
+    font-family: "Mulish", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--charcoal);
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--sage-deep);
+    outline-offset: 2px;
+  }
+  .mono { font-family: "DM Mono", monospace; }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(247,242,236,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0; }
+  .brand-mark {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--sage); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .brand-name { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.4rem; line-height: 1; white-space: nowrap; }
+  .brand-sub { display: block; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-deep); margin-top: 3px; }
+  nav.main-nav { display: flex; align-items: center; gap: 28px; }
+  nav.main-nav a { font-weight: 700; font-size: 0.92rem; padding: 6px 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s ease, color 0.2s ease; }
+  nav.main-nav a:hover { color: var(--sage-deep); border-color: var(--sage-deep); }
+  .header-cta { background: var(--sage); color: #fff; font-weight: 700; font-size: 0.9rem; padding: 11px 22px; border-radius: 100px; transition: background 0.2s ease; }
+  .header-cta:hover { background: var(--sage-deep); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--charcoal); margin: 5px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 4.5rem 0 3rem; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--sage-deep); border: 1px solid var(--line); background: var(--card);
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 4.8vw, 3.7rem); line-height: 1.06; max-width: 680px; }
+  .hero h1 .accent { color: var(--sage-deep); }
+  .hero p.lede { max-width: 540px; font-size: 1.08rem; line-height: 1.65; color: var(--text-dim); margin: 22px 0 30px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.96rem; padding: 14px 26px; border-radius: 100px; transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn--sage { background: var(--sage); color: #fff; }
+  .btn--sage:hover { background: var(--sage-deep); }
+  .btn--outline { border: 1.5px solid var(--charcoal); color: var(--charcoal); }
+  .btn--outline:hover { border-color: var(--sage-deep); color: var(--sage-deep); }
+
+  /* ---------- Signature: swatch strip ---------- */
+  .swatch-strip { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+  .swatch {
+    flex: 1 1 150px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .swatch::before {
+    content: "";
+    display: block;
+    width: 100%; height: 8px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .swatch.s-sage::before { background: var(--sage); }
+  .swatch.s-blush::before { background: var(--blush); }
+  .swatch.s-butter::before { background: var(--butter); }
+  .swatch.s-denim::before { background: var(--denim); }
+  .swatch .swatch-name { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1rem; }
+  .swatch .swatch-note { font-size: 0.82rem; color: var(--text-dim); margin-top: 4px; }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); }
+  .trust-strip .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 26px 24px; }
+  .trust-item .num { display: block; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.5rem; color: var(--sage-deep); }
+  .trust-item .label { display: block; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); margin-top: 2px; }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 80px 0; }
+  .section-head { max-width: 600px; margin-bottom: 40px; }
+  .eyebrow { display: block; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--sage-deep); margin-bottom: 10px; font-weight: 700; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
+  .section-head p { color: var(--text-dim); margin-top: 14px; line-height: 1.6; font-size: 1.02rem; }
+
+  /* Walk-in nail bar */
+  .nailbar { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .nailbar p { color: var(--text-dim); line-height: 1.7; font-size: 1.02rem; margin: 0 0 18px; }
+  .nailbar-hours { list-style: none; margin: 0; padding: 0; }
+  .nailbar-hours li { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px dashed var(--line); font-size: 0.98rem; }
+  .nailbar-hours li:first-child { border-top: none; }
+  .nailbar-hours .day { font-weight: 700; }
+  .nailbar-hours .time { color: var(--sage-deep); font-family: "DM Mono", monospace; font-size: 0.9rem; }
+
+  /* Services grid */
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .service-card .dot { width: 34px; height: 34px; border-radius: 50%; margin-bottom: 14px; }
+  .service-card.c-sage .dot { background: var(--sage); }
+  .service-card.c-blush .dot { background: var(--blush); }
+  .service-card.c-butter .dot { background: var(--butter); }
+  .service-card.c-denim .dot { background: var(--denim); }
+  .service-card.c-charcoal .dot { background: var(--charcoal); }
+  .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .service-card p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.55; margin: 0; }
+
+  /* About */
+  .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-split p { color: var(--text-dim); line-height: 1.72; font-size: 1.04rem; margin: 0 0 16px; }
+  .about-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; }
+  .about-card .quote { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.4rem; line-height: 1.35; color: var(--sage-deep); }
+  .about-card .who { margin-top: 16px; font-size: 0.9rem; color: var(--text-dim); }
+  .rating-row { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+  .rating-row .stars { color: var(--butter); font-size: 1.1rem; letter-spacing: 2px; }
+  .rating-row .rating-text { font-size: 0.86rem; color: var(--text-dim); }
+
+  .cta-band { background: var(--sage); }
+  .cta-band .container { padding: 60px 24px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .cta-band h2 { color: #fff; font-size: clamp(1.7rem, 3.2vw, 2.2rem); max-width: 460px; }
+  .cta-band .btn--white { background: #fff; color: var(--sage-deep); }
+  .cta-band .btn--white:hover { background: var(--cloud); }
+  .cta-band .btn--line { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; }
+  .cta-band .btn--line:hover { border-color: #fff; }
+
+  footer.site-footer { padding: 44px 0; }
+  .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-brand .name { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.1rem; }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { color: var(--text-dim); font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--sage-deep); }
+  .footer-bottom { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--text-dim); text-align: center; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .nailbar { grid-template-columns: 1fr; gap: 26px; }
+    .service-grid { grid-template-columns: 1fr 1fr; }
+    .about-split { grid-template-columns: 1fr; gap: 30px; }
+  }
+  @media (max-width: 1200px) {
+    nav.main-nav { position: fixed; top: 84px; left: 0; right: 0; background: var(--cloud); flex-direction: column; align-items: stretch; padding: 10px 24px 20px; border-bottom: 1px solid var(--line); transform: translateY(-130%); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; pointer-events: none; gap: 0; }
+    nav.main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    nav.main-nav a { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: block; }
+    .header-cta { display: none; }
+    .cta-band .container { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .trust-strip .container { grid-template-columns: 1fr 1fr; }
+    .service-grid { grid-template-columns: 1fr; }
+    .swatch-strip { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#top" class="brand">
+      <span class="brand-mark">CC</span>
+      <span>
+        <span class="brand-name">Cooper Cuts</span>
+        <span class="brand-sub">Pet Grooming &middot; Erie, PA</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#nailbar">Walk-In Nails</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Sarah</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="header-cta" href="tel:18143150894">Call Us</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="document.getElementById('main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <span class="hero-eyebrow">Women-Owned &middot; Erie, PA</span>
+    <h1>Gentle Hands. <span class="accent">Nine Years Of Them.</span></h1>
+    <p class="lede">Sarah has been grooming for 9+ years, in a clean, all-new-equipment salon built for dogs who need a little extra patience, and the ones who just need a trim.</p>
+    <div class="hero-actions">
+      <a class="btn btn--sage" href="tel:18143150894">Call (814) 315-0894</a>
+      <a class="btn btn--outline" href="#nailbar">Walk-In Nail Hours</a>
+    </div>
+    <div class="swatch-strip">
+      <div class="swatch s-sage"><div class="swatch-name">Full Groom</div><div class="swatch-note">Bath, cut &amp; style</div></div>
+      <div class="swatch s-blush"><div class="swatch-name">Nail Paint</div><div class="swatch-note">A little color, optional</div></div>
+      <div class="swatch s-butter"><div class="swatch-name">Teeth Brushing</div><div class="swatch-note">Add-on service</div></div>
+      <div class="swatch s-denim"><div class="swatch-name">Deep Conditioner</div><div class="swatch-note">For coat &amp; skin</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-item"><span class="num">9+ Years</span><span class="label">Grooming Experience</span></div>
+    <div class="trust-item"><span class="num">100%</span><span class="label">Recommended, 21 Reviews</span></div>
+    <div class="trust-item"><span class="num">Women</span><span class="label">Owned &amp; Operated</span></div>
+    <div class="trust-item"><span class="num">Walk-Ins</span><span class="label">Welcome For Nails</span></div>
+  </div>
+</section>
+
+<section class="section" id="nailbar">
+  <div class="container">
+    <div class="nailbar">
+      <div>
+        <span class="eyebrow">Walk-In Nail Bar</span>
+        <h2 style="font-size: clamp(1.8rem, 3.4vw, 2.3rem); margin-bottom: 16px;">No Appointment Needed.</h2>
+        <p>Nail trims are walk-in only, no booking required, just stop by during nail bar hours and Sarah will take it from there.</p>
+        <a class="btn btn--sage" href="tel:18143150894">Ask About Today's Wait</a>
+      </div>
+      <ul class="nailbar-hours">
+        <li><span class="day">Tuesday</span><span class="time">8:00 AM &ndash; 2:00 PM</span></li>
+        <li><span class="day">Wednesday</span><span class="time">8:00 AM &ndash; 4:00 PM</span></li>
+        <li><span class="day">Thursday</span><span class="time">8:00 AM &ndash; 2:00 PM</span></li>
+        <li><span class="day">Friday</span><span class="time">8:00 AM &ndash; 2:00 PM</span></li>
+        <li><span class="day">Saturday</span><span class="time">8:00 AM &ndash; 2:00 PM</span></li>
+        <li><span class="day">Sun &amp; Mon</span><span class="time">Closed</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>Everything In One Visit.</h2>
+      <p>A full groom covers the basics, with a few extras for dogs who could use a little more care.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card c-sage"><div class="dot"></div><h3>Full Groom</h3><p>Bath, cut, and style, tailored to the breed and the dog.</p></div>
+      <div class="service-card c-charcoal"><div class="dot"></div><h3>Nail Trims</h3><p>Walk-in nail trims, no appointment necessary.</p></div>
+      <div class="service-card c-blush"><div class="dot"></div><h3>Nail Painting</h3><p>An optional splash of color after the trim.</p></div>
+      <div class="service-card c-denim"><div class="dot"></div><h3>Deep Conditioning</h3><p>An add-on for dry or sensitive coats and skin.</p></div>
+      <div class="service-card c-butter"><div class="dot"></div><h3>Teeth Brushing</h3><p>A quick add-on to round out the visit.</p></div>
+      <div class="service-card c-sage"><div class="dot"></div><h3>Sensitive Dogs</h3><p>Extra patience for anxious or paw-sensitive dogs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-split">
+    <div>
+      <span class="eyebrow">About Sarah</span>
+      <h2 style="font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom: 18px;">Nine Years, One Groomer.</h2>
+      <p>Sarah N. has been grooming for over nine years and owns Cooper Cuts outright, a small, women-owned salon built around doing right by every dog that comes through the door.</p>
+      <p>The equipment is new, the space stays clean between every appointment, and dogs who need a gentler hand, including ones with paw sensitivity, get the extra time they need.</p>
+    </div>
+    <div class="about-card">
+      <p class="quote">"She worked so well with our dog, who has paw sensitivity issues. Patient the whole time."</p>
+      <div class="rating-row">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rating-text">100% recommend on Facebook, 21 reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="visit">
+  <div class="container">
+    <h2>Bring Your Dog By.</h2>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a class="btn btn--white" href="tel:18143150894">Call (814) 315-0894</a>
+      <a class="btn btn--line" href="https://www.facebook.com/p/Cooper-Cuts-Pet-Grooming-LLC-61567164333847/" target="_blank" rel="noopener">Visit Our Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">CC</span>
+      <span class="name">Cooper Cuts Pet Grooming</span>
+    </div>
+    <div class="footer-links">
+      <a href="tel:18143150894">(814) 315-0894</a>
+      <a href="https://www.facebook.com/p/Cooper-Cuts-Pet-Grooming-LLC-61567164333847/" target="_blank" rel="noopener">Facebook</a>
+      <a href="#nailbar">Nail Bar Hours</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Cooper Cuts Pet Grooming LLC &middot; 4001 W Ridge Rd, Erie, PA 16506</div>
+</footer>
+
+</body>
+</html>

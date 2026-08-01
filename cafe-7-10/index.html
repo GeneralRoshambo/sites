@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe 7-10 | Coffee, Bakery &amp; Community in Downtown Erie, PA</title>
+<meta name="description" content="Cafe 7-10 is a mother-daughter owned coffee shop and bakery at 7 W 10th St in downtown Erie, PA. Homemade pastries, coffee, poetry nights, and a weekly rhythm of community events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Karla:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment: #f2e6d0;
+    --card: #faf3e4;
+    --espresso: #3a2418;
+    --chalk-green: #1f2e26;
+    --chalk-green-line: rgba(245,239,224,0.14);
+    --chalk-cream: #f5efe0;
+    --gold: #c98a2c;
+    --gold-deep: #a8701f;
+    --merlot: #7d2f35;
+    --line: rgba(58,36,24,0.14);
+    --text-dim: rgba(58,36,24,0.64);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--parchment);
+    color: var(--espresso);
+    font-family: "Karla", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    margin: 0;
+    color: var(--espresso);
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--merlot);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(242,230,208,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0; }
+  .brand-badge {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--espresso); color: var(--chalk-cream);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 0.85rem;
+    letter-spacing: -0.02em; flex-shrink: 0;
+  }
+  .brand-name { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1; white-space: nowrap; }
+  .brand-sub { display: block; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--merlot); margin-top: 3px; }
+  nav.main-nav { display: flex; align-items: center; gap: 28px; }
+  nav.main-nav a { font-weight: 600; font-size: 0.92rem; padding: 6px 2px; border-bottom: 2px solid transparent; transition: border-color 0.2s ease, color 0.2s ease; }
+  nav.main-nav a:hover { color: var(--merlot); border-color: var(--merlot); }
+  .header-cta { background: var(--espresso); color: var(--chalk-cream); font-weight: 700; font-size: 0.9rem; padding: 11px 20px; border-radius: 100px; transition: background 0.2s ease; }
+  .header-cta:hover { background: var(--merlot); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--espresso); margin: 5px 0; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; padding: 4.5rem 0 4rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--merlot); border: 1px solid var(--line); background: var(--card);
+    padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); line-height: 1.03; max-width: 560px; }
+  .hero h1 .accent { color: var(--merlot); }
+  .hero p.lede { max-width: 480px; font-size: 1.08rem; line-height: 1.65; color: var(--text-dim); margin: 22px 0 30px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.96rem; padding: 14px 26px; border-radius: 100px; transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn--gold { background: var(--gold); color: var(--espresso); }
+  .btn--gold:hover { background: #d99b3c; }
+  .btn--outline { border: 1.5px solid var(--espresso); color: var(--espresso); }
+  .btn--outline:hover { border-color: var(--merlot); color: var(--merlot); }
+
+  /* Address badge - signature nod to "7 W 10th St" being the source of the name */
+  .address-badge {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 28px 26px;
+    text-align: center;
+  }
+  .address-badge .big-num {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    font-size: 4.2rem;
+    line-height: 0.9;
+    color: var(--merlot);
+    letter-spacing: -0.02em;
+  }
+  .address-badge .big-num sup { font-size: 1.6rem; vertical-align: 22px; color: var(--gold-deep); margin: 0 6px; }
+  .address-badge .addr-label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-top: 10px; }
+  .address-badge .addr-line { font-weight: 700; margin-top: 4px; font-size: 1rem; }
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--card); }
+  .trust-strip .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 26px 24px; }
+  .trust-item .num { display: block; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--merlot); }
+  .trust-item .label { display: block; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); margin-top: 2px; }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 80px 0; }
+  .section-head { max-width: 600px; margin-bottom: 40px; }
+  .eyebrow { display: block; font-size: 0.78rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--merlot); margin-bottom: 10px; font-weight: 700; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
+  .section-head p { color: var(--text-dim); margin-top: 14px; line-height: 1.6; font-size: 1.02rem; }
+
+  /* ---------- Chalkboard specials (signature) ---------- */
+  .chalkboard { background: var(--chalk-green); color: var(--chalk-cream); }
+  .chalkboard .eyebrow { color: var(--gold); }
+  .chalkboard .section-head h2 { color: var(--chalk-cream); }
+  .chalkboard .section-head p { color: rgba(245,239,224,0.66); }
+  .board-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .board-list li {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 18px 0; border-top: 1px dashed var(--chalk-green-line);
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.3rem;
+  }
+  .board-list li:first-child { border-top: none; }
+  .board-list li .tag {
+    font-family: "Karla", sans-serif; font-weight: 700; font-size: 0.68rem;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold);
+    background: rgba(201,138,44,0.14); padding: 5px 12px; border-radius: 100px;
+  }
+  .board-signature { margin-top: 30px; padding: 20px 22px; border: 1px dashed var(--chalk-green-line); border-radius: 12px; }
+  .board-signature .label { font-family: "Karla", sans-serif; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .board-signature p { font-family: "Permanent Marker", cursive; font-size: 1.5rem; margin: 8px 0 0; line-height: 1.3; }
+
+  /* ---------- Weekly rhythm ---------- */
+  .rhythm-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .rhythm-list li {
+    display: grid; grid-template-columns: 130px 1fr; gap: 20px; align-items: center;
+    padding: 16px 20px; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  }
+  .rhythm-list li.featured { border-color: var(--merlot); background: rgba(125,47,53,0.06); }
+  .rhythm-list .day { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1rem; }
+  .rhythm-list .what { font-size: 0.96rem; color: var(--text-dim); }
+  .rhythm-list li.featured .what { color: var(--espresso); font-weight: 600; }
+
+  /* ---------- About ---------- */
+  .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-split p { color: var(--text-dim); line-height: 1.72; font-size: 1.04rem; margin: 0 0 16px; }
+  .about-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; }
+  .about-card .quote { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.5rem; line-height: 1.3; color: var(--merlot); }
+  .about-card .who { margin-top: 16px; font-size: 0.9rem; color: var(--text-dim); }
+
+  .cta-band { background: var(--espresso); }
+  .cta-band .container { padding: 60px 24px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .cta-band h2 { color: var(--chalk-cream); font-size: clamp(1.7rem, 3.2vw, 2.2rem); max-width: 460px; }
+  .cta-band .btn--gold-solid { background: var(--gold); color: var(--espresso); }
+  .cta-band .btn--gold-solid:hover { background: #d99b3c; }
+  .cta-band .btn--line { border: 1.5px solid rgba(245,239,224,0.4); color: var(--chalk-cream); }
+  .cta-band .btn--line:hover { border-color: var(--chalk-cream); }
+
+  footer.site-footer { padding: 44px 0; }
+  .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-brand .name { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.1rem; }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { color: var(--text-dim); font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--merlot); }
+  .footer-bottom { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--text-dim); text-align: center; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .about-split { grid-template-columns: 1fr; gap: 30px; }
+  }
+  @media (max-width: 1200px) {
+    nav.main-nav { position: fixed; top: 84px; left: 0; right: 0; background: var(--parchment); flex-direction: column; align-items: stretch; padding: 10px 24px 20px; border-bottom: 1px solid var(--line); transform: translateY(-130%); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; pointer-events: none; gap: 0; }
+    nav.main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    nav.main-nav a { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: block; }
+    .header-cta { display: none; }
+    .cta-band .container { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .trust-strip .container { grid-template-columns: 1fr 1fr; }
+    .rhythm-list li { grid-template-columns: 1fr; gap: 4px; }
+    .board-list li { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="#top" class="brand">
+      <span class="brand-badge">7&middot;10</span>
+      <span>
+        <span class="brand-name">Cafe 7-10</span>
+        <span class="brand-sub">Downtown Erie, PA</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="#board">Today's Board</a>
+      <a href="#rhythm">Weekly Rhythm</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="header-cta" href="tel:18145720985">Call Us</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="document.getElementById('main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">Coffee &amp; Bakery &middot; Downtown Erie</span>
+      <h1>Your Morning Stop, <span class="accent">Downtown.</span></h1>
+      <p class="lede">A mother-daughter run coffee shop and bakery on 10th Street, with homemade pastries, a full pot of coffee, and a calendar that fills up with poetry, chess, and books.</p>
+      <div class="hero-actions">
+        <a class="btn btn--gold" href="tel:18145720985">Call (814) 572-0985</a>
+        <a class="btn btn--outline" href="#board">See Today's Board</a>
+      </div>
+    </div>
+    <div class="address-badge">
+      <div class="big-num">7<sup>&middot;</sup>10</div>
+      <div class="addr-label">Where The Name Comes From</div>
+      <div class="addr-line">7 W 10th St, Erie, PA</div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-item"><span class="num">Mon&ndash;Sat</span><span class="label">7:15 AM &ndash; 7 PM</span></div>
+    <div class="trust-item"><span class="num">Family</span><span class="label">Mother &amp; Daughter Run</span></div>
+    <div class="trust-item"><span class="num">Curbside</span><span class="label">+ Delivery Available</span></div>
+    <div class="trust-item"><span class="num">Downtown</span><span class="label">7 W 10th St, Erie</span></div>
+  </div>
+</section>
+
+<section class="section chalkboard" id="board">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Today's Board</span>
+      <h2>Homemade, Every Morning.</h2>
+      <p>Fresh pastries and drip coffee made daily, the kind of board that changes with what came out of the oven that morning.</p>
+    </div>
+    <ul class="board-list">
+      <li><span>Peanut Butter Banana Chocolate Bread</span><span class="tag">Signature</span></li>
+      <li><span>Fresh Baked Pastries</span><span class="tag">Daily</span></li>
+      <li><span>Drip Coffee &amp; Tea</span><span class="tag">All Day</span></li>
+      <li><span>Curbside Pickup</span><span class="tag">Order Ahead</span></li>
+    </ul>
+    <div class="board-signature">
+      <span class="label">House Favorite</span>
+      <p>"The peanut butter banana chocolate bread is the one people come back for."</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rhythm">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Weekly Rhythm</span>
+      <h2>More Than A Coffee Run.</h2>
+      <p>Cafe 7-10 doubles as a living room for the neighborhood, with a standing lineup of events built around the people who show up.</p>
+    </div>
+    <ul class="rhythm-list">
+      <li class="featured"><span class="day">Tuesday</span><span class="what">Poetry Night, 6:00 PM</span></li>
+      <li><span class="day">Wednesday</span><span class="what">Book Club</span></li>
+      <li><span class="day">Thursday</span><span class="what">Game Night &amp; Chess</span></li>
+      <li><span class="day">Mon, Fri &amp; Sat</span><span class="what">Regular Hours, 7:15 AM &ndash; 7:00 PM</span></li>
+      <li><span class="day">Sunday</span><span class="what">Closed</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="about" style="background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container about-split">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 style="font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom: 18px;">Built By Mom And Daughter.</h2>
+      <p>Cafe 7-10 is owned and run by Thelma Mae Blanks and her daughter Mabel Howard, a black-owned small business at the corner of 7th and 10th in downtown Erie.</p>
+      <p>What started as a coffee counter has grown into a gathering spot, pastries in the morning, poetry on Tuesdays, and a standing invitation to pull up a chair.</p>
+    </div>
+    <div class="about-card">
+      <p class="quote">"We wanted a place where people would actually stay."</p>
+      <p class="who">Thelma Mae Blanks &amp; Mabel Howard, Owners</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="visit">
+  <div class="container">
+    <h2>Stop By 10th Street.</h2>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a class="btn btn--gold-solid" href="tel:18145720985">Call (814) 572-0985</a>
+      <a class="btn btn--line" href="https://www.facebook.com/cafe710/" target="_blank" rel="noopener">Visit Our Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-badge">7&middot;10</span>
+      <span class="name">Cafe 7-10</span>
+    </div>
+    <div class="footer-links">
+      <a href="tel:18145720985">(814) 572-0985</a>
+      <a href="mailto:mabel.cafe710@gmail.com">Email Us</a>
+      <a href="https://www.facebook.com/cafe710/" target="_blank" rel="noopener">Facebook</a>
+      <a href="#rhythm">Weekly Rhythm</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Cafe 7-10 &middot; 7 W 10th St, Erie, PA 16501</div>
+</footer>
+
+</body>
+</html>
