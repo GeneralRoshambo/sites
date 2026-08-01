@@ -276,14 +276,13 @@ html = f'''<!doctype html>
     border-radius: 100px;
   }}
   .tab-btn.active .tab-count {{ background: rgba(6,16,28,0.18); }}
-  .tab-panel {{ display: none; }}
-  .tab-panel.active {{ display: grid; }}
 
   .grid {{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 1.25rem;
   }}
+  .grid.tab-panel:not(.active) {{ display: none; }}
   .card {{
     display: flex;
     flex-direction: column;
