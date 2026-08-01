@@ -355,7 +355,7 @@ html = f'''<!doctype html>
         <span class="brand-mark">M</span>
         <span class="brand-word">MODULARITY<small>DEMO GALLERY</small></span>
       </div>
-      <a class="nav-cta" href="https://modularityhosting.com" target="_blank" rel="noopener">VISIT MODULARITY &rarr;</a>
+      <a class="nav-cta" href="https://modularityhosting.com/contact" target="_blank" rel="noopener">CONTACT US &rarr;</a>
     </div>
   </header>
 
