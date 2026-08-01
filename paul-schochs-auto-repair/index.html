@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paul Schoch's Auto Repair | Port Jervis, NY</title>
+<meta name="description" content="ASE Master Certified auto repair in Port Jervis, NY. 37 years of experience from Paul Schoch. General repair and routine maintenance, Mon-Sat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700;900&family=Roboto:wght@400;500;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oil-black:#1c1c1c;
+    --rust-orange:#c1531f;
+    --cream:#f2ede0;
+    --steel-blue:#4a6b7a;
+    --chrome:#c9c9c9;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--oil-black);
+    font-family:'Roboto',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Passion One',sans-serif;
+    font-weight:900;
+    line-height:1.05;
+    letter-spacing:0.5px;
+  }
+  .label{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:500;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--rust-orange);outline-offset:3px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--oil-black);
+    border-bottom:3px solid var(--rust-orange);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1180px;margin:0 auto;
+    gap:20px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    flex-shrink:0;white-space:nowrap;color:var(--cream);
+  }
+  .brand-mark{width:44px;height:44px;flex-shrink:0;}
+  .brand-text{font-family:'Passion One',sans-serif;font-size:1.35rem;font-weight:900;letter-spacing:0.5px;}
+  .brand-text span{color:var(--rust-orange);}
+  nav{display:flex;align-items:center;gap:32px;}
+  nav ul{display:flex;gap:28px;list-style:none;}
+  nav ul li a{
+    color:var(--chrome);font-family:'Oswald',sans-serif;
+    text-transform:uppercase;font-size:0.88rem;letter-spacing:1.5px;
+    padding:6px 2px;border-bottom:2px solid transparent;
+    transition:border-color .2s,color .2s;
+  }
+  nav ul li a:hover{color:var(--cream);border-color:var(--rust-orange);}
+  .call-btn{
+    background:var(--rust-orange);color:var(--cream);
+    font-family:'Oswald',sans-serif;text-transform:uppercase;
+    letter-spacing:1.5px;font-size:0.85rem;font-weight:600;
+    padding:12px 22px;border-radius:3px;white-space:nowrap;
+    border:2px solid var(--rust-orange);
+    transition:background .2s,color .2s;
+  }
+  .call-btn:hover{background:transparent;color:var(--rust-orange);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--cream);display:block;}
+
+  /* Hero */
+  .hero{
+    padding:80px 0 70px;
+    border-bottom:1px solid rgba(28,28,28,0.12);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;color:var(--steel-blue);font-family:'Oswald',sans-serif;
+    text-transform:uppercase;letter-spacing:3px;font-size:0.85rem;font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{font-size:3.4rem;color:var(--oil-black);margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--rust-orange);}
+  .hero p.lede{font-size:1.15rem;max-width:52ch;color:#3a3a3a;margin-bottom:34px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:15px 30px;border-radius:3px;
+    font-family:'Oswald',sans-serif;text-transform:uppercase;
+    letter-spacing:1.5px;font-size:0.9rem;font-weight:600;
+    border:2px solid var(--oil-black);transition:all .2s;
+  }
+  .btn-primary{background:var(--rust-orange);border-color:var(--rust-orange);color:var(--cream);}
+  .btn-primary:hover{background:#a5471a;border-color:#a5471a;}
+  .btn-secondary{background:transparent;color:var(--oil-black);}
+  .btn-secondary:hover{background:var(--oil-black);color:var(--cream);}
+
+  .badge-frame{
+    display:flex;align-items:center;justify-content:center;
+    background:var(--oil-black);border-radius:8px;padding:50px;
+  }
+  .seal{width:100%;max-width:320px;}
+  .seal-ring{fill:none;stroke:var(--chrome);}
+  .seal-text{fill:var(--chrome);font-family:'Oswald',sans-serif;}
+
+  /* Trust strip */
+  .trust-strip{background:var(--steel-blue);padding:0;}
+  .trust-strip .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .chip{
+    padding:28px 20px;text-align:center;color:var(--cream);
+    border-right:1px solid rgba(242,237,224,0.2);
+  }
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Passion One',sans-serif;font-size:2.1rem;font-weight:900;display:block;color:var(--cream);}
+  .chip .txt{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:0.78rem;letter-spacing:1.5px;color:var(--chrome);}
+
+  /* Services */
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--rust-orange);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.6rem;}
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .service-card{
+    background:#fff;border:1px solid rgba(28,28,28,0.12);
+    border-top:4px solid var(--rust-orange);
+    padding:32px 26px;border-radius:4px;
+  }
+  .service-card h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:1.05rem;font-weight:600;margin-bottom:12px;color:var(--oil-black);}
+  .service-card p{font-size:0.96rem;color:#4a4a4a;}
+
+  /* About */
+  .about{padding:90px 0;background:#e8e1cf;}
+  .about-inner{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.5rem;margin-bottom:20px;}
+  .about p{margin-bottom:16px;color:#3a3a3a;font-size:1.02rem;max-width:56ch;}
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .tl-item{
+    display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(28,28,28,0.15);
+  }
+  .tl-item:last-child{border-bottom:none;}
+  .tl-years{font-family:'Passion One',sans-serif;font-size:1.6rem;color:var(--rust-orange);min-width:90px;font-weight:900;}
+  .tl-desc .label{color:var(--steel-blue);display:block;margin-bottom:4px;font-size:0.78rem;}
+  .tl-desc p{color:#3a3a3a;font-size:0.95rem;}
+
+  /* CTA band */
+  .cta-band{background:var(--oil-black);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.4rem;margin-bottom:16px;}
+  .cta-band p{color:var(--chrome);margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{border-color:var(--rust-orange);}
+
+  /* Footer */
+  footer{background:#151515;color:var(--chrome);padding:50px 0 30px;}
+  .footer-inner{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;
+    padding-bottom:30px;border-bottom:1px solid rgba(201,201,201,0.15);margin-bottom:24px;
+  }
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:36px;height:36px;}
+  .footer-brand span{font-family:'Passion One',sans-serif;font-size:1.2rem;color:var(--cream);}
+  .footer-col h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:0.85rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p, .footer-col a{display:block;font-size:0.9rem;color:var(--chrome);margin-bottom:8px;}
+  .footer-col a:hover{color:var(--rust-orange);}
+  .footer-bottom{text-align:center;font-size:0.82rem;color:#7a7a7a;}
+
+  @media (max-width:1150px){
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--oil-black);padding:20px 24px;gap:0;border-top:1px solid var(--rust-orange);
+    }
+    nav.open ul li{width:100%;}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(201,201,201,0.1);}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero h1{font-size:2.6rem;}
+    .badge-frame{max-width:320px;margin:0 auto;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(242,237,224,0.2);border-bottom:1px solid rgba(242,237,224,0.2);}
+    .service-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:50px 0;}
+    .hero h1{font-size:2.1rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="none" stroke="#c1531f" stroke-width="2.5"/>
+        <path d="M13 26 L15 18 L18 18 L19 15 L25 15 L26 18 L29 18 L31 26 Z" fill="none" stroke="#c9c9c9" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="17" cy="27" r="2" fill="#c9c9c9"/>
+        <circle cx="27" cy="27" r="2" fill="#c9c9c9"/>
+      </svg>
+      <span class="brand-text">SCHOCH'S <span>AUTO</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Paul</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18456723630" class="call-btn">(845) 672-3630</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Port Jervis, NY &middot; Est. Local Shop</span>
+      <h1>37 years under the hood.<br><em>One name you can trust.</em></h1>
+      <p class="lede">Paul Schoch is an ASE-certified master technician who has been fixing cars in this corner of Orange County since long before he opened his own doors. General repair and routine maintenance, done right the first time.</p>
+      <div class="cta-row">
+        <a href="tel:18456723630" class="btn btn-primary">Call (845) 672-3630</a>
+        <a href="https://facebook.com/p/Paul-Schochs-Auto-Repair-100057530166003" class="btn btn-secondary" target="_blank" rel="noopener">Find Us on Facebook</a>
+      </div>
+    </div>
+    <div class="badge-frame">
+      <svg class="seal" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ASE Master Certified seal">
+        <circle class="seal-ring" cx="150" cy="150" r="130" stroke-width="3"/>
+        <circle class="seal-ring" cx="150" cy="150" r="112" stroke-width="1.5"/>
+        <path id="topArc" d="M 45 150 A 105 105 0 0 1 255 150" fill="none"/>
+        <path id="botArc" d="M 255 165 A 105 105 0 0 1 45 165" fill="none"/>
+        <text class="seal-text" font-size="15" letter-spacing="4">
+          <textPath href="#topArc" startOffset="50%" text-anchor="middle">ASE MASTER CERTIFIED</textPath>
+        </text>
+        <text class="seal-text" font-size="15" letter-spacing="4">
+          <textPath href="#botArc" startOffset="50%" text-anchor="middle">PAUL SCHOCH &middot; TECHNICIAN</textPath>
+        </text>
+        <g stroke="#c9c9c9" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M120 130 h35 l8 -12 h20 l8 12 h10 v45 h-81 z"/>
+          <circle cx="132" cy="178" r="9"/>
+          <circle cx="178" cy="178" r="9"/>
+          <path d="M120 145 h81"/>
+        </g>
+        <text x="150" y="230" text-anchor="middle" class="seal-text" font-size="34" font-weight="700" font-family="'Passion One',sans-serif">37 YRS</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">37</span><span class="txt">Years Experience</span></div>
+    <div class="chip"><span class="num">ASE</span><span class="txt">Master Certified</span></div>
+    <div class="chip"><span class="num">6</span><span class="txt">Days a Week</span></div>
+    <div class="chip"><span class="num">1</span><span class="txt">Owner on Every Job</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What We Handle</span>
+      <h2>General repair &amp; routine maintenance</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>General Repair</h3>
+        <p>From diagnostics to drivability issues, Paul brings decades of dealership and independent-shop experience to every job that comes through the bay.</p>
+      </div>
+      <div class="service-card">
+        <h3>Routine Maintenance</h3>
+        <p>Oil changes, brakes, fluids, and the regular upkeep that keeps a car reliable through Orange County winters and summers alike.</p>
+      </div>
+      <div class="service-card">
+        <h3>Straight Talk</h3>
+        <p>No corporate service writer, no upsell script. You talk to the master technician who is actually doing the work on your car.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>Four decades in Port Jervis garages</h2>
+      <p>Paul Schoch has spent his entire career working on cars in this area, long before he ever hung his own sign. He is an ASE-certified master technician with 37 years of hands-on experience.</p>
+      <p>Today he runs his own shop on Franklin Street, bringing dealership-level know-how to a small, straightforward operation, Monday through Saturday.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-years">10 yrs</div>
+        <div class="tl-desc"><span class="label">Port Jervis Tire &amp; Auto</span><p>Where Paul first built his reputation for careful, honest repair work.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-years">27 yrs</div>
+        <div class="tl-desc"><span class="label">DG Pontiac</span><p>Nearly three decades at the dealership level, earning ASE Master Certification along the way.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-years">Today</div>
+        <div class="tl-desc"><span class="label">Paul Schoch's Auto Repair</span><p>Now running his own shop at 116 Franklin St, Port Jervis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Need it looked at? Call the shop.</h2>
+    <p>Open Monday through Saturday, 9am to 4pm, at 116 Franklin St, Port Jervis.</p>
+    <a href="tel:18456723630" class="btn btn-primary">Call (845) 672-3630</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="22" r="20" fill="none" stroke="#c1531f" stroke-width="2.5"/>
+          <path d="M13 26 L15 18 L18 18 L19 15 L25 15 L26 18 L29 18 L31 26 Z" fill="none" stroke="#c9c9c9" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span>Paul Schoch's Auto Repair</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18456723630">(845) 672-3630</a>
+        <a href="https://facebook.com/p/Paul-Schochs-Auto-Repair-100057530166003" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>116 Franklin St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Monday - Saturday</p>
+        <p>9:00am - 4:00pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Paul Schoch's Auto Repair.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

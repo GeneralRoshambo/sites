@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxie's Nail Salon | Fairview / Erie, PA</title>
+<meta name="description" content="Manicures, pedicures, dip powder and gel services at Roxie's Nail Salon in Erie, PA. Clean, colorful, and known for its music-filled atmosphere.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Karla:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lilac:#c9a8e0;
+    --coral:#f2836b;
+    --mint:#8fd4c1;
+    --cream:#fdf8f2;
+    --ink:#2b2430;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Karla',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15;}
+  .mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.07em;font-size:.75rem;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--ink);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;white-space:nowrap;flex-shrink:0;}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .brand-mark svg{width:22px;height:22px;}
+  .brand-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.15rem;}
+  nav{display:flex;align-items:center;gap:32px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{font-weight:500;font-size:.95rem;padding:4px 2px;border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-bottom:2px solid var(--lilac);}
+  .header-actions{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.92rem;border:2px solid transparent;cursor:pointer;}
+  .btn-primary{background:var(--coral);color:#fff;}
+  .btn-primary:hover{background:#d96c53;}
+  .btn-outline{background:transparent;border:2px solid var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--cream);}
+  .call-btn{background:var(--ink);color:var(--cream);white-space:nowrap;}
+  .call-btn:hover{background:#463c4e;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--ink);margin:5px 0;border-radius:2px;}
+
+  .hero{padding:0;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:56px 1fr;min-height:auto;}
+  .polish-rail{display:flex;flex-direction:column;}
+  .polish-rail div{flex:1;}
+  .polish-rail div:nth-child(1){background:var(--lilac);}
+  .polish-rail div:nth-child(2){background:var(--coral);}
+  .polish-rail div:nth-child(3){background:var(--mint);}
+  .polish-rail div:nth-child(4){background:var(--lilac);}
+  .polish-rail div:nth-child(5){background:var(--coral);}
+  .hero-content{padding:76px 40px 64px;}
+  .eyebrow{display:inline-block;background:var(--mint);color:var(--ink);padding:6px 14px;border-radius:999px;margin-bottom:20px;font-weight:700;font-size:.9rem;}
+  .hero h1{font-size:clamp(2.2rem,4.4vw,3.5rem);margin-bottom:20px;font-weight:800;max-width:18ch;}
+  .hero .lede{font-size:1.15rem;max-width:56ch;margin-bottom:32px;color:#4a3f52;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .trust-strip{background:var(--ink);color:var(--cream);padding:28px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .trust-chip{text-align:center;}
+  .trust-chip .num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;color:var(--mint);}
+  .trust-chip .desc{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;color:#d8cbe0;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .section-head .mono{color:var(--coral);display:block;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:26px;text-align:center;}
+  .service-card .dot{width:34px;height:34px;border-radius:50%;margin:0 auto 14px;}
+  .service-card:nth-child(1) .dot{background:var(--lilac);}
+  .service-card:nth-child(2) .dot{background:var(--coral);}
+  .service-card:nth-child(3) .dot{background:var(--mint);}
+  .service-card:nth-child(4) .dot{background:var(--ink);}
+  .service-card h3{font-size:1rem;margin-bottom:8px;}
+  .service-card p{font-size:.88rem;color:#5c4f63;}
+
+  .staff-section{background:#fff;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);}
+  .staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .staff-card{text-align:center;padding:28px 20px;border-radius:16px;background:var(--cream);border:2px solid var(--ink);}
+  .staff-avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;}
+  .staff-card:nth-child(1) .staff-avatar{background:var(--lilac);}
+  .staff-card:nth-child(2) .staff-avatar{background:var(--coral);}
+  .staff-card:nth-child(3) .staff-avatar{background:var(--mint);}
+  .staff-card h3{font-size:1.1rem;margin-bottom:6px;}
+  .staff-card p{font-size:.88rem;color:#5c4f63;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about h2{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:18px;font-weight:800;}
+  .about p{color:#4a3f52;margin-bottom:16px;max-width:56ch;}
+  .about-visual{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:32px;}
+  .about-visual .swatch-row{display:flex;gap:10px;margin-bottom:14px;}
+  .about-visual .swatch{flex:1;height:64px;border-radius:10px;}
+  .about-visual .swatch:nth-child(1){background:var(--lilac);}
+  .about-visual .swatch:nth-child(2){background:var(--coral);}
+  .about-visual .swatch:nth-child(3){background:var(--mint);}
+  .about-visual p{text-align:center;color:#5c4f63;font-size:.9rem;}
+
+  .cta-band{background:var(--lilac);color:var(--ink);text-align:center;padding:64px 24px;}
+  .cta-band h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:14px;font-weight:800;}
+  .cta-band p{max-width:52ch;margin:0 auto 30px;color:#453a4d;}
+  .cta-band .btn-primary{background:var(--ink);color:var(--cream);}
+  .cta-band .btn-primary:hover{background:#463c4e;}
+  .cta-band .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .cta-band .btn-outline:hover{background:var(--ink);color:var(--cream);}
+
+  footer{background:var(--ink);color:#d8cbe0;padding:48px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h4{font-family:'JetBrains Mono',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;color:var(--mint);}
+  footer a, footer p{color:#d8cbe0;font-size:.92rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid #453a4d;padding-top:20px;font-size:.8rem;color:#a897b0;text-align:center;}
+
+  @media (max-width:1150px){
+    .nav-links, .header-actions .btn-outline{display:none;}
+    .hamburger{display:block;}
+    nav{position:static;}
+    nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:2px solid var(--ink);padding:20px 24px;gap:18px;}
+  }
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .staff-grid, .about-grid, .footer-grid{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .hero-grid{grid-template-columns:28px 1fr;}
+    .hero-content{padding:56px 24px 48px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4c-3 3-6 6-6 10a6 6 0 0 0 12 0c0-4-3-7-6-10z" fill="#fff"/></svg>
+      </span>
+      <span class="brand-name">Roxie's Nail Salon</span>
+    </div>
+    <nav id="siteNav">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://facebook.com/roxiesnailsalonfairview" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn call-btn" href="tel:18145285288">Call (814) 528-5288</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="polish-rail" aria-hidden="true">
+      <div></div><div></div><div></div><div></div><div></div>
+    </div>
+    <div class="hero-content wrap" style="padding-left:0;padding-right:0;">
+      <span class="eyebrow">Fairview &middot; Erie, PA</span>
+      <h1>Color, clean, and good music every visit.</h1>
+      <p class="lede">Roxie's Nail Salon offers manicures, pedicures, dip powder and gel services in a bright, welcoming space known for cleanliness, a huge color selection, and fair prices.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:18145285288">Call to Book</a>
+        <a class="btn btn-outline" href="#services">See Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-grid">
+    <div class="trust-chip"><div class="num">Gel &amp; Dip</div><div class="desc">Powder Available</div></div>
+    <div class="trust-chip"><div class="num">Huge</div><div class="desc">Color Selection</div></div>
+    <div class="trust-chip"><div class="num">Clean</div><div class="desc">Salon Environment</div></div>
+    <div class="trust-chip"><div class="num">Fair</div><div class="desc">Everyday Prices</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Our Services</span>
+      <h2>Manicures, pedicures &amp; more</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="dot"></div><h3>Manicures</h3><p>Classic and custom manicure services.</p></div>
+      <div class="service-card"><div class="dot"></div><h3>Pedicures</h3><p>Relaxing, thorough pedicure treatments.</p></div>
+      <div class="service-card"><div class="dot"></div><h3>Dip Powder</h3><p>Long-lasting dip powder color.</p></div>
+      <div class="service-card"><div class="dot"></div><h3>Gel Services</h3><p>Chip-resistant gel finishes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="staff-section" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Meet The Team</span>
+      <h2>The people behind the polish</h2>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card"><div class="staff-avatar"></div><h3>Jen</h3><p>A regular favorite for color pairing and detail work.</p></div>
+      <div class="staff-card"><div class="staff-avatar"></div><h3>Debbie</h3><p>Known for a steady hand and a warm welcome.</p></div>
+      <div class="staff-card"><div class="staff-avatar"></div><h3>Kristen</h3><p>Loved for making every visit feel easy and fun.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>A neighborhood salon that gets it right</h2>
+      <p>From the moment you walk in, Roxie's is about color, cleanliness, and good energy. The music is always going, the polish wall is packed with options, and the prices stay fair.</p>
+      <p>It's the kind of salon regulars bring their friends to, built around a team that knows their clients by name.</p>
+    </div>
+    <div class="about-visual">
+      <div class="swatch-row" aria-hidden="true">
+        <div class="swatch"></div><div class="swatch"></div><div class="swatch"></div>
+      </div>
+      <p>Just a slice of the color wall waiting for you</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready for fresh color?</h2>
+    <p>Call Roxie's Nail Salon to book your next manicure or pedicure in Fairview.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="tel:18145285288">Call (814) 528-5288</a>
+      <a class="btn btn-outline" href="https://facebook.com/roxiesnailsalonfairview" target="_blank" rel="noopener">Find Us on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4c-3 3-6 6-6 10a6 6 0 0 0 12 0c0-4-3-7-6-10z" fill="#c9a8e0"/></svg>
+          </span>
+          <span class="brand-name" style="color:var(--cream);">Roxie's Nail Salon</span>
+        </div>
+        <p>Manicures, pedicures, dip powder and gel services in Erie, PA.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:18145285288">(814) 528-5288</a></li>
+          <li><a href="https://facebook.com/roxiesnailsalonfairview" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>3256 W 26th St<br>Erie, PA 16506</p>
+      </div>
+    </div>
+    <div class="footer-bottom">Site by Modularity Networks &middot; Roxie's Nail Salon, Erie PA</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var nav = document.getElementById('siteNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

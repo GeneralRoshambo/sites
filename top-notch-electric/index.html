@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Notch Electric | Dingmans Ferry, PA</title>
+<meta name="description" content="Top Notch Electric, family owned and operated electrical contractor serving Dingmans Ferry PA and the tri-state area. 17+ years experience, licensed in PA and NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --volt-yellow:#e8b923;
+    --deep-navy:#1a2740;
+    --paper:#f7f6f2;
+    --wire-orange:#d9622b;
+    --slate:#4a5560;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--deep-navy);font-family:'Inter',sans-serif;line-height:1.65;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Exo 2',sans-serif;font-weight:700;line-height:1.15;color:var(--deep-navy);}
+  .mono{font-family:'Space Mono',monospace;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 30px;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--wire-orange);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(247,246,242,0.97);backdrop-filter:blur(4px);border-bottom:1px solid #dcd9cf;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:16px 30px;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;}
+  .brand-name{font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.28rem;color:var(--deep-navy);}
+  nav ul{list-style:none;display:flex;gap:30px;}
+  nav a{font-family:'Inter',sans-serif;font-weight:600;font-size:0.94rem;color:var(--slate);}
+  nav a:hover{color:var(--wire-orange);}
+  .header-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:5px;font-family:'Inter',sans-serif;font-weight:700;font-size:0.92rem;cursor:pointer;transition:all 0.2s ease;}
+  .btn-primary{background:var(--volt-yellow);color:var(--deep-navy);}
+  .btn-primary:hover{background:#cfa41c;}
+  .btn-secondary{background:transparent;color:var(--deep-navy);border:1.5px solid var(--deep-navy);}
+  .btn-secondary:hover{background:var(--deep-navy);color:var(--paper);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{width:26px;height:3px;background:var(--deep-navy);border-radius:2px;}
+
+  /* Hero - 2 col */
+  .hero{background:var(--deep-navy);color:var(--paper);padding:90px 0;position:relative;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;position:relative;z-index:2;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;color:var(--volt-yellow);font-size:0.85rem;margin-bottom:22px;}
+  .eyebrow::before{content:'';width:8px;height:8px;background:var(--volt-yellow);border-radius:50%;display:inline-block;}
+  .hero h1{font-size:2.9rem;margin-bottom:20px;color:#fff;}
+  .hero h1 span{color:var(--volt-yellow);}
+  .hero p.lede{font-size:1.13rem;color:#c3ccd8;max-width:520px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero .btn-secondary{border-color:#c3ccd8;color:#fff;}
+  .hero .btn-secondary:hover{background:#fff;color:var(--deep-navy);}
+
+  .circuit-visual{display:flex;justify-content:center;}
+  .circuit-svg{width:100%;max-width:400px;height:auto;}
+
+  /* Trust strip */
+  .trust-strip{background:var(--paper);padding:32px 0;border-bottom:1px solid #dcd9cf;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .chip{text-align:center;border-left:1px solid #dcd9cf;padding-left:20px;}
+  .chip:first-child{border-left:none;}
+  .chip .num{font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.6rem;display:block;color:var(--deep-navy);}
+  .chip .txt{font-family:'Space Mono',monospace;font-size:0.78rem;margin-top:4px;color:var(--slate);}
+
+  /* Services */
+  .services{padding:100px 0;border-bottom:1px solid #dcd9cf;}
+  .services-head{max-width:640px;margin-bottom:54px;}
+  .services-head span.tag{font-family:'Space Mono',monospace;color:var(--wire-orange);font-size:0.85rem;margin-bottom:14px;display:inline-block;}
+  .services-head h2{font-size:2.3rem;margin-bottom:16px;}
+  .services-head p{color:var(--slate);font-size:1.05rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:#fff;border:1px solid #dcd9cf;border-radius:8px;padding:30px 24px;}
+  .service-card .icon-wrap{width:52px;height:52px;margin-bottom:18px;}
+  .service-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .service-card p{color:var(--slate);font-size:0.95rem;}
+
+  .service-list-secondary{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .mini-tag{
+    background:var(--paper);border:1px solid #dcd9cf;border-radius:6px;padding:14px 18px;
+    font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:600;color:var(--deep-navy);
+  }
+
+  /* About */
+  .about{padding:100px 0;border-bottom:1px solid #dcd9cf;background:#eeece4;}
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.2rem;margin-bottom:20px;}
+  .about p{color:var(--slate);font-size:1.05rem;margin-bottom:14px;}
+  .license-block{background:var(--deep-navy);color:var(--paper);padding:36px;border-radius:8px;}
+  .license-block h3{color:var(--volt-yellow);font-size:1.2rem;margin-bottom:16px;}
+  .license-block ul{list-style:none;}
+  .license-block li{
+    padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);
+    font-family:'Space Mono',monospace;font-size:0.9rem;display:flex;justify-content:space-between;
+  }
+  .license-block li:last-child{border-bottom:none;}
+
+  /* CTA band */
+  .cta-band{background:var(--wire-orange);color:#fff;padding:70px 0;text-align:center;}
+  .cta-band h2{color:#fff;font-size:2.1rem;margin-bottom:14px;}
+  .cta-band p{margin-bottom:28px;font-size:1.1rem;opacity:0.95;}
+  .cta-band .btn-primary{background:var(--deep-navy);color:#fff;}
+  .cta-band .btn-primary:hover{background:#111d33;}
+
+  footer{background:var(--deep-navy);color:#c3ccd8;padding:56px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;margin-bottom:36px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand span{font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;}
+  .footer-links{display:flex;gap:44px;flex-wrap:wrap;}
+  .footer-col h4{font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:12px;color:var(--volt-yellow);text-transform:uppercase;}
+  .footer-col a, .footer-col p{display:block;font-size:0.92rem;margin-bottom:8px;color:#aab4c2;}
+  .footer-bottom{border-top:1px solid #2a3a55;padding-top:20px;font-size:0.85rem;color:#7f8ba0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:1150px){
+    nav{display:none;}
+    .hamburger{display:flex;}
+    nav.open{
+      display:flex;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:1px solid #dcd9cf;
+      flex-direction:column;padding:10px 30px 20px;
+    }
+    nav.open ul{flex-direction:column;width:100%;}
+    nav.open ul li{border-bottom:1px solid #dcd9cf;}
+    nav.open ul li a{display:block;padding:14px 0;}
+  }
+  @media (max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .circuit-visual{order:-1;}
+    .about .wrap{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .service-list-secondary{grid-template-columns:1fr 1fr;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);gap:20px;}
+  }
+  @media (max-width:560px){
+    .hero h1{font-size:2.1rem;}
+    .service-grid{grid-template-columns:1fr;}
+    .service-list-secondary{grid-template-columns:1fr;}
+    .header-actions .btn-primary .btn-label{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="38" height="38" rx="6" fill="#1a2740"/>
+        <path d="M22 8 L13 22 h7 l-2 12 11-16 h-7 z" fill="#e8b923"/>
+      </svg>
+      <span class="brand-name">Top Notch Electric</span>
+    </a>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="tel:15702490021"><span class="btn-label">Call</span> (570) 249-0021</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">FAMILY OWNED &amp; OPERATED, 17+ YEARS</span>
+      <h1>Wiring done <span>right</span>, from Dingmans Ferry to the tri-state area.</h1>
+      <p class="lede">Top Notch Electric handles residential, commercial, and industrial electrical work: new construction, remodels, troubleshooting, service upgrades, generators, and more. Licensed across PA, Orange County NY, Middletown NY, and Sullivan County NY.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:15702490021">Call (570) 249-0021</a>
+        <a class="btn btn-secondary" href="#services">See Our Work</a>
+      </div>
+    </div>
+    <div class="circuit-visual">
+      <svg class="circuit-svg" viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#e8b923" stroke-width="2" fill="none">
+          <path d="M60 60 H160 V140"/>
+          <path d="M160 140 H240"/>
+          <path d="M240 140 V60 H340"/>
+          <path d="M160 140 V240 H80"/>
+          <path d="M240 140 V240 H320 V280"/>
+        </g>
+        <circle cx="60" cy="60" r="5" fill="#e8b923"/>
+        <circle cx="340" cy="60" r="5" fill="#e8b923"/>
+        <circle cx="80" cy="240" r="5" fill="#e8b923"/>
+        <circle cx="320" cy="280" r="5" fill="#e8b923"/>
+        <circle cx="160" cy="140" r="4" fill="#d9622b"/>
+        <circle cx="240" cy="140" r="4" fill="#d9622b"/>
+
+        <g transform="translate(30,20)">
+          <rect width="60" height="60" rx="8" fill="#243352"/>
+          <path d="M30 16 v10 M22 32 h16 M25 32 c0 8 10 8 10 0" stroke="#f7f6f2" stroke-width="2" fill="none"/>
+        </g>
+        <text x="30" y="98" fill="#c3ccd8" font-family="Space Mono, monospace" font-size="11">GENERATOR</text>
+
+        <g transform="translate(310,20)">
+          <rect width="60" height="60" rx="8" fill="#243352"/>
+          <circle cx="30" cy="30" r="12" fill="none" stroke="#f7f6f2" stroke-width="2"/>
+          <path d="M30 12 V8 M30 52 v-4 M12 30 H8 M52 30 h-4" stroke="#f7f6f2" stroke-width="2"/>
+        </g>
+        <text x="298" y="98" fill="#c3ccd8" font-family="Space Mono, monospace" font-size="11">LIGHTING</text>
+
+        <g transform="translate(290,250)">
+          <rect width="60" height="60" rx="8" fill="#243352"/>
+          <path d="M18 40 q6 -10 12 0 q6 -10 12 0 q6 -10 12 0" stroke="#f7f6f2" stroke-width="2" fill="none"/>
+          <path d="M18 26 q6 -10 12 0 q6 -10 12 0 q6 -10 12 0" stroke="#f7f6f2" stroke-width="2" fill="none" opacity="0.6"/>
+        </g>
+        <text x="292" y="326" fill="#c3ccd8" font-family="Space Mono, monospace" font-size="11">POOL / SPA</text>
+
+        <g transform="translate(50,210)">
+          <rect width="60" height="60" rx="8" fill="#243352"/>
+          <path d="M30 14 L44 34 H34 L34 46 L18 26 H28 Z" fill="#e8b923"/>
+        </g>
+        <text x="48" y="286" fill="#c3ccd8" font-family="Space Mono, monospace" font-size="11">SERVICE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">17+ Yrs</span><span class="txt">Experience</span></div>
+    <div class="chip"><span class="num">4 Regions</span><span class="txt">PA + NY Licensed</span></div>
+    <div class="chip"><span class="num">Family</span><span class="txt">Owned &amp; Operated</span></div>
+    <div class="chip"><span class="num">Res/Comm</span><span class="txt">Industrial Too</span></div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <span class="tag mono">// WHAT WE WIRE</span>
+      <h2>From new construction to backup power.</h2>
+      <p>Top Notch Electric covers the full range of electrical work, whether it's a new build, a troubleshooting call, or a full-house generator install.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <svg class="icon-wrap" viewBox="0 0 52 52"><rect x="4" y="4" width="44" height="44" rx="8" fill="#1a2740"/><path d="M26 14 v8 M18 30 h16 M20 30 c0 6 8 6 8 0" stroke="#e8b923" stroke-width="2.5" fill="none"/></svg>
+        <h3>Generator Installs</h3>
+        <p>Whole-home and commercial backup generator systems, installed and wired to code.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon-wrap" viewBox="0 0 52 52"><rect x="4" y="4" width="44" height="44" rx="8" fill="#1a2740"/><circle cx="26" cy="26" r="9" fill="none" stroke="#e8b923" stroke-width="2.5"/><path d="M26 10v4M26 38v4M10 26h4M38 26h4" stroke="#e8b923" stroke-width="2.5"/></svg>
+        <h3>Landscape &amp; Security Lighting</h3>
+        <p>Outdoor lighting that keeps your property lit, safe, and looking sharp after dark.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon-wrap" viewBox="0 0 52 52"><rect x="4" y="4" width="44" height="44" rx="8" fill="#1a2740"/><path d="M14 34 q6 -10 12 0 q6 -10 12 0" stroke="#e8b923" stroke-width="2.5" fill="none"/><path d="M14 24 q6 -10 12 0 q6 -10 12 0" stroke="#e8b923" stroke-width="2.5" fill="none" opacity="0.55"/></svg>
+        <h3>Pool, Spa &amp; Hot Tub</h3>
+        <p>Safe, code-compliant electrical for pools, spas, and hot tubs.</p>
+      </div>
+    </div>
+    <div class="service-list-secondary">
+      <div class="mini-tag">New Construction Wiring</div>
+      <div class="mini-tag">Remodels &amp; Additions</div>
+      <div class="mini-tag">Troubleshooting &amp; Repair</div>
+      <div class="mini-tag">Service Upgrades</div>
+      <div class="mini-tag">Residential &amp; Commercial</div>
+      <div class="mini-tag">Industrial Electrical</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-copy">
+      <h2>Family owned, 17+ years in the field.</h2>
+      <p>Top Notch Electric is a family owned and operated electrical contractor based near Dingmans Ferry. With more than 17 years of experience, the crew handles everything from a single service call to full new-construction wiring.</p>
+      <p>Licensed across Pennsylvania and into Orange County, Middletown, and Sullivan County in New York, Top Notch covers homes and businesses throughout the tri-state Delaware River corner.</p>
+    </div>
+    <div class="license-block">
+      <h3>Licensed &amp; Insured Across</h3>
+      <ul>
+        <li><span>Pennsylvania</span><span>&#10003;</span></li>
+        <li><span>Orange County, NY</span><span>&#10003;</span></li>
+        <li><span>Middletown, NY</span><span>&#10003;</span></li>
+        <li><span>Sullivan County, NY</span><span>&#10003;</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Need an electrician who shows up?</h2>
+    <p>Call, or email topnotchelectric1@gmail.com to get your project scheduled.</p>
+    <a class="btn btn-primary" href="tel:15702490021">Call (570) 249-0021</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <rect x="2" y="2" width="38" height="38" rx="6" fill="#e8b923"/>
+          <path d="M22 8 L13 22 h7 l-2 12 11-16 h-7 z" fill="#1a2740"/>
+        </svg>
+        <span>Top Notch Electric</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:15702490021">(570) 249-0021</a>
+          <a href="mailto:topnotchelectric1@gmail.com">topnotchelectric1@gmail.com</a>
+          <a href="https://facebook.com/TopNotchElectric1" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <div class="footer-col">
+          <h4>Service Area</h4>
+          <p>Dingmans Ferry, PA 18328</p>
+          <p>PA / Orange County NY / Sullivan County NY</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Top Notch Electric.</span>
+      <span>Site by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hbtn = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('siteNav');
+  hbtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    hbtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    hbtn.setAttribute('aria-expanded','false');
+  }));
+</script>
+</body>
+</html>

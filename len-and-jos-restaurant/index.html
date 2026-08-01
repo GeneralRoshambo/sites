@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Len &amp; Jo's Restaurant | Port Jervis, NY</title>
+<meta name="description" content="A Port Jervis institution since Len and Josephine Sarrow opened it in an old garage over 70 years ago. Thin, rectangular Brooklyn-style pizza and oak paneling decor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=PT+Serif:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brick-red:#a8332c;
+    --cream:#f6f0e2;
+    --oak:#6b4a2f;
+    --pine-green:#3f5a3f;
+    --charcoal:#2b2622;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'PT Serif',serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Rye',cursive;font-weight:400;line-height:1.2;}
+  .label{font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:2px;font-weight:400;font-size:0.85rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--brick-red);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--charcoal);border-bottom:3px solid var(--brick-red);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;color:var(--cream);}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;}
+  .brand-text{font-family:'Rye',cursive;font-size:1.25rem;}
+  .brand-text span{color:var(--brick-red);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{color:var(--cream);font-family:'Special Elite',cursive;text-transform:uppercase;font-size:0.8rem;letter-spacing:1.5px;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--brick-red);color:#e8d9c5;}
+  .call-btn{background:var(--brick-red);color:var(--cream);font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.8rem;padding:12px 22px;border-radius:2px;white-space:nowrap;border:2px solid var(--brick-red);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--brick-red);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--cream);display:block;}
+
+  .hero{padding:90px 0 70px;text-align:center;border-bottom:1px solid rgba(43,38,34,0.12);}
+  .eyebrow{display:inline-block;color:var(--pine-green);font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:3px;font-size:0.82rem;margin-bottom:20px;}
+  .hero h1{font-size:3.4rem;max-width:17ch;margin:0 auto 22px;color:var(--brick-red);}
+  .hero p.lede{font-size:1.15rem;max-width:58ch;margin:0 auto 34px;color:#3a332c;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+  .btn{display:inline-block;padding:15px 30px;border-radius:2px;font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.85rem;border:2px solid var(--charcoal);transition:all .2s;}
+  .btn-primary{background:var(--brick-red);border-color:var(--brick-red);color:var(--cream);}
+  .btn-primary:hover{background:#7f261f;border-color:#7f261f;}
+  .btn-secondary{background:transparent;color:var(--charcoal);}
+  .btn-secondary:hover{background:var(--charcoal);color:var(--cream);}
+
+  .trust-strip{background:var(--pine-green);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:28px 20px;text-align:center;color:var(--cream);border-right:1px solid rgba(246,240,226,0.2);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Rye',cursive;font-size:1.7rem;display:block;color:var(--cream);}
+  .chip .txt{font-family:'Special Elite',cursive;text-transform:uppercase;font-size:0.72rem;letter-spacing:1.5px;color:#d8e3d8;}
+
+  .menu-section{padding:90px 0;}
+  .section-head{max-width:640px;margin:0 auto 50px;text-align:center;}
+  .section-head .label{color:var(--brick-red);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.4rem;color:var(--charcoal);}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .menu-card{background:#fff;border:1px solid rgba(43,38,34,0.12);padding:32px 26px;border-top:4px solid var(--oak);}
+  .menu-card h3{font-family:'Rye',cursive;font-size:1.35rem;margin-bottom:12px;color:var(--charcoal);}
+  .menu-card p{font-size:0.96rem;color:#4a4034;}
+
+  .about{
+    padding:90px 0;position:relative;overflow:hidden;background:var(--oak);color:var(--cream);
+  }
+  .grain-bg{position:absolute;inset:0;opacity:0.18;pointer-events:none;}
+  .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
+  .about h2{font-size:2.3rem;margin-bottom:20px;color:var(--cream);}
+  .about p{margin-bottom:16px;max-width:52ch;color:#f0e6d4;font-size:1.02rem;}
+  .about-frame{background:var(--charcoal);border:6px solid var(--charcoal);border-radius:4px;padding:26px;position:relative;z-index:1;}
+  .about-frame .label{color:#c9b896;display:block;margin-bottom:10px;}
+  .about-frame p{color:#e8d9c5;font-size:0.98rem;margin-bottom:0;}
+
+  .cta-band{background:var(--charcoal);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.2rem;margin-bottom:16px;}
+  .cta-band p{color:#c9b896;margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{border-color:var(--brick-red);}
+
+  footer{background:#1c1815;color:#c9b896;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(201,184,150,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Rye',cursive;font-size:1.1rem;color:var(--cream);}
+  .footer-col h4{font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.8rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.9rem;color:#c9b896;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--brick-red);}
+  .footer-bottom{text-align:center;font-size:0.8rem;color:#8a7a63;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 14px);left:-24px;right:-24px;background:var(--charcoal);padding:20px 24px;gap:0;border-top:2px solid var(--brick-red);}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(246,240,226,0.1);}
+    .hero h1{font-size:2.4rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(246,240,226,0.2);border-bottom:1px solid rgba(246,240,226,0.2);}
+    .menu-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:60px 0;}
+    .hero h1{font-size:1.9rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" fill="none" stroke="#a8332c" stroke-width="2.5"/>
+        <path d="M13 28 L22 13 L31 28 Z" fill="none" stroke="#f6f0e2" stroke-width="1.8" stroke-linejoin="round"/>
+        <line x1="16" y1="24" x2="28" y2="24" stroke="#f6f0e2" stroke-width="1.4"/>
+      </svg>
+      <span class="brand-text">Len <span>&amp;</span> Jo's</span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18458568021" class="call-btn">(845) 856-8021</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">West Main St &middot; Port Jervis, NY</span>
+    <h1>Seventy years of thin, rectangular pizza</h1>
+    <p class="lede">Len & Jo's has been a Port Jervis institution since Len and Josephine Sarrow opened it in an old garage more than 70 years ago. The oak paneling has barely changed since, and neither has the Brooklyn-style pizza.</p>
+    <div class="cta-row">
+      <a href="tel:18458568021" class="btn btn-primary">Call (845) 856-8021</a>
+      <a href="https://facebook.com/lenjospj" class="btn btn-secondary" target="_blank" rel="noopener">Visit Us on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">70+</span><span class="txt">Years Running</span></div>
+    <div class="chip"><span class="num">2</span><span class="txt">Founding Families</span></div>
+    <div class="chip"><span class="num">Oak</span><span class="txt">Paneled Since Day One</span></div>
+    <div class="chip"><span class="num">Est.</span><span class="txt">In an Old Garage</span></div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">On the Menu</span>
+      <h2>Brooklyn-style, cut thin and rectangular</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>The Pizza</h3>
+        <p>Thin, rectangular, Brooklyn-style pies that have kept this place packed for generations.</p>
+      </div>
+      <div class="menu-card">
+        <h3>The Bar</h3>
+        <p>A neighborhood bar and restaurant, the kind of place regulars have called their own for decades.</p>
+      </div>
+      <div class="menu-card">
+        <h3>The Room</h3>
+        <p>Oak paneling and a layout that has stayed largely the same since Len and Jo first opened the doors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <svg class="grain-bg" viewBox="0 0 400 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="#f6f0e2" stroke-width="1" fill="none">
+      <path d="M10 0 Q15 40 10 80 Q5 120 10 160 Q15 200 10 240 Q5 270 10 300"/>
+      <path d="M35 0 Q40 40 35 80 Q30 120 35 160 Q40 200 35 240 Q30 270 35 300"/>
+      <path d="M60 0 Q65 40 60 80 Q55 120 60 160 Q65 200 60 240 Q55 270 60 300"/>
+      <path d="M85 0 Q90 40 85 80 Q80 120 85 160 Q90 200 85 240 Q80 270 85 300"/>
+      <path d="M110 0 Q115 40 110 80 Q105 120 110 160 Q115 200 110 240 Q105 270 110 300"/>
+      <path d="M135 0 Q140 40 135 80 Q130 120 135 160 Q140 200 135 240 Q130 270 135 300"/>
+      <path d="M160 0 Q165 40 160 80 Q155 120 160 160 Q165 200 160 240 Q155 270 160 300"/>
+      <path d="M185 0 Q190 40 185 80 Q180 120 185 160 Q190 200 185 240 Q180 270 185 300"/>
+      <path d="M210 0 Q215 40 210 80 Q205 120 210 160 Q215 200 210 240 Q205 270 210 300"/>
+      <path d="M235 0 Q240 40 235 80 Q230 120 235 160 Q240 200 235 240 Q230 270 235 300"/>
+      <path d="M260 0 Q265 40 260 80 Q255 120 260 160 Q265 200 260 240 Q255 270 260 300"/>
+      <path d="M285 0 Q290 40 285 80 Q280 120 285 160 Q290 200 285 240 Q280 270 285 300"/>
+      <path d="M310 0 Q315 40 310 80 Q305 120 310 160 Q315 200 310 240 Q305 270 310 300"/>
+      <path d="M335 0 Q340 40 335 80 Q330 120 335 160 Q340 200 335 240 Q330 270 335 300"/>
+      <path d="M360 0 Q365 40 360 80 Q355 120 360 160 Q365 200 360 240 Q355 270 360 300"/>
+      <path d="M385 0 Q390 40 385 80 Q380 120 385 160 Q390 200 385 240 Q380 270 385 300"/>
+    </g>
+  </svg>
+  <div class="wrap about-inner">
+    <div>
+      <h2>Started in a garage, run by the next generation</h2>
+      <p>Len and Josephine Sarrow started this place in an old garage over 70 years ago. It later passed to two of their employees, and today it is their children who keep the ovens running.</p>
+      <p>Walk in and the oak paneling looks about the same as it always has. That is the point.</p>
+    </div>
+    <div class="about-frame">
+      <span class="label">Since Day One</span>
+      <p>"The paneling, the pizza, the people behind the counter, it has always felt like family here in Port Jervis."</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Come pull up a stool</h2>
+    <p>186 W Main St, Port Jervis. Call ahead or find us on Facebook.</p>
+    <a href="tel:18458568021" class="btn btn-primary">Call (845) 856-8021</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="22" r="20" fill="none" stroke="#a8332c" stroke-width="2.5"/>
+          <path d="M13 28 L22 13 L31 28 Z" fill="none" stroke="#c9b896" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span>Len &amp; Jo's Restaurant</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18458568021">(845) 856-8021</a>
+        <a href="https://facebook.com/lenjospj" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>186 W Main St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Since</h4>
+        <p>Founded by Len &amp; Josephine Sarrow</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Len &amp; Jo's Restaurant.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

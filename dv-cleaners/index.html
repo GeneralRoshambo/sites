@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DV Cleaners | Port Jervis, NY</title>
+<meta name="description" content="Full-service dry cleaning, tailoring and alterations, leather cleaning, and wedding gown preservation in Port Jervis, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&family=Jost:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen:#f4f1ea;
+    --navy:#1f3347;
+    --gold:#c9a24a;
+    --sage:#7a8f7a;
+    --charcoal:#2b2b2b;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--linen);color:var(--charcoal);font-family:'Nunito Sans',sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Cinzel',serif;font-weight:600;line-height:1.25;color:var(--navy);}
+  .label{font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;font-size:0.82rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--linen);border-bottom:1px solid rgba(31,51,71,0.15);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:40px;height:40px;flex-shrink:0;}
+  .brand-text{font-family:'Cinzel',serif;font-size:1.15rem;font-weight:600;letter-spacing:1px;color:var(--navy);}
+  .brand-text span{color:var(--gold);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{font-family:'Jost',sans-serif;text-transform:uppercase;font-size:0.82rem;letter-spacing:1.5px;font-weight:600;color:var(--navy);padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--gold);color:#7a5f22;}
+  .call-btn{background:var(--navy);color:var(--linen);font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:0.8rem;font-weight:600;padding:12px 22px;border-radius:2px;white-space:nowrap;border:2px solid var(--navy);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--navy);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--navy);display:block;}
+
+  .hero{padding:90px 0;}
+  .hero-inner{display:grid;grid-template-columns:1.05fr 0.95fr;gap:60px;align-items:center;}
+  .eyebrow{display:inline-block;color:var(--sage);font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:3px;font-size:0.82rem;font-weight:600;margin-bottom:20px;}
+  .hero h1{font-size:2.7rem;margin-bottom:22px;}
+  .hero h1 span{color:var(--gold);}
+  .hero p.lede{font-size:1.1rem;max-width:50ch;color:#4a4a4a;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;border-radius:2px;font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:0.85rem;font-weight:600;border:2px solid var(--navy);transition:all .2s;}
+  .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--linen);}
+  .btn-primary:hover{background:#152634;border-color:#152634;}
+  .btn-secondary{background:transparent;color:var(--navy);}
+  .btn-secondary:hover{background:var(--navy);color:var(--linen);}
+
+  .garment-frame{display:flex;justify-content:center;align-items:center;background:#fff;border:1px solid rgba(31,51,71,0.12);border-radius:8px;padding:40px;}
+  .garment{width:100%;max-width:300px;}
+
+  .trust-strip{background:var(--navy);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:28px 20px;text-align:center;color:var(--linen);border-right:1px solid rgba(244,241,234,0.15);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:600;display:block;color:var(--gold);}
+  .chip .txt{font-family:'Jost',sans-serif;text-transform:uppercase;font-size:0.72rem;letter-spacing:1.5px;color:#d7dee4;}
+
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--sage);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.2rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .service-card{background:#fff;border:1px solid rgba(31,51,71,0.12);padding:28px 22px;border-radius:6px;}
+  .service-card h3{font-family:'Cinzel',serif;font-size:1rem;margin-bottom:10px;letter-spacing:0.5px;}
+  .service-card p{font-size:0.9rem;color:#4a4a4a;}
+
+  .about{padding:90px 0;background:#e8e2d3;}
+  .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.2rem;margin-bottom:20px;}
+  .about p{margin-bottom:16px;max-width:52ch;color:#3a3a3a;font-size:1.02rem;}
+  .fold-visual{display:flex;justify-content:center;}
+  .fold-visual svg{width:100%;max-width:260px;}
+
+  .cta-band{background:var(--gold);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--charcoal);font-size:2.1rem;margin-bottom:16px;}
+  .cta-band p{color:#3a3020;margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--linen);}
+  .cta-band .btn-primary:hover{background:#152634;border-color:#152634;}
+
+  footer{background:var(--navy);color:#c5cdd5;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(197,205,213,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--linen);}
+  .footer-col h4{font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:1.5px;font-size:0.8rem;color:var(--linen);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.9rem;color:#c5cdd5;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{text-align:center;font-size:0.8rem;color:#7f8d99;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 16px);left:-24px;right:-24px;background:var(--linen);padding:20px 24px;gap:0;border-top:1px solid rgba(31,51,71,0.15);border-bottom:1px solid rgba(31,51,71,0.15);}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(31,51,71,0.08);}
+    .hero-inner{grid-template-columns:1fr;}
+    .garment-frame{max-width:320px;margin:0 auto;}
+    .hero h1{font-size:2.1rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(244,241,234,0.15);border-bottom:1px solid rgba(244,241,234,0.15);}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:60px 0;}
+    .hero h1{font-size:1.8rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+    .service-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="8" y="10" width="24" height="22" rx="2" fill="none" stroke="#1f3347" stroke-width="2"/>
+        <path d="M8 16 H32" stroke="#c9a24a" stroke-width="1.5"/>
+        <path d="M14 10 V32 M20 10 V32 M26 10 V32" stroke="#7a8f7a" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <span class="brand-text">DV <span>Cleaners</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18458567421" class="call-btn">(845) 856-7421</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Front St &middot; Port Jervis, NY</span>
+      <h1>Pressed, mended, and <span>preserved</span> with care</h1>
+      <p class="lede">DV Cleaners is a full-service cleaner on Front Street offering dry cleaning, tailoring and alterations, leather cleaning, and wedding gown preservation for Port Jervis and the surrounding Delaware River valley.</p>
+      <div class="cta-row">
+        <a href="tel:18458567421" class="btn btn-primary">Call (845) 856-7421</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
+      </div>
+    </div>
+    <div class="garment-frame">
+      <svg class="garment" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Folded and pressed garment illustration">
+        <rect x="40" y="60" width="180" height="130" rx="4" fill="#f4f1ea" stroke="#1f3347" stroke-width="2.5"/>
+        <path d="M40 100 L220 100" stroke="#c9a24a" stroke-width="2"/>
+        <path d="M40 140 L220 140" stroke="#c9a24a" stroke-width="2"/>
+        <path d="M75 60 L75 190" stroke="#7a8f7a" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <path d="M185 60 L185 190" stroke="#7a8f7a" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <path d="M40 60 Q60 45 90 60" fill="none" stroke="#1f3347" stroke-width="2.5"/>
+        <path d="M220 60 Q200 45 170 60" fill="none" stroke="#1f3347" stroke-width="2.5"/>
+        <circle cx="130" cy="80" r="3" fill="#1f3347"/>
+        <circle cx="130" cy="120" r="3" fill="#1f3347"/>
+        <circle cx="130" cy="160" r="3" fill="#1f3347"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">Dry Cleaning</span><span class="txt">Full Service</span></div>
+    <div class="chip"><span class="num">Alterations</span><span class="txt">In-House Tailoring</span></div>
+    <div class="chip"><span class="num">Leather</span><span class="txt">Cleaning Available</span></div>
+    <div class="chip"><span class="num">Gowns</span><span class="txt">Wedding Preservation</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">Full Service</span>
+      <h2>Every garment, handled properly</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Dry Cleaning</h3>
+        <p>Everyday garment care, pressed and finished with attention to detail.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tailoring &amp; Alterations</h3>
+        <p>Hems, fits, and repairs handled in-house by experienced hands.</p>
+      </div>
+      <div class="service-card">
+        <h3>Leather Cleaning</h3>
+        <p>Specialized cleaning for leather jackets and garments.</p>
+      </div>
+      <div class="service-card">
+        <h3>Wedding Gown Preservation</h3>
+        <p>Careful cleaning and preservation to keep a gown ready for the future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>A cleaner built for the whole wardrobe</h2>
+      <p>DV Cleaners on Front Street handles the full range of garment care, from routine dry cleaning to specialty work like leather cleaning and wedding gown preservation.</p>
+      <p>Alterations and tailoring are done in-house, so a fitted suit or a hemmed pair of pants comes back exactly right.</p>
+    </div>
+    <div class="fold-visual">
+      <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="30" y="40" width="180" height="140" rx="6" fill="#fff" stroke="#1f3347" stroke-width="2"/>
+        <path d="M30 90 H210 M30 130 H210" stroke="#7a8f7a" stroke-width="1.5"/>
+        <path d="M50 40 Q70 25 100 40 M190 40 Q170 25 140 40" fill="none" stroke="#c9a24a" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Bring it in, we will take it from here</h2>
+    <p>80 Front St, Port Jervis. Call ahead with any questions about your garment.</p>
+    <a href="tel:18458567421" class="btn btn-primary">Call (845) 856-7421</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="8" y="10" width="24" height="22" rx="2" fill="none" stroke="#c9a24a" stroke-width="2"/>
+        </svg>
+        <span>DV Cleaners</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18458567421">(845) 856-7421</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>80 Front St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <p>Dry Cleaning &amp; Alterations</p>
+        <p>Leather &amp; Gown Preservation</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for DV Cleaners.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

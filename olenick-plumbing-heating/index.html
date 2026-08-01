@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olenick Plumbing and Heating | Port Jervis, NY</title>
+<meta name="description" content="Family-owned plumbing and heating in Port Jervis, NY since 1983. Available 24 hours for plumbing and heating emergencies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-teal:#2f5a52;
+    --rust:#b5541f;
+    --cream:#f4f0e6;
+    --navy:#1f2f3f;
+    --brass:#c9a24a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--navy);font-family:'Source Sans 3',sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Teko',sans-serif;font-weight:600;line-height:1.05;letter-spacing:0.3px;text-transform:uppercase;color:var(--navy);}
+  .label{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;font-size:0.78rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--rust);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:3px solid var(--rust);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;color:var(--cream);}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;}
+  .brand-text{font-family:'Teko',sans-serif;font-size:1.6rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+  .brand-text span{color:var(--brass);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{color:#d3dbe0;font-family:'JetBrains Mono',monospace;text-transform:uppercase;font-size:0.76rem;letter-spacing:1.5px;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--rust);color:var(--cream);}
+  .call-btn{background:var(--rust);color:var(--cream);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.2px;font-size:0.76rem;font-weight:600;padding:12px 20px;border-radius:3px;white-space:nowrap;border:2px solid var(--rust);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--rust);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--cream);display:block;}
+
+  .hero{padding:80px 0 70px;}
+  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .eyebrow{display:inline-block;color:var(--forest-teal);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:2.5px;font-size:0.78rem;font-weight:600;margin-bottom:18px;}
+  .hero h1{font-size:4rem;margin-bottom:20px;}
+  .hero h1 span{color:var(--rust);}
+  .hero p.lede{font-size:1.12rem;max-width:50ch;color:#38424a;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;border-radius:3px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.2px;font-size:0.8rem;font-weight:600;border:2px solid var(--navy);transition:all .2s;}
+  .btn-primary{background:var(--rust);border-color:var(--rust);color:var(--cream);}
+  .btn-primary:hover{background:#8f4118;border-color:#8f4118;}
+  .btn-secondary{background:transparent;color:var(--navy);}
+  .btn-secondary:hover{background:var(--navy);color:var(--cream);}
+
+  .dial-frame{display:flex;justify-content:center;align-items:center;}
+  .dial{width:100%;max-width:320px;}
+
+  .trust-strip{background:var(--forest-teal);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:26px 20px;text-align:center;color:var(--cream);border-right:1px solid rgba(244,240,230,0.2);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Teko',sans-serif;font-size:2.1rem;font-weight:600;display:block;color:var(--cream);}
+  .chip .txt{font-family:'JetBrains Mono',monospace;text-transform:uppercase;font-size:0.68rem;letter-spacing:1.2px;color:#d3e5e0;}
+
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--rust);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.7rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{background:#fff;border:1px solid rgba(31,47,63,0.12);padding:30px 24px;border-radius:4px;border-left:4px solid var(--brass);}
+  .service-card h3{font-family:'Teko',sans-serif;font-size:1.5rem;margin-bottom:10px;}
+  .service-card p{font-size:0.95rem;color:#4a4a4a;}
+
+  .about{padding:90px 0;background:var(--navy);color:var(--cream);}
+  .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.6rem;margin-bottom:20px;color:var(--cream);}
+  .about p{margin-bottom:16px;max-width:52ch;color:#c9d3d9;font-size:1.02rem;}
+  .years-badge{background:var(--forest-teal);border-radius:6px;padding:34px;text-align:center;}
+  .years-badge .yr{font-family:'Teko',sans-serif;font-size:3.2rem;color:var(--brass);display:block;}
+  .years-badge .txt{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:2px;font-size:0.85rem;color:var(--cream);}
+
+  .cta-band{background:var(--rust);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.5rem;margin-bottom:16px;}
+  .cta-band p{color:#f7ddc9;margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{background:var(--navy);border-color:var(--navy);}
+  .cta-band .btn-primary:hover{background:#0f1a24;border-color:#0f1a24;}
+
+  footer{background:#152029;color:#a9b8c0;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(169,184,192,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Teko',sans-serif;font-size:1.5rem;color:var(--cream);text-transform:uppercase;}
+  .footer-col h4{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;font-size:0.76rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.9rem;color:#a9b8c0;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--brass);}
+  .footer-bottom{text-align:center;font-size:0.8rem;color:#6c7d87;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 12px);left:-24px;right:-24px;background:var(--navy);padding:20px 24px;gap:0;border-top:2px solid var(--rust);}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(244,240,230,0.1);}
+    .hero-inner{grid-template-columns:1fr;}
+    .dial-frame{order:-1;max-width:280px;margin:0 auto;}
+    .hero h1{font-size:3rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(244,240,230,0.2);border-bottom:1px solid rgba(244,240,230,0.2);}
+    .service-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:50px 0;}
+    .hero h1{font-size:2.3rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="22" cy="22" r="19" fill="none" stroke="#c9a24a" stroke-width="2"/>
+        <path d="M14 22 L20 16 L22 18 L16 24 Z" fill="none" stroke="#f4f0e6" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M22 22 L28 16 L30 18 L24 24 Z" fill="none" stroke="#b5541f" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">Olenick <span>P&amp;H</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18458568784" class="call-btn">(845) 856-8784</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">New Ball St &middot; Port Jervis, NY</span>
+      <h1>Family owned since <span>1983</span></h1>
+      <p class="lede">Olenick Plumbing and Heating has served Port Jervis and the surrounding Orange County area since 1983. Family owned and operated, and available 24 hours for plumbing and heating emergencies.</p>
+      <div class="cta-row">
+        <a href="tel:18458568784" class="btn btn-primary">Call (845) 856-8784</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
+      </div>
+    </div>
+    <div class="dial-frame">
+      <svg class="dial" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="24 hour emergency service dial">
+        <circle cx="130" cy="130" r="115" fill="var(--navy)" stroke="#c9a24a" stroke-width="3"/>
+        <circle cx="130" cy="130" r="98" fill="none" stroke="#2f5a52" stroke-width="1.5"/>
+        <g stroke="#f4f0e6" stroke-width="2">
+          <line x1="130" y1="32" x2="130" y2="44"/>
+          <line x1="130" y1="216" x2="130" y2="228"/>
+          <line x1="32" y1="130" x2="44" y2="130"/>
+          <line x1="216" y1="130" x2="228" y2="130"/>
+          <line x1="62" y1="62" x2="70" y2="70"/>
+          <line x1="190" y1="190" x2="198" y2="198"/>
+          <line x1="198" y1="62" x2="190" y2="70"/>
+          <line x1="70" y1="190" x2="62" y2="198"/>
+        </g>
+        <text x="130" y="145" text-anchor="middle" font-family="'Teko',sans-serif" font-weight="700" font-size="70" fill="#c9a24a">24</text>
+        <g transform="translate(130,130) rotate(35)">
+          <rect x="-4" y="-72" width="8" height="46" rx="2" fill="#b5541f"/>
+          <path d="M-9 -80 h18 v10 h-6 v6 h-6 v-6 h-6 z" fill="#b5541f"/>
+        </g>
+        <circle cx="130" cy="130" r="6" fill="#f4f0e6"/>
+        <text x="130" y="245" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="2" fill="#f4f0e6">HOUR EMERGENCY SERVICE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">1983</span><span class="txt">Family Owned Since</span></div>
+    <div class="chip"><span class="num">24/7</span><span class="txt">Emergency Service</span></div>
+    <div class="chip"><span class="num">Plumbing</span><span class="txt">&amp; Heating</span></div>
+    <div class="chip"><span class="num">Port Jervis</span><span class="txt">&amp; Surrounding Area</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What We Handle</span>
+      <h2>Plumbing &amp; Heating, Day or Night</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Plumbing</h3>
+        <p>Repairs and service for the plumbing issues that come up in any home or business.</p>
+      </div>
+      <div class="service-card">
+        <h3>Heating</h3>
+        <p>Keeping heating systems running through the Hudson Valley's coldest stretches.</p>
+      </div>
+      <div class="service-card">
+        <h3>24-Hour Emergencies</h3>
+        <p>A burst pipe or a dead furnace does not wait for business hours, and neither do we.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>Four decades of family service</h2>
+      <p>Olenick Plumbing and Heating has been family owned and operated in Port Jervis since 1983, serving homes and businesses throughout this stretch of the upper Delaware River area.</p>
+      <p>Around-the-clock availability means when a plumbing or heating emergency hits, there is always someone to call.</p>
+    </div>
+    <div class="years-badge">
+      <span class="yr">1983</span>
+      <span class="txt">Established</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Emergency? Call any time.</h2>
+    <p>211 New Ball St, Port Jervis. Available 24 hours for plumbing and heating emergencies.</p>
+    <a href="tel:18458568784" class="btn btn-primary">Call (845) 856-8784</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="22" r="19" fill="none" stroke="#c9a24a" stroke-width="2"/>
+          <path d="M14 22 L20 16 L22 18 L16 24 Z" fill="none" stroke="#a9b8c0" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        <span>Olenick Plumbing &amp; Heating</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18458568784">(845) 856-8784</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>211 New Ball St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Availability</h4>
+        <p>24 Hours for Emergencies</p>
+        <p>Family Owned Since 1983</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Olenick Plumbing and Heating.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

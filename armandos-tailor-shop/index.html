@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armando's Tailor Shop | Middletown, NY</title>
+<meta name="description" content="Custom sewing, alterations, and formal wear rentals in Middletown, NY. Family owned by Armando Collarelli since 1979.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Crimson+Text:wght@400;600&family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal-wool:#2b2b2e;
+    --brass:#a97d3d;
+    --cream:#f2ede0;
+    --burgundy:#6e2438;
+    --steel:#7a7f83;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal-wool);font-family:'Crimson Text',serif;line-height:1.7;}
+  h1,h2,h3{font-family:'Libre Caslon Display',serif;font-weight:400;line-height:1.2;color:var(--charcoal-wool);}
+  .label{font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:2px;font-weight:600;font-size:0.95rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--burgundy);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid rgba(43,43,46,0.18);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:40px;height:40px;flex-shrink:0;}
+  .brand-text{font-family:'Libre Caslon Display',serif;font-size:1.15rem;color:var(--charcoal-wool);}
+  .brand-text span{color:var(--burgundy);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{font-family:'EB Garamond',serif;font-variant:small-caps;font-size:1rem;letter-spacing:1.5px;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--brass);color:var(--brass);}
+  .call-btn{background:var(--burgundy);color:var(--cream);font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:1.5px;font-size:0.95rem;font-weight:600;padding:12px 22px;border-radius:2px;white-space:nowrap;border:2px solid var(--burgundy);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--burgundy);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--charcoal-wool);display:block;}
+
+  .hero{padding:90px 0;}
+  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .eyebrow{display:inline-block;color:var(--steel);font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:3px;font-size:1.05rem;font-weight:600;margin-bottom:20px;}
+  .hero h1{font-size:2.9rem;margin-bottom:22px;}
+  .hero h1 span{color:var(--burgundy);}
+  .hero p.lede{font-size:1.18rem;max-width:50ch;color:#3a3a3a;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;border-radius:2px;font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:1.5px;font-size:1rem;font-weight:600;border:2px solid var(--charcoal-wool);transition:all .2s;}
+  .btn-primary{background:var(--burgundy);border-color:var(--burgundy);color:var(--cream);}
+  .btn-primary:hover{background:#521b2b;border-color:#521b2b;}
+  .btn-secondary{background:transparent;color:var(--charcoal-wool);}
+  .btn-secondary:hover{background:var(--charcoal-wool);color:var(--cream);}
+
+  .chalk-frame{display:flex;justify-content:center;align-items:center;background:var(--charcoal-wool);border-radius:6px;padding:44px;}
+  .chalk-panel{width:100%;max-width:300px;}
+
+  .trust-strip{background:var(--charcoal-wool);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:28px 20px;text-align:center;color:var(--cream);border-right:1px solid rgba(242,237,224,0.15);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Libre Caslon Display',serif;font-size:1.5rem;display:block;color:var(--brass);}
+  .chip .txt{font-family:'EB Garamond',serif;font-variant:small-caps;font-size:0.92rem;letter-spacing:1.2px;color:#d8d5cc;}
+
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--burgundy);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.3rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{background:#fff;border:1px solid rgba(43,43,46,0.14);padding:32px 26px;border-radius:4px;}
+  .service-card h3{font-family:'Libre Caslon Display',serif;font-size:1.2rem;margin-bottom:12px;}
+  .service-card p{font-size:1rem;color:#4a4a4a;}
+
+  .about{padding:90px 0;background:#e6dfcb;}
+  .about-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.3rem;margin-bottom:20px;}
+  .about p{margin-bottom:16px;max-width:54ch;color:#3a3a3a;font-size:1.08rem;}
+  .est-badge{
+    background:#fff;border:2px solid var(--charcoal-wool);border-radius:6px;padding:34px;
+    text-align:center;
+  }
+  .est-badge .yr{font-family:'Libre Caslon Display',serif;font-size:3rem;color:var(--burgundy);display:block;}
+  .est-badge .txt{font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:2px;font-size:1rem;color:var(--charcoal-wool);}
+
+  .cta-band{background:var(--burgundy);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.2rem;margin-bottom:16px;}
+  .cta-band p{color:#f1dfe4;margin-bottom:30px;font-size:1.1rem;}
+  .cta-band .btn-primary{background:var(--charcoal-wool);border-color:var(--charcoal-wool);}
+  .cta-band .btn-primary:hover{background:#151517;border-color:#151517;}
+
+  footer{background:var(--charcoal-wool);color:#c7c4bc;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(199,196,188,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Libre Caslon Display',serif;font-size:1.05rem;color:var(--cream);}
+  .footer-col h4{font-family:'EB Garamond',serif;font-variant:small-caps;letter-spacing:1.5px;font-size:0.98rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.95rem;color:#c7c4bc;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--brass);}
+  .footer-bottom{text-align:center;font-size:0.85rem;color:#8a877e;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 16px);left:-24px;right:-24px;background:var(--cream);padding:20px 24px;gap:0;border-top:1px solid rgba(43,43,46,0.15);border-bottom:1px solid rgba(43,43,46,0.15);}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(43,43,46,0.08);}
+    .hero-inner{grid-template-columns:1fr;}
+    .chalk-frame{max-width:320px;margin:0 auto;}
+    .hero h1{font-size:2.2rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(242,237,224,0.15);border-bottom:1px solid rgba(242,237,224,0.15);}
+    .service-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:60px 0;}
+    .hero h1{font-size:1.9rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="#a97d3d" stroke-width="1.8"/>
+        <path d="M12 24 Q20 12 28 24" fill="none" stroke="#6e2438" stroke-width="1.6" stroke-dasharray="2 3"/>
+        <circle cx="20" cy="16" r="1.6" fill="#2b2b2e"/>
+      </svg>
+      <span class="brand-text">Armando's <span>Tailor Shop</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18453431766" class="call-btn">(845) 343-1766</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">N Street &middot; Middletown, NY</span>
+      <h1>Custom tailoring since <span>1979</span></h1>
+      <p class="lede">Armando's Tailor Shop has been fitting Middletown for over four decades. Custom sewing, alterations, and formal wear rentals through Formal Wear by Armando's, all under one roof.</p>
+      <div class="cta-row">
+        <a href="tel:18453431766" class="btn btn-primary">Call (845) 343-1766</a>
+        <a href="#services" class="btn btn-secondary">See Our Services</a>
+      </div>
+    </div>
+    <div class="chalk-frame">
+      <svg class="chalk-panel" viewBox="0 0 260 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tailor's chalk pattern marking lines on fabric">
+        <rect x="20" y="20" width="220" height="200" rx="4" fill="#f2ede0" opacity="0.06"/>
+        <rect x="20" y="20" width="220" height="200" rx="4" fill="none" stroke="#a97d3d" stroke-width="1.5"/>
+        <path d="M40 60 L130 40 L220 60" fill="none" stroke="#f2ede0" stroke-width="1.4" stroke-dasharray="3 5"/>
+        <path d="M40 110 Q130 90 220 110" fill="none" stroke="#f2ede0" stroke-width="1.4" stroke-dasharray="3 5"/>
+        <path d="M60 160 L130 145 L200 160" fill="none" stroke="#f2ede0" stroke-width="1.4" stroke-dasharray="3 5"/>
+        <path d="M130 40 L130 190" fill="none" stroke="#6e2438" stroke-width="1.4" stroke-dasharray="2 4"/>
+        <circle cx="40" cy="60" r="2.4" fill="#f2ede0"/>
+        <circle cx="220" cy="60" r="2.4" fill="#f2ede0"/>
+        <circle cx="60" cy="160" r="2.4" fill="#f2ede0"/>
+        <circle cx="200" cy="160" r="2.4" fill="#f2ede0"/>
+        <text x="130" y="205" text-anchor="middle" font-family="'EB Garamond',serif" font-size="13" letter-spacing="2" fill="#a97d3d">PATTERN &middot; MARKED BY HAND</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">1979</span><span class="txt">Est. by Armando Collarelli</span></div>
+    <div class="chip"><span class="num">45+</span><span class="txt">Years in Middletown</span></div>
+    <div class="chip"><span class="num">Custom</span><span class="txt">Sewing &amp; Alterations</span></div>
+    <div class="chip"><span class="num">Formal</span><span class="txt">Wear Rentals</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">The Work</span>
+      <h2>Made to fit, made to last</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Custom Sewing</h3>
+        <p>Garments built from the ground up to your exact measurements and preferences.</p>
+      </div>
+      <div class="service-card">
+        <h3>Alterations</h3>
+        <p>Hems, resizing, and repairs handled with the same care as a full custom piece.</p>
+      </div>
+      <div class="service-card">
+        <h3>Formal Wear Rentals</h3>
+        <p>Formal Wear by Armando's outfits weddings, proms, and every occasion in between.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>A Middletown tailor since 1979</h2>
+      <p>Armando Collarelli opened his tailor shop on N Street in 1979, and it has served Middletown ever since. What began as a custom sewing and alterations shop grew to include Formal Wear by Armando's for weddings and formal occasions.</p>
+      <p>Every piece that leaves the shop still gets the same hands-on attention it did on day one.</p>
+    </div>
+    <div class="est-badge">
+      <span class="yr">1979</span>
+      <span class="txt">Established</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Call to schedule a fitting</h2>
+    <p>22 N St, Middletown. Speak directly with the shop about your alteration or rental.</p>
+    <a href="tel:18453431766" class="btn btn-primary">Call (845) 343-1766</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#a97d3d" stroke-width="1.8"/>
+          <path d="M12 24 Q20 12 28 24" fill="none" stroke="#c7c4bc" stroke-width="1.6" stroke-dasharray="2 3"/>
+        </svg>
+        <span>Armando's Tailor Shop</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18453431766">(845) 343-1766</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>22 N St</p>
+        <p>Middletown, NY 10940</p>
+      </div>
+      <div class="footer-col">
+        <h4>Since</h4>
+        <p>Founded by Armando Collarelli, 1979</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Armando's Tailor Shop.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

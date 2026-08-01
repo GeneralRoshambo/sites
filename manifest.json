@@ -124,5 +124,194 @@
     "location": "Erie, PA",
     "category": "Pet Grooming",
     "region": "Erie"
+  },
+  {
+    "slug": "bake-your-day-bakery",
+    "name": "Bake Your Day Bakery",
+    "location": "Erie, PA",
+    "category": "Bakery",
+    "region": "Erie"
+  },
+  {
+    "slug": "redus-auto-repair",
+    "name": "Redus Auto Repair",
+    "location": "Erie, PA",
+    "category": "Auto Repair",
+    "region": "Erie"
+  },
+  {
+    "slug": "roxies-nail-salon",
+    "name": "Roxie's Nail Salon",
+    "location": "Erie, PA",
+    "category": "Nail Salon",
+    "region": "Erie"
+  },
+  {
+    "slug": "bayfront-tattoo-lounge",
+    "name": "Bayfront Tattoo Lounge",
+    "location": "Erie, PA",
+    "category": "Tattoo & Piercing",
+    "region": "Erie"
+  },
+  {
+    "slug": "affordable-plumbing-co",
+    "name": "Affordable Plumbing Co.",
+    "location": "Erie, PA",
+    "category": "Plumbing Contractor",
+    "region": "Erie"
+  },
+  {
+    "slug": "the-freezerie",
+    "name": "The Freezerie",
+    "location": "Erie, PA",
+    "category": "Ice Cream Shop",
+    "region": "Erie"
+  },
+  {
+    "slug": "dorine-reeces-dry-cleaning",
+    "name": "Dorine & Reece's Dry Cleaning",
+    "location": "Erie, PA",
+    "category": "Dry Cleaning & Tailoring",
+    "region": "Erie"
+  },
+  {
+    "slug": "walker-house-antiques",
+    "name": "Walker House Antiques",
+    "location": "Erie, PA",
+    "category": "Antiques Shop",
+    "region": "Erie"
+  },
+  {
+    "slug": "lindquist-jewelers",
+    "name": "Lindquist Jewelers",
+    "location": "Erie, PA",
+    "category": "Jewelry Store",
+    "region": "Erie"
+  },
+  {
+    "slug": "chrissies-deli",
+    "name": "Chrissie's Deli",
+    "location": "Matamoras, PA",
+    "category": "Deli & Sandwich Shop",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "greening-landscape-design",
+    "name": "Greening Landscape & Design",
+    "location": "Milford, PA",
+    "category": "Landscaping",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "tri-state-tree-landscaping",
+    "name": "Tri-State Tree & Landscaping",
+    "location": "Milford, PA",
+    "category": "Tree Service",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "top-notch-electric",
+    "name": "Top Notch Electric",
+    "location": "Dingmans Ferry, PA",
+    "category": "Electrician",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "north-country-antiques",
+    "name": "North Country Antiques",
+    "location": "Dingmans Ferry, PA",
+    "category": "Antiques & Furniture",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "pawesome-pooch-pet-salon",
+    "name": "Pawesome Pooch Pet Salon",
+    "location": "Dingmans Ferry, PA",
+    "category": "Mobile Pet Grooming",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "legacy-salon-milford",
+    "name": "Legacy Salon",
+    "location": "Milford, PA",
+    "category": "Hair & Nail Salon",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "pike-pressure-washing",
+    "name": "Pike Pressure Washing",
+    "location": "Milford, PA",
+    "category": "Pressure Washing",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "wise-guys-barber-shop",
+    "name": "Wise Guys Barber Shop",
+    "location": "Milford, PA",
+    "category": "Barber Shop",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "paul-schochs-auto-repair",
+    "name": "Paul Schoch's Auto Repair",
+    "location": "Port Jervis, NY",
+    "category": "Auto Repair",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "tristate-barbershop",
+    "name": "TriState BarberShop",
+    "location": "Port Jervis, NY",
+    "category": "Barber Shop",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "raksmey-nails",
+    "name": "Raksmey Nails",
+    "location": "Port Jervis, NY",
+    "category": "Nail Salon",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "len-and-jos-restaurant",
+    "name": "Len & Jo's Restaurant",
+    "location": "Port Jervis, NY",
+    "category": "Pizza Restaurant",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "broome-street-bargains",
+    "name": "Broome Street Bargains",
+    "location": "Port Jervis, NY",
+    "category": "Thrift Store",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "dv-cleaners",
+    "name": "DV Cleaners",
+    "location": "Port Jervis, NY",
+    "category": "Dry Cleaning & Tailoring",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "armandos-tailor-shop",
+    "name": "Armando's Tailor Shop",
+    "location": "Middletown, NY",
+    "category": "Tailor",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "rosies-italian",
+    "name": "Rosie's Italian",
+    "location": "Port Jervis, NY",
+    "category": "Italian Specialty Food",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "olenick-plumbing-heating",
+    "name": "Olenick Plumbing and Heating",
+    "location": "Port Jervis, NY",
+    "category": "Plumbing & Heating",
+    "region": "HudsonValley"
   }
 ]

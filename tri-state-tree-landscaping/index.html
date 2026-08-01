@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tri-State Tree & Landscaping | Milford, PA</title>
+<meta name="description" content="Tri-State Tree & Landscaping, 4.8-star rated tree care in Milford, PA. Pruning, trimming, removal, lot clearing, and spring cleanup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bark:#4a3728;
+    --pine-green:#2f4a3a;
+    --birch:#e8ddc7;
+    --amber:#c98a3d;
+    --sky-pale:#dce8e4;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--birch);
+    color:var(--bark);
+    font-family:'Karla',sans-serif;
+    line-height:1.65;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Crimson Pro',serif;font-weight:600;line-height:1.18;color:var(--pine-green);}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(232,221,199,0.96);
+    backdrop-filter:blur(4px);
+    border-bottom:1px solid #d3c4a4;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1180px;margin:0 auto;padding:16px 28px;gap:20px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;}
+  .brand-name{font-family:'Crimson Pro',serif;font-weight:700;font-size:1.32rem;color:var(--pine-green);}
+  nav ul{list-style:none;display:flex;gap:30px;}
+  nav a{font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--bark);}
+  nav a:hover{color:var(--amber);}
+  .header-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:3px;
+    font-family:'Karla',sans-serif;font-weight:700;font-size:0.92rem;
+    cursor:pointer;transition:all 0.2s ease;
+  }
+  .btn-primary{background:var(--pine-green);color:var(--birch);}
+  .btn-primary:hover{background:#243d2f;}
+  .btn-secondary{background:transparent;color:var(--pine-green);border:1.5px solid var(--pine-green);}
+  .btn-secondary:hover{background:var(--pine-green);color:var(--birch);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{width:26px;height:3px;background:var(--pine-green);border-radius:2px;}
+
+  /* Hero single column */
+  .hero{padding:90px 0 70px;border-bottom:1px solid #d3c4a4;position:relative;overflow:hidden;}
+  .hero .wrap{max-width:800px;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-block;font-family:'JetBrains Mono',monospace;
+    color:var(--amber);font-size:0.85rem;letter-spacing:0.03em;margin-bottom:22px;
+  }
+  .hero h1{font-size:3.3rem;margin-bottom:22px;}
+  .hero p.lede{font-size:1.18rem;color:#5a4c3c;max-width:600px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .ring-badge{
+    position:absolute;
+    right:-60px;top:50%;transform:translateY(-50%);
+    width:340px;height:340px;
+    opacity:0.9;
+    z-index:1;
+  }
+
+  /* Trust strip */
+  .trust-strip{background:var(--pine-green);color:var(--birch);padding:30px 0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .chip{text-align:center;}
+  .chip .num{font-family:'Crimson Pro',serif;font-weight:700;font-size:1.6rem;display:block;color:#e9dfc4;}
+  .chip .txt{font-family:'JetBrains Mono',monospace;font-size:0.78rem;margin-top:4px;opacity:0.9;}
+
+  /* Services */
+  .services{padding:100px 0;border-bottom:1px solid #d3c4a4;}
+  .services-head{max-width:620px;margin-bottom:54px;}
+  .services-head h2{font-size:2.3rem;margin-bottom:16px;}
+  .services-head p{color:#5a4c3c;font-size:1.05rem;}
+  .service-list{display:flex;flex-direction:column;}
+  .service-row{
+    display:grid;grid-template-columns:100px 1fr;gap:28px;
+    padding:28px 0;border-bottom:1px solid #d3c4a4;align-items:start;
+  }
+  .service-row:first-child{border-top:1px solid #d3c4a4;}
+  .service-badge{
+    width:70px;height:70px;
+  }
+  .service-row h3{font-size:1.4rem;margin-bottom:8px;color:var(--pine-green);}
+  .service-row p{color:#5a4c3c;font-size:1rem;max-width:560px;}
+
+  /* About with ring badge repeated small */
+  .about{padding:100px 0;border-bottom:1px solid #d3c4a4;background:var(--sky-pale);}
+  .about .wrap{display:flex;gap:60px;align-items:center;}
+  .about-copy{flex:1.2;}
+  .about-copy h2{font-size:2.2rem;margin-bottom:20px;}
+  .about-copy p{color:#3c4a44;font-size:1.06rem;margin-bottom:14px;}
+  .about-visual{flex:0.8;display:flex;justify-content:center;}
+
+  /* CTA band */
+  .cta-band{background:var(--bark);color:var(--birch);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--birch);font-size:2.1rem;margin-bottom:14px;}
+  .cta-band p{margin-bottom:28px;font-size:1.1rem;opacity:0.9;}
+  .cta-band .btn-primary{background:var(--amber);color:var(--bark);}
+  .cta-band .btn-primary:hover{background:#b3792f;}
+
+  footer{background:var(--pine-green);color:#cfe0d6;padding:54px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;margin-bottom:36px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand span{font-family:'Crimson Pro',serif;font-weight:700;font-size:1.2rem;color:var(--birch);}
+  .footer-links{display:flex;gap:44px;flex-wrap:wrap;}
+  .footer-col h4{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;margin-bottom:12px;color:var(--amber);text-transform:uppercase;}
+  .footer-col a, .footer-col p{display:block;font-size:0.92rem;margin-bottom:8px;color:#b8cdbf;}
+  .footer-bottom{border-top:1px solid #3d5847;padding-top:20px;font-size:0.85rem;color:#8fab98;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:1150px){
+    nav{display:none;}
+    .hamburger{display:flex;}
+    nav.open{
+      display:flex;position:absolute;top:100%;left:0;right:0;
+      background:var(--birch);border-bottom:1px solid #d3c4a4;
+      flex-direction:column;padding:10px 28px 20px;
+    }
+    nav.open ul{flex-direction:column;width:100%;}
+    nav.open ul li{border-bottom:1px solid #d3c4a4;}
+    nav.open ul li a{display:block;padding:14px 0;}
+  }
+  @media (max-width:900px){
+    .ring-badge{display:none;}
+    .about .wrap{flex-direction:column;}
+    .about-visual{order:-1;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .service-row{grid-template-columns:60px 1fr;gap:18px;}
+  }
+  @media (max-width:560px){
+    .hero h1{font-size:2.3rem;}
+    .header-actions .btn-primary .btn-label{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="20" fill="none" stroke="#2f4a3a" stroke-width="2"/>
+        <circle cx="22" cy="22" r="14" fill="none" stroke="#2f4a3a" stroke-width="1.4"/>
+        <circle cx="22" cy="22" r="8" fill="none" stroke="#2f4a3a" stroke-width="1.4"/>
+        <circle cx="22" cy="22" r="2.5" fill="#c98a3d"/>
+      </svg>
+      <span class="brand-name">Tri-State Tree &amp; Landscaping</span>
+    </a>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="https://facebook.com/TriStateTreeLandscaping" target="_blank" rel="noopener"><span class="btn-label">Message Us on</span> Facebook</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow mono">// 4.8-star tree care, Milford PA</span>
+    <h1>Tree work done right, from the crown to the stump.</h1>
+    <p class="lede">Tri-State Tree &amp; Landscaping handles pruning, trimming, removal, lot clearing, and spring cleanup around Milford. Rated 4.8 stars by the neighbors who've had us up in their trees.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://facebook.com/TriStateTreeLandscaping" target="_blank" rel="noopener">Message Us on Facebook</a>
+      <a class="btn btn-secondary" href="#services">Our Services</a>
+    </div>
+  </div>
+  <svg class="ring-badge" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="95" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.5"/>
+    <circle cx="100" cy="100" r="48" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.55"/>
+    <circle cx="100" cy="100" r="32" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.6"/>
+    <circle cx="100" cy="100" r="16" fill="none" stroke="#4a3728" stroke-width="1" opacity="0.7"/>
+    <circle cx="100" cy="100" r="4" fill="#c98a3d"/>
+  </svg>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">4.8 &#9733;</span><span class="txt">Star Rated</span></div>
+    <div class="chip"><span class="num">Milford</span><span class="txt">Local Coverage</span></div>
+    <div class="chip"><span class="num">Full Crew</span><span class="txt">Pruning to Removal</span></div>
+    <div class="chip"><span class="num">Spring</span><span class="txt">Cleanup Ready</span></div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <h2>What we handle, from single limbs to full lots.</h2>
+      <p>Whether it's one problem tree or a whole overgrown lot, Tri-State brings the equipment and the experience to get it done safely.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <svg class="service-badge" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="none" stroke="#2f4a3a" stroke-width="1.6"/><circle cx="35" cy="35" r="22" fill="none" stroke="#2f4a3a" stroke-width="1.4" opacity="0.7"/><circle cx="35" cy="35" r="12" fill="none" stroke="#2f4a3a" stroke-width="1.2" opacity="0.6"/><circle cx="35" cy="35" r="3" fill="#c98a3d"/></svg>
+        <div><h3>Pruning &amp; Trimming</h3><p>Routine crown care that keeps trees healthy, shaped, and safe near your home or driveway.</p></div>
+      </div>
+      <div class="service-row">
+        <svg class="service-badge" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="none" stroke="#2f4a3a" stroke-width="1.6"/><circle cx="35" cy="35" r="22" fill="none" stroke="#2f4a3a" stroke-width="1.4" opacity="0.7"/><circle cx="35" cy="35" r="12" fill="none" stroke="#2f4a3a" stroke-width="1.2" opacity="0.6"/><circle cx="35" cy="35" r="3" fill="#c98a3d"/></svg>
+        <div><h3>Tree Removal</h3><p>Full removal for hazardous, dead, or unwanted trees, handled cleanly and completely.</p></div>
+      </div>
+      <div class="service-row">
+        <svg class="service-badge" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="none" stroke="#2f4a3a" stroke-width="1.6"/><circle cx="35" cy="35" r="22" fill="none" stroke="#2f4a3a" stroke-width="1.4" opacity="0.7"/><circle cx="35" cy="35" r="12" fill="none" stroke="#2f4a3a" stroke-width="1.2" opacity="0.6"/><circle cx="35" cy="35" r="3" fill="#c98a3d"/></svg>
+        <div><h3>Lot Clearing</h3><p>Clearing overgrown or wooded lots to make way for building, planting, or open space.</p></div>
+      </div>
+      <div class="service-row">
+        <svg class="service-badge" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="none" stroke="#2f4a3a" stroke-width="1.6"/><circle cx="35" cy="35" r="22" fill="none" stroke="#2f4a3a" stroke-width="1.4" opacity="0.7"/><circle cx="35" cy="35" r="12" fill="none" stroke="#2f4a3a" stroke-width="1.2" opacity="0.6"/><circle cx="35" cy="35" r="3" fill="#c98a3d"/></svg>
+        <div><h3>Spring Cleanup</h3><p>Post-winter cleanup that clears storm damage and gets your property ready for the season.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-copy">
+      <h2>Rooted in Milford, rated by the people who live here.</h2>
+      <p>Tri-State Tree &amp; Landscaping works out of Route 6/209 in Milford, serving the Upper Delaware River area with tree pruning, removal, and lot clearing. A 4.8-star rating comes from doing careful, safe work on properties across the area.</p>
+      <p>Every job, whether it's a single limb or an entire lot, gets treated with the same attention to detail.</p>
+    </div>
+    <div class="about-visual">
+      <svg width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="130" cy="130" r="122" fill="none" stroke="#2f4a3a" stroke-width="1.5" opacity="0.45"/>
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#2f4a3a" stroke-width="1.5" opacity="0.5"/>
+        <circle cx="130" cy="130" r="78" fill="none" stroke="#2f4a3a" stroke-width="1.5" opacity="0.55"/>
+        <circle cx="130" cy="130" r="56" fill="none" stroke="#2f4a3a" stroke-width="1.5" opacity="0.65"/>
+        <circle cx="130" cy="130" r="34" fill="none" stroke="#2f4a3a" stroke-width="1.5" opacity="0.75"/>
+        <circle cx="130" cy="130" r="12" fill="none" stroke="#2f4a3a" stroke-width="1.5"/>
+        <circle cx="130" cy="130" r="4" fill="#c98a3d"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Got a tree that needs attention?</h2>
+    <p>Reach out on Facebook to get on the schedule around Milford and the surrounding area.</p>
+    <a class="btn btn-primary" href="https://facebook.com/TriStateTreeLandscaping" target="_blank" rel="noopener">Message Us on Facebook</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <circle cx="22" cy="22" r="20" fill="none" stroke="#e8ddc7" stroke-width="2"/>
+          <circle cx="22" cy="22" r="14" fill="none" stroke="#e8ddc7" stroke-width="1.4"/>
+          <circle cx="22" cy="22" r="8" fill="none" stroke="#e8ddc7" stroke-width="1.4"/>
+          <circle cx="22" cy="22" r="2.5" fill="#c98a3d"/>
+        </svg>
+        <span>Tri-State Tree &amp; Landscaping</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="https://facebook.com/TriStateTreeLandscaping" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <div class="footer-col">
+          <h4>Location</h4>
+          <p>104 Route North (US-6/209)</p>
+          <p>Milford, PA 18337</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Tri-State Tree &amp; Landscaping.</span>
+      <span>Site by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hbtn = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('siteNav');
+  hbtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    hbtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    hbtn.setAttribute('aria-expanded','false');
+  }));
+</script>
+</body>
+</html>

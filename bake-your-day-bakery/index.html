@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bake Your Day Bakery | Erie, PA</title>
+<meta name="description" content="Family-owned bakery inside the Greene Township municipal building in Erie, PA. Cakes, cupcakes, cookies, pies, Bobcat brownies and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;700&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf3e6;
+    --cocoa:#4a2f22;
+    --amber:#d98f2b;
+    --berry:#a83246;
+    --paper:#fffaf1;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--cream);
+    color:var(--cocoa);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Domine',serif;line-height:1.15;}
+  .label{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--berry);outline-offset:3px;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:2px solid var(--cocoa);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .brand-mark{
+    width:42px;height:42px;flex-shrink:0;
+    background:var(--berry);
+    border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:24px;height:24px;}
+  .brand-name{font-family:'Domine',serif;font-weight:700;font-size:1.15rem;color:var(--cocoa);}
+  nav{display:flex;align-items:center;gap:32px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{font-weight:500;font-size:.95rem;padding:4px 2px;border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-bottom:2px solid var(--amber);}
+  .header-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:8px;
+    font-weight:700;font-size:.95rem;
+    border:2px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--berry);color:var(--paper);}
+  .btn-primary:hover{background:#8f2a3c;}
+  .btn-outline{background:transparent;border:2px solid var(--cocoa);color:var(--cocoa);}
+  .btn-outline:hover{background:var(--cocoa);color:var(--paper);}
+  .call-btn{background:var(--cocoa);color:var(--paper);white-space:nowrap;}
+  .call-btn:hover{background:#331f16;}
+
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--cocoa);margin:5px 0;border-radius:2px;}
+
+  /* HERO */
+  .hero{padding:72px 0 56px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;background:var(--amber);color:var(--cocoa);
+    padding:6px 14px;border-radius:999px;margin-bottom:20px;font-weight:700;
+  }
+  .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);margin-bottom:20px;}
+  .hero .lede{font-size:1.15rem;max-width:52ch;margin-bottom:32px;color:#5c4230;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-visual{
+    background:var(--paper);
+    border:2px solid var(--cocoa);
+    border-radius:18px;
+    padding:32px;
+    position:relative;
+  }
+  .brownie-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;
+  }
+  .brownie-sq{
+    aspect-ratio:1;border-radius:10px;
+  }
+  .brownie-sq:nth-child(1){background:var(--berry);}
+  .brownie-sq:nth-child(2){background:var(--amber);}
+  .brownie-sq:nth-child(3){background:var(--cocoa);}
+  .brownie-sq:nth-child(4){background:var(--cocoa);}
+  .brownie-sq:nth-child(5){background:var(--berry);}
+  .brownie-sq:nth-child(6){background:var(--amber);}
+  .hero-visual-caption{font-family:'Space Mono',monospace;font-size:.8rem;color:#7a5c46;text-align:center;}
+
+  /* TRUST STRIP */
+  .trust-strip{background:var(--cocoa);color:var(--paper);padding:28px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .trust-chip{text-align:center;}
+  .trust-chip .num{font-family:'Domine',serif;font-size:1.6rem;font-weight:700;color:var(--amber);}
+  .trust-chip .desc{font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;color:#e8d9c8;}
+
+  /* SECTIONS */
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .section-head .label{color:var(--berry);display:block;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
+
+  .menu-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .menu-list{list-style:none;}
+  .menu-list li{
+    padding:18px 0;border-bottom:1px solid #e0cba9;
+    display:flex;justify-content:space-between;gap:16px;
+  }
+  .menu-list li strong{font-family:'Domine',serif;font-size:1.05rem;}
+  .menu-list li span{color:#6f5340;font-size:.92rem;}
+
+  .signature-panel{
+    background:var(--paper);border:2px solid var(--cocoa);border-radius:18px;padding:36px;
+  }
+  .signature-panel h3{font-size:1.3rem;margin-bottom:8px;}
+  .signature-panel p{color:#5c4230;margin-bottom:24px;}
+  .sig-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;
+    max-width:300px;margin:0 auto;
+  }
+  .sig-grid div{aspect-ratio:1;border-radius:8px;}
+  .sig-grid div:nth-child(1){background:var(--amber);}
+  .sig-grid div:nth-child(2){background:var(--berry);}
+  .sig-grid div:nth-child(3){background:var(--cocoa);}
+  .sig-grid div:nth-child(4){background:var(--cocoa);}
+  .sig-grid div:nth-child(5){background:var(--berry);}
+  .sig-grid div:nth-child(6){background:var(--amber);}
+  .sig-label{text-align:center;margin-top:16px;color:#7a5c46;}
+
+  /* ABOUT */
+  .about{background:var(--paper);border-top:2px solid var(--cocoa);border-bottom:2px solid var(--cocoa);}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+  .about h2{font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:18px;}
+  .about p{color:#5c4230;margin-bottom:16px;max-width:56ch;}
+  .about-stat{
+    background:var(--cream);border:2px solid var(--cocoa);border-radius:16px;padding:32px;text-align:center;
+  }
+  .about-stat .big{font-family:'Domine',serif;font-size:2.4rem;color:var(--berry);font-weight:700;}
+  .about-stat .small{font-family:'Space Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;}
+
+  /* CTA BAND */
+  .cta-band{background:var(--berry);color:var(--paper);text-align:center;padding:64px 24px;}
+  .cta-band h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:14px;}
+  .cta-band p{max-width:52ch;margin:0 auto 30px;color:#f5dfe3;}
+  .cta-band .btn-primary{background:var(--paper);color:var(--berry);}
+  .cta-band .btn-primary:hover{background:#f5e9d6;}
+  .cta-band .btn-outline{border-color:var(--paper);color:var(--paper);}
+  .cta-band .btn-outline:hover{background:var(--paper);color:var(--berry);}
+
+  /* FOOTER */
+  footer{background:var(--cocoa);color:var(--paper);padding:48px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .footer-brand .brand-mark{background:var(--amber);}
+  footer h4{font-family:'Space Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;color:var(--amber);}
+  footer a, footer p{color:#e8d9c8;font-size:.92rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid #6b4d38;padding-top:20px;font-size:.82rem;color:#c9ab8e;text-align:center;}
+
+  @media (max-width:1150px){
+    .nav-links, .header-actions .btn-outline{display:none;}
+    .hamburger{display:block;}
+    nav.open .nav-links{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:2px solid var(--cocoa);padding:20px 24px;gap:18px;
+    }
+    nav{position:static;}
+  }
+  @media (max-width:900px){
+    .hero-grid, .menu-layout, .about-grid, .footer-grid{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 10h16l-1.5 9a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 10z" fill="#fffaf1"/><path d="M6 10a6 6 0 0 1 12 0" stroke="#fffaf1" stroke-width="2"/></svg>
+      </span>
+      <span class="brand-name">Bake Your Day Bakery</span>
+    </div>
+    <nav id="siteNav">
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://facebook.com/bakeyourdayerie" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn call-btn" href="tel:18145728401">Call (814) 572-8401</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Family-Owned in Greene Township</span>
+      <h1>Fresh baked, made to order, straight from Shawn's kitchen.</h1>
+      <p class="lede">Bake Your Day Bakery is a family-owned bakery tucked inside the Greene Township municipal building, turning out cakes, cupcakes, cookies, danishes, muffins, turnovers, brownies and made-to-order pies every week.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:18145728401">Call to Order</a>
+        <a class="btn btn-outline" href="#menu">See the Menu</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="brownie-grid" aria-hidden="true">
+        <div class="brownie-sq"></div><div class="brownie-sq"></div><div class="brownie-sq"></div>
+        <div class="brownie-sq"></div><div class="brownie-sq"></div><div class="brownie-sq"></div>
+      </div>
+      <p class="hero-visual-caption">Bobcat Brownies &mdash; cut into 6&quot; squares, triple-layer buckeye style</p>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-grid">
+    <div class="trust-chip"><div class="num">Family</div><div class="desc">Owned &amp; Operated</div></div>
+    <div class="trust-chip"><div class="num">12+</div><div class="desc">Indoor Seats</div></div>
+    <div class="trust-chip"><div class="num">Outdoor</div><div class="desc">Tables Available</div></div>
+    <div class="trust-chip"><div class="num">Made</div><div class="desc">To Order Pies</div></div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What We Bake</span>
+      <h2>Local favorites, baked fresh</h2>
+    </div>
+    <div class="menu-layout">
+      <ul class="menu-list">
+        <li><strong>Jo's Brooklyn Bagels</strong><span>Local favorite</span></li>
+        <li><strong>Bobcat Brownies</strong><span>Triple-layer buckeye, 6&quot; squares</span></li>
+        <li><strong>Pepperoni Rolls</strong><span>Local favorite</span></li>
+        <li><strong>Cakes &amp; Cupcakes</strong><span>Custom &amp; everyday</span></li>
+        <li><strong>Cookies, Danishes &amp; Muffins</strong><span>Fresh daily</span></li>
+        <li><strong>Made-to-Order Pies</strong><span>Just ask</span></li>
+      </ul>
+      <div class="signature-panel">
+        <h3>The Bobcat Brownie</h3>
+        <p>Our best-selling treat: a triple-layer buckeye brownie cut into full 6-inch squares. Rich, dense, and built to share (if you want to).</p>
+        <div class="sig-grid" aria-hidden="true">
+          <div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <p class="sig-label label">6&quot; Squares &middot; Triple Layer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-stat">
+      <div class="big">Est.</div>
+      <div class="small">Family Recipe Roots</div>
+    </div>
+    <div>
+      <h2>Run by Shawn Matson, baked with the neighborhood in mind</h2>
+      <p>Bake Your Day Bakery is a true family-owned shop, run day to day by owner Shawn Matson. It's a stop-in kind of place, set inside the Greene Township municipal building with room to sit down for twelve, plus a few outdoor tables when the weather is right.</p>
+      <p>Everything from the pepperoni rolls to the made-to-order pies is baked in-house, the way a neighborhood bakery should be.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="visit">
+  <div class="wrap">
+    <h2>Come hungry. Leave with a box.</h2>
+    <p>Stop by Tate Rd for something fresh, or call ahead to order a cake, pie, or a tray of Bobcat Brownies.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="tel:18145728401">Call (814) 572-8401</a>
+      <a class="btn btn-outline" href="https://facebook.com/bakeyourdayerie" target="_blank" rel="noopener">Find Us on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 10h16l-1.5 9a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 10z" fill="#4a2f22"/><path d="M6 10a6 6 0 0 1 12 0" stroke="#4a2f22" stroke-width="2"/></svg>
+          </span>
+          <span class="brand-name" style="color:var(--paper);">Bake Your Day Bakery</span>
+        </div>
+        <p>Family-owned bakery serving Erie, PA with cakes, pies, brownies and more.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:18145728401">(814) 572-8401</a></li>
+          <li><a href="https://facebook.com/bakeyourdayerie" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>9333 Tate Rd<br>Greene Township Municipal Building<br>Erie, PA 16509</p>
+      </div>
+    </div>
+    <div class="footer-bottom">Site by Modularity Networks &middot; Bake Your Day Bakery, Erie PA</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var nav = document.getElementById('siteNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

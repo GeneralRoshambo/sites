@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Freezerie | Erie, PA</title>
+<meta name="description" content="Father-and-son homemade ice cream stand in Erie, PA since 2012. Scratch-made flavors plus a full non-dairy and vegan lineup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:#8ecbb0;
+    --cherry:#d94f4f;
+    --cream:#fff8ee;
+    --choc:#4a3226;
+    --sky:#7fb8d9;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Quicksand',sans-serif;background:var(--cream);color:var(--choc);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;line-height:1.15;}
+  .mono{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.07em;font-size:.75rem;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--cherry);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:3px solid var(--choc);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;white-space:nowrap;flex-shrink:0;}
+  .brand-mark{width:44px;height:44px;flex-shrink:0;background:var(--sky);border-radius:50% 50% 50% 8px;display:flex;align-items:center;justify-content:center;}
+  .brand-mark svg{width:24px;height:24px;}
+  .brand-name{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:1.2rem;}
+  nav{display:flex;align-items:center;gap:32px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{font-weight:600;font-size:.95rem;padding:4px 2px;border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-bottom:2px solid var(--mint);}
+  .header-actions{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:.92rem;border:2px solid transparent;cursor:pointer;}
+  .btn-primary{background:var(--cherry);color:#fff;}
+  .btn-primary:hover{background:#bd3f3f;}
+  .btn-outline{background:transparent;border:2px solid var(--choc);color:var(--choc);}
+  .btn-outline:hover{background:var(--choc);color:var(--cream);}
+  .call-btn{background:var(--choc);color:var(--cream);white-space:nowrap;}
+  .call-btn:hover{background:#33221a;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--choc);margin:5px 0;border-radius:2px;}
+
+  .hero{padding:76px 0 56px;text-align:center;}
+  .hero-inner{max-width:780px;margin:0 auto;}
+  .eyebrow{display:inline-block;background:var(--mint);color:var(--choc);padding:6px 16px;border-radius:999px;margin-bottom:20px;font-weight:700;}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);margin-bottom:20px;}
+  .hero .lede{font-size:1.15rem;max-width:56ch;margin:0 auto 32px;color:#6b5142;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+
+  .trust-strip{background:var(--choc);color:var(--cream);padding:28px 0;}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .trust-chip{text-align:center;}
+  .trust-chip .num{font-family:'Baloo 2',sans-serif;font-size:1.5rem;font-weight:700;color:var(--sky);}
+  .trust-chip .desc{font-family:'DM Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;color:#e8dccb;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .section-head .mono{color:var(--cherry);display:block;margin-bottom:10px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem);}
+
+  .scoop-stack{display:flex;justify-content:center;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:0;}
+  .scoop{
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    margin-left:-24px;position:relative;color:#fff;font-family:'Baloo 2',sans-serif;font-weight:700;
+    text-align:center;padding:10px;border:3px solid var(--cream);
+  }
+  .scoop:first-child{margin-left:0;}
+  .scoop span{font-size:.72rem;line-height:1.15;}
+  .scoop-1{width:150px;height:150px;background:var(--sky);z-index:5;}
+  .scoop-2{width:150px;height:150px;background:var(--cherry);z-index:4;}
+  .scoop-3{width:150px;height:150px;background:var(--mint);z-index:3;color:var(--choc);}
+  .scoop-4{width:150px;height:150px;background:var(--choc);z-index:2;}
+  .scoop-5{width:150px;height:150px;background:var(--sky);z-index:1;}
+
+  .flavor-note{text-align:center;color:#6b5142;max-width:56ch;margin:0 auto;}
+
+  .vegan-section{background:#fff;border-top:3px solid var(--choc);border-bottom:3px solid var(--choc);}
+  .vegan-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .vegan-grid h2{font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:18px;}
+  .vegan-grid p{color:#6b5142;margin-bottom:16px;max-width:56ch;}
+  .vegan-card{background:var(--cream);border:3px solid var(--choc);border-radius:24px;padding:36px;text-align:center;}
+  .vegan-card .big{font-family:'Baloo 2',sans-serif;font-size:2rem;color:var(--mint);font-weight:800;}
+  .vegan-card .small{font-family:'DM Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about-grid h2{font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:18px;}
+  .about-grid p{color:#6b5142;margin-bottom:16px;max-width:56ch;}
+  .about-visual{
+    background:var(--sky);border-radius:24px;padding:48px;text-align:center;color:#fff;
+  }
+  .about-visual .yr{font-family:'Baloo 2',sans-serif;font-size:2.6rem;font-weight:800;}
+  .about-visual .lbl{font-family:'DM Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-top:8px;}
+
+  .cta-band{background:var(--mint);color:var(--choc);text-align:center;padding:64px 24px;}
+  .cta-band h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:14px;}
+  .cta-band p{max-width:52ch;margin:0 auto 30px;color:#33473b;}
+  .cta-band .btn-primary{background:var(--choc);color:var(--cream);}
+  .cta-band .btn-primary:hover{background:#33221a;}
+  .cta-band .btn-outline{border-color:var(--choc);color:var(--choc);}
+  .cta-band .btn-outline:hover{background:var(--choc);color:var(--cream);}
+
+  footer{background:var(--choc);color:#e8dccb;padding:48px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h4{font-family:'DM Mono',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;color:var(--sky);}
+  footer a, footer p{color:#e8dccb;font-size:.92rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid #654a3a;padding-top:20px;font-size:.8rem;color:#a8927e;text-align:center;}
+
+  @media (max-width:1150px){
+    .nav-links, .header-actions .btn-outline{display:none;}
+    .hamburger{display:block;}
+    nav{position:static;}
+    nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:3px solid var(--choc);padding:20px 24px;gap:18px;}
+  }
+  @media (max-width:900px){
+    .vegan-grid, .about-grid, .footer-grid{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .scoop{width:100px !important;height:100px !important;margin-left:-16px !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6H9l3-6z" fill="#4a3226"/><circle cx="12" cy="13" r="7" fill="#fff"/></svg>
+      </span>
+      <span class="brand-name">The Freezerie</span>
+    </div>
+    <nav id="siteNav">
+      <ul class="nav-links">
+        <li><a href="#flavors">Flavors</a></li>
+        <li><a href="#vegan">Non-Dairy</a></li>
+        <li><a href="#about">Our Story</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://facebook.com/p/The-Freezerie-100057145043058" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn call-btn" href="tel:18145729235">Call (814) 572-9235</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Homemade Since 2012</span>
+    <h1>Scratch-made ice cream, father-and-son style.</h1>
+    <p class="lede">The Freezerie is a seasonal ice cream stand opened by Gary Garnic and his son Kang, serving scratch-made flavors and a full non-dairy and vegan lineup on W Ridge Rd.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:18145729235">Call Ahead</a>
+      <a class="btn btn-outline" href="#flavors">See Our Flavors</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-grid">
+    <div class="trust-chip"><div class="num">2012</div><div class="desc">Opened By Gary &amp; Kang</div></div>
+    <div class="trust-chip"><div class="num">Scratch</div><div class="desc">Made Flavors</div></div>
+    <div class="trust-chip"><div class="num">Full</div><div class="desc">Vegan Lineup</div></div>
+    <div class="trust-chip"><div class="num">Seasonal</div><div class="desc">Stand</div></div>
+  </div>
+</div>
+
+<section id="flavors">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">The Scoop</span>
+      <h2>Real flavors, made in-house</h2>
+    </div>
+    <div class="scoop-stack" aria-hidden="true">
+      <div class="scoop scoop-1"><span>Waffle Cone Bash</span></div>
+      <div class="scoop scoop-2"><span>Sea Salt</span></div>
+      <div class="scoop scoop-3"><span>Mountain Dew</span></div>
+      <div class="scoop scoop-4"><span>Pudding Pie</span></div>
+      <div class="scoop scoop-5"><span>Pumpkin</span></div>
+    </div>
+    <p class="flavor-note">A few of our scratch-made favorites: Waffle Cone Bash, Sea Salt, Mountain Dew, seasonal Pumpkin, and Pudding Pie. New batches, same homemade approach since day one.</p>
+  </div>
+</section>
+
+<section class="vegan-section" id="vegan">
+  <div class="wrap vegan-grid">
+    <div>
+      <h2>A full non-dairy and vegan lineup</h2>
+      <p>Dairy-free doesn't mean flavor-free. The Freezerie keeps a complete non-dairy and vegan menu going alongside the scratch-made classics, so everyone in line gets something good.</p>
+    </div>
+    <div class="vegan-card">
+      <div class="big">Non-Dairy</div>
+      <div class="small">&amp; Vegan Options Daily</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>A father-son stand since 2012</h2>
+      <p>Gary Garnic and his son Kang opened The Freezerie in 2012, building a seasonal stand around homemade ice cream made from scratch, batch by batch.</p>
+      <p>It's stayed a family operation ever since, with new flavors rotating in alongside the favorites people keep coming back for.</p>
+    </div>
+    <div class="about-visual">
+      <div class="yr">2012</div>
+      <div class="lbl">Founded By Gary &amp; Kang Garnic</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready for a scoop?</h2>
+    <p>Stop by W Ridge Rd this season, or call ahead for The Freezerie's hours and flavors.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="tel:18145729235">Call (814) 572-9235</a>
+      <a class="btn btn-outline" href="https://facebook.com/p/The-Freezerie-100057145043058" target="_blank" rel="noopener">Find Us on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6H9l3-6z" fill="#7fb8d9"/><circle cx="12" cy="13" r="7" fill="#fff"/></svg>
+          </span>
+          <span class="brand-name" style="color:var(--cream);">The Freezerie</span>
+        </div>
+        <p>Seasonal homemade ice cream stand in Erie, PA.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:18145729235">(814) 572-9235</a></li>
+          <li><a href="https://facebook.com/p/The-Freezerie-100057145043058" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>4393 W Ridge Rd<br>Erie, PA 16506</p>
+      </div>
+    </div>
+    <div class="footer-bottom">Site by Modularity Networks &middot; The Freezerie, Erie PA</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var nav = document.getElementById('siteNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

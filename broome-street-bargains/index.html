@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broome Street Bargains | Port Jervis, NY</title>
+<meta name="description" content="A small, community thrift shop in Port Jervis, NY. Clothing to housewares, open Thursday and Saturday mornings, 9 to 12.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --denim-blue:#3f5a72;
+    --mustard:#d9a02c;
+    --cream:#f5f0e4;
+    --terracotta:#b5603a;
+    --moss:#5c6b4a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:#2c2a24;font-family:'Karla',sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.15;color:#26241f;}
+  .label{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;font-size:0.8rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:2px solid #26241f;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:40px;height:40px;flex-shrink:0;}
+  .brand-text{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;}
+  .brand-text span{color:var(--terracotta);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;font-size:0.78rem;letter-spacing:1.5px;font-weight:600;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--denim-blue);color:var(--denim-blue);}
+  .call-btn{background:var(--denim-blue);color:var(--cream);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;font-size:0.76rem;font-weight:600;padding:12px 20px;border-radius:3px;white-space:nowrap;border:2px solid var(--denim-blue);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--denim-blue);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:#26241f;display:block;}
+
+  .hero{padding:80px 0 70px;}
+  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .eyebrow{display:inline-block;color:var(--moss);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:2.5px;font-size:0.8rem;font-weight:600;margin-bottom:18px;}
+  .hero h1{font-size:3rem;margin-bottom:20px;}
+  .hero h1 span{color:var(--terracotta);}
+  .hero p.lede{font-size:1.1rem;max-width:50ch;color:#3a3730;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 28px;border-radius:3px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1.2px;font-size:0.82rem;font-weight:600;border:2px solid #26241f;transition:all .2s;}
+  .btn-primary{background:var(--denim-blue);border-color:var(--denim-blue);color:var(--cream);}
+  .btn-primary:hover{background:#2e4457;border-color:#2e4457;}
+  .btn-secondary{background:transparent;color:#26241f;}
+  .btn-secondary:hover{background:#26241f;color:var(--cream);}
+
+  .tag-frame{display:flex;justify-content:center;align-items:center;}
+  .price-tag{width:100%;max-width:280px;transform:rotate(-6deg);}
+
+  .trust-strip{background:var(--moss);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:28px 20px;text-align:center;color:var(--cream);border-right:1px solid rgba(245,240,228,0.2);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;display:block;color:var(--cream);}
+  .chip .txt{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;font-size:0.7rem;letter-spacing:1.2px;color:#e2e8da;}
+
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--terracotta);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.2rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:#fff;border:2px solid #26241f;padding:28px 24px;}
+  .service-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;margin-bottom:10px;}
+  .service-card p{font-size:0.92rem;color:#4a463c;}
+
+  .about{padding:90px 0;background:var(--denim-blue);color:var(--cream);}
+  .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.2rem;margin-bottom:20px;color:var(--cream);}
+  .about p{margin-bottom:16px;max-width:52ch;color:#dbe3ea;font-size:1.02rem;}
+  .schedule-card{background:var(--mustard);border:3px solid #26241f;padding:30px;transform:rotate(2deg);position:relative;}
+  .schedule-card::before{content:"";position:absolute;top:-10px;left:24px;width:16px;height:16px;background:var(--cream);border:3px solid #26241f;border-radius:50%;}
+  .schedule-card h3{font-family:'Space Grotesk',sans-serif;color:#26241f;font-size:1.3rem;margin-bottom:8px;}
+  .schedule-card p{color:#26241f;font-family:'IBM Plex Mono',monospace;font-size:0.95rem;margin-bottom:0;}
+
+  .cta-band{background:var(--terracotta);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.1rem;margin-bottom:16px;}
+  .cta-band p{color:#f7e3d6;margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{background:#26241f;border-color:#26241f;}
+  .cta-band .btn-primary:hover{background:#000;border-color:#000;}
+
+  footer{background:#26241f;color:#cfc9ba;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(207,201,186,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Space Grotesk',sans-serif;font-size:1rem;color:var(--cream);}
+  .footer-col h4{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:1.5px;font-size:0.78rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.9rem;color:#cfc9ba;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--mustard);}
+  .footer-bottom{text-align:center;font-size:0.8rem;color:#8a8474;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 14px);left:-24px;right:-24px;background:var(--cream);padding:20px 24px;gap:0;border-top:2px solid #26241f;border-bottom:2px solid #26241f;}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(38,36,31,0.1);}
+    .hero-inner{grid-template-columns:1fr;}
+    .tag-frame{order:-1;}
+    .price-tag{max-width:220px;margin:0 auto;}
+    .hero h1{font-size:2.3rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(245,240,228,0.2);border-bottom:1px solid rgba(245,240,228,0.2);}
+    .service-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:50px 0;}
+    .hero h1{font-size:1.9rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 8 L22 8 L34 20 L20 34 Z" fill="none" stroke="#b5603a" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="14" cy="14" r="2.6" fill="#3f5a72"/>
+      </svg>
+      <span class="brand-text">Broome St <span>Bargains</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#shop">What We Have</a></li>
+        <li><a href="#about">Hours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="https://facebook.com/p/Broome-Street-Bargains-Thrift-Store-61552133566607" class="call-btn" target="_blank" rel="noopener">Message on Facebook</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">N Broome St &middot; Port Jervis, NY</span>
+      <h1>A little bit of <span>everything</span>, priced to go</h1>
+      <p class="lede">Broome Street Bargains is a small, volunteer-run thrift shop with a real community feel. Clothing, housewares, and whatever good stuff comes through the door that week.</p>
+      <div class="cta-row">
+        <a href="https://facebook.com/p/Broome-Street-Bargains-Thrift-Store-61552133566607" class="btn btn-primary" target="_blank" rel="noopener">Message Us on Facebook</a>
+        <a href="#about" class="btn btn-secondary">See Our Hours</a>
+      </div>
+    </div>
+    <div class="tag-frame">
+      <svg class="price-tag" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Price tag showing shop hours">
+        <path d="M20 10 H160 L200 60 V240 Q200 250 190 250 H30 Q20 250 20 240 V10 Z" fill="#f5f0e4" stroke="#26241f" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="45" cy="35" r="12" fill="none" stroke="#26241f" stroke-width="4"/>
+        <circle cx="45" cy="35" r="4" fill="#26241f"/>
+        <line x1="35" y1="85" x2="185" y2="85" stroke="#26241f" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="110" y="120" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="20" fill="#b5603a">OPEN</text>
+        <text x="110" y="150" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-weight="600" font-size="15" fill="#26241f">THURSDAY</text>
+        <text x="110" y="172" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-weight="600" font-size="15" fill="#26241f">&amp; SATURDAY</text>
+        <line x1="35" y1="190" x2="185" y2="190" stroke="#26241f" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="110" y="222" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="26" fill="#3f5a72">9 - 12</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">Thu &amp; Sat</span><span class="txt">Open Days</span></div>
+    <div class="chip"><span class="num">9-12</span><span class="txt">Shop Hours</span></div>
+    <div class="chip"><span class="num">Community</span><span class="txt">Run &amp; Volunteer Staffed</span></div>
+    <div class="chip"><span class="num">N Broome</span><span class="txt">St, Port Jervis</span></div>
+  </div>
+</section>
+
+<section class="services" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">On the Racks</span>
+      <h2>Clothing to housewares</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Clothing</h3>
+        <p>Everyday clothing for the whole family, always turning over with new donations.</p>
+      </div>
+      <div class="service-card">
+        <h3>Housewares</h3>
+        <p>Kitchen goods, dishware, and home basics at thrift shop prices.</p>
+      </div>
+      <div class="service-card">
+        <h3>A Bit of Everything</h3>
+        <p>Books, odds and ends, and the kind of finds you only get by stopping in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>Small shop, short hours, worth the trip</h2>
+      <p>Broome Street Bargains is a small community thrift shop on N Broome St. It is run on a short, volunteer schedule, just two mornings a week.</p>
+      <p>Because the shop keeps limited hours, it helps to plan ahead. Stop by Thursday or Saturday morning to see what has come in.</p>
+    </div>
+    <div class="schedule-card">
+      <h3>Open Thursday &amp; Saturday</h3>
+      <p>9:00am &ndash; 12:00pm</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Stop by this Thursday or Saturday</h2>
+    <p>6 N Broome St, Port Jervis. Message us on Facebook with any questions.</p>
+    <a href="https://facebook.com/p/Broome-Street-Bargains-Thrift-Store-61552133566607" class="btn btn-primary" target="_blank" rel="noopener">Message Us on Facebook</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 8 L22 8 L34 20 L20 34 Z" fill="none" stroke="#d9a02c" stroke-width="2.2" stroke-linejoin="round"/>
+        </svg>
+        <span>Broome Street Bargains</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://facebook.com/p/Broome-Street-Bargains-Thrift-Store-61552133566607" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>6 N Broome St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Thursday &amp; Saturday</p>
+        <p>9:00am &ndash; 12:00pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Broome Street Bargains.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

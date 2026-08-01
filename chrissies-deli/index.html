@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chrissie's Deli | Matamoras, PA</title>
+<meta name="description" content="Chrissie's Deli in Matamoras, PA. Boar's Head subs on fresh-baked rolls, breakfast sandwiches, and coffee. Cash only. Open Mon-Sat 7am-4pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Libre+Franklin:wght@400;500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --butcher-cream:#f5efe2;
+    --deli-red:#b0342c;
+    --mustard:#d9a02c;
+    --ink:#2b2420;
+    --olive:#5c6b3f;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--butcher-cream);
+    color:var(--ink);
+    font-family:'Libre Franklin',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .label{
+    font-family:'Special Elite',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  h1,h2,h3{
+    font-family:'Bevan',serif;
+    font-weight:400;
+    line-height:1.15;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--deli-red);
+    outline-offset:3px;
+  }
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--butcher-cream);
+    border-bottom:3px solid var(--ink);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;
+    max-width:1180px;margin:0 auto;
+    gap:20px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+    flex-shrink:0;
+    white-space:nowrap;
+  }
+  .brand-mark{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--deli-red);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    border:2px solid var(--ink);
+  }
+  .brand-mark svg{width:26px;height:26px;}
+  .brand-name{
+    font-family:'Bevan',serif;
+    font-size:1.4rem;
+    color:var(--ink);
+  }
+  nav{display:flex;align-items:center;gap:28px;}
+  nav ul{list-style:none;display:flex;gap:26px;}
+  nav a{
+    font-family:'Special Elite',monospace;
+    font-size:0.95rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  nav a:hover{color:var(--deli-red);}
+  .header-actions{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;
+    border-radius:4px;
+    font-weight:700;
+    font-size:0.95rem;
+    border:2px solid var(--ink);
+    cursor:pointer;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{background:var(--deli-red);color:var(--butcher-cream);}
+  .btn-primary:hover{background:#8f2a23;transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--ink);}
+  .btn-secondary:hover{background:var(--ink);color:var(--butcher-cream);}
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;border:none;cursor:pointer;
+    padding:6px;
+  }
+  .hamburger span{width:26px;height:3px;background:var(--ink);border-radius:2px;}
+
+  /* Hero */
+  .hero{
+    padding:70px 0 60px;
+    border-bottom:3px solid var(--ink);
+    position:relative;
+  }
+  .hero .wrap{
+    display:flex;flex-direction:column;align-items:flex-start;
+    max-width:780px;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:var(--mustard);
+    color:var(--ink);
+    padding:6px 14px;
+    border-radius:3px;
+    font-size:0.85rem;
+    margin-bottom:22px;
+    border:2px solid var(--ink);
+  }
+  .hero h1{
+    font-size:3.4rem;
+    margin-bottom:20px;
+    color:var(--ink);
+  }
+  .hero h1 span{color:var(--deli-red);}
+  .hero p.lede{
+    font-size:1.2rem;
+    max-width:560px;
+    margin-bottom:34px;
+    color:#4a4038;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+
+  /* Trust strip */
+  .trust-strip{
+    background:var(--ink);
+    color:var(--butcher-cream);
+    padding:28px 0;
+  }
+  .trust-strip .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .chip{text-align:center;}
+  .chip .num{
+    font-family:'Bevan',serif;
+    font-size:1.6rem;
+    color:var(--mustard);
+    display:block;
+  }
+  .chip .txt{
+    font-family:'Special Elite',monospace;
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-top:4px;
+    opacity:0.9;
+  }
+
+  /* Menu / ticket section */
+  .menu-section{
+    padding:90px 0;
+    border-bottom:3px solid var(--ink);
+  }
+  .menu-section .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  .menu-section h2{font-size:2.4rem;margin-bottom:18px;}
+  .menu-section .section-copy p{margin-bottom:16px;color:#4a4038;font-size:1.05rem;}
+  .menu-list{margin-top:22px;}
+  .menu-list li{
+    list-style:none;
+    display:flex;justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px dashed #b8ac97;
+    font-size:1.05rem;
+  }
+  .menu-list li strong{font-family:'Bevan',serif;font-weight:400;}
+
+  /* Ticket illustration */
+  .ticket-wrap{
+    display:flex;justify-content:center;
+    position:relative;
+  }
+  .ticket{
+    background:#fffdf7;
+    width:280px;
+    padding:26px 22px 34px;
+    transform:rotate(-4deg);
+    box-shadow:0 10px 0 -4px rgba(43,36,32,0.08), 6px 10px 18px rgba(43,36,32,0.18);
+    position:relative;
+    font-family:'Special Elite',monospace;
+    border:1px solid #d8cfb8;
+  }
+  .ticket::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:16px;
+    background:
+      linear-gradient(135deg,#fffdf7 50%,transparent 50%) 0 0/12px 16px repeat-x,
+      linear-gradient(-135deg,#fffdf7 50%,transparent 50%) 0 0/12px 16px repeat-x;
+    background-color:var(--butcher-cream);
+  }
+  .ticket-head{
+    text-align:center;
+    font-family:'Bevan',serif;
+    font-size:1.1rem;
+    border-bottom:2px dashed var(--ink);
+    padding-bottom:10px;
+    margin-bottom:14px;
+  }
+  .ticket-line{
+    display:flex;justify-content:space-between;
+    font-size:0.85rem;
+    margin-bottom:8px;
+  }
+  .ticket-total{
+    border-top:2px dashed var(--ink);
+    margin-top:10px;
+    padding-top:10px;
+    font-size:0.9rem;
+    display:flex;justify-content:space-between;
+    font-weight:700;
+  }
+  .stamp{
+    position:absolute;
+    top:-14px;
+    right:-30px;
+    transform:rotate(12deg);
+    border:3px solid var(--deli-red);
+    color:var(--deli-red);
+    border-radius:6px;
+    padding:8px 12px;
+    font-family:'Special Elite',monospace;
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    background:rgba(176,52,44,0.04);
+  }
+
+  /* About */
+  .about{
+    padding:90px 0;
+    border-bottom:3px solid var(--ink);
+    background:#efe6d4;
+  }
+  .about .wrap{max-width:780px;}
+  .about h2{font-size:2.2rem;margin-bottom:22px;}
+  .about p{font-size:1.08rem;color:#4a4038;margin-bottom:16px;}
+
+  /* CTA band */
+  .cta-band{
+    background:var(--olive);
+    color:var(--butcher-cream);
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-band h2{
+    font-size:2rem;color:var(--butcher-cream);margin-bottom:14px;
+  }
+  .cta-band p{margin-bottom:28px;font-size:1.1rem;opacity:0.95;}
+  .cta-band .btn-primary{background:var(--mustard);color:var(--ink);border-color:var(--ink);}
+  .cta-band .btn-primary:hover{background:#c68f21;}
+
+  /* Footer */
+  footer{
+    background:var(--ink);
+    color:var(--butcher-cream);
+    padding:50px 0 30px;
+  }
+  .footer-inner{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;
+    margin-bottom:30px;
+  }
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{background:var(--deli-red);border-color:var(--butcher-cream);}
+  .footer-brand span{font-family:'Bevan',serif;font-size:1.2rem;}
+  .footer-links{display:flex;gap:40px;flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'Special Elite',monospace;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    margin-bottom:12px;
+    color:var(--mustard);
+  }
+  .footer-col a, .footer-col p{
+    display:block;font-size:0.92rem;margin-bottom:8px;color:#e5ddc9;
+  }
+  .footer-bottom{
+    border-top:1px solid #4a4038;
+    padding-top:20px;
+    font-size:0.85rem;
+    color:#b8ac97;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media (max-width:1150px){
+    nav{display:none;}
+    .hamburger{display:flex;}
+    nav.open{
+      display:flex;
+      position:absolute;
+      top:100%;left:0;right:0;
+      background:var(--butcher-cream);
+      border-bottom:3px solid var(--ink);
+      flex-direction:column;
+      padding:20px 28px;
+      gap:0;
+    }
+    nav.open ul{flex-direction:column;gap:0;width:100%;}
+    nav.open ul li{border-bottom:1px solid #d8cfb8;}
+    nav.open ul li a{display:block;padding:14px 0;}
+  }
+  @media (max-width:900px){
+    .menu-section .wrap{grid-template-columns:1fr;}
+    .ticket-wrap{order:-1;margin-bottom:20px;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .hero h1{font-size:2.4rem;}
+  }
+  @media (max-width:560px){
+    .header-actions .btn-primary span.btn-label{display:none;}
+    .hero{padding:50px 0 40px;}
+    .menu-section, .about{padding:60px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 8h16l-1.5 10a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 8Z" stroke="#f5efe2" stroke-width="1.6"/>
+          <path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="#f5efe2" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span class="brand-name">Chrissie's Deli</span>
+    </a>
+    <nav id="siteNav">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="tel:15704915611"><span class="btn-label">Call</span> (570) 491-5611</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow label">Matamoras, PA &middot; Since forever a corner deli</span>
+    <h1>Real subs, <span>fresh-baked rolls</span>, and a griddle that never quits.</h1>
+    <p class="lede">Chrissie's Deli is the corner shop on Pennsylvania Ave doing it the old way: Boar's Head meats piled high on bread baked that morning, plus breakfast sandwiches and hot coffee to get Matamoras moving.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="tel:15704915611">Call (570) 491-5611</a>
+      <a class="btn btn-secondary" href="#menu">See the Menu</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">7am</span><span class="txt">Open Daily</span></div>
+    <div class="chip"><span class="num">Mon-Sat</span><span class="txt">6-Day Week</span></div>
+    <div class="chip"><span class="num">Boar's Head</span><span class="txt">Premium Meats</span></div>
+    <div class="chip"><span class="num">Cash Only</span><span class="txt">Bring Bills</span></div>
+  </div>
+</div>
+
+<section class="menu-section" id="menu">
+  <div class="wrap">
+    <div class="section-copy">
+      <h2>Built on fresh rolls, piled with Boar's Head.</h2>
+      <p>Every sub starts with a roll baked fresh, then gets stacked with Boar's Head deli meats. Regulars come back for the roast beef sub and the BLT, but the breakfast sandwiches and coffee are what get the morning crowd through the door.</p>
+      <ul class="menu-list">
+        <li><span><strong>Roast Beef Sub</strong><br>Reviewer favorite, piled high</span></li>
+        <li><span><strong>The BLT</strong><br>Classic, crisp, and simple</span></li>
+        <li><span><strong>Breakfast Sandwich & Coffee</strong><br>Griddled fresh, mornings only</span></li>
+      </ul>
+    </div>
+    <div class="ticket-wrap">
+      <div class="ticket">
+        <span class="stamp">Cash Only</span>
+        <div class="ticket-head">Chrissie's Deli</div>
+        <div class="ticket-line"><span>Roast Beef Sub</span><span>1</span></div>
+        <div class="ticket-line"><span>BLT</span><span>1</span></div>
+        <div class="ticket-line"><span>Coffee, Reg.</span><span>1</span></div>
+        <div class="ticket-total"><span>Thanks, come again</span><span>&hearts;</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>A neighborhood counter, not a chain.</h2>
+    <p>Chrissie's has been the go-to stop for folks in Matamoras who want a sandwich made right, not assembled off a screen. It's a small, cash-only operation on Pennsylvania Ave, the kind of place where the person behind the counter remembers your order.</p>
+    <p>Open six days a week starting at 7am, it's equal parts breakfast spot and lunch counter, serving the Upper Delaware River corner of Pike County one sub at a time.</p>
+  </div>
+</section>
+
+<section class="cta-band" id="visit">
+  <div class="wrap">
+    <h2>Hungry? We're on Pennsylvania Ave.</h2>
+    <p>Cash only, so grab some bills and swing by 17 Pennsylvania Ave, Matamoras. Open Mon-Sat, 7am-4pm.</p>
+    <a class="btn btn-primary" href="tel:15704915611">Call (570) 491-5611</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 8h16l-1.5 10a2 2 0 0 1-2 1.7H7.5a2 2 0 0 1-2-1.7L4 8Z" stroke="#f5efe2" stroke-width="1.6"/>
+            <path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="#f5efe2" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <span>Chrissie's Deli</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:15704915611">(570) 491-5611</a>
+          <a href="https://facebook.com/chrissiesdeli" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <p>17 Pennsylvania Ave</p>
+          <p>Matamoras, PA 18336</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <p>Mon-Sat: 7am-4pm</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Chrissie's Deli. Matamoras, PA.</span>
+      <span>Site by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hbtn = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('siteNav');
+  hbtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    hbtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    hbtn.setAttribute('aria-expanded','false');
+  }));
+</script>
+</body>
+</html>

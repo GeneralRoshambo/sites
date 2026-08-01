@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Italian | Port Jervis, NY</title>
+<meta name="description" content="Imported Italian grocery products, fresh homemade entrees and subs, and a menu that changes weekly. Husband-and-wife run in Port Jervis, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#b5342a;
+    --basil:#3f5a3f;
+    --cream:#f7f1e4;
+    --olive-oil:#c9a24a;
+    --charcoal:#2b2622;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Mulish',sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Newsreader',serif;font-weight:600;line-height:1.2;color:var(--charcoal);}
+  .label{font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:2px;font-weight:400;font-size:0.82rem;}
+  a{color:inherit;text-decoration:none;}
+  svg,img{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--tomato);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:2px solid var(--charcoal);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;white-space:nowrap;}
+  .brand-mark{width:40px;height:40px;flex-shrink:0;}
+  .brand-text{font-family:'Newsreader',serif;font-style:italic;font-size:1.3rem;font-weight:600;}
+  .brand-text span{color:var(--tomato);font-style:normal;}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav ul li a{font-family:'Special Elite',cursive;text-transform:uppercase;font-size:0.78rem;letter-spacing:1.5px;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;}
+  nav ul li a:hover{border-color:var(--basil);color:var(--basil);}
+  .call-btn{background:var(--tomato);color:var(--cream);font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.78rem;padding:12px 22px;border-radius:2px;white-space:nowrap;border:2px solid var(--tomato);transition:all .2s;}
+  .call-btn:hover{background:transparent;color:var(--tomato);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:26px;height:3px;background:var(--charcoal);display:block;}
+
+  .hero{padding:90px 0;}
+  .hero-inner{display:grid;grid-template-columns:1.05fr 0.95fr;gap:60px;align-items:center;}
+  .eyebrow{display:inline-block;color:var(--basil);font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:2.5px;font-size:0.8rem;margin-bottom:20px;}
+  .hero h1{font-size:2.9rem;margin-bottom:22px;}
+  .hero h1 em{font-style:italic;color:var(--tomato);}
+  .hero p.lede{font-size:1.12rem;max-width:50ch;color:#40372e;margin-bottom:32px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 30px;border-radius:2px;font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.82rem;border:2px solid var(--charcoal);transition:all .2s;}
+  .btn-primary{background:var(--tomato);border-color:var(--tomato);color:var(--cream);}
+  .btn-primary:hover{background:#8f281f;border-color:#8f281f;}
+  .btn-secondary{background:transparent;color:var(--charcoal);}
+  .btn-secondary:hover{background:var(--charcoal);color:var(--cream);}
+
+  .menu-card-frame{display:flex;justify-content:center;align-items:center;}
+  .menu-card{width:100%;max-width:300px;transform:rotate(2deg);}
+
+  .trust-strip{background:var(--basil);padding:0;}
+  .trust-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .chip{padding:28px 20px;text-align:center;color:var(--cream);border-right:1px solid rgba(247,241,228,0.2);}
+  .chip:last-child{border-right:none;}
+  .chip .num{font-family:'Newsreader',serif;font-size:1.5rem;font-weight:600;display:block;color:var(--cream);}
+  .chip .txt{font-family:'Special Elite',cursive;text-transform:uppercase;font-size:0.68rem;letter-spacing:1.2px;color:#dce6dc;}
+
+  .services{padding:90px 0;}
+  .section-head{max-width:640px;margin-bottom:50px;}
+  .section-head .label{color:var(--tomato);display:block;margin-bottom:14px;}
+  .section-head h2{font-size:2.3rem;}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{background:#fff;border:1px solid rgba(43,38,34,0.12);padding:32px 26px;border-top:4px solid var(--olive-oil);}
+  .service-card h3{font-family:'Newsreader',serif;font-size:1.25rem;margin-bottom:12px;}
+  .service-card p{font-size:0.96rem;color:#4a4034;}
+
+  .about{padding:90px 0;background:#eee3c9;}
+  .about-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .about h2{font-size:2.3rem;margin-bottom:20px;}
+  .about p{margin-bottom:16px;max-width:54ch;color:#3a3226;font-size:1.02rem;}
+  .owners-card{background:#fff;border:1px solid rgba(43,38,34,0.15);border-radius:6px;padding:30px;}
+  .owners-card .label{color:var(--basil);display:block;margin-bottom:10px;}
+  .owners-card p{color:#3a3226;font-size:1rem;margin-bottom:0;}
+
+  .cta-band{background:var(--tomato);padding:70px 0;text-align:center;}
+  .cta-band h2{color:var(--cream);font-size:2.2rem;margin-bottom:16px;}
+  .cta-band p{color:#fbe0dc;margin-bottom:30px;font-size:1.05rem;}
+  .cta-band .btn-primary{background:var(--charcoal);border-color:var(--charcoal);}
+  .cta-band .btn-primary:hover{background:#000;border-color:#000;}
+
+  footer{background:var(--charcoal);color:#cfc6b8;padding:50px 0 30px;}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(207,198,184,0.15);margin-bottom:24px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;}
+  .footer-brand .brand-mark{width:34px;height:34px;}
+  .footer-brand span{font-family:'Newsreader',serif;font-style:italic;font-size:1.1rem;color:var(--cream);}
+  .footer-col h4{font-family:'Special Elite',cursive;text-transform:uppercase;letter-spacing:1.5px;font-size:0.78rem;color:var(--cream);margin-bottom:14px;}
+  .footer-col p,.footer-col a{display:block;font-size:0.9rem;color:#cfc6b8;margin-bottom:8px;}
+  .footer-col a:hover{color:var(--olive-oil);}
+  .footer-bottom{text-align:center;font-size:0.8rem;color:#877c68;}
+
+  @media (max-width:1150px){
+    nav{position:relative;}
+    nav ul{display:none;}
+    .hamburger{display:flex;}
+    nav.open ul{display:flex;flex-direction:column;position:absolute;top:calc(100% + 16px);left:-24px;right:-24px;background:var(--cream);padding:20px 24px;gap:0;border-top:2px solid var(--charcoal);border-bottom:2px solid var(--charcoal);}
+    nav.open ul li a{display:block;padding:14px 0;border-bottom:1px solid rgba(43,38,34,0.1);}
+    .hero-inner{grid-template-columns:1fr;}
+    .menu-card-frame{order:-1;}
+    .menu-card{max-width:240px;margin:0 auto;}
+    .hero h1{font-size:2.2rem;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .chip{border-right:1px solid rgba(247,241,228,0.2);border-bottom:1px solid rgba(247,241,228,0.2);}
+    .service-grid{grid-template-columns:1fr;}
+    .about-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .hero{padding:60px 0;}
+    .hero h1{font-size:1.9rem;}
+    .cta-row{flex-direction:column;}
+    .btn{text-align:center;}
+    .trust-strip .wrap{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="#b5342a" stroke-width="2"/>
+        <path d="M14 24 Q20 14 26 24" fill="none" stroke="#3f5a3f" stroke-width="1.8"/>
+        <circle cx="20" cy="16" r="2" fill="#c9a24a"/>
+      </svg>
+      <span class="brand-text">Rosie's <span>Italian</span></span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#services">What We Offer</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:18456723373" class="call-btn">(845) 672-3373</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Pike St &middot; Port Jervis, NY</span>
+      <h1>Homemade Italian, <em>new every week</em></h1>
+      <p class="lede">Rosie's Italian is a husband-and-wife run shop on Pike Street pairing imported Italian grocery products with fresh, homemade entrees and subs. The menu changes weekly, so there is always something new to try.</p>
+      <div class="cta-row">
+        <a href="tel:18456723373" class="btn btn-primary">Call (845) 672-3373</a>
+        <a href="https://facebook.com/p/Rosies-Italian-61552472495262" class="btn btn-secondary" target="_blank" rel="noopener">Find Us on Facebook</a>
+      </div>
+    </div>
+    <div class="menu-card-frame">
+      <svg class="menu-card" viewBox="0 0 260 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="This week's specials card">
+        <rect x="10" y="10" width="240" height="300" fill="#fdfaf1" stroke="#2b2622" stroke-width="2.5"/>
+        <path d="M120 6 Q130 -6 140 6 L140 26 Q130 30 120 26 Z" fill="none" stroke="#7a7f83" stroke-width="2.5"/>
+        <text x="130" y="55" text-anchor="middle" font-family="'Newsreader',serif" font-style="italic" font-weight="600" font-size="20" fill="#b5342a">This Week's</text>
+        <text x="130" y="80" text-anchor="middle" font-family="'Newsreader',serif" font-weight="600" font-size="22" fill="#2b2622">Specials</text>
+        <line x1="35" y1="100" x2="225" y2="100" stroke="#c9a24a" stroke-width="1.5"/>
+        <text x="35" y="130" font-family="'Special Elite',cursive" font-size="12" fill="#3f5a3f">HOMEMADE ENTRÉE OF THE DAY</text>
+        <text x="35" y="165" font-family="'Special Elite',cursive" font-size="12" fill="#3f5a3f">FRESH-CUT SUB OF THE WEEK</text>
+        <text x="35" y="200" font-family="'Special Elite',cursive" font-size="12" fill="#3f5a3f">IMPORTED PICK OF THE WEEK</text>
+        <line x1="35" y1="220" x2="225" y2="220" stroke="#c9a24a" stroke-width="1.5"/>
+        <text x="130" y="255" text-anchor="middle" font-family="'Mulish',sans-serif" font-size="12" fill="#5a4f3f">Ask what's fresh today</text>
+        <text x="130" y="290" text-anchor="middle" font-family="'Newsreader',serif" font-style="italic" font-size="14" fill="#7a7f83">Rodney &amp; Denise</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="chip"><span class="num">Weekly</span><span class="txt">Changing Menu</span></div>
+    <div class="chip"><span class="num">Imported</span><span class="txt">Italian Groceries</span></div>
+    <div class="chip"><span class="num">Homemade</span><span class="txt">Entrees &amp; Subs</span></div>
+    <div class="chip"><span class="num">Family</span><span class="txt">Run by Rodney &amp; Denise</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">What We Offer</span>
+      <h2>Grocery shelf meets kitchen counter</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Imported Groceries</h3>
+        <p>Italian pantry staples and specialty products brought in for the shop, alongside the fresh food counter.</p>
+      </div>
+      <div class="service-card">
+        <h3>Homemade Entrees</h3>
+        <p>Fresh Italian entrees made in-house, with the lineup changing from week to week.</p>
+      </div>
+      <div class="service-card">
+        <h3>Subs</h3>
+        <p>Fresh-made subs built with the same care as the entrees, ready to grab and go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <h2>Run by Rodney and Denise</h2>
+      <p>Rosie's Italian is a husband-and-wife operation on Pike Street, blending an imported Italian grocery selection with a kitchen that turns out fresh, homemade entrees and subs.</p>
+      <p>Because the menu changes weekly, regulars know to check in often, there is always something new coming out of the kitchen.</p>
+    </div>
+    <div class="owners-card">
+      <span class="label">Reach Us</span>
+      <p>Call the shop at (845) 672-3373, message us on Facebook, or email <a href="mailto:rosiesportjervis@gmail.com" style="color:#b5342a;">rosiesportjervis@gmail.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>See what's fresh this week</h2>
+    <p>21 Pike St, Port Jervis. Call ahead or stop by the shop.</p>
+    <a href="tel:18456723373" class="btn btn-primary">Call (845) 672-3373</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#c9a24a" stroke-width="2"/>
+          <path d="M14 24 Q20 14 26 24" fill="none" stroke="#cfc6b8" stroke-width="1.8"/>
+        </svg>
+        <span>Rosie's Italian</span>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:18456723373">(845) 672-3373</a>
+        <a href="mailto:rosiesportjervis@gmail.com">rosiesportjervis@gmail.com</a>
+        <a href="https://facebook.com/p/Rosies-Italian-61552472495262" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>21 Pike St</p>
+        <p>Port Jervis, NY 12771</p>
+      </div>
+      <div class="footer-col">
+        <h4>Run By</h4>
+        <p>Rodney &amp; Denise</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Site built by Modularity Networks for Rosie's Italian.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hb = document.getElementById('hamburgerBtn');
+  const nav = document.getElementById('mainNav');
+  hb.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>

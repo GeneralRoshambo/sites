@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bayfront Tattoo Lounge | Erie, PA</title>
+<meta name="description" content="Family-owned, artist-owned tattoo and piercing studio in Erie, PA. Walk-ins welcome, open daily 1-6pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f4ee;
+    --ink-black:#1a1a1a;
+    --flash-red:#c8232a;
+    --gold:#c9a227;
+    --dust:#cfc6b8;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink-black);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Bebas Neue',sans-serif;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;}
+  .marker{font-family:'Permanent Marker',cursive;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--flash-red);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--ink-black);border-bottom:3px solid var(--flash-red);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;white-space:nowrap;flex-shrink:0;}
+  .brand-mark{width:42px;height:42px;flex-shrink:0;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .brand-mark svg{width:22px;height:22px;}
+  .brand-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--paper);letter-spacing:.03em;}
+  nav{display:flex;align-items:center;gap:32px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{font-weight:600;font-size:.92rem;color:var(--dust);padding:4px 2px;border-bottom:2px solid transparent;}
+  .nav-links a:hover{color:var(--paper);border-bottom:2px solid var(--flash-red);}
+  .header-actions{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:2px;font-weight:700;font-size:.92rem;border:2px solid transparent;cursor:pointer;}
+  .btn-primary{background:var(--flash-red);color:var(--paper);}
+  .btn-primary:hover{background:#a51c22;}
+  .btn-outline{background:transparent;border:2px solid var(--dust);color:var(--dust);}
+  .btn-outline:hover{border-color:var(--paper);color:var(--paper);}
+  .call-btn{background:var(--gold);color:var(--ink-black);white-space:nowrap;}
+  .call-btn:hover{background:#ad8c22;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--paper);margin:5px 0;border-radius:1px;}
+
+  .hero{padding:88px 0 64px;background:var(--ink-black);color:var(--paper);position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(207,198,184,.05) 39px);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:760px;position:relative;z-index:1;}
+  .eyebrow{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:2px;margin-bottom:22px;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:22px;}
+  .hero .lede{font-size:1.15rem;max-width:56ch;margin-bottom:34px;color:var(--dust);}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .trust-strip{background:var(--paper);padding:30px 0;border-bottom:3px solid var(--ink-black);}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .trust-chip{text-align:center;}
+  .trust-chip .num{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--flash-red);}
+  .trust-chip .desc{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;font-weight:600;color:#555;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
+  .section-head .eyebrow-sm{color:var(--flash-red);display:block;margin-bottom:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;}
+  .section-head h2{font-size:clamp(2rem,3.5vw,2.8rem);}
+
+  .flash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .flash-card{
+    background:#fff;border:2px solid var(--ink-black);border-radius:6px;padding:26px 20px;text-align:center;position:relative;
+  }
+  .flash-card svg{width:56px;height:56px;margin:0 auto 16px;}
+  .flash-card .marker{color:var(--flash-red);font-size:1.1rem;transform:rotate(-2deg);display:block;}
+  .flash-card p{font-size:.82rem;color:#555;margin-top:6px;}
+
+  .about{background:var(--ink-black);color:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .about h2{font-size:clamp(2rem,3.5vw,2.6rem);margin-bottom:18px;}
+  .about p{color:var(--dust);margin-bottom:16px;max-width:56ch;}
+  .about-card{background:#242424;border:2px solid var(--gold);border-radius:6px;padding:32px;text-align:center;}
+  .about-card .big{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);}
+  .about-card .small{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;color:var(--dust);}
+
+  .hours-band{background:var(--flash-red);color:var(--paper);text-align:center;padding:64px 24px;}
+  .hours-band h2{font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:14px;}
+  .hours-band p{max-width:52ch;margin:0 auto 30px;color:#f5d5d6;}
+  .hours-band .btn-primary{background:var(--paper);color:var(--flash-red);}
+  .hours-band .btn-primary:hover{background:#e8e2d5;}
+  .hours-band .btn-outline{border-color:var(--paper);color:var(--paper);}
+  .hours-band .btn-outline:hover{background:var(--paper);color:var(--flash-red);}
+
+  footer{background:var(--ink-black);color:var(--dust);padding:48px 0 28px;border-top:3px solid var(--flash-red);}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;margin-bottom:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  footer h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.05em;margin-bottom:14px;color:var(--gold);}
+  footer a, footer p{color:var(--dust);font-size:.92rem;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-bottom{border-top:1px solid #3a3a3a;padding-top:20px;font-size:.8rem;color:#7a7a7a;text-align:center;}
+
+  @media (max-width:1150px){
+    .nav-links, .header-actions .btn-outline{display:none;}
+    .hamburger{display:block;}
+    nav{position:static;}
+    nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--ink-black);border-bottom:3px solid var(--flash-red);padding:20px 24px;gap:18px;}
+  }
+  @media (max-width:900px){
+    .flash-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .footer-grid{grid-template-columns:1fr;}
+    .trust-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#c9a227" stroke-width="2"/></svg>
+      </span>
+      <span class="brand-name">Bayfront Tattoo Lounge</span>
+    </div>
+    <nav id="siteNav">
+      <ul class="nav-links">
+        <li><a href="#services">Piercings</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hours">Hours</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://facebook.com/p/The-Bayfront-Tattoo-Lounge-100078123852879" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn call-btn" href="tel:18142177237">Call (814) 217-7237</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Family &amp; Artist-Owned</span>
+    <h1>Tattoos and Piercings, Done Right</h1>
+    <p class="lede">Bayfront Tattoo Lounge is a small, family-oriented shop with six tattoo artists and three piercers on staff. Walk-ins and appointments are both welcome, every day of the week.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:18142177237">Call the Studio</a>
+      <a class="btn btn-outline" href="#services">See Piercing Options</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap trust-grid">
+    <div class="trust-chip"><div class="num">6</div><div class="desc">Tattoo Artists</div></div>
+    <div class="trust-chip"><div class="num">3</div><div class="desc">Piercers</div></div>
+    <div class="trust-chip"><div class="num">Walk-Ins</div><div class="desc">Always Welcome</div></div>
+    <div class="trust-chip"><div class="num">1-6pm</div><div class="desc">Open Daily</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-sm">Piercing Menu</span>
+      <h2>From lobe to septum, we've got you</h2>
+    </div>
+    <div class="flash-grid">
+      <div class="flash-card">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#1a1a1a" stroke-width="1.5"/></svg>
+        <span class="marker">septum</span>
+        <p>Classic center piercing</p>
+      </div>
+      <div class="flash-card">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" stroke="#1a1a1a" stroke-width="1.5"/><line x1="12" y1="11" x2="12" y2="19" stroke="#1a1a1a" stroke-width="1.5"/></svg>
+        <span class="marker">nostril</span>
+        <p>Subtle stud placement</p>
+      </div>
+      <div class="flash-card">
+        <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="6" ry="9" stroke="#1a1a1a" stroke-width="1.5"/></svg>
+        <span class="marker">helix</span>
+        <p>Upper ear cartilage hoop</p>
+      </div>
+      <div class="flash-card">
+        <svg viewBox="0 0 24 24" fill="none"><line x1="6" y1="12" x2="18" y2="12" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="6" cy="12" r="1.6" fill="#1a1a1a"/><circle cx="18" cy="12" r="1.6" fill="#1a1a1a"/></svg>
+        <span class="marker">eyebrow</span>
+        <p>Straight barbell bar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Small shop, real artists, real family</h2>
+      <p>Bayfront Tattoo Lounge is owned and run by working artists, not a chain. It's a small, family-oriented studio where the crew knows their regulars and welcomes first-timers just the same.</p>
+      <p>Whether you're coming in for a lobe piercing or a full tattoo session, the door's open every day from 1 to 6pm, walk-ins included.</p>
+    </div>
+    <div class="about-card">
+      <div class="big">9</div>
+      <div class="small">Artists &amp; Piercers on Staff</div>
+    </div>
+  </div>
+</section>
+
+<section class="hours-band" id="hours">
+  <div class="wrap">
+    <h2>Open Daily, 1pm to 6pm</h2>
+    <p>Walk in or call ahead. Bayfront Tattoo Lounge is ready when you are.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="tel:18142177237">Call (814) 217-7237</a>
+      <a class="btn btn-outline" href="https://facebook.com/p/The-Bayfront-Tattoo-Lounge-100078123852879" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#c9a227" stroke-width="2"/></svg>
+          </span>
+          <span class="brand-name" style="color:var(--paper);">Bayfront Tattoo Lounge</span>
+        </div>
+        <p>Family and artist-owned tattoo and piercing studio in Erie, PA.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:18142177237">(814) 217-7237</a></li>
+          <li><a href="https://facebook.com/p/The-Bayfront-Tattoo-Lounge-100078123852879" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <p>3256 W 26th St<br>Erie, PA 16506<br>Open Daily 1-6pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">Site by Modularity Networks &middot; Bayfront Tattoo Lounge, Erie PA</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var nav = document.getElementById('siteNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+</body>
+</html>
