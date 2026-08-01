@@ -362,20 +362,20 @@ html = f'''<!doctype html>
   <main class="wrap">
     <section class="hero">
       <span class="badge"><span class="badge-dot"></span> Client Demo Gallery &middot; Modularity Networks</span>
-      <h1>Real Businesses.<br><span class="accent">Real Websites.</span></h1>
-      <p>Every site below was hand-built for a local business by our team, custom code, no page-builder templates, no stock layouts.</p>
+      <h1>We Built You A Website.<br><span class="accent">Take A Look.</span></h1>
+      <p>You didn't have one yet, so we put one together to show you what's possible. Free to preview, no obligation either way, if you like it, it's yours once you're ready for hosting.</p>
       <div class="stats">
-        <div class="stat"><span class="stat-num">{count}</span><span class="stat-label">Sites Built</span></div>
-        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Custom Code</span></div>
-        <div class="stat"><span class="stat-num">Zero</span><span class="stat-label">Templates Used</span></div>
+        <div class="stat"><span class="stat-num">{count}</span><span class="stat-label">Local Businesses</span></div>
+        <div class="stat"><span class="stat-num">Free</span><span class="stat-label">To Preview</span></div>
+        <div class="stat"><span class="stat-num">No</span><span class="stat-label">Obligation</span></div>
       </div>
     </section>
 
     <section class="showcase">
       <div class="section-head">
         <span class="eyebrow">The Work</span>
-        <h2>Browse The Builds.</h2>
-        <p>Click any business below to view its live demo site, exactly what we'd hand a client on day one.</p>
+        <h2>Find Your Business.</h2>
+        <p>Click any business below to see its live demo site, and let us know what you think.</p>
       </div>
       <div class="tab-bar" role="tablist">
 {tab_buttons}      </div>
