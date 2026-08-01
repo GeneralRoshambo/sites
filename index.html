@@ -230,6 +230,13 @@
     gap: 1.25rem;
   }
   .grid.tab-panel:not(.active) { display: none; }
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: var(--text-dim);
+    font-size: 0.98rem;
+  }
   .card {
     display: flex;
     flex-direction: column;
@@ -328,6 +335,12 @@
         <button class="tab-btn active" data-tab="Wallenpaupack" role="tab" aria-selected="true">
           Wallenpaupack Area <span class="tab-count">15</span>
         </button>
+        <button class="tab-btn" data-tab="DelawareValley" role="tab" aria-selected="false">
+          Delaware Valley <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-tab="HudsonValley" role="tab" aria-selected="false">
+          Hudson Valley <span class="tab-count">0</span>
+        </button>
         <button class="tab-btn" data-tab="Erie" role="tab" aria-selected="false">
           Erie Area <span class="tab-count">3</span>
         </button>
@@ -423,6 +436,16 @@
           <span class="card-loc">Tafton, PA</span>
           <span class="card-cta">View Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
+      </div>
+      <div class="grid tab-panel" data-panel="DelawareValley" role="tabpanel">
+        <div class="empty-state">
+          <p>No demo sites in Delaware Valley yet, check back soon.</p>
+        </div>
+      </div>
+      <div class="grid tab-panel" data-panel="HudsonValley" role="tabpanel">
+        <div class="empty-state">
+          <p>No demo sites in Hudson Valley yet, check back soon.</p>
+        </div>
       </div>
       <div class="grid tab-panel" data-panel="Erie" role="tabpanel">
         <a class="card" href="reyes-landscaping/">

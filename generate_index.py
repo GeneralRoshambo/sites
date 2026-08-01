@@ -11,17 +11,20 @@ with open("manifest.json") as f:
 # Group sites by region, preserving first-seen region order.
 REGION_LABELS = {
     "Wallenpaupack": "Wallenpaupack Area",
+    "DelawareValley": "Delaware Valley",
+    "HudsonValley": "Hudson Valley",
     "Erie": "Erie Area",
 }
-REGION_ORDER = ["Wallenpaupack", "Erie"]
+REGION_ORDER = ["Wallenpaupack", "DelawareValley", "HudsonValley", "Erie"]
 
 by_region = OrderedDict()
 for s in sites:
     region = s.get("region") or "Wallenpaupack"
     by_region.setdefault(region, []).append(s)
 
-# Make sure known regions appear even if empty, in a stable order; append any unexpected ones after.
-ordered_regions = [r for r in REGION_ORDER if r in by_region]
+# Always show every known region, even ones with zero sites yet, in a stable order;
+# append any unexpected regions found in the data after.
+ordered_regions = list(REGION_ORDER)
 ordered_regions += [r for r in by_region if r not in REGION_ORDER]
 
 def card_html(s):
@@ -36,7 +39,7 @@ def card_html(s):
 tab_buttons = ""
 tab_panels = ""
 for i, region in enumerate(ordered_regions):
-    region_sites = by_region[region]
+    region_sites = by_region.get(region, [])
     label = REGION_LABELS.get(region, region)
     active_btn = " active" if i == 0 else ""
     active_panel = " active" if i == 0 else ""
@@ -44,7 +47,13 @@ for i, region in enumerate(ordered_regions):
           {label} <span class="tab-count">{len(region_sites)}</span>
         </button>
 '''
-    cards = "".join(card_html(s) for s in region_sites)
+    if region_sites:
+        cards = "".join(card_html(s) for s in region_sites)
+    else:
+        cards = f'''        <div class="empty-state">
+          <p>No demo sites in {label} yet, check back soon.</p>
+        </div>
+'''
     tab_panels += f'''      <div class="grid tab-panel{active_panel}" data-panel="{region}" role="tabpanel">
 {cards}      </div>
 '''
@@ -283,6 +292,13 @@ html = f'''<!doctype html>
     gap: 1.25rem;
   }}
   .grid.tab-panel:not(.active) {{ display: none; }}
+  .empty-state {{
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: var(--text-dim);
+    font-size: 0.98rem;
+  }}
   .card {{
     display: flex;
     flex-direction: column;
