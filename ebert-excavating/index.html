@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebert Excavating LLC | Damascus, PA Excavation &amp; Site Work</title>
+<meta name="description" content="Ebert Excavating LLC of Damascus, PA. Licensed, insured excavation, demolition, and site work across Wayne County.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#6B6560;
+    --clay:#B5502D;
+    --bone:#F2EEE6;
+    --slate:#2E2B27;
+    --moss:#6B7A5E;
+    --line:rgba(46,43,39,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--slate);
+    font-family:'Public Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    color:var(--slate);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:3px;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--bone);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1180px;margin:0 auto;
+    gap:20px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;font-weight:700;font-size:1.25rem;
+    white-space:nowrap;flex-shrink:0;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{width:30px;height:30px;flex-shrink:0;}
+  .nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--slate);}
+  .nav-links a:hover{color:var(--clay);}
+  .nav-cta{
+    background:var(--clay);color:#fff;padding:11px 22px;border-radius:3px;
+    font-weight:700;text-decoration:none;font-size:0.92rem;white-space:nowrap;
+  }
+  .nav-cta:hover{background:#96401f;}
+  .hamburger{display:none;background:none;border:2px solid var(--slate);border-radius:4px;padding:8px 10px;cursor:pointer;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--slate);margin:4px 0;}
+  .mobile-menu{display:none;}
+
+  @media (max-width:1150px){
+    .nav-links, .nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .brand span.text{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .mobile-menu{
+      display:none;flex-direction:column;gap:0;
+      background:var(--bone);border-top:1px solid var(--line);
+    }
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{
+      padding:16px 24px;text-decoration:none;color:var(--slate);font-weight:600;
+      border-bottom:1px solid var(--line);
+    }
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:88px 0 76px;
+    background:var(--bone);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+    max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:2;
+  }
+  .eyebrow{
+    font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;
+    color:var(--moss);margin-bottom:18px;display:block;
+  }
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.06;font-weight:700;}
+  .hero h1 em{color:var(--clay);font-style:normal;}
+  .hero p.lead{font-size:1.13rem;color:#4a4642;max-width:46ch;margin:22px 0 32px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--slate);color:var(--bone);padding:15px 28px;border-radius:3px;
+    text-decoration:none;font-weight:700;font-size:0.98rem;
+  }
+  .btn-primary:hover{background:#454039;}
+  .btn-secondary{
+    border:2px solid var(--slate);color:var(--slate);padding:13px 26px;border-radius:3px;
+    text-decoration:none;font-weight:700;font-size:0.98rem;
+  }
+  .btn-secondary:hover{background:var(--slate);color:var(--bone);}
+
+  .contour-art{width:100%;height:auto;}
+
+  .stats-row{
+    display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;
+    border-top:1px solid var(--line);padding-top:28px;
+  }
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--clay);}
+  .stat span{font-size:0.85rem;color:#5a564f;}
+
+  /* SECTION helpers */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:#5a564f;margin-top:16px;font-size:1.05rem;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid p{color:#4a4642;margin:0 0 16px;font-size:1.02rem;}
+  .quote-block{
+    border-left:4px solid var(--clay);padding-left:24px;margin-top:28px;
+  }
+  .quote-block p{font-family:'Fraunces',serif;font-size:1.25rem;font-style:italic;color:var(--slate);}
+  .quote-block span{font-size:0.85rem;color:#6a655e;font-weight:600;}
+
+  /* SERVICES */
+  .services{background:var(--bone);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 28px;
+  }
+  .service-card .icon{width:44px;height:44px;margin-bottom:20px;}
+  .service-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .service-card p{color:#5a564f;font-size:0.95rem;margin:0;}
+
+  /* SERVICE AREA */
+  .area-section{background:#fff;}
+  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .area-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;}
+  .area-list li{
+    padding-left:22px;position:relative;font-weight:600;color:var(--slate);
+  }
+  .area-list li::before{
+    content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--moss);border-radius:50%;
+  }
+
+  /* CTA */
+  .cta-band{
+    background:var(--slate);color:var(--bone);text-align:center;padding:76px 24px;
+  }
+  .cta-band h2{color:var(--bone);font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:18px;}
+  .cta-band p{color:#cfc9c0;max-width:52ch;margin:0 auto 32px;font-size:1.05rem;}
+  .cta-band .btn-primary{background:var(--clay);}
+  .cta-band .btn-primary:hover{background:#c85f38;}
+
+  /* CONTACT / FOOTER */
+  footer{background:#211f1c;color:#cfc9c0;padding:64px 0 32px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+  footer h3{color:var(--bone);font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:18px;}
+  footer p, footer li{color:#a6a099;font-size:0.95rem;line-height:1.8;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#cfc9c0;text-decoration:none;}
+  footer a:hover{color:var(--clay);}
+  .footer-bottom{
+    border-top:1px solid #3a3630;padding-top:24px;font-size:0.85rem;color:#867f76;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .about-grid, .area-grid{grid-template-columns:1fr;gap:32px;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+    .area-list{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#B5502D"/><path d="M6 22 L14 10 L18 16 L22 8 L27 22 Z" stroke="#F2EEE6" stroke-width="2" fill="none"/></svg>
+      <span class="text">Ebert Excavating</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#area">Service Area</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(570) 224-6795</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#area">Service Area</a>
+    <a href="#contact" class="nav-cta">(570) 224-6795</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Damascus, PA &middot; Wayne County</span>
+      <h1>Ground work built to <em>hold</em> for the long run.</h1>
+      <p class="lead">Ebert Excavating has moved earth across Wayne County for years, driveways, foundations, land clearing, and demolition, run by a crew that treats every site like it's their own land.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get a quote</a>
+        <a href="#services" class="btn-secondary">See our work</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><b>USDOT</b><span>Licensed carrier, #2131241</span></div>
+        <div class="stat"><b>Wayne Co.</b><span>Based in Damascus, PA</span></div>
+        <div class="stat"><b>Insured</b><span>Fully licensed &amp; insured</span></div>
+      </div>
+    </div>
+    <div>
+      <svg class="contour-art" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Topographic contour illustration of excavated land">
+        <rect width="480" height="420" rx="10" fill="#EFE9DD"/>
+        <g stroke="#B5502D" stroke-width="2" fill="none" opacity="0.9">
+          <path d="M40 340 C 120 300, 160 260, 130 220 C 100 180, 160 160, 220 190 C 280 220, 320 190, 340 140 C 355 105, 400 90, 440 100"/>
+        </g>
+        <g stroke="#6B7A5E" stroke-width="2" fill="none" opacity="0.85">
+          <path d="M20 300 C 100 270, 150 235, 120 200 C 95 170, 150 145, 210 172 C 270 200, 315 168, 335 120 C 350 88, 395 72, 445 82"/>
+        </g>
+        <g stroke="#6B6560" stroke-width="1.6" fill="none" opacity="0.7">
+          <path d="M10 260 C 90 235, 135 205, 108 175 C 85 148, 138 128, 196 152 C 258 178, 305 148, 325 105 C 340 76, 385 58, 440 66"/>
+          <path d="M0 220 C 80 198, 120 172, 95 148 C 74 126, 122 108, 178 130 C 235 154, 285 128, 305 90 C 320 64, 365 48, 430 52"/>
+        </g>
+        <path d="M60 380 L110 320 L150 380 Z" fill="#2E2B27" opacity="0.12"/>
+        <path d="M300 380 L360 300 L410 380 Z" fill="#2E2B27" opacity="0.12"/>
+        <circle cx="440" cy="70" r="5" fill="#B5502D"/>
+        <text x="450" y="65" font-family="Public Sans, sans-serif" font-size="11" fill="#6B6560">site marker</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--moss);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;display:block;margin-bottom:14px;">Who's on the site</span>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:20px;">Owner-operated, truck by truck.</h2>
+        <p>Wade Ebert runs the crew out of Damascus, keeping the same trucks and the same faces on every job, from a single driveway regrade to a full commercial pad. The business carries its own USDOT number, meaning it's a real fleet operation with its own equipment, not a broker passing work along.</p>
+        <p>Most calls come from neighbors who saw the trucks working down the road, which is exactly how a business like this is supposed to grow.</p>
+      </div>
+      <div class="quote-block">
+        <p>"We show up, we grade it right, and we clean up after ourselves. That's the whole reputation."</p>
+        <span>&mdash; Wade Ebert, Owner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--moss);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;">What we grade</span>
+      <h2>Site work for homes, land, and job sites.</h2>
+      <p>From a single residential lot to a commercial pad, the same crew and the same machines handle it start to finish.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><path d="M10 30 L18 16 L22 22 L28 12 L34 30" stroke="#B5502D" stroke-width="2" fill="none"/></svg>
+        <h3>Driveways &amp; Grading</h3>
+        <p>New driveway cuts, regrading, and drainage correction so water moves where it should.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><rect x="12" y="14" width="20" height="16" stroke="#6B7A5E" stroke-width="2" fill="none"/><path d="M12 14 L22 8 L32 14" stroke="#6B7A5E" stroke-width="2" fill="none"/></svg>
+        <h3>Foundation &amp; Site Prep</h3>
+        <p>Digging and prepping building sites for new construction, additions, and outbuildings.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><path d="M14 30 L30 14 M14 14 L30 30" stroke="#6B6560" stroke-width="2"/></svg>
+        <h3>Demolition</h3>
+        <p>Structure teardown and clearing, hauled off and the site left level and clean.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><circle cx="16" cy="28" r="4" stroke="#B5502D" stroke-width="2" fill="none"/><circle cx="28" cy="28" r="4" stroke="#B5502D" stroke-width="2" fill="none"/><path d="M12 28 L12 18 L26 18 L32 24 L32 28" stroke="#B5502D" stroke-width="2" fill="none"/></svg>
+        <h3>Land Clearing</h3>
+        <p>Brush, timber, and debris removal to open up land for whatever's next.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><path d="M10 22 L34 22 M22 10 L22 34" stroke="#6B7A5E" stroke-width="2"/></svg>
+        <h3>Utility Trenching</h3>
+        <p>Water, septic, and utility line trenches dug to spec and backfilled properly.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 44 44"><rect width="44" height="44" rx="8" fill="#F2EEE6"/><path d="M12 32 L18 20 L24 26 L32 12" stroke="#6B6560" stroke-width="2" fill="none"/></svg>
+        <h3>Commercial Pads</h3>
+        <p>Larger-scale grading for commercial builds, backed by our own fleet and DOT number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area-section" id="area">
+  <div class="wrap">
+    <div class="area-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--moss);font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;display:block;margin-bottom:14px;">Where we work</span>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;">Damascus and the towns around it.</h2>
+        <p style="color:#4a4642;">Based in Damascus, running jobs throughout Wayne County and just across the river into the Upper Delaware Valley.</p>
+      </div>
+      <ul class="area-list">
+        <li>Damascus</li>
+        <li>Tyler Hill</li>
+        <li>Honesdale</li>
+        <li>Milanville</li>
+        <li>Beach Lake</li>
+        <li>Equinunk</li>
+        <li>Cochecton, NY</li>
+        <li>Narrowsburg, NY</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Have a site that needs work?</h2>
+    <p>Tell us what you're trying to get done, driveway, foundation, or a full teardown, and we'll get back to you with a straight answer.</p>
+    <a href="#contact" class="btn-primary">Request a quote</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Ebert Excavating LLC</h3>
+        <p>Licensed and insured excavation and site work based in Damascus, Pennsylvania. USDOT #2131241.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>111 Stone Arch Rd<br>Damascus, PA 18415</li>
+          <li style="margin-top:10px;"><a href="tel:5702246795">(570) 224-6795</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Monday &ndash; Friday: 7:00 AM &ndash; 5:00 PM</li>
+          <li>Saturday: By appointment</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ebert Excavating LLC. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

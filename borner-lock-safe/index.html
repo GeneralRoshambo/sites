@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borner Lock &amp; Safe | Milford, PA Locksmith Since 1961</title>
+<meta name="description" content="Borner Lock &amp; Safe, veteran-owned locksmith serving Milford, PA since 1961. Rekeying, safes, and lockouts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vault:#1F3D2E;
+    --brass:#B8935A;
+    --cream:#F3EEE1;
+    --char:#262321;
+    --rust:#8B3A2B;
+    --line:rgba(38,35,33,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--char);font-family:'Nunito Sans',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Oswald',sans-serif;margin:0;text-transform:uppercase;letter-spacing:0.01em;font-weight:600;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--vault);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.25rem;text-transform:uppercase;color:var(--cream);white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.93rem;color:#d8d2c2;}
+  .nav-links a:hover{color:var(--brass);}
+  .nav-cta{background:var(--brass);color:var(--char);padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#a37c46;}
+  .hamburger{display:none;background:none;border:2px solid #d8d2c2;padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:#d8d2c2;margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--vault);border-top:1px solid #315443;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:#d8d2c2;font-weight:600;border-bottom:1px solid #315443;}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{background:var(--vault);color:var(--cream);padding:96px 0 76px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.16em;font-size:0.76rem;color:var(--brass);display:block;margin-bottom:16px;font-family:'Nunito Sans',sans-serif;}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.7rem);line-height:1.06;color:var(--cream);}
+  .hero p.lead{font-size:1.1rem;color:#cfc9b8;max-width:44ch;margin:22px 0 30px;font-family:'Nunito Sans',sans-serif;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--brass);color:var(--char);padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Nunito Sans',sans-serif;}
+  .btn-primary:hover{background:#a37c46;}
+  .btn-secondary{border:2px solid #4c6b5b;color:var(--cream);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Nunito Sans',sans-serif;}
+  .btn-secondary:hover{border-color:var(--brass);}
+
+  .keyhole-frame{
+    position:relative;width:100%;aspect-ratio:4/3.2;border-radius:8px;overflow:hidden;
+    background:#16281f;border:2px solid #345b48;
+  }
+  .keyhole-mask{width:100%;height:100%;}
+
+  .est-badge{
+    display:inline-flex;align-items:center;gap:10px;background:#16281f;border:1px solid var(--brass);
+    padding:10px 18px;border-radius:30px;margin-top:26px;font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:0.85rem;color:var(--brass);
+  }
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:#4a463f;margin-top:16px;font-size:1.04rem;font-family:'Nunito Sans',sans-serif;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-grid p{color:#3d3a34;margin:0 0 16px;font-size:1.02rem;font-family:'Nunito Sans',sans-serif;}
+
+  .services{background:var(--cream);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:#fff;border:1px solid var(--line);padding:28px 24px;border-radius:4px;border-top:4px solid var(--brass);}
+  .service-card h3{font-size:1.05rem;margin-bottom:10px;}
+  .service-card p{color:#57534c;font-size:0.9rem;margin:0;font-family:'Nunito Sans',sans-serif;}
+
+  .cta-band{background:var(--char);color:var(--cream);text-align:center;padding:72px 24px;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.9rem,3.4vw,2.4rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#bcb6a8;font-family:'Nunito Sans',sans-serif;}
+  .cta-band .btn-primary{background:var(--rust);color:#fff;}
+  .cta-band .btn-primary:hover{background:#712f22;}
+
+  footer{background:var(--vault);color:#cfc9b8;padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:44px;}
+  footer h3{color:var(--cream);font-family:'Oswald',sans-serif;font-size:1.1rem;margin-bottom:16px;text-transform:uppercase;}
+  footer p,footer li{color:#a6a08e;font-size:0.94rem;line-height:1.8;font-family:'Nunito Sans',sans-serif;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#cfc9b8;text-decoration:none;}
+  footer a:hover{color:var(--brass);}
+  .footer-bottom{border-top:1px solid #315443;padding-top:22px;font-size:0.85rem;color:#8a917;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Nunito Sans',sans-serif;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#B8935A"/><circle cx="16" cy="13" r="5" fill="#1F3D2E"/><rect x="13.5" y="17" width="5" height="10" fill="#1F3D2E"/></svg>
+      Borner Lock &amp; Safe
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(570) 296-8222</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact" class="nav-cta">(570) 296-8222</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Milford, Pennsylvania</span>
+      <h1>Locks, safes, and keys, handled right.</h1>
+      <p class="lead">Borner Lock &amp; Safe has served Milford since 1961, rekeying homes, cutting keys, and servicing safes for three generations of the same families.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Call the shop</a>
+        <a href="#services" class="btn-secondary">Our services</a>
+      </div>
+      <div class="est-badge">
+        <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="#B8935A" stroke-width="1.4" fill="none"/></svg>
+        Established 1961 &middot; Veteran Owned
+      </div>
+    </div>
+    <div class="keyhole-frame">
+      <svg class="keyhole-mask" viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a keyhole revealing a safe dial">
+        <defs>
+          <mask id="keyhole-cut">
+            <rect width="460" height="380" fill="white"/>
+            <circle cx="230" cy="150" r="58" fill="black"/>
+            <path d="M204 180 L256 180 L238 260 L222 260 Z" fill="black"/>
+          </mask>
+        </defs>
+        <rect width="460" height="380" fill="#16281f"/>
+        <g mask="url(#keyhole-cut)">
+          <rect width="460" height="380" fill="#0f1c15"/>
+          <circle cx="230" cy="210" r="140" fill="none" stroke="#B8935A" stroke-width="3"/>
+          <circle cx="230" cy="210" r="100" fill="none" stroke="#8B3A2B" stroke-width="2"/>
+          <circle cx="230" cy="210" r="60" fill="none" stroke="#B8935A" stroke-width="2"/>
+          <line x1="230" y1="70" x2="230" y2="100" stroke="#B8935A" stroke-width="3"/>
+          <line x1="230" y1="210" x2="230" y2="150" stroke="#B8935A" stroke-width="4"/>
+        </g>
+        <circle cx="230" cy="150" r="58" fill="none" stroke="#B8935A" stroke-width="3"/>
+        <path d="M204 180 L256 180 L238 260 L222 260 Z" fill="none" stroke="#B8935A" stroke-width="3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--rust);">Three generations, one shop</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;">Owned by William Borner, run on trust.</h2>
+      <p>William Borner has run this shop since 1961, building a reputation on the kind of work that doesn't get advertised much because it doesn't need to, referrals from neighbors who've trusted the same locksmith for decades.</p>
+      <p>Veteran owned and locally operated, Borner Lock &amp; Safe still handles the full range of the trade: rekeying, safe work, and cut keys for home, auto, and commercial doors.</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 420 320" width="100%" role="img" aria-label="Illustration of a vintage safe">
+        <rect width="420" height="320" rx="12" fill="#F3EEE1"/>
+        <rect x="120" y="60" width="180" height="200" rx="10" fill="#1F3D2E" stroke="#262321" stroke-width="3"/>
+        <circle cx="210" cy="160" r="42" fill="none" stroke="#B8935A" stroke-width="4"/>
+        <circle cx="210" cy="160" r="6" fill="#B8935A"/>
+        <rect x="140" y="220" width="140" height="14" rx="4" fill="#B8935A"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--rust);">Full trade</span>
+      <h2>Everything with a lock and a key.</h2>
+      <p>Residential, commercial, and safe work, all handled in-house.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Rekeying</h3><p>Rekey your home or business after a move or a lost key, without replacing hardware.</p></div>
+      <div class="service-card"><h3>Key Cutting</h3><p>Duplicate house, auto, and commercial keys cut on-site while you wait.</p></div>
+      <div class="service-card"><h3>Safe Service</h3><p>Safe installation, combination changes, and lockout service.</p></div>
+      <div class="service-card"><h3>Lockouts</h3><p>Locked out of your home, car, or business? We can get you back in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Locked out or need a rekey?</h2>
+    <p>Call the shop on Route 6, sixty-plus years of the same trade, done right.</p>
+    <a href="#contact" class="btn-primary">Call (570) 296-8222</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Borner Lock &amp; Safe</h3>
+        <p>Veteran-owned locksmith serving Milford, Pennsylvania since 1961.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>349 Route 6<br>Milford, PA 18337</li>
+          <li style="margin-top:10px;"><a href="tel:5702968222">(570) 296-8222</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM</li>
+          <li>Saturday: By appointment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Borner Lock &amp; Safe. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

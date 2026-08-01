@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamma Grace Pizzeria &amp; Restaurant | Sparrow Bush, NY</title>
+<meta name="description" content="Mamma Grace Pizzeria &amp; Restaurant, family-owned Italian pizzeria in Sparrow Bush, New York.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --semolina:#F4E9D8;
+    --tomato:#A63D2F;
+    --olive:#5C6B3F;
+    --char:#2B2420;
+    --gold:#C9A227;
+    --line:rgba(43,36,32,0.15);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--semolina);color:var(--char);font-family:'Karla',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Playfair Display',serif;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--tomato);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--semolina);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:1.35rem;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.93rem;}
+  .nav-links a:hover{color:var(--tomato);}
+  .nav-cta{background:var(--tomato);color:#fff;padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#87301f;}
+  .hamburger{display:none;background:none;border:2px solid var(--char);padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--char);margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--semolina);border-top:1px solid var(--line);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--char);font-weight:600;border-bottom:1px solid var(--line);}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{padding:88px 0 64px;background:var(--semolina);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.76rem;color:var(--olive);display:block;margin-bottom:16px;}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.1;font-style:italic;}
+  .hero h1 span{color:var(--tomato);}
+  .hero p.lead{font-size:1.12rem;color:#4a3d33;max-width:44ch;margin:22px 0 30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--tomato);color:#fff;padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;}
+  .btn-primary:hover{background:#87301f;}
+  .btn-secondary{border:2px solid var(--char);color:var(--char);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;}
+  .btn-secondary:hover{background:var(--char);color:var(--semolina);}
+
+  .torn-card{
+    background:#fff;padding:36px;position:relative;
+    clip-path:polygon(0 0,100% 0,100% 96%,97% 100%,92% 97%,86% 100%,80% 97%,74% 100%,68% 97%,62% 100%,56% 97%,50% 100%,44% 97%,38% 100%,32% 97%,26% 100%,20% 97%,14% 100%,8% 97%,2% 100%,0 96%);
+    box-shadow:0 18px 30px rgba(43,36,32,0.14);
+  }
+  .torn-card .kicker{font-family:'Karla',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-size:0.75rem;color:var(--gold);margin-bottom:16px;}
+  .menu-list{list-style:none;margin:0;padding:0;}
+  .menu-list li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dotted var(--line);font-family:'Playfair Display',serif;font-size:1.1rem;}
+  .menu-list li:last-child{border-bottom:none;}
+  .menu-list span.desc{font-family:'Karla',sans-serif;font-size:0.85rem;color:#6b5d50;display:block;font-style:normal;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:#4a3d33;margin-top:16px;font-size:1.04rem;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-grid p{color:#41352b;margin:0 0 16px;font-size:1.02rem;}
+
+  .services{background:var(--semolina);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:#fff;border:1px solid var(--line);padding:28px 22px;border-radius:4px;}
+  .service-card h3{font-size:1.1rem;margin-bottom:10px;font-style:italic;}
+  .service-card p{color:#5a4c40;font-size:0.9rem;margin:0;}
+
+  .cta-band{background:var(--olive);color:var(--semolina);text-align:center;padding:72px 24px;}
+  .cta-band h2{color:var(--semolina);font-size:clamp(1.9rem,3.4vw,2.4rem);margin-bottom:16px;font-style:italic;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#e0e5d3;}
+  .cta-band .btn-primary{background:var(--gold);color:var(--char);}
+  .cta-band .btn-primary:hover{background:#ad8a20;}
+
+  footer{background:var(--char);color:#d8cec2;padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:44px;}
+  footer h3{color:var(--semolina);font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;margin-bottom:16px;}
+  footer p,footer li{color:#a89b8b;font-size:0.94rem;line-height:1.8;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#d8cec2;text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+  .footer-bottom{border-top:1px solid #453a30;padding-top:22px;font-size:0.85rem;color:#8a7d6e;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="28" height="28" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#A63D2F"/><circle cx="16" cy="16" r="10" fill="#F4E9D8"/><circle cx="12" cy="13" r="1.6" fill="#A63D2F"/><circle cx="19" cy="12" r="1.6" fill="#5C6B3F"/><circle cx="17" cy="19" r="1.6" fill="#A63D2F"/><circle cx="11" cy="19" r="1.6" fill="#5C6B3F"/></svg>
+      Mamma Grace
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">Sparrow Bush, NY</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">Our Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact" class="nav-cta">Sparrow Bush, NY</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Sparrow Bush, New York</span>
+      <h1>Real dough, real sauce, <span>real family.</span></h1>
+      <p class="lead">Mamma Grace Pizzeria &amp; Restaurant serves gourmet pizza and homemade Italian dishes from a small kitchen on Main Street, quality ingredients, nothing shortcut.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Order for pickup</a>
+        <a href="#menu" class="btn-secondary">See the menu</a>
+      </div>
+    </div>
+    <div class="torn-card">
+      <div class="kicker">Tonight's board</div>
+      <ul class="menu-list">
+        <li>Margherita Pie <span class="desc" style="text-align:right;">Fresh basil, san marzano</span></li>
+        <li>Baked Ziti <span class="desc" style="text-align:right;">House recipe</span></li>
+        <li>Chicken Parm Hero <span class="desc" style="text-align:right;">Made to order</span></li>
+        <li>Garden Salad <span class="desc" style="text-align:right;">Side or full</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--tomato);">Family owned and operated</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;">A kitchen that still does it the long way.</h2>
+      <p>Mamma Grace opened as a family operation and has stayed one, gourmet pizzas and homemade Italian dishes built from quality ingredients rather than shortcuts.</p>
+      <p>It's the kind of place Sparrow Bush and Port Jervis regulars order from without needing to check the menu first.</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 420 320" width="100%" role="img" aria-label="Illustration of a wood-fired pizza oven and peel">
+        <rect width="420" height="320" rx="12" fill="#F4E9D8"/>
+        <path d="M90 260 C 90 170, 330 170, 330 260 Z" fill="#8B5A3C"/>
+        <ellipse cx="210" cy="260" rx="120" ry="20" fill="#5C4530"/>
+        <rect x="150" y="200" width="120" height="60" rx="30" fill="#2B2420"/>
+        <ellipse cx="210" cy="230" rx="45" ry="20" fill="#C9A227" opacity="0.5"/>
+        <rect x="60" y="230" width="140" height="10" rx="5" fill="#A63D2F" transform="rotate(-8 130 235)"/>
+        <circle cx="60" cy="225" r="16" fill="#A63D2F" transform="rotate(-8 130 235)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--tomato);">On the menu</span>
+      <h2>Pizza, pasta, and the classics.</h2>
+      <p>A full Italian-American menu built around scratch-made sauce and dough.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Gourmet Pizza</h3><p>Wood-style pies with fresh toppings and house-made sauce.</p></div>
+      <div class="service-card"><h3>Pasta &amp; Baked Dishes</h3><p>Baked ziti, lasagna, and classic Italian-American entrees.</p></div>
+      <div class="service-card"><h3>Heroes &amp; Sandwiches</h3><p>Chicken parm, meatball, and cold hero sandwiches made to order.</p></div>
+      <div class="service-card"><h3>Family Trays</h3><p>Catering trays for parties, gatherings, and the whole crew.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Hungry? Call it in.</h2>
+    <p>Pickup and delivery from a kitchen that still does it the long way.</p>
+    <a href="#contact" class="btn-primary">See contact info</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Mamma Grace Pizzeria &amp; Restaurant</h3>
+        <p>Family-owned Italian pizzeria and restaurant in Sparrow Bush, New York.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>32 Main St<br>Sparrow Bush, NY 12780</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Tuesday &ndash; Sunday: 11:00 AM &ndash; 9:00 PM</li>
+          <li>Monday: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Mamma Grace Pizzeria &amp; Restaurant. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milford Dry Cleaners | Milford, PA</title>
+<meta name="description" content="Milford Dry Cleaners, full service dry cleaning and coin-op laundry in Milford, Pennsylvania.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FAFAF7;
+    --steam:#3F6C86;
+    --starch:#EDE6D6;
+    --navy:#22303B;
+    --coral:#D97B62;
+    --line:rgba(34,48,59,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--white);color:var(--navy);font-family:'Source Sans 3',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Big Shoulders Display',sans-serif;margin:0;text-transform:uppercase;letter-spacing:0.01em;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.4rem;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.93rem;}
+  .nav-links a:hover{color:var(--steam);}
+  .nav-cta{background:var(--steam);color:#fff;padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#325a70;}
+  .hamburger{display:none;background:none;border:2px solid var(--navy);padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--navy);margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--line);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--navy);font-weight:600;border-bottom:1px solid var(--line);}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{
+    padding:90px 0 70px;background:var(--starch);position:relative;overflow:hidden;
+    background-image:repeating-linear-gradient(115deg, rgba(63,108,134,0.07) 0px, rgba(63,108,134,0.07) 2px, transparent 2px, transparent 46px);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.76rem;color:var(--steam);display:block;margin-bottom:16px;font-family:'Source Sans 3',sans-serif;}
+  .hero h1{font-size:clamp(2.6rem,5vw,4rem);line-height:1.02;}
+  .hero h1 span{color:var(--coral);}
+  .hero p.lead{font-size:1.1rem;color:#3d4a55;max-width:44ch;margin:22px 0 30px;font-family:'Source Sans 3',sans-serif;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--navy);color:var(--white);padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Source Sans 3',sans-serif;}
+  .btn-primary:hover{background:#16222b;}
+  .btn-secondary{border:2px solid var(--navy);color:var(--navy);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Source Sans 3',sans-serif;}
+  .btn-secondary:hover{background:var(--navy);color:var(--white);}
+
+  .steam-art{width:100%;height:auto;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:#455260;margin-top:16px;font-size:1.04rem;font-family:'Source Sans 3',sans-serif;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .about-grid p{color:#3d4a55;margin:0 0 16px;font-size:1.02rem;font-family:'Source Sans 3',sans-serif;}
+  .fold-line{border-top:2px dashed var(--steam);margin:28px 0;}
+
+  .services{background:var(--white);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:#fff;border:1px solid var(--line);padding:28px 22px;border-radius:4px;text-align:left;}
+  .service-card h3{font-size:1.15rem;margin-bottom:10px;text-transform:none;}
+  .service-card p{color:#57616f;font-size:0.92rem;margin:0;font-family:'Source Sans 3',sans-serif;}
+
+  .cta-band{background:var(--navy);color:var(--white);text-align:center;padding:72px 24px;}
+  .cta-band h2{color:var(--white);font-size:clamp(2rem,3.6vw,2.6rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#b9c6cf;font-family:'Source Sans 3',sans-serif;}
+  .cta-band .btn-primary{background:var(--coral);}
+  .cta-band .btn-primary:hover{background:#c56a52;}
+
+  footer{background:#182229;color:#b9c6cf;padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:44px;}
+  footer h3{color:var(--white);font-family:'Big Shoulders Display',sans-serif;font-size:1.2rem;margin-bottom:16px;text-transform:uppercase;}
+  footer p,footer li{color:#8fa0ac;font-size:0.94rem;line-height:1.8;font-family:'Source Sans 3',sans-serif;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#b9c6cf;text-decoration:none;}
+  footer a:hover{color:var(--coral);}
+  .footer-bottom{border-top:1px solid #2b3941;padding-top:22px;font-size:0.85rem;color:#71828e;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Source Sans 3',sans-serif;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="28" height="28" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#3F6C86"/><path d="M8 24 L8 12 L24 12 L24 24" stroke="#FAFAF7" stroke-width="2" fill="none"/><path d="M8 24 L16 18 L24 24" stroke="#FAFAF7" stroke-width="2" fill="none"/></svg>
+      Milford Dry Cleaners
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(570) 296-7252</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact" class="nav-cta">(570) 296-7252</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Milford, Pennsylvania</span>
+      <h1>Pressed. Folded. <span>Done right.</span></h1>
+      <p class="lead">Milford Dry Cleaners has handled the town's dry cleaning and coin-op laundry for over a decade, the kind of steady, reliable service that keeps customers coming back year after year.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Drop off today</a>
+        <a href="#services" class="btn-secondary">See our services</a>
+      </div>
+    </div>
+    <div>
+      <svg class="steam-art" viewBox="0 0 460 360" role="img" aria-label="Illustration of a pressed shirt with steam">
+        <rect width="460" height="360" rx="8" fill="#fff"/>
+        <path d="M170 60 C160 40, 180 30, 175 10" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M210 60 C200 40, 222 28, 215 6" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.6"/>
+        <path d="M250 60 C240 42, 262 30, 255 10" stroke="#3F6C86" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M120 90 L150 70 L190 82 L230 68 L270 82 L310 70 L340 90 L340 260 L120 260 Z" fill="#EDE6D6" stroke="#22303B" stroke-width="2.5"/>
+        <line x1="230" y1="100" x2="230" y2="250" stroke="#22303B" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <path d="M150 70 L165 130 L190 82 Z" fill="#D97B62"/>
+        <path d="M310 70 L295 130 L270 82 Z" fill="#D97B62"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">A Milford fixture</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;">Ten years of the same careful work.</h2>
+      <p>Milford Dry Cleaners has built its name on consistency, the same careful pressing and cleaning, visit after visit, that customers say they can count on year after year.</p>
+      <div class="fold-line"></div>
+      <p>Alongside dry cleaning, the shop runs a coin-op laundromat, giving Milford one stop for everyday laundry and the garments that need a professional hand.</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 460 320" width="100%" role="img" aria-label="Illustration of a laundromat washing machine">
+        <rect width="460" height="320" rx="8" fill="#EDE6D6"/>
+        <rect x="130" y="40" width="200" height="240" rx="14" fill="#fff" stroke="#22303B" stroke-width="3"/>
+        <circle cx="230" cy="170" r="70" fill="none" stroke="#3F6C86" stroke-width="6"/>
+        <circle cx="230" cy="170" r="50" fill="none" stroke="#D97B62" stroke-width="2"/>
+        <circle cx="160" cy="70" r="6" fill="#22303B"/>
+        <circle cx="185" cy="70" r="6" fill="#22303B"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Full service</span>
+      <h2>Everything, cleaned and pressed.</h2>
+      <p>From everyday laundry to garments that need a professional touch.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Dry Cleaning</h3><p>Suits, dresses, and delicates cleaned and pressed with care.</p></div>
+      <div class="service-card"><h3>Coin-Op Laundry</h3><p>Self-serve washers and dryers for everyday loads, open extended hours.</p></div>
+      <div class="service-card"><h3>Alterations</h3><p>Hemming, repairs, and fitting for garments that need a small fix.</p></div>
+      <div class="service-card"><h3>Household Items</h3><p>Comforters, curtains, and linens cleaned and pressed to fit right back home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Bring it by Water Street.</h2>
+    <p>Same careful pressing Milford has trusted for years, ready when you need it.</p>
+    <a href="#contact" class="btn-primary">Get directions</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Milford Dry Cleaners</h3>
+        <p>Full service dry cleaning and coin-op laundromat serving Milford, Pennsylvania.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>307 W Harford St<br>Milford, PA 18337</li>
+          <li style="margin-top:10px;"><a href="tel:5702967252">(570) 296-7252</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Monday &ndash; Saturday: 8:00 AM &ndash; 6:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Milford Dry Cleaners. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

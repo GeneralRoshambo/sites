@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Canaan Farm Market | Waymart, PA</title>
+<meta name="description" content="South Canaan Farm Market in Waymart, PA. Fresh deli, Lancaster County meats and cheese, farm staples, and friendly service.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F0DE;
+    --green:#3F5C3F;
+    --gold:#D9A441;
+    --barn:#8C3B2E;
+    --char:#2B2620;
+    --line:rgba(43,38,32,0.15);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--char);font-family:'Inter',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'DM Serif Display',serif;margin:0;font-weight:400;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--barn);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:2px solid var(--char);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'DM Serif Display',serif;font-size:1.35rem;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;}
+  .nav-links a:hover{color:var(--barn);}
+  .nav-cta{background:var(--green);color:var(--cream);padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:2px solid var(--char);padding:8px 10px;cursor:pointer;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--char);margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--cream);border-top:1px solid var(--line);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--char);font-weight:600;border-bottom:1px solid var(--line);}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{padding:80px 0 60px;background:var(--cream);position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.13em;font-size:0.76rem;color:var(--green);display:block;margin-bottom:16px;}
+  .hero h1{font-size:clamp(2.3rem,4.4vw,3.4rem);line-height:1.12;}
+  .hero h1 em{color:var(--barn);font-style:italic;}
+  .hero p.lead{font-size:1.1rem;color:#4c4438;max-width:44ch;margin:22px 0 30px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--barn);color:var(--cream);padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;}
+  .btn-primary:hover{background:#732f24;}
+  .btn-secondary{border:2px solid var(--char);color:var(--char);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;}
+  .btn-secondary:hover{background:var(--char);color:var(--cream);}
+
+  .chalk-card{
+    background:var(--char);color:var(--cream);border-radius:10px;padding:36px;
+    border:6px solid #4a4033;box-shadow:0 18px 34px rgba(43,38,32,0.18);
+    font-family:'DM Serif Display',serif;
+  }
+  .chalk-card .chalk-title{font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:700;color:var(--gold);margin-bottom:18px;}
+  .chalk-list{list-style:none;margin:0;padding:0;}
+  .chalk-list li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(247,240,222,0.28);font-size:1.05rem;}
+  .chalk-list li:last-child{border-bottom:none;}
+  .chalk-list span.price{color:var(--gold);}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.9rem,3.2vw,2.5rem);}
+  .section-head p{color:#4c4438;margin-top:16px;font-size:1.04rem;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .about-grid p{color:#453e33;margin:0 0 16px;font-size:1.02rem;}
+  .badge-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;}
+  .badge{background:var(--cream);border:1px solid var(--line);padding:10px 18px;border-radius:30px;font-size:0.88rem;font-weight:700;color:var(--green);}
+
+  .goods{background:var(--cream);}
+  .goods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .goods-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 26px;}
+  .goods-card .tag{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;color:var(--barn);}
+  .goods-card h3{font-size:1.2rem;margin:10px 0;}
+  .goods-card p{color:#5c5346;font-size:0.94rem;margin:0;}
+
+  .cta-band{background:var(--green);color:var(--cream);text-align:center;padding:72px 24px;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.8rem,3.2vw,2.3rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#dfe6d9;}
+  .cta-band .btn-primary{background:var(--gold);color:var(--char);}
+  .cta-band .btn-primary:hover{background:#c69333;}
+
+  footer{background:var(--char);color:#c9c0b0;padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:44px;}
+  footer h3{color:var(--cream);font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:16px;}
+  footer p,footer li{color:#a89f8d;font-size:0.94rem;line-height:1.8;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#c9c0b0;text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+  .footer-bottom{border-top:1px solid #443c30;padding-top:22px;font-size:0.85rem;color:#87806f;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .goods-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#8C3B2E"/><path d="M9 20 L16 9 L23 20 Z" fill="#F7F0DE"/></svg>
+      South Canaan Farm Market
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#goods">What We Carry</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(570) 937-9484</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#goods">What We Carry</a>
+    <a href="#contact" class="nav-cta">(570) 937-9484</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Waymart, PA &middot; Wayne County</span>
+      <h1>The deli counter <em>Wayne County</em> shops for.</h1>
+      <p class="lead">South Canaan Farm Market keeps a real deli, Lancaster County meats and cheeses, farm-fresh eggs, and raw milk on the shelf, run with the kind of service that remembers your order.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get directions</a>
+        <a href="#goods" class="btn-secondary">See what we carry</a>
+      </div>
+    </div>
+    <div class="chalk-card">
+      <div class="chalk-title">Today at the counter</div>
+      <ul class="chalk-list">
+        <li><span>John F. Martin lunch meats</span> <span class="price">by the lb</span></li>
+        <li><span>Farm fresh eggs</span> <span class="price">dozen</span></li>
+        <li><span>Raw milk</span> <span class="price">half gal</span></li>
+        <li><span>House soup mixes</span> <span class="price">bagged</span></li>
+        <li><span>Local cheese wheels</span> <span class="price">cut to order</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Family run, since day one</span>
+      <h2 style="font-size:clamp(1.9rem,3.2vw,2.5rem);margin-bottom:18px;">A market built around the counter, not the aisles.</h2>
+      <p>South Canaan Farm Market opened as a straightforward country market: a real deli counter, farm goods, and staples at fair prices, with a staff that treats regulars like neighbors.</p>
+      <p>Out-of-state customers have come to depend on mail orders when they can't make the drive, a sign of how much the deli itself, not just the location, keeps people coming back.</p>
+      <div class="badge-row">
+        <span class="badge">Deli counter</span>
+        <span class="badge">Raw milk &amp; eggs</span>
+        <span class="badge">Mail orders</span>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 460 380" width="100%" role="img" aria-label="Illustration of a farm market crate of produce and jars">
+        <rect width="460" height="380" rx="10" fill="#F7F0DE"/>
+        <rect x="60" y="200" width="340" height="130" rx="6" fill="none" stroke="#8C3B2E" stroke-width="3"/>
+        <line x1="60" y1="230" x2="400" y2="230" stroke="#8C3B2E" stroke-width="3"/>
+        <line x1="140" y1="200" x2="140" y2="330" stroke="#8C3B2E" stroke-width="3"/>
+        <line x1="230" y1="200" x2="230" y2="330" stroke="#8C3B2E" stroke-width="3"/>
+        <line x1="320" y1="200" x2="320" y2="330" stroke="#8C3B2E" stroke-width="3"/>
+        <circle cx="100" cy="180" r="34" fill="#D9A441"/>
+        <circle cx="185" cy="170" r="28" fill="#3F5C3F"/>
+        <circle cx="270" cy="180" r="32" fill="#8C3B2E"/>
+        <rect x="330" y="140" width="42" height="56" rx="6" fill="#3F5C3F"/>
+        <rect x="330" y="140" width="42" height="14" rx="4" fill="#2B2620"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="goods" id="goods">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's on the shelf</span>
+      <h2>Deli, dairy, and farm staples.</h2>
+      <p>A little of everything a country kitchen runs on, sourced close to home and priced fair.</p>
+    </div>
+    <div class="goods-grid">
+      <div class="goods-card">
+        <span class="tag">Deli</span>
+        <h3>Meats &amp; Cheese</h3>
+        <p>John F. Martin meats and cheeses from Lancaster County, cut to order at the counter.</p>
+      </div>
+      <div class="goods-card">
+        <span class="tag">Dairy</span>
+        <h3>Raw Milk &amp; Eggs</h3>
+        <p>Farm-fresh eggs and raw milk kept in stock for regulars who plan their week around it.</p>
+      </div>
+      <div class="goods-card">
+        <span class="tag">Pantry</span>
+        <h3>Soup Mixes &amp; Staples</h3>
+        <p>House soup mixes, candy, vegetables, and frozen goods at reasonable, small-market prices.</p>
+      </div>
+      <div class="goods-card">
+        <span class="tag">Service</span>
+        <h3>Mail Orders</h3>
+        <p>Out-of-state regulars keep ordering by mail when the drive isn't an option.</p>
+      </div>
+      <div class="goods-card">
+        <span class="tag">Hours</span>
+        <h3>Tue &ndash; Sat</h3>
+        <p>Open Tuesday through Friday, and Saturday mornings, closed Sunday and Monday.</p>
+      </div>
+      <div class="goods-card">
+        <span class="tag">Local</span>
+        <h3>Waymart Staple</h3>
+        <p>A short drive from Honesdale, Hamlin, and the whole Wallenpaupack area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Stop by the counter.</h2>
+    <p>Fresh cuts, farm eggs, and a market that still runs the way a country store should.</p>
+    <a href="#contact" class="btn-primary">Plan your visit</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>South Canaan Farm Market</h3>
+        <p>A country deli and farm market serving Waymart and the surrounding Wayne County towns.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>33 Fox Lane Rd<br>Waymart, PA 18472</li>
+          <li style="margin-top:10px;"><a href="tel:5709379484">(570) 937-9484</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Tue &ndash; Fri: 9:00 AM &ndash; 5:30 PM</li>
+          <li>Saturday: 9:00 AM &ndash; 2:00 PM</li>
+          <li>Sun &amp; Mon: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 South Canaan Farm Market. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

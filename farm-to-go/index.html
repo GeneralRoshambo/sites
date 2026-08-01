@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm To Go | Slate Hill, NY</title>
+<meta name="description" content="Farm To Go, a local farm store in Slate Hill, New York with fresh meat, eggs, milk, and produce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wheat:#EDE3C8;
+    --forest:#34492F;
+    --terracotta:#C1673D;
+    --white:#FBF8F0;
+    --brown:#3A2E22;
+    --line:rgba(58,46,34,0.15);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--white);color:var(--brown);font-family:'Archivo',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Cormorant',serif;margin:0;font-weight:600;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Cormorant',serif;font-weight:700;font-size:1.5rem;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.93rem;}
+  .nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{background:var(--forest);color:var(--white);padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#25321f;}
+  .hamburger{display:none;background:none;border:2px solid var(--brown);padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--brown);margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--line);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--brown);font-weight:600;border-bottom:1px solid var(--line);}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .rows-band{
+    height:14px;width:100%;
+    background:repeating-linear-gradient(90deg, var(--forest) 0 34px, var(--terracotta) 34px 68px, var(--wheat) 68px 102px);
+    opacity:0.85;
+  }
+
+  .hero{padding:76px 0 64px;background:var(--wheat);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.76rem;color:var(--forest);display:block;margin-bottom:16px;font-family:'Archivo',sans-serif;}
+  .hero h1{font-size:clamp(2.5rem,4.8vw,3.8rem);line-height:1.06;}
+  .hero h1 em{color:var(--terracotta);font-style:italic;}
+  .hero p.lead{font-size:1.12rem;color:#4a3d2e;max-width:44ch;margin:22px 0 30px;font-family:'Archivo',sans-serif;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--forest);color:var(--white);padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Archivo',sans-serif;}
+  .btn-primary:hover{background:#25321f;}
+  .btn-secondary{border:2px solid var(--brown);color:var(--brown);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Archivo',sans-serif;}
+  .btn-secondary:hover{background:var(--brown);color:var(--white);}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:#4a3d2e;margin-top:16px;font-size:1.04rem;font-family:'Archivo',sans-serif;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-grid p{color:#3d3225;margin:0 0 16px;font-size:1.05rem;font-family:'Archivo',sans-serif;}
+
+  .goods{background:var(--wheat);}
+  .goods-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .goods-card{background:var(--white);border:1px solid var(--line);padding:26px 22px;border-radius:6px;}
+  .goods-card h3{font-size:1.2rem;margin-bottom:8px;}
+  .goods-card p{color:#5c5040;font-size:0.9rem;margin:0;font-family:'Archivo',sans-serif;}
+
+  .cta-band{background:var(--forest);color:var(--white);text-align:center;padding:70px 24px;}
+  .cta-band h2{color:var(--white);font-size:clamp(1.9rem,3.4vw,2.4rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#d3ddc9;font-family:'Archivo',sans-serif;}
+  .cta-band .btn-primary{background:var(--terracotta);}
+  .cta-band .btn-primary:hover{background:#a4552f;}
+
+  footer{background:var(--brown);color:#d3c8b6;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+  footer h3{color:var(--white);font-family:'Cormorant',serif;font-size:1.25rem;margin-bottom:14px;}
+  footer p,footer li{color:#b3a48f;font-size:0.94rem;line-height:1.8;font-family:'Archivo',sans-serif;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#d3c8b6;text-decoration:none;}
+  footer a:hover{color:var(--terracotta);}
+  .footer-bottom{border-top:1px solid #4e4132;padding-top:20px;font-size:0.85rem;color:#93876f;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Archivo',sans-serif;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .goods-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="16" fill="#34492F"/><path d="M9 22 L16 9 L23 22" stroke="#EDE3C8" stroke-width="2" fill="none"/></svg>
+      Farm To Go
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#goods">What We Carry</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">Slate Hill, NY</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#goods">What We Carry</a>
+    <a href="#contact" class="nav-cta">Slate Hill, NY</a>
+  </div>
+</header>
+
+<div class="rows-band"></div>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Slate Hill, New York</span>
+      <h1>Straight off the farm, <em>straight to you.</em></h1>
+      <p class="lead">Farm To Go is a roadside farm store on Route 6 stocked with local meat, eggs, milk, and produce, along with a small selection of gifts and trinkets.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get directions</a>
+        <a href="#goods" class="btn-secondary">See what's in stock</a>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 460 340" width="100%" role="img" aria-label="Illustration of planted farm rows and a produce stand">
+        <rect width="460" height="340" rx="10" fill="#EDE3C8"/>
+        <g stroke="#34492F" stroke-width="6" stroke-linecap="round">
+          <line x1="30" y1="80" x2="430" y2="80"/>
+          <line x1="30" y1="120" x2="430" y2="120"/>
+          <line x1="30" y1="160" x2="430" y2="160"/>
+        </g>
+        <rect x="130" y="190" width="200" height="110" rx="8" fill="#FBF8F0" stroke="#3A2E22" stroke-width="3"/>
+        <rect x="130" y="190" width="200" height="24" fill="#C1673D"/>
+        <circle cx="170" cy="250" r="18" fill="#34492F"/>
+        <circle cx="220" cy="255" r="16" fill="#C1673D"/>
+        <circle cx="270" cy="250" r="18" fill="#34492F"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of a farm crate with eggs and produce">
+        <rect width="420" height="300" rx="12" fill="#FBF8F0"/>
+        <rect x="90" y="140" width="240" height="100" rx="6" fill="none" stroke="#C1673D" stroke-width="3"/>
+        <circle cx="140" cy="130" r="22" fill="#EDE3C8" stroke="#3A2E22" stroke-width="2"/>
+        <circle cx="185" cy="122" r="26" fill="#EDE3C8" stroke="#3A2E22" stroke-width="2"/>
+        <circle cx="235" cy="128" r="22" fill="#EDE3C8" stroke="#3A2E22" stroke-width="2"/>
+        <circle cx="280" cy="120" r="26" fill="#EDE3C8" stroke="#3A2E22" stroke-width="2"/>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--terracotta);">A stand that stays open</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;">Fresh, local, and close to home.</h2>
+      <p>Farm To Go keeps Slate Hill stocked with locally-sourced meat, eggs, and milk, along with seasonal produce, run out of a stand that neighbors have started stopping at regularly.</p>
+      <p>It's simple by design: fresh goods, fair prices, and a small selection of gifts for anyone passing through on Route 6.</p>
+    </div>
+  </div>
+</section>
+
+<section class="goods" id="goods">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--terracotta);">On the shelf</span>
+      <h2>What's fresh this week.</h2>
+      <p>Local meat, dairy, and produce, along with a few gifts worth browsing.</p>
+    </div>
+    <div class="goods-grid">
+      <div class="goods-card"><h3>Meat</h3><p>Locally-raised cuts, sourced from farms nearby.</p></div>
+      <div class="goods-card"><h3>Eggs &amp; Milk</h3><p>Farm-fresh eggs and milk, restocked regularly.</p></div>
+      <div class="goods-card"><h3>Produce</h3><p>Seasonal fruits and vegetables from the surrounding area.</p></div>
+      <div class="goods-card"><h3>Gifts &amp; Trinkets</h3><p>A small selection of local gifts worth a look.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Stop by Route 6.</h2>
+    <p>Fresh from the farm, no middleman, no fuss.</p>
+    <a href="#contact" class="btn-primary">Find us on Route 6</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Farm To Go</h3>
+        <p>A local farm store serving Slate Hill and the surrounding Orange County towns.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>2580 US-6<br>Slate Hill, NY 10973</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Open daily &middot; hours vary seasonally</li>
+          <li>Call ahead to confirm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Farm To Go. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

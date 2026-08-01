@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Bakery | Erie, PA</title>
+<meta name="description" content="International Bakery, family-owned Italian bakery in Erie's Little Italy, famous for fresh baked Italian bread.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --flour:#F7F2E9;
+    --wheat:#D3A24C;
+    --terracotta:#B75A3A;
+    --olive:#4B5842;
+    --espresso:#2E2420;
+    --line:rgba(46,36,32,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--flour);color:var(--espresso);font-family:'Mulish',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Libre Caslon Display',serif;margin:0;font-weight:400;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--flour);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Libre Caslon Display',serif;font-size:1.3rem;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.93rem;}
+  .nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{background:var(--terracotta);color:#fff;padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#984a2e;}
+  .hamburger{display:none;background:none;border:2px solid var(--espresso);padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:var(--espresso);margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--flour);border-top:1px solid var(--line);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:var(--espresso);font-weight:600;border-bottom:1px solid var(--line);}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{padding:86px 0 60px;background:var(--flour);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.76rem;color:var(--olive);display:block;margin-bottom:16px;font-family:'Mulish',sans-serif;}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.1;}
+  .hero h1 em{color:var(--terracotta);font-style:italic;}
+  .hero p.lead{font-size:1.1rem;color:#4c4038;max-width:44ch;margin:22px 0 30px;font-family:'Mulish',sans-serif;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--espresso);color:var(--flour);padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Mulish',sans-serif;}
+  .btn-primary:hover{background:#463a32;}
+  .btn-secondary{border:2px solid var(--espresso);color:var(--espresso);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'Mulish',sans-serif;}
+  .btn-secondary:hover{background:var(--espresso);color:var(--flour);}
+
+  .braid-divider{width:100%;height:40px;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.5rem);}
+  .section-head p{color:#4c4038;margin-top:16px;font-size:1.03rem;font-family:'Mulish',sans-serif;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-grid p{color:#40352d;margin:0 0 16px;font-size:1.02rem;font-family:'Mulish',sans-serif;}
+
+  .goods{background:var(--flour);}
+  .goods-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .goods-card{background:#fff;border:1px solid var(--line);padding:30px 26px;border-radius:6px;}
+  .goods-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .goods-card p{color:#5a4e44;font-size:0.93rem;margin:0;font-family:'Mulish',sans-serif;}
+
+  .cta-band{background:var(--olive);color:var(--flour);text-align:center;padding:70px 24px;}
+  .cta-band h2{color:var(--flour);font-size:clamp(1.9rem,3.4vw,2.4rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#d9dfd0;font-family:'Mulish',sans-serif;}
+  .cta-band .btn-primary{background:var(--wheat);color:var(--espresso);}
+  .cta-band .btn-primary:hover{background:#b6863c;}
+
+  footer{background:var(--espresso);color:#d8cbbf;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+  footer h3{color:var(--flour);font-family:'Libre Caslon Display',serif;font-size:1.15rem;margin-bottom:16px;}
+  footer p,footer li{color:#a99a8c;font-size:0.94rem;line-height:1.8;font-family:'Mulish',sans-serif;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#d8cbbf;text-decoration:none;}
+  footer a:hover{color:var(--wheat);}
+  .footer-bottom{border-top:1px solid #453a32;padding-top:20px;font-size:0.85rem;color:#8c7d70;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Mulish',sans-serif;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .goods-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="26" height="26" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#B75A3A"/><path d="M9 20 C9 12, 23 12, 23 20" stroke="#F7F2E9" stroke-width="2" fill="none"/></svg>
+      International Bakery
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#goods">Fresh Today</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(814) 452-3435</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#goods">Fresh Today</a>
+    <a href="#contact" class="nav-cta">(814) 452-3435</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Erie's Little Italy</span>
+      <h1>Bread baked the way <em>Little Italy</em> remembers it.</h1>
+      <p class="lead">International Bakery has turned out fresh Italian bread, whole loaves and sliced, from the same corner of Erie's Little Italy for generations of regulars.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get directions</a>
+        <a href="#goods" class="btn-secondary">See what's fresh</a>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 460 340" width="100%" role="img" aria-label="Illustration of braided Italian bread loaves">
+        <rect width="460" height="340" rx="10" fill="#F7F2E9"/>
+        <path d="M80 200 C 110 170, 130 230, 160 200 C 190 170, 210 230, 240 200 C 270 170, 290 230, 320 200 C 350 170, 370 230, 400 200" stroke="#D3A24C" stroke-width="20" stroke-linecap="round" fill="none"/>
+        <path d="M80 240 C 110 210, 130 270, 160 240 C 190 210, 210 270, 240 240 C 270 210, 290 270, 320 240 C 350 210, 370 270, 400 240" stroke="#B75A3A" stroke-width="20" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<svg class="braid-divider" viewBox="0 0 1180 40" preserveAspectRatio="none">
+  <path d="M0 20 C 60 5, 90 35, 150 20 C 210 5, 240 35, 300 20 C 360 5, 390 35, 450 20 C 510 5, 540 35, 600 20 C 660 5, 690 35, 750 20 C 810 5, 840 35, 900 20 C 960 5, 990 35, 1050 20 C 1090 10, 1140 25, 1180 20" stroke="#D3A24C" stroke-width="4" fill="none" opacity="0.6"/>
+</svg>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--terracotta);">A Little Italy fixture</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.5rem);margin-bottom:18px;">Baked fresh, the old way.</h2>
+      <p>International Bakery has kept the ovens running on West 18th Street, turning out Italian bread the traditional way, whole loaves, half loaves, and slices for regulars who plan their week around bakery hours.</p>
+      <p>It's the kind of bakery neighbors send visitors to, a real taste of Erie's Little Italy in a loaf of bread.</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of a bakery display case with loaves">
+        <rect width="420" height="300" rx="10" fill="#F7F2E9"/>
+        <rect x="70" y="150" width="280" height="110" rx="8" fill="#fff" stroke="#4B5842" stroke-width="2"/>
+        <ellipse cx="140" cy="150" rx="40" ry="22" fill="#D3A24C"/>
+        <ellipse cx="220" cy="150" rx="36" ry="20" fill="#B75A3A"/>
+        <ellipse cx="300" cy="150" rx="38" ry="21" fill="#D3A24C"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="goods" id="goods">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--terracotta);">From the oven</span>
+      <h2>Bread, and the things that go with it.</h2>
+    </div>
+    <div class="goods-grid">
+      <div class="goods-card"><h3>Italian Bread</h3><p>Whole loaves and slices baked fresh throughout the week.</p></div>
+      <div class="goods-card"><h3>Rolls &amp; Buns</h3><p>Fresh rolls for sandwiches, dinner, and everything in between.</p></div>
+      <div class="goods-card"><h3>Specialty Orders</h3><p>Larger orders for events and gatherings, call ahead to arrange.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Stop by West 18th Street.</h2>
+    <p>Fresh bread, baked the traditional way, since generations back.</p>
+    <a href="#contact" class="btn-primary">Call (814) 452-3435</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>International Bakery</h3>
+        <p>A family Italian bakery in Erie's Little Italy neighborhood.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>610 W 18th St<br>Erie, PA 16502</li>
+          <li style="margin-top:10px;"><a href="tel:8144523435">(814) 452-3435</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Mon &ndash; Wed: 9:00 AM &ndash; 2:00 PM</li>
+          <li>Thu &ndash; Fri: 9:00 AM &ndash; 3:00 PM</li>
+          <li>Sat: 9:00 AM &ndash; 1:00 PM &middot; Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 International Bakery. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

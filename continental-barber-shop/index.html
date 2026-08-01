@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continental Barber Shop | Erie, PA</title>
+<meta name="description" content="Continental Barber Shop, a classic neighborhood barbershop on West 6th Street in Erie, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2A38;
+    --brick:#A23E2E;
+    --cream:#F2ECE0;
+    --forest:#35503F;
+    --gray:#8D857A;
+    --line:rgba(30,42,56,0.15);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--navy);font-family:'PT Sans',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Anton',sans-serif;margin:0;font-weight:400;text-transform:uppercase;letter-spacing:0.01em;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--brick);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--navy);}
+  .stripe{height:6px;width:100%;background:repeating-linear-gradient(115deg,var(--brick) 0 22px, var(--cream) 22px 44px, var(--navy) 44px 66px);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;gap:20px;}
+  .brand{font-family:'Anton',sans-serif;font-size:1.3rem;text-transform:uppercase;color:var(--cream);white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:0.92rem;color:#d8d2c4;}
+  .nav-links a:hover{color:var(--brick);}
+  .nav-cta{background:var(--brick);color:#fff;padding:11px 22px;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.9rem;white-space:nowrap;}
+  .nav-cta:hover{background:#822f22;}
+  .hamburger{display:none;background:none;border:2px solid #d8d2c4;padding:8px 10px;cursor:pointer;border-radius:2px;}
+  .hamburger span{display:block;width:20px;height:2px;background:#d8d2c4;margin:4px 0;}
+  .mobile-menu{display:none;}
+  @media (max-width:1150px){
+    .nav-links,.nav-cta.desktop{display:none;}
+    .hamburger{display:block;}
+    .mobile-menu{display:none;flex-direction:column;background:var(--navy);border-top:1px solid #34455a;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:16px 24px;text-decoration:none;color:#d8d2c4;font-weight:700;border-bottom:1px solid #34455a;}
+    .mobile-menu .nav-cta{margin:16px 24px;text-align:center;}
+  }
+
+  .hero{background:var(--navy);color:var(--cream);padding:88px 0 70px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.14em;font-size:0.76rem;color:var(--brick);display:block;margin-bottom:16px;font-family:'PT Sans',sans-serif;}
+  .hero h1{font-size:clamp(2.4rem,4.8vw,3.8rem);line-height:1.05;color:var(--cream);}
+  .hero p.lead{font-size:1.1rem;color:#c7c1b3;max-width:44ch;margin:22px 0 30px;font-family:'PT Sans',sans-serif;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--brick);color:#fff;padding:15px 28px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'PT Sans',sans-serif;}
+  .btn-primary:hover{background:#822f22;}
+  .btn-secondary{border:2px solid #4c5c72;color:var(--cream);padding:13px 26px;border-radius:2px;text-decoration:none;font-weight:700;font-family:'PT Sans',sans-serif;}
+  .btn-secondary:hover{border-color:var(--brick);}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.5rem);}
+  .section-head p{color:#45403a;margin-top:16px;font-size:1.03rem;font-family:'PT Sans',sans-serif;}
+
+  .about-section{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-grid p{color:#3a352f;margin:0 0 16px;font-size:1.02rem;font-family:'PT Sans',sans-serif;}
+  .plaque-badge{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--navy);padding:10px 18px;margin-top:20px;font-weight:700;font-size:0.85rem;font-family:'PT Sans',sans-serif;}
+
+  .services{background:var(--cream);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-card{background:#fff;border:1px solid var(--line);padding:30px 26px;border-radius:4px;border-bottom:4px solid var(--brick);}
+  .service-card h3{font-size:1.1rem;margin-bottom:10px;}
+  .service-card p{color:#524c44;font-size:0.92rem;margin:0;font-family:'PT Sans',sans-serif;}
+
+  .cta-band{background:var(--forest);color:var(--cream);text-align:center;padding:72px 24px;}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.9rem,3.4vw,2.4rem);margin-bottom:16px;}
+  .cta-band p{max-width:50ch;margin:0 auto 30px;color:#d6e0d1;font-family:'PT Sans',sans-serif;}
+  .cta-band .btn-primary{background:var(--brick);}
+
+  footer{background:#171f28;color:#c7c1b3;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+  footer h3{color:var(--cream);font-family:'Anton',sans-serif;font-size:1.15rem;margin-bottom:16px;text-transform:uppercase;}
+  footer p,footer li{color:#93897b;font-size:0.94rem;line-height:1.8;font-family:'PT Sans',sans-serif;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer a{color:#c7c1b3;text-decoration:none;}
+  footer a:hover{color:var(--brick);}
+  .footer-bottom{border-top:1px solid #2c3743;padding-top:20px;font-size:0.85rem;color:#786f62;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'PT Sans',sans-serif;}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="stripe"></div>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#A23E2E"/><rect x="14" y="6" width="4" height="20" fill="#F2ECE0"/></svg>
+      Continental Barber
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta desktop">(814) 454-1633</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mmenu');var open=m.classList.toggle('open');this.setAttribute('aria-expanded',open);">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact" class="nav-cta">(814) 454-1633</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">West 6th Street, Erie</span>
+      <h1>A neighborhood barbershop, still standing.</h1>
+      <p class="lead">Continental Barber Shop has kept West 6th Street's chairs full with sharp, no-nonsense cuts, the kind of shop regulars have been walking into for years.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get directions</a>
+        <a href="#services" class="btn-secondary">Our services</a>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 460 340" width="100%" role="img" aria-label="Illustration of a classic barbershop chair">
+        <rect width="460" height="340" rx="8" fill="#28374A"/>
+        <rect x="150" y="100" width="160" height="130" rx="10" fill="#F2ECE0"/>
+        <rect x="170" y="230" width="120" height="16" rx="4" fill="#A23E2E"/>
+        <circle cx="230" cy="90" r="30" fill="#F2ECE0" stroke="#A23E2E" stroke-width="3"/>
+        <rect x="220" y="250" width="20" height="60" fill="#8D857A"/>
+        <ellipse cx="230" cy="312" rx="70" ry="12" fill="#141c26"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Illustration of barber tools on a counter">
+        <rect width="420" height="300" rx="10" fill="#F2ECE0"/>
+        <rect x="80" y="200" width="260" height="16" rx="4" fill="#1E2A38"/>
+        <rect x="110" y="120" width="14" height="80" rx="6" fill="#A23E2E"/>
+        <rect x="150" y="140" width="14" height="60" rx="6" fill="#35503F"/>
+        <rect x="190" y="100" width="14" height="100" rx="6" fill="#1E2A38"/>
+        <circle cx="280" cy="150" r="34" fill="none" stroke="#A23E2E" stroke-width="4"/>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--brick);">On the block since day one</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.5rem);margin-bottom:18px;">Same shop, same standards.</h2>
+      <p>Continental Barber Shop has held its spot on West 6th Street through Erie's changes, sticking to straightforward cuts and shaves rather than chasing trends.</p>
+      <p>Walk-ins are the norm here, not the exception, the kind of shop where you can drop in between errands and still get a proper cut.</p>
+      <div class="plaque-badge">West 6th St, Erie</div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--brick);">In the chair</span>
+      <h2>Cuts, shaves, and the basics done well.</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Classic Cuts</h3><p>Clean, standard cuts for any age, no appointment needed.</p></div>
+      <div class="service-card"><h3>Fades &amp; Tapers</h3><p>Sharp fades and tapers, blended clean every time.</p></div>
+      <div class="service-card"><h3>Straight Razor Shaves</h3><p>Hot towel and straight razor shaves for a proper finish.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Walk in any day we're open.</h2>
+    <p>No appointment needed, just a chair and a good cut.</p>
+    <a href="#contact" class="btn-primary">Call (814) 454-1633</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Continental Barber Shop</h3>
+        <p>A classic neighborhood barbershop on West 6th Street in Erie, Pennsylvania.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li>1238 W 6th St<br>Erie, PA 16507</li>
+          <li style="margin-top:10px;"><a href="tel:8144541633">(814) 454-1633</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <ul>
+          <li>Tue &ndash; Fri: 9:00 AM &ndash; 6:00 PM</li>
+          <li>Saturday: 9:00 AM &ndash; 3:00 PM</li>
+          <li>Sun &amp; Mon: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Continental Barber Shop. All rights reserved.</span>
+      <span>Site preview built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

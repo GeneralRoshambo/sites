@@ -313,5 +313,89 @@
     "location": "Port Jervis, NY",
     "category": "Plumbing & Heating",
     "region": "HudsonValley"
+  },
+  {
+    "slug": "ebert-excavating",
+    "name": "Ebert Excavating LLC",
+    "location": "Damascus, PA",
+    "category": "Excavation Contractor",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "south-canaan-farm-market",
+    "name": "South Canaan Farm Market",
+    "location": "Waymart, PA",
+    "category": "Farm Market & Deli",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "jba-auto",
+    "name": "JBA Auto",
+    "location": "New Milford, PA",
+    "category": "Auto Repair",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "milford-dry-cleaners",
+    "name": "Milford Dry Cleaners",
+    "location": "Milford, PA",
+    "category": "Dry Cleaning",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "happy-nails-milford",
+    "name": "Happy Nails",
+    "location": "Milford, PA",
+    "category": "Nail Salon",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "borner-lock-safe",
+    "name": "Borner Lock & Safe",
+    "location": "Milford, PA",
+    "category": "Locksmith",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "mamma-grace-pizzeria",
+    "name": "Mamma Grace Pizzeria & Restaurant",
+    "location": "Sparrow Bush, NY",
+    "category": "Pizza & Italian",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "farm-to-go",
+    "name": "Farm To Go",
+    "location": "Slate Hill, NY",
+    "category": "Farm Market",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "ny-barber-co",
+    "name": "NY Barber Co.",
+    "location": "Middletown, NY",
+    "category": "Barber Shop",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "international-bakery-erie",
+    "name": "International Bakery",
+    "location": "Erie, PA",
+    "category": "Italian Bakery",
+    "region": "Erie"
+  },
+  {
+    "slug": "continental-barber-shop",
+    "name": "Continental Barber Shop",
+    "location": "Erie, PA",
+    "category": "Barber Shop",
+    "region": "Erie"
+  },
+  {
+    "slug": "abc-grooming-julie-baire",
+    "name": "ABC Grooming by Julie Baire",
+    "location": "Erie, PA",
+    "category": "Pet Grooming",
+    "region": "Erie"
   }
 ]
