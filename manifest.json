@@ -103,5 +103,12 @@
     "location": "Erie, PA",
     "category": "Landscaping & Snow Removal",
     "region": "Erie"
+  },
+  {
+    "slug": "lager-haus",
+    "name": "The Lager Haus",
+    "location": "Tafton, PA",
+    "category": "Pub & Restaurant",
+    "region": "Wallenpaupack"
   }
 ]
