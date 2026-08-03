@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O'Dell's Country Corner | Deli &amp; Convenience Store in Cuddebackville, NY</title>
+<meta name="description" content="O'Dell's Country Corner, a family-run deli, gas station and convenience store in Cuddebackville, NY serving Route 209 travelers and locals since generations back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2F4A38;
+    --barn:#8C3229;
+    --cream:#F5EFDD;
+    --mustard:#C98F2A;
+    --charcoal:#2A2621;
+    --display:'Special Elite', cursive;
+    --body:'Karla', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--cream);color:var(--charcoal);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--mustard);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--forest);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.15rem;color:var(--cream);text-decoration:none;white-space:nowrap;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--cream);text-decoration:none;font-weight:700;opacity:0.9;}
+  .nav-cta{background:var(--mustard);color:var(--charcoal);padding:10px 20px;font-weight:700;text-decoration:none;white-space:nowrap;border-radius:3px;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--cream);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--forest);}
+  .mobile-menu a{padding:16px 24px;color:var(--cream);text-decoration:none;font-weight:700;border-top:1px solid rgba(245,239,221,0.15);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--forest);color:var(--cream);padding:90px 24px 80px;display:flex;justify-content:center;}
+  /* Signature: hand-painted sign board */
+  .sign{
+    max-width:760px;
+    background:var(--cream);
+    color:var(--charcoal);
+    border-radius:8px;
+    border:6px solid var(--mustard);
+    padding:56px 48px;
+    text-align:center;
+    box-shadow:0 14px 30px rgba(0,0,0,0.25);
+  }
+  .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;font-weight:700;color:var(--barn);margin-bottom:16px;}
+  .hero h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.2;margin-bottom:18px;}
+  .hero p{max-width:48ch;margin:0 auto 26px;opacity:0.85;font-size:1.05rem;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+  .btn-primary{background:var(--barn);color:var(--cream);padding:14px 28px;border-radius:3px;font-weight:700;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--forest);color:var(--forest);padding:12px 26px;border-radius:3px;font-weight:700;text-decoration:none;display:inline-block;}
+
+  section{padding:78px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .section-head .eyebrow{color:var(--barn);text-align:center;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.2rem);}
+
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1160px;margin:0 auto;align-items:center;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .hours-card{background:var(--forest);color:var(--cream);padding:32px;border-radius:6px;}
+  .hours-card .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(245,239,221,0.2);font-weight:700;}
+  .hours-card .row:last-child{border-bottom:none;}
+
+  .services{background:var(--mustard);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto;}
+  .service-card{background:var(--cream);padding:28px 22px;border-radius:6px;border-top:4px solid var(--barn);}
+  .service-card h3{font-size:1.05rem;margin-bottom:10px;}
+  .service-card p{margin:0;font-size:0.92rem;opacity:0.85;}
+
+  .cta-band{background:var(--barn);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--cream);color:var(--barn);}
+
+  footer{background:var(--charcoal);color:var(--cream);padding:56px 24px 32px;}
+  .footer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.05rem;margin-bottom:14px;}
+  footer p,footer a{opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1160px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(245,239,221,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .sign{padding:40px 28px;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">O'Dell's Country Corner</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">What We Offer</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="tel:8457547541" class="nav-cta">(845) 754-7541</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">What We Offer</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:8457547541">Call (845) 754-7541</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="top">
+    <div class="sign">
+      <p class="eyebrow">Cuddebackville, New York</p>
+      <h1>Deli, Gas &amp; Convenience Store in Cuddebackville, NY</h1>
+      <p>A family-run stop on Route 209 since long before GPS, serving cheesesteaks, hot pastrami, and pizza to locals and travelers between Port Jervis and the Route 17 corridor, open early to midnight, every day.</p>
+      <div class="btn-row">
+        <a href="tel:8457547541" class="btn-primary">Call (845) 754-7541</a>
+        <a href="#services" class="btn-secondary">What We Offer</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--barn);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;font-size:0.8rem;">A Route 209 institution</p>
+        <h2 style="margin:14px 0 20px;font-size:clamp(1.7rem,3vw,2.2rem);">Gas, groceries, and a deli counter that delivers</h2>
+        <p>The O'Dell family has run this corner for generations, and the deli counter is the reason people pull off Route 209 instead of driving past. Cheesesteaks, hot pastrami, and made-to-order pizza sit alongside the usual gas station shelf of essentials.</p>
+        <p>It serves two different crowds at once: neighbors who stop in daily and travelers passing between Port Jervis and the Route 17 corridor who just need gas, a sandwich, and directions.</p>
+      </div>
+      <div class="hours-card">
+        <div class="row"><span>Open</span><span>5:00 AM &ndash; Midnight</span></div>
+        <div class="row"><span>Deli</span><span>Cheesesteaks, Pastrami, Pizza</span></div>
+        <div class="row"><span>Also</span><span>Gas &amp; Convenience</span></div>
+        <div class="row"><span>Days</span><span>Daily</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--charcoal);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;font-size:0.8rem;">What we offer</p>
+      <h2>One stop, most of what you need</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Deli Counter</h3><p>Cheesesteaks, hot pastrami sandwiches, and made-to-order pizza.</p></div>
+      <div class="service-card"><h3>Gas Station</h3><p>Fuel up on Route 209, open early to midnight every day.</p></div>
+      <div class="service-card"><h3>Convenience Store</h3><p>Groceries, snacks, and the everyday essentials.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Stop by anytime</h2>
+      <p style="opacity:0.9;">Open daily from 5 AM to midnight on Route 209 in Cuddebackville.</p>
+      <a href="tel:8457547541" class="btn-primary">Call (845) 754-7541</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>O'Dell's Country Corner</h3><p>1015 US-209<br>Cuddebackville, NY 12729</p></div>
+    <div><h3>Contact</h3><p><a href="tel:8457547541">(845) 754-7541</a></p></div>
+    <div><h3>Hours</h3><p>Daily, 5:00 AM &ndash; Midnight</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

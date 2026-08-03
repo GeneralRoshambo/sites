@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pounds Pet Grooming | Dog &amp; Cat Grooming in Edinboro, PA</title>
+<meta name="description" content="Pounds Pet Grooming offers full-service dog and cat grooming, baths, haircuts and nail trims, in Edinboro, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#2F6B63;
+    --coral:#E37B5C;
+    --cream:#FBF6EC;
+    --navy:#2A2E33;
+    --yellow:#E8C767;
+    --display:'Comfortaa', sans-serif;
+    --body:'Assistant', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--cream);color:var(--navy);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid rgba(42,46,51,0.1);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.25rem;color:var(--teal);text-decoration:none;white-space:nowrap;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{text-decoration:none;font-weight:600;color:var(--navy);}
+  .nav-cta{background:var(--teal);color:var(--cream);padding:10px 22px;border-radius:30px;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:2px;background:var(--navy);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--cream);}
+  .mobile-menu a{padding:16px 24px;text-decoration:none;font-weight:600;border-top:1px solid rgba(42,46,51,0.1);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--cream);padding:90px 24px 0;position:relative;overflow:hidden;}
+  .hero-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;padding-bottom:70px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.1em;font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:16px;}
+  .hero h1{font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.16;margin-bottom:22px;}
+  .hero p{max-width:48ch;opacity:0.85;font-size:1.08rem;margin-bottom:28px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--teal);color:var(--cream);padding:14px 28px;border-radius:30px;font-weight:700;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--teal);color:var(--teal);padding:12px 26px;border-radius:30px;font-weight:700;text-decoration:none;display:inline-block;}
+
+  .bath-card{background:var(--coral);color:var(--cream);border-radius:20px;padding:36px;text-align:center;}
+  .bath-card .big{font-family:var(--display);font-size:2rem;display:block;margin-bottom:8px;}
+  .bath-card .small{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;opacity:0.9;}
+
+  /* Signature: soap bubble scallop divider */
+  .scallop{
+    width:100%;height:40px;
+    background-image: radial-gradient(circle at 20px 0, transparent 18px, var(--teal) 19px);
+    background-size:40px 40px;
+    background-repeat:repeat-x;
+    background-position:top;
+  }
+
+  section{padding:0 24px 78px;}
+  .services{background:var(--teal);color:var(--cream);padding-top:60px;}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--yellow);}
+  .services .section-head h2{color:var(--cream);font-size:clamp(1.8rem,3vw,2.3rem);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto;}
+  .service-card{background:rgba(251,246,236,0.08);border:1px solid rgba(251,246,236,0.25);padding:28px 22px;border-radius:16px;}
+  .service-card h3{color:var(--cream);font-size:1.1rem;margin-bottom:10px;}
+  .service-card p{margin:0;opacity:0.85;font-size:0.92rem;}
+
+  .about{background:var(--cream);padding:78px 24px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1160px;margin:0 auto;align-items:center;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .about-card{background:var(--yellow);padding:32px;border-radius:20px;}
+  .about-card ul{list-style:none;margin:0;padding:0;}
+  .about-card li{padding:12px 0;border-bottom:1px solid rgba(42,46,51,0.15);font-weight:600;}
+  .about-card li:last-child{border-bottom:none;}
+
+  .cta-band{background:var(--navy);color:var(--cream);text-align:center;padding:78px 24px;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--coral);}
+
+  footer{background:var(--navy);color:var(--cream);padding:56px 24px 32px;border-top:1px solid rgba(251,246,236,0.1);}
+  .footer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.1rem;margin-bottom:14px;}
+  footer p,footer a{opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1160px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(251,246,236,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;padding-bottom:40px;}
+    .bath-card{max-width:340px;margin:0 auto;}
+    .service-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Pounds Pet Grooming</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Book</a></li>
+    </ul>
+    <a href="tel:8144400273" class="nav-cta">(814) 440-0273</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Book</a>
+    <a href="tel:8144400273">Call (814) 440-0273</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Edinboro, Pennsylvania</p>
+        <h1>Dog &amp; Cat Grooming in Edinboro, PA</h1>
+        <p>Baths, haircuts, nail trims, and a self-service dog wash for pet owners across Edinboro and Waterford. Open Tuesday through Saturday, with a groomer who treats every visit like a spa day.</p>
+        <div class="btn-row">
+          <a href="tel:8144400273" class="btn-primary">Call (814) 440-0273</a>
+          <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+      </div>
+      <div class="bath-card">
+        <span class="big">Tue&ndash;Sat</span>
+        <span class="small">Open for Grooming</span>
+      </div>
+    </div>
+  </section>
+  <div class="scallop"></div>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="text-transform:uppercase;letter-spacing:0.1em;font-weight:700;font-size:0.8rem;">Services</p>
+      <h2>Full-service grooming</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Baths &amp; Brush-Outs</h3><p>Full baths and brush-outs for dogs and cats of every coat type.</p></div>
+      <div class="service-card"><h3>Haircuts</h3><p>Breed-appropriate cuts and trims done at a comfortable pace.</p></div>
+      <div class="service-card"><h3>Self-Service Wash</h3><p>Bring your own dog in and use our wash station yourself.</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;font-size:0.8rem;">A Mill Street fixture</p>
+        <h2 style="margin:14px 0 20px;font-size:clamp(1.8rem,3vw,2.3rem);">Grooming that pet owners trust</h2>
+        <p>Pounds Pet Grooming has built a loyal following of dog and cat owners across Edinboro and neighboring Waterford, offering everything from a quick nail trim to a full breed cut. The self-service wash station is a favorite for owners who want to do the bathing themselves without the mess at home.</p>
+        <p>It is a small, hands-on shop where pets are handled calmly and owners get an honest read on what their dog or cat actually needs.</p>
+      </div>
+      <div class="about-card">
+        <ul>
+          <li>Full-service and self-service washing</li>
+          <li>Dogs and cats welcome</li>
+          <li>Open Tuesday through Saturday</li>
+          <li>Serving Edinboro &amp; Waterford</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Book your pet's next groom</h2>
+      <p style="opacity:0.9;">Call to schedule a full groom or ask about the self-service wash.</p>
+      <a href="tel:8144400273" class="btn-primary">Call (814) 440-0273</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>Pounds Pet Grooming</h3><p>208 Mill St<br>Edinboro, PA 16412</p></div>
+    <div><h3>Contact</h3><p><a href="tel:8144400273">(814) 440-0273</a></p></div>
+    <div><h3>Hours</h3><p>Tuesday&ndash;Saturday</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michelle's Pocono Mobile Grooming | Mobile Pet Grooming in Bushkill, PA</title>
+<meta name="description" content="Michelle's Pocono Mobile Grooming brings 15 years of experience to in-home dog grooming across Bushkill, PA and the surrounding Pike County area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#3E6E64;
+    --peach:#E8A87C;
+    --cream:#FBF3E8;
+    --plum:#3B2E33;
+    --blush:#D98C8C;
+    --display:'Baloo 2', sans-serif;
+    --body:'Figtree', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--cream);color:var(--plum);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--blush);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid rgba(59,46,51,0.1);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.3rem;color:var(--teal);text-decoration:none;white-space:nowrap;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{text-decoration:none;font-weight:600;color:var(--plum);}
+  .nav-cta{background:var(--teal);color:var(--cream);padding:10px 22px;border-radius:30px;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:2px;background:var(--plum);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--cream);}
+  .mobile-menu a{padding:16px 24px;text-decoration:none;font-weight:600;border-top:1px solid rgba(59,46,51,0.1);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--cream);padding:88px 24px 40px;position:relative;overflow:hidden;}
+  .hero-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.1em;font-size:0.8rem;font-weight:700;color:var(--teal);margin-bottom:16px;}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.14;margin-bottom:22px;}
+  .hero p{max-width:48ch;opacity:0.85;font-size:1.08rem;margin-bottom:28px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--teal);color:var(--cream);padding:14px 28px;border-radius:30px;font-weight:700;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--teal);color:var(--teal);padding:12px 26px;border-radius:30px;font-weight:700;text-decoration:none;display:inline-block;}
+
+  /* Signature: paw trail leading to a van */
+  .trail{position:relative;height:320px;}
+  .paw{position:absolute;width:26px;height:26px;opacity:0.55;}
+  .van-card{position:absolute;bottom:0;right:10%;background:var(--teal);color:var(--cream);padding:22px 26px;border-radius:16px;text-align:center;}
+  .van-card .big{font-family:var(--display);font-size:1.9rem;display:block;}
+  .van-card .small{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;opacity:0.85;}
+
+  section{padding:78px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--teal);}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.3rem);}
+
+  .about{background:var(--peach);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1160px;margin:0 auto;align-items:center;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .about-card{background:var(--cream);padding:32px;border-radius:16px;}
+  .about-card ul{list-style:none;margin:0;padding:0;}
+  .about-card li{padding:12px 0;border-bottom:1px solid rgba(59,46,51,0.12);font-weight:600;}
+  .about-card li:last-child{border-bottom:none;}
+
+  .services{background:var(--cream);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1160px;margin:0 auto;}
+  .service-card{background:var(--peach);padding:30px 24px;border-radius:16px;}
+  .service-card h3{font-size:1.2rem;color:var(--plum);margin-bottom:10px;}
+  .service-card p{margin:0;font-size:0.93rem;opacity:0.85;}
+
+  .cta-band{background:var(--plum);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--blush);color:var(--plum);}
+
+  footer{background:var(--plum);color:var(--cream);padding:56px 24px 32px;border-top:1px solid rgba(251,243,232,0.1);}
+  .footer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.2rem;margin-bottom:14px;}
+  footer p,footer a{opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1160px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(251,243,232,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .trail{height:200px;max-width:340px;margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Michelle's Pocono Mobile Grooming</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Book</a></li>
+    </ul>
+    <a href="tel:5705883537" class="nav-cta">(570) 588-3537</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Book</a>
+    <a href="tel:5705883537">Call (570) 588-3537</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Bushkill, Pennsylvania</p>
+        <h1>Mobile Pet Grooming in Bushkill, PA</h1>
+        <p>Fifteen years of grooming experience, brought right to the driveway. Michelle grooms dogs in the comfort of their own home, or hers, across Bushkill and the surrounding Pike County area.</p>
+        <div class="btn-row">
+          <a href="tel:5705883537" class="btn-primary">Call (570) 588-3537</a>
+          <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+      </div>
+      <div class="trail">
+        <svg class="paw" style="left:10%;top:70%;" viewBox="0 0 100 100" fill="#3E6E64"><circle cx="50" cy="65" r="22"/><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="10"/><circle cx="75" cy="30" r="10"/></svg>
+        <svg class="paw" style="left:32%;top:48%;" viewBox="0 0 100 100" fill="#3E6E64"><circle cx="50" cy="65" r="22"/><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="10"/><circle cx="75" cy="30" r="10"/></svg>
+        <svg class="paw" style="left:54%;top:30%;" viewBox="0 0 100 100" fill="#3E6E64"><circle cx="50" cy="65" r="22"/><circle cx="25" cy="30" r="10"/><circle cx="50" cy="18" r="10"/><circle cx="75" cy="30" r="10"/></svg>
+        <div class="van-card">
+          <span class="big">15 yrs</span>
+          <span class="small">Grooming Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--plum);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;font-size:0.8rem;">4.9 stars, 23 reviews</p>
+        <h2 style="margin:14px 0 20px;font-size:clamp(1.8rem,3vw,2.3rem);">Grooming without the car ride</h2>
+        <p>No carrier, no waiting room, no stressed-out ride across town. Michelle comes to the dog, whether that means grooming at the client's home or at her own space in Bushkill, and clients consistently praise the calm, gentle approach with nervous or older pets.</p>
+        <p>Word has spread across Pike County the old-fashioned way, through neighbors telling neighbors about a groomer who actually shows up and treats every dog like her own.</p>
+      </div>
+      <div class="about-card">
+        <ul>
+          <li>15 years of grooming experience</li>
+          <li>4.9 stars across 23 reviews</li>
+          <li>In-home or on-site grooming</li>
+          <li>Serving Bushkill &amp; Pike County</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;font-size:0.8rem;">Services</p>
+      <h2>Pampering, pooch by pooch</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Baths &amp; Brush-Outs</h3><p>Full baths, de-shedding, and brush-outs for coats of every kind.</p></div>
+      <div class="service-card"><h3>Haircuts</h3><p>Breed-appropriate cuts and trims, done at a comfortable pace.</p></div>
+      <div class="service-card"><h3>Nail Trims &amp; Ears</h3><p>Nail trims, ear cleaning, and the little extras that keep a dog comfortable.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Book a grooming visit</h2>
+      <p style="opacity:0.9;">Call or text to set up an appointment for your dog.</p>
+      <a href="tel:5705883537" class="btn-primary">Call (570) 588-3537</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>Michelle's Pocono Mobile Grooming</h3><p>28 Walnut Trail<br>Bushkill, PA 18324</p></div>
+    <div><h3>Contact</h3><p><a href="tel:5705883537">(570) 588-3537</a></p></div>
+    <div><h3>Service Area</h3><p>Bushkill &amp; surrounding Pike County</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

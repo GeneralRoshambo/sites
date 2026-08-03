@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mountainhome Deli &amp; General Store | Deli in Mountainhome, PA</title>
+<meta name="description" content="Mountainhome Deli & General Store on Route 390, a cash-only farmhouse deli serving sandwiches, soups and baked goods to the Pocono community since generations back.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --barn:#7A2E24;
+    --cream:#F7F0DE;
+    --wood:#4A3B2A;
+    --sage:#6B7A5E;
+    --charcoal:#2B2620;
+    --paper:#FCF9EF;
+    --display:'Bitter', serif;
+    --body:'Jost', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--paper);color:var(--charcoal);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:700;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--barn);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:2px solid var(--wood);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.35rem;color:var(--barn);text-decoration:none;white-space:nowrap;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{text-decoration:none;font-weight:500;color:var(--charcoal);}
+  .nav-cta{background:var(--barn);color:var(--cream);padding:10px 22px;border-radius:3px;font-weight:600;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:2px;background:var(--charcoal);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--paper);}
+  .mobile-menu a{padding:16px 24px;text-decoration:none;font-weight:500;border-top:1px solid rgba(74,59,42,0.15);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--cream);padding:88px 24px 70px;}
+  .hero-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.12em;font-size:0.8rem;font-weight:600;color:var(--barn);margin-bottom:16px;}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.16;margin-bottom:22px;}
+  .hero p{max-width:48ch;opacity:0.85;font-size:1.08rem;margin-bottom:28px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--barn);color:var(--cream);padding:14px 28px;border-radius:3px;font-weight:600;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--wood);color:var(--wood);padding:12px 26px;border-radius:3px;font-weight:600;text-decoration:none;display:inline-block;}
+
+  /* Signature: twine-tied hand written tag */
+  .tag{
+    background:var(--paper);
+    border:2px solid var(--wood);
+    padding:28px;
+    position:relative;
+    transform:rotate(-2deg);
+    box-shadow:6px 6px 0 rgba(74,59,42,0.15);
+  }
+  .tag::before{
+    content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    width:2px;height:20px;background:var(--wood);
+  }
+  .tag .cash{font-family:var(--display);font-size:1.6rem;color:var(--barn);display:block;margin-bottom:6px;}
+  .tag .sub{font-size:0.9rem;opacity:0.75;}
+
+  section{padding:80px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--barn);}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.3rem);}
+
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1160px;margin:0 auto;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .about-list{list-style:none;margin:0;padding:0;}
+  .about-list li{padding:14px 0;border-bottom:1px dashed rgba(74,59,42,0.3);font-weight:500;}
+  .about-list li:last-child{border-bottom:none;}
+
+  .board{background:var(--wood);color:var(--cream);}
+  .board-head{text-align:center;margin-bottom:44px;}
+  .board-head .eyebrow{color:var(--sage);text-align:center;}
+  .board-head h2{color:var(--cream);font-size:clamp(1.8rem,3vw,2.3rem);}
+  .board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto;}
+  .board-card{background:rgba(247,240,222,0.06);border:1px solid rgba(247,240,222,0.25);padding:26px 22px;border-radius:3px;}
+  .board-card h3{color:var(--cream);font-size:1.1rem;margin-bottom:10px;}
+  .board-card p{margin:0;opacity:0.8;font-size:0.92rem;}
+
+  .cta-band{background:var(--barn);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--cream);color:var(--barn);}
+
+  footer{background:var(--charcoal);color:var(--cream);padding:56px 24px 32px;}
+  .footer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.25rem;margin-bottom:14px;}
+  footer p,footer a{opacity:0.8;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1160px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(247,240,222,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .tag{max-width:320px;margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .board-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Mountainhome Deli &amp; General Store</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="tel:5705953839" class="nav-cta">(570) 595-3839</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:5705953839">Call (570) 595-3839</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Barrett Township, Pennsylvania</p>
+        <h1>Deli &amp; General Store in Mountainhome, PA</h1>
+        <p>An old farmhouse turned deli and general store on Route 390, serving homemade soups, stacked sandwiches, and fresh baked pastries to Pocono locals and travelers alike. Cash only, and worth having exact change ready.</p>
+        <div class="btn-row">
+          <a href="tel:5705953839" class="btn-primary">Call (570) 595-3839</a>
+          <a href="#menu" class="btn-secondary">What We Serve</a>
+        </div>
+      </div>
+      <div class="tag">
+        <span class="cash">Cash Only</span>
+        <span class="sub">Route 390 at Laurel Pine Road, Mountainhome</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--barn);text-transform:uppercase;letter-spacing:0.12em;font-weight:600;font-size:0.8rem;">A true general store</p>
+        <h2 style="margin:14px 0 20px;font-size:clamp(1.8rem,3vw,2.3rem);">Homemade, and known for it</h2>
+        <p>The BLTs are the thing regulars talk about, but the soup rotation and fresh pastry case keep people coming back through the week. It has the feel of an old farmhouse because it is one, tucked at the corner of Route 390 and Laurel Pine Road in Barrett Township.</p>
+        <p>Locals and Pocono visitors alike stop in for lunch, a coffee, or a loaf of something fresh out of the case, and the shop has built a loyal following almost entirely by word of mouth.</p>
+      </div>
+      <ul class="about-list">
+        <li>Homemade soups, changing daily</li>
+        <li>Stacked deli sandwiches, BLT included</li>
+        <li>Fresh baked pastries and bread</li>
+        <li>Cash only, plan ahead</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="board" id="menu">
+    <div class="board-head">
+      <p class="eyebrow" style="text-transform:uppercase;letter-spacing:0.12em;font-weight:600;font-size:0.8rem;">On the counter</p>
+      <h2>What's usually fresh</h2>
+    </div>
+    <div class="board-grid">
+      <div class="board-card"><h3>Sandwiches</h3><p>Classic deli sandwiches piled high, the BLT is the one people ask for by name.</p></div>
+      <div class="board-card"><h3>Soup of the Day</h3><p>A rotating pot of homemade soup, different every visit.</p></div>
+      <div class="board-card"><h3>Baked Goods</h3><p>Pastries, breads, and sweets made in house.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Stop by Route 390</h2>
+      <p style="opacity:0.9;">Open through the week for lunch and counter service. Cash only, bring exact change if you can.</p>
+      <a href="tel:5705953839" class="btn-primary">Call (570) 595-3839</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>Mountainhome Deli &amp; General Store</h3><p>RR 390 at Laurel Pine Rd<br>Mountainhome, PA 18342</p></div>
+    <div><h3>Contact</h3><p><a href="tel:5705953839">(570) 595-3839</a></p></div>
+    <div><h3>Payment</h3><p>Cash only</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

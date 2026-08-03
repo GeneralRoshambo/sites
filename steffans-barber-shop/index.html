@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steffan's Barber Shop | Barber Shop in North East, PA</title>
+<meta name="description" content="Steffan's Barber Shop is a cash-only, walk-in barbershop serving North East, PA for over 35 years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2E4A3D;
+    --red:#9C3B33;
+    --cream:#F3EFE3;
+    --charcoal:#211E1C;
+    --brass:#B8924A;
+    --display:'Teko', sans-serif;
+    --body:'Work Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--cream);color:var(--charcoal);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:0.01em;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--charcoal);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1160px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.7rem;color:var(--cream);text-decoration:none;white-space:nowrap;letter-spacing:0.02em;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--cream);opacity:0.85;text-decoration:none;font-weight:600;font-size:1.1rem;font-family:var(--display);}
+  .nav-cta{background:var(--brass);color:var(--charcoal);padding:9px 20px;font-weight:700;text-decoration:none;white-space:nowrap;font-family:var(--display);font-size:1.15rem;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--cream);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--charcoal);}
+  .mobile-menu a{padding:16px 24px;color:var(--cream);text-decoration:none;font-weight:600;border-top:1px solid rgba(243,239,227,0.1);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  /* Signature: barber-pole stripe rule */
+  .barber-stripe{
+    height:10px;width:100%;
+    background:repeating-linear-gradient(-45deg, var(--red) 0 18px, var(--cream) 18px 36px, var(--green) 36px 54px);
+  }
+
+  .hero{background:var(--charcoal);color:var(--cream);padding:90px 24px 70px;}
+  .hero-inner{max-width:800px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.85rem;font-weight:600;color:var(--brass);margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.6rem,5.6vw,4.2rem);line-height:1.02;margin-bottom:22px;}
+  .hero p{max-width:50ch;opacity:0.85;font-size:1.1rem;margin-bottom:30px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--red);color:var(--cream);padding:15px 30px;font-weight:700;text-decoration:none;display:inline-block;font-family:var(--display);font-size:1.2rem;}
+  .btn-secondary{border:2px solid var(--cream);color:var(--cream);padding:13px 28px;font-weight:700;text-decoration:none;display:inline-block;font-family:var(--display);font-size:1.2rem;}
+
+  section{padding:80px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--red);}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.6rem);}
+
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1160px;margin:0 auto;align-items:center;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .stat{background:var(--green);color:var(--cream);padding:24px;text-align:center;}
+  .stat .num{font-family:var(--display);font-size:2.4rem;display:block;}
+  .stat .label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.04em;opacity:0.85;}
+
+  .services{background:var(--brass);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1160px;margin:0 auto;}
+  .service-card{background:var(--cream);padding:28px 22px;border-bottom:4px solid var(--red);}
+  .service-card h3{font-size:1.4rem;margin-bottom:8px;}
+  .service-card p{margin:0;font-size:0.92rem;opacity:0.8;}
+
+  .cta-band{background:var(--red);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--charcoal);}
+
+  footer{background:var(--charcoal);color:var(--cream);padding:56px 24px 32px;}
+  .footer-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.5rem;margin-bottom:14px;}
+  footer p,footer a{opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1160px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(243,239,227,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+  @media (max-width:560px){.stat-row{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">STEFFAN'S BARBER SHOP</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Walk-Ins Welcome</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Visit</a>
+  </div>
+</header>
+<div class="barber-stripe"></div>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">North East, Pennsylvania</p>
+      <h1>Barber Shop in North East, PA</h1>
+      <p>Cash only, walk-ins welcome, and no appointment book to check. Steffan's has cut hair for North East men and boys for more than 35 years on Clinton Street, and the chair is rarely empty for long.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">Get Directions</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--red);text-transform:uppercase;letter-spacing:0.14em;font-weight:600;font-size:0.85rem;">35+ years on Clinton Street</p>
+        <h2 style="margin:14px 0 20px;">A real neighborhood barbershop</h2>
+        <p>Steffan's is the kind of shop where three generations of the same family have sat in the same chair. No appointments, no online booking, just walk in and wait your turn, the way barbershops have always worked in North East.</p>
+        <p>The 40-plus reviews and near-five-star rating say what the regulars already know: it is fast, it is fair, and the cut is right every time.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><span class="num">35+</span><span class="label">Years Cutting</span></div>
+        <div class="stat"><span class="num">4.8</span><span class="label">Star Rating</span></div>
+        <div class="stat"><span class="num">Cash</span><span class="label">Only</span></div>
+        <div class="stat"><span class="num">Walk-In</span><span class="label">No Appointment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--charcoal);text-transform:uppercase;letter-spacing:0.14em;font-weight:600;font-size:0.85rem;">Services</p>
+      <h2>What's in the chair</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Haircuts</h3><p>Classic cuts and fades for men and boys, no appointment needed.</p></div>
+      <div class="service-card"><h3>Beard Trims</h3><p>Clean beard and mustache trims to finish the look.</p></div>
+      <div class="service-card"><h3>Kids' Cuts</h3><p>Patient, quick haircuts for younger customers.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Stop in on Clinton Street</h2>
+      <p style="opacity:0.9;">Cash only. Walk-ins welcome, no appointment necessary.</p>
+      <a href="#top" class="btn-primary">Get Directions</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>Steffan's Barber Shop</h3><p>16 Clinton St<br>North East, PA 16428</p></div>
+    <div><h3>Payment</h3><p>Cash only</p></div>
+    <div><h3>Visits</h3><p>Walk-ins welcome</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ulee's Truck &amp; Auto Repair | Truck &amp; Auto Repair in Otisville, NY</title>
+<meta name="description" content="Ulee's Truck & Auto Repair has served Otisville and Middletown, NY drivers with reliable auto and light truck repair for 24 years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2A33;
+    --brick:#9C3B28;
+    --chrome:#B9C2C6;
+    --cream:#F4F2ED;
+    --yellow:#E0A63C;
+    --display:'Bebas Neue', sans-serif;
+    --body:'Archivo', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--cream);color:var(--navy);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:0.02em;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--navy);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.7rem;color:var(--cream);text-decoration:none;white-space:nowrap;letter-spacing:0.03em;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--chrome);text-decoration:none;font-weight:600;}
+  .nav-cta{background:var(--brick);color:var(--cream);padding:10px 22px;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--cream);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy);}
+  .mobile-menu a{padding:16px 24px;color:var(--chrome);text-decoration:none;font-weight:600;border-top:1px solid rgba(244,242,237,0.1);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--navy);color:var(--cream);padding:100px 24px 70px;}
+  .hero-inner{max-width:820px;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.16em;font-size:0.85rem;font-weight:600;color:var(--yellow);margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.04;margin-bottom:24px;letter-spacing:0.01em;}
+  .hero p{max-width:52ch;opacity:0.85;font-size:1.12rem;margin-bottom:30px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--brick);color:var(--cream);padding:15px 30px;font-weight:700;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--cream);color:var(--cream);padding:13px 28px;font-weight:700;text-decoration:none;display:inline-block;}
+
+  /* Signature: diamond plate texture band */
+  .plate-band{
+    height:34px;width:100%;
+    background-color:var(--chrome);
+    background-image:
+      radial-gradient(circle at 8px 8px, rgba(30,42,51,0.25) 2px, transparent 2.5px),
+      radial-gradient(circle at 24px 24px, rgba(30,42,51,0.25) 2px, transparent 2.5px);
+    background-size:32px 32px;
+  }
+
+  section{padding:82px 24px;}
+  .section-head{max-width:640px;margin:0 auto 44px;}
+  .section-head .eyebrow{color:var(--brick);}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.7rem);}
+
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1180px;margin:0 auto;align-items:center;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .stat{background:var(--navy);color:var(--cream);padding:26px;text-align:center;}
+  .stat .num{font-family:var(--display);font-size:2.4rem;display:block;letter-spacing:0.02em;}
+  .stat .label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;opacity:0.8;}
+
+  .services{background:var(--chrome);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px;margin:0 auto;}
+  .service-card{background:var(--cream);padding:28px 22px;border-bottom:4px solid var(--brick);}
+  .service-card h3{font-size:1.3rem;letter-spacing:0.02em;margin-bottom:10px;}
+  .service-card p{margin:0;font-size:0.92rem;opacity:0.8;}
+
+  .cta-band{background:var(--brick);color:var(--cream);text-align:center;}
+  .cta-band h2{color:var(--cream);margin-bottom:16px;letter-spacing:0.02em;}
+  .cta-band .btn-primary{background:var(--navy);}
+
+  footer{background:var(--navy);color:var(--chrome);padding:56px 24px 32px;}
+  .footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--cream);font-size:1.4rem;margin-bottom:14px;letter-spacing:0.02em;}
+  footer p,footer a{opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1180px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(185,194,198,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+  @media (max-width:560px){
+    .stat-row{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">ULEE'S TRUCK &amp; AUTO</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:8453864773" class="nav-cta">(845) 386-4773</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:8453864773">Call (845) 386-4773</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Otisville, New York</p>
+      <h1>Truck &amp; Auto Repair in Otisville, NY</h1>
+      <p>Twenty-four years in the same shop on State Street, with 165 reviews and a 4.9-star average from Otisville and Middletown drivers who keep coming back for honest work on cars and light trucks.</p>
+      <div class="btn-row">
+        <a href="tel:8453864773" class="btn-primary">Call (845) 386-4773</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+    </div>
+  </section>
+  <div class="plate-band"></div>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--brick);text-transform:uppercase;letter-spacing:0.14em;font-weight:600;font-size:0.85rem;">24 Years on State Street</p>
+        <h2 style="margin:14px 0 20px;">A shop that runs on reputation</h2>
+        <p>Ulee's has repaired cars and light trucks in Otisville for nearly a quarter century, building the kind of track record that shows up in 165 reviews without a single dollar spent on advertising. It is a call-first, work-first shop, appointments are set over the phone and the bay stays busy.</p>
+        <p>Drivers from Middletown and the surrounding Orange County towns make the trip because the diagnosis is straight and the repair is done once.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><span class="num">24 yrs</span><span class="label">In Business</span></div>
+        <div class="stat"><span class="num">4.9</span><span class="label">Star Rating</span></div>
+        <div class="stat"><span class="num">165</span><span class="label">Reviews</span></div>
+        <div class="stat"><span class="num">Cars &amp;</span><span class="label">Light Trucks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--brick);text-transform:uppercase;letter-spacing:0.14em;font-weight:600;font-size:0.85rem;">Services</p>
+      <h2>What the bay handles</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>General Repair</h3><p>Diagnostics, brakes, engine and electrical work for cars and light trucks.</p></div>
+      <div class="service-card"><h3>Maintenance</h3><p>Oil changes, tune-ups, and the routine work that keeps a vehicle out of the shop.</p></div>
+      <div class="service-card"><h3>Truck Repair</h3><p>Light truck repair for work vehicles and daily drivers alike.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Call ahead for an appointment</h2>
+      <p style="opacity:0.9;">Ulee's books by phone, appointments recommended over walk-ins.</p>
+      <a href="tel:8453864773" class="btn-primary">Call (845) 386-4773</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>Ulee's Truck &amp; Auto Repair</h3><p>9 State St<br>Otisville, NY 10963</p></div>
+    <div><h3>Contact</h3><p><a href="tel:8453864773">(845) 386-4773</a><br><a href="mailto:uleegmc@yahoo.com">uleegmc@yahoo.com</a></p></div>
+    <div><h3>Service Area</h3><p>Otisville &amp; Middletown, NY</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>

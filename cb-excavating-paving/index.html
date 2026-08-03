@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CB Excavating &amp; Paving | Excavating Contractor in Susquehanna, PA</title>
+<meta name="description" content="CB Excavating & Paving, LLC provides excavation, grading, demolition, drainage and paving for Susquehanna County, PA property owners and builders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#2A2C27;
+    --clay:#C1591F;
+    --topsoil:#5B4A36;
+    --sand:#E8DCC8;
+    --off-white:#F6F3EB;
+    --yellow:#D9A62A;
+    --display:'Staatliches', sans-serif;
+    --body:'Barlow', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--body);background:var(--off-white);color:var(--charcoal);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:0.02em;margin:0;}
+  :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  header{position:sticky;top:0;z-index:50;background:var(--charcoal);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .brand{font-family:var(--display);font-size:1.5rem;letter-spacing:0.03em;color:var(--off-white);text-decoration:none;white-space:nowrap;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;}
+  .nav-links a{color:var(--sand);text-decoration:none;font-weight:600;font-size:0.95rem;}
+  .nav-cta{background:var(--clay);color:var(--off-white);padding:10px 22px;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--off-white);margin:6px 0;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--charcoal);}
+  .mobile-menu a{padding:16px 24px;color:var(--sand);text-decoration:none;font-weight:600;border-top:1px solid rgba(246,243,235,0.1);}
+  .mobile-menu.open{display:flex;}
+  @media (max-width:1180px){.nav-links,.nav .nav-cta{display:none;}.hamburger{display:block;}}
+
+  .hero{background:var(--charcoal);color:var(--off-white);padding:100px 24px 90px;position:relative;overflow:hidden;}
+  .hero-inner{max-width:900px;position:relative;z-index:2;}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.16em;font-size:0.85rem;font-weight:700;color:var(--yellow);margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.06;margin-bottom:24px;}
+  .hero p{max-width:52ch;opacity:0.85;font-size:1.15rem;margin-bottom:32px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--clay);color:var(--off-white);padding:15px 30px;font-weight:700;text-decoration:none;display:inline-block;}
+  .btn-secondary{border:2px solid var(--off-white);color:var(--off-white);padding:13px 28px;font-weight:700;text-decoration:none;display:inline-block;}
+
+  /* Signature: topographic contour lines */
+  .contours{position:absolute;right:-80px;top:0;bottom:0;width:60%;opacity:0.35;z-index:1;pointer-events:none;}
+  @media (max-width:900px){.contours{display:none;}}
+
+  section{padding:84px 24px;}
+  .section-head{max-width:640px;margin:0 auto 48px;}
+  .section-head .eyebrow{color:var(--clay);}
+  .section-head h2{font-size:clamp(1.9rem,3.2vw,2.6rem);}
+
+  .about{background:var(--off-white);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:1180px;margin:0 auto;align-items:start;}
+  .about p{opacity:0.85;margin-bottom:16px;}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat{background:var(--sand);padding:24px;border-left:4px solid var(--clay);}
+  .stat .num{font-family:var(--display);font-size:2.2rem;color:var(--charcoal);display:block;}
+  .stat .label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;opacity:0.7;}
+
+  .services{background:var(--sand);}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1180px;margin:0 auto;}
+  .service-card{background:var(--off-white);padding:28px 22px;border-top:4px solid var(--clay);}
+  .service-card h3{font-size:1.15rem;color:var(--charcoal);margin-bottom:10px;letter-spacing:0.01em;}
+  .service-card p{margin:0;font-size:0.92rem;opacity:0.8;}
+
+  .band{background:var(--topsoil);color:var(--off-white);}
+  .band-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;}
+  .band h2{color:var(--off-white);font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:16px;}
+  .band p{opacity:0.85;}
+
+  .cta-band{background:var(--clay);color:var(--off-white);text-align:center;}
+  .cta-band h2{color:var(--off-white);margin-bottom:16px;}
+  .cta-band .btn-primary{background:var(--charcoal);}
+
+  footer{background:var(--charcoal);color:var(--sand);padding:56px 24px 32px;}
+  .footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;}
+  footer h3{font-family:var(--display);color:var(--off-white);font-size:1.3rem;margin-bottom:14px;letter-spacing:0.02em;}
+  footer p,footer a{color:var(--sand);opacity:0.85;text-decoration:none;font-size:0.95rem;}
+  .footer-bottom{max-width:1180px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(232,220,200,0.15);font-size:0.85rem;opacity:0.6;}
+
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .band-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+  @media (max-width:560px){
+    .service-grid{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">CB EXCAVATING &amp; PAVING</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:5707562749" class="nav-cta">(570) 756-2749</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:5707562749">Call (570) 756-2749</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="contours" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="260" cy="250" rx="180" ry="230" fill="none" stroke="#D9A62A" stroke-width="2"/>
+      <ellipse cx="260" cy="250" rx="140" ry="180" fill="none" stroke="#D9A62A" stroke-width="2"/>
+      <ellipse cx="260" cy="250" rx="100" ry="130" fill="none" stroke="#D9A62A" stroke-width="2"/>
+      <ellipse cx="260" cy="250" rx="60" ry="80" fill="none" stroke="#D9A62A" stroke-width="2"/>
+    </svg>
+    <div class="hero-inner">
+      <p class="eyebrow">Susquehanna County, PA</p>
+      <h1>Excavating &amp; Paving Contractor Serving Susquehanna, PA</h1>
+      <p>Charles Boman and his crew have been moving dirt and laying pavement across Susquehanna County since 2011. Site prep, grading, demolition, drainage, trucking and logging, run by people who know the ground here.</p>
+      <div class="btn-row">
+        <a href="tel:5707562749" class="btn-primary">Call (570) 756-2749</a>
+        <a href="#services" class="btn-secondary">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--clay);text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-size:0.85rem;">Locally run since 2011</p>
+        <h2 style="margin:14px 0 20px;font-size:clamp(1.9rem,3vw,2.4rem);">Ground work you can plan a build around</h2>
+        <p>CB Excavating &amp; Paving is a Susquehanna-based outfit doing the unglamorous work that every project depends on: clearing a lot, grading a pad level, cutting a drainage line that actually keeps water away from a foundation. Residential jobs, commercial sites, and small builders across the county rely on the same crew for repeat work.</p>
+        <p>The company also handles trucking and logging, making it one of the few local contractors set up to move material and clear timber on the same job.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><span class="num">2011</span><span class="label">Founded</span></div>
+        <div class="stat"><span class="num">County-wide</span><span class="label">Service area</span></div>
+        <div class="stat"><span class="num">Res. &amp; Comm.</span><span class="label">Job types</span></div>
+        <div class="stat"><span class="num">Owner-run</span><span class="label">Crew</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow" style="color:var(--clay);text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-size:0.85rem;">What we do</p>
+      <h2>Site work, start to finish</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><h3>Excavation &amp; Grading</h3><p>Lot clearing, digging, and precise grading for foundations and driveways.</p></div>
+      <div class="service-card"><h3>Demolition</h3><p>Structure and site demolition with proper cleanup and haul-away.</p></div>
+      <div class="service-card"><h3>Drainage</h3><p>Drainage lines and grading that keep water moving away from what matters.</p></div>
+      <div class="service-card"><h3>Trucking &amp; Logging</h3><p>Material hauling and timber clearing handled by the same crew.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-grid">
+      <div>
+        <h2>Built on referrals, not ads</h2>
+        <p>Most jobs come from word of mouth around Susquehanna, Great Bend, and the surrounding townships. A straightforward crew, fair estimates, and equipment that shows up on time.</p>
+      </div>
+      <div>
+        <p style="opacity:0.85;">Have a lot to clear, a pad to grade, or a drainage problem that needs fixing before winter? Get in touch and describe the job.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <h2>Get a quote on your site work</h2>
+      <p style="opacity:0.9;">Call to talk through the job. Estimates given over the phone or on site.</p>
+      <a href="tel:5707562749" class="btn-primary">Call (570) 756-2749</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><h3>CB Excavating &amp; Paving</h3><p>2108 Lakeview Rd<br>Susquehanna, PA 18847</p></div>
+    <div><h3>Contact</h3><p><a href="tel:5707562749">(570) 756-2749</a></p></div>
+    <div><h3>Service Area</h3><p>Susquehanna County and surrounding townships</p></div>
+  </div>
+  <div class="wrap footer-bottom">Site built by Modularity Networks.</div>
+</footer>
+
+<script>
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open?'true':'false');
+  });
+</script>
+</body>
+</html>
