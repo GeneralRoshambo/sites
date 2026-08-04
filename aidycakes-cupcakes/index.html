@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aidycakes Cupcakes | Custom Cupcakes & Wedding Cakes in Dingmans Ferry, PA</title>
+<meta name="description" content="Home-based custom cupcake and wedding cake bakery in Dingmans Ferry, PA. Made to order for weddings and events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF3F0;
+    --ink:#2E2024;
+    --blush:#D98CA0;
+    --plum:#5C3448;
+    --gold:#C79A4B;
+    --sage:#7A8B6F;
+    --line:#EFDDE0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:'Quicksand',sans-serif;line-height:1.65;font-size:17px;}
+  h1,h2,h3{font-family:'Italiana',serif;letter-spacing:0.5px;}
+  a{color:var(--plum);}
+  a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--plum);outline-offset:3px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  .swirl-band{height:16px;width:100%;background-image:radial-gradient(circle at 10px 8px, var(--blush) 4px, transparent 5px);background-size:24px 16px;background-repeat:repeat-x;}
+
+  header{background:var(--bg);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Italiana',serif;font-size:1.5rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .brand span{color:var(--plum);}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:0.95rem;}
+  nav.links a:hover{color:var(--plum);}
+  .cta-top{background:var(--plum);color:#fff!important;padding:10px 20px;border-radius:20px;font-weight:700;}
+  .cta-top:hover{background:#43263a;}
+  #menu-toggle{display:none;}
+  .hamburger{display:none;cursor:pointer;font-size:1.6rem;background:none;border:none;color:var(--ink);}
+
+  .hero{padding:64px 0 50px;}
+  .hero .wrap{display:flex;align-items:center;gap:50px;}
+  .hero-text{flex:1.15;}
+  .eyebrow{color:var(--sage);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.8rem;margin-bottom:14px;display:block;}
+  .hero h1{font-size:2.7rem;line-height:1.2;margin-bottom:20px;}
+  .hero p.lead{font-size:1.14rem;max-width:520px;color:#4d3941;margin-bottom:30px;font-family:'Quicksand',sans-serif;}
+  .tagline{font-family:'Italiana',serif;font-style:italic;color:var(--plum);font-size:1.1rem;margin-bottom:18px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 26px;border-radius:24px;font-weight:700;text-decoration:none;border:2px solid var(--plum);}
+  .btn-primary{background:var(--plum);color:#fff;}
+  .btn-primary:hover{background:#43263a;}
+  .btn-secondary{background:transparent;color:var(--plum);}
+  .btn-secondary:hover{background:rgba(92,52,72,0.08);}
+  .hero-art{flex:1;display:flex;justify-content:center;}
+  .hero-art svg{width:100%;max-width:280px;height:auto;}
+
+  section{padding:56px 0;}
+  .about .wrap{display:flex;gap:50px;align-items:flex-start;flex-wrap:wrap;}
+  .about-text{flex:1.3;min-width:280px;}
+  .about h2{font-size:1.9rem;margin-bottom:16px;}
+  .about p{color:#4d3941;margin-bottom:14px;max-width:560px;}
+  .about-stats{flex:1;min-width:220px;display:grid;gap:16px;}
+  .stat{background:#fff;border:1px solid var(--line);padding:20px 22px;border-radius:14px;}
+  .stat strong{display:block;font-family:'Italiana',serif;font-size:1.3rem;color:var(--plum);}
+  .stat span{color:#6b5560;font-size:0.92rem;}
+
+  .services{background:#F5E4E6;}
+  .services h2{font-size:1.9rem;margin-bottom:8px;text-align:center;}
+  .services .sub{text-align:center;color:#6b5560;max-width:560px;margin:0 auto 40px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:26px 22px;text-align:center;}
+  .card h3{font-size:1.15rem;margin-bottom:10px;}
+  .card p{color:#6b5560;font-size:0.95rem;}
+  .card svg{width:40px;height:40px;margin-bottom:14px;}
+
+  .contact-band{background:var(--plum);color:#fbeef1;}
+  .contact-band .wrap{text-align:center;padding:50px 28px;}
+  .contact-band h3{font-size:1.7rem;margin-bottom:14px;}
+  .contact-band p{color:#e6cdd6;margin-bottom:16px;}
+  .contact-band a{color:var(--gold);text-decoration:none;font-weight:700;}
+
+  footer{background:#241a20;color:#b09aa2;padding:36px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  footer a{color:var(--gold);}
+
+  @media (max-width: 1150px){
+    .hamburger{display:block;}
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:20px 28px;gap:18px;display:none;}
+    #menu-toggle:checked ~ nav.links{display:flex;}
+    .cta-top{width:100%;text-align:center;}
+    header{position:relative;}
+  }
+  @media (max-width: 900px){.cards{grid-template-columns:1fr;}}
+  @media (max-width: 760px){
+    .hero .wrap{flex-direction:column-reverse;}
+    .hero h1{font-size:2rem;}
+    .hero-art svg{max-width:200px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="swirl-band" aria-hidden="true"></div>
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">Aidy<span>cakes</span></a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">What We Bake</a>
+      <a href="#contact">Order</a>
+      <a href="tel:+15708287950" class="cta-top">Call (570) 828-7950</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Dingmans Ferry, Pike County</span>
+        <h1>Custom Cupcakes & Wedding Cakes in Dingmans Ferry, PA</h1>
+        <p class="tagline">Made to order, from a home kitchen on Red Pine Road.</p>
+        <p class="lead">Custom cupcakes and wedding cakes designed around your colors, flavors, and occasion, baked fresh for weddings, showers, and celebrations across Pike County.</p>
+        <div class="btn-row">
+          <a href="tel:+15708287950" class="btn btn-primary">Call to Order</a>
+          <a href="#services" class="btn btn-secondary">See Flavors</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 240 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a cupcake with piped frosting">
+          <path d="M60 130 L180 130 L165 220 C150 235 90 235 75 220 Z" fill="#F3D9C6"/>
+          <path d="M65 130 Q70 95 90 90 Q95 75 120 78 Q145 72 150 95 Q170 95 175 130 Z" fill="#D98CA0"/>
+          <circle cx="120" cy="72" r="6" fill="#C79A4B"/>
+          <path d="M60 130 L180 130" stroke="#5C3448" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-text">
+        <h2>Every order made from scratch</h2>
+        <p>Aidycakes Cupcakes is a home-based bakery in Dingmans Ferry specializing in wedding cupcakes and custom cakes. Every order is designed around what the client wants, colors, flavors, and finish, rather than pulled from a standing menu.</p>
+        <p>Brides, event planners, and local residents place orders ahead for weddings, showers, and birthdays, working directly with the baker on design before the big day.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>Made to order</strong><span>Every cake and batch of cupcakes custom designed</span></div>
+        <div class="stat"><strong>Wedding specialty</strong><span>Cupcake towers and custom wedding cakes</span></div>
+        <div class="stat"><strong>Local pickup</strong><span>Orders ready near Dingmans Ferry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>What we bake</h2>
+      <p class="sub">Custom orders for the occasions that matter.</p>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 40 40"><path d="M10 22 L30 22 L27 34 C22 38 18 38 13 34 Z" fill="#D98CA0"/><path d="M11 22 Q13 12 20 12 Q27 12 29 22 Z" fill="#5C3448"/></svg>
+          <h3>Wedding Cupcakes</h3>
+          <p>Cupcake towers designed to match your wedding colors and theme.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><rect x="8" y="18" width="24" height="14" rx="2" fill="#F3D9C6"/><rect x="12" y="10" width="16" height="10" rx="2" fill="#D98CA0"/></svg>
+          <h3>Custom Cakes</h3>
+          <p>Tiered and single cakes for showers, birthdays, and celebrations.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="#C79A4B" stroke-width="3"/><circle cx="20" cy="20" r="4" fill="#C79A4B"/></svg>
+          <h3>Flavor Design</h3>
+          <p>Work directly with the baker to choose flavors, fillings, and finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap">
+      <h3>Planning an order?</h3>
+      <p>Dingmans Ferry, PA 18328</p>
+      <a href="tel:+15708287950">(570) 828-7950</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Aidycakes Cupcakes &middot; Dingmans Ferry, PA 18328</span>
+    <span>Site design by Modularity Networks</span>
+  </div>
+</footer>
+
+</body>
+</html>

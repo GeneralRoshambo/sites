@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berentsen Auto Repair | Auto Repair in Bloomingburg, NY</title>
+<meta name="description" content="Family-run auto repair shop in Bloomingburg, NY. General repair and diagnostics on cars and light trucks since 2005.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F2ED;
+    --ink:#1D2430;
+    --navy:#223449;
+    --rust:#A6472B;
+    --gray:#7C7568;
+    --mustard:#C8932E;
+    --line:#DEDACE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Condensed',sans-serif;line-height:1.6;font-size:17px;}
+  h1,h2,h3{font-family:'Antonio',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+  a{color:var(--rust);}
+  a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--rust);outline-offset:3px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  header{background:var(--navy);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Antonio',sans-serif;font-weight:700;font-size:1.4rem;color:#fff;text-decoration:none;white-space:nowrap;text-transform:uppercase;}
+  .brand span{color:var(--mustard);}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{color:#dfe3e8;text-decoration:none;font-weight:600;font-size:0.95rem;}
+  nav.links a:hover{color:var(--mustard);}
+  .cta-top{background:var(--rust);color:#fff!important;padding:10px 20px;border-radius:2px;font-weight:700;}
+  .cta-top:hover{background:#873a23;}
+  #menu-toggle{display:none;}
+  .hamburger{display:none;cursor:pointer;font-size:1.6rem;background:none;border:none;color:#fff;}
+
+  .hero{padding:0;position:relative;overflow:hidden;background:var(--bg);}
+  .skid{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;opacity:0.9;}
+  .hero .wrap{position:relative;z-index:1;display:flex;align-items:center;gap:50px;padding:70px 28px 55px;}
+  .hero-text{flex:1.15;}
+  .eyebrow{color:var(--mustard);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.82rem;margin-bottom:14px;display:block;}
+  .hero h1{font-size:2.9rem;line-height:1.1;margin-bottom:20px;}
+  .hero p.lead{font-size:1.14rem;max-width:520px;color:#42474f;margin-bottom:30px;font-family:'IBM Plex Sans Condensed',sans-serif;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:700;text-decoration:none;border:2px solid var(--navy);text-transform:uppercase;font-size:0.9rem;letter-spacing:0.5px;}
+  .btn-primary{background:var(--navy);color:#fff;}
+  .btn-primary:hover{background:#16232f;}
+  .btn-secondary{background:transparent;color:var(--navy);}
+  .btn-secondary:hover{background:rgba(34,52,73,0.08);}
+  .hero-art{flex:1;display:flex;justify-content:center;position:relative;z-index:1;}
+  .hero-art svg{width:100%;max-width:300px;height:auto;}
+
+  section{padding:56px 0;}
+  .about .wrap{display:flex;gap:50px;align-items:flex-start;flex-wrap:wrap;}
+  .about-text{flex:1.3;min-width:280px;}
+  .about h2{font-size:1.9rem;margin-bottom:16px;}
+  .about p{color:#42474f;margin-bottom:14px;max-width:560px;}
+  .about-stats{flex:1;min-width:220px;display:grid;gap:16px;}
+  .stat{background:#fff;border:1px solid var(--line);padding:20px 22px;border-left:4px solid var(--rust);}
+  .stat strong{display:block;font-family:'Antonio',sans-serif;font-size:1.5rem;color:var(--navy);}
+  .stat span{color:#5c5f66;font-size:0.92rem;}
+
+  .services{background:#EAE6DB;}
+  .services h2{font-size:1.9rem;margin-bottom:8px;text-align:center;}
+  .services .sub{text-align:center;color:#5c5f66;max-width:560px;margin:0 auto 40px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--bg);border:1px solid var(--line);padding:26px 22px;}
+  .card h3{font-size:1.15rem;margin-bottom:10px;}
+  .card p{color:#5c5f66;font-size:0.95rem;}
+  .card svg{width:36px;height:36px;margin-bottom:14px;}
+
+  .contact-band{background:var(--navy);color:#fff;}
+  .contact-band .wrap{display:flex;gap:50px;flex-wrap:wrap;align-items:center;padding:50px 28px;}
+  .contact-band h3{font-size:1.6rem;margin-bottom:14px;}
+  .contact-band p{color:#c9ccd2;margin-bottom:8px;}
+  .contact-band a{color:var(--mustard);text-decoration:none;font-weight:700;}
+
+  footer{background:#141a22;color:#9aa0a8;padding:36px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  footer a{color:#c9ccd2;}
+
+  @media (max-width: 1150px){
+    .hamburger{display:block;}
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;align-items:flex-start;padding:20px 28px;gap:18px;display:none;}
+    #menu-toggle:checked ~ nav.links{display:flex;}
+    .cta-top{width:100%;text-align:center;}
+    header{position:relative;}
+  }
+  @media (max-width: 900px){.cards{grid-template-columns:1fr;}}
+  @media (max-width: 760px){
+    .hero .wrap{flex-direction:column-reverse;}
+    .hero h1{font-size:2.1rem;}
+    .hero-art svg{max-width:220px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">Berentsen <span>Auto Repair</span></a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+18457334907" class="cta-top">Call (845) 733-4907</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="skid" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-50 460 C 250 380, 450 480, 750 380 S 1150 300, 1300 340" stroke="#1D2430" stroke-width="14" fill="none" opacity="0.06"/>
+      <path d="M-50 490 C 250 410, 450 510, 750 410 S 1150 330, 1300 370" stroke="#1D2430" stroke-width="8" fill="none" opacity="0.05"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Bloomingburg, NY &middot; Family-run since 2005</span>
+        <h1>Auto Repair in Bloomingburg, NY</h1>
+        <p class="lead">General repair and diagnostics on cars and light trucks, run out of the same shop on Winterton Road for two decades, with a reputation built on straight answers and steady work.</p>
+        <div class="btn-row">
+          <a href="tel:+18457334907" class="btn btn-primary">Call the Shop</a>
+          <a href="#services" class="btn btn-secondary">See Services</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a car silhouette">
+          <path d="M30 150 L45 110 Q60 90 90 90 L190 90 Q220 90 235 110 L250 150 Z" fill="#223449"/>
+          <rect x="20" y="145" width="240" height="24" rx="6" fill="#1D2430"/>
+          <circle cx="75" cy="172" r="20" fill="#1D2430"/>
+          <circle cx="205" cy="172" r="20" fill="#1D2430"/>
+          <circle cx="75" cy="172" r="8" fill="#C8932E"/>
+          <circle cx="205" cy="172" r="8" fill="#C8932E"/>
+          <path d="M95 92 L105 60 L175 60 L185 92" stroke="#A6472B" stroke-width="4" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-text">
+        <h2>Two decades on Winterton Road</h2>
+        <p>Berentsen Auto Repair has been servicing cars and light trucks for Bloomingburg-area drivers since roughly 2005. It's a small, family-run operation, Monday through Saturday, and the kind of shop where regulars ask for a specific mechanic by name.</p>
+        <p>Reviews consistently mention fair pricing and honest diagnostics, the two things that keep people coming back instead of driving into Middletown for repairs.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>20 years</strong><span>Serving Bloomingburg and the Mamakating area</span></div>
+        <div class="stat"><strong>4.6&ndash;5 stars</strong><span>Across review platforms, 30+ reviews</span></div>
+        <div class="stat"><strong>Mon&ndash;Sat</strong><span>Open six days a week</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="sub">General repair for whatever's wrong with the car.</p>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#A6472B" stroke-width="3"/><path d="M20 10 L20 20 L27 25" stroke="#A6472B" stroke-width="3" fill="none"/></svg>
+          <h3>Diagnostics</h3>
+          <p>Engine and electrical diagnostics to find the real problem, not just guess.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="14" cy="26" r="8" fill="none" stroke="#223449" stroke-width="4"/><circle cx="28" cy="26" r="8" fill="none" stroke="#223449" stroke-width="4"/><rect x="10" y="12" width="20" height="10" rx="2" fill="#C8932E"/></svg>
+          <h3>General Repair</h3>
+          <p>Brakes, suspension, exhaust, and the everyday work that keeps a car running.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><rect x="8" y="14" width="24" height="16" rx="2" fill="#7C7568"/><circle cx="14" cy="32" r="4" fill="#1D2430"/><circle cx="28" cy="32" r="4" fill="#1D2430"/></svg>
+          <h3>Light Trucks</h3>
+          <p>Repair and maintenance for pickups and light-duty trucks too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap">
+      <div>
+        <h3>Get your car looked at</h3>
+        <p>17 Winterton Rd, Bloomingburg, NY 12721</p>
+      </div>
+      <div>
+        <a href="tel:+18457334907">(845) 733-4907</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Berentsen Auto Repair &middot; 17 Winterton Rd, Bloomingburg, NY 12721</span>
+    <span>Site design by Modularity Networks</span>
+  </div>
+</footer>
+
+</body>
+</html>

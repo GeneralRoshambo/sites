@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CL Repair, LLC | Small Engine, ATV & Tractor Repair in Equinunk, PA</title>
+<meta name="description" content="Small engine, ATV, tractor and auto repair shop in Equinunk, PA. Same-day service on mowers and outdoor equipment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@500;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F1EC;
+    --ink:#1E2023;
+    --steel:#454B52;
+    --orange:#D9531E;
+    --chrome:#B9BEC2;
+    --line:#DAD6CC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:'Work Sans',sans-serif;line-height:1.6;font-size:17px;}
+  h1,h2,h3{font-family:'Chivo',sans-serif;font-weight:900;letter-spacing:-0.3px;}
+  a{color:var(--orange);}
+  a:focus-visible, .btn:focus-visible, button:focus-visible{outline:3px solid var(--orange);outline-offset:3px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  .plate-strip{
+    height:14px;width:100%;
+    background:repeating-linear-gradient(135deg, var(--chrome) 0 6px, #a7adb2 6px 12px);
+  }
+
+  header{background:var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Chivo',sans-serif;font-weight:900;font-size:1.35rem;color:#fff;text-decoration:none;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px;}
+  .brand span{color:var(--orange);}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{color:#e6e6e6;text-decoration:none;font-weight:600;font-size:0.95rem;}
+  nav.links a:hover{color:var(--orange);}
+  .cta-top{background:var(--orange);color:#fff!important;padding:10px 20px;border-radius:2px;font-weight:700;}
+  .cta-top:hover{background:#b8451a;}
+  #menu-toggle{display:none;}
+  .hamburger{display:none;cursor:pointer;font-size:1.6rem;background:none;border:none;color:#fff;}
+
+  .hero{padding:70px 0 60px;background:var(--bg);}
+  .hero .wrap{display:flex;align-items:center;gap:50px;}
+  .hero-text{flex:1.15;}
+  .eyebrow{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:0.82rem;margin-bottom:14px;display:block;}
+  .hero h1{font-size:2.9rem;line-height:1.1;margin-bottom:20px;text-transform:uppercase;}
+  .hero p.lead{font-size:1.15rem;max-width:520px;color:#43474c;margin-bottom:30px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:700;text-decoration:none;border:2px solid var(--ink);text-transform:uppercase;font-size:0.9rem;letter-spacing:0.5px;}
+  .btn-primary{background:var(--ink);color:#fff;}
+  .btn-primary:hover{background:#000;}
+  .btn-secondary{background:transparent;color:var(--ink);}
+  .btn-secondary:hover{background:rgba(30,32,35,0.06);}
+
+  .hero-art{flex:1;display:flex;justify-content:center;}
+  .hero-art svg{width:100%;max-width:320px;height:auto;}
+
+  section{padding:60px 0;}
+  .about .wrap{display:flex;gap:50px;align-items:flex-start;flex-wrap:wrap;}
+  .about-text{flex:1.3;min-width:280px;}
+  .about h2{font-size:1.9rem;margin-bottom:16px;text-transform:uppercase;}
+  .about p{color:#43474c;margin-bottom:14px;max-width:560px;}
+  .about-stats{flex:1;min-width:220px;display:grid;gap:16px;}
+  .stat{background:#fff;border:1px solid var(--line);padding:20px 22px;border-left:4px solid var(--orange);}
+  .stat strong{display:block;font-family:'Chivo',sans-serif;font-size:1.4rem;color:var(--ink);margin-bottom:2px;}
+  .stat span{color:#5c6066;font-size:0.92rem;}
+
+  .services{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .services h2{font-size:1.9rem;margin-bottom:8px;text-align:center;text-transform:uppercase;}
+  .services .sub{text-align:center;color:#5c6066;max-width:560px;margin:0 auto 40px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--bg);border:1px solid var(--line);padding:26px 22px;}
+  .card h3{font-size:1.15rem;margin-bottom:10px;text-transform:uppercase;}
+  .card p{color:#5c6066;font-size:0.95rem;}
+  .card svg{width:36px;height:36px;margin-bottom:14px;}
+
+  .contact-band{background:var(--ink);color:#fff;}
+  .contact-band .wrap{display:flex;gap:50px;flex-wrap:wrap;align-items:center;padding:50px 28px;}
+  .contact-band h3{font-size:1.6rem;margin-bottom:14px;text-transform:uppercase;}
+  .contact-band p{color:#c9ccce;margin-bottom:8px;}
+  .contact-band a{color:var(--orange);text-decoration:none;font-weight:700;}
+  .hours-list{flex:1;min-width:260px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:0.95rem;color:#d5d7d9;}
+
+  footer{background:#141618;color:#9aa0a4;padding:36px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  footer a{color:#c9ccce;}
+
+  @media (max-width: 1150px){
+    .hamburger{display:block;}
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:20px 28px;gap:18px;display:none;}
+    #menu-toggle:checked ~ nav.links{display:flex;}
+    .cta-top{width:100%;text-align:center;}
+    header{position:relative;}
+  }
+  @media (max-width: 900px){.cards{grid-template-columns:1fr;}}
+  @media (max-width: 760px){
+    .hero .wrap{flex-direction:column-reverse;}
+    .hero h1{font-size:2.1rem;}
+    .hero-art svg{max-width:220px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="plate-strip" aria-hidden="true"></div>
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">CL <span>Repair</span></a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Hours</a>
+      <a href="tel:+15702246424" class="cta-top">Call (570) 224-6424</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Equinunk, PA &middot; Owner-operated</span>
+        <h1>Small Engine, ATV & Tractor Repair in Equinunk, PA</h1>
+        <p class="lead">Craig Gehrig fixes what runs on gas, from riding mowers and ATVs to tractors and light autos, out of the shop on Hancock Highway. Drop it off, get it back running.</p>
+        <div class="btn-row">
+          <a href="tel:+15702246424" class="btn btn-primary">Call the Shop</a>
+          <a href="#services" class="btn btn-secondary">What We Fix</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a gear and wrench">
+          <circle cx="150" cy="140" r="80" fill="none" stroke="#B9BEC2" stroke-width="10"/>
+          <g fill="#454B52">
+            <rect x="140" y="30" width="20" height="30"/>
+            <rect x="140" y="230" width="20" height="30"/>
+            <rect x="30" y="130" width="30" height="20"/>
+            <rect x="240" y="130" width="30" height="20"/>
+            <rect x="65" y="65" width="24" height="24" transform="rotate(45 77 77)"/>
+            <rect x="211" y="65" width="24" height="24" transform="rotate(45 223 77)"/>
+            <rect x="65" y="191" width="24" height="24" transform="rotate(45 77 203)"/>
+            <rect x="211" y="191" width="24" height="24" transform="rotate(45 223 203)"/>
+          </g>
+          <circle cx="150" cy="140" r="46" fill="#F3F1EC" stroke="#1E2023" stroke-width="6"/>
+          <rect x="142" y="60" width="16" height="90" rx="4" fill="#D9531E" transform="rotate(35 150 140)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-text">
+        <h2>One guy, one shop, everything with an engine</h2>
+        <p>CL Repair is a one-man operation run by Craig Gehrig out of a working shop on Hancock Highway in Equinunk. If it has a small engine, four wheels, or a hitch, there's a good chance it comes through this shop, riding mowers, ATVs, tractors, and lawn equipment for homeowners and farms across the Equinunk and Hancock border area.</p>
+        <p>Word gets around locally for quick turnaround, especially on mower repairs during the summer when everyone needs their equipment back the same week.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>Same-day drop-off</strong><span>On most mower and small engine work</span></div>
+        <div class="stat"><strong>ATV & tractor service</strong><span>Not just lawn equipment</span></div>
+        <div class="stat"><strong>Auto repair too</strong><span>General repair on cars and light trucks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>What comes through the shop</h2>
+      <p class="sub">Four categories cover most of what rolls or gets trailered in.</p>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 40 40"><rect x="6" y="18" width="28" height="10" rx="2" fill="#454B52"/><circle cx="12" cy="30" r="5" fill="#1E2023"/><circle cx="28" cy="30" r="5" fill="#1E2023"/></svg>
+          <h3>Riding Mowers</h3>
+          <p>Tune-ups, blade and deck repair, belts, and engine trouble on riding and push mowers.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="12" cy="26" r="8" fill="none" stroke="#454B52" stroke-width="4"/><circle cx="28" cy="26" r="8" fill="none" stroke="#454B52" stroke-width="4"/><rect x="10" y="12" width="20" height="10" rx="2" fill="#D9531E"/></svg>
+          <h3>ATVs & Off-Road</h3>
+          <p>Engine, suspension, and electrical work for four-wheelers and side-by-sides.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><rect x="8" y="14" width="24" height="16" rx="2" fill="#454B52"/><circle cx="14" cy="32" r="5" fill="#1E2023"/><circle cx="28" cy="32" r="5" fill="#1E2023"/></svg>
+          <h3>Tractors</h3>
+          <p>Farm and compact tractor repair, from hydraulics to routine maintenance.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><path d="M8 26 L14 14 L26 14 L32 26 Z" fill="none" stroke="#454B52" stroke-width="3"/><circle cx="14" cy="30" r="4" fill="#1E2023"/><circle cx="26" cy="30" r="4" fill="#1E2023"/></svg>
+          <h3>Cars & Light Trucks</h3>
+          <p>General auto repair on the side for local vehicles that need attention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap">
+      <div>
+        <h3>Drop it off, we'll call you</h3>
+        <p>4338 Hancock Hwy, Equinunk, PA 18417</p>
+        <p><a href="tel:+15702246424">(570) 224-6424</a></p>
+      </div>
+      <div class="hours-list">
+        <div class="hours-row"><span>Monday to Friday</span><span>Call for hours</span></div>
+        <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>CL Repair, LLC &middot; 4338 Hancock Hwy, Equinunk, PA 18417</span>
+    <span>Site design by Modularity Networks</span>
+  </div>
+</footer>
+
+</body>
+</html>

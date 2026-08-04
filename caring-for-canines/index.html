@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caring for Canines | In-Home Dog Boarding & Pet Sitting in Greeley, PA</title>
+<meta name="description" content="In-home dog boarding and pet sitting in Greeley, PA. Over 7 years caring for local dogs while their owners travel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF3E9;
+    --ink:#2B2621;
+    --terra:#C1704A;
+    --forest:#3F5844;
+    --dusty:#6E8CA0;
+    --mustard:#DDA34D;
+    --line:#EAE0CD;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--ink);font-family:'Nunito Sans',sans-serif;line-height:1.65;font-size:17px;}
+  h1,h2,h3{font-family:'Josefin Sans',sans-serif;font-weight:700;}
+  a{color:var(--terra);}
+  a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--terra);outline-offset:3px;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  header{background:var(--bg);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:1.4rem;color:var(--ink);text-decoration:none;white-space:nowrap;}
+  .brand span{color:var(--terra);}
+  nav.links{display:flex;align-items:center;gap:32px;}
+  nav.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:0.95rem;}
+  nav.links a:hover{color:var(--terra);}
+  .cta-top{background:var(--terra);color:#fff!important;padding:10px 20px;border-radius:20px;font-weight:700;}
+  .cta-top:hover{background:#a25c3a;}
+  #menu-toggle{display:none;}
+  .hamburger{display:none;cursor:pointer;font-size:1.6rem;background:none;border:none;color:var(--ink);}
+
+  .hero{padding:70px 0 50px;position:relative;overflow:hidden;}
+  .hero .wrap{display:flex;align-items:center;gap:50px;}
+  .hero-text{flex:1.15;}
+  .eyebrow{color:var(--forest);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:0.82rem;margin-bottom:14px;display:block;}
+  .hero h1{font-size:2.8rem;line-height:1.18;margin-bottom:20px;}
+  .hero p.lead{font-size:1.14rem;max-width:520px;color:#4a443b;margin-bottom:30px;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 26px;border-radius:24px;font-weight:700;text-decoration:none;border:2px solid var(--forest);}
+  .btn-primary{background:var(--forest);color:#fff;}
+  .btn-primary:hover{background:#2f4636;}
+  .btn-secondary{background:transparent;color:var(--forest);}
+  .btn-secondary:hover{background:rgba(63,88,68,0.08);}
+  .hero-art{flex:1;display:flex;justify-content:center;}
+  .hero-art svg{width:100%;max-width:300px;height:auto;}
+
+  .paw-trail{display:flex;justify-content:center;gap:36px;padding:10px 0 30px;opacity:0.6;}
+  .paw-trail svg{width:22px;height:22px;}
+
+  section{padding:56px 0;}
+  .about .wrap{display:flex;gap:50px;align-items:flex-start;flex-wrap:wrap;}
+  .about-text{flex:1.3;min-width:280px;}
+  .about h2{font-size:1.95rem;margin-bottom:16px;}
+  .about p{color:#4a443b;margin-bottom:14px;max-width:560px;}
+  .about-stats{flex:1;min-width:220px;display:grid;gap:16px;}
+  .stat{background:#fff;border:1px solid var(--line);padding:20px 22px;border-radius:14px;}
+  .stat strong{display:block;font-family:'Josefin Sans',sans-serif;font-size:1.4rem;color:var(--terra);}
+  .stat span{color:#5c5548;font-size:0.92rem;}
+
+  .services{background:#F2E8D8;}
+  .services h2{font-size:1.95rem;margin-bottom:8px;text-align:center;}
+  .services .sub{text-align:center;color:#5c5548;max-width:560px;margin:0 auto 40px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:26px 22px;}
+  .card h3{font-size:1.15rem;margin-bottom:10px;}
+  .card p{color:#5c5548;font-size:0.95rem;}
+  .card svg{width:34px;height:34px;margin-bottom:14px;}
+
+  .contact-band{background:var(--dusty);color:#f4f7f9;}
+  .contact-band .wrap{display:flex;gap:50px;flex-wrap:wrap;align-items:center;padding:50px 28px;}
+  .contact-band h3{font-size:1.6rem;margin-bottom:14px;}
+  .contact-band p{color:#e6eef2;margin-bottom:8px;}
+  .contact-band a{color:#2B2621;background:#fff;padding:4px 10px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;margin-top:6px;}
+
+  footer{background:#22201b;color:#a89e88;padding:36px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  footer a{color:var(--mustard);}
+
+  @media (max-width: 1150px){
+    .hamburger{display:block;}
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:20px 28px;gap:18px;display:none;}
+    #menu-toggle:checked ~ nav.links{display:flex;}
+    .cta-top{width:100%;text-align:center;}
+    header{position:relative;}
+  }
+  @media (max-width: 900px){.cards{grid-template-columns:1fr;}}
+  @media (max-width: 760px){
+    .hero .wrap{flex-direction:column-reverse;}
+    .hero h1{font-size:2.1rem;}
+    .hero-art svg{max-width:200px;}
+    .paw-trail{gap:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">Caring for <span>Canines</span></a>
+    <input type="checkbox" id="menu-toggle">
+    <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Book a Stay</a>
+      <a href="tel:+15706477031" class="cta-top">Call (570) 647-7031</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Greeley, Pike County</span>
+        <h1>In-Home Dog Boarding & Pet Sitting in Greeley, PA</h1>
+        <p class="lead">Chrissy has boarded and sat for local dogs out of her Greeley home for over 7 years, with a dedicated space set aside just for the dogs in her care while their owners travel.</p>
+        <div class="btn-row">
+          <a href="tel:+15706477031" class="btn btn-primary">Call to Book</a>
+          <a href="#services" class="btn btn-secondary">How It Works</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 260 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a house with a paw print">
+          <path d="M40 120 L130 50 L220 120" stroke="#3F5844" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <rect x="60" y="120" width="140" height="90" rx="6" fill="#fff" stroke="#3F5844" stroke-width="6"/>
+          <circle cx="130" cy="165" r="18" fill="#C1704A"/>
+          <circle cx="112" cy="145" r="8" fill="#C1704A"/>
+          <circle cx="128" cy="138" r="8" fill="#C1704A"/>
+          <circle cx="148" cy="145" r="8" fill="#C1704A"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="paw-trail" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#C1704A"><circle cx="12" cy="15" r="6"/><circle cx="6" cy="7" r="2.5"/><circle cx="12" cy="4" r="2.5"/><circle cx="18" cy="7" r="2.5"/></svg>
+    <svg viewBox="0 0 24 24" fill="#3F5844"><circle cx="12" cy="15" r="6"/><circle cx="6" cy="7" r="2.5"/><circle cx="12" cy="4" r="2.5"/><circle cx="18" cy="7" r="2.5"/></svg>
+    <svg viewBox="0 0 24 24" fill="#DDA34D"><circle cx="12" cy="15" r="6"/><circle cx="6" cy="7" r="2.5"/><circle cx="12" cy="4" r="2.5"/><circle cx="18" cy="7" r="2.5"/></svg>
+    <svg viewBox="0 0 24 24" fill="#6E8CA0"><circle cx="12" cy="15" r="6"/><circle cx="6" cy="7" r="2.5"/><circle cx="12" cy="4" r="2.5"/><circle cx="18" cy="7" r="2.5"/></svg>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-text">
+        <h2>A real home, not a kennel</h2>
+        <p>Caring for Canines is a one-woman, home-based boarding and pet-sitting service in Greeley. Chrissy has been doing this full time for more than seven years, and set aside half of her own duplex as dedicated space for the dogs staying with her, not a converted garage or a row of kennel runs.</p>
+        <p>Most clients are local homeowners and second-home owners along the upper Delaware who need someone trustworthy to watch a dog while they travel, without shipping their pet off to a commercial kennel.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>7+ years</strong><span>Full-time pet sitting experience</span></div>
+        <div class="stat"><strong>Dedicated space</strong><span>Half a duplex set up just for boarding</span></div>
+        <div class="stat"><strong>One-on-one care</strong><span>Not a commercial kennel setup</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>How boarding works</h2>
+      <p class="sub">A simple process built around trust and a home environment.</p>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="24" r="10" fill="#C1704A"/><circle cx="12" cy="12" r="4" fill="#C1704A"/><circle cx="20" cy="8" r="4" fill="#C1704A"/><circle cx="28" cy="12" r="4" fill="#C1704A"/></svg>
+          <h3>Meet & Greet</h3>
+          <p>A first visit to make sure your dog is comfortable before an overnight stay.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><path d="M10 30 L20 10 L30 30 Z" fill="none" stroke="#3F5844" stroke-width="3"/><rect x="14" y="24" width="12" height="6" fill="#3F5844"/></svg>
+          <h3>In-Home Boarding</h3>
+          <p>A dedicated space in Chrissy's home, not a kennel run, for however long you need.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="none" stroke="#DDA34D" stroke-width="3"/><path d="M20 12 L20 20 L26 24" stroke="#DDA34D" stroke-width="3" fill="none"/></svg>
+          <h3>Daily Updates</h3>
+          <p>Peace of mind while you're away, with regular check-ins on how your dog is doing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap">
+      <div>
+        <h3>Ready to book a stay?</h3>
+        <p>925 PA-434, Greeley, PA 18425</p>
+        <a href="tel:+15706477031">(570) 647-7031</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Caring for Canines &middot; 925 PA-434, Greeley, PA 18425</span>
+    <span>Site design by Modularity Networks</span>
+  </div>
+</footer>
+
+</body>
+</html>

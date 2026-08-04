@@ -516,5 +516,89 @@
     "location": "Jacksonville, FL",
     "category": "House Cleaning",
     "region": "More"
+  },
+  {
+    "slug": "herrick-hill-huckleberry-farm",
+    "name": "Herrick Hill Huckleberry Farm",
+    "location": "Herrick Center, PA",
+    "category": "U-Pick Blueberry Farm",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "cl-repair",
+    "name": "CL Repair, LLC",
+    "location": "Equinunk, PA",
+    "category": "Small Engine & Auto Repair",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "mike-roloson-excavating",
+    "name": "Mike Roloson Excavating",
+    "location": "Equinunk, PA",
+    "category": "Excavation Contractor",
+    "region": "Wallenpaupack"
+  },
+  {
+    "slug": "hills-homestead",
+    "name": "Hills' Homestead",
+    "location": "Lords Valley, PA",
+    "category": "Farm Market & Eatery",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "caring-for-canines",
+    "name": "Caring for Canines",
+    "location": "Greeley, PA",
+    "category": "Pet Boarding & Sitting",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "aidycakes-cupcakes",
+    "name": "Aidycakes Cupcakes",
+    "location": "Dingmans Ferry, PA",
+    "category": "Custom Bakery",
+    "region": "DelawareValley"
+  },
+  {
+    "slug": "berentsen-auto-repair",
+    "name": "Berentsen Auto Repair",
+    "location": "Bloomingburg, NY",
+    "category": "Auto Repair",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "freedhome-variety",
+    "name": "Freedhome Variety",
+    "location": "Bloomingburg, NY",
+    "category": "Hardware & Variety Store",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "horlers-general-store",
+    "name": "Horler's General Store",
+    "location": "Unionville, NY",
+    "category": "General Store & Deli",
+    "region": "HudsonValley"
+  },
+  {
+    "slug": "bovaird-tree-stump-removal",
+    "name": "Bovaird Tree & Stump Removal",
+    "location": "Fairview, PA",
+    "category": "Tree Service",
+    "region": "Erie"
+  },
+  {
+    "slug": "highway-to-hair",
+    "name": "Highway to Hair",
+    "location": "Union City, PA",
+    "category": "Hair Salon",
+    "region": "Erie"
+  },
+  {
+    "slug": "big-irenes-little-diner",
+    "name": "Big Irene's Little Diner",
+    "location": "Albion, PA",
+    "category": "Diner",
+    "region": "Erie"
   }
 ]
