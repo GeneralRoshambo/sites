@@ -481,5 +481,40 @@
     "location": "Edinboro, PA",
     "category": "Pet Grooming",
     "region": "Erie"
+  },
+  {
+    "slug": "demos/stache-detailing",
+    "name": "Stache Detailing",
+    "location": "Deerwood, MN",
+    "category": "Auto Detailing",
+    "region": "More"
+  },
+  {
+    "slug": "demos/pristine-pressure-washing",
+    "name": "Pristine Pressure Washing",
+    "location": "Charlotte, NC",
+    "category": "Pressure Washing",
+    "region": "More"
+  },
+  {
+    "slug": "demos/hollywood-painting-design",
+    "name": "Hollywood Painting and Design",
+    "location": "Slidell, LA",
+    "category": "Painting",
+    "region": "More"
+  },
+  {
+    "slug": "demos/onsite-auto-repair",
+    "name": "Onsite Auto Repair",
+    "location": "Rexburg, ID",
+    "category": "Auto Repair",
+    "region": "More"
+  },
+  {
+    "slug": "demos/caldentey-cleaning-co",
+    "name": "Caldentey Cleaning Co.",
+    "location": "Jacksonville, FL",
+    "category": "House Cleaning",
+    "region": "More"
   }
 ]
