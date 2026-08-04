@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mobile Detailing Services | Stache Detailing, Brainerd Lakes MN</title>
+<meta name="description" content="Interior detailing, exterior wash and wax, and paint decontamination from Stache Detailing, a mobile detailer serving Deerwood and the Brainerd Lakes area.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10201F; --pine:#0E3B36; --teal:#0E6E63; --chrome:#C8CDD2;
+  --wax:#E4B24A; --paper:#F7F9F8; --panel:#EDF2F0; --text:#1A2523; --muted:#5B6C68; --white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+h1,h2,h3,.disp{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.98;text-transform:uppercase}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--teal)}
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(16,32,31,.96);border-bottom:1px solid rgba(200,205,210,.18)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--paper);text-decoration:none;white-space:nowrap}
+.brand .mark{width:40px;height:24px;flex:0 0 auto}
+.brand b{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;line-height:1}
+.brand small{display:block;font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.24em;color:var(--wax);text-transform:uppercase;margin-top:2px}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{color:var(--chrome);text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.02em}
+.navlinks a:hover,.navlinks a.active{color:var(--paper)}
+.navcta{background:var(--wax);color:var(--ink)!important;padding:11px 20px;border-radius:2px;font-weight:700;letter-spacing:.03em}
+.navcta:hover{background:#f0c169}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:2px;background:var(--paper);margin:5px 0}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--wax);outline-offset:3px}
+/* hero */
+.hero{background:var(--ink);color:var(--paper);padding:88px 0 96px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.9rem,7vw,6rem);color:var(--paper);max-width:16ch}
+.hero h1 .hl{color:var(--wax)}
+.hero p.lead{margin-top:22px;max-width:52ch;font-size:1.12rem;color:#cdd8d5}
+.herobtns{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;letter-spacing:.03em;padding:14px 26px;border-radius:2px;font-size:.95rem}
+.btn.p{background:var(--wax);color:var(--ink)}
+.btn.p:hover{background:#f0c169}
+.btn.s{background:transparent;color:var(--paper);border:1.5px solid rgba(200,205,210,.5)}
+.btn.s:hover{border-color:var(--wax);color:var(--wax)}
+/* gloss sweep panel */
+.panel-car{margin-top:56px;height:150px;border-radius:6px;position:relative;overflow:hidden;border:1px solid rgba(200,205,210,.2);
+  background:linear-gradient(100deg,#0c1918 0%,#123430 45%,#0c1918 100%)}
+.panel-car .sweep{position:absolute;top:0;bottom:0;width:36%;left:-40%;
+  background:linear-gradient(100deg,transparent,rgba(228,178,74,.28) 40%,rgba(255,255,255,.5) 50%,rgba(228,178,74,.28) 60%,transparent);
+  transform:skewX(-12deg);animation:sweep 5.5s ease-in-out infinite}
+@keyframes sweep{0%{left:-45%}55%{left:120%}100%{left:120%}}
+.panel-car .lbl{position:absolute;left:18px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.2em;color:var(--chrome);text-transform:uppercase}
+.panel-car .lbl.r{left:auto;right:18px;color:var(--wax)}
+@media(prefers-reduced-motion:reduce){.panel-car .sweep{animation:none;left:60%;opacity:.5}}
+/* mustache divider */
+.stache{display:block;margin:0 auto;width:70px;height:26px;color:var(--teal)}
+/* sections */
+section{padding:76px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.3rem);color:var(--pine)}
+.sec-head p{max-width:46ch;color:var(--muted)}
+/* service grid */
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--white);border:1px solid #e2e9e6;border-radius:6px;padding:28px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--teal)}
+.card .ic{width:44px;height:44px;color:var(--teal);margin-bottom:16px}
+.card h3{font-size:1.5rem;color:var(--pine);margin-bottom:8px;letter-spacing:.03em}
+.card p{color:var(--muted);font-size:.96rem}
+.card a.more{display:inline-block;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px}
+/* stripe band */
+.band{background:var(--pine);color:var(--paper)}
+.band .wrap{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.stat b{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--wax);display:block;line-height:1}
+.stat span{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--chrome)}
+/* split */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.split h2{font-size:clamp(2rem,4vw,3rem);color:var(--pine);margin-bottom:18px}
+.split p{color:var(--muted);margin-bottom:14px}
+.checklist{list-style:none;margin-top:10px}
+.checklist li{padding-left:30px;position:relative;margin-bottom:12px;color:var(--text)}
+.checklist li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--teal)}
+.checklist li:after{content:"";position:absolute;left:5px;top:10px;width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.imgcard{background:linear-gradient(160deg,#0E3B36,#0E6E63);border-radius:8px;min-height:320px;position:relative;overflow:hidden;border:1px solid #d9e2df}
+.imgcard .mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+/* cta */
+.cta{background:var(--ink);color:var(--paper);text-align:center}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--paper);margin-bottom:16px}
+.cta p{color:#cdd8d5;max-width:44ch;margin:0 auto 28px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.info b{display:block;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.info p{margin-bottom:22px;color:var(--text);font-size:1.05rem}
+form label{display:block;font-size:.82rem;font-weight:600;margin:14px 0 6px;color:var(--pine)}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid #cfdad6;border-radius:4px;font-family:inherit;font-size:.95rem;background:var(--white)}
+form button{margin-top:20px;border:0;cursor:pointer}
+/* generic page hero (subpages) */
+.phero{background:var(--pine);color:var(--paper);padding:66px 0}
+.phero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);color:var(--paper);max-width:18ch}
+.phero p{margin-top:16px;max-width:56ch;color:#cfe0dc}
+.crumbs{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wax);margin-bottom:18px}
+.crumbs a{color:var(--chrome);text-decoration:none}
+.prose{max-width:74ch}
+.prose p{margin-bottom:18px;color:var(--text)}
+.prose h2{font-size:2rem;color:var(--pine);margin:34px 0 14px}
+.area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.area-tags span{background:var(--panel);border:1px solid #d7e2de;color:var(--pine);padding:7px 13px;border-radius:20px;font-size:.85rem}
+/* footer */
+footer.ft{background:#0b1817;color:#aebbb7;padding:56px 0 30px}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:34px}
+footer.ft h4{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wax);margin-bottom:14px}
+footer.ft a{color:#aebbb7;text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:var(--paper)}
+footer.ft .brand b{color:var(--paper)}
+.legal{border-top:1px solid rgba(200,205,210,.14);padding-top:20px;font-size:.8rem;color:#7d8d89;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--wax);color:var(--ink);text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
+@media(max-width:1140px){
+  .navlinks{position:fixed;inset:74px 0 auto 0;background:var(--ink);flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid rgba(200,205,210,.2)}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center}
+  .burger{display:block}
+}
+@media(max-width:860px){
+  .g3,.g2{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:32px}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  footer.ft .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){footer.ft .cols{grid-template-columns:1fr}}
+</style></head>
+<body><header class="nav"><div class="wrap">
+<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 30c-6-14-16-16-24-12-6 3-8 9-4 10 3 .8 6-1 8-4-1 4 1 8 6 9 6 1.4 11-1 14-5 3 4 8 6.4 14 5 5-1 7-5 6-9 2 3 5 5 8 4 4-1 2-7-4-10-8-4-18-2-24 12z" fill="currentColor"/></svg><span><b>STACHE&nbsp;DETAILING</b><small>Brainerd Lakes, MN</small></span></a>
+<nav class="navlinks" id="nav">
+<a href="index.html">Home</a>
+<a href="services.html" class="active">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="navcta" href="contact.html">Book a Detail</a>
+</nav>
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero"><div class="wrap">
+<div class="crumbs"><a href="index.html">Home</a> / Services</div>
+<h1>Detailing Services in the Brainerd Lakes Area</h1>
+<p>Full mobile detailing packages, built to be done by hand at your home. Pick a single service or combine them for a complete inside-and-out reset.</p>
+</div></section>
+<section><div class="wrap"><div class="grid g3">
+<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-4h10l2 4M7 18v2M17 18v2"/></svg><h3>Interior Detail</h3><p>Deep vacuum, steam clean, leather and plastic care, glass, and odor treatment. The cabin looks and smells new again.</p><a class="more" href="interior-detailing-deerwood.html">Interior in Deerwood &rarr;</a></div>
+<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18M6 14l1.5-5h9L18 14M7 18v2M17 18v2"/><circle cx="7.5" cy="17" r="1.3"/><circle cx="16.5" cy="17" r="1.3"/></svg><h3>Exterior Wash &amp; Wax</h3><p>Two-bucket hand wash, wheel and tire care, bug and tar removal, and a sealant or wax that protects the paint.</p><a class="more" href="exterior-wash-wax-brainerd-lakes.html">Exterior in the Lakes &rarr;</a></div>
+<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6 6 11a6 6 0 01-12 0c0-5 6-11 6-11z"/></svg><h3>Paint Decontamination</h3><p>Clay bar, iron fallout remover, and a finishing wax to leave the clear coat smooth and reflective.</p><a class="more" href="paint-decontamination-deerwood.html">Decon in Deerwood &rarr;</a></div>
+</div>
+<div class="split" style="margin-top:64px">
+<div><p class="eyebrow">How it works</p><h2>Booking is a text away</h2>
+<p>There is no lot to drive to and no waiting room. You tell us the vehicle and the address, we confirm a time, and we show up ready to work.</p>
+<ul class="checklist"><li>Send your vehicle and location</li><li>We confirm a window that fits your day</li><li>We arrive with water, power, and supplies</li><li>You get the keys back with a finished detail</li></ul>
+</div>
+<div class="imgcard"><div class="mono"><svg class="stache" viewBox="0 0 80 30" fill="none"><path d="M40 20c-5-11-13-13-19-10-5 2.5-6 7-3 8 2.4.7 5-.8 6.4-3-.8 3 .8 6.4 4.8 7.2 4.8 1 8.8-.8 11-4 2.2 3.2 6.2 5 11 4 4-.8 5.6-4.2 4.8-7.2 1.4 2.2 4 3.7 6.4 3 3-1 2-5.5-3-8-6-3-14-1-19 10z" fill="currentColor"/></svg></div></div>
+</div>
+</div></section>
+<section class="cta"><div class="wrap"><h2>Not sure which package?</h2><p>Tell us about the vehicle and we will point you to the right detail.</p><a class="btn p" href="contact.html">Get a Recommendation</a></div></section>
+
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><a class="brand" href="index.html" style="margin-bottom:14px"><svg class="mark" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 30c-6-14-16-16-24-12-6 3-8 9-4 10 3 .8 6-1 8-4-1 4 1 8 6 9 6 1.4 11-1 14-5 3 4 8 6.4 14 5 5-1 7-5 6-9 2 3 5 5 8 4 4-1 2-7-4-10-8-4-18-2-24 12z" fill="currentColor"/></svg><span><b style="font-size:1.4rem">STACHE DETAILING</b></span></a>
+<p style="max-width:34ch">Mobile auto detailing that comes to your driveway across the Brainerd Lakes area. Interiors, exteriors, and the finishing touches most washes skip.</p></div>
+<div><h4>Detailing</h4>
+<a href="interior-detailing-deerwood.html">Interior Detailing</a>
+<a href="exterior-wash-wax-brainerd-lakes.html">Exterior Wash &amp; Wax</a>
+<a href="paint-decontamination-deerwood.html">Paint Decontamination</a>
+<a href="services.html">All Services</a></div>
+<div><h4>Company</h4>
+<a href="about.html">About Stache</a>
+<a href="contact.html">Book a Detail</a>
+<a href="mailto:stachedetailing@gmail.com">stachedetailing@gmail.com</a>
+<span style="display:block;color:#7d8d89;font-size:.9rem;margin-top:4px">Serving Deerwood &amp; the Brainerd Lakes area</span></div>
+</div>
+<div class="legal"><span>&copy; 2026 Stache Detailing. All rights reserved.</span><span>Mobile detailing, Deerwood, Minnesota</span></div>
+</div></footer>
+<div class="disclaimer">Preview site built by Modularity Networks for Stache Detailing. Not yet an official company website.</div>
+</body></html>
