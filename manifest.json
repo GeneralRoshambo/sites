@@ -600,5 +600,40 @@
     "location": "Albion, PA",
     "category": "Diner",
     "region": "Erie"
+  },
+  {
+    "slug": "demos/re-detailing",
+    "name": "R&E Detailing",
+    "location": "Eureka, MO",
+    "category": "Auto Detailing",
+    "region": "More"
+  },
+  {
+    "slug": "demos/brodins-betterments",
+    "name": "Brodin's Betterments",
+    "location": "Auburn, AL",
+    "category": "Lawn & Home Services",
+    "region": "More"
+  },
+  {
+    "slug": "demos/squeegs-window-services",
+    "name": "Squeegs Window Services",
+    "location": "Santa Ana, CA",
+    "category": "Window Cleaning",
+    "region": "More"
+  },
+  {
+    "slug": "demos/ajw-auto-service",
+    "name": "AJW Auto Service",
+    "location": "Dallas, TX",
+    "category": "Mobile Mechanic",
+    "region": "More"
+  },
+  {
+    "slug": "demos/pennington-countertop-restoration",
+    "name": "Pennington Countertop Restoration",
+    "location": "Volusia County, FL",
+    "category": "Countertop Resurfacing",
+    "region": "More"
   }
 ]

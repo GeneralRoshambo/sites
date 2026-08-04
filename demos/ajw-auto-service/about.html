@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About AJW Auto Service | Mobile Mechanic in Dallas, TX</title>
+<meta name="description" content="AJW Auto Service is a mobile mechanic business based in Dallas, Texas, run by Aaron Warren, offering diagnostics, brake repair, and battery service.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#24211D; --bg:#FAF7F1; --panel:#EFE7D9; --line:#E1D6C2; --muted:#6B6355;
+  --accent:#B5502D; --accent-dk:#973F22; --accent2:#2E4A63;
+  --disp:'Space Grotesk',system-ui,sans-serif; --disp-w:700; --body:'Public Sans',system-ui,sans-serif; --mono:'JetBrains Mono';
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body),system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1140px,92vw);margin:0 auto}
+h1,h2,h3,.disp{font-family:var(--disp),Georgia,serif;font-weight:var(--disp-w,600);line-height:1.06}
+.eyebrow{font-family:var(--mono),monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;min-width:0}
+.brand .mark{width:38px;height:38px;flex:0 0 auto}
+.brand b{font-family:var(--disp);font-weight:var(--disp-w,600);font-size:1.28rem;letter-spacing:.01em;line-height:1.1;color:var(--ink);white-space:nowrap}
+.brand small{display:block;font-family:var(--mono),monospace;font-size:.62rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-top:2px;white-space:nowrap}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:600}
+.navlinks a:hover,.navlinks a.active{color:var(--ink)}
+.navcta{background:var(--accent);color:#fff!important;padding:11px 20px;border-radius:6px;font-weight:700}
+.navcta:hover{background:var(--accent-dk)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+/* hero */
+.hero{background:var(--bg);padding:72px 0 64px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);color:var(--ink);max-width:17ch}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{margin-top:20px;max-width:54ch;font-size:1.12rem;color:var(--muted)}
+.herobtns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;letter-spacing:.01em;padding:14px 24px;border-radius:7px;font-size:.95rem;border:1.5px solid transparent}
+.btn.p{background:var(--accent);color:#fff}
+.btn.p:hover{background:var(--accent-dk)}
+.btn.s{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.s:hover{border-color:var(--accent);color:var(--accent)}
+/* sections */
+section{padding:70px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--ink)}
+.sec-head p{max-width:46ch;color:var(--muted)}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .ic{width:40px;height:40px;color:var(--accent);margin-bottom:14px}
+.card h3{font-size:1.32rem;color:var(--ink);margin-bottom:8px;font-weight:var(--disp-w,600)}
+.card p{color:var(--muted);font-size:.96rem}
+.card a.more{display:inline-block;margin-top:14px;font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+.band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .wrap{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.stat b{font-family:var(--disp);font-weight:var(--disp-w,600);font-size:2.5rem;color:var(--accent);display:block;line-height:1}
+.stat span{font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.split h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--ink);margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:14px}
+.checklist{list-style:none;margin-top:10px}
+.checklist li{padding-left:30px;position:relative;margin-bottom:12px;color:var(--ink)}
+.checklist li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent)}
+.checklist li:after{content:"";position:absolute;left:5px;top:10px;width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.imgcard{background:var(--panel);border-radius:10px;min-height:300px;position:relative;overflow:hidden;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.cta{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.cta h2{font-size:clamp(2rem,4.2vw,2.9rem);color:var(--ink);margin-bottom:14px}
+.cta p{color:var(--muted);max-width:44ch;margin:0 auto 26px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.info b{display:block;font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.info p{margin-bottom:22px;color:var(--ink);font-size:1.03rem}
+form label{display:block;font-size:.82rem;font-weight:700;margin:14px 0 6px;color:var(--ink)}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-family:inherit;font-size:.95rem;background:#fff}
+form input:focus,form textarea:focus{border-color:var(--accent)}
+form button{margin-top:20px;border:0;cursor:pointer}
+.phero{background:var(--panel);border-bottom:1px solid var(--line);padding:56px 0}
+.phero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);color:var(--ink);max-width:20ch}
+.phero p{margin-top:14px;max-width:56ch;color:var(--muted)}
+.crumbs{font-family:var(--mono),monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.prose{max-width:74ch}
+.prose p{margin-bottom:17px;color:var(--ink)}
+.prose h2{font-size:1.8rem;color:var(--ink);margin:30px 0 14px}
+.area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.area-tags span{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:7px 13px;border-radius:20px;font-size:.85rem}
+footer.ft{background:var(--panel);color:var(--muted);padding:52px 0 28px;border-top:1px solid var(--line)}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.ft h4{font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+footer.ft a{color:var(--muted);text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:var(--ink)}
+footer.ft .brand b{color:var(--ink)}
+.legal{border-top:1px solid var(--line);padding-top:18px;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--accent);color:#fff;text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
+@media(max-width:1150px){
+  .navlinks{position:fixed;inset:78px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid var(--line)}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center}
+  .burger{display:block}
+}
+@media(max-width:860px){
+  .g3,.g2{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:30px}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+  footer.ft .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){footer.ft .cols{grid-template-columns:1fr}}
+
+
+.pegboard{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px}
+.pegboard .slot{background:#fff;border:1px dashed var(--line);border-radius:6px;height:64px;display:flex;align-items:center;justify-content:center}
+.pegboard .slot svg{width:28px;height:28px;color:var(--accent2)}
+.drawer{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:6px;padding:12px 16px;background:#fff;margin-bottom:8px}
+.drawer b{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.drawer span{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-transform:uppercase}
+
+</style></head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" rx="8" fill="#FAF7F1" stroke="#B5502D" stroke-width="1.5"/><path d="M13 27l2-9h10l2 9" stroke="#24211D" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="16" cy="27" r="2.2" fill="#24211D"/><circle cx="24" cy="27" r="2.2" fill="#24211D"/><path d="M17 15l2-3h2l2 3" stroke="#2E4A63" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><span><b>AJW AUTO SERVICE</b><small>Dallas, TX &middot; Mobile Mechanic</small></span></a>
+<nav class="navlinks" id="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a><a class="navcta" href="contact.html">Request a Visit</a></nav>
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero"><div class="wrap">
+<div class="crumbs"><a href="index.html">Home</a> / About</div>
+
+<h1>About AJW Auto Service in Dallas, TX</h1>
+<p>A mobile mechanic built around one idea, bring the repair to the car instead of the other way around.</p>
+
+
+</div></section>
+
+
+<section><div class="wrap"><div class="split">
+<div class="prose"><p class="eyebrow">Based in Dallas, Texas</p>
+<h2>Run by Aaron Warren</h2>
+<p>AJW Auto Service is a mobile mechanic business serving the Dallas area, run by Aaron Warren. The idea is simple: most repairs, from a dead battery to worn brakes to a check engine light, do not actually require a shop, just the right tools and someone who knows what they are doing.</p>
+<p>Every visit starts with an honest diagnosis before any work begins, so you know what is actually wrong and what it will cost before committing to the repair.</p>
+<p>Because the work happens at your home or office, there is no tow, no waiting room, and no rental car while your vehicle sits in a queue.</p>
+</div>
+<div class="drawer-stack">
+<div class="drawer"><b>Diagnostics</b><span>On-site</span></div>
+<div class="drawer"><b>Brakes</b><span>Pads &amp; rotors</span></div>
+<div class="drawer"><b>Battery</b><span>Test &amp; replace</span></div>
+</div>
+</div>
+<div class="split" style="margin-top:52px">
+<div><p class="eyebrow">What we stand for</p><h2>Honest, upfront repairs</h2>
+<ul class="checklist" style="margin-top:14px">
+<li>Diagnosis before any work starts</li>
+<li>Clear pricing, no surprise add-ons</li>
+<li>Repairs done where the car already is</li>
+<li>Based in Dallas, reachable directly</li></ul></div>
+<div><p class="eyebrow">Service area</p><h2>Where we work</h2>
+<div class="area-tags"><span>Dallas</span><span>Irving</span><span>Garland</span><span>Mesquite</span><span>Richardson</span></div>
+<p style="margin-top:14px;color:var(--muted)">Elsewhere in the metro? Ask, we take on jobs nearby too.</p></div>
+</div>
+</div></section>
+<section class="cta"><div class="wrap"><h2>Let&#39;s get your car looked at</h2><p>Tell us what it is doing and we will get you scheduled.</p><a class="btn p" href="contact.html">Request a Visit</a></div></section>
+
+
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><a class="brand" href="index.html" style="margin-bottom:14px"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" rx="8" fill="#FAF7F1" stroke="#B5502D" stroke-width="1.5"/><path d="M13 27l2-9h10l2 9" stroke="#24211D" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="16" cy="27" r="2.2" fill="#24211D"/><circle cx="24" cy="27" r="2.2" fill="#24211D"/><path d="M17 15l2-3h2l2 3" stroke="#2E4A63" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><span><b style="font-size:1.3rem">AJW AUTO SERVICE</b></span></a>
+<p style="max-width:34ch">Mobile mechanic service in Dallas, Texas. Diagnostics, brake repair, and battery and starter work done at your home or office.</p></div>
+<div><h4>Services</h4><a href="mobile-diagnostics-dallas.html">Mobile Diagnostics</a><a href="brake-repair-dallas.html">Brake Repair</a><a href="battery-starter-service-dallas.html">Battery &amp; Starter Service</a><a href="services.html">All Services</a></div>
+<div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Request a Visit</a><span style="display:block;color:var(--muted);font-size:.9rem;margin-top:4px">Message AJW Auto Service on LinkedIn to book</span>
+<span style="display:block;color:var(--muted);font-size:.9rem;margin-top:4px">Serving Dallas &amp; the surrounding metro</span></div>
+</div>
+<div class="legal"><span>&copy; 2026 AJW AUTO SERVICE. All rights reserved.</span><span>Mobile mechanic, Dallas, Texas</span></div>
+</div></footer>
+<div class="disclaimer">Preview site built by Modularity Networks for AJW AUTO SERVICE. Not yet an official company website.</div>
+</body></html>
