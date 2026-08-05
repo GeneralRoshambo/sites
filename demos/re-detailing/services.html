@@ -6,170 +6,182 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#1E2422; --bg:#FAF7F2; --panel:#EFE6D8; --line:#E2D8C7; --muted:#6B6255;
-  --accent:#B23A2E; --accent-dk:#96271D; --accent2:#35586B;
-  --disp:'Oswald',Impact,sans-serif; --disp-w:600; --body:'Karla',system-ui,sans-serif; --mono:'IBM Plex Mono';
-}
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--body),system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{width:min(1140px,92vw);margin:0 auto}
-h1,h2,h3,.disp{font-family:var(--disp),Georgia,serif;font-weight:var(--disp-w,600);line-height:1.06}
-.eyebrow{font-family:var(--mono),monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+img,svg{max-width:100%;display:block}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-/* nav */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;min-width:0}
-.brand .mark{width:38px;height:38px;flex:0 0 auto}
-.brand b{font-family:var(--disp);font-weight:var(--disp-w,600);font-size:1.28rem;letter-spacing:.01em;line-height:1.1;color:var(--ink);white-space:nowrap}
-.brand small{display:block;font-family:var(--mono),monospace;font-size:.62rem;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-top:2px;white-space:nowrap}
-.navlinks{display:flex;align-items:center;gap:28px}
-.navlinks a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:600}
+
+
+:root{
+  --ink:#1E2422; --paper:#FAF7F2; --panel:#EFE6D8; --line:#DCD0BC; --muted:#6B6255;
+  --accent:#B23A2E; --accent-dk:#8F2C22; --accent2:#35586B;
+  --disp:'Oswald',Impact,sans-serif; --body:'Karla',system-ui,sans-serif; --mono:'IBM Plex Mono',monospace;
+}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:.01em;line-height:1.05;text-transform:uppercase}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+
+/* ---- nav: plain bar, stamp CTA ---- */
+header.nav{border-bottom:2px solid var(--ink);background:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:82px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap}
+.brand .mark{width:42px;height:42px;flex:0 0 auto}
+.brand b{font-family:var(--disp);font-size:1.4rem;letter-spacing:.02em}
+.brand small{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;color:var(--accent2);text-transform:uppercase;margin-top:1px}
+.navlinks{display:flex;align-items:center;gap:26px}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
 .navlinks a:hover,.navlinks a.active{color:var(--ink)}
-.navcta{background:var(--accent);color:#fff!important;padding:11px 20px;border-radius:6px;font-weight:700}
-.navcta:hover{background:var(--accent-dk)}
+.navcta{border:2px solid var(--ink);color:var(--ink)!important;padding:9px 18px;font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-2deg);transition:transform .15s,background .15s}
+.navcta:hover{background:var(--accent);color:#fff!important;border-color:var(--accent);transform:rotate(0deg)}
 .burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
 .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
-/* hero */
-.hero{background:var(--bg);padding:72px 0 64px;border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(2.4rem,5.4vw,4.1rem);color:var(--ink);max-width:17ch}
-.hero h1 .hl{color:var(--accent)}
-.hero p.lead{margin-top:20px;max-width:54ch;font-size:1.12rem;color:var(--muted)}
-.herobtns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-block;text-decoration:none;font-weight:700;letter-spacing:.01em;padding:14px 24px;border-radius:7px;font-size:.95rem;border:1.5px solid transparent}
-.btn.p{background:var(--accent);color:#fff}
-.btn.p:hover{background:var(--accent-dk)}
-.btn.s{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn.s:hover{border-color:var(--accent);color:var(--accent)}
-/* sections */
-section{padding:70px 0}
-.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px}
-.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--ink)}
-.sec-head p{max-width:46ch;color:var(--muted)}
-.grid{display:grid;gap:20px}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px;transition:transform .15s,border-color .15s}
-.card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.card .ic{width:40px;height:40px;color:var(--accent);margin-bottom:14px}
-.card h3{font-size:1.32rem;color:var(--ink);margin-bottom:8px;font-weight:var(--disp-w,600)}
-.card p{color:var(--muted);font-size:.96rem}
-.card a.more{display:inline-block;margin-top:14px;font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
-.band{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.band .wrap{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;align-items:center}
-.stat b{font-family:var(--disp);font-weight:var(--disp-w,600);font-size:2.5rem;color:var(--accent);display:block;line-height:1}
-.stat span{font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.split{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-.split h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--ink);margin-bottom:16px}
-.split p{color:var(--muted);margin-bottom:14px}
-.checklist{list-style:none;margin-top:10px}
-.checklist li{padding-left:30px;position:relative;margin-bottom:12px;color:var(--ink)}
-.checklist li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent)}
-.checklist li:after{content:"";position:absolute;left:5px;top:10px;width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
-.imgcard{background:var(--panel);border-radius:10px;min-height:300px;position:relative;overflow:hidden;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-.cta{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
-.cta h2{font-size:clamp(2rem,4.2vw,2.9rem);color:var(--ink);margin-bottom:14px}
-.cta p{color:var(--muted);max-width:44ch;margin:0 auto 26px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
-.info b{display:block;font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.info p{margin-bottom:22px;color:var(--ink);font-size:1.03rem}
-form label{display:block;font-size:.82rem;font-weight:700;margin:14px 0 6px;color:var(--ink)}
-form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-family:inherit;font-size:.95rem;background:#fff}
-form input:focus,form textarea:focus{border-color:var(--accent)}
-form button{margin-top:20px;border:0;cursor:pointer}
-.phero{background:var(--panel);border-bottom:1px solid var(--line);padding:56px 0}
-.phero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);color:var(--ink);max-width:20ch}
-.phero p{margin-top:14px;max-width:56ch;color:var(--muted)}
-.crumbs{font-family:var(--mono),monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.crumbs a{color:var(--muted);text-decoration:none}
-.prose{max-width:74ch}
-.prose p{margin-bottom:17px;color:var(--ink)}
-.prose h2{font-size:1.8rem;color:var(--ink);margin:30px 0 14px}
-.area-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-.area-tags span{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:7px 13px;border-radius:20px;font-size:.85rem}
-footer.ft{background:var(--panel);color:var(--muted);padding:52px 0 28px;border-top:1px solid var(--line)}
-footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
-footer.ft h4{font-family:var(--mono),monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-footer.ft a{color:var(--muted);text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
-footer.ft a:hover{color:var(--ink)}
-footer.ft .brand b{color:var(--ink)}
-.legal{border-top:1px solid var(--line);padding-top:18px;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.disclaimer{background:var(--accent);color:#fff;text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
 @media(max-width:1150px){
-  .navlinks{position:fixed;inset:78px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid var(--line)}
-  .navlinks.open{display:flex}
-  .navlinks a{width:100%;padding:14px 6vw}
-  .navcta{margin:10px 6vw;text-align:center}
+  .navlinks{position:fixed;inset:82px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:2px solid var(--ink)}
+  .navlinks.open{display:flex}.navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center;transform:none;display:inline-block}
   .burger{display:block}
 }
-@media(max-width:860px){
-  .g3,.g2{grid-template-columns:1fr}
-  .split{grid-template-columns:1fr;gap:30px}
-  .contact-grid{grid-template-columns:1fr;gap:26px}
+
+/* ---- hero: asymmetric, receipt dominant ---- */
+.hero{padding:56px 0 0}
+.hero .grid{display:grid;grid-template-columns:1.05fr .85fr;gap:54px;align-items:start}
+.hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);max-width:15ch}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{margin-top:18px;max-width:48ch;font-size:1.08rem;color:var(--muted)}
+.herobtns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 24px;font-size:.92rem;text-transform:uppercase;letter-spacing:.03em}
+.btn.p{background:var(--accent);color:#fff}
+.btn.p:hover{background:var(--accent-dk)}
+.btn.s{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.s:hover{border-color:var(--accent);color:var(--accent)}
+
+/* receipt panel: dominant vertical work order */
+.receipt{background:#fff;border:1px solid var(--line);box-shadow:0 1px 0 var(--line);position:relative}
+.receipt .rhead{background:var(--ink);color:var(--paper);padding:16px 20px;display:flex;justify-content:space-between;align-items:baseline}
+.receipt .rhead b{font-family:var(--disp);font-size:1.1rem;letter-spacing:.04em}
+.receipt .rhead span{font-family:var(--mono);font-size:.66rem;color:var(--accent);letter-spacing:.08em}
+.receipt .rbody{padding:22px 20px}
+.rline{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px dotted var(--line);font-size:.94rem}
+.rline:last-child{border-bottom:0}
+.rline .name{color:var(--ink)}
+.rline .tag{font-family:var(--mono);font-size:.72rem;color:var(--accent2);text-transform:uppercase;white-space:nowrap}
+.rfoot{padding:16px 20px;background:var(--panel);display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.torn{height:14px;background:
+  linear-gradient(135deg,var(--paper) 50%,transparent 50%) 0 0/14px 14px repeat-x,
+  linear-gradient(-135deg,var(--paper) 50%,transparent 50%) 0 0/14px 14px repeat-x;
+  background-color:#fff}
+
+/* ---- services: itemized single-column list, not cards ---- */
+.menu{padding:70px 0}
+.menu-head{max-width:56ch;margin-bottom:36px}
+.menu-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem)}
+.menu-head p{color:var(--muted);margin-top:12px}
+.mitem{display:grid;grid-template-columns:56px 1fr auto;gap:22px;align-items:flex-start;padding:26px 0;border-top:1px solid var(--line)}
+.mitem:last-child{border-bottom:1px solid var(--line)}
+.mitem .micon{width:56px;height:56px;border:1.5px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.mitem .micon svg{width:26px;height:26px;color:var(--accent)}
+.mitem h3{font-size:1.4rem;letter-spacing:.02em}
+.mitem p{color:var(--muted);margin-top:6px;max-width:56ch;font-size:.96rem}
+.mitem a.more{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);white-space:nowrap;padding-bottom:2px;align-self:center}
+
+/* ---- band ---- */
+.band{background:var(--ink);color:var(--paper);padding:44px 0}
+.band .wrap{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between}
+.stat b{font-family:var(--disp);font-size:2.2rem;color:var(--accent);display:block;line-height:1}
+.stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#c8beae}
+
+/* ---- why section: checklist left, stamp right ---- */
+.why{padding:76px 0}
+.why .grid{display:grid;grid-template-columns:1fr .8fr;gap:56px;align-items:center}
+.why h2{font-size:clamp(1.9rem,3.6vw,2.5rem);margin-bottom:16px}
+.why p{color:var(--muted);margin-bottom:14px;max-width:52ch}
+.checklist{list-style:none;margin-top:14px}
+.checklist li{padding-left:28px;position:relative;margin-bottom:11px}
+.checklist li:before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;background:var(--accent)}
+.stamp{width:150px;height:150px;border:2.5px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;transform:rotate(-9deg);margin:0 auto}
+.stamp b{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;text-align:center;line-height:1.5}
+
+/* ---- cta ---- */
+.cta{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:70px 0;text-align:center}
+.cta h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+.cta p{color:var(--muted);max-width:44ch;margin:0 auto 24px}
+
+/* ---- generic sub-hero ---- */
+.phero{padding:52px 0;border-bottom:2px solid var(--ink)}
+.phero h1{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch}
+.phero p{margin-top:14px;max-width:56ch;color:var(--muted)}
+.crumbs{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+
+/* ---- prose + sidebar (about) ---- */
+.split{padding:70px 0}
+.split .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
+.prose p{margin-bottom:16px;color:var(--ink)}
+.area-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+.area-tags span{background:var(--panel);border:1px solid var(--line);padding:6px 12px;font-size:.82rem;font-family:var(--mono)}
+
+/* ---- contact ---- */
+.contact{padding:70px 0}
+.contact .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+.info b{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.info p{margin-bottom:22px;font-size:1.02rem}
+form label{display:block;font-size:.8rem;font-weight:700;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.03em}
+form input,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);background:#fff;font-family:inherit;font-size:.95rem}
+form input:focus,form textarea:focus{border-color:var(--accent)}
+form button{margin-top:20px;border:0;cursor:pointer}
+
+/* ---- footer ---- */
+footer.ft{background:var(--ink);color:#c8beae;padding:50px 0 26px}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.ft h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+footer.ft a{color:#c8beae;text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:#fff}
+footer.ft .brand b{color:var(--paper)}
+.legal{border-top:1px solid #3a423f;padding-top:18px;font-size:.8rem;color:#8b8477;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--accent);color:#fff;text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
+
+@media(max-width:900px){
+  .hero .grid,.why .grid,.split .grid,.contact .grid{grid-template-columns:1fr;gap:30px}
+  .mitem{grid-template-columns:44px 1fr;row-gap:8px}
+  .mitem a.more{grid-column:2}
   footer.ft .cols{grid-template-columns:1fr 1fr}
 }
 @media(max-width:520px){footer.ft .cols{grid-template-columns:1fr}}
 
-
-.ticket{border:1.5px dashed var(--accent2);border-radius:10px;background:#fff;padding:26px;position:relative}
-.ticket:before,.ticket:after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:20px;height:20px;background:var(--bg);border:1.5px dashed var(--accent2);border-radius:50%}
-.ticket:before{left:-11px}
-.ticket:after{right:-11px}
-.ticket .stamp{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(-8deg);margin-bottom:16px}
-.ticket .stamp b{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;line-height:1.3;text-align:center}
-.ticket-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
-.ticket-row:last-child{border-bottom:0}
-.ticket-row span:first-child{color:var(--muted)}
-.ticket-row span:last-child{font-family:var(--mono);color:var(--ink);font-weight:600}
-
 </style></head>
 <body>
 <header class="nav"><div class="wrap">
-<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" rx="8" fill="#FAF7F2" stroke="#B23A2E" stroke-width="1.5"/><path d="M9 26l3-9h16l4 6h3v3H9z" stroke="#1E2422" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="14.5" cy="27" r="2.6" fill="#1E2422"/><circle cx="27.5" cy="27" r="2.6" fill="#1E2422"/></svg><span><b>R&amp;E DETAILING</b><small>Eureka, MO &middot; Mobile</small></span></a>
+<a class="brand" href="index.html"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" fill="#FAF7F2" stroke="#1E2422" stroke-width="2"/><path d="M9 26l3-9h16l4 6h3v3H9z" stroke="#1E2422" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="14.5" cy="27" r="2.4" fill="#B23A2E"/><circle cx="27.5" cy="27" r="2.4" fill="#B23A2E"/></svg><span><b>R&amp;E DETAILING</b><small>Eureka, MO &middot; Mobile</small></span></a>
 <nav class="navlinks" id="nav"><a href="index.html">Home</a><a href="services.html" class="active">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="navcta" href="contact.html">Book a Detail</a></nav>
 <button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
 </div></header>
 
-<section class="phero"><div class="wrap">
-<div class="crumbs"><a href="index.html">Home</a> / Services</div>
-
-<h1>Detailing Services in Eureka, MO</h1>
-<p>Pick a single service or combine them for a complete inside-and-out reset, done at your address.</p>
-
-
+<section class="phero"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / Services</div>
+<h1>Detailing Services in Eureka, MO</h1><p>Pick a single service or combine them for a complete inside-and-out reset, done at your address.</p></div></section>
+<section class="menu"><div class="wrap">
+<div class="mitem"><div class="micon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-4h10l2 4M7 18v2M17 18v2"/></svg></div><div><h3>Interior Deep Cleaning</h3><p>Vacuum, steam clean, and hand-wipe of every surface, plus a full pass on vents, cupholders, and door panels.</p></div><a class="more" href="interior-deep-cleaning-eureka.html">View &rarr;</a></div>
+<div class="mitem"><div class="micon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18M6 14l1.5-5h9L18 14M7 18v2M17 18v2"/><circle cx="7.5" cy="17" r="1.3"/><circle cx="16.5" cy="17" r="1.3"/></svg></div><div><h3>Exterior Wash &amp; Protection</h3><p>Two-bucket hand wash, wheel and tire care, and a protective coat that helps the finish shed dirt and water.</p></div><a class="more" href="exterior-wash-protection-eureka.html">View &rarr;</a></div>
+<div class="mitem"><div class="micon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6 6 11a6 6 0 01-12 0c0-5 6-11 6-11z"/></svg></div><div><h3>Stain &amp; Odor Removal</h3><p>Focused treatment for spills, pet hair, and smoke or pet odor that everyday vacuuming cannot reach.</p></div><a class="more" href="stain-odor-removal-eureka.html">View &rarr;</a></div>
 </div></section>
-
-
-<section><div class="wrap"><div class="grid g3">
-<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-4h10l2 4M7 18v2M17 18v2"/></svg><h3>Interior Deep Cleaning</h3><p>Vacuum, steam clean, and hand-wipe of every surface, plus a full pass on vents, cupholders, and door panels.</p><a class="more" href="interior-deep-cleaning-eureka.html">Interior in Eureka &rarr;</a></div>
-<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18M6 14l1.5-5h9L18 14M7 18v2M17 18v2"/><circle cx="7.5" cy="17" r="1.3"/><circle cx="16.5" cy="17" r="1.3"/></svg><h3>Exterior Wash &amp; Protection</h3><p>Two-bucket hand wash, wheel and tire care, and a protective coat that helps the finish shed dirt and water.</p><a class="more" href="exterior-wash-protection-eureka.html">Exterior in Eureka &rarr;</a></div>
-<div class="card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6 6 11a6 6 0 01-12 0c0-5 6-11 6-11z"/></svg><h3>Stain &amp; Odor Removal</h3><p>Focused treatment for spills, pet hair, and smoke or pet odor that everyday vacuuming cannot reach.</p><a class="more" href="stain-odor-removal-eureka.html">Stains in Eureka &rarr;</a></div>
-</div>
-<div class="split" style="margin-top:60px">
-<div><p class="eyebrow">How it works</p><h2>Booking takes one message</h2>
-<p>There is no lot to drive to. Tell us the vehicle and the address in Eureka, we confirm a time, and we show up ready to work.</p>
-<ul class="checklist"><li>Send your vehicle and location</li><li>We confirm a time that fits your day</li><li>We arrive with water, power, and supplies</li><li>You get the keys back with a finished detail</li></ul>
-</div>
-<div class="imgcard"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" stroke-width="1.3"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M5 10l2-4h10l2 4M7 18v2M17 18v2"/></svg></div>
-</div>
-</div></section>
+<section class="why"><div class="wrap"><div class="grid">
+<div><p class="eyebrow">How it works</p><h2>Booking takes one message</h2><p>There is no lot to drive to. Tell us the vehicle and the address in Eureka, we confirm a time, and we show up ready to work.</p>
+<ul class="checklist"><li>Send your vehicle and location</li><li>We confirm a time that fits your day</li><li>We arrive with water, power, and supplies</li><li>You get the keys back with a finished detail</li></ul></div>
+<div class="stamp"><b>Book<br>in One<br>Message</b></div>
+</div></div></section>
 <section class="cta"><div class="wrap"><h2>Not sure which service fits?</h2><p>Tell us about the vehicle and we will point you to the right package.</p><a class="btn p" href="contact.html">Get a Recommendation</a></div></section>
-
 
 <footer class="ft"><div class="wrap">
 <div class="cols">
-<div><a class="brand" href="index.html" style="margin-bottom:14px"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" rx="8" fill="#FAF7F2" stroke="#B23A2E" stroke-width="1.5"/><path d="M9 26l3-9h16l4 6h3v3H9z" stroke="#1E2422" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="14.5" cy="27" r="2.6" fill="#1E2422"/><circle cx="27.5" cy="27" r="2.6" fill="#1E2422"/></svg><span><b style="font-size:1.3rem">R&amp;E DETAILING</b></span></a>
-<p style="max-width:34ch">Mobile auto detailing that comes to your driveway in Eureka, Missouri. Interior deep cleans, exterior protection, and stain and odor work done by hand.</p></div>
+<div><a class="brand" href="index.html" style="margin-bottom:14px"><svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="38" height="38" fill="#FAF7F2" stroke="#1E2422" stroke-width="2"/><path d="M9 26l3-9h16l4 6h3v3H9z" stroke="#1E2422" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="14.5" cy="27" r="2.4" fill="#B23A2E"/><circle cx="27.5" cy="27" r="2.4" fill="#B23A2E"/></svg><span><b style="font-size:1.3rem">R&amp;E DETAILING</b></span></a>
+<p style="max-width:34ch">Mobile auto detailing that comes to your driveway in Eureka, Missouri. Interior, exterior, and stain work, itemized and done by hand.</p></div>
 <div><h4>Services</h4><a href="interior-deep-cleaning-eureka.html">Interior Deep Cleaning</a><a href="exterior-wash-protection-eureka.html">Exterior Wash &amp; Protection</a><a href="stain-odor-removal-eureka.html">Stain &amp; Odor Removal</a><a href="services.html">All Services</a></div>
-<div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Book a Detail</a><span style="display:block;color:var(--muted);font-size:.9rem;margin-top:4px">Message R&amp;E Detailing on LinkedIn to book</span>
-<span style="display:block;color:var(--muted);font-size:.9rem;margin-top:4px">Serving Eureka &amp; the St. Louis metro west side</span></div>
+<div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Book a Detail</a><span style="display:block;color:#8b8477;font-size:.9rem;margin-top:4px">Message on LinkedIn to book</span>
+<span style="display:block;color:#8b8477;font-size:.9rem;margin-top:4px">Serving Eureka &amp; the west St. Louis metro</span></div>
 </div>
-<div class="legal"><span>&copy; 2026 R&amp;E DETAILING. All rights reserved.</span><span>Mobile auto detailing, Eureka, Missouri</span></div>
+<div class="legal"><span>&copy; 2026 R&amp;E Detailing. All rights reserved.</span><span>Mobile auto detailing, Eureka, Missouri</span></div>
 </div></footer>
-<div class="disclaimer">Preview site built by Modularity Networks for R&amp;E DETAILING. Not yet an official company website.</div>
+<div class="disclaimer">Preview site built by Modularity Networks for R&E Detailing. Not yet an official company website.</div>
 </body></html>
