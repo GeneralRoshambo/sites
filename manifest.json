@@ -4,42 +4,48 @@
     "name": "Preston Country Market",
     "location": "Starrucca, PA",
     "category": "General Store",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-30"
   },
   {
     "slug": "brozonis-excavating",
     "name": "Brozonis Excavating",
     "location": "Union Dale, PA",
     "category": "Excavation Contractor",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-31"
   },
   {
     "slug": "country-cafe-pizzeria",
     "name": "Country Cafe & Pizzeria",
     "location": "Beach Lake, PA",
     "category": "Diner & Pizzeria",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-29"
   },
   {
     "slug": "mctree-care-landscaping",
     "name": "McTree Care & Landscaping",
     "location": "Hawley, PA",
     "category": "Landscaping",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-25"
   },
   {
     "slug": "slices-pizzeria-bistro",
     "name": "Slices Pizzeria & Bistro",
     "location": "Hamlin, PA",
     "category": "Pizzeria & Bistro",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-27"
   },
   {
     "slug": "waymart-deli",
     "name": "The Waymart Deli",
     "location": "Waymart, PA",
     "category": "Deli & Sandwich Shop",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-07-28"
   },
   {
     "slug": "mikes-auto-services",
@@ -130,357 +136,408 @@
     "name": "Bake Your Day Bakery",
     "location": "Erie, PA",
     "category": "Bakery",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "redus-auto-repair",
     "name": "Redus Auto Repair",
     "location": "Erie, PA",
     "category": "Auto Repair",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "roxies-nail-salon",
     "name": "Roxie's Nail Salon",
     "location": "Erie, PA",
     "category": "Nail Salon",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "bayfront-tattoo-lounge",
     "name": "Bayfront Tattoo Lounge",
     "location": "Erie, PA",
     "category": "Tattoo & Piercing",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "affordable-plumbing-co",
     "name": "Affordable Plumbing Co.",
     "location": "Erie, PA",
     "category": "Plumbing Contractor",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "the-freezerie",
     "name": "The Freezerie",
     "location": "Erie, PA",
     "category": "Ice Cream Shop",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "dorine-reeces-dry-cleaning",
     "name": "Dorine & Reece's Dry Cleaning",
     "location": "Erie, PA",
     "category": "Dry Cleaning & Tailoring",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "walker-house-antiques",
     "name": "Walker House Antiques",
     "location": "Erie, PA",
     "category": "Antiques Shop",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "lindquist-jewelers",
     "name": "Lindquist Jewelers",
     "location": "Erie, PA",
     "category": "Jewelry Store",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-07-31"
   },
   {
     "slug": "chrissies-deli",
     "name": "Chrissie's Deli",
     "location": "Matamoras, PA",
     "category": "Deli & Sandwich Shop",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "greening-landscape-design",
     "name": "Greening Landscape & Design",
     "location": "Milford, PA",
     "category": "Landscaping",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "tri-state-tree-landscaping",
     "name": "Tri-State Tree & Landscaping",
     "location": "Milford, PA",
     "category": "Tree Service",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "top-notch-electric",
     "name": "Top Notch Electric",
     "location": "Dingmans Ferry, PA",
     "category": "Electrician",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "north-country-antiques",
     "name": "North Country Antiques",
     "location": "Dingmans Ferry, PA",
     "category": "Antiques & Furniture",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "pawesome-pooch-pet-salon",
     "name": "Pawesome Pooch Pet Salon",
     "location": "Dingmans Ferry, PA",
     "category": "Mobile Pet Grooming",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "legacy-salon-milford",
     "name": "Legacy Salon",
     "location": "Milford, PA",
     "category": "Hair & Nail Salon",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "pike-pressure-washing",
     "name": "Pike Pressure Washing",
     "location": "Milford, PA",
     "category": "Pressure Washing",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "wise-guys-barber-shop",
     "name": "Wise Guys Barber Shop",
     "location": "Milford, PA",
     "category": "Barber Shop",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "paul-schochs-auto-repair",
     "name": "Paul Schoch's Auto Repair",
     "location": "Port Jervis, NY",
     "category": "Auto Repair",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "tristate-barbershop",
     "name": "TriState BarberShop",
     "location": "Port Jervis, NY",
     "category": "Barber Shop",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "raksmey-nails",
     "name": "Raksmey Nails",
     "location": "Port Jervis, NY",
     "category": "Nail Salon",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "len-and-jos-restaurant",
     "name": "Len & Jo's Restaurant",
     "location": "Port Jervis, NY",
     "category": "Pizza Restaurant",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "broome-street-bargains",
     "name": "Broome Street Bargains",
     "location": "Port Jervis, NY",
     "category": "Thrift Store",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "dv-cleaners",
     "name": "DV Cleaners",
     "location": "Port Jervis, NY",
     "category": "Dry Cleaning & Tailoring",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "armandos-tailor-shop",
     "name": "Armando's Tailor Shop",
     "location": "Middletown, NY",
     "category": "Tailor",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "rosies-italian",
     "name": "Rosie's Italian",
     "location": "Port Jervis, NY",
     "category": "Italian Specialty Food",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "olenick-plumbing-heating",
     "name": "Olenick Plumbing and Heating",
     "location": "Port Jervis, NY",
     "category": "Plumbing & Heating",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-07-31"
   },
   {
     "slug": "ebert-excavating",
     "name": "Ebert Excavating LLC",
     "location": "Damascus, PA",
     "category": "Excavation Contractor",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-01"
   },
   {
     "slug": "south-canaan-farm-market",
     "name": "South Canaan Farm Market",
     "location": "Waymart, PA",
     "category": "Farm Market & Deli",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-01"
   },
   {
     "slug": "jba-auto",
     "name": "JBA Auto",
     "location": "New Milford, PA",
     "category": "Auto Repair",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-01"
   },
   {
     "slug": "milford-dry-cleaners",
     "name": "Milford Dry Cleaners",
     "location": "Milford, PA",
     "category": "Dry Cleaning",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "happy-nails-milford",
     "name": "Happy Nails",
     "location": "Milford, PA",
     "category": "Nail Salon",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "borner-lock-safe",
     "name": "Borner Lock & Safe",
     "location": "Milford, PA",
     "category": "Locksmith",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "mamma-grace-pizzeria",
     "name": "Mamma Grace Pizzeria & Restaurant",
     "location": "Sparrow Bush, NY",
     "category": "Pizza & Italian",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "farm-to-go",
     "name": "Farm To Go",
     "location": "Slate Hill, NY",
     "category": "Farm Market",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "ny-barber-co",
     "name": "NY Barber Co.",
     "location": "Middletown, NY",
     "category": "Barber Shop",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-01"
   },
   {
     "slug": "international-bakery-erie",
     "name": "International Bakery",
     "location": "Erie, PA",
     "category": "Italian Bakery",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-01"
   },
   {
     "slug": "continental-barber-shop",
     "name": "Continental Barber Shop",
     "location": "Erie, PA",
     "category": "Barber Shop",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-01"
   },
   {
     "slug": "abc-grooming-julie-baire",
     "name": "ABC Grooming by Julie Baire",
     "location": "Erie, PA",
     "category": "Pet Grooming",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-01"
   },
   {
     "slug": "barbies-hair-creations",
     "name": "Barbie's Hair Creations",
     "location": "Jermyn, PA",
     "category": "Hair Salon",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-03"
   },
   {
     "slug": "cb-excavating-paving",
     "name": "CB Excavating & Paving",
     "location": "Susquehanna, PA",
     "category": "Excavating",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-03"
   },
   {
     "slug": "mountainhome-deli-general-store",
     "name": "Mountainhome Deli & General Store",
     "location": "Mountainhome, PA",
     "category": "Deli & Store",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-03"
   },
   {
     "slug": "st-auto-services",
     "name": "S & T Auto Services",
     "location": "Dingmans Ferry, PA",
     "category": "Auto Repair",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "salazar-excavating",
     "name": "Salazar Excavating",
     "location": "Shohola, PA",
     "category": "Excavating",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "michelles-pocono-mobile-grooming",
     "name": "Michelle's Pocono Mobile Grooming",
     "location": "Bushkill, PA",
     "category": "Pet Grooming",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "ulees-truck-auto-repair",
     "name": "Ulee's Truck & Auto Repair",
     "location": "Otisville, NY",
     "category": "Auto Repair",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "odells-country-corner",
     "name": "O'Dell's Country Corner",
     "location": "Cuddebackville, NY",
     "category": "Deli & Store",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "pirog-garvey-excavating",
     "name": "Pirog & Garvey Excavating",
     "location": "Pine Bush, NY",
     "category": "Excavating",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-03"
   },
   {
     "slug": "girard-cafe-ralphies",
     "name": "Girard Cafe (Ralphie's)",
     "location": "Girard, PA",
     "category": "Diner",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-03"
   },
   {
     "slug": "steffans-barber-shop",
     "name": "Steffan's Barber Shop",
     "location": "North East, PA",
     "category": "Barber Shop",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-03"
   },
   {
     "slug": "pounds-pet-grooming",
     "name": "Pounds Pet Grooming",
     "location": "Edinboro, PA",
     "category": "Pet Grooming",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-03"
   },
   {
     "slug": "demos/stache-detailing",
@@ -522,84 +579,96 @@
     "name": "Herrick Hill Huckleberry Farm",
     "location": "Herrick Center, PA",
     "category": "U-Pick Blueberry Farm",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-04"
   },
   {
     "slug": "cl-repair",
     "name": "CL Repair, LLC",
     "location": "Equinunk, PA",
     "category": "Small Engine & Auto Repair",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-04"
   },
   {
     "slug": "mike-roloson-excavating",
     "name": "Mike Roloson Excavating",
     "location": "Equinunk, PA",
     "category": "Excavation Contractor",
-    "region": "Wallenpaupack"
+    "region": "Wallenpaupack",
+    "added": "2026-08-04"
   },
   {
     "slug": "hills-homestead",
     "name": "Hills' Homestead",
     "location": "Lords Valley, PA",
     "category": "Farm Market & Eatery",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "caring-for-canines",
     "name": "Caring for Canines",
     "location": "Greeley, PA",
     "category": "Pet Boarding & Sitting",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "aidycakes-cupcakes",
     "name": "Aidycakes Cupcakes",
     "location": "Dingmans Ferry, PA",
     "category": "Custom Bakery",
-    "region": "DelawareValley"
+    "region": "DelawareValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "berentsen-auto-repair",
     "name": "Berentsen Auto Repair",
     "location": "Bloomingburg, NY",
     "category": "Auto Repair",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "freedhome-variety",
     "name": "Freedhome Variety",
     "location": "Bloomingburg, NY",
     "category": "Hardware & Variety Store",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "horlers-general-store",
     "name": "Horler's General Store",
     "location": "Unionville, NY",
     "category": "General Store & Deli",
-    "region": "HudsonValley"
+    "region": "HudsonValley",
+    "added": "2026-08-04"
   },
   {
     "slug": "bovaird-tree-stump-removal",
     "name": "Bovaird Tree & Stump Removal",
     "location": "Fairview, PA",
     "category": "Tree Service",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-04"
   },
   {
     "slug": "highway-to-hair",
     "name": "Highway to Hair",
     "location": "Union City, PA",
     "category": "Hair Salon",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-04"
   },
   {
     "slug": "big-irenes-little-diner",
     "name": "Big Irene's Little Diner",
     "location": "Albion, PA",
     "category": "Diner",
-    "region": "Erie"
+    "region": "Erie",
+    "added": "2026-08-04"
   },
   {
     "slug": "demos/re-detailing",

@@ -37,16 +37,36 @@ def card_html(s):
         </a>
 '''
 
-tab_buttons = ""
-tab_panels = ""
-for i, region in enumerate(ordered_regions):
+# "Latest" is a synthetic pseudo-region, always shown first and active by
+# default, drawn from whichever sites carry the most recent "added" date.
+# Every manifest entry a daily prospecting run appends should include an
+# "added": "YYYY-MM-DD" field (in addition to slug/name/location/category/
+# region) precisely so this tab keeps working without manual upkeep; entries
+# from before this convention existed simply have no "added" field and are
+# never eligible to appear here.
+dated_sites = [s for s in sites if s.get("added")]
+latest_sites = []
+if dated_sites:
+    latest_date = max(s["added"] for s in dated_sites)
+    latest_sites = [s for s in dated_sites if s["added"] == latest_date]
+    latest_sites = list(reversed(latest_sites))
+
+tab_defs = []
+if latest_sites:
+    tab_defs.append(("Latest", "Latest", latest_sites))
+for region in ordered_regions:
     # Newest-added first: manifest.json entries are appended in build order,
     # so reversing shows the most recently built sites at the top of every view.
     region_sites = list(reversed(by_region.get(region, [])))
     label = REGION_LABELS.get(region, region)
+    tab_defs.append((region, label, region_sites))
+
+tab_buttons = ""
+tab_panels = ""
+for i, (tab_key, label, region_sites) in enumerate(tab_defs):
     active_btn = " active" if i == 0 else ""
     active_panel = " active" if i == 0 else ""
-    tab_buttons += f'''        <button class="tab-btn{active_btn}" data-tab="{region}" role="tab" aria-selected="{"true" if i == 0 else "false"}">
+    tab_buttons += f'''        <button class="tab-btn{active_btn}" data-tab="{tab_key}" role="tab" aria-selected="{"true" if i == 0 else "false"}">
           {label} <span class="tab-count">{len(region_sites)}</span>
         </button>
 '''
@@ -57,7 +77,7 @@ for i, region in enumerate(ordered_regions):
           <p>No demo sites in {label} yet, check back soon.</p>
         </div>
 '''
-    tab_panels += f'''      <div class="grid tab-panel{active_panel}" data-panel="{region}" role="tabpanel">
+    tab_panels += f'''      <div class="grid tab-panel{active_panel}" data-panel="{tab_key}" role="tabpanel">
 {cards}      </div>
 '''
 
