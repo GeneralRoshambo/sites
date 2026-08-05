@@ -704,5 +704,40 @@
     "location": "Volusia County, FL",
     "category": "Countertop Resurfacing",
     "region": "More"
+  },
+  {
+    "slug": "demos/oddjobbobnj",
+    "name": "OddJobBobNJ, LLC",
+    "location": "Glen Rock, NJ",
+    "category": "Handyman",
+    "region": "More"
+  },
+  {
+    "slug": "demos/millers-remodeling",
+    "name": "Miller's Remodeling",
+    "location": "Bethlehem, PA",
+    "category": "Remodeling",
+    "region": "More"
+  },
+  {
+    "slug": "demos/honest-plumbing",
+    "name": "Honest Plumbing LLC",
+    "location": "Biloxi, MS",
+    "category": "Plumbing",
+    "region": "More"
+  },
+  {
+    "slug": "demos/empowered-nest-cleaning",
+    "name": "Empowered Nest Cleaning Services",
+    "location": "Minneapolis, MN",
+    "category": "House Cleaning",
+    "region": "More"
+  },
+  {
+    "slug": "demos/the-traveling-notary",
+    "name": "The Traveling Notary",
+    "location": "San Antonio, TX",
+    "category": "Mobile Notary",
+    "region": "More"
   }
 ]

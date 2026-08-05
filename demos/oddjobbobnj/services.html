@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services | Handyman Services in Glen Rock, NJ</title>
+<meta name="description" content="Full list of handyman services from OddJobBobNJ: cabinet and fixture repair, mounting and hanging, deck repair, and window cleaning in Bergen County, NJ.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#20281F; --denim:#345169; --denim-d:#233A49; --rust:#A6501F; --rust-d:#84400F; --rust-l:#E08A4A;
+  --tan:#EDE3CC; --panel:#F1EAD8; --paper:#FAF7F1; --white:#FFFFFF;
+  --text:#262B22; --muted:#556056; --line:#DCD3B9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Work Sans',system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+h1,h2,h3,.disp{font-family:'Fjalla One',Impact,sans-serif;font-weight:400;letter-spacing:.01em;line-height:1.04;text-transform:uppercase;color:var(--denim-d)}
+.mono{font-family:'IBM Plex Mono',monospace}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rust)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+/* ruler tick rule */
+.ruler{height:14px;background:repeating-linear-gradient(90deg,var(--denim) 0 2px,transparent 2px 24px);opacity:.9}
+.ruler.big{height:20px;background:repeating-linear-gradient(90deg,var(--rust) 0 2px,transparent 2px 48px),repeating-linear-gradient(90deg,var(--denim) 0 2px,transparent 2px 12px);background-blend-mode:normal}
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:var(--denim);border-bottom:1px solid rgba(255,255,255,.14)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none;white-space:nowrap}
+.brand svg{width:38px;height:38px;flex:0 0 auto;color:var(--tan)}
+.brand b{font-family:'Fjalla One',sans-serif;font-size:1.35rem;letter-spacing:.03em;color:var(--white);line-height:1}
+.brand small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.16em;color:var(--tan);text-transform:uppercase;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{color:#FFFFFF;text-decoration:none;font-size:.92rem;font-weight:500}
+.navlinks a:hover,.navlinks a.active{color:var(--tan)}
+.navcta{background:var(--rust);color:var(--white)!important;padding:10px 18px;font-weight:700;letter-spacing:.02em;border-radius:2px}
+.navcta:hover{background:var(--rust-d)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0}
+/* hero: two column, ticket stack right */
+.hero{padding:64px 20px 0;background:var(--paper)}
+.herogrid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start;padding-bottom:56px}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);max-width:14ch}
+.hero p.lead{margin-top:20px;max-width:50ch;font-size:1.08rem;color:var(--muted)}
+.herobtns{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;letter-spacing:.02em;padding:14px 24px;border-radius:2px;font-size:.94rem}
+.btn.p{background:var(--rust);color:var(--white)}
+.btn.p:hover{background:var(--rust-d)}
+.btn.s{background:transparent;color:var(--denim-d);border:1.5px solid var(--denim-d)}
+.btn.s:hover{background:var(--denim-d);color:var(--white)}
+.lic{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--muted)}
+.ticketstack{display:flex;flex-direction:column;gap:14px}
+.ticket{background:var(--white);border:1px dashed var(--line);padding:16px 18px;border-radius:3px;position:relative}
+.ticket:before{content:"";position:absolute;left:16px;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--rust)}
+.ticket b{display:block;font-family:'Fjalla One',sans-serif;font-size:1.7rem;color:var(--denim-d);letter-spacing:.02em}
+.ticket span{font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.01em;color:var(--muted)}
+/* services tickets */
+section{padding:70px 0}
+.steps,.coverage,.cta{padding-left:20px;padding-right:20px}
+.sec-head{margin-bottom:38px;max-width:60ch}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem)}
+.sec-head p{margin-top:12px;color:var(--muted)}
+.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.jobcard{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:26px;position:relative}
+.jobcard:before{content:"";position:absolute;top:-1px;left:20px;right:20px;height:2px;background:repeating-linear-gradient(90deg,var(--rust) 0 8px,transparent 8px 14px)}
+.jobcard .lvl{width:38px;height:38px;color:var(--denim);margin-bottom:14px}
+.jobcard h3{font-size:1.4rem;margin-bottom:8px}
+.jobcard p{color:var(--muted);font-size:.95rem}
+.jobcard a.more{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);text-decoration:none;border-bottom:1px solid var(--rust);padding-bottom:2px}
+/* how it works - word steps, not numbers */
+.steps{background:var(--denim);color:var(--white)}
+.steprow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{padding-top:18px;position:relative}
+.step:before{content:"";position:absolute;top:0;left:0;width:34px;height:2px;background:var(--rust-l)}
+.step .tag{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tan)}
+.step h3{color:var(--white);font-size:1.5rem;margin-top:8px}
+.step p{color:#F4F7F8;margin-top:8px;font-size:.94rem}
+/* split about teaser */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:12px}
+.checklist{list-style:none;margin-top:14px}
+.checklist li{padding-left:32px;position:relative;margin-bottom:12px}
+.bubble{position:absolute;left:0;top:2px;width:20px;height:20px}
+.panelbox{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px;min-height:280px;display:flex;align-items:center;justify-content:center}
+.panelbox svg{width:100%;max-width:280px;color:var(--denim)}
+/* coverage tags */
+.coverage{background:var(--tan)}
+.tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tagrow span{background:var(--white);border:1px solid var(--line);color:var(--denim-d);padding:8px 14px;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.04em}
+/* cta */
+.cta{background:var(--ink);color:var(--white);text-align:center}
+.cta h2{color:var(--white);font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:14px}
+.cta p{color:#C9D3C8;max-width:48ch;margin:0 auto 26px}
+/* contact / page hero */
+.phero{background:var(--denim);color:var(--white);padding:56px 20px}
+.phero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);max-width:20ch}
+.phero p{margin-top:14px;max-width:58ch;color:#F4F7F8}
+.crumbs{font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.01em;text-transform:none;color:var(--tan);margin-bottom:16px}
+.crumbs a{color:#F4F7F8;text-decoration:none}
+.prose{max-width:76ch}
+.prose p{margin-bottom:16px;color:var(--text)}
+.prose h2{font-size:1.9rem;margin:30px 0 12px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.info b{display:block;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:4px}
+.info p{margin-bottom:22px;font-size:1.05rem}
+form label{display:block;font-size:.82rem;font-weight:600;margin:14px 0 6px;color:var(--denim-d)}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:.95rem;background:var(--white)}
+form button{margin-top:20px;border:0;cursor:pointer}
+/* footer */
+footer.ft{background:#182019;color:#9FAB9A;padding:54px 0 28px}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.ft p.fh{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust-l);margin-bottom:14px}
+footer.ft a{color:#9FAB9A;text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:var(--white)}
+footer.ft .brand b{color:var(--white)}
+.legal{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;font-size:.8rem;color:#6E7A6A;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--rust);color:var(--white);text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
+@media(max-width:1180px){
+  .navlinks{position:fixed;inset:76px 0 auto 0;background:var(--denim);flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid rgba(255,255,255,.14)}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center}
+  .burger{display:block}
+}
+@media(max-width:900px){
+  .herogrid{grid-template-columns:1fr}
+  .tickets,.steprow{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:30px}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+  footer.ft .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){footer.ft .cols{grid-template-columns:1fr}}
+</style></head>
+<body><header class="nav"><div class="wrap row">
+<a class="brand" href="index.html"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="17" width="28" height="7" rx="1.5" fill="currentColor"/><rect x="16" y="6" width="8" height="10" rx="1" fill="currentColor"/><circle cx="10" cy="20.5" r="1.6" fill="#20281F"/><circle cx="30" cy="20.5" r="1.6" fill="#20281F"/></svg><span><b>ODDJOBBOBNJ</b><small>Glen Rock, NJ</small></span></a>
+<nav class="navlinks" id="nav">
+<a href="index.html">Home</a>
+<a href="services.html" class="active">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="navcta" href="contact.html">Get a Quote</a>
+</nav>
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero"><div class="wrap"><p class="crumbs"><a href="index.html">Home</a> / Services</p>
+<h1>Handyman Services in Glen Rock, NJ</h1>
+<p>The full list of odd jobs OddJobBobNJ handles across Bergen County.</p></div></section>
+<section><div class="wrap">
+<div class="sec-head"><h2>The full job list</h2></div>
+<div class="tickets">
+<div class="jobcard"><svg class="lvl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="12" y1="3" x2="12" y2="21"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/></svg><h3>Cabinet &amp; Fixture Repair</h3><p>Hinge replacement, drawer slide fixes, shower and vanity lighting, and small kitchen and bath repairs.</p><a class="more" href="handyman-glen-rock.html">Handyman in Glen Rock &rarr;</a></div>
+<div class="jobcard"><svg class="lvl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="11" rx="1"/><path d="M9 20h6M12 15v5"/></svg><h3>Mounting &amp; Hanging</h3><p>Artwork, mirrors, shelving, and TV mounts hung level and secured into real framing.</p><a class="more" href="furniture-mounting-glen-rock.html">Mounting in Glen Rock &rarr;</a></div>
+<div class="jobcard"><svg class="lvl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg><h3>Deck &amp; Exterior Repair</h3><p>Board replacement, restaining, and general deck repair to get outdoor spaces ready for the season.</p><a class="more" href="deck-repair-ridgewood.html">Deck Repair in Ridgewood &rarr;</a></div>
+<div class="jobcard"><svg class="lvl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1.5"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg><h3>Window Cleaning</h3><p>Interior and exterior window cleaning, often paired with another job on the same visit.</p><a class="more" href="contact.html">Ask About Window Cleaning &rarr;</a></div>
+</div></div></section>
+<section class="coverage"><div class="wrap">
+<div class="sec-head"><h2>Bergen County towns served weekly</h2><p class="eyebrow">Coverage Area</p></div>
+<div class="tagrow"><span>Glen Rock</span><span>Ridgewood</span><span>Fair Lawn</span><span>Midland Park</span><span>Wyckoff</span><span>Ho-Ho-Kus</span><span>Hawthorne</span></div>
+</div></section>
+<section class="cta"><div class="wrap"><h2>Not sure if it fits the list?</h2>
+<p>If it is a small or odd job around the house, send a photo and ask.</p>
+<a class="btn p" href="contact.html">Get a Quote</a></div></section>
+
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><a class="brand" href="index.html" style="margin-bottom:14px;color:#fff"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="17" width="28" height="7" rx="1.5" fill="currentColor"/><rect x="16" y="6" width="8" height="10" rx="1" fill="currentColor"/><circle cx="10" cy="20.5" r="1.6" fill="#20281F"/><circle cx="30" cy="20.5" r="1.6" fill="#20281F"/></svg><span><b style="font-size:1.25rem">ODDJOBBOBNJ, LLC</b></span></a>
+<p style="max-width:34ch">Small and odd jobs done right around the house, from a squeaky hinge to a full deck repair. Based in Glen Rock, serving Bergen County.</p></div>
+<div><p class="fh">Services</p>
+<a href="handyman-glen-rock.html">Handyman Repairs</a>
+<a href="furniture-mounting-glen-rock.html">Mounting &amp; Hanging</a>
+<a href="deck-repair-ridgewood.html">Deck Repair</a>
+<a href="services.html">All Services</a></div>
+<div><p class="fh">Company</p>
+<a href="about.html">About Bob</a>
+<a href="contact.html">Get a Quote</a>
+<a href="mailto:oddjobbobnj@gmail.com">oddjobbobnj@gmail.com</a>
+<a href="tel:2017396696">(201) 739-6696</a>
+<span style="display:block;color:#6E7A6A;font-size:.88rem;margin-top:4px">NJ HIC License #13VH10889100</span></div>
+</div>
+<div class="legal"><span>&copy; 2026 OddJobBobNJ, LLC. All rights reserved.</span><span>Glen Rock &amp; Bergen County, New Jersey</span></div>
+</div></footer>
+<div class="disclaimer">Preview site built by Modularity Networks for OddJobBobNJ. Not yet an official company website.</div>
+</body></html>

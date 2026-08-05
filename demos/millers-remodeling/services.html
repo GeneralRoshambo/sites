@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services | Home Remodeling in Bethlehem, PA</title>
+<meta name="description" content="Kitchen remodeling, bathroom remodeling, and basement finishing from Miller's Remodeling in Bethlehem, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#2B2B28; --charcoal-d:#1E1E1B; --brick:#9C4A32; --brick-d:#7E3A27;
+  --clay:#B97A4E; --cream:#F6F1E7; --paper:#FBF9F4; --white:#FFFFFF;
+  --text:#2C2A25; --muted:#6B6459; --line:#E0D6C4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+h1,h2,h3,.disp{font-family:'Zilla Slab',Georgia,serif;font-weight:600;letter-spacing:0;line-height:1.08;color:var(--charcoal-d)}
+.mono{font-family:'Space Mono',monospace}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brick)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--charcoal-d);text-decoration:none;white-space:nowrap}
+.brand svg{width:36px;height:36px;flex:0 0 auto;color:var(--brick)}
+.brand b{font-family:'Zilla Slab',serif;font-size:1.4rem;font-weight:700;line-height:1}
+.brand small{display:block;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:30px}
+.navlinks a{color:var(--text);text-decoration:none;font-size:.95rem;font-weight:600}
+.navlinks a:hover,.navlinks a.active{color:var(--brick)}
+.navcta{background:var(--charcoal-d);color:var(--white)!important;padding:11px 20px;font-weight:700;border-radius:1px}
+.navcta:hover{background:var(--brick)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--charcoal-d);margin:5px 0}
+/* hero with dimension annotations */
+.hero{padding:74px 0 88px;position:relative}
+.dim{position:relative;padding:22px 0}
+.dimline{position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+.dimline:after,.dimline:before{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--brick)}
+.dimline:before{left:0}.dimline:after{right:0}
+.dimlabel{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--brick);text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);max-width:18ch;margin-top:18px}
+.hero p.lead{margin-top:20px;max-width:56ch;font-size:1.1rem;color:var(--muted)}
+.herobtns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:1px;font-size:.95rem}
+.btn.p{background:var(--brick);color:var(--white)}
+.btn.p:hover{background:var(--brick-d)}
+.btn.s{background:transparent;color:var(--charcoal-d);border:1.5px solid var(--charcoal-d)}
+.btn.s:hover{background:var(--charcoal-d);color:var(--white)}
+.blueprint{margin-top:56px;border:1px solid var(--line);border-radius:2px;padding:18px 20px;position:relative;overflow:hidden;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:28px 28px;background-color:var(--cream);min-height:170px;box-sizing:border-box}
+.blueprint .bframe{position:absolute;inset:22px;border:2px solid var(--charcoal-d)}
+.blueprint .bframe:before,.blueprint .bframe:after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--brick)}
+.blueprint .bframe:before{top:-2px;left:-2px;border-right:0;border-bottom:0}
+.blueprint .bframe:after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.blueprint .tag{position:absolute;left:38px;bottom:38px;font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--charcoal-d);text-transform:uppercase;background:var(--paper);padding:3px 7px}
+/* sections */
+section{padding:76px 0}
+.process,.band,.cta{padding-left:20px;padding-right:20px}
+.sec-head{margin-bottom:40px;max-width:60ch}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem)}
+.sec-head p{margin-top:12px;color:var(--muted)}
+/* bracket cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bcard{position:relative;padding:30px 26px;background:var(--white)}
+.bcard:before,.bcard:after{content:"";position:absolute;width:22px;height:22px;border:2px solid var(--brick)}
+.bcard:before{top:0;left:0;border-right:0;border-bottom:0}
+.bcard:after{bottom:0;right:0;border-left:0;border-top:0}
+.bcard .ic{width:40px;height:40px;color:var(--brick);margin-bottom:16px}
+.bcard h3{font-size:1.5rem;margin-bottom:10px}
+.bcard p{color:var(--muted);font-size:.96rem}
+.bcard a.more{display:inline-block;margin-top:14px;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brick);text-decoration:none;border-bottom:1px solid var(--brick);padding-bottom:2px}
+/* process timeline - genuinely sequential */
+.process{background:var(--charcoal-d);color:var(--cream)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.timeline:before{content:"";position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(246,241,231,.25)}
+.tstep{position:relative;padding-top:34px;padding-right:20px}
+.tstep .dot{position:absolute;top:0;left:0;width:22px;height:22px;border-radius:50%;background:var(--brick);display:flex;align-items:center;justify-content:center}
+.tstep .dot span{width:8px;height:8px;background:var(--cream);border-radius:50%}
+.tstep h3{color:var(--white);font-size:1.35rem;margin-bottom:8px}
+.tstep p{color:#C9BFAF;font-size:.92rem}
+/* split with grid paper panel */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:12px}
+.checklist{list-style:none;margin-top:14px}
+.checklist li{padding-left:30px;position:relative;margin-bottom:12px}
+.checklist li:before{content:"";position:absolute;left:0;top:7px;width:15px;height:15px;border:2px solid var(--brick)}
+.gridpanel{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:24px 24px;background-color:var(--cream);border:1px solid var(--line);min-height:300px;display:flex;align-items:center;justify-content:center;position:relative}
+.gridpanel svg{width:60%;max-width:220px;color:var(--charcoal-d)}
+/* stat band */
+.band{background:var(--cream)}
+.statrow{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
+.stat b{font-family:'Zilla Slab',serif;font-size:2.6rem;color:var(--brick);display:block;line-height:1}
+.stat span{font-family:'Space Mono',monospace;font-size:.82rem;letter-spacing:.01em;color:var(--muted)}
+/* cta */
+.cta{background:var(--brick);color:var(--white);text-align:center}
+.cta h2{color:var(--white);font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:14px}
+.cta p{color:#F3E3DA;max-width:48ch;margin:0 auto 26px}
+/* page hero */
+.phero{background:var(--cream);padding:58px 20px;border-bottom:1px solid var(--line)}
+.phero h1{font-size:clamp(2.1rem,5vw,3.4rem);max-width:22ch}
+.phero p{margin-top:14px;max-width:58ch;color:var(--muted)}
+.crumbs{font-family:'Space Mono',monospace;font-size:.82rem;letter-spacing:.01em;text-transform:none;color:var(--brick);margin-bottom:16px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.prose{max-width:76ch}
+.prose p{margin-bottom:16px;color:var(--text)}
+.prose h2{font-size:1.9rem;margin:30px 0 12px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.info b{display:block;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);margin-bottom:4px}
+.info p{margin-bottom:22px;font-size:1.05rem}
+form label{display:block;font-size:.82rem;font-weight:600;margin:14px 0 6px;color:var(--charcoal-d)}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:2px;font-family:inherit;font-size:.95rem;background:var(--white)}
+form button{margin-top:20px;border:0;cursor:pointer}
+/* footer */
+footer.ft{background:var(--charcoal-d);color:#B4AC9C;padding:54px 0 28px}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.ft p.fh{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:14px}
+footer.ft a{color:#B4AC9C;text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:var(--white)}
+footer.ft .brand b{color:var(--white)}
+.legal{border-top:1px solid rgba(246,241,231,.1);padding-top:20px;font-size:.8rem;color:#847C6C;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--brick);color:var(--white);text-align:center;font-size:.82rem;padding:9px 12px;font-weight:600}
+@media(max-width:1180px){
+  .navlinks{position:fixed;inset:80px 0 auto 0;background:var(--white);flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid var(--line)}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center;display:inline-block}
+  .burger{display:block}
+}
+@media(max-width:900px){
+  .grid3{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:26px}
+  .split{grid-template-columns:1fr;gap:30px}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+  footer.ft .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){footer.ft .cols{grid-template-columns:1fr};.timeline{grid-template-columns:1fr}}
+</style></head>
+<body><header class="nav"><div class="wrap row">
+<a class="brand" href="index.html"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 34V16l14-10 14 10v18" stroke="currentColor" stroke-width="2.4" fill="none"/><path d="M14 34V22h12v12" stroke="currentColor" stroke-width="2.4" fill="none"/></svg><span><b>Miller's Remodeling</b><small>Bethlehem, PA</small></span></a>
+<nav class="navlinks" id="nav">
+<a href="index.html">Home</a>
+<a href="services.html" class="active">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="navcta" href="contact.html">Request an Estimate</a>
+</nav>
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero"><div class="wrap"><p class="crumbs"><a href="index.html">Home</a> / Services</p>
+<h1>Home Remodeling in Bethlehem, PA</h1>
+<p>Kitchen, bathroom, and basement remodeling for homeowners across the Lehigh Valley.</p></div></section>
+<section><div class="wrap">
+<div class="sec-head"><h2>Three core specialties</h2></div>
+<div class="grid3">
+<div class="bcard"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="11" rx="1"/><path d="M3 9l3-6h12l3 6"/><line x1="9" y1="14" x2="9" y2="17"/><line x1="15" y1="14" x2="15" y2="17"/></svg><h3>Kitchen Remodeling</h3><p>Cabinetry, counters, layout changes, and finishes for kitchens that need a full renovation.</p><a class="more" href="kitchen-remodeling-bethlehem.html">Kitchens in Bethlehem &rarr;</a></div>
+<div class="bcard"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v3a5 5 0 01-5 5H9a5 5 0 01-5-5v-3z"/><path d="M6 12V6a2 2 0 012-2 2 2 0 012 2"/><line x1="4" y1="20" x2="4" y2="22"/><line x1="20" y1="20" x2="20" y2="22"/></svg><h3>Bathroom Remodeling</h3><p>Tile, fixtures, and layout work for full or partial bathroom renovations.</p><a class="more" href="bathroom-remodeling-bethlehem.html">Bathrooms in Bethlehem &rarr;</a></div>
+<div class="bcard"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l9-7 9 7v10" /><rect x="8" y="13" width="8" height="7"/><line x1="3" y1="20" x2="21" y2="20"/></svg><h3>Basement Finishing</h3><p>Framing, electrical, and finishes to turn a basement into usable living space.</p><a class="more" href="basement-finishing-bethlehem.html">Basements in Bethlehem &rarr;</a></div>
+</div></div></section>
+<section class="cta"><div class="wrap"><h2>Not sure which project comes first?</h2>
+<p>Send a few details about the space and we will help scope it.</p>
+<a class="btn p" href="contact.html">Request an Estimate</a></div></section>
+
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><a class="brand" href="index.html" style="margin-bottom:14px;color:#fff"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 34V16l14-10 14 10v18" stroke="currentColor" stroke-width="2.4" fill="none"/><path d="M14 34V22h12v12" stroke="currentColor" stroke-width="2.4" fill="none"/></svg><span><b style="font-size:1.2rem">Miller's Remodeling</b></span></a>
+<p style="max-width:34ch">Kitchen, bathroom, and basement remodeling for homeowners in Bethlehem and the Lehigh Valley, built and managed by Parker Miller.</p></div>
+<div><p class="fh">Services</p>
+<a href="kitchen-remodeling-bethlehem.html">Kitchen Remodeling</a>
+<a href="bathroom-remodeling-bethlehem.html">Bathroom Remodeling</a>
+<a href="basement-finishing-bethlehem.html">Basement Finishing</a>
+<a href="services.html">All Services</a></div>
+<div><p class="fh">Company</p>
+<a href="about.html">About Parker</a>
+<a href="contact.html">Request an Estimate</a>
+<span style="display:block;color:#847C6C;font-size:.88rem;margin-top:4px">Serving Bethlehem &amp; the Lehigh Valley, PA</span></div>
+</div>
+<div class="legal"><span>&copy; 2026 Miller's Remodeling. All rights reserved.</span><span>Bethlehem, Pennsylvania</span></div>
+</div></footer>
+<div class="disclaimer">Preview site built by Modularity Networks for Miller's Remodeling. Not yet an official company website.</div>
+</body></html>

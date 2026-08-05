@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leak Repair in Gulfport, MS | Honest Plumbing LLC</title>
+<meta name="description" content="Finding and fixing leaks behind walls, under slabs, and around fixtures for homes in Gulfport and the Gulf Coast.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Mulish:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A4B; --navy-d:#122834; --brass:#B8823B; --brass-d:#96692D;
+  --copper:#A3572E; --seafoam:#DCEAE3; --paper:#FAFAF7; --white:#FFFFFF;
+  --text:#20282B; --muted:#535F61; --line:#D7E3DD;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+h1,h2,h3,.disp{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.01em;line-height:1.05;color:var(--navy)}
+.rmono{font-family:'Roboto Mono',monospace}
+.eyebrow{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.16)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white);text-decoration:none;white-space:nowrap}
+.brand svg{width:38px;height:38px;flex:0 0 auto;color:var(--brass)}
+.brand b{font-family:'Saira Condensed',sans-serif;font-size:1.5rem;font-weight:700;line-height:1}
+.brand small{display:block;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:#D9A85E;text-transform:uppercase;margin-top:3px}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{color:#CBD9DE;text-decoration:none;font-size:.94rem;font-weight:600}
+.navlinks a:hover,.navlinks a.active{color:var(--white)}
+.navcta{background:var(--brass);color:var(--navy-d)!important;padding:11px 20px;font-weight:800;border-radius:2px}
+.navcta:hover{background:#CE9A50}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0}
+/* pipe route line */
+.pipeline{position:relative;height:2px;background:var(--brass);margin:0 auto}
+.pipeline .node{position:absolute;top:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:var(--navy);border:2px solid var(--brass)}
+/* hero */
+.hero{background:var(--navy);color:var(--white);padding:80px 20px 60px;position:relative;overflow:hidden}
+.hero .eyebrow{color:#D9A85E}
+.hero h1{color:var(--white);font-size:clamp(2.5rem,6vw,4.6rem);max-width:16ch}
+.hero p.lead{margin-top:20px;max-width:52ch;font-size:1.1rem;color:#F2F7F8}
+.herobtns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:14px 26px;border-radius:2px;font-size:.95rem;letter-spacing:.02em}
+.btn.p{background:var(--brass);color:var(--navy-d)}
+.btn.p:hover{background:#CE9A50}
+.btn.s{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}
+.btn.s:hover{border-color:var(--brass);color:var(--brass)}
+.readouts{margin-top:48px;display:flex;gap:0;border-top:1px solid rgba(255,255,255,.18);padding-top:26px}
+.readout{flex:1;padding-right:20px}
+.readout b{font-family:'Saira Condensed',sans-serif;font-size:2.4rem;color:var(--brass);display:block;line-height:1}
+.readout span{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#C3D2D6}
+/* schematic service list */
+section{padding:76px 0}
+.band,.cta{padding-left:20px;padding-right:20px}
+.sec-head{margin-bottom:40px;max-width:60ch}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.sec-head p{margin-top:12px;color:var(--muted)}
+.schematic{position:relative}
+.schematic .spine{position:absolute;left:38px;top:0;bottom:0;width:3px;background:var(--brass)}
+.snode{position:relative;padding-left:90px;padding-bottom:48px}
+.snode:last-child{padding-bottom:0}
+.snode .dot{position:absolute;left:22px;top:2px;width:36px;height:36px;border-radius:50%;background:var(--navy);border:3px solid var(--brass);display:flex;align-items:center;justify-content:center;color:var(--white)}
+.snode .dot svg{width:18px;height:18px}
+.snode h3{font-size:1.7rem;margin-bottom:8px}
+.snode p{color:var(--muted);max-width:60ch;margin-bottom:10px}
+.snode a.more{display:inline-block;font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:2px}
+/* split about */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split h2{font-size:clamp(2rem,4.2vw,2.9rem);margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:12px}
+.checklist{list-style:none;margin-top:14px}
+.checklist li{padding-left:32px;position:relative;margin-bottom:12px}
+.checklist li:before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--brass)}
+.panelbox{background:var(--seafoam);border:1px solid var(--line);border-radius:6px;padding:34px;min-height:280px;display:flex;align-items:center;justify-content:center}
+.panelbox svg{width:100%;max-width:260px;color:var(--navy)}
+/* band */
+.band{background:var(--seafoam)}
+.tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.tagrow span{background:var(--white);border:1px solid var(--line);color:var(--navy);padding:8px 14px;border-radius:20px;font-family:'Roboto Mono',monospace;font-size:.78rem}
+/* cta */
+.cta{background:var(--navy-d);color:var(--white);text-align:center}
+.cta h2{color:var(--white);font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:14px}
+.cta p{color:#B9CBD1;max-width:48ch;margin:0 auto 26px}
+/* page hero */
+.phero{background:var(--navy);color:var(--white);padding:58px 20px}
+.phero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);max-width:22ch}
+.phero p{margin-top:14px;max-width:58ch;color:#F2F7F8}
+.crumbs{font-family:'Roboto Mono',monospace;font-size:.82rem;letter-spacing:.01em;text-transform:none;color:var(--brass);margin-bottom:16px}
+.crumbs a{color:#CBD9DE;text-decoration:none}
+.prose{max-width:76ch}
+.prose p{margin-bottom:16px;color:var(--text)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.info b{display:block;font-family:'Roboto Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:4px}
+.info p{margin-bottom:22px;font-size:1.05rem}
+form label{display:block;font-size:.82rem;font-weight:700;margin:14px 0 6px;color:var(--navy)}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:.95rem;background:var(--white)}
+form button{margin-top:20px;border:0;cursor:pointer}
+/* footer */
+footer.ft{background:var(--navy-d);color:#93A6AB;padding:54px 0 28px}
+footer.ft .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:32px}
+footer.ft p.fh{font-family:'Roboto Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+footer.ft a{color:#93A6AB;text-decoration:none;display:block;margin-bottom:9px;font-size:.92rem}
+footer.ft a:hover{color:var(--white)}
+footer.ft .brand b{color:var(--white)}
+.legal{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;font-size:.8rem;color:#647579;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.disclaimer{background:var(--brass);color:var(--navy-d);text-align:center;font-size:.82rem;padding:9px 12px;font-weight:700}
+@media(max-width:1180px){
+  .navlinks{position:fixed;inset:78px 0 auto 0;background:var(--navy);flex-direction:column;gap:0;padding:8px 0;display:none;border-bottom:1px solid rgba(255,255,255,.16)}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:14px 6vw}
+  .navcta{margin:10px 6vw;text-align:center;display:inline-block}
+  .burger{display:block}
+}
+@media(max-width:860px){
+  .readouts{flex-direction:column;gap:18px}
+  .split{grid-template-columns:1fr;gap:30px}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+  footer.ft .cols{grid-template-columns:1fr 1fr}
+  .snode{padding-left:74px}
+  .schematic .spine{left:30px}
+  .snode .dot{left:14px;width:32px;height:32px}
+}
+@media(max-width:520px){footer.ft .cols{grid-template-columns:1fr}}
+</style></head>
+<body><header class="nav"><div class="wrap row">
+<a class="brand" href="index.html"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 20h10M22 20h10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.6" fill="none"/><path d="M17 14l-4-5M23 26l4 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Honest Plumbing</b><small>Biloxi, MS</small></span></a>
+<nav class="navlinks" id="nav">
+<a href="index.html">Home</a>
+<a href="services.html" class="active">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a class="navcta" href="contact.html">Call for Service</a>
+</nav>
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="phero"><div class="wrap"><p class="crumbs"><a href="index.html">Home</a> / <a href="services.html">Services</a></p>
+<h1>Leak Repair in Gulfport, MS</h1>
+<p>Finding and fixing leaks behind walls, under slabs, and around fixtures for homes in Gulfport and the Gulf Coast.</p></div></section>
+<section><div class="wrap"><div class="split">
+<div><div class="prose">
+<p>A rising water bill or a damp spot on a wall or ceiling is often the only warning sign of a slow leak until it turns into real damage.</p><p>Honest Plumbing tracks down the source before cutting into anything, then makes the repair and confirms the fix holds.</p>
+</div>
+<ul class="checklist" style="margin-top:20px">
+<li>Leak detection behind walls and under slabs</li><li>Fixture and supply line leak repair</li><li>Water bill spike investigation</li><li>Confirmed fix before the job is closed out</li>
+</ul>
+<div style="margin-top:26px"><a class="btn p" href="contact.html">Call for Service</a></div>
+</div>
+<div class="panelbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="100" height="100" style="color:#1B3A4B"><path d="M12 3c4 5 6 8.5 6 11.5a6 6 0 01-12 0C6 11.5 8 8 12 3z"/></svg></div>
+</div></div></section>
+<section class="cta"><div class="wrap"><h2>Ready to get this fixed?</h2>
+<p>Reach out with what is happening and Landon will get back with next steps.</p>
+<a class="btn p" href="contact.html">Call for Service</a></div></section>
+
+<footer class="ft"><div class="wrap">
+<div class="cols">
+<div><a class="brand" href="index.html" style="margin-bottom:14px;color:#fff"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 20h10M22 20h10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="7" stroke="currentColor" stroke-width="2.6" fill="none"/><path d="M17 14l-4-5M23 26l4 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span><b style="font-size:1.25rem">Honest Plumbing LLC</b></span></a>
+<p style="max-width:34ch">Straightforward plumbing repair for the Mississippi Gulf Coast, run by owner Landon Jackson.</p></div>
+<div><p class="fh">Services</p>
+<a href="drain-cleaning-biloxi.html">Drain Cleaning</a>
+<a href="water-heater-repair-biloxi.html">Water Heater Repair</a>
+<a href="leak-repair-gulfport.html">Leak Repair</a>
+<a href="services.html">All Services</a></div>
+<div><p class="fh">Company</p>
+<a href="about.html">About Honest Plumbing</a>
+<a href="contact.html">Call for Service</a>
+<span style="display:block;color:#647579;font-size:.88rem;margin-top:4px">Serving Biloxi &amp; the Mississippi Gulf Coast</span></div>
+</div>
+<div class="legal"><span>&copy; 2026 Honest Plumbing LLC. All rights reserved.</span><span>Biloxi, Mississippi</span></div>
+</div></footer>
+<div class="disclaimer">Preview site built by Modularity Networks for Honest Plumbing LLC. Not yet an official company website.</div>
+</body></html>
