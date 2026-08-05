@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guida's Grooming | One-on-One Dog Grooming in Milford, PA</title>
+<meta name="description" content="Guida's Grooming offers calm, appointment-only, one dog at a time grooming in Milford, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#7c8768;
+    --sage-text:#697258;
+    --sage-btn:#6f795d;
+    --taupe:#a9906f;
+    --cream:#f6f2e9;
+    --terracotta:#c17a52;
+    --terracotta-deep:#a26644;
+    --ink:#3a3831;
+    --white:#fffdf9;
+    --line:#e3ddcb;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;line-height:1.65;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;margin:0;font-weight:600;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--terracotta);outline-offset:2px;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:1060px;margin:0 auto;}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;text-decoration:none;color:var(--ink);letter-spacing:0.02em;}
+  .nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:500;font-size:0.92rem;color:var(--ink);letter-spacing:0.02em;}
+  .nav-cta{border:1px solid var(--sage);padding:9px 20px;color:var(--sage-text);}
+  .burger{display:none;background:none;border:1px solid var(--ink);padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:1px;background:var(--ink);margin:5px 0;}
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:14px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:100px 0 84px;text-align:center;}
+  .eyebrow{color:var(--sage-text);font-weight:600;font-size:0.9rem;}
+  h1{font-size:clamp(2.3rem,5.6vw,3.4rem);margin:18px auto 22px;max-width:18ch;font-weight:500;}
+  .hero p.lead{max-width:46ch;margin:0 auto;font-size:1.08rem;color:#565344;}
+  .hero-cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;}
+  .btn-primary{background:var(--sage-btn);color:var(--white);padding:14px 30px;text-decoration:none;font-weight:500;letter-spacing:0.03em;}
+  .btn-secondary{border:1px solid var(--ink);color:var(--ink);padding:13px 28px;text-decoration:none;font-weight:500;letter-spacing:0.03em;}
+  .line-dog{margin:56px auto 0;width:120px;height:2px;background:var(--terracotta);}
+
+  section{padding:70px 0;}
+  .section-head{max-width:560px;margin:0 auto 44px;text-align:center;}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+
+  .approach{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .a-item{background:var(--white);padding:34px 26px;text-align:center;}
+  .a-item h3{font-size:1.1rem;color:var(--terracotta-deep);margin-bottom:10px;}
+  .a-item p{margin:0;font-size:0.94rem;color:#565344;}
+  @media (max-width:760px){.approach{grid-template-columns:1fr;}}
+
+  .about{background:var(--white);}
+  .about .wrap{max-width:760px;text-align:center;}
+  .about p{font-size:1.08rem;color:#4b4838;}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--white);border:1px solid var(--line);padding:32px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;}
+  .card a.tel{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--terracotta-deep);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--ink);color:#cbc6b4;padding:34px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--white);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Guida's Grooming</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:5702428657" class="nav-cta">(570) 242-8657</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Milford, PA</p>
+      <h1>One-on-One Dog Grooming in Milford, PA</h1>
+      <p class="lead">Guida's Grooming takes one dog at a time, by appointment only, in a quiet home studio built around patience rather than a packed schedule.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5702428657" class="btn-primary">Call (570) 242-8657</a>
+        <a href="#approach" class="btn-secondary">Our Approach</a>
+      </div>
+      <div class="line-dog" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The Difference</p>
+        <h2>Unhurried, by design</h2>
+      </div>
+      <div class="approach">
+        <div class="a-item"><h3>One Dog at a Time</h3><p>No crowded kennels, no rushed handoffs, just your dog and full attention.</p></div>
+        <div class="a-item"><h3>Appointment Only</h3><p>A schedule built around a calm pace, not walk-in volume.</p></div>
+        <div class="a-item"><h3>Home Studio</h3><p>A quiet setting in Milford, since 2015, run by someone who knows dogs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--sage-text);text-align:center;">Since 2015</p>
+      <h2 style="text-align:center;margin-bottom:20px;">A groomer who works at your dog's pace</h2>
+      <p>Guida's Grooming opened in 2015 with a simple idea: dogs groom better when they aren't rushed. That's meant staying small on purpose, no walk-ins, no multiple dogs at once, just individualized care in a home studio in Milford.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Book an Appointment</p>
+        <h2>By phone or email</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:5702428657">(570) 242-8657</a>
+          <p>175 Primrose Ln<br>Milford, PA 18337</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>By Appointment</span><span>Mon &ndash; Sat</span></div>
+          <div class="hours-row"><span>Walk-ins</span><span>Not available</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Guida's Grooming, Milford, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

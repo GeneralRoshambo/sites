@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T's Barbershop | Barber Shop in Wurtsboro, NY</title>
+<meta name="description" content="T's Barbershop offers precision cuts, fades, and beard trims by appointment in Wurtsboro, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#182437;
+    --barber-red:#b5342a;
+    --brass:#c79a4b;
+    --cream:#f3efe6;
+    --white:#fffdf9;
+    --line:#dcd4c1;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--navy);font-family:'Barlow',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.02em;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--barber-red);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{
+    background:var(--navy);border-bottom:2px solid var(--barber-red);
+    position:sticky;top:0;z-index:40;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Anton',sans-serif;font-size:1.4rem;text-decoration:none;color:var(--white);letter-spacing:0.03em;}
+  .brand span{color:var(--brass);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--cream);}
+  .nav-cta{background:var(--barber-red);color:var(--white)!important;padding:10px 20px;border-radius:2px;}
+  .burger{display:none;background:none;border:2px solid var(--cream);border-radius:4px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--cream);margin:4px 0;}
+  @media (max-width:1080px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:10px 24px 22px;}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;}
+  }
+
+  .hero{padding:88px 0 78px;background:var(--navy);color:var(--white);position:relative;overflow:hidden;}
+  .pole{
+    position:absolute;right:6%;top:0;bottom:0;width:14px;border-radius:7px;
+    background:var(--barber-red);
+    opacity:0.35;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{color:var(--brass);font-weight:600;font-size:0.92rem;font-family:'Barlow',sans-serif;}
+  .section-head .eyebrow{color:var(--barber-red);}
+  h1{font-size:clamp(2.5rem,6.2vw,3.9rem);margin:16px 0 20px;max-width:15ch;}
+  .hero p.lead{max-width:48ch;font-size:1.1rem;color:#cfd6e3;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+  .btn-primary{background:var(--barber-red);color:var(--white);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;font-size:0.92rem;}
+  .btn-secondary{border:2px solid var(--brass);color:var(--brass);padding:12px 26px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;font-size:0.92rem;}
+
+  section{padding:78px 0;}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  h2{font-size:clamp(1.7rem,3.4vw,2.3rem);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .service{background:var(--white);padding:30px 24px;}
+  .service h3{font-family:'Barlow',sans-serif;font-weight:700;text-transform:none;font-size:1.1rem;margin-bottom:8px;color:var(--barber-red);}
+  .service p{margin:0;font-size:0.95rem;color:#3a3a3a;}
+  @media (max-width:800px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--navy);color:var(--cream);}
+  .about .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .about h2{color:var(--white);}
+  .about p{color:#cfd6e3;font-size:1.05rem;}
+  .badge{border:2px solid var(--brass);padding:28px;text-align:center;}
+  .badge strong{display:block;font-family:'Anton',sans-serif;font-size:1.9rem;color:var(--brass);}
+  @media (max-width:820px){.about .wrap{grid-template-columns:1fr;}}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  .card{background:var(--white);border:1px solid var(--line);padding:34px;}
+  .card h3{font-family:'Barlow',sans-serif;font-weight:700;text-transform:none;font-size:1.1rem;margin-bottom:14px;}
+  .card a.tel{font-family:'Anton',sans-serif;font-size:1.6rem;color:var(--barber-red);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--navy);color:#a9b2c4;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">T's <span>Barbershop</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Book</a></li>
+      <li><a href="tel:8459012786" class="nav-cta">(845) 901-2786</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="pole" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Wurtsboro, NY &middot; Sullivan County</p>
+      <h1>Barber Shop in Wurtsboro, NY</h1>
+      <p class="lead">T's Barbershop delivers precision fades, classic cuts, and special designs by appointment, on Sullivan Street in the heart of Wurtsboro.</p>
+      <div class="hero-cta-row">
+        <a href="tel:8459012786" class="btn-primary">Call (845) 901-2786</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">In the Chair</p>
+        <h2>Cuts built with precision</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Fades &amp; Tapers</h3><p>Clean, sharp fades tailored to your style and face shape.</p></div>
+        <div class="service"><h3>Classic Cuts</h3><p>Traditional cuts done with a straight-razor finish.</p></div>
+        <div class="service"><h3>Special Designs</h3><p>Custom line work and designs for whatever you have in mind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--brass);">By Appointment</p>
+        <h2>Sullivan Street's chair worth the wait</h2>
+        <p>T's Barbershop keeps a full book on Sullivan Street, where regulars come back for the same steady hand and sharp lines. Appointments are the way in, walk in ready and the chair will be worth it.</p>
+      </div>
+      <div class="badge">
+        <strong>By Appointment</strong>
+        Wurtsboro, NY
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Book Your Cut</p>
+        <h2>Call ahead for a chair</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:8459012786">(845) 901-2786</a>
+          <p>153 Sullivan St<br>Wurtsboro, NY 12790</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>9:00am &ndash; 6:00pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 T's Barbershop, Wurtsboro, NY</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funky Fresh Pet Grooming | Dog &amp; Cat Grooming in Milford, PA</title>
+<meta name="description" content="Funky Fresh Pet Grooming offers bathing, haircuts, and nail trims for dogs and cats in Milford, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0f7d7a;
+    --coral:#f2664b;
+    --coral-deep:#ba4e39;
+    --sun:#f6b93b;
+    --cream:#fbf5ea;
+    --white:#ffffff;
+    --ink:#20342f;
+    --line:#e4dcc9;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Mulish',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{background:var(--white);border-bottom:2px solid var(--teal);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Baloo 2',sans-serif;font-size:1.35rem;font-weight:800;text-decoration:none;color:var(--teal);}
+  .brand span{color:var(--coral-deep);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:0.95rem;color:var(--ink);}
+  .nav-cta{background:var(--coral-deep);color:var(--white)!important;padding:10px 20px;border-radius:24px;}
+  .burger{display:none;background:none;border:2px solid var(--teal);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--teal);margin:4px 0;}
+  @media (max-width:1100px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:2px solid var(--teal);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:84px 0 74px;background:var(--teal);color:var(--white);position:relative;overflow:hidden;}
+  .paw-row{
+    position:absolute;bottom:0;left:0;right:0;height:10px;
+    background:var(--sun);
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{color:var(--cream);font-weight:600;font-size:0.92rem;opacity:0.9;}
+  h1{font-size:clamp(2.4rem,6vw,3.7rem);margin:14px 0 20px;max-width:15ch;}
+  .hero p.lead{max-width:50ch;font-size:1.1rem;color:var(--cream);}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;}
+  .btn-primary{background:var(--coral-deep);color:var(--white);padding:14px 26px;border-radius:24px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--white);color:var(--white);padding:12px 24px;border-radius:24px;text-decoration:none;font-weight:700;}
+
+  section{padding:76px 0;}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  h2{font-size:clamp(1.9rem,3.6vw,2.5rem);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .service{background:var(--white);border-radius:16px;padding:26px 22px;border:2px solid var(--line);}
+  .service h3{font-size:1.05rem;margin-bottom:8px;color:var(--teal);}
+  .service p{margin:0;font-size:0.92rem;color:#41544e;}
+  @media (max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--white);}
+  .about .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .about h2{color:var(--teal);}
+  .bubble{
+    background:var(--sun);border-radius:24px;padding:30px;text-align:center;color:var(--ink);
+  }
+  .bubble strong{display:block;font-family:'Baloo 2',sans-serif;font-size:2.2rem;color:var(--ink);}
+  @media (max-width:820px){.about .wrap{grid-template-columns:1fr;}}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  .card{background:var(--white);border:2px solid var(--line);padding:34px;border-radius:16px;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--teal);}
+  .card a.tel{font-family:'Baloo 2',sans-serif;font-size:1.6rem;color:var(--coral-deep);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--teal);color:#cdece8;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--white);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Funky <span>Fresh</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Book</a></li>
+      <li><a href="tel:5702965202" class="nav-cta">(570) 296-5202</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="paw-row" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Milford, PA &middot; Pike County</p>
+      <h1>Dog &amp; Cat Grooming in Milford, PA</h1>
+      <p class="lead">Funky Fresh Pet Grooming keeps Milford's dogs and cats looking sharp with baths, haircuts, nail trims, and every add-on your pet actually needs, no fluff, just fresh.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5702965202" class="btn-primary">Call (570) 296-5202</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--coral-deep);">On the Table</p>
+        <h2>Every groom, done fresh</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Bathing</h3><p>A thorough wash with shampoos suited to your pet's coat and skin.</p></div>
+        <div class="service"><h3>Haircuts</h3><p>Breed-standard or your own custom style, trimmed with care.</p></div>
+        <div class="service"><h3>Ear Cleaning</h3><p>A gentle clean that keeps ears healthy between visits.</p></div>
+        <div class="service"><h3>Nail Trimming</h3><p>Quick, low-stress trims so paws stay comfortable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--coral-deep);">Why Milford Trusts Us</p>
+        <h2>Grooming that keeps tails wagging</h2>
+        <p>Funky Fresh Pet Grooming has become the neighborhood favorite along East Harford Street, known for a gentle touch and a genuine love of every dog and cat that walks through the door.</p>
+        <p>Add-on services like paw treatments and teeth cleaning mean your pet leaves looking, and feeling, their best.</p>
+      </div>
+      <div class="bubble">
+        <strong>Neighborhood<br>Favorite</strong>
+        Milford, PA
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--coral-deep);">Book a Groom</p>
+        <h2>Call or stop by East Harford Street</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:5702965202">(570) 296-5202</a>
+          <p>305 E Harford St<br>Milford, PA 18337</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Tuesday &ndash; Saturday</span><span>8:00am &ndash; 4:00pm</span></div>
+          <div class="hours-row"><span>Sunday &amp; Monday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Funky Fresh Pet Grooming, Milford, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

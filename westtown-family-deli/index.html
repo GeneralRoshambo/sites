@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westtown Family Deli | Latin &amp; Puerto Rican Food in Westtown, NY</title>
+<meta name="description" content="Westtown Family Deli serves authentic Puerto Rican and Latin breakfast, lunch, and dinner specials in Westtown, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mango:#e8862d;
+    --mango-deep:#ab6321;
+    --mango-deep2:#a25d1f;
+    --teal:#0e6e6a;
+    --cream:#fbf3e4;
+    --plantain:#4c7a3d;
+    --white:#fffdf8;
+    --ink:#2c2418;
+    --line:#e8dbc0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Rubik',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Fredoka',sans-serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mango);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Fredoka',sans-serif;font-size:1.3rem;font-weight:600;text-decoration:none;color:var(--teal);}
+  .brand span{color:var(--mango-deep);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.94rem;color:var(--ink);}
+  .nav-cta{background:var(--mango-deep);color:var(--white)!important;padding:10px 20px;border-radius:22px;}
+  .burger{display:none;background:none;border:2px solid var(--teal);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--teal);margin:4px 0;}
+  @media (max-width:1100px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:86px 0 76px;background:var(--teal);color:var(--white);position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{color:var(--cream);font-weight:600;font-size:0.92rem;opacity:0.9;}
+  h1{font-size:clamp(2.4rem,6vw,3.7rem);margin:14px 0 20px;max-width:16ch;}
+  .hero p.lead{max-width:50ch;font-size:1.1rem;color:var(--cream);}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;}
+  .btn-primary{background:var(--mango-deep);color:var(--white);padding:14px 26px;border-radius:24px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--white);color:var(--white);padding:12px 24px;border-radius:24px;text-decoration:none;font-weight:700;}
+
+  section{padding:76px 0;}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  h2{font-size:clamp(1.9rem,3.6vw,2.5rem);}
+
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .menu-card{background:var(--white);border-radius:18px;padding:28px 24px;border:2px solid var(--line);}
+  .menu-card h3{font-size:1.1rem;margin-bottom:10px;color:var(--teal);}
+  .menu-card p{margin:0;font-size:0.95rem;color:#4c4630;}
+  @media (max-width:860px){.menu-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.menu-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--white);}
+  .about .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .about h2{color:var(--teal);}
+  .smoothie{
+    background:var(--mango-deep);border-radius:20px;padding:30px;text-align:center;color:var(--white);
+  }
+  .smoothie strong{display:block;font-family:'Fredoka',sans-serif;font-size:1.8rem;}
+  @media (max-width:820px){.about .wrap{grid-template-columns:1fr;}}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  .card{background:var(--white);border:2px solid var(--line);padding:34px;border-radius:16px;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--teal);}
+  .card a.tel{font-family:'Fredoka',sans-serif;font-size:1.6rem;color:var(--mango-deep2);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--teal);color:#c9e7e2;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--white);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Westtown <span>Family Deli</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:8458002933" class="nav-cta">(845) 800-2933</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Westtown, NY &middot; Orange County</p>
+      <h1>Latin &amp; Puerto Rican Food in Westtown, NY</h1>
+      <p class="lead">Westtown Family Deli brings authentic Puerto Rican cooking to Route 284, with daily specials, a smoothie bar, and breakfast, lunch, and dinner all served with the same care.</p>
+      <div class="hero-cta-row">
+        <a href="tel:8458002933" class="btn-primary">Call (845) 800-2933</a>
+        <a href="#menu" class="btn-secondary">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--mango-deep2);">On the Menu</p>
+        <h2>Daily specials, made fresh</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card"><h3>Breakfast</h3><p>A hearty start with Latin classics done right.</p></div>
+        <div class="menu-card"><h3>Lunch &amp; Dinner Specials</h3><p>Rotating daily specials rooted in authentic Puerto Rican cooking.</p></div>
+        <div class="menu-card"><h3>Smoothie Bar</h3><p>Fresh-blended smoothies to go with any meal or on their own.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--mango-deep2);">A Family Table</p>
+        <h2>Route 284's stop for authentic Puerto Rican cooking</h2>
+        <p>Westtown Family Deli serves Route 284 daily from 8am to 6pm, with outdoor seating and a menu that leans into real Latin flavor rather than a general deli case.</p>
+        <p>Delivery and takeout keep it moving fast, but the recipes are the reason people come back.</p>
+      </div>
+      <div class="smoothie">
+        <strong>8am &ndash; 6pm</strong>
+        Daily, Westtown, NY
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--mango-deep2);">Visit or Order</p>
+        <h2>Route 284, Westtown</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:8458002933">(845) 800-2933</a>
+          <p>780 NY-284<br>Westtown, NY 10998</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Every Day</span><span>8:00am &ndash; 6:00pm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Westtown Family Deli, Westtown, NY</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

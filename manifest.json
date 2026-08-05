@@ -739,5 +739,101 @@
     "location": "San Antonio, TX",
     "category": "Mobile Notary",
     "region": "More"
+  },
+  {
+    "slug": "halls-auto",
+    "name": "Hall's Auto",
+    "location": "Pleasant Mount, PA",
+    "category": "Auto Repair",
+    "region": "Wallenpaupack",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "schwalms-deli-n-more",
+    "name": "Schwalm's Deli N More",
+    "location": "South Gibson, PA",
+    "category": "Deli & Grocery",
+    "region": "Wallenpaupack",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "poyntelle-general-store",
+    "name": "Poyntelle General Store",
+    "location": "Poyntelle, PA",
+    "category": "General Store",
+    "region": "Wallenpaupack",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "funky-fresh-pet-grooming",
+    "name": "Funky Fresh Pet Grooming",
+    "location": "Milford, PA",
+    "category": "Pet Grooming",
+    "region": "DelawareValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "guidas-grooming",
+    "name": "Guida's Grooming",
+    "location": "Milford, PA",
+    "category": "Pet Grooming",
+    "region": "DelawareValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "giovannis-pizza-gyro-king",
+    "name": "Giovanni's Pizza and Gyro King",
+    "location": "Matamoras, PA",
+    "category": "Pizza & Gyros",
+    "region": "DelawareValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "ts-barbershop",
+    "name": "T's Barbershop",
+    "location": "Wurtsboro, NY",
+    "category": "Barber Shop",
+    "region": "HudsonValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "westtown-family-deli",
+    "name": "Westtown Family Deli",
+    "location": "Westtown, NY",
+    "category": "Deli",
+    "region": "HudsonValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "kehlenbeck-bros-construction",
+    "name": "Kehlenbeck Bros. Construction",
+    "location": "Huguenot, NY",
+    "category": "Home Builder",
+    "region": "HudsonValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "sabos-pizza",
+    "name": "Sabo's Pizza",
+    "location": "Fairview, PA",
+    "category": "Pizza",
+    "region": "Erie",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "calzones-house-of-pizza",
+    "name": "Calzones House of Pizza",
+    "location": "Erie, PA",
+    "category": "Pizza",
+    "region": "Erie",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "kims-kreamery",
+    "name": "Kim's Kreamery",
+    "location": "Union City, PA",
+    "category": "Ice Cream Shop",
+    "region": "Erie",
+    "added": "2026-08-05"
   }
 ]

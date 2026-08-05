@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabo's Pizza | Hometown Pizza Shop in Fairview, PA</title>
+<meta name="description" content="Sabo's Pizza serves fresh dough, traditional pizzeria-style pizza in Fairview, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-red:#8c1f1a;
+    --forest:#33502f;
+    --cream:#f7ede0;
+    --charcoal:#2c2620;
+    --white:#fffaf3;
+    --line:#e2d2b8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--charcoal);font-family:'Nunito',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Abril Fatface',serif;margin:0;font-weight:400;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--deep-red);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Abril Fatface',serif;font-size:1.35rem;text-decoration:none;color:var(--deep-red);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:0.94rem;color:var(--charcoal);}
+  .nav-cta{background:var(--deep-red);color:var(--white)!important;padding:10px 20px;border-radius:22px;}
+  .burger{display:none;background:none;border:2px solid var(--deep-red);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--deep-red);margin:4px 0;}
+  @media (max-width:1080px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:88px 0 78px;background:var(--deep-red);color:var(--white);position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{color:#f0c9a0;font-weight:600;font-size:0.94rem;font-family:'Nunito',sans-serif;}
+  h1{font-size:clamp(2.6rem,6.4vw,4rem);margin:16px 0 20px;max-width:15ch;}
+  .hero p.lead{max-width:48ch;font-size:1.1rem;color:#f4dfd0;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+  .btn-primary{background:var(--forest);color:var(--white);padding:14px 28px;border-radius:24px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--white);color:var(--white);padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:700;}
+
+  section{padding:78px 0;}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  h2{font-size:clamp(1.8rem,3.4vw,2.3rem);}
+
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .menu-card{background:var(--white);border:1px solid var(--line);padding:28px 24px;border-radius:6px;}
+  .menu-card h3{font-size:1.3rem;margin-bottom:10px;color:var(--deep-red);}
+  .menu-card p{margin:0;font-size:0.95rem;color:#4a4034;}
+  @media (max-width:860px){.menu-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.menu-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--white);}
+  .about .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .about h2{color:var(--deep-red);}
+  .rating{
+    background:var(--forest);border-radius:8px;padding:30px;text-align:center;color:var(--white);
+  }
+  .rating strong{display:block;font-family:'Abril Fatface',serif;font-size:2.4rem;}
+  @media (max-width:820px){.about .wrap{grid-template-columns:1fr;}}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  .card{background:var(--white);border:1px solid var(--line);padding:34px;border-radius:6px;}
+  .card h3{font-size:1.2rem;margin-bottom:14px;}
+  .card a.tel{font-family:'Abril Fatface',serif;font-size:1.5rem;color:var(--deep-red);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--charcoal);color:#cbb9a5;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--white);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Sabo's Pizza</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Order</a></li>
+      <li><a href="tel:8144744500" class="nav-cta">(814) 474-4500</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Fairview, PA &middot; Erie County</p>
+      <h1>Hometown Pizza Shop in Fairview, PA</h1>
+      <p class="lead">Sabo's Pizza has kept West Ridge Road in fresh dough for years, rolling out traditional pizzeria-style pies and specialty pizzas made the same way every time.</p>
+      <div class="hero-cta-row">
+        <a href="tel:8144744500" class="btn-primary">Call (814) 474-4500</a>
+        <a href="#menu" class="btn-secondary">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--deep-red);">On the Menu</p>
+        <h2>Fresh dough, every single day</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card"><h3>Classic Pies</h3><p>Traditional pizzeria-style pizza with fresh, hand-stretched dough.</p></div>
+        <div class="menu-card"><h3>Specialty Pizzas</h3><p>House recipes that go beyond the standard toppings list.</p></div>
+        <div class="menu-card"><h3>Made to Order</h3><p>Every pie rolled out fresh when you call, not sitting under a lamp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--deep-red);">A West Ridge Road Fixture</p>
+        <h2>Fairview's pizza shop, done the traditional way</h2>
+        <p>Sabo's Pizza has built a loyal following on fresh dough and speedy service, earning a reputation among locals as the shop that still does it the traditional pizzeria way.</p>
+        <p>Open Tuesday through Saturday, it's the kind of spot regulars call by memory, not by search.</p>
+      </div>
+      <div class="rating">
+        <strong>4.5 / 5</strong>
+        Tripadvisor rating
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--deep-red);">Order or Visit</p>
+        <h2>West Ridge Road, Fairview</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:8144744500">(814) 474-4500</a>
+          <p>7374 W Ridge Rd<br>Fairview, PA 16415</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Tuesday &ndash; Saturday</span><span>11:00am &ndash; 8:00pm</span></div>
+          <div class="hours-row"><span>Sunday &amp; Monday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Sabo's Pizza, Fairview, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

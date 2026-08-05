@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall's Auto | Full Service Auto Repair in Pleasant Mount, PA</title>
+<meta name="description" content="Hall's Auto provides full service auto repair, state inspections, and DMV title/registration help in Pleasant Mount, PA and Wayne County.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#2b2b2b;
+    --steel:#5b6470;
+    --safety-orange:#d9531e;
+    --safety-orange-deep:#b8451c;
+    --safety-orange-light:#e07348;
+    --cream:#f3efe8;
+    --line:#d8d2c4;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--safety-orange);
+    outline-offset:3px;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:1120px;margin:0 auto;
+  }
+  .brand{font-size:1.3rem;font-weight:700;color:var(--charcoal);text-decoration:none;white-space:nowrap;}
+  .brand span{color:var(--safety-orange);}
+  .nav-links{display:flex;gap:32px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;}
+  .nav-cta{
+    background:var(--safety-orange-deep);color:var(--white);
+    padding:10px 20px;border-radius:2px;font-weight:600;text-decoration:none;
+    white-space:nowrap;
+  }
+  .burger{display:none;background:none;border:2px solid var(--charcoal);border-radius:4px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--charcoal);margin:4px 0;}
+  @media (max-width:1180px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{
+      display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);border-bottom:1px solid var(--line);padding:8px 24px 20px;
+    }
+    .nav-links.open li{width:100%;padding:12px 0;border-bottom:1px solid var(--line);}
+    .nav-links.open .nav-cta{display:inline-block;margin-top:8px;}
+  }
+
+  /* HERO */
+  .hero{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:88px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .gauge{
+    position:absolute;right:-60px;top:-60px;width:340px;height:340px;
+    border-radius:50%;border:18px solid rgba(217,83,30,0.18);
+    z-index:1;
+  }
+  .gauge::before{
+    content:"";position:absolute;inset:34px;border-radius:50%;
+    border:2px solid rgba(243,239,232,0.15);
+  }
+  .eyebrow{color:var(--safety-orange-light);font-weight:600;font-size:0.92rem;}
+  h1{font-size:clamp(2.4rem,6vw,3.8rem);margin:14px 0 18px;max-width:16ch;color:var(--white);}
+  .hero p.lead{max-width:52ch;font-size:1.1rem;color:#d8d3c8;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+  .btn-primary{
+    background:var(--safety-orange-deep);color:var(--white);padding:14px 26px;
+    border-radius:2px;text-decoration:none;font-weight:600;display:inline-block;
+  }
+  .btn-secondary{
+    border:2px solid var(--cream);color:var(--cream);padding:12px 24px;
+    border-radius:2px;text-decoration:none;font-weight:600;display:inline-block;
+  }
+  .hero-stats{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap;}
+  .hero-stats div{padding-left:14px;position:relative;}
+  .hero-stats div::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--safety-orange-light);opacity:0.55;}
+  .hero-stats strong{display:block;font-family:'Oswald',sans-serif;font-size:1.6rem;color:var(--white);}
+  .hero-stats span{font-size:0.85rem;color:#c9c3b7;}
+
+  /* SECTIONS */
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head .eyebrow{color:var(--safety-orange-deep);}
+  h2{font-size:clamp(1.9rem,3.6vw,2.5rem);margin:8px 0 0;}
+
+  .services-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .service{
+    background:var(--white);padding:32px;
+  }
+  .service h3{font-size:1.15rem;margin:0 0 10px;display:flex;align-items:center;gap:10px;}
+  .service h3::before{
+    content:"";width:10px;height:10px;background:var(--safety-orange);
+    display:inline-block;transform:rotate(45deg);
+  }
+  .service p{margin:0;color:#4a4a4a;font-size:0.98rem;}
+  @media (max-width:700px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{
+    background:var(--charcoal);color:var(--cream);
+  }
+  .about .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+  .about h2{color:var(--white);}
+  .about p{color:#d8d3c8;font-size:1.05rem;}
+  .dial{
+    border:1px solid #4a4a44;padding:28px;border-radius:6px;
+  }
+  .dial ul{list-style:none;margin:0;padding:0;}
+  .dial li{padding:12px 0;border-bottom:1px solid #3d3d38;display:flex;justify-content:space-between;font-size:0.95rem;}
+  .dial li:last-child{border-bottom:none;}
+  .dial li span{color:var(--safety-orange-light);font-weight:600;}
+  @media (max-width:820px){.about .wrap{grid-template-columns:1fr;}}
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  .card{
+    background:var(--white);border:1px solid var(--line);padding:36px;border-radius:4px;
+  }
+  .card h3{margin-top:0;font-size:1.1rem;}
+  .card a.tel{
+    font-family:'Oswald',sans-serif;font-size:1.7rem;color:var(--safety-orange-deep);
+    text-decoration:none;display:inline-block;margin:10px 0;
+  }
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{
+    background:var(--charcoal);color:#a9a29a;padding:36px 0;font-size:0.9rem;
+  }
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">HALL'S <span>AUTO</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:5704482817" class="nav-cta">(570) 448-2817</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="gauge" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Pleasant Mount, PA &middot; Wayne County</p>
+      <h1>Full Service Auto Repair in Pleasant Mount, PA</h1>
+      <p class="lead">Hall's Auto has kept Wayne County vehicles running for years, from routine oil changes to full diagnostics, state inspections, and DMV title and registration work, all done right the first time.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5704482817" class="btn-primary">Call (570) 448-2817</a>
+        <a href="#services" class="btn-secondary">See Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>19+</strong><span>Verified 5-star reviews</span></div>
+        <div><strong>DMV</strong><span>Titles &amp; registration agent</span></div>
+        <div><strong>Local</strong><span>Serving Pleasant Mount &amp; beyond</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What We Handle</p>
+        <h2>Repair, inspection, and paperwork, under one roof</h2>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="services-grid">
+        <div class="service">
+          <h3>General Repair</h3>
+          <p>Brakes, suspension, exhaust, and everything under the hood, diagnosed straight and fixed once.</p>
+        </div>
+        <div class="service">
+          <h3>State Inspection</h3>
+          <p>PA state safety and emissions inspections, scheduled around your day, not ours.</p>
+        </div>
+        <div class="service">
+          <h3>Oil &amp; Fluid Service</h3>
+          <p>Routine maintenance that catches small problems before they become expensive ones.</p>
+        </div>
+        <div class="service">
+          <h3>DMV Title &amp; Registration</h3>
+          <p>An authorized DMV agent on site for titles, registrations, and the paperwork nobody enjoys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">The Shop</p>
+        <h2>A garage that knows every back road in Wayne County</h2>
+        <p>Hall's Auto sits on the Great Bend Turnpike in Pleasant Mount, where farm trucks, commuter cars, and everything in between rolls through the bay doors. The shop has built its name on straight answers and fair pricing, no upselling, no guesswork.</p>
+        <p>If it drives on PA-171 or the back roads around Wayne County, chances are Hall's has already fixed one just like it.</p>
+      </div>
+      <div class="dial">
+        <ul>
+          <li>Full diagnostics <span>&#10003;</span></li>
+          <li>State inspections <span>&#10003;</span></li>
+          <li>Title &amp; registration <span>&#10003;</span></li>
+          <li>Local, honest pricing <span>&#10003;</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get In Touch</p>
+        <h2>Call ahead or stop by the bay</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:5704482817">(570) 448-2817</a>
+          <p>1081 Great Bend Turnpike<br>Pleasant Mount, PA 18453</p>
+        </div>
+        <div class="card">
+          <h3>Shop Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Friday</span><span>8:00am &ndash; 5:00pm</span></div>
+          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Hall's Auto, Pleasant Mount, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

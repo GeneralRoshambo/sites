@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim's Kreamery | Ice Cream Shop in Union City, PA</title>
+<meta name="description" content="Kim's Kreamery serves soft-serve ice cream and frozen treats in Union City, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:#8fd0c4;
+    --pink:#f2a6c1;
+    --pink-deep:#936575;
+    --navy:#22344a;
+    --cream:#fdf7ee;
+    --white:#ffffff;
+    --line:#e8ded0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--navy);font-family:'Quicksand',sans-serif;line-height:1.6;}
+  h1,h2,h3{margin:0;}
+  .script{font-family:'Pacifico',cursive;font-weight:400;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--navy);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{background:var(--white);border-bottom:2px solid var(--mint);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Pacifico',cursive;font-size:1.5rem;text-decoration:none;color:var(--navy);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:0.94rem;color:var(--navy);}
+  .nav-cta{background:var(--pink-deep);color:var(--white)!important;padding:10px 20px;border-radius:24px;}
+  .burger{display:none;background:none;border:2px solid var(--navy);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0;}
+  @media (max-width:1080px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:2px solid var(--mint);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{
+    padding:80px 0 40px;background:var(--mint);color:var(--navy);text-align:center;position:relative;
+  }
+  .wave{
+    position:absolute;bottom:-1px;left:0;right:0;height:44px;
+    background:var(--cream);
+    clip-path: polygon(0 100%, 0 40%, 5% 60%, 10% 30%, 15% 60%, 20% 30%, 25% 60%, 30% 30%, 35% 60%, 40% 30%, 45% 60%, 50% 30%, 55% 60%, 60% 30%, 65% 60%, 70% 30%, 75% 60%, 80% 30%, 85% 60%, 90% 30%, 95% 60%, 100% 40%, 100% 100%);
+  }
+  .eyebrow{color:var(--navy);font-weight:600;font-size:0.9rem;opacity:0.75;}
+  h1{font-size:clamp(2.3rem,5.8vw,3.6rem);margin:16px auto 20px;max-width:16ch;font-family:'Quicksand',sans-serif;font-weight:700;}
+  .hero p.lead{max-width:46ch;margin:0 auto;font-size:1.08rem;}
+  .hero-cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:26px;padding-bottom:56px;}
+  .btn-primary{background:var(--navy);color:var(--white);padding:14px 28px;border-radius:24px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--navy);color:var(--navy);padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:700;}
+
+  section{padding:70px 0;}
+  .section-head{max-width:600px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.7rem,3vw,2.2rem);}
+
+  .flavors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .flavor{background:var(--white);border-radius:50% 50% 16px 16px / 30% 30% 16px 16px;padding:34px 20px 24px;text-align:center;border:2px solid var(--line);}
+  .flavor h3{font-size:1rem;margin-bottom:6px;color:var(--navy);}
+  .flavor p{margin:0;font-size:0.86rem;color:#5a5a4e;}
+  @media (max-width:860px){.flavors-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.flavors-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--navy);color:var(--cream);text-align:center;}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.06rem;}
+  .likes{
+    display:inline-block;margin-top:20px;background:var(--pink-deep);color:var(--white);
+    padding:10px 22px;border-radius:24px;font-weight:700;
+  }
+
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--white);border:2px solid var(--line);padding:32px;border-radius:20px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;}
+  .card a.tel{font-family:'Pacifico',cursive;font-size:1.5rem;color:var(--pink-deep);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--navy);color:#aebccb;padding:34px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Kim's Kreamery</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#flavors">Flavors</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:8144382200" class="nav-cta">(814) 438-2200</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Union City, PA</p>
+      <h1>Ice Cream Shop in Union City, PA</h1>
+      <p class="lead">Kim's Kreamery scoops soft-serve and frozen treats on Main Street, the stop Union City makes on a warm evening.</p>
+      <div class="hero-cta-row">
+        <a href="tel:8144382200" class="btn-primary">Call (814) 438-2200</a>
+        <a href="#flavors" class="btn-secondary">See What's Scooping</a>
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true"></div>
+  </section>
+
+  <section id="flavors">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--pink-deep);">On the Menu</p>
+        <h2>Soft-serve, done simple</h2>
+      </div>
+      <div class="flavors-grid">
+        <div class="flavor"><h3>Soft Serve</h3><p>Classic vanilla and chocolate twist cones.</p></div>
+        <div class="flavor"><h3>Sundaes</h3><p>Toppings piled high, built the way you want them.</p></div>
+        <div class="flavor"><h3>Milkshakes</h3><p>Thick, blended, and made to order.</p></div>
+        <div class="flavor"><h3>Seasonal Specials</h3><p>Rotating flavors that show up when the weather turns.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--pink);">Main Street Tradition</p>
+      <h2>Union City's summer stop</h2>
+      <p>Kim's Kreamery has become the walk-up window Union City counts on from noon until closing, a small-town scoop shop with a loyal Facebook following and a line out the window on warm nights.</p>
+      <span class="likes">865+ Facebook likes and counting</span>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--pink-deep);">Find Us</p>
+        <h2>Main Street, Union City</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:8144382200">(814) 438-2200</a>
+          <p>60 N Main St<br>Union City, PA 16438</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Every Day</span><span>12:00pm &ndash; 9:00pm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Kim's Kreamery, Union City, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
