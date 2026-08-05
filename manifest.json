@@ -835,5 +835,117 @@
     "category": "Ice Cream Shop",
     "region": "Erie",
     "added": "2026-08-05"
+  },
+  {
+    "slug": "taveras-shoe-repair",
+    "name": "Taveras Shoe Repair",
+    "location": "New York, NY",
+    "category": "Shoe Repair",
+    "region": "Manhattan",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "brooklyn-cleaner-tailor",
+    "name": "Brooklyn Cleaner & Tailor",
+    "location": "Brooklyn, NY",
+    "category": "Dry Cleaning & Tailoring",
+    "region": "Brooklyn",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "jj-tailor-souvenir",
+    "name": "J&J Tailor & Souvenir",
+    "location": "Jamaica, NY",
+    "category": "Tailor",
+    "region": "Queens",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "superior-custom-tailor",
+    "name": "Superior Custom Tailor",
+    "location": "Bronx, NY",
+    "category": "Tailor",
+    "region": "Bronx",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "victor-scalici-florist",
+    "name": "Victor Scalici Florist",
+    "location": "Staten Island, NY",
+    "category": "Florist",
+    "region": "StatenIsland",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "shields-florist",
+    "name": "Shields Florist",
+    "location": "Scranton, PA",
+    "category": "Florist",
+    "region": "Scranton",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "3-tiers-bakery",
+    "name": "3 Tiers Bakery",
+    "location": "Scranton, PA",
+    "category": "Bakery & Coffee Shop",
+    "region": "Scranton",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "howards-vac-and-sew",
+    "name": "Howard's Vac & Sew",
+    "location": "Scranton, PA",
+    "category": "Vacuum & Sewing Repair",
+    "region": "Scranton",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "pawn-shop-buy-and-sell",
+    "name": "Pawn Shop Buy and Sell",
+    "location": "Scranton, PA",
+    "category": "Pawn Shop",
+    "region": "Scranton",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "jeffs-trading-post-gold2cash",
+    "name": "Jeff's Trading Post - Gold2Cash",
+    "location": "Scranton, PA",
+    "category": "Gold Buyer",
+    "region": "Scranton",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "galatis-barber-shop",
+    "name": "Galati's Barber Shop",
+    "location": "Carbondale, PA",
+    "category": "Barber Shop",
+    "region": "Wallenpaupack",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "heads-up-hair-baby",
+    "name": "Heads Up Hair Baby",
+    "location": "Matamoras, PA",
+    "category": "Hair Salon",
+    "region": "DelawareValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "number-one-nails",
+    "name": "Number One Nails",
+    "location": "Port Jervis, NY",
+    "category": "Nail Salon",
+    "region": "HudsonValley",
+    "added": "2026-08-05"
+  },
+  {
+    "slug": "harborcreek-hairlines",
+    "name": "Harborcreek Hairlines",
+    "location": "Harborcreek, PA",
+    "category": "Beauty Salon",
+    "region": "Erie",
+    "added": "2026-08-05"
   }
 ]

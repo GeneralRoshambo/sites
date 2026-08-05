@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galati's Barber Shop | Barber Shop in Carbondale, PA</title>
+<meta name="description" content="Galati's Barber Shop offers classic cuts and shaves on Salem Avenue in Carbondale, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#a5322a;
+    --navy:#1c2b45;
+    --cream:#f4efe3;
+    --white:#fffdf8;
+    --ink:#232323;
+    --line:#ddd6c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Nunito Sans',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Staatliches',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.02em;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .pole-stripe{height:6px;background:repeating-linear-gradient(115deg, var(--red) 0 10px, var(--white) 10px 20px, var(--navy) 20px 30px);}
+
+  header{background:var(--navy);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Staatliches',sans-serif;font-size:1.3rem;text-decoration:none;color:var(--white);letter-spacing:0.02em;}
+  .brand span{color:var(--red);}
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.94rem;color:var(--cream);}
+  .nav-cta{background:var(--red);color:var(--white)!important;padding:10px 20px;border-radius:2px;}
+  .burger{display:none;background:none;border:2px solid var(--cream);border-radius:4px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--cream);margin:4px 0;}
+  @media (max-width:1080px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:10px 24px 22px;}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;}
+  }
+
+  .hero{padding:84px 0 58px;background:var(--white);}
+  .eyebrow{color:var(--red);font-weight:700;font-size:0.9rem;letter-spacing:0.03em;font-family:'Nunito Sans',sans-serif;text-transform:uppercase;}
+  h1{font-size:clamp(2.3rem,5.8vw,3.6rem);margin:16px 0 20px;max-width:16ch;color:var(--navy);}
+  .hero p.lead{max-width:48ch;font-size:1.08rem;text-transform:none;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--red);color:var(--white);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:0.9rem;}
+  .btn-secondary{border:2px solid var(--navy);color:var(--navy);padding:12px 26px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:0.9rem;}
+
+  section{padding:66px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.7rem,3.2vw,2.2rem);color:var(--navy);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .service{background:var(--white);padding:28px 22px;text-align:center;}
+  .service h3{font-family:'Nunito Sans',sans-serif;font-weight:700;text-transform:none;font-size:1.05rem;margin-bottom:8px;color:var(--red);}
+  .service p{margin:0;font-size:0.92rem;color:#4a4640;}
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--navy);color:var(--cream);text-align:center;}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.05rem;text-transform:none;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:32px;text-align:center;}
+  .card h3{font-size:1.05rem;margin-bottom:14px;color:var(--navy);}
+  .card p.note{font-family:'Nunito Sans',sans-serif;text-transform:none;font-size:0.94rem;color:#4a4640;margin-top:8px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;text-transform:none;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--navy);color:#c3c8d4;padding:34px 0;font-size:0.88rem;text-transform:none;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Galati's <span>Barber Shop</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+  </nav>
+  <div class="pole-stripe" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Salem Avenue &middot; Carbondale</p>
+      <h1>Barber Shop in Carbondale, PA</h1>
+      <p class="lead">Galati's Barber Shop has kept Carbondale's cuts sharp and its shaves close from a Salem Avenue chair that regulars have trusted for years.</p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-primary">Get Directions</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--red);">In the Chair</p>
+        <h2>Classic cuts, done right</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Haircuts</h3><p>Classic and modern cuts for every age.</p></div>
+        <div class="service"><h3>Straight Razor Shaves</h3><p>A traditional hot towel shave finished with a straight razor.</p></div>
+        <div class="service"><h3>Beard Trims</h3><p>Beard shaping and line-ups to finish the look.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#e8b8ad;">Salem Avenue</p>
+      <h2>A Carbondale chair worth the wait</h2>
+      <p>Galati's Barber Shop has kept the same steady hand on Salem Avenue, the kind of shop where three generations of the same family still get their hair cut.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--navy);">Stop By</p>
+        <h2>Walk-ins welcome</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Find the Shop</h3>
+          <p class="note">15 Salem Ave<br>Carbondale, PA 18407</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Tuesday &ndash; Saturday</span><span>8:00am &ndash; 5:00pm</span></div>
+          <div class="hours-row"><span>Sunday &amp; Monday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Galati's Barber Shop, Carbondale, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

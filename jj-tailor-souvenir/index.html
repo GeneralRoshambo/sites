@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&J Tailor & Souvenir | Alterations & Tailoring in Jamaica, Queens</title>
+<meta name="description" content="J&J Tailor & Souvenir offers same-day alterations, custom tailoring, and souvenirs on 163rd Street in Jamaica, Queens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1f2f4d;
+    --gold-thread:#7c5d1a;
+    --cream:#f5efdf;
+    --white:#fffdf7;
+    --ink:#20242e;
+    --line:#dcd2b8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Karla',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Domine',serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold-thread);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .swatches{display:flex;height:6px;}
+  .swatches span{flex:1;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Domine',serif;font-size:1.25rem;font-weight:600;text-decoration:none;color:var(--navy);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 20px;border-radius:4px;}
+  .burger{display:none;background:none;border:2px solid var(--navy);border-radius:6px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0;}
+  @media (max-width:1120px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:80px 0 56px;background:var(--white);}
+  .eyebrow{color:var(--gold-thread);font-weight:700;font-size:0.9rem;letter-spacing:0.03em;}
+  h1{font-size:clamp(2.2rem,5.6vw,3.5rem);margin:16px 0 20px;max-width:17ch;color:var(--navy);}
+  .hero p.lead{max-width:48ch;font-size:1.08rem;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--navy);color:var(--white);padding:14px 28px;border-radius:4px;text-decoration:none;font-weight:600;}
+  .btn-secondary{border:2px solid var(--navy);color:var(--navy);padding:12px 26px;border-radius:4px;text-decoration:none;font-weight:600;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.65rem,3.2vw,2.15rem);color:var(--navy);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service{background:var(--white);border:1px solid var(--line);padding:28px 22px;border-radius:6px;}
+  .service h3{font-family:'Karla',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px;color:var(--navy);}
+  .service p{margin:0;font-size:0.92rem;color:#4a4636;}
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--navy);color:var(--cream);}
+  .about .wrap{max-width:700px;text-align:center;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.05rem;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:32px;border-radius:6px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--navy);}
+  .card a.tel{font-family:'Domine',serif;font-size:1.5rem;color:var(--gold-thread);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--ink);color:#c7c3b3;padding:34px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="swatches" aria-hidden="true">
+    <span style="background:#1f2f4d"></span><span style="background:#c99a3f"></span><span style="background:#8f2f3a"></span><span style="background:#2f6b4f"></span>
+  </div>
+  <nav class="nav">
+    <a href="#top" class="brand">J&amp;J Tailor &amp; Souvenir</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:3476174935" class="nav-cta">(347) 617-4935</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">163rd Street &middot; Jamaica</p>
+      <h1>Alterations & Custom Tailoring in Jamaica, Queens</h1>
+      <p class="lead">J&J Tailor & Souvenir fits and finishes garments the same day, right alongside the small gift counter that's made the shop a neighborhood stop for two things at once.</p>
+      <div class="hero-cta-row">
+        <a href="tel:3476174935" class="btn-primary">Call (347) 617-4935</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On the Table</p>
+        <h2>Fit, hem, and finish</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Same-Day Alterations</h3><p>Hems, waists, and quick fixes turned around while you wait.</p></div>
+        <div class="service"><h3>Custom Tailoring</h3><p>Garments built and fitted to your exact measurements.</p></div>
+        <div class="service"><h3>Souvenirs & Gifts</h3><p>A small counter of gifts and souvenirs for the neighborhood.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#e8c98a;">Jamaica Avenue Corridor</p>
+      <h2>Two counters, one neighborhood shop</h2>
+      <p>J&J Tailor & Souvenir has built a following on 163rd Street by doing both jobs well, sharp needlework on one side of the shop and a friendly gift counter on the other.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Bring It In</p>
+        <h2>Open Monday through Saturday</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:3476174935">(347) 617-4935</a>
+          <p>163-02 163rd St<br>Jamaica, NY 11432</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>8:30am &ndash; 6:30pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 J&J Tailor & Souvenir, Jamaica, Queens</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shields Florist | Florist in Scranton, PA</title>
+<meta name="description" content="Shields Florist arranges fresh flowers and gifts for Scranton, PA from North Main Avenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#2f6b6a;
+    --coral:#e17b56;
+    --coral-deep:#b25a3c;
+    --cream:#f7f1e6;
+    --white:#fffdf9;
+    --ink:#252b26;
+    --line:#dcd4bf;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Rubik',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Spectral',serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--coral-deep);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .stem{height:5px;background:repeating-linear-gradient(90deg, var(--teal) 0 22px, transparent 22px 34px);}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Spectral',serif;font-size:1.4rem;font-weight:600;text-decoration:none;color:var(--teal);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .nav-cta{background:var(--coral-deep);color:var(--white)!important;padding:10px 20px;border-radius:6px;}
+  .burger{display:none;background:none;border:2px solid var(--teal);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--teal);margin:4px 0;}
+  @media (max-width:1120px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:82px 0 58px;background:var(--white);}
+  .eyebrow{color:var(--coral-deep);font-weight:600;font-size:0.9rem;letter-spacing:0.03em;}
+  h1{font-size:clamp(2.4rem,6vw,3.7rem);margin:16px 0 20px;max-width:16ch;color:var(--teal);}
+  .hero p.lead{max-width:48ch;font-size:1.1rem;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--teal);color:var(--white);padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--teal);color:var(--teal);padding:12px 26px;border-radius:6px;text-decoration:none;font-weight:700;}
+
+  section{padding:68px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.9rem,3.4vw,2.4rem);color:var(--teal);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service{background:var(--white);border:1px solid var(--line);padding:28px 22px;border-radius:8px;}
+  .service h3{font-size:1.05rem;margin-bottom:8px;color:var(--coral-deep);}
+  .service p{margin:0;font-size:0.92rem;color:#4a4a3e;}
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--teal);color:var(--cream);text-align:center;}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.06rem;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:32px;border-radius:8px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--teal);}
+  .card a.tel{font-family:'Spectral',serif;font-size:1.6rem;color:var(--coral-deep);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--teal);color:#d6e6e3;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Shields Florist</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Arrangements</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Order</a></li>
+      <li><a href="tel:5703446992" class="nav-cta">(570) 344-6992</a></li>
+    </ul>
+  </nav>
+  <div class="stem" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">North Main Avenue &middot; Scranton</p>
+      <h1>Florist in Scranton, PA</h1>
+      <p class="lead">Shields Florist puts together fresh arrangements for Scranton weddings, funerals, and everyday gifts, right off North Main Avenue.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5703446992" class="btn-primary">Call (570) 344-6992</a>
+        <a href="#services" class="btn-secondary">See Arrangements</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--teal);">By Occasion</p>
+        <h2>Fresh flowers for every occasion</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Weddings</h3><p>Bouquets, centerpieces, and full wedding flower packages.</p></div>
+        <div class="service"><h3>Sympathy & Funeral</h3><p>Arrangements delivered with care for services and wakes.</p></div>
+        <div class="service"><h3>Everyday Gifts</h3><p>Bouquets and plants for birthdays and every other occasion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#f6ded1;">North Main Avenue</p>
+      <h2>Scranton's neighborhood florist</h2>
+      <p>Shields Florist has been the shop Scranton families call first, whether it's a wedding to plan for or flowers needed on short notice.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--coral-deep);">Place an Order</p>
+        <h2>Call ahead or stop by</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:5703446992">(570) 344-6992</a>
+          <p>1808 N Main Ave<br>Scranton, PA 18508</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>9:00am &ndash; 5:00pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Shields Florist, Scranton, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

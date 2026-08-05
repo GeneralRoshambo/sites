@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taveras Shoe Repair | Shoe & Leather Repair in Harlem, New York</title>
+<meta name="description" content="Taveras Shoe Repair offers cobbler services, leather repair, and shoe shines on 145th Street in Harlem, New York.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --chestnut:#5c3a28;
+    --brass:#7a5420;
+    --cream:#f6ecdd;
+    --white:#fffdf9;
+    --ink:#2c2018;
+    --line:#ddccb0;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Work Sans',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Lora',serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--brass);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .stitch{background-image:repeating-linear-gradient(90deg, var(--brass) 0 10px, transparent 10px 20px);height:3px;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Lora',serif;font-size:1.35rem;font-weight:600;text-decoration:none;color:var(--chestnut);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .nav-cta{background:var(--chestnut);color:var(--white)!important;padding:10px 20px;border-radius:2px;}
+  .burger{display:none;background:none;border:2px solid var(--chestnut);border-radius:6px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--chestnut);margin:4px 0;}
+  @media (max-width:1120px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:82px 0 60px;background:var(--white);}
+  .eyebrow{color:var(--brass);font-weight:600;font-size:0.9rem;letter-spacing:0.03em;}
+  h1{font-size:clamp(2.3rem,5.8vw,3.6rem);margin:16px 0 20px;max-width:16ch;color:var(--chestnut);}
+  .hero p.lead{max-width:48ch;font-size:1.08rem;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--chestnut);color:var(--white);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:600;}
+  .btn-secondary{border:2px solid var(--chestnut);color:var(--chestnut);padding:12px 26px;border-radius:2px;text-decoration:none;font-weight:600;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.7rem,3.2vw,2.2rem);color:var(--chestnut);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .service{background:var(--white);padding:30px 22px;}
+  .service h3{font-family:'Work Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:8px;color:var(--chestnut);}
+  .service p{margin:0;font-size:0.92rem;color:#4a3a2c;}
+  @media (max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--chestnut);color:var(--cream);}
+  .about .wrap{max-width:700px;text-align:center;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.05rem;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:32px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--chestnut);}
+  .card a.tel{font-family:'Lora',serif;font-size:1.5rem;color:var(--brass);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--ink);color:#cabfa8;padding:34px 0;font-size:0.88rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Taveras Shoe Repair</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:2122344422" class="nav-cta">(212) 234-4422</a></li>
+    </ul>
+  </nav>
+  <div class="stitch" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">145th Street &middot; Harlem</p>
+      <h1>Shoe & Leather Repair in Harlem, New York</h1>
+      <p class="lead">Taveras Shoe Repair has kept Harlem's shoes, boots, and bags in shape for decades, with the kind of hand work that a machine can't match.</p>
+      <div class="hero-cta-row">
+        <a href="tel:2122344422" class="btn-primary">Call (212) 234-4422</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On the Bench</p>
+        <h2>Repairs done by hand</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Sole Replacement</h3><p>Full and half sole repairs that add years to a good pair of shoes.</p></div>
+        <div class="service"><h3>Heel Repair</h3><p>Heel tips and full heel rebuilds for boots and dress shoes alike.</p></div>
+        <div class="service"><h3>Leather & Bag Repair</h3><p>Stitching, zippers, and strap repair for bags and leather goods.</p></div>
+        <div class="service"><h3>Shoe Shine</h3><p>A proper polish and shine to finish the job right.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#e0c090;">West 145th Street</p>
+      <h2>A Harlem cobbler for the long haul</h2>
+      <p>Taveras Shoe Repair works out of a small storefront between Frederick Douglass and Adam Clayton Powell Jr. Boulevards, the kind of shop neighbors bring their good shoes back to instead of buying new ones.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Bring It In</p>
+        <h2>Open Monday through Saturday</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:2122344422">(212) 234-4422</a>
+          <p>227 W 145th St<br>New York, NY 10039</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>8:30am &ndash; 6:30pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Taveras Shoe Repair, Harlem, New York</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff's Trading Post - Gold2Cash | Gold Buyer in Scranton, PA</title>
+<meta name="description" content="Jeff's Trading Post - Gold2Cash buys gold, silver, and jewelry on Adams Avenue in Scranton, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#1c1a17;
+    --gold:#d4af5a;
+    --gold-deep:#7a5920;
+    --cream:#f3ede0;
+    --white:#fffcf6;
+    --line:#ded6c1;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--black);font-family:'Karla',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.02em;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold-deep);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .ingot{height:6px;background:linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 50%, var(--gold) 100%);}
+
+  header{background:var(--black);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Oswald',sans-serif;font-size:1.25rem;text-transform:uppercase;text-decoration:none;color:var(--gold);letter-spacing:0.03em;}
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.92rem;color:var(--cream);}
+  .nav-cta{background:var(--gold);color:var(--black)!important;padding:10px 20px;}
+  .burger{display:none;background:none;border:2px solid var(--gold);padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--gold);margin:4px 0;}
+  @media (max-width:1080px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--black);padding:10px 24px 22px;}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1);width:100%;}
+  }
+
+  .hero{padding:80px 0 58px;background:var(--white);}
+  .eyebrow{color:var(--gold-deep);font-weight:700;font-size:0.88rem;letter-spacing:0.04em;text-transform:uppercase;font-family:'Karla',sans-serif;}
+  h1{font-size:clamp(2.2rem,5.4vw,3.4rem);margin:16px 0 20px;max-width:16ch;}
+  .hero p.lead{max-width:48ch;font-size:1.06rem;text-transform:none;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--black);color:var(--white);padding:14px 28px;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:0.9rem;letter-spacing:0.02em;}
+  .btn-secondary{border:2px solid var(--black);color:var(--black);padding:12px 26px;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:0.9rem;letter-spacing:0.02em;}
+
+  section{padding:66px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem);color:var(--black);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service{background:var(--white);border:1px solid var(--line);padding:28px 22px;text-align:center;}
+  .service h3{font-size:1rem;margin-bottom:8px;color:var(--gold-deep);}
+  .service p{margin:0;font-size:0.92rem;color:#4a463c;text-transform:none;}
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--black);color:var(--cream);text-align:center;}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--gold);}
+  .about p{color:var(--cream);font-size:1.04rem;text-transform:none;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:32px;text-align:center;}
+  .card h3{font-size:1rem;margin-bottom:14px;color:var(--black);}
+  .card a.tel{font-family:'Oswald',sans-serif;font-size:1.5rem;color:var(--gold-deep);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.92rem;text-transform:none;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--black);color:#b9b2a0;padding:34px 0;font-size:0.86rem;text-transform:none;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--gold);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Gold2Cash</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:5708810386" class="nav-cta">(570) 881-0386</a></li>
+    </ul>
+  </nav>
+  <div class="ingot" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Adams Avenue &middot; Scranton</p>
+      <h1>Gold Buyer in Scranton, PA</h1>
+      <p class="lead">Jeff's Trading Post - Gold2Cash pays cash on the spot for gold, silver, and jewelry out of a storefront on Adams Avenue, weighed and priced while you wait.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5708810386" class="btn-primary">Call (570) 881-0386</a>
+        <a href="#services" class="btn-secondary">See What We Buy</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What We Buy</p>
+        <h2>Gold, silver, and jewelry</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Gold & Silver</h3><p>Coins, bullion, and scrap weighed and paid out on the spot.</p></div>
+        <div class="service"><h3>Jewelry</h3><p>Rings, chains, and estate pieces bought at a fair price.</p></div>
+        <div class="service"><h3>Watches & Coins</h3><p>Watches and coin collections evaluated and purchased.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold);">Adams Avenue</p>
+      <h2>A fast, honest weigh-in</h2>
+      <p>Jeff's Trading Post - Gold2Cash has built its name on Adams Avenue by giving straight numbers on the spot, no pressure to sell if the offer isn't right.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Stop By</p>
+        <h2>Open Monday through Saturday</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:5708810386">(570) 881-0386</a>
+          <p>301 Adams Ave<br>Scranton, PA 18503</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>10:00am &ndash; 6:00pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Jeff's Trading Post - Gold2Cash, Scranton, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

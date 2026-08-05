@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawn Shop Buy and Sell | Pawn Shop in Scranton, PA</title>
+<meta name="description" content="Pawn Shop Buy and Sell offers pawn loans, buying, and selling on Cedar Avenue in Scranton, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1f4d3a;
+    --gold:#c8a13a;
+    --gold-text:#7a5f18;
+    --charcoal:#232323;
+    --cream:#f2efe4;
+    --white:#fffdf7;
+    --line:#d8d3bf;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--charcoal);font-family:'Barlow',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0.02em;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .chain{height:5px;background:repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 16px, var(--forest) 16px 20px, transparent 20px 32px);}
+
+  header{background:var(--charcoal);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.03em;text-decoration:none;color:var(--white);}
+  .brand span{color:var(--gold);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:600;font-size:0.95rem;color:var(--cream);}
+  .nav-cta{background:var(--gold);color:var(--charcoal)!important;padding:10px 20px;border-radius:2px;}
+  .burger{display:none;background:none;border:2px solid var(--cream);border-radius:4px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--cream);margin:4px 0;}
+  @media (max-width:1100px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--charcoal);padding:10px 24px 22px;}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.12);width:100%;}
+  }
+
+  .hero{padding:82px 0 60px;background:var(--charcoal);color:var(--white);}
+  .eyebrow{color:var(--gold);font-weight:600;font-size:0.92rem;letter-spacing:0.03em;font-family:'Barlow',sans-serif;}
+  h1{font-size:clamp(2.3rem,5.8vw,3.6rem);margin:16px 0 20px;max-width:16ch;}
+  .hero p.lead{max-width:48ch;font-size:1.1rem;color:#d9d5c8;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--gold);color:var(--charcoal);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;font-size:0.92rem;}
+  .btn-secondary{border:2px solid var(--gold);color:var(--gold);padding:12px 26px;border-radius:2px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;font-size:0.92rem;}
+
+  section{padding:70px 0;}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  h2{font-size:clamp(1.8rem,3.4vw,2.3rem);color:var(--forest);}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+  .service{background:var(--white);padding:30px 24px;}
+  .service h3{font-family:'Barlow',sans-serif;font-weight:700;text-transform:none;font-size:1.05rem;margin-bottom:8px;color:var(--forest);}
+  .service p{margin:0;font-size:0.94rem;color:#4a4a42;}
+  @media (max-width:800px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--forest);color:var(--cream);}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--white);}
+  .about p{color:#dce8de;font-size:1.05rem;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  .card{background:var(--cream);border:1px solid var(--line);padding:34px;}
+  .card h3{font-family:'Barlow',sans-serif;font-weight:700;text-transform:none;font-size:1.05rem;margin-bottom:14px;}
+  .card a.tel{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--forest);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--charcoal);color:#b9b5a8;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Pawn Shop <span>Buy and Sell</span></a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:5709099533" class="nav-cta">(570) 909-9533</a></li>
+    </ul>
+  </nav>
+  <div class="chain" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Cedar Avenue &middot; Scranton</p>
+      <h1>Pawn Shop in Scranton, PA</h1>
+      <p class="lead">Pawn Shop Buy and Sell offers straightforward pawn loans and cash for gold, electronics, and tools right on Cedar Avenue, no appointment needed.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5709099533" class="btn-primary">Call (570) 909-9533</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--gold-text);">Walk In</p>
+        <h2>Loans, buying, and selling</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service"><h3>Pawn Loans</h3><p>Fast cash loans against gold, tools, and electronics.</p></div>
+        <div class="service"><h3>We Buy</h3><p>Straightforward cash offers on gold, jewelry, and more.</p></div>
+        <div class="service"><h3>We Sell</h3><p>A rotating selection of gold, tools, and electronics for sale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#e6cd8f;">Cedar Avenue</p>
+      <h2>Straight answers, fair offers</h2>
+      <p>Pawn Shop Buy and Sell has built a name on Cedar Avenue for treating every customer the same way, a fair look and a fast answer, no runaround.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--forest);">Come By</p>
+        <h2>Open six days a week</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach the Shop</h3>
+          <a class="tel" href="tel:5709099533">(570) 909-9533</a>
+          <p>403 Cedar Ave<br>Scranton, PA 18505</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &ndash; Saturday</span><span>10:00am &ndash; 6:00pm</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Pawn Shop Buy and Sell, Scranton, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

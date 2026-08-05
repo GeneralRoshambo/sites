@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Tiers Bakery | Bakery & Coffee Shop in Scranton, PA</title>
+<meta name="description" content="3 Tiers Bakery serves scratch-made Hispanic pastries and coffee in downtown Scranton, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracotta:#9c4a2c;
+    --mustard:#d9a441;
+    --brown:#432c22;
+    --cream:#faefdd;
+    --white:#fffaf2;
+    --line:#e8d5b8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--brown);font-family:'Nunito',sans-serif;line-height:1.6;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;}
+  a{color:inherit;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--terracotta);outline-offset:2px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .tiers{height:8px;display:flex;}
+  .tiers span{flex:1;}
+
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .brand{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;text-decoration:none;color:var(--terracotta);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;align-items:center;}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:0.95rem;color:var(--brown);}
+  .nav-cta{background:var(--terracotta);color:var(--white)!important;padding:10px 20px;border-radius:24px;}
+  .burger{display:none;background:none;border:2px solid var(--terracotta);border-radius:8px;padding:8px 10px;cursor:pointer;}
+  .burger span{display:block;width:22px;height:2px;background:var(--terracotta);margin:4px 0;}
+  @media (max-width:1120px){
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--white);padding:10px 24px 22px;border-bottom:1px solid var(--line);}
+    .nav-links.open li{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  .hero{padding:82px 0 58px;background:var(--white);}
+  .eyebrow{color:var(--terracotta);font-weight:700;font-size:0.9rem;letter-spacing:0.03em;}
+  h1{font-size:clamp(2.4rem,6vw,3.7rem);margin:16px 0 20px;max-width:16ch;}
+  .hero p.lead{max-width:48ch;font-size:1.1rem;}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;}
+  .btn-primary{background:var(--terracotta);color:var(--white);padding:14px 28px;border-radius:24px;text-decoration:none;font-weight:700;}
+  .btn-secondary{border:2px solid var(--terracotta);color:var(--terracotta);padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:700;}
+
+  section{padding:68px 0;}
+  .section-head{max-width:620px;margin:0 auto 40px;text-align:center;}
+  h2{font-size:clamp(1.9rem,3.4vw,2.4rem);color:var(--terracotta);}
+
+  .menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .item{background:var(--white);border-radius:14px;padding:26px 20px;border:2px solid var(--line);text-align:center;}
+  .item h3{font-size:1.02rem;margin-bottom:8px;color:var(--brown);}
+  .item p{margin:0;font-size:0.88rem;color:#5a4c3e;}
+  @media (max-width:900px){.menu-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.menu-grid{grid-template-columns:1fr;}}
+
+  .about{background:var(--brown);color:var(--cream);text-align:center;}
+  .about .wrap{max-width:700px;}
+  .about h2{color:var(--white);}
+  .about p{color:var(--cream);font-size:1.06rem;}
+
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:760px;margin:0 auto;}
+  .card{background:var(--cream);border:2px solid var(--line);padding:32px;border-radius:14px;text-align:center;}
+  .card h3{font-size:1.1rem;margin-bottom:14px;color:var(--terracotta);}
+  .card a.tel{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--mustard);text-decoration:none;display:inline-block;margin-bottom:10px;}
+  .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:0.94rem;}
+  .hours-row:last-child{border-bottom:none;}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  footer{background:var(--brown);color:#e2cdb5;padding:34px 0;font-size:0.9rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--cream);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">3 Tiers Bakery</a>
+    <button class="burger" aria-label="Toggle navigation" aria-expanded="false" onclick="var l=document.getElementById('navlinks');var open=l.classList.toggle('open');this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li><a href="tel:5702402137" class="nav-cta">(570) 240-2137</a></li>
+    </ul>
+  </nav>
+  <div class="tiers" aria-hidden="true">
+    <span style="background:#c4623c"></span><span style="background:#d9a441"></span><span style="background:#432c22"></span>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Downtown Scranton</p>
+      <h1>Bakery & Coffee Shop in Scranton, PA</h1>
+      <p class="lead">3 Tiers Bakery bakes Hispanic pastries and pours coffee from a storefront on Washington Avenue, made from scratch every morning.</p>
+      <div class="hero-cta-row">
+        <a href="tel:5702402137" class="btn-primary">Call (570) 240-2137</a>
+        <a href="#menu" class="btn-secondary">See the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--terracotta);">Fresh Daily</p>
+        <h2>Made from scratch, every morning</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="item"><h3>Pastries</h3><p>Hand-made sweet breads and pastries baked fresh each day.</p></div>
+        <div class="item"><h3>Custom Cakes</h3><p>Layer cakes and specialty orders for any celebration.</p></div>
+        <div class="item"><h3>Coffee & Drinks</h3><p>Coffee, cafecito, and drinks to go with anything on the counter.</p></div>
+        <div class="item"><h3>Savory Bites</h3><p>Empanadas and other savory snacks made in house.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--mustard);">Downtown Washington Avenue</p>
+      <h2>A taste of home in downtown Scranton</h2>
+      <p>3 Tiers Bakery has filled a downtown Scranton corner with Hispanic baking and fresh coffee, becoming a daily stop for anyone craving something made from scratch.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="color:var(--terracotta);">Stop By</p>
+        <h2>Downtown Scranton</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Us</h3>
+          <a class="tel" href="tel:5702402137">(570) 240-2137</a>
+          <p>349 N Washington Ave<br>Scranton, PA 18503</p>
+        </div>
+        <div class="card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Tuesday &ndash; Sunday</span><span>7:00am &ndash; 4:00pm</span></div>
+          <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 3 Tiers Bakery, Scranton, PA</span>
+    <span>Demo site by <a href="https://modularitynet.com">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
