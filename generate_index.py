@@ -14,18 +14,36 @@ REGION_LABELS = {
     "DelawareValley": "Delaware Valley",
     "HudsonValley": "Hudson Valley",
     "Erie": "Erie Area",
+    "NYC": "NYC",
 }
 REGION_ORDER = ["Wallenpaupack", "DelawareValley", "HudsonValley", "Erie"]
+
+# The five NYC boroughs each carry their own region value in manifest.json
+# (for accurate per-borough record-keeping), but share a single "NYC" tab in
+# the gallery. Each card still shows its own borough/neighborhood via the
+# location field, so nothing is lost by collapsing the tab.
+NYC_BOROUGHS = {"Manhattan", "Brooklyn", "Queens", "Bronx", "StatenIsland"}
+
+# Pseudo-region for older, unrelated demo batches (non-NE-PA/NYC). Always
+# sorted to the end of the tab bar regardless of where it first appears in
+# manifest.json.
+CATCH_ALL_REGION = "More"
+
+def tab_key_for(region):
+    return "NYC" if region in NYC_BOROUGHS else region
 
 by_region = OrderedDict()
 for s in sites:
     region = s.get("region") or "Wallenpaupack"
-    by_region.setdefault(region, []).append(s)
+    by_region.setdefault(tab_key_for(region), []).append(s)
 
 # Always show every known region, even ones with zero sites yet, in a stable order;
-# append any unexpected regions found in the data after.
+# append any unexpected regions found in the data after, with the catch-all
+# "More" region always pinned last.
 ordered_regions = list(REGION_ORDER)
-ordered_regions += [r for r in by_region if r not in REGION_ORDER]
+ordered_regions += [r for r in by_region if r not in REGION_ORDER and r != CATCH_ALL_REGION]
+if CATCH_ALL_REGION in by_region:
+    ordered_regions.append(CATCH_ALL_REGION)
 
 def card_html(s):
     search_blob = f"{s['name']} {s['category']} {s['location']}".lower()
