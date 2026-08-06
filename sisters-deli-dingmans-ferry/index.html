@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sister's Deli and Convenience Store | Dingmans Ferry, PA</title>
+<meta name="description" content="The last stop before the river trailheads: deli sandwiches, cold drinks, and the convenience essentials day-trippers always forget to pack.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Vollkorn:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+      --cream: #ECF1EF;
+      --riverblue: #2E5266;
+      --canoewood: #8C5A3C;
+      --amber: #E8A33D;
+      --pine: #263229;
+      --bg: var(--cream);
+      --ink: var(--pine);
+      --accent: var(--riverblue);
+      --bold: var(--canoewood);
+      --accent2: var(--amber);
+      --display-font: 'DM Serif Display', serif;
+      --body-font: 'Vollkorn', sans-serif;
+      --utility-font: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; position: relative;
+  }
+  .brand {
+    font-family: var(--display-font); font-size: 1.625rem; font-weight: 700; line-height: 1.4;
+    white-space: nowrap; text-decoration: none; flex-shrink: 0;
+  }
+  nav.links { display: flex; gap: 28px; align-items: center; }
+  nav.links a { text-decoration: none; font-size: 1rem; font-weight: 500; line-height: 1.4; }
+  nav.links a.nav-cta {
+    padding: 9px 18px; border-radius: 3px;
+    background: var(--accent); color: #FFFFFF;
+    font-weight: 600;
+  }
+  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--ink); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg);
+      flex-direction: column; align-items: flex-start;
+      padding: 16px 24px 24px; gap: 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+    }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  /* HERO */
+  .hero { padding: 64px 24px 56px; }
+  h1 {
+    font-family: var(--display-font); font-weight: 700; line-height: 1.38;
+    font-size: clamp(2.75rem, 5.6vw, 4.25rem); margin: 0 0 22px; max-width: 16ch;
+  }
+  .lede { font-size: 1.25rem; max-width: 52ch; margin: 0 0 30px; line-height: 1.6; }
+  .about-copy { font-size: 1.0625rem; max-width: 62ch; margin: 0; line-height: 1.6; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .kicker {
+    font-family: var(--utility-font); font-size: 0.75rem; margin: 22px 0 0; color: var(--ink);
+  }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 3px;
+    text-decoration: none; font-weight: 600; font-size: 1rem; line-height: 1.4;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #FFFFFF; }
+  .btn-ghost { border-color: currentColor; }
+
+  .hero-split {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  }
+  .hero-art { padding: 20px; }
+  .sig-svg { width: 100%; height: auto; }
+
+  .hero-editorial { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
+  .hero-rule { margin: 24px 0 32px; max-width: 420px; }
+
+  .hero-block {
+    background: var(--bold); color: #FFFFFF;
+    margin: 0; padding: 72px 24px;
+  }
+  .hero-block .btn-ghost { border-color: #FFFFFF; }
+  .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
+  .hero-block .kicker { color: #FFFFFF; }
+  .hero-inner { max-width: 1120px; margin: 0 auto; }
+  .hero-sig { max-width: 1120px; margin: 32px auto 0; opacity: 0.95; }
+
+  /* SECTIONS */
+  section.block-section { padding: 56px 24px; }
+  h2 {
+    font-family: var(--display-font); font-size: clamp(2.125rem, 3.6vw, 2.75rem);
+    margin: 0 0 28px; font-weight: 700;
+  }
+  .services-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+  .services-list li {
+    padding: 16px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+    font-size: 1rem;
+  }
+  @media (max-width: 640px) {
+    .services-list { grid-template-columns: 1fr; }
+    .hero-split { grid-template-columns: 1fr; }
+  }
+
+  .about-section { background: color-mix(in srgb, var(--accent2) 14%, var(--bg)); }
+
+  footer {
+    background: var(--ink); color: var(--bg);
+    padding: 48px 24px 32px; margin-top: 24px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.625rem; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.7; }
+  footer a.footer-link { text-decoration: underline; color: var(--bg); }
+  .footer-bottom {
+    max-width: 1120px; margin: 32px auto 0; padding-top: 20px;
+    border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
+    font-family: var(--utility-font); font-size: 0.75rem; color: color-mix(in srgb, var(--bg) 80%, var(--ink) 20%);
+  }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Sister's Deli and Convenience Store</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:5708286885">(570) 828-6885</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+      <section class="hero hero-split">
+        <div class="hero-copy">
+          <h1>Deli and Convenience Store in Dingmans Ferry, PA</h1>
+          <p class="lede">The last stop before the river trailheads: deli sandwiches, cold drinks, and the convenience essentials day-trippers always forget to pack.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:5708286885">Call (570) 828-6885</a>
+            <a class="btn btn-ghost" href="#contact">Get Directions</a>
+          </div>
+          <p class="kicker">Deli / Convenience Store, Dingmans Ferry, PA</p>
+        </div>
+        <div class="hero-art"><svg viewBox="0 0 300 100" class="sig-svg" role="img" aria-label="River stone cairn and wavy river line">
+      <path d="M0 85 Q75 65 150 85 T300 85" fill="none" stroke="var(--accent)" stroke-width="3"/>
+      <ellipse cx="240" cy="60" rx="22" ry="9" fill="var(--bold)"/>
+      <ellipse cx="240" cy="45" rx="17" ry="8" fill="var(--accent2)"/>
+      <ellipse cx="240" cy="32" rx="11" ry="6" fill="var(--ink)"/>
+    </svg></div>
+      </section>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2>About Sister's Deli and Convenience Store</h2>
+      <p class="about-copy">The last stop before the river trailheads: deli sandwiches, cold drinks, and the convenience essentials day-trippers always forget to pack. Find us at 229 Silver Lake Rd, Dingmans Ferry, PA 18328, serving Dingmans Ferry, PA and the surrounding area.</p>
+    </div>
+  </section>
+
+  <section id="services" class="block-section">
+    <div class="wrap">
+      <h2>Services</h2>
+      <ul class="services-list">
+        <li>Made-to-order deli sandwiches</li>
+            <li>Coffee and cold drinks</li>
+            <li>Camping and trail essentials</li>
+            <li>Ice and firewood</li>
+            <li>Lottery and ATM</li>
+            <li>Open early for river traffic</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Sister's Deli and Convenience Store</h3>
+      <address>
+        229 Silver Lake Rd, Dingmans Ferry, PA 18328<br><a class='footer-link' href='tel:5708286885'>(570) 828-6885</a><br>
+      </address>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <p>Call ahead for current hours.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Sister's Deli and Convenience Store. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>

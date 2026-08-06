@@ -947,5 +947,117 @@
     "category": "Beauty Salon",
     "region": "Erie",
     "added": "2026-08-05"
+  },
+  {
+    "slug": "andrade-shoe-repair-manhattan",
+    "name": "Andrade Shoe Repair Corporation",
+    "location": "Upper East Side, Manhattan",
+    "category": "Shoe Repair",
+    "region": "Manhattan",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "brooklyn-barbers-ny",
+    "name": "Brooklyn Barbers NY",
+    "location": "Borough Park, Brooklyn",
+    "category": "Barber Shop",
+    "region": "Brooklyn",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "jackson-tailors-queens",
+    "name": "Jackson Tailors",
+    "location": "Jackson Heights, Queens",
+    "category": "Tailor / Alterations",
+    "region": "Queens",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "mr-deli-bronx",
+    "name": "Mr Deli and Convenience (M&R Bronx Deli)",
+    "location": "Bronxdale, Bronx",
+    "category": "Deli / Convenience Store",
+    "region": "Bronx",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "town-square-deli-staten-island",
+    "name": "Town Square Deli",
+    "location": "Port Richmond, Staten Island",
+    "category": "Deli",
+    "region": "StatenIsland",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "international-deli-grocery-scranton",
+    "name": "International Deli & Grocery",
+    "location": "South Side, Scranton",
+    "category": "Latin Deli / Grocery",
+    "region": "Scranton",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "abes-kosher-deli-scranton",
+    "name": "Abe's Kosher Delicatessen",
+    "location": "Downtown Scranton",
+    "category": "Kosher Deli",
+    "region": "Scranton",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "la-mexicanita-scranton",
+    "name": "La Mexicanita Grocery Store",
+    "location": "South Side, Scranton",
+    "category": "Mexican Grocery",
+    "region": "Scranton",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "taqueria-oaxaca-scranton",
+    "name": "Taqueria Oaxaca",
+    "location": "South Side, Scranton",
+    "category": "Mexican Restaurant",
+    "region": "Scranton",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "ross-times-barber-scranton",
+    "name": "Ross' Times Barber Shop",
+    "location": "Green Ridge, Scranton",
+    "category": "Barber Shop",
+    "region": "Scranton",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "mane-creations-honesdale",
+    "name": "Mane Creations Salon",
+    "location": "Honesdale, PA",
+    "category": "Hair Salon",
+    "region": "Wallenpaupack",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "sisters-deli-dingmans-ferry",
+    "name": "Sister's Deli and Convenience Store",
+    "location": "Dingmans Ferry, PA",
+    "category": "Deli / Convenience Store",
+    "region": "DelawareValley",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "joddys-deli-bagel-middletown",
+    "name": "Joddy's Deli and Bagel",
+    "location": "Middletown, NY",
+    "category": "Deli / Bagel Shop",
+    "region": "HudsonValley",
+    "added": "2026-08-06"
+  },
+  {
+    "slug": "arnones-deli-erie",
+    "name": "Arnone's Deli",
+    "location": "Erie, PA",
+    "category": "Italian Deli",
+    "region": "Erie",
+    "added": "2026-08-06"
   }
 ]

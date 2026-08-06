@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joddy's Deli and Bagel | Middletown, NY</title>
+<meta name="description" content="Boiled and baked fresh every morning, Joddy's has been Middletown's early-hours stop for a proper bagel and a deli sandwich since long before the chains showed up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Figtree:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+      --cream: #EAEAE7;
+      --toasted: #8A4B24;
+      --everything: #B23A0A;
+      --poppyseed: #1E1B16;
+      --eggwash: #E8B23D;
+      --bg: var(--cream);
+      --ink: var(--poppyseed);
+      --accent: var(--everything);
+      --bold: var(--toasted);
+      --accent2: var(--eggwash);
+      --display-font: 'Zilla Slab', serif;
+      --body-font: 'Figtree', sans-serif;
+      --utility-font: 'Courier Prime', monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; position: relative;
+  }
+  .brand {
+    font-family: var(--display-font); font-size: 1.625rem; font-weight: 700; line-height: 1.4;
+    white-space: nowrap; text-decoration: none; flex-shrink: 0;
+  }
+  nav.links { display: flex; gap: 28px; align-items: center; }
+  nav.links a { text-decoration: none; font-size: 1rem; font-weight: 500; line-height: 1.4; }
+  nav.links a.nav-cta {
+    padding: 9px 18px; border-radius: 3px;
+    background: var(--accent); color: #FFFFFF;
+    font-weight: 600;
+  }
+  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--ink); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg);
+      flex-direction: column; align-items: flex-start;
+      padding: 16px 24px 24px; gap: 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+    }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  /* HERO */
+  .hero { padding: 64px 24px 56px; }
+  h1 {
+    font-family: var(--display-font); font-weight: 700; line-height: 1.38;
+    font-size: clamp(2.75rem, 5.6vw, 4.25rem); margin: 0 0 22px; max-width: 16ch;
+  }
+  .lede { font-size: 1.25rem; max-width: 52ch; margin: 0 0 30px; line-height: 1.6; }
+  .about-copy { font-size: 1.0625rem; max-width: 62ch; margin: 0; line-height: 1.6; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .kicker {
+    font-family: var(--utility-font); font-size: 0.75rem; margin: 22px 0 0; color: var(--ink);
+  }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 3px;
+    text-decoration: none; font-weight: 600; font-size: 1rem; line-height: 1.4;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #FFFFFF; }
+  .btn-ghost { border-color: currentColor; }
+
+  .hero-split {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  }
+  .hero-art { padding: 20px; }
+  .sig-svg { width: 100%; height: auto; }
+
+  .hero-editorial { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
+  .hero-rule { margin: 24px 0 32px; max-width: 420px; }
+
+  .hero-block {
+    background: var(--bold); color: #FFFFFF;
+    margin: 0; padding: 72px 24px;
+  }
+  .hero-block .btn-ghost { border-color: #FFFFFF; }
+  .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
+  .hero-block .kicker { color: #FFFFFF; }
+  .hero-inner { max-width: 1120px; margin: 0 auto; }
+  .hero-sig { max-width: 1120px; margin: 32px auto 0; opacity: 0.95; }
+
+  /* SECTIONS */
+  section.block-section { padding: 56px 24px; }
+  h2 {
+    font-family: var(--display-font); font-size: clamp(2.125rem, 3.6vw, 2.75rem);
+    margin: 0 0 28px; font-weight: 700;
+  }
+  .services-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+  .services-list li {
+    padding: 16px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+    font-size: 1rem;
+  }
+  @media (max-width: 640px) {
+    .services-list { grid-template-columns: 1fr; }
+    .hero-split { grid-template-columns: 1fr; }
+  }
+
+  .about-section { background: color-mix(in srgb, var(--accent2) 14%, var(--bg)); }
+
+  footer {
+    background: var(--ink); color: var(--bg);
+    padding: 48px 24px 32px; margin-top: 24px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.625rem; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.7; }
+  footer a.footer-link { text-decoration: underline; color: var(--bg); }
+  .footer-bottom {
+    max-width: 1120px; margin: 32px auto 0; padding-top: 20px;
+    border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
+    font-family: var(--utility-font); font-size: 0.75rem; color: color-mix(in srgb, var(--bg) 80%, var(--ink) 20%);
+  }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Joddy's Deli and Bagel</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:8453811292">(845) 381-1292</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+      <section class="hero hero-block">
+        <div class="hero-inner">
+          <h1>Deli and Bagel Shop in Middletown, NY</h1>
+          <p class="lede">Boiled and baked fresh every morning, Joddy's has been Middletown's early-hours stop for a proper bagel and a deli sandwich since long before the chains showed up.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:8453811292">Call (845) 381-1292</a>
+            <a class="btn btn-ghost" href="#contact">Get Directions</a>
+          </div>
+          <p class="kicker">Deli / Bagel Shop, Middletown, NY</p>
+        </div>
+        <div class="hero-sig"><svg viewBox="0 0 300 80" class="sig-svg" role="img" aria-label="Everything seasoning ring pattern">
+      <g fill="none" stroke="var(--bg)" stroke-width="2">
+        <circle cx="20" cy="20" r="6"/><circle cx="60" cy="40" r="4"/><circle cx="100" cy="15" r="5"/>
+        <circle cx="140" cy="45" r="6"/><circle cx="180" cy="20" r="4"/><circle cx="220" cy="40" r="5"/>
+        <circle cx="260" cy="15" r="6"/><circle cx="40" cy="60" r="5"/><circle cx="150" cy="65" r="4"/><circle cx="270" cy="60" r="5"/>
+      </g>
+    </svg></div>
+      </section>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2>About Joddy's Deli and Bagel</h2>
+      <p class="about-copy">Boiled and baked fresh every morning, Joddy's has been Middletown's early-hours stop for a proper bagel and a deli sandwich since long before the chains showed up. Find us at 198 Monhagen Ave, Middletown, NY 10940, serving Middletown, NY and the surrounding area.</p>
+    </div>
+  </section>
+
+  <section id="services" class="block-section">
+    <div class="wrap">
+      <h2>Services</h2>
+      <ul class="services-list">
+        <li>Fresh boiled bagels, daily batches</li>
+            <li>Deli sandwiches and platters</li>
+            <li>Breakfast combos</li>
+            <li>Coffee and espresso</li>
+            <li>Catering trays</li>
+            <li>Early morning hours, Mon to Sat</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Joddy's Deli and Bagel</h3>
+      <address>
+        198 Monhagen Ave, Middletown, NY 10940<br><a class='footer-link' href='tel:8453811292'>(845) 381-1292</a><br><a class='footer-link' href='mailto:joddysdeliandbagel@gmail.com'>joddysdeliandbagel@gmail.com</a>
+      </address>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <p>Call ahead for current hours.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Joddy's Deli and Bagel. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>

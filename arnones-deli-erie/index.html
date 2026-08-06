@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnone's Deli | Erie, PA</title>
+<meta name="description" content="A proper Italian deli on Buffalo Road, cured meats hanging behind the counter and a catering menu that shows up at half the graduation parties in Erie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+      --cream: #EDEDEA;
+      --wine: #6E1423;
+      --italiangreen: #1F5C3F;
+      --parmesan: #C9A66B;
+      --inkdark: #241C16;
+      --bg: var(--cream);
+      --ink: var(--inkdark);
+      --accent: var(--wine);
+      --bold: var(--italiangreen);
+      --accent2: var(--parmesan);
+      --display-font: 'Spectral', serif;
+      --body-font: 'Public Sans', sans-serif;
+      --utility-font: 'Space Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  header.site-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+  .nav-inner {
+    max-width: 1120px; margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; position: relative;
+  }
+  .brand {
+    font-family: var(--display-font); font-size: 1.625rem; font-weight: 700; line-height: 1.4;
+    white-space: nowrap; text-decoration: none; flex-shrink: 0;
+  }
+  nav.links { display: flex; gap: 28px; align-items: center; }
+  nav.links a { text-decoration: none; font-size: 1rem; font-weight: 500; line-height: 1.4; }
+  nav.links a.nav-cta {
+    padding: 9px 18px; border-radius: 3px;
+    background: var(--accent); color: #FFFFFF;
+    font-weight: 600;
+  }
+  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--ink); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg);
+      flex-direction: column; align-items: flex-start;
+      padding: 16px 24px 24px; gap: 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+    }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  /* HERO */
+  .hero { padding: 64px 24px 56px; }
+  h1 {
+    font-family: var(--display-font); font-weight: 700; line-height: 1.38;
+    font-size: clamp(2.75rem, 5.6vw, 4.25rem); margin: 0 0 22px; max-width: 16ch;
+  }
+  .lede { font-size: 1.25rem; max-width: 52ch; margin: 0 0 30px; line-height: 1.6; }
+  .about-copy { font-size: 1.0625rem; max-width: 62ch; margin: 0; line-height: 1.6; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .kicker {
+    font-family: var(--utility-font); font-size: 0.75rem; margin: 22px 0 0; color: var(--ink);
+  }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 3px;
+    text-decoration: none; font-weight: 600; font-size: 1rem; line-height: 1.4;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #FFFFFF; }
+  .btn-ghost { border-color: currentColor; }
+
+  .hero-split {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  }
+  .hero-art { padding: 20px; }
+  .sig-svg { width: 100%; height: auto; }
+
+  .hero-editorial { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
+  .hero-rule { margin: 24px 0 32px; max-width: 420px; }
+
+  .hero-block {
+    background: var(--bold); color: #FFFFFF;
+    margin: 0; padding: 72px 24px;
+  }
+  .hero-block .btn-ghost { border-color: #FFFFFF; }
+  .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
+  .hero-block .kicker { color: #FFFFFF; }
+  .hero-inner { max-width: 1120px; margin: 0 auto; }
+  .hero-sig { max-width: 1120px; margin: 32px auto 0; opacity: 0.95; }
+
+  /* SECTIONS */
+  section.block-section { padding: 56px 24px; }
+  h2 {
+    font-family: var(--display-font); font-size: clamp(2.125rem, 3.6vw, 2.75rem);
+    margin: 0 0 28px; font-weight: 700;
+  }
+  .services-list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  }
+  .services-list li {
+    padding: 16px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+    font-size: 1rem;
+  }
+  @media (max-width: 640px) {
+    .services-list { grid-template-columns: 1fr; }
+    .hero-split { grid-template-columns: 1fr; }
+  }
+
+  .about-section { background: color-mix(in srgb, var(--accent2) 14%, var(--bg)); }
+
+  footer {
+    background: var(--ink); color: var(--bg);
+    padding: 48px 24px 32px; margin-top: 24px;
+  }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.625rem; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.7; }
+  footer a.footer-link { text-decoration: underline; color: var(--bg); }
+  .footer-bottom {
+    max-width: 1120px; margin: 32px auto 0; padding-top: 20px;
+    border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
+    font-family: var(--utility-font); font-size: 0.75rem; color: color-mix(in srgb, var(--bg) 80%, var(--ink) 20%);
+  }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Arnone's Deli</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:8148982917">(814) 898-2917</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+      <section class="hero hero-editorial">
+        <h1>Italian Deli in Erie, PA</h1>
+        <p class="lede">A proper Italian deli on Buffalo Road, cured meats hanging behind the counter and a catering menu that shows up at half the graduation parties in Erie.</p>
+        <div class="hero-rule"><svg viewBox="0 0 300 100" class="sig-svg" role="img" aria-label="Hanging salumi string illustration">
+      <line x1="0" y1="10" x2="300" y2="10" stroke="var(--accent)" stroke-width="2"/>
+      <g stroke="var(--accent)" stroke-width="2" fill="var(--accent2)">
+        <line x1="40" y1="10" x2="40" y2="28"/><ellipse cx="40" cy="45" rx="12" ry="20"/>
+        <line x1="110" y1="10" x2="110" y2="24"/><ellipse cx="110" cy="42" rx="10" ry="18"/>
+        <line x1="190" y1="10" x2="190" y2="30"/><ellipse cx="190" cy="50" rx="13" ry="22"/>
+        <line x1="260" y1="10" x2="260" y2="26"/><ellipse cx="260" cy="44" rx="10" ry="18"/>
+      </g>
+    </svg></div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:8148982917">Call (814) 898-2917</a>
+          <a class="btn btn-ghost" href="#contact">Get Directions</a>
+        </div>
+        <p class="kicker">Italian Deli, Erie, PA</p>
+      </section>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2>About Arnone's Deli</h2>
+      <p class="about-copy">A proper Italian deli on Buffalo Road, cured meats hanging behind the counter and a catering menu that shows up at half the graduation parties in Erie. Find us at 3342 Buffalo Rd, Erie, PA 16510, serving Erie, PA and the surrounding area.</p>
+    </div>
+  </section>
+
+  <section id="services" class="block-section">
+    <div class="wrap">
+      <h2>Services</h2>
+      <ul class="services-list">
+        <li>Italian cold cuts and cheeses</li>
+            <li>Made-to-order hoagies</li>
+            <li>Catering platters and trays</li>
+            <li>Imported pantry goods</li>
+            <li>Holiday order specials</li>
+            <li>Party sub trays</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Arnone's Deli</h3>
+      <address>
+        3342 Buffalo Rd, Erie, PA 16510<br><a class='footer-link' href='tel:8148982917'>(814) 898-2917</a><br><a class='footer-link' href='mailto:arnonesdeli@gmail.com'>arnonesdeli@gmail.com</a>
+      </address>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <p>Call ahead for current hours.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Arnone's Deli. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>
