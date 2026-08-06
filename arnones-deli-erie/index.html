@@ -120,6 +120,45 @@
   .hero-inner { max-width: 1120px; margin: 0 auto; }
   .hero-sig { max-width: 1120px; margin: 32px auto 0; opacity: 0.95; }
 
+  .hero-photo-side {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center;
+  }
+  .hero-photo-card {
+    border-radius: 12px; overflow: hidden; aspect-ratio: 4/5;
+    border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hero-photo-full { padding: 0 0 56px; }
+  .hero-photo-full-media { width: 100%; aspect-ratio: 16/7; overflow: hidden; }
+  .hero-photo-full-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-photo-full-panel {
+    background: var(--bold); color: #FFFFFF;
+    max-width: 620px; margin: -64px 24px 0; position: relative;
+    padding: 40px 32px 36px; border-radius: 4px;
+  }
+  .hero-photo-full-panel h1 { font-size: clamp(2rem, 4vw, 2.75rem); max-width: none; }
+  .hero-photo-full-panel .btn-ghost { border-color: #FFFFFF; }
+  .hero-photo-full-panel .btn-primary { background: #FFFFFF; color: var(--bold); }
+  .hero-photo-full-panel .kicker { color: #FFFFFF; }
+  @media (max-width: 700px) {
+    .hero-photo-full-panel { margin: -40px 16px 0; padding: 28px 20px 24px; }
+  }
+
+  .hero-photo-frame { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
+  .hero-frame-media {
+    width: 100%; aspect-ratio: 21/8; border-radius: 8px; overflow: hidden;
+    margin: 28px 0 32px; border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+  .hero-frame-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  @media (max-width: 640px) {
+    .hero-photo-side { grid-template-columns: 1fr; }
+    .hero-photo-card { aspect-ratio: 16/10; }
+    .hero-frame-media { aspect-ratio: 4/3; }
+  }
+
   /* SECTIONS */
   section.block-section { padding: 56px 24px; }
   h2 {
@@ -174,23 +213,17 @@
 
 <main id="top">
 
-      <section class="hero hero-editorial">
-        <h1>Italian Deli in Erie, PA</h1>
-        <p class="lede">A proper Italian deli on Buffalo Road, cured meats hanging behind the counter and a catering menu that shows up at half the graduation parties in Erie.</p>
-        <div class="hero-rule"><svg viewBox="0 0 300 100" class="sig-svg" role="img" aria-label="Hanging salumi string illustration">
-      <line x1="0" y1="10" x2="300" y2="10" stroke="var(--accent)" stroke-width="2"/>
-      <g stroke="var(--accent)" stroke-width="2" fill="var(--accent2)">
-        <line x1="40" y1="10" x2="40" y2="28"/><ellipse cx="40" cy="45" rx="12" ry="20"/>
-        <line x1="110" y1="10" x2="110" y2="24"/><ellipse cx="110" cy="42" rx="10" ry="18"/>
-        <line x1="190" y1="10" x2="190" y2="30"/><ellipse cx="190" cy="50" rx="13" ry="22"/>
-        <line x1="260" y1="10" x2="260" y2="26"/><ellipse cx="260" cy="44" rx="10" ry="18"/>
-      </g>
-    </svg></div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="tel:8148982917">Call (814) 898-2917</a>
-          <a class="btn btn-ghost" href="#contact">Get Directions</a>
+      <section class="hero hero-photo-side">
+        <div class="hero-copy">
+          <h1>Italian Deli in Erie, PA</h1>
+          <p class="lede">A proper Italian deli on Buffalo Road, cured meats hanging behind the counter and a catering menu that shows up at half the graduation parties in Erie.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:8148982917">Call (814) 898-2917</a>
+            <a class="btn btn-ghost" href="#contact">Get Directions</a>
+          </div>
+          <p class="kicker">Italian Deli, Erie, PA</p>
         </div>
-        <p class="kicker">Italian Deli, Erie, PA</p>
+        <div class="hero-photo-card"><img class="hero-img" src="https://images.pexels.com/photos/33605466/pexels-photo-33605466.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Italian deli counter with cured meats and cheeses on display" loading="lazy" width="800" height="1000"></div>
       </section>
 
   <section id="about" class="block-section about-section">
