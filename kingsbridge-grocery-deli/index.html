@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingsbridge Grocery &amp; Deli | Neighborhood Deli in Kingsbridge, Bronx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #1E4630;
+    --forest-dark: #12301F;
+    --rust: #B0491E;
+    --rust-dark: #9A431F;
+    --cream: #F7F3EA;
+    --card: #EFE7D6;
+    --ink: #26231D;
+    --ink-soft: #57503F;
+    --line: #D9CFB8;
+    --radius: 4px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Zilla Slab', serif;
+    font-weight:700;
+    margin:0;
+    color:var(--forest-dark);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  :focus-visible{
+    outline:3px solid var(--rust);
+    outline-offset:3px;
+  }
+
+  /* Awning stripe bar */
+  .awning{
+    height:10px;
+    width:100%;
+    background:var(--forest);
+  }
+
+  /* Header / nav */
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Zilla Slab', serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--forest-dark);
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand span{color:var(--rust);}
+  nav.primary-nav{
+    display:flex;
+    gap:32px;
+    align-items:center;
+  }
+  nav.primary-nav a{
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--ink);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--rust);}
+  .call-btn{
+    background:var(--forest);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:var(--radius);
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:none !important;
+  }
+  .call-btn:hover{background:var(--forest-dark);}
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:2px solid var(--forest);
+    border-radius:var(--radius);
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    flex-shrink:0;
+    position:relative;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";
+    position:absolute;
+    left:9px;
+    right:9px;
+    height:2px;
+    background:var(--forest-dark);
+  }
+  .menu-toggle::before{top:14px;}
+  .menu-toggle span{top:19px;}
+  .menu-toggle::after{top:24px;}
+
+  @media (max-width: 1150px){
+    nav.primary-nav{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--cream);
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{
+      padding:16px 28px;
+      border-bottom:1px solid var(--line);
+    }
+    nav.primary-nav .call-btn{
+      margin:16px 28px;
+      text-align:center;
+    }
+    .menu-toggle{display:block;}
+  }
+
+  /* Hero */
+  .hero{
+    padding:72px 0 64px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.75rem, 4.5vw, 3.5rem);
+    line-height:1.08;
+    margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:1.25rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:28px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:32px;
+  }
+  .btn-primary{
+    background:var(--rust);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--rust-dark);}
+  .btn-secondary{
+    border:2px solid var(--forest);
+    color:var(--forest-dark);
+    padding:12px 24px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--forest);color:#fff;}
+  .hours-strip{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    font-size:0.8125rem;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .hours-strip strong{color:var(--forest-dark);}
+
+  /* Signature: deli case cards illustration in hero */
+  .case-illustration{
+    background:#fff;
+    border-radius:8px;
+    padding:26px;
+    box-shadow:0 18px 40px -20px rgba(18,48,31,0.35);
+  }
+  .case-illustration .case-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:16px;
+    border-bottom:2px dashed var(--line);
+    padding-bottom:12px;
+  }
+  .case-illustration .case-top span{
+    font-family:'Zilla Slab', serif;
+    font-weight:700;
+    color:var(--forest-dark);
+    font-size:1.25rem;
+  }
+  .case-illustration .case-top small{
+    color:var(--rust-dark);
+    font-weight:700;
+    font-size:0.8125rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  .case-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:1rem;
+  }
+  .case-row:last-child{border-bottom:none;}
+  .case-row .item{color:var(--ink);font-weight:500;}
+  .case-row .price{color:var(--rust-dark);font-weight:700;font-family:'Zilla Slab',serif;}
+
+  /* Cards section - deli case index cards */
+  .stock-section{
+    padding:70px 0;
+    background:#fff;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    max-width:640px;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-size:clamp(1.75rem, 3vw, 2rem);
+    margin-bottom:14px;
+  }
+  .section-head p{color:var(--ink-soft);font-size:1rem;}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:26px;
+  }
+  .stock-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:26px 22px;
+    position:relative;
+  }
+  .stock-card:nth-child(odd){transform:rotate(-0.6deg);}
+  .stock-card:nth-child(even){transform:rotate(0.7deg);}
+  .stock-card::before{
+    content:"";
+    position:absolute;
+    top:-8px;
+    left:50%;
+    transform:translateX(-50%) rotate(-3deg);
+    width:56px;
+    height:18px;
+    background:rgba(176,73,30,0.28);
+    border:1px solid rgba(176,73,30,0.4);
+  }
+  .stock-card h3{
+    font-size:1.25rem;
+    margin-bottom:10px;
+    color:var(--forest-dark);
+  }
+  .stock-card p{
+    font-size:1rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* About / neighborhood */
+  .about-section{
+    padding:80px 0;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-grid h2{
+    font-size:clamp(1.75rem, 3vw, 2rem);
+    margin-bottom:20px;
+  }
+  .about-grid p{
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    font-size:1rem;
+  }
+  .address-block{
+    background:var(--forest);
+    color:#fff;
+    padding:36px;
+    border-radius:6px;
+  }
+  .address-block h3{
+    color:#fff;
+    font-size:1.25rem;
+    margin-bottom:18px;
+  }
+  .address-block dl{
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:10px 18px;
+    font-size:1rem;
+  }
+  .address-block dt{
+    color:#EFF7F1;
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:0.8125rem;
+    letter-spacing:0.08em;
+    align-self:center;
+  }
+  .address-block dd{margin:0;}
+  .address-block a{color:#fff;text-decoration:underline;}
+
+  /* CTA band - dark color block */
+  .cta-band{
+    background:var(--forest-dark);
+    color:#fff;
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-band h2{
+    color:#fff;
+    font-size:clamp(1.75rem, 3.2vw, 2.2rem);
+    margin-bottom:16px;
+  }
+  .cta-band p{
+    color:#CBD8CF;
+    max-width:52ch;
+    margin:0 auto 30px;
+    font-size:1rem;
+  }
+
+  footer{
+    background:var(--forest-dark);
+    color:#9EB0A3;
+    padding:28px 0 40px;
+    text-align:center;
+    font-size:0.8125rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  footer a{color:#fff;}
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .address-block{order:-1;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .hours-strip{flex-direction:column;gap:8px;}
+    .stock-card:nth-child(odd), .stock-card:nth-child(even){transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="awning"></div>
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">Kingsbridge <span>Grocery &amp; Deli</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#stock">What We Carry</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a class="call-btn" href="tel:+17186010956">Call (718) 601-0956</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Neighborhood Grocery &amp; Deli Serving Kingsbridge, Bronx</h1>
+        <p class="lede">A family-run corner grocery and deli on West 230th Street in Kingsbridge, Bronx, stocked every morning with fresh cut cold cuts, hot breakfast sandwiches, and the everyday essentials the block runs on.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+17186010956">Call to Order Ahead</a>
+          <a class="btn-secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hours-strip">
+          <span><strong>Open Daily</strong> &middot; 6:00 AM &ndash; 10:00 PM</span>
+          <span><strong>245 W 230th St</strong> &middot; Bronx, NY 10463</span>
+        </div>
+      </div>
+      <div class="case-illustration" aria-hidden="true">
+        <div class="case-top">
+          <span>Today at the Counter</span>
+          <small>Fresh Daily</small>
+        </div>
+        <div class="case-row"><span class="item">Boar's Head Turkey, hand sliced</span><span class="price">Ask</span></div>
+        <div class="case-row"><span class="item">Bacon, Egg &amp; Cheese on a Roll</span><span class="price">Ask</span></div>
+        <div class="case-row"><span class="item">Fresh Ground Coffee</span><span class="price">Ask</span></div>
+        <div class="case-row"><span class="item">Chopped Cheese</span><span class="price">Ask</span></div>
+        <div class="case-row"><span class="item">Cold Beverages, ice cold</span><span class="price">Ask</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stock-section" id="stock">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What We Stock</h2>
+        <p>Everything a Kingsbridge household needs without a trip to the avenue, cut, packed, and rung up by people who know your order.</p>
+      </div>
+      <div class="card-grid">
+        <div class="stock-card">
+          <h3>Cold Cuts &amp; Deli</h3>
+          <p>Hand sliced meats and cheeses, made-to-order hero sandwiches and platters for the block.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Hot Breakfast</h3>
+          <p>Egg sandwiches, chopped cheese, and coffee going since six in the morning, every morning.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Grocery Essentials</h3>
+          <p>Milk, bread, canned goods, and the small stuff you forgot to grab uptown.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Lottery &amp; Sundries</h3>
+          <p>Lottery, phone cards, snacks, and cold drinks, open long hours for the neighborhood.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Run by the Block, for the Block</h2>
+        <p>Edward Powers has kept the deli counter stocked and the lights on at West 230th Street for over two decades, through changing blocks and changing seasons. It is a small operation, three people on any given shift, which is exactly why regulars get greeted by name and orders get remembered.</p>
+        <p>No app, no ordering portal, just a phone that gets answered and a counter that opens early. That has been enough for Kingsbridge for twenty years, but it also means most people searching for a Kingsbridge deli online never find this one.</p>
+      </div>
+      <div class="address-block">
+        <h3>Visit the Counter</h3>
+        <dl>
+          <dt>Address</dt>
+          <dd>245 W 230th St<br>Bronx, NY 10463</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+17186010956">(718) 601-0956</a></dd>
+          <dt>Hours</dt>
+          <dd>Daily, 6:00 AM &ndash; 10:00 PM</dd>
+          <dt>Neighborhood</dt>
+          <dd>Kingsbridge, Bronx</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit">
+    <div class="wrap">
+      <h2>Stop by West 230th Street</h2>
+      <p>Open early, open late, and always around the corner from home. Come see what's in the case today.</p>
+      <a class="btn-primary" href="tel:+17186010956">Call (718) 601-0956</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Kingsbridge Grocery &amp; Deli &middot; 245 W 230th St, Bronx, NY 10463 &middot; <a href="tel:+17186010956">(718) 601-0956</a></p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

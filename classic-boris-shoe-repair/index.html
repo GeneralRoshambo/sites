@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classic Boris Shoe Repair | Washington Heights, Manhattan</title>
+<meta name="description" content="Hand shoe repair, resoling, and leather care in Washington Heights, Manhattan. Family cobbler shop on 181st Street since decades of neighborhood trust.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F3EDE2;
+    --stone:#E6DCC8;
+    --charcoal:#2B2420;
+    --oxblood:#6B1E23;
+    --oxblood-dark:#511217;
+    --brass:#A9822C;
+    --brass-deep:#7A5720;
+    --brass-soft:#E3C687;
+    --leather:#3B2A20;
+    --line:#d4c7ac;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Public Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    color:var(--charcoal);
+    margin:0 0 0.5em 0;
+    line-height:1.1;
+    font-weight:600;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--oxblood);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(243,237,226,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:var(--max);margin:0 auto;
+  }
+  .brand{
+    font-family:'Newsreader', serif;
+    font-weight:700;
+    font-size:1.35rem;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{
+    width:34px;height:34px;flex:none;
+  }
+  nav.primary{display:flex;gap:36px;align-items:center;}
+  nav.primary a{
+    text-decoration:none;
+    font-size:0.95rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--charcoal);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary a:hover{border-bottom-color:var(--oxblood);}
+  .nav-cta{
+    background:var(--oxblood);
+    color:var(--ivory);
+    padding:10px 20px;
+    border-radius:3px;
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--oxblood-dark);}
+  .hamburger{display:none;background:none;border:1px solid var(--charcoal);border-radius:3px;padding:8px 10px;cursor:pointer;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);margin:4px 0;}
+  .mobile-panel{display:none;}
+
+  @media (max-width:1150px){
+    nav.primary, .nav-cta.desktop-only{display:none;}
+    .hamburger{display:block;}
+    .mobile-panel{
+      display:none;
+      flex-direction:column;
+      background:var(--ivory);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:12px 32px 20px;
+    }
+    .mobile-panel.open{display:flex;}
+    .mobile-panel a{
+      padding:12px 0;
+      text-decoration:none;
+      color:var(--charcoal);
+      font-weight:600;
+      border-bottom:1px solid var(--line);
+    }
+    .mobile-panel .nav-cta{margin-top:14px;text-align:center;color:var(--ivory);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 0 96px;
+    background:var(--ivory);
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:64px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.78rem;
+    color:var(--oxblood);
+    font-weight:600;
+    margin-bottom:18px;
+    display:inline-block;
+    border:1px solid var(--oxblood);
+    padding:5px 12px;
+    border-radius:2px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4vw, 3.4rem);
+    max-width:12ch;
+  }
+  .hero p.lead{
+    font-size:1.15rem;
+    max-width:46ch;
+    color:#4a3f34;
+    margin-top:22px;
+  }
+  .hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--oxblood);
+    color:var(--ivory);
+    padding:14px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--oxblood-dark);}
+  .btn-secondary{
+    border:1.5px solid var(--charcoal);
+    color:var(--charcoal);
+    padding:13px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--charcoal);color:var(--ivory);}
+
+  /* hero ticket visual */
+  .hero-ticket{
+    background:var(--stone);
+    border:1.5px dashed var(--brass);
+    border-radius:6px;
+    padding:30px 28px;
+    position:relative;
+    transform:rotate(1.5deg);
+    box-shadow:0 10px 14px -10px rgba(43,36,32,0.3);
+  }
+  .hero-ticket::before, .hero-ticket::after{
+    content:"";
+    position:absolute;
+    width:22px;height:22px;
+    background:var(--ivory);
+    border-radius:50%;
+    top:50%;transform:translateY(-50%);
+  }
+  .hero-ticket::before{left:-11px;}
+  .hero-ticket::after{right:-11px;}
+  .ticket-top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px dashed var(--brass);padding-bottom:14px;margin-bottom:14px;}
+  .ticket-top .num{font-family:'IBM Plex Mono',monospace;font-size:1.6rem;font-weight:600;color:var(--oxblood);}
+  .ticket-top .lbl{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--leather);opacity:0.7;}
+  .ticket-rows{display:flex;flex-direction:column;gap:10px;font-size:0.95rem;}
+  .ticket-rows div{display:flex;justify-content:space-between;gap:12px;}
+  .ticket-rows span:first-child{color:#5a4c3e;}
+  .ticket-rows span:last-child{font-weight:600;}
+  .ticket-stamp{
+    margin-top:18px;
+    padding-top:14px;
+    border-top:1px dashed var(--brass);
+    display:flex;align-items:center;gap:10px;
+  }
+  .ticket-stamp .dot{width:10px;height:10px;border-radius:50%;background:var(--oxblood);}
+  .ticket-stamp span{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.06em;color:var(--leather);}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-ticket{transform:rotate(0.5deg);max-width:420px;}
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,2.6vw,2.4rem);}
+  .section-head p{color:#4a3f34;font-size:1.05rem;margin-top:14px;}
+
+  /* About / stitched divider */
+  .about{background:var(--stone);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .stitch-frame{
+    border:2px solid var(--charcoal);
+    border-radius:6px;
+    padding:8px;
+    background:var(--ivory);
+  }
+  .stitch-frame-inner{
+    border:1px dashed var(--brass);
+    border-radius:4px;
+    padding:34px 28px;
+  }
+  .stitch-frame-inner h2{font-size:1.5rem;margin-bottom:14px;}
+  .stitch-frame-inner p{color:#4a3f34;}
+  .about ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px;}
+  .about li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:1rem;
+  }
+  .about li .bullet{
+    width:8px;height:8px;border-radius:50%;background:var(--oxblood);
+    margin-top:9px;flex:none;
+  }
+
+  /* Services as claim tickets */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+  }
+  .svc-ticket{
+    background:var(--ivory);
+    border:1.5px dashed #c9b98f;
+    border-radius:6px;
+    padding:26px 24px 22px;
+    position:relative;
+  }
+  .svc-ticket::before, .svc-ticket::after{
+    content:"";
+    position:absolute;
+    width:18px;height:18px;
+    background:var(--stone);
+    border-radius:50%;
+    top:50%;transform:translateY(-50%);
+  }
+  .svc-ticket::before{left:-9px;}
+  .svc-ticket::after{right:-9px;}
+  .svc-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+  .svc-num{font-family:'IBM Plex Mono',monospace;color:var(--brass-deep);font-weight:600;font-size:0.85rem;}
+  .svc-ticket h3{font-size:1.15rem;margin-bottom:8px;}
+  .svc-ticket p{font-size:0.93rem;color:#4a3f34;margin:0;}
+
+  /* Process - genuinely sequential */
+  .process{background:var(--leather);color:var(--ivory);}
+  .process .section-head h2, .process .section-head p{color:var(--ivory);}
+  .process .section-head p{color:#d8c9b4;}
+  .process-steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    counter-reset:step;
+  }
+  .step{
+    padding:0 24px 0 0;
+    position:relative;
+  }
+  .step:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:20px;right:0;
+    width:24px;height:1px;
+    background:var(--brass);
+    display:none;
+  }
+  @media (min-width:701px){
+    .step:not(:last-child)::after{display:block;}
+  }
+  .step .step-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;
+    color:var(--brass-soft);
+    border:1px solid var(--brass-soft);
+    width:34px;height:34px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .step h3{color:var(--ivory);font-size:1.1rem;margin-bottom:8px;}
+  .step p{color:#cbb99f;font-size:0.92rem;margin:0;}
+
+  /* Testimonial / neighborhood */
+  .quote-block{
+    background:var(--stone);
+    padding:34px 38px;
+    border-radius:4px;
+    max-width:760px;
+  }
+  .quote-block p{font-family:'Newsreader',serif;font-size:1.4rem;font-weight:500;font-style:italic;line-height:1.45;margin:0 0 14px;}
+  .quote-block cite{font-style:normal;font-size:0.9rem;color:#4a3f34;}
+
+  /* Contact / hours */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .info-card{
+    background:var(--stone);
+    border-radius:6px;
+    padding:32px;
+  }
+  .info-card h3{font-size:1.2rem;margin-bottom:18px;}
+  .info-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
+  .info-row:last-child{border-bottom:none;}
+  .info-row span:first-child{color:#5a4c3e;}
+  .info-row span:last-child{font-weight:600;}
+
+  /* Footer */
+  footer{
+    background:var(--charcoal);
+    color:var(--ivory);
+    padding:56px 0 32px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:36px;
+    border-bottom:1px solid #4a3f34;
+  }
+  footer h4{
+    font-family:'Newsreader',serif;
+    font-size:1.1rem;
+    margin:0 0 14px;
+    color:var(--ivory);
+  }
+  footer p, footer a{color:#c9bda9;font-size:0.92rem;text-decoration:none;line-height:1.8;}
+  footer a:hover{color:var(--ivory);}
+  .foot-brand{font-family:'Newsreader',serif;font-weight:700;font-size:1.3rem;color:var(--ivory);margin-bottom:10px;}
+  .foot-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    padding-top:24px;font-size:0.82rem;color:#8a7d6a;
+  }
+
+  @media (max-width:900px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .process-steps{grid-template-columns:1fr 1fr;gap:32px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .nav-inner{padding:16px 20px;}
+    section{padding:64px 0;}
+    .hero{padding:56px 0 64px;}
+    .services-grid, .process-steps{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 27C6 27 9 18 14 15C17.5 13 21 14 22.5 16.5C23.8 18.7 22.5 21 25 22C28 23.2 32 21.5 34 24C35.3 25.6 34.5 28 32 28.5C24 30 14 30 6 27Z" stroke="#6B1E23" stroke-width="2" fill="#E6DCC8"/>
+        <circle cx="12" cy="24" r="1.4" fill="#A9822C"/>
+        <circle cx="17" cy="25.5" r="1.4" fill="#A9822C"/>
+      </svg>
+      Classic Boris
+    </a>
+    <nav class="primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">How It Works</a>
+      <a href="#contact">Visit Us</a>
+    </nav>
+    <a href="tel:2127402110" class="nav-cta desktop-only">Call (212) 740-2110</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">How It Works</a>
+    <a href="#contact">Visit Us</a>
+    <a href="tel:2127402110" class="nav-cta">Call (212) 740-2110</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Shoe Repair in Washington Heights, Manhattan</h1>
+        <p class="lead">The neighborhood's cobbler on 181st Street, doing resoling, heel work, stretching, and leather care by hand at the bench, the same way it's been done on this block for years. Drop off your shoes in the morning, most repairs are ready the same day.</p>
+        <div class="hero-actions">
+          <a href="tel:2127402110" class="btn-primary">Call the Shop</a>
+          <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+      </div>
+      <div class="hero-ticket">
+        <div class="ticket-top">
+          <div>
+            <div class="lbl">Claim Ticket</div>
+            <div class="num">No. 0182</div>
+          </div>
+          <div class="lbl">180TH &amp; 181ST</div>
+        </div>
+        <div class="ticket-rows">
+          <div><span>Item</span><span>Oxford, brown leather</span></div>
+          <div><span>Work</span><span>Full resole + heel</span></div>
+          <div><span>Ready</span><span>Same day</span></div>
+        </div>
+        <div class="ticket-stamp">
+          <div class="dot"></div>
+          <span>720 W 181ST ST</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="stitch-frame">
+        <div class="stitch-frame-inner">
+          <h2>A bench, not a factory</h2>
+          <p>Every pair that comes through the door gets looked at by hand before a single stitch is touched. No mail-in service, no assembly line. Just a cobbler who has been fixing shoes for this neighborhood long enough to know most of his customers by their gait.</p>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">About the shop</span>
+        <h2>Old-world repair work, still done the old way</h2>
+        <p style="color:#4a3f34;">Classic Boris Shoe Repair sits on 181st Street, where it has kept Washington Heights in working shoes and repaired handbags for years. The tools are the same ones a cobbler would recognize from decades ago: a stitching horse, a last, a heel iron warmed on the burner.</p>
+        <ul>
+          <li><span class="bullet"></span>Hand resoling with genuine leather and rubber options</li>
+          <li><span class="bullet"></span>Heel replacement while you wait, in most cases</li>
+          <li><span class="bullet"></span>Zipper, strap, and lining repair for bags and boots</li>
+          <li><span class="bullet"></span>Stretching for tight or narrow-fitting shoes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we fix</span>
+        <h2>Every ticket is a promise</h2>
+        <p>Each job leaves the bench with a claim number and a straight answer on price and timing before any work starts.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 01</span></div>
+          <h3>Full Resoling</h3>
+          <p>Leather or rubber soles rebuilt from the ground up, matched to how you actually wear your shoes.</p>
+        </div>
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 02</span></div>
+          <h3>Heel Replacement</h3>
+          <p>Worn heels swapped and leveled so your stride, and your posture, stay even.</p>
+        </div>
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 03</span></div>
+          <h3>Shine &amp; Conditioning</h3>
+          <p>Polish, condition, and buff that brings tired leather back to a proper shine.</p>
+        </div>
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 04</span></div>
+          <h3>Stretching &amp; Fit</h3>
+          <p>Tight spots eased with proper stretching tools, not guesswork, so new shoes actually fit.</p>
+        </div>
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 05</span></div>
+          <h3>Zipper &amp; Strap Repair</h3>
+          <p>Boots, bags, and jackets get zippers replaced and straps re-stitched to hold for years.</p>
+        </div>
+        <div class="svc-ticket">
+          <div class="svc-head"><span class="svc-num">NO. 06</span></div>
+          <h3>Leather &amp; Bag Repair</h3>
+          <p>Torn seams, worn corners, and loose handles repaired on bags, belts, and wallets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How a repair works</span>
+        <h2>From drop-off to done, in four steps</h2>
+        <p>Same process every time, whether it is a scuffed sneaker or a pair of dress shoes worn thin.</p>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Drop off</h3>
+          <p>Bring your shoes in, no appointment needed. Most people are in and out in five minutes.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Quote</h3>
+          <p>You get a straight price and timeline on the spot, plus a numbered claim ticket.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Repair</h3>
+          <p>Work is done by hand at the bench, checked before it ever leaves the shop.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Pickup</h3>
+          <p>Bring your ticket, pick up your shoes. Most repairs are ready the same day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">From the neighborhood</span>
+        <h2>What people on 181st say</h2>
+      </div>
+      <div class="quote-block">
+        <p>"Brought in a pair of boots I thought were done for. Came back looking better than when I bought them, and for less than I expected."</p>
+        <cite>Regular customer, Washington Heights</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Visit the shop</span>
+        <h2>Stop by 181st Street</h2>
+        <p style="color:#4a3f34;margin-top:14px;">No appointment necessary. Walk in during shop hours and someone will look at your shoes right at the counter.</p>
+        <div class="hero-actions" style="margin-top:28px;">
+          <a href="tel:2127402110" class="btn-primary">Call (212) 740-2110</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Shop Details</h3>
+        <div class="info-row"><span>Address</span><span>720 W 181st St, New York, NY 10033</span></div>
+        <div class="info-row"><span>Phone</span><span>(212) 740-2110</span></div>
+        <div class="info-row"><span>Mon &ndash; Wed</span><span>8:00am &ndash; 7:00pm</span></div>
+        <div class="info-row"><span>Thursday</span><span>8:00am &ndash; 7:00pm</span></div>
+        <div class="info-row"><span>Friday</span><span>8:00am &ndash; 6:00pm</span></div>
+        <div class="info-row"><span>Sat &ndash; Sun</span><span>Closed</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand">Classic Boris Shoe Repair</div>
+        <p>Hand shoe and leather repair on 181st Street in Washington Heights, Manhattan.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <p><a href="#services">Services</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#process">How It Works</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:2127402110">(212) 740-2110</a></p>
+        <p>720 W 181st St<br>New York, NY 10033</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Classic Boris Shoe Repair</span>
+      <span>Site built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var panel = document.getElementById('mobilePanel');
+  btn.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

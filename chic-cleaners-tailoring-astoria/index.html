@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chic Cleaners &amp; Tailoring | Astoria, Queens</title>
+<meta name="description" content="Dry cleaning, hemming, and custom alterations in Astoria, Queens. Wedding dress alterations a specialty. Family run on 30th Avenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Bitter:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marigold:#E8A33D;
+    --saffron:#D98E04;
+    --teal:#1B4B4A;
+    --teal-dark:#123434;
+    --cream:#FBF3E3;
+    --parchment:#F4E7CB;
+    --rust:#B5541A;
+    --ink:#1F2A24;
+    --line:#e3cfa2;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Bitter', serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    color:var(--ink);
+    margin:0 0 0.45em 0;
+    line-height:1.15;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--rust);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,243,227,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:var(--max);margin:0 auto;
+  }
+  .brand{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{width:32px;height:32px;flex:none;}
+  nav.primary{display:flex;gap:34px;align-items:center;}
+  nav.primary a{
+    text-decoration:none;
+    font-family:'Poppins',sans-serif;
+    font-size:0.92rem;
+    font-weight:600;
+    color:var(--ink);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary a:hover{border-bottom-color:var(--rust);}
+  .nav-cta{
+    background:var(--teal);
+    color:var(--cream);
+    padding:10px 20px;
+    border-radius:24px;
+    font-weight:600;
+    font-family:'Poppins',sans-serif;
+    font-size:0.9rem;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--teal-dark);}
+  .hamburger{display:none;background:none;border:1px solid var(--ink);border-radius:6px;padding:8px 10px;cursor:pointer;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);margin:4px 0;}
+  .mobile-panel{display:none;}
+
+  @media (max-width:1150px){
+    nav.primary, .nav-cta.desktop-only{display:none;}
+    .hamburger{display:block;}
+    .mobile-panel{
+      display:none;flex-direction:column;
+      background:var(--cream);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:12px 32px 20px;
+    }
+    .mobile-panel.open{display:flex;}
+    .mobile-panel a{
+      padding:12px 0;text-decoration:none;color:var(--ink);
+      font-family:'Poppins',sans-serif;font-weight:600;
+      border-bottom:1px solid var(--line);
+    }
+    .mobile-panel .nav-cta{margin-top:14px;text-align:center;color:var(--cream);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:84px 0 0;background:var(--cream);}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;padding-bottom:64px;}
+  .eyebrow{
+    font-family:'Poppins',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:0.78rem;
+    color:var(--rust);
+    font-weight:700;
+    margin-bottom:16px;
+    display:inline-block;
+  }
+  .hero h1{font-size:clamp(2.3rem,4.2vw,3.4rem);max-width:12ch;}
+  .hero p.lead{font-family:'Bitter',serif;font-size:1.15rem;max-width:44ch;color:#4a3f2c;margin-top:20px;}
+  .hero-actions{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--teal);color:var(--cream);
+    padding:14px 28px;border-radius:24px;text-decoration:none;
+    font-family:'Poppins',sans-serif;font-weight:600;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-secondary{
+    border:1.5px solid var(--ink);color:var(--ink);
+    padding:13px 28px;border-radius:24px;text-decoration:none;
+    font-family:'Poppins',sans-serif;font-weight:600;
+    display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--ink);color:var(--cream);}
+
+  /* Care tag hero visual */
+  .care-tag{
+    background:var(--teal);
+    border-radius:16px;
+    padding:36px 30px 30px;
+    position:relative;
+    color:var(--cream);
+    box-shadow:0 22px 36px -20px rgba(27,75,74,0.45);
+  }
+  .care-tag::before{
+    content:"";
+    position:absolute;
+    top:-14px;left:34px;
+    width:26px;height:26px;
+    border:4px solid var(--marigold);
+    border-radius:50%;
+    background:var(--cream);
+  }
+  .tag-label{
+    font-family:'Poppins',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.72rem;
+    color:var(--marigold);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .tag-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;margin-bottom:18px;}
+  .tag-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .tag-list li{
+    display:flex;justify-content:space-between;gap:10px;
+    font-family:'Bitter',serif;font-size:0.95rem;
+    border-bottom:1px dashed rgba(251,243,227,0.35);
+    padding-bottom:10px;
+  }
+  .tag-list li span:last-child{color:var(--marigold);font-weight:600;}
+
+  /* Measuring tape divider */
+  .tape{
+    height:64px;
+    background:var(--marigold);
+    position:relative;
+    overflow:hidden;
+    display:flex;align-items:center;
+    border-bottom:2px solid var(--ink);
+    padding:12px 20px;
+    box-sizing:border-box;
+  }
+  .tape-ticks{
+    width:100%;
+    height:100%;
+    display:flex;align-items:flex-end;
+    padding-bottom:16px;
+    box-sizing:border-box;
+  }
+  .tape-numbers{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    padding:0 24px;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:0.8rem;
+    color:var(--ink);
+    letter-spacing:0.04em;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .care-tag{max-width:420px;}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.9rem,2.8vw,2.5rem);}
+  .section-head p{color:#4a3f2c;font-size:1.05rem;margin-top:14px;font-family:'Bitter',serif;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about p{color:#4a3f2c;}
+  .about-card{
+    background:var(--parchment);
+    border-radius:12px;
+    padding:32px;
+  }
+  .about-card h3{font-size:1.25rem;margin-bottom:10px;}
+  .about-card p{margin:0;color:#4a3f2c;}
+
+  /* Services as care tags */
+  .services{background:var(--parchment);}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .care-card{
+    background:var(--cream);
+    border-radius:12px;
+    padding:30px 26px 26px;
+    position:relative;
+    border:1px solid var(--line);
+  }
+  .care-card::before{
+    content:"";
+    position:absolute;top:-10px;left:24px;
+    width:18px;height:18px;
+    border:3px solid var(--teal);
+    border-radius:50%;
+    background:var(--cream);
+  }
+  .care-card h3{font-size:1.15rem;margin-bottom:10px;color:var(--teal);}
+  .care-card p{font-size:0.94rem;color:#4a3f2c;margin:0;font-family:'Bitter',serif;}
+
+  /* Specialty band */
+  .specialty{background:var(--teal);color:var(--cream);}
+  .specialty .section-head h2, .specialty .section-head p{color:var(--cream);}
+  .specialty .section-head p{color:#bcd6d3;}
+  .specialty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .spec-item{
+    padding:16px 20px;
+    background:rgba(251,243,227,0.06);
+    border-radius:6px;
+  }
+  .spec-item h3{color:var(--marigold);font-size:1.1rem;margin-bottom:10px;}
+  .spec-item p{color:#cfe3e0;font-size:0.93rem;margin:0;}
+
+  /* Quote */
+  .quote-block{
+    background:var(--parchment);
+    padding:34px 38px;
+    border-radius:8px;
+    max-width:760px;
+  }
+  .quote-block p{font-family:'Bitter',serif;font-size:1.3rem;font-style:italic;line-height:1.5;margin:0 0 14px;color:var(--ink);}
+  .quote-block cite{font-style:normal;font-size:0.9rem;color:#5a4c33;}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .info-card{background:var(--parchment);border-radius:12px;padding:32px;}
+  .info-card h3{font-size:1.25rem;margin-bottom:18px;}
+  .info-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
+  .info-row:last-child{border-bottom:none;}
+  .info-row span:first-child{color:#5a4c33;}
+  .info-row span:last-child{font-weight:600;text-align:right;}
+
+  /* Footer */
+  footer{background:var(--ink);color:var(--cream);padding:56px 0 32px;}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid #3a4640;}
+  footer h4{font-family:'Poppins',sans-serif;font-size:1.05rem;margin:0 0 14px;color:var(--cream);}
+  footer p, footer a{color:#c8cfc8;font-size:0.92rem;text-decoration:none;line-height:1.8;font-family:'Bitter',serif;}
+  footer a:hover{color:var(--marigold);}
+  .foot-brand{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--cream);margin-bottom:10px;}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:0.82rem;color:#8a9490;}
+
+  @media (max-width:900px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .specialty-grid{grid-template-columns:1fr;gap:28px;}
+    .spec-item{padding:20px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .nav-inner{padding:16px 20px;}
+    section{padding:64px 0;}
+    .hero{padding:56px 0 0;}
+    .hero-grid{padding-bottom:48px;}
+    .services-grid{grid-template-columns:1fr;}
+    .tape-numbers{padding:0 12px;font-size:0.75rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="7" y="16" width="26" height="10" rx="2" fill="#F4E7CB" stroke="#1B4B4A" stroke-width="2"/>
+        <line x1="12" y1="16" x2="12" y2="21" stroke="#1B4B4A" stroke-width="1.5"/>
+        <line x1="17" y1="16" x2="17" y2="21" stroke="#1B4B4A" stroke-width="1.5"/>
+        <line x1="22" y1="16" x2="22" y2="21" stroke="#1B4B4A" stroke-width="1.5"/>
+        <line x1="27" y1="16" x2="27" y2="21" stroke="#1B4B4A" stroke-width="1.5"/>
+      </svg>
+      Chic Cleaners
+    </a>
+    <nav class="primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#weddings">Weddings</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <a href="tel:7189323125" class="nav-cta desktop-only">Call (718) 932-3125</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#weddings">Weddings</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:7189323125" class="nav-cta">Call (718) 932-3125</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Dry Cleaning and Tailoring in Astoria, Queens</h1>
+        <p class="lead">A family-run shop on 30th Avenue, where hems, alterations, and pressed garments are handled by the same two hands every time you visit. Wedding dresses fitted with the same care as an everyday pair of pants.</p>
+        <div class="hero-actions">
+          <a href="tel:7189323125" class="btn-primary">Call the Shop</a>
+          <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+      </div>
+      <div class="care-tag">
+        <div class="tag-label">Garment Ticket</div>
+        <div class="tag-title">Alteration Order</div>
+        <ul class="tag-list">
+          <li><span>Item</span><span>Wedding gown</span></li>
+          <li><span>Work</span><span>Hem &amp; taper</span></li>
+          <li><span>Turnaround</span><span>3&ndash;5 days</span></li>
+          <li><span>Fitting</span><span>By appointment</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tape">
+      <div class="tape-ticks">
+        <div class="tape-numbers">
+          <span>1"</span><span>2"</span><span>3"</span><span>4"</span><span>5"</span><span>6"</span><span>7"</span><span>8"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About the shop</span>
+        <h2>Precision, not guesswork</h2>
+        <p>Chic Cleaners &amp; Tailoring has worked out of the same storefront on 30th Avenue, taking in everything from a torn seam to a full wedding gown fitting. The shop is run day to day by the same couple who measure, pin, and press every garment themselves.</p>
+        <p>No drop box, no outsourcing. What comes in the door gets worked on right there.</p>
+      </div>
+      <div class="about-card">
+        <h3>Measured twice, altered once</h3>
+        <p>Every alteration starts with an honest read on fit, not just a quick pin job. That's the difference between clothes that fit for a season and clothes that fit for years.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we handle</span>
+        <h2>Every garment, properly fitted</h2>
+        <p>From a quick hem to a full dry clean, each job gets checked and pressed before it goes back on the hanger.</p>
+      </div>
+      <div class="services-grid">
+        <div class="care-card">
+          <h3>Hemming &amp; Alterations</h3>
+          <p>Pants, skirts, and dresses taken in, let out, or shortened to fit exactly how you want.</p>
+        </div>
+        <div class="care-card">
+          <h3>Dry Cleaning</h3>
+          <p>Suits, coats, and delicates cleaned and pressed, ready on hangers for pickup.</p>
+        </div>
+        <div class="care-card">
+          <h3>Wedding Dress Fitting</h3>
+          <p>Gowns fitted in person, with enough time built in for a second fitting before the big day.</p>
+        </div>
+        <div class="care-card">
+          <h3>Suit Tailoring</h3>
+          <p>Jackets and trousers adjusted at the shoulder, waist, and cuff for a fit that reads custom.</p>
+        </div>
+        <div class="care-card">
+          <h3>Zipper &amp; Repair Work</h3>
+          <p>Broken zippers, torn linings, and loose buttons fixed without a full remake.</p>
+        </div>
+        <div class="care-card">
+          <h3>Same-Week Turnaround</h3>
+          <p>Most alterations are ready within a few days, with rush options for tighter timelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specialty" id="weddings">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A specialty of the shop</span>
+        <h2>Wedding dress alterations, done right</h2>
+        <p>Gowns take more care than a hem, and the shop treats them that way.</p>
+      </div>
+      <div class="specialty-grid">
+        <div class="spec-item">
+          <h3>First Fitting</h3>
+          <p>The dress is pinned and marked in person, with the bride there to check the fit while standing.</p>
+        </div>
+        <div class="spec-item">
+          <h3>Alteration Work</h3>
+          <p>Hems, straps, and bodices adjusted by hand, with attention to the fabric and beading involved.</p>
+        </div>
+        <div class="spec-item">
+          <h3>Final Fitting</h3>
+          <p>A second fitting confirms everything sits right before the dress goes home for the wedding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">From Astoria</span>
+        <h2>What customers say</h2>
+      </div>
+      <div class="quote-block">
+        <p>"They altered my wedding dress and it fit better than it did off the rack. Kind, patient, and honest about what it needed."</p>
+        <cite>Customer, Astoria</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Visit the shop</span>
+        <h2>Stop by 30th Avenue</h2>
+        <p style="color:#4a3f2c;margin-top:14px;">Walk in for drop-offs and pickups, or call ahead to schedule a fitting.</p>
+        <div class="hero-actions" style="margin-top:28px;">
+          <a href="tel:7189323125" class="btn-primary">Call (718) 932-3125</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Shop Details</h3>
+        <div class="info-row"><span>Address</span><span>3005 30th Ave, Astoria, NY 11102</span></div>
+        <div class="info-row"><span>Phone</span><span>(718) 932-3125</span></div>
+        <div class="info-row"><span>Mon &ndash; Fri</span><span>7:30am &ndash; 7:30pm</span></div>
+        <div class="info-row"><span>Saturday</span><span>8:30am &ndash; 6:30pm</span></div>
+        <div class="info-row"><span>Sunday</span><span>Closed</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand">Chic Cleaners &amp; Tailoring</div>
+        <p>Dry cleaning and custom alterations on 30th Avenue in Astoria, Queens.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <p><a href="#services">Services</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#weddings">Weddings</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:7189323125">(718) 932-3125</a></p>
+        <p>3005 30th Ave<br>Astoria, NY 11102</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Chic Cleaners &amp; Tailoring</span>
+      <span>Site built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var panel = document.getElementById('mobilePanel');
+  btn.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

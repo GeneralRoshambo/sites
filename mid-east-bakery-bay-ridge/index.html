@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mid-East Bakery and Grocery | Bay Ridge, Brooklyn</title>
+<meta name="description" content="Fresh pita, manakish, and imported groceries baked and stocked daily in Bay Ridge, Brooklyn. Family owned on 3rd Avenue since 1976.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Condensed:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracotta:#C1502E;
+    --terracotta-dark:#9B3E22;
+    --terracotta-deep:#9F3E1C;
+    --terracotta-bright:#DB7648;
+    --brick:#8C3A22;
+    --charcoal:#2A2420;
+    --wheat:#F2E4CE;
+    --cream:#FBF6EC;
+    --olive:#6B7A3A;
+    --line:#dccba8;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Source Serif 4', serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Archivo Condensed', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    color:var(--charcoal);
+    margin:0 0 0.4em 0;
+    line-height:1.05;
+    font-weight:800;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--terracotta);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,236,0.96);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:var(--max);margin:0 auto;
+  }
+  .brand{
+    font-family:'Archivo Condensed', sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:1.5rem;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    display:flex;align-items:center;gap:10px;
+    color:var(--charcoal);
+  }
+  .brand .mark{width:32px;height:32px;flex:none;}
+  nav.primary{display:flex;gap:34px;align-items:center;}
+  nav.primary a{
+    text-decoration:none;
+    font-family:'Archivo Condensed',sans-serif;
+    text-transform:uppercase;
+    font-size:0.95rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color:var(--charcoal);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary a:hover{border-bottom-color:var(--terracotta);}
+  .nav-cta{
+    background:var(--terracotta-deep);
+    color:var(--cream);
+    padding:10px 20px;
+    border-radius:3px;
+    font-weight:700;
+    font-family:'Archivo Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    font-size:0.9rem;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brick);}
+  .hamburger{display:none;background:none;border:1px solid var(--charcoal);border-radius:3px;padding:8px 10px;cursor:pointer;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);margin:4px 0;}
+  .mobile-panel{display:none;}
+
+  @media (max-width:1150px){
+    nav.primary, .nav-cta.desktop-only{display:none;}
+    .hamburger{display:block;}
+    .mobile-panel{
+      display:none;flex-direction:column;
+      background:var(--cream);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding:12px 32px 20px;
+    }
+    .mobile-panel.open{display:flex;}
+    .mobile-panel a{
+      padding:12px 0;text-decoration:none;color:var(--charcoal);
+      font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;font-weight:700;
+      border-bottom:1px solid var(--line);
+    }
+    .mobile-panel .nav-cta{margin-top:14px;text-align:center;color:var(--cream);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:80px 0 96px;background:var(--wheat);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;}
+  .eyebrow{
+    font-family:'Archivo Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:0.82rem;
+    color:var(--brick);
+    font-weight:700;
+    margin-bottom:16px;
+    display:inline-block;
+  }
+  .hero h1{font-size:clamp(2.4rem,4.4vw,3.6rem);max-width:11ch;}
+  .hero p.lead{font-size:1.15rem;max-width:44ch;color:#4a3d2e;margin-top:20px;}
+  .hero-actions{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--terracotta-deep);color:var(--cream);
+    padding:14px 26px;border-radius:3px;text-decoration:none;
+    font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:0.02em;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--brick);}
+  .btn-secondary{
+    border:1.5px solid var(--charcoal);color:var(--charcoal);
+    padding:13px 26px;border-radius:3px;text-decoration:none;
+    font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;font-weight:700;letter-spacing:0.02em;
+    display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--charcoal);color:var(--cream);}
+
+  /* Oven arch signature */
+  .oven-arch{
+    background:var(--brick);
+    border-radius:220px 220px 16px 16px;
+    padding:44px 30px 30px;
+    position:relative;
+    box-shadow:0 24px 40px -22px rgba(42,36,32,0.4);
+  }
+  .oven-inner{
+    background:var(--terracotta-deep);
+    border-radius:190px 190px 8px 8px;
+    padding:40px 24px 26px;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .pita-row{display:flex;justify-content:center;gap:-6px;margin-bottom:-14px;}
+  .pita{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--wheat);
+    border:2px solid var(--cream);
+    margin-left:-16px;
+    position:relative;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+  .pita:first-child{margin-left:0;}
+  .pita::before{
+    content:"";position:absolute;inset:10px;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 30% 30%, #d8a35a 2px, transparent 2px),
+      radial-gradient(circle at 60% 50%, #d8a35a 2px, transparent 2px),
+      radial-gradient(circle at 40% 70%, #d8a35a 2px, transparent 2px),
+      radial-gradient(circle at 70% 25%, #d8a35a 2px, transparent 2px);
+  }
+  .oven-caption{
+    margin-top:26px;text-align:center;
+  }
+  .oven-caption .big{
+    font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;
+    color:var(--cream);font-weight:800;font-size:1.6rem;letter-spacing:0.02em;
+  }
+  .oven-caption .small{
+    color:#f4dcc6;font-family:'Source Serif 4',serif;font-size:0.92rem;margin-top:4px;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .oven-arch{max-width:420px;margin:0 auto;}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.9rem,2.8vw,2.6rem);}
+  .section-head p{color:#4a3d2e;font-size:1.05rem;margin-top:14px;font-family:'Source Serif 4',serif;}
+
+  /* About / legacy */
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about p{color:#4a3d2e;}
+  .legacy-card{
+    background:var(--wheat);
+    border-radius:8px;
+    padding:32px;
+  }
+  .legacy-card h3{font-size:1.3rem;margin-bottom:10px;}
+  .legacy-card p{margin:0;color:#4a3d2e;}
+
+  /* Menu / offerings grid */
+  .menu{background:var(--wheat);}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .menu-card{
+    background:var(--cream);
+    border-radius:8px;
+    padding:28px 24px;
+  }
+  .menu-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .menu-card p{font-size:0.95rem;color:#4a3d2e;margin:0;}
+
+  /* Timeline - genuinely sequential (real years) */
+  .timeline{background:var(--charcoal);color:var(--cream);}
+  .timeline .section-head h2, .timeline .section-head p{color:var(--cream);}
+  .timeline .section-head p{color:#c9b89a;}
+  .tl-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+  }
+  .tl-item{border-top:2px solid var(--terracotta);padding-top:18px;}
+  .tl-year{
+    font-family:'Archivo Condensed',sans-serif;
+    font-size:1.8rem;font-weight:800;color:var(--terracotta-bright);
+    display:block;margin-bottom:8px;
+  }
+  .tl-item p{color:#d8c9ac;font-size:0.93rem;margin:0;}
+
+  /* Quote */
+  .quote-block{
+    background:var(--wheat);
+    padding:34px 38px;
+    border-radius:4px;
+    max-width:760px;
+  }
+  .quote-block p{font-family:'Source Serif 4',serif;font-size:1.3rem;font-style:italic;line-height:1.5;margin:0 0 14px;color:var(--charcoal);}
+  .quote-block cite{font-style:normal;font-size:0.9rem;color:#5a4c3b;}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .info-card{background:var(--wheat);border-radius:8px;padding:32px;}
+  .info-card h3{font-size:1.3rem;margin-bottom:18px;}
+  .info-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.95rem;}
+  .info-row:last-child{border-bottom:none;}
+  .info-row span:first-child{color:#5a4c3b;}
+  .info-row span:last-child{font-weight:600;text-align:right;}
+
+  /* Footer */
+  footer{background:var(--brick);color:var(--cream);padding:56px 0 32px;}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid #a85838;}
+  footer h4{font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;font-size:1.1rem;margin:0 0 14px;color:var(--cream);}
+  footer p, footer a{color:#f0d4bd;font-size:0.92rem;text-decoration:none;line-height:1.8;}
+  footer a:hover{color:var(--cream);}
+  .foot-brand{font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;font-weight:800;font-size:1.4rem;color:var(--cream);margin-bottom:10px;}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:0.82rem;color:#d3a184;}
+
+  @media (max-width:900px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .menu-grid{grid-template-columns:1fr 1fr;}
+    .tl-row{grid-template-columns:1fr 1fr;gap:28px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .nav-inner{padding:14px 20px;}
+    section{padding:64px 0;}
+    .hero{padding:52px 0 60px;}
+    .menu-grid, .tl-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 22C8 14 13 8 20 8C27 8 32 14 32 22C32 24 30 25 28 24.5C25 23.7 24 26 20 26C16 26 15 23.7 12 24.5C10 25 8 24 8 22Z" fill="#F2E4CE" stroke="#8C3A22" stroke-width="2"/>
+      </svg>
+      Mid-East Bakery
+    </a>
+    <nav class="primary">
+      <a href="#offerings">Offerings</a>
+      <a href="#about">Our Story</a>
+      <a href="#legacy">Legacy</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <a href="tel:7186800561" class="nav-cta desktop-only">Call (718) 680-0561</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#offerings">Offerings</a>
+    <a href="#about">Our Story</a>
+    <a href="#legacy">Legacy</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:7186800561" class="nav-cta">Call (718) 680-0561</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Middle Eastern Bakery in Bay Ridge, Brooklyn</h1>
+        <p class="lead">A family-owned fixture of 3rd Avenue since 1976. Pita comes out of the oven fresh every morning, the way it has since the doors first opened. Manakish, spinach pies, olive oil, and shelves of imported groceries, all run by the same family for three generations.</p>
+        <div class="hero-actions">
+          <a href="tel:7186800561" class="btn-primary">Call the Bakery</a>
+          <a href="#offerings" class="btn-secondary">See What We Bake</a>
+        </div>
+      </div>
+      <div class="oven-arch">
+        <div class="oven-inner">
+          <div class="pita-row">
+            <div class="pita"></div>
+            <div class="pita"></div>
+            <div class="pita"></div>
+          </div>
+          <div class="oven-caption">
+            <div class="big">Baked Fresh Daily</div>
+            <div class="small">Straight from the oven on 3rd Avenue</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">Our story</span>
+        <h2>Three generations, one oven</h2>
+        <p>Mid-East Bakery and Grocery has been a fixture of 3rd Avenue since 1976, when Antoine and Frangie Tabet first opened its doors. Their daughter Marie now runs the shop with her husband Tony Aflak, and their sons Alex and Thomas have grown up behind the same counter.</p>
+        <p>The bread has not changed. Neither has the welcome you get walking through the door.</p>
+      </div>
+      <div class="legacy-card" id="legacy">
+        <h3>Run by the Aflak family</h3>
+        <p>Tony and Marie Aflak keep the bakery going today, continuing the legacy Marie's parents built. It is still a shop where regulars are greeted by name and the pita is never more than a few hours old.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="offerings">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">From the oven and the shelves</span>
+        <h2>What's baked and stocked daily</h2>
+        <p>Everything is made in small batches, so what you buy in the afternoon was likely baked that same morning.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h3>Fresh Pita</h3>
+          <p>Baked daily and sold warm, the bread this bakery has been known for since 1976.</p>
+        </div>
+        <div class="menu-card">
+          <h3>Manakish</h3>
+          <p>Za'atar and cheese flatbreads baked to order, a neighborhood breakfast staple.</p>
+        </div>
+        <div class="menu-card">
+          <h3>Spinach Pies</h3>
+          <p>Hand-folded pastries baked fresh, ready to grab on your way out the door.</p>
+        </div>
+        <div class="menu-card">
+          <h3>Olive Oil &amp; Spices</h3>
+          <p>Imported olive oil, za'atar, and spice blends stocked on shelves lining the shop.</p>
+        </div>
+        <div class="menu-card">
+          <h3>Cheese &amp; Olives</h3>
+          <p>A rotating selection of cheeses and cured olives sold by the pound.</p>
+        </div>
+        <div class="menu-card">
+          <h3>Pantry Groceries</h3>
+          <p>Grains, legumes, and Middle Eastern pantry staples hard to find elsewhere in Bay Ridge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Where we come from</span>
+        <h2>Almost fifty years on 3rd Avenue</h2>
+        <p>A short history of a shop that has never needed to change much to keep people coming back.</p>
+      </div>
+      <div class="tl-row">
+        <div class="tl-item">
+          <span class="tl-year">1976</span>
+          <p>Antoine and Frangie Tabet open Mid-East Bakery and Grocery on 3rd Avenue.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">1990s</span>
+          <p>Daughter Marie takes on a larger role in the shop, learning the ovens and the regulars.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2000s</span>
+          <p>Marie and her husband Tony Aflak take over daily operations of the bakery.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">Today</span>
+          <p>Sons Alex and Thomas work alongside their parents, the third generation behind the counter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">From Bay Ridge</span>
+        <h2>What neighbors say</h2>
+      </div>
+      <div class="quote-block">
+        <p>"Best pita in Brooklyn, hands down. It's the kind of place where they remember what you always order before you say a word."</p>
+        <cite>Longtime customer, Bay Ridge</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Visit the bakery</span>
+        <h2>Stop by 3rd Avenue</h2>
+        <p style="color:#4a3d2e;margin-top:14px;">Come by any day we're open, no need to call ahead. The oven runs every morning we're open.</p>
+        <div class="hero-actions" style="margin-top:28px;">
+          <a href="tel:7186800561" class="btn-primary">Call (718) 680-0561</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Bakery Details</h3>
+        <div class="info-row"><span>Address</span><span>7808 3rd Ave, Brooklyn, NY 11209</span></div>
+        <div class="info-row"><span>Phone</span><span>(718) 680-0561</span></div>
+        <div class="info-row"><span>Email</span><span>mideastbakerygrocery@gmail.com</span></div>
+        <div class="info-row"><span>Tue &ndash; Fri</span><span>9:00am &ndash; 5:00pm</span></div>
+        <div class="info-row"><span>Saturday</span><span>9:00am &ndash; 3:00pm</span></div>
+        <div class="info-row"><span>Sun &amp; Mon</span><span>Closed</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand">Mid-East Bakery and Grocery</div>
+        <p>Family owned bakery and grocery on 3rd Avenue in Bay Ridge, Brooklyn, since 1976.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <p><a href="#offerings">Offerings</a></p>
+        <p><a href="#about">Our Story</a></p>
+        <p><a href="#legacy">Legacy</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:7186800561">(718) 680-0561</a></p>
+        <p><a href="mailto:mideastbakerygrocery@gmail.com">mideastbakerygrocery@gmail.com</a></p>
+        <p>7808 3rd Ave<br>Brooklyn, NY 11209</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Mid-East Bakery and Grocery</span>
+      <span>Site built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var panel = document.getElementById('mobilePanel');
+  btn.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

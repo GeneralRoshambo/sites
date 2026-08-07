@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Dorp Deli | Corner Deli in New Dorp, Staten Island</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #1B2A4A;
+    --navy-dark: #101B30;
+    --coral: #FF6B4A;
+    --coral-dark: #DE5230;
+    --sand: #E8DCC3;
+    --cream: #F6F4EE;
+    --ink: #23262E;
+    --ink-soft: #565C68;
+    --line: #DDD6C6;
+    --radius: 5px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    margin:0;
+    color:var(--navy);
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+
+  /* Bunting signature strip */
+  .bunting{
+    display:flex;
+    height:26px;
+    width:100%;
+    overflow:hidden;
+  }
+  .bunting span{
+    flex:1 0 40px;
+    height:0;
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-top:24px solid var(--navy);
+    margin:0 4px;
+  }
+  .bunting span:nth-child(3n+2){border-top-color:var(--coral);}
+  .bunting span:nth-child(3n){border-top-color:var(--sand);}
+
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--navy);
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand span{color:var(--coral);}
+  nav.primary-nav{display:flex;gap:32px;align-items:center;}
+  nav.primary-nav a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:1rem;
+    color:var(--ink);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--coral);}
+  .call-btn{
+    background:var(--navy);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:var(--radius);
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:none !important;
+  }
+  .call-btn:hover{background:var(--navy-dark);}
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:2px solid var(--navy);
+    border-radius:var(--radius);
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    flex-shrink:0;
+    position:relative;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";
+    position:absolute;
+    left:9px;
+    right:9px;
+    height:2px;
+    background:var(--navy);
+  }
+  .menu-toggle::before{top:14px;}
+  .menu-toggle span{top:19px;}
+  .menu-toggle::after{top:24px;}
+
+  @media (max-width: 1150px){
+    nav.primary-nav{
+      position:absolute;
+      top:100%;left:0;right:0;
+      background:var(--cream);
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{padding:16px 28px;border-bottom:1px solid var(--line);}
+    nav.primary-nav .call-btn{margin:16px 28px;text-align:center;}
+    .menu-toggle{display:block;}
+  }
+
+  .hero{padding:64px 0 60px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.75rem, 4.5vw, 3.5rem);
+    line-height:1.12;
+    margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:1.25rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:28px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+  .btn-primary{
+    background:var(--coral);
+    color:#101B30;
+    padding:14px 26px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:700;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:#EA6A44;}
+  .btn-secondary{
+    border:2px solid var(--navy);
+    color:var(--navy);
+    padding:12px 24px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:700;
+    display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--navy);color:#fff;}
+  .hours-strip{
+    display:flex;gap:28px;flex-wrap:wrap;
+    font-size:0.8125rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .hours-strip strong{color:var(--navy);}
+
+  .board{
+    background:var(--navy);
+    color:#fff;
+    border-radius:10px;
+    padding:30px;
+    position:relative;
+  }
+  .board-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:2px solid rgba(255,255,255,0.18);
+    padding-bottom:14px;
+    margin-bottom:16px;
+  }
+  .board-top span{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.25rem;}
+  .board-top small{
+    color:var(--coral);
+    font-weight:700;
+    font-size:0.8125rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  .board-row{
+    display:flex;justify-content:space-between;
+    padding:11px 0;
+    border-bottom:1px dashed rgba(255,255,255,0.18);
+    font-size:1rem;
+  }
+  .board-row:last-child{border-bottom:none;}
+  .board-row .item{font-weight:500;}
+  .board-row .tag{color:var(--coral);font-weight:700;font-size:0.8125rem;}
+
+  .wave{
+    width:100%;
+    display:block;
+    height:44px;
+  }
+
+  .menu-section{
+    padding:70px 0;
+    background:#fff;
+  }
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1rem;}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+  }
+  .stock-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:26px 22px;
+  }
+  .stock-card h3{font-size:1.25rem;margin-bottom:10px;}
+  .stock-card p{font-size:1rem;color:var(--ink-soft);margin:0;}
+
+  .about-section{padding:80px 0;background:var(--cream);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-grid h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:20px;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:1rem;}
+  .address-block{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:36px;
+    border-radius:8px;
+  }
+  .address-block h3{font-size:1.25rem;margin-bottom:18px;}
+  .address-block dl{
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:10px 18px;
+    font-size:1rem;
+  }
+  .address-block dt{
+    color:#A83D1F;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:0.8125rem;
+    letter-spacing:0.08em;
+    align-self:center;
+  }
+  .address-block dd{margin:0;color:var(--ink);}
+  .address-block a{color:var(--navy);text-decoration:underline;}
+
+  .cta-band{
+    background:var(--navy-dark);
+    color:#fff;
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(1.75rem, 3.2vw, 2.2rem);margin-bottom:16px;}
+  .cta-band p{color:#B9C2D6;max-width:52ch;margin:0 auto 30px;font-size:1rem;}
+
+  footer{
+    background:var(--navy-dark);
+    color:#8D97AC;
+    padding:28px 0 40px;
+    text-align:center;
+    font-size:0.8125rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  footer a{color:#fff;}
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .address-block{order:-1;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .hours-strip{flex-direction:column;gap:8px;}
+    .bunting span{flex:1 0 24px;border-left-width:14px;border-right-width:14px;border-top-width:18px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bunting" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">New Dorp <span>Deli</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a class="call-btn" href="tel:+17189801207">Call (718) 980-1207</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Corner Deli Serving New Dorp, Staten Island</h1>
+        <p class="lede">A short walk from the train station and a few blocks from the beach, New Dorp Deli has been slicing sandwiches and pouring coffee for the neighborhood, no drive-thru, no app, just a counter and a griddle.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+17189801207">Call to Order</a>
+          <a class="btn-secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hours-strip">
+          <span><strong>Open Daily</strong> &middot; Early Morning &ndash; Evening</span>
+          <span><strong>306 New Dorp Ln</strong> &middot; Staten Island, NY 10306</span>
+        </div>
+      </div>
+      <div class="board" aria-hidden="true">
+        <div class="board-top">
+          <span>On the Counter</span>
+          <small>House Favorites</small>
+        </div>
+        <div class="board-row"><span class="item">Bacon, Egg &amp; Cheese</span><span class="tag">Grill</span></div>
+        <div class="board-row"><span class="item">Turkey Club Hero</span><span class="tag">Cold Cut</span></div>
+        <div class="board-row"><span class="item">Fresh Brewed Coffee</span><span class="tag">All Day</span></div>
+        <div class="board-row"><span class="item">Italian Combo</span><span class="tag">Cold Cut</span></div>
+        <div class="board-row"><span class="item">Chips &amp; Cold Drinks</span><span class="tag">Grab &amp; Go</span></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,22 C150,44 300,0 450,22 C600,44 750,0 900,22 C1050,44 1150,10 1200,20 L1200,44 L0,44 Z" fill="#ffffff"></path>
+  </svg>
+
+  <section class="menu-section" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What's Behind the Counter</h2>
+        <p>Fresh cut cold cuts, a hot griddle, and the kind of coffee that goes with the morning rush to the train.</p>
+      </div>
+      <div class="card-grid">
+        <div class="stock-card">
+          <h3>Breakfast Sandwiches</h3>
+          <p>Eggs, bacon, sausage and cheese, made to order on a roll or a bagel.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Cold Cut Heroes</h3>
+          <p>Hand sliced turkey, ham, and Italian combos built the way you order them.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Coffee &amp; Fountain</h3>
+          <p>Fresh brewed coffee, iced coffee, and cold fountain drinks all day long.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Grab &amp; Go</h3>
+          <p>Chips, snacks, and grocery basics for a quick stop between errands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A Fixture on New Dorp Lane</h2>
+        <p>New Dorp Deli sits in the middle of one of Staten Island's busiest little strips, steps from the Staten Island Railway and a short ride from New Dorp Beach. It is the kind of counter where the person making your sandwich already knows what you want before you say it.</p>
+        <p>The deli has never needed a website to fill the counter, foot traffic and word of mouth have done that job for years. That also means most people who search for a New Dorp deli online never see this one show up.</p>
+      </div>
+      <div class="address-block">
+        <h3>Visit the Deli</h3>
+        <dl>
+          <dt>Address</dt>
+          <dd>306 New Dorp Ln<br>Staten Island, NY 10306</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+17189801207">(718) 980-1207</a></dd>
+          <dt>Neighborhood</dt>
+          <dd>New Dorp, Staten Island</dd>
+          <dt>Near</dt>
+          <dd>New Dorp Railroad Station</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit">
+    <div class="wrap">
+      <h2>Stop in on New Dorp Lane</h2>
+      <p>Open early for the commute, open through the day for everything else. Come see what's fresh on the griddle.</p>
+      <a class="btn-primary" href="tel:+17189801207">Call (718) 980-1207</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>New Dorp Deli &middot; 306 New Dorp Ln, Staten Island, NY 10306 &middot; <a href="tel:+17189801207">(718) 980-1207</a></p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

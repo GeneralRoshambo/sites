@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polar Bear Ice Cream | Matamoras, PA</title>
+<meta name="description" content="A roadside ice cream stand on Pennsylvania Avenue in Matamoras, PA since 1984. Soft serve, hard ice cream, sundaes and shakes near the Delaware River.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --river-blue: #1F5C73;
+    --blue-dark: #12262C;
+    --limestone: #D8C9AE;
+    --bg: #F6F8F5;
+    --ink: #1B2A2E;
+    --blue-tint: #DCE9EC;
+    --display-font: 'Spectral', serif;
+    --body-font: 'Public Sans', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--body-font); background: var(--bg); color: var(--ink); line-height: 1.6; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--river-blue); outline-offset: 3px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  header.site-nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); }
+  .nav-inner { max-width: 1140px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; }
+  .brand { font-family: var(--display-font); font-size: 1.55rem; font-weight: 700; white-space: nowrap; text-decoration: none; flex-shrink: 0; color: var(--blue-dark); }
+  nav.links { display: flex; gap: 28px; align-items: center; }
+  nav.links a { text-decoration: none; font-size: 0.98rem; font-weight: 500; }
+  nav.links a.nav-cta { padding: 10px 20px; border-radius: 3px; background: var(--river-blue); color: #FFFFFF; font-weight: 600; }
+  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--blue-dark); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: flex-start; padding: 16px 24px 24px; gap: 14px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  .hero { padding: 64px 24px 0; }
+  .hero-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; padding-bottom: 52px; }
+  h1 { font-family: var(--display-font); font-weight: 700; line-height: 1.16; font-size: clamp(2.4rem, 5vw, 3.5rem); margin: 0 0 20px; max-width: 14ch; color: var(--blue-dark); }
+  .lede { font-size: 1.12rem; max-width: 46ch; margin: 0 0 30px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid transparent; }
+  .btn-primary { background: var(--blue-dark); color: #FFFFFF; }
+  .btn-ghost { border-color: var(--blue-dark); color: var(--blue-dark); }
+
+  /* River gauge signature */
+  .gauge-wrap { display: flex; align-items: center; gap: 22px; background: var(--blue-tint); border-radius: 4px; padding: 26px 24px; }
+  .gauge-wrap svg { flex-shrink: 0; height: 220px; width: auto; }
+  .gauge-copy .num { font-family: var(--display-font); font-size: 2.6rem; font-weight: 700; color: var(--river-blue); margin: 0; line-height: 1; }
+  .gauge-copy .num-label { font-family: var(--body-font); font-size: 0.85rem; color: var(--blue-dark); margin: 6px 0 0; max-width: 20ch; }
+
+  section.block-section { padding: 60px 24px; }
+  h2.section-title { font-family: var(--display-font); font-size: clamp(1.9rem, 3.2vw, 2.4rem); margin: 0 0 26px; font-weight: 700; color: var(--blue-dark); }
+  .about-copy { font-size: 1.06rem; max-width: 64ch; margin: 0 0 16px; }
+  .about-section { background: var(--limestone); }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .menu-grid > div { padding: 22px 20px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-right: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .menu-grid > div:nth-child(3n) { border-right: none; }
+  .menu-grid h3 { font-family: var(--display-font); font-size: 1.15rem; margin: 0 0 8px; color: var(--river-blue); font-weight: 700; }
+  .menu-grid p { margin: 0; font-size: 0.97rem; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-grid > div { border-right: none; }
+    .gauge-wrap { flex-direction: column; text-align: center; }
+  }
+
+  .hours-block { background: var(--river-blue); color: #FFFFFF; }
+  .hours-block h2.section-title { color: #FFFFFF; }
+  .hours-table { width: 100%; max-width: 480px; border-collapse: collapse; font-size: 0.98rem; }
+  .hours-table td { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.25); }
+  .hours-table td:last-child { text-align: right; font-weight: 600; }
+  .hours-note { font-size: 1rem; margin-top: 20px; max-width: 50ch; }
+
+  footer { background: var(--blue-dark); color: #FAF7F0; padding: 48px 24px 32px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.4rem; font-weight: 700; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.8; }
+  footer a.footer-link { text-decoration: underline; color: #FAF7F0; font-weight: 600; }
+  .footer-bottom { max-width: 1140px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(250,247,240,0.2); font-size: 0.75rem; color: rgba(250,247,240,0.75); }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Polar Bear Ice Cream</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#hours">Hours &amp; Location</a>
+      <a class="nav-cta" href="tel:5704914311">(570) 491-4311</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Ice Cream and Soft Serve in Matamoras, PA</h1>
+        <p class="lede">A roadside ice cream stand on Pennsylvania Avenue since 1984, a short walk from the Delaware River, serving cones, sundaes and shakes all summer long.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:5704914311">Call (570) 491-4311</a>
+          <a class="btn btn-ghost" href="#hours">Get Directions</a>
+        </div>
+      </div>
+      <div class="gauge-wrap">
+        <svg viewBox="0 0 60 220" role="img" aria-label="River gauge marker illustration">
+          <rect x="24" y="4" width="12" height="212" fill="none" stroke="var(--river-blue)" stroke-width="2"/>
+          <g stroke="var(--river-blue)" stroke-width="2">
+            <line x1="24" y1="20" x2="10" y2="20"/>
+            <line x1="24" y1="60" x2="10" y2="60"/>
+            <line x1="24" y1="100" x2="10" y2="100"/>
+            <line x1="24" y1="140" x2="10" y2="140"/>
+            <line x1="24" y1="180" x2="10" y2="180"/>
+          </g>
+          <rect x="24" y="120" width="12" height="96" fill="var(--river-blue)" opacity="0.35"/>
+          <text x="8" y="18" font-family="Public Sans" font-size="9" fill="var(--blue-dark)" text-anchor="end">1984</text>
+          <text x="8" y="182" font-family="Public Sans" font-size="9" fill="var(--blue-dark)" text-anchor="end">Today</text>
+        </svg>
+        <div class="gauge-copy">
+          <p class="num">40+</p>
+          <p class="num-label">years scooping ice cream a few blocks from the river</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2 class="section-title">A Roadside Stop Since 1984</h2>
+      <p class="about-copy">Polar Bear has been the ice cream stop on Pennsylvania Avenue in Matamoras since 1984, a short drive from the Delaware River and the bridge into Port Jervis. It is a stand, not a restaurant: pull up, order at the window, and eat your cone at the picnic tables out front.</p>
+      <p class="about-copy">Sundaes, shakes, hard scoop and soft serve twist, made the same way it has been made for forty summers.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="block-section">
+    <div class="wrap">
+      <h2 class="section-title">At the Window</h2>
+      <div class="menu-grid">
+        <div>
+          <h3>Soft Serve</h3>
+          <p>Dole soft serve and classic vanilla-chocolate twist, cups and cones.</p>
+        </div>
+        <div>
+          <h3>Sundaes</h3>
+          <p>Hot fudge and caramel sundaes built to order, no two quite the same.</p>
+        </div>
+        <div>
+          <h3>Shakes &amp; Lunch</h3>
+          <p>Hand-spun shakes plus sandwiches for a quick lunch before the drive home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="block-section hours-block">
+    <div class="wrap">
+      <h2 class="section-title">Hours &amp; Location</h2>
+      <table class="hours-table">
+        <tr><td>Monday &ndash; Thursday</td><td>11:30 AM &ndash; 9:00 PM</td></tr>
+        <tr><td>Friday &ndash; Saturday</td><td>11:30 AM &ndash; 9:30 PM</td></tr>
+        <tr><td>Sunday</td><td>11:30 AM &ndash; 9:00 PM</td></tr>
+      </table>
+      <p class="hours-note">1004 Pennsylvania Ave, Matamoras, PA 18336. Seasonal window service, picnic tables out front.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Polar Bear Ice Cream</h3>
+      <address>
+        1004 Pennsylvania Ave, Matamoras, PA 18336<br>
+        <a class="footer-link" href="tel:5704914311">(570) 491-4311</a>
+      </address>
+    </div>
+    <div>
+      <h3>Find Us</h3>
+      <p>Pennsylvania Avenue, Matamoras, PA, minutes from the Delaware River bridge.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Polar Bear Ice Cream. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>

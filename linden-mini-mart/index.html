@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linden Mini Mart | Corner Convenience Store in Scranton, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mustard: #F2CE78;
+    --mustard-dark: #8C6415;
+    --denim: #33566E;
+    --denim-dark: #1F3A4D;
+    --cream: #FAF5E9;
+    --panel: #F0E6CC;
+    --ink: #26241D;
+    --ink-soft: #5C5748;
+    --line: #E3D8BC;
+    --radius: 4px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+    color:var(--denim-dark);
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:3px solid var(--mustard-dark);outline-offset:3px;}
+
+  .canopy{
+    height:12px;
+    width:100%;
+    background:var(--denim);
+  }
+
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;gap:24px;
+  }
+  .brand{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    font-size:1.25rem;
+    color:var(--denim-dark);
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand span{color:var(--mustard-dark);}
+  nav.primary-nav{display:flex;gap:32px;align-items:center;}
+  nav.primary-nav a{
+    text-decoration:none;font-weight:600;font-size:1rem;
+    color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--mustard-dark);}
+  .call-btn{
+    background:var(--denim);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:var(--radius);
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:none !important;
+  }
+  .call-btn:hover{background:var(--denim-dark);}
+  .menu-toggle{
+    display:none;background:none;border:2px solid var(--denim);
+    border-radius:var(--radius);width:44px;height:40px;cursor:pointer;
+    flex-shrink:0;position:relative;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";position:absolute;left:9px;right:9px;height:2px;background:var(--denim);
+  }
+  .menu-toggle::before{top:14px;}
+  .menu-toggle span{top:19px;}
+  .menu-toggle::after{top:24px;}
+
+  @media (max-width: 1150px){
+    nav.primary-nav{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);flex-direction:column;align-items:stretch;
+      gap:0;border-bottom:1px solid var(--line);display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{padding:16px 28px;border-bottom:1px solid var(--line);}
+    nav.primary-nav .call-btn{margin:16px 28px;text-align:center;}
+    .menu-toggle{display:block;}
+  }
+
+  .hero{padding:64px 0 56px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.75rem, 4.5vw, 3.5rem);
+    line-height:1.14;margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:1.25rem;color:var(--ink-soft);max-width:46ch;margin-bottom:28px;
+    text-transform:none;
+    font-weight:400;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+  .btn-primary{
+    background:var(--mustard-dark);color:#fff;padding:14px 26px;
+    border-radius:var(--radius);text-decoration:none;font-weight:700;display:inline-block;
+  }
+  .btn-primary:hover{background:#7A5610;}
+  .btn-secondary{
+    border:2px solid var(--denim);color:var(--denim-dark);padding:12px 24px;
+    border-radius:var(--radius);text-decoration:none;font-weight:700;display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--denim);color:#fff;}
+  .hours-strip{
+    display:flex;gap:28px;flex-wrap:wrap;font-size:0.8125rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);padding-top:20px;
+  }
+  .hours-strip strong{color:var(--denim-dark);}
+
+  /* Signature: hanging sign board */
+  .sign-card{
+    background:var(--denim);
+    color:#fff;
+    border-radius:6px;
+    padding:0 0 26px;
+    position:relative;
+  }
+  .sign-hook{
+    display:flex;
+    justify-content:center;
+    gap:56px;
+    padding-top:10px;
+  }
+  .sign-hook span{
+    width:3px;height:22px;background:var(--mustard);display:block;border-radius:2px;
+  }
+  .sign-top{
+    text-align:center;
+    padding:6px 20px 18px;
+    border-bottom:2px solid var(--mustard);
+    margin:0 24px 18px;
+  }
+  .sign-top strong{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-size:1.25rem;
+  }
+  .sign-top small{
+    display:block;
+    color:var(--mustard);
+    font-weight:600;
+    font-size:0.8125rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin-top:6px;
+  }
+  .sign-row{
+    display:flex;justify-content:space-between;
+    padding:10px 30px;
+    border-bottom:1px dashed rgba(255,255,255,0.2);
+    font-size:1rem;
+  }
+  .sign-row:last-child{border-bottom:none;}
+  .sign-row .tag{color:var(--mustard);font-weight:700;font-size:0.8125rem;text-transform:uppercase;}
+
+  .stock-section{padding:70px 0;background:#fff;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1rem;font-weight:400;}
+  .card-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:24px;}
+  .stock-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:26px 22px;
+  }
+  .stock-card h3{font-size:1.25rem;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.01em;}
+  .stock-card p{font-size:1rem;color:var(--ink-soft);margin:0;font-weight:400;}
+
+  .about-section{padding:80px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:20px;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:1rem;font-weight:400;}
+  .address-block{
+    background:var(--denim);color:#fff;padding:36px;border-radius:6px;
+  }
+  .address-block h3{color:#fff;font-size:1.25rem;margin-bottom:18px;}
+  .address-block dl{
+    margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:1rem;
+  }
+  .address-block dt{
+    color:var(--mustard);font-weight:700;text-transform:uppercase;
+    font-size:0.8125rem;letter-spacing:0.1em;align-self:center;
+  }
+  .address-block dd{margin:0;font-weight:400;}
+  .address-block a{color:#fff;text-decoration:underline;}
+
+  .cta-band{background:var(--denim-dark);color:#fff;padding:64px 0;text-align:center;}
+  .cta-band h2{color:#fff;font-size:clamp(1.75rem, 3.2vw, 2.2rem);margin-bottom:16px;}
+  .cta-band p{color:#FFFFFF;max-width:52ch;margin:0 auto 30px;font-size:1rem;font-weight:400;}
+
+  footer{
+    background:var(--denim-dark);color:#FFFFFF;padding:28px 0 40px;
+    text-align:center;font-size:0.8125rem;border-top:1px solid rgba(255,255,255,0.08);
+  }
+  footer a{color:#fff;}
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .address-block{order:-1;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .hours-strip{flex-direction:column;gap:8px;}
+    .sign-hook{gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="canopy"></div>
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">Linden <span>Mini Mart</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#stock">In the Store</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a class="call-btn" href="tel:+15703428656">Call (570) 342-8656</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Corner Convenience Store Serving Linden Street, Scranton, PA</h1>
+        <p class="lede">Owned and run by Mike Slavich, Linden Mini Mart has kept this stretch of Linden Street in Scranton, PA stocked with the everyday basics, snacks, and cold drinks people need without a trip across town.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+15703428656">Call the Store</a>
+          <a class="btn-secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hours-strip">
+          <span><strong>Open Daily</strong> &middot; Morning &ndash; Evening</span>
+          <span><strong>535 Linden St</strong> &middot; Scranton, PA 18503</span>
+        </div>
+      </div>
+      <div class="sign-card" aria-hidden="true">
+        <div class="sign-hook"><span></span><span></span></div>
+        <div class="sign-top">
+          <strong>In the Store</strong>
+          <small>Stocked Daily</small>
+        </div>
+        <div class="sign-row"><span>Snacks &amp; Chips</span><span class="tag">Aisle 1</span></div>
+        <div class="sign-row"><span>Cold Drinks &amp; Coffee</span><span class="tag">Cooler</span></div>
+        <div class="sign-row"><span>Household Basics</span><span class="tag">Aisle 2</span></div>
+        <div class="sign-row"><span>Lottery &amp; Phone Cards</span><span class="tag">Counter</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stock-section" id="stock">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What's On the Shelf</h2>
+        <p>A tight little store built around what the block actually needs, restocked every day.</p>
+      </div>
+      <div class="card-grid">
+        <div class="stock-card">
+          <h3>Snacks &amp; Grocery</h3>
+          <p>Chips, packaged foods, and everyday grocery basics on hand seven days a week.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Cold Beverages</h3>
+          <p>A stocked cooler of soda, water, and coffee to go for the walk home.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Household Essentials</h3>
+          <p>The small stuff you run out of at the worst time, kept in stock on Linden Street.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Lottery &amp; Sundries</h3>
+          <p>Lottery tickets, phone cards, and counter essentials for a quick stop in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A Steady Hand on Linden Street</h2>
+        <p>Mike Slavich has run Linden Mini Mart as a straightforward corner store, the kind of place regulars stop into on the way home without needing an app or a loyalty card. It has kept the block stocked for years on nothing more than a good location and a reliable owner behind the counter.</p>
+        <p>The store has never had its own website, which means the people searching online for a corner store near Linden Street in Scranton have no way of finding it.</p>
+      </div>
+      <div class="address-block">
+        <h3>Visit the Store</h3>
+        <dl>
+          <dt>Address</dt>
+          <dd>535 Linden St<br>Scranton, PA 18503</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15703428656">(570) 342-8656</a></dd>
+          <dt>Neighborhood</dt>
+          <dd>Linden Street, Scranton, PA</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit">
+    <div class="wrap">
+      <h2>Stop by Linden Street</h2>
+      <p>Snacks, drinks, and the basics, open daily right in the neighborhood.</p>
+      <a class="btn-primary" href="tel:+15703428656">Call (570) 342-8656</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Linden Mini Mart &middot; 535 Linden St, Scranton, PA 18503 &middot; <a href="tel:+15703428656">(570) 342-8656</a></p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posh Paws Dog Spa | Dog Grooming and Spa in Erie, PA</title>
+<meta name="description" content="Posh Paws Dog Spa offers full-service, appointment-only dog grooming at 1301 E Grandview Blvd in Erie, PA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --foam: #F6F9FA;
+    --panel: #ECF2F3;
+    --ink: #16232B;
+    --lake: #0F3F5C;
+    --lake-dark: #0A2C40;
+    --steel: #55666F;
+    --steel-light: #8B979D;
+    --teal: #1C7C8C;
+    --rope: #C99A5B;
+    --line: #D9E2E4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--foam);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+
+  h1, h2, h3, .brand, nav a, .btn-primary, .btn-secondary, .footer-brand {
+    font-family: 'Schibsted Grotesk', sans-serif;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  p { margin: 0; }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--rope);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246, 249, 250, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1160px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--lake);
+    flex-shrink: 0;
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+
+  nav.primary-nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 4px 2px;
+  }
+
+  nav.primary-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--teal);
+    transition: width 0.2s ease;
+  }
+
+  nav.primary-nav a:hover::after,
+  nav.primary-nav a:focus-visible::after {
+    width: 100%;
+  }
+
+  .nav-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--lake);
+    color: var(--foam);
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .nav-call:hover { background: var(--lake-dark); }
+  nav.primary-nav a.nav-call,
+  nav.primary-nav a.nav-call:hover { color: var(--foam); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--steel);
+    border-radius: 4px;
+    width: 44px;
+    height: 40px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle span,
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    margin: 0 auto;
+  }
+
+  .menu-toggle span { margin: 5px auto; }
+  .menu-toggle::before { margin-top: 12px; }
+  .menu-toggle::after { margin-bottom: 12px; }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 72px 0 0;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+    padding-bottom: 54px;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 4.6vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  h1 span.accent { color: var(--lake); }
+
+  .hero-sub {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--steel);
+    max-width: 46ch;
+    font-family: 'Lora', serif;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--lake);
+    color: var(--foam);
+  }
+
+  .btn-primary:hover { background: var(--lake-dark); }
+
+  .btn-secondary {
+    border-color: var(--steel);
+    color: var(--ink);
+  }
+
+  .btn-secondary:hover { border-color: var(--ink); }
+
+  .hero-stats {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-stats div { font-size: 0.75rem; color: var(--steel); font-family: 'Lora', serif; }
+  .hero-stats strong {
+    display: block;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-size: 1.25rem;
+    color: var(--lake);
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-visual .panel {
+    background: var(--panel);
+    border-radius: 10px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .hero-visual .tag {
+    position: absolute;
+    bottom: -18px;
+    left: 24px;
+    background: var(--lake);
+    color: var(--foam);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(15, 63, 92, 0.18);
+  }
+
+  /* ---------- Ripple divider (signature) ---------- */
+
+  .ripple-divider {
+    width: 100%;
+    display: block;
+    height: 44px;
+  }
+
+  .ripple-divider.hero-bottom { background: var(--foam); }
+
+  /* ---------- Sections ---------- */
+
+  .section { padding: 84px 0; }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 46px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+  }
+
+  .section-head p {
+    color: var(--steel);
+    max-width: 40ch;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .service-card .mark { width: 38px; height: 38px; color: var(--lake); }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .service-card p {
+    color: var(--steel);
+    font-size: 1rem;
+    line-height: 1.55;
+    font-family: 'Lora', serif;
+  }
+
+  /* ---------- Philosophy block (color accent) ---------- */
+
+  .philosophy {
+    background: var(--lake);
+    color: var(--foam);
+    position: relative;
+  }
+
+  .philosophy .wrap {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .philosophy h2 {
+    color: var(--foam);
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    line-height: 1.25;
+  }
+
+  .philosophy .owner-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E0BB86;
+    margin-bottom: 18px;
+  }
+
+  .philosophy p.body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(246, 249, 250, 0.92);
+    font-family: 'Lora', serif;
+  }
+
+  .philosophy .signoff {
+    margin-top: 22px;
+    font-weight: 600;
+    color: rgba(246, 249, 250, 0.85);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    font-family: 'Schibsted Grotesk', sans-serif;
+  }
+
+  /* ---------- Visit ---------- */
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .visit-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px;
+    background: #ffffff;
+  }
+
+  .visit-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+  }
+
+  .hours-row:last-child { border-bottom: none; }
+
+  .hours-row span:first-child { color: var(--ink); font-weight: 600; font-family: 'Schibsted Grotesk', sans-serif; }
+  .hours-row span:last-child { color: var(--steel); }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .contact-list .ic {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--lake);
+  }
+
+  .contact-list strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--ink);
+    font-family: 'Schibsted Grotesk', sans-serif;
+  }
+
+  .contact-list span {
+    font-size: 1rem;
+    color: var(--steel);
+    font-family: 'Lora', serif;
+  }
+
+  .contact-list a { text-decoration: none; color: inherit; }
+  .contact-list a:hover { color: var(--teal); }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0 36px;
+  }
+
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--lake);
+  }
+
+  .footer-meta {
+    font-size: 0.75rem;
+    color: var(--steel);
+    font-family: 'Lora', serif;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 18px;
+  }
+
+  .footer-social a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--steel);
+  }
+
+  .footer-social a:hover { color: var(--teal); }
+
+  .footer-note {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    color: var(--steel);
+    font-family: 'Lora', serif;
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { order: -1; max-width: 360px; margin: 0 auto; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .philosophy .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .visit-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 1150px) {
+    nav.primary-nav { display: none; }
+    .menu-toggle { display: block; }
+  }
+
+  @media (max-width: 1150px) {
+    header.open nav.primary-nav {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--foam);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 32px 28px;
+      gap: 18px;
+    }
+    header.open .nav-call { margin-top: 4px; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .nav-bar { padding: 16px 20px; }
+    .hero { padding: 40px 0 0; }
+    .hero-grid { padding-bottom: 40px; }
+    .section { padding: 56px 0; }
+    .service-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 20px; }
+    .footer-grid { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="nav-bar">
+    <a href="#top" class="brand">Posh Paws Dog Spa</a>
+    <nav class="primary-nav" id="primary-nav">
+      <a href="#services">Services</a>
+      <a href="#philosophy">Our Approach</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:+18145206000" class="nav-call">Call (814) 520-6000</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Dog Grooming and Spa <span class="accent">in Erie, PA</span></h1>
+        <p class="hero-sub">One dog on the table at a time, appointment only, at 1301 E Grandview Blvd near the lake in Erie. Full-service baths, cuts, and spa add-ons from an owner-operated shop.</p>
+        <div class="hero-actions">
+          <a href="tel:+18145206000" class="btn-primary">Call to Book</a>
+          <a href="#services" class="btn-secondary">See Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>1 at a time</strong>No cage stacking, no rushed grooms</div>
+          <div><strong>Tue&ndash;Sat</strong>Appointment only, by phone</div>
+          <div><strong>Full service</strong>Bath through finish cut</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="panel">
+          <svg width="220" height="240" viewBox="0 0 220 240" role="img" aria-label="Illustration of a dog comb with teeth that taper into lake ripples">
+            <rect x="60" y="18" width="100" height="26" rx="6" fill="#0F3F5C"/>
+            <g stroke="#0F3F5C" stroke-width="6" stroke-linecap="round">
+              <line x1="72" y1="44" x2="72" y2="86"/>
+              <line x1="88" y1="44" x2="88" y2="94"/>
+              <line x1="104" y1="44" x2="104" y2="100"/>
+              <line x1="120" y1="44" x2="120" y2="94"/>
+              <line x1="136" y1="44" x2="136" y2="86"/>
+              <line x1="152" y1="44" x2="152" y2="80"/>
+            </g>
+            <path d="M40 130 Q 60 116 80 130 T 120 130 T 160 130 T 200 130" fill="none" stroke="#1C7C8C" stroke-width="4" stroke-linecap="round"/>
+            <path d="M30 160 Q 55 144 80 160 T 130 160 T 180 160 T 210 160" fill="none" stroke="#1C7C8C" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+            <path d="M20 190 Q 50 172 80 190 T 140 190 T 200 190" fill="none" stroke="#1C7C8C" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+          </svg>
+        </div>
+        <span class="tag">Comb to ripple, tools of the trade</span>
+      </div>
+    </div>
+    <svg class="ripple-divider hero-bottom" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 22 Q 50 6 100 22 T 200 22 T 300 22 T 400 22 T 500 22 T 600 22 T 700 22 T 800 22 T 900 22 T 1000 22 T 1100 22 T 1200 22 V44 H0 Z" fill="#ECF2F3"/>
+    </svg>
+  </section>
+
+  <section class="section" id="services" style="background: var(--panel); padding-top: 16px;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What&rsquo;s on the table</h2>
+        <p>Every groom starts with a bath and ends with a finish cut suited to the dog in front of us, not a breed chart.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card" style="background: #ffffff;">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 26c0-8 4-14 10-14s10 6 10 14"/><path d="M6 26h28"/><path d="M12 26v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+          <h3>Bath &amp; Brush</h3>
+          <p>Shampoo suited to coat type, full blow-dry, and brush-out. Good for dogs who just need to look sharp again.</p>
+        </div>
+        <div class="service-card" style="background: #ffffff;">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="24" height="24" rx="3"/><path d="M8 20h24M20 8v24"/></svg>
+          <h3>Full Groom</h3>
+          <p>Bath, haircut, and styling to a length that suits the dog and the season, hand-scissored around the face and paws.</p>
+        </div>
+        <div class="service-card" style="background: #ffffff;">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="20" cy="20" r="4"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M9 9l4 4M27 27l4 4M31 9l-4 4M13 27l-4 4"/></svg>
+          <h3>Nail Trim &amp; Ears</h3>
+          <p>Nail trim, ear cleaning, and paw pad care, offered on its own or added onto any groom.</p>
+        </div>
+        <div class="service-card" style="background: #ffffff;">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6c6 4 12 4 12 12 0 8-6 12-12 16-6-4-12-8-12-16 0-8 6-8 12-12z"/></svg>
+          <h3>Spa Add-Ons</h3>
+          <p>De-shedding treatments, paw balm, and conditioning soaks for dogs with sensitive skin or a heavy coat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy section" id="philosophy">
+    <div class="wrap">
+      <div>
+        <span class="owner-tag">Meet the Owner</span>
+        <h2>One dog on the table means one dog gets my full attention.</h2>
+      </div>
+      <div>
+        <p class="body">Taunya Welch runs Posh Paws by appointment, one dog at a time, so no one is waiting in a crate for their turn. It is slower than a volume shop, and that is the point. Dogs get groomed at their own pace, in a quiet room, by someone who knows their coat.</p>
+        <p class="signoff">Taunya Welch, Owner &middot; Posh Paws Dog Spa, Erie</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Book a groom</h2>
+        <p>Appointments are booked by phone, Tuesday through Saturday. Call ahead, especially heading into the weekend.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday &amp; Sunday</span><span>Closed</span></div>
+          <div class="hours-row"><span>Tuesday, Wed, Thu, Fri</span><span>8:00 AM &ndash; 4:00 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>8:00 AM &ndash; 3:00 PM</span></div>
+        </div>
+        <div class="visit-card">
+          <h3>Find Us</h3>
+          <ul class="contact-list">
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div><strong>1301 E Grandview Blvd</strong><span>Erie, PA 16504</span></div>
+            </li>
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4-2.7-5-5l2-2-3-6-4 3z"/></svg>
+              <div><strong><a href="tel:+18145206000">(814) 520-6000</a></strong><span>Call to book an appointment</span></div>
+            </li>
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <div><strong>Facebook</strong><span>Posh Paws Dog Spa, Erie PA</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <span class="footer-brand">Posh Paws Dog Spa</span>
+      <span class="footer-meta">1301 E Grandview Blvd, Erie, PA 16504 &middot; (814) 520-6000</span>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      This is a demo site built by Modularity Networks to show Posh Paws Dog Spa what a home online could look like. Not the business&rsquo;s official site.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var header = document.getElementById('site-header');
+  var toggle = document.getElementById('menu-toggle');
+  toggle.addEventListener('click', function () {
+    var isOpen = header.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('#primary-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      header.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

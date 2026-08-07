@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyce's Cafe | Minooka, Scranton, PA</title>
+<meta name="description" content="A neighborhood bar and grill in Minooka, Scranton, PA since 1918. Wings, burgers, hoagies and a game-day crowd that's been coming back for generations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --slate: #34495E;
+    --slate-dark: #1F2E3B;
+    --coral: #E8795A;
+    --coral-dark: #B83C1A;
+    --bg: #F5F5F1;
+    --ink: #23262B;
+    --slate-tint: #E4EAEF;
+    --display-font: 'Archivo', sans-serif;
+    --body-font: 'Karla', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--body-font); background: var(--bg); color: var(--ink); line-height: 1.6; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--coral); outline-offset: 3px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  header.site-nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); }
+  .nav-inner { max-width: 1140px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: relative; }
+  .brand { font-family: var(--display-font); font-size: 1.4rem; font-weight: 800; white-space: nowrap; text-decoration: none; flex-shrink: 0; color: var(--slate-dark); letter-spacing: -0.01em; }
+  nav.links { display: flex; gap: 28px; align-items: center; }
+  nav.links a { text-decoration: none; font-size: 0.98rem; font-weight: 600; }
+  nav.links a.nav-cta { padding: 10px 20px; border-radius: 3px; background: var(--coral-dark); color: #FFFFFF; font-weight: 700; }
+  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--slate-dark); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: flex-start; padding: 16px 24px 24px; gap: 14px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  .hero { padding: 60px 24px 0; }
+  .hero-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; padding-bottom: 48px; }
+  h1 { font-family: var(--display-font); font-weight: 900; line-height: 1.08; font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 0 0 20px; max-width: 13ch; color: var(--slate-dark); letter-spacing: -0.01em; }
+  .lede { font-size: 1.12rem; max-width: 46ch; margin: 0 0 30px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 3px; font-family: var(--display-font); text-decoration: none; font-weight: 700; font-size: 0.98rem; border: 2px solid transparent; }
+  .btn-primary { background: var(--slate-dark); color: #FFFFFF; }
+  .btn-ghost { border-color: var(--slate-dark); color: var(--slate-dark); }
+
+  /* Scoreboard stat block */
+  .scoreboard { background: var(--slate-dark); color: #FFFFFF; border-radius: 4px; padding: 30px 26px; }
+  .scoreboard .est { font-family: var(--display-font); font-size: 3.4rem; font-weight: 900; color: var(--coral); line-height: 1; margin: 0; }
+  .scoreboard .est-label { font-family: var(--display-font); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: #C9D3DD; margin: 8px 0 22px; }
+  .scoreboard dl { margin: 0; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 18px; }
+  .scoreboard-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .scoreboard-row dt { color: #C9D3DD; font-weight: 500; }
+  .scoreboard-row dd { margin: 0; font-weight: 700; }
+
+  /* Pressed-tin ceiling motif band */
+  .tin-band { background: var(--slate); height: 46px; position: relative; overflow: hidden; }
+  .tin-band svg { width: 100%; height: 100%; display: block; }
+
+  section.block-section { padding: 60px 24px; }
+  h2.section-title { font-family: var(--display-font); font-size: clamp(1.85rem, 3.2vw, 2.3rem); margin: 0 0 26px; font-weight: 800; color: var(--slate-dark); }
+  .about-copy { font-size: 1.06rem; max-width: 64ch; margin: 0 0 16px; }
+  .about-section { background: var(--slate-tint); }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--slate-dark); }
+  .menu-grid > div { padding: 22px 20px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); border-right: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
+  .menu-grid > div:nth-child(3n) { border-right: none; }
+  .menu-grid h3 { font-family: var(--display-font); font-size: 1.05rem; margin: 0 0 8px; color: var(--coral-dark); font-weight: 700; }
+  .menu-grid p { margin: 0; font-size: 0.97rem; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-grid > div { border-right: none; }
+  }
+
+  .hours-block { background: var(--coral); color: #2B1409; }
+  .hours-block h2.section-title { color: #2B1409; }
+  .hours-table { width: 100%; max-width: 480px; border-collapse: collapse; font-family: var(--display-font); font-size: 0.95rem; }
+  .hours-table td { padding: 10px 0; border-bottom: 1px solid rgba(43,20,9,0.25); }
+  .hours-table td:last-child { text-align: right; font-weight: 700; }
+  .hours-note { font-size: 1rem; margin-top: 20px; max-width: 50ch; }
+
+  footer { background: var(--slate-dark); color: #F7F5F1; padding: 48px 24px 32px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.3rem; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.8; }
+  footer a.footer-link { text-decoration: underline; color: #F7F5F1; font-weight: 600; }
+  .footer-bottom { max-width: 1140px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(247,245,241,0.2); font-family: var(--display-font); font-size: 0.72rem; color: rgba(247,245,241,0.7); }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Joyce's Cafe</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#hours">Hours &amp; Location</a>
+      <a class="nav-cta" href="tel:5703434041">(570) 343-4041</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Bar and Grill in Minooka, Scranton, PA</h1>
+        <p class="lede">A neighborhood tavern on Birney Avenue since 1918, serving wings, burgers and hoagies to Minooka regulars and the Notre Dame Club crowd on game day.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:5703434041">Call (570) 343-4041</a>
+          <a class="btn btn-ghost" href="#hours">Get Directions</a>
+        </div>
+      </div>
+      <div class="scoreboard">
+        <p class="est">1918</p>
+        <p class="est-label">Serving Minooka Since</p>
+        <dl>
+          <div class="scoreboard-row"><dt>Neighborhood</dt><dd>Minooka</dd></div>
+          <div class="scoreboard-row"><dt>Home Of</dt><dd>Notre Dame Club</dd></div>
+          <div class="scoreboard-row"><dt>Known For</dt><dd>Wings &amp; Hoagies</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="tin-band" aria-hidden="true">
+    <svg viewBox="0 0 200 46" preserveAspectRatio="none">
+      <defs>
+        <pattern id="tin" width="23" height="23" patternUnits="userSpaceOnUse">
+          <rect width="23" height="23" fill="var(--slate)"/>
+          <path d="M11.5,1 L22,11.5 L11.5,22 L1,11.5 Z" fill="none" stroke="#4A6076" stroke-width="1"/>
+          <circle cx="11.5" cy="11.5" r="1.6" fill="#4A6076"/>
+        </pattern>
+      </defs>
+      <rect width="200" height="46" fill="url(#tin)"/>
+    </svg>
+  </div>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2 class="section-title">A Century on Birney Avenue</h2>
+      <p class="about-copy">Joyce's Cafe has held the same corner in Minooka since 1918, four generations of the same neighborhood walking in for a burger, a beer and whatever game is on. It is the proud home of the Minooka Notre Dame Club, and the kind of bar where the bartender already knows your order.</p>
+      <p class="about-copy">Pull up a stool, order off the grill, and settle in with the rest of the block.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="block-section">
+    <div class="wrap">
+      <h2 class="section-title">Off the Grill</h2>
+      <div class="menu-grid">
+        <div>
+          <h3>Wings</h3>
+          <p>Classic bar wings by the dozen, sauced your way and served fast on game day.</p>
+        </div>
+        <div>
+          <h3>Burgers</h3>
+          <p>Griddled to order with the standard bar toppings and a basket of fries.</p>
+        </div>
+        <div>
+          <h3>Hoagies</h3>
+          <p>Cold cut and hot hoagies built the Minooka way, made to order at the bar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="block-section hours-block">
+    <div class="wrap">
+      <h2 class="section-title">Hours &amp; Location</h2>
+      <table class="hours-table">
+        <tr><td>Monday &ndash; Thursday</td><td>Call for hours</td></tr>
+        <tr><td>Friday &ndash; Saturday</td><td>Kitchen open late</td></tr>
+        <tr><td>Sunday</td><td>Game day hours</td></tr>
+      </table>
+      <p class="hours-note">2734 Birney Ave, Minooka, Scranton, PA 18505. Call ahead to confirm the kitchen is open, hours shift around Notre Dame Club events.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Joyce's Cafe</h3>
+      <address>
+        2734 Birney Ave, Minooka, Scranton, PA 18505<br>
+        <a class="footer-link" href="tel:5703434041">(570) 343-4041</a>
+      </address>
+    </div>
+    <div>
+      <h3>Find Us</h3>
+      <p>Corner of Birney Avenue, in the heart of the Minooka neighborhood.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Joyce's Cafe. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>

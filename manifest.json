@@ -1059,5 +1059,117 @@
     "category": "Italian Deli",
     "region": "Erie",
     "added": "2026-08-06"
+  },
+  {
+    "slug": "classic-boris-shoe-repair",
+    "name": "Classic Boris Shoe Repair",
+    "location": "Washington Heights, Manhattan",
+    "category": "Shoe Repair",
+    "region": "Manhattan",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "mid-east-bakery-bay-ridge",
+    "name": "Mid-East Bakery and Grocery",
+    "location": "Bay Ridge, Brooklyn",
+    "category": "Middle Eastern Bakery",
+    "region": "Brooklyn",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "chic-cleaners-tailoring-astoria",
+    "name": "Chic Cleaners & Tailoring",
+    "location": "Astoria, Queens",
+    "category": "Dry Cleaning & Tailoring",
+    "region": "Queens",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "kingsbridge-grocery-deli",
+    "name": "Kingsbridge Grocery & Deli",
+    "location": "Kingsbridge, Bronx",
+    "category": "Grocery & Deli",
+    "region": "Bronx",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "new-dorp-deli",
+    "name": "New Dorp Deli",
+    "location": "New Dorp, Staten Island",
+    "category": "Deli",
+    "region": "StatenIsland",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "colursos-market-deli",
+    "name": "Colurso's Market and Deli",
+    "location": "West Scranton, PA",
+    "category": "Market & Deli",
+    "region": "Scranton",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "domenicks-tailoring",
+    "name": "Domenick's Expert Tailoring",
+    "location": "Providence, Scranton, PA",
+    "category": "Tailor",
+    "region": "Scranton",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "linden-mini-mart",
+    "name": "Linden Mini Mart",
+    "location": "Scranton, PA",
+    "category": "Convenience Store",
+    "region": "Scranton",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "main-ave-ice-cream-scranton",
+    "name": "Main Ave Ice Cream",
+    "location": "North Scranton, PA",
+    "category": "Ice Cream Shop",
+    "region": "Scranton",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "joyces-cafe-minooka",
+    "name": "Joyce's Cafe",
+    "location": "Minooka, Scranton, PA",
+    "category": "Bar & Grill",
+    "region": "Scranton",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "susquehanna-scoops",
+    "name": "Susquehanna Scoops and More",
+    "location": "Susquehanna, PA",
+    "category": "Ice Cream & Subs",
+    "region": "Wallenpaupack",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "polar-bear-ice-cream-matamoras",
+    "name": "Polar Bear Ice Cream",
+    "location": "Matamoras, PA",
+    "category": "Ice Cream Shop",
+    "region": "DelawareValley",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "diplomat-cafe-goshen",
+    "name": "Diplomat Caf\u00e9 & Bakery",
+    "location": "Goshen, NY",
+    "category": "European Caf\u00e9 & Bakery",
+    "region": "HudsonValley",
+    "added": "2026-08-07"
+  },
+  {
+    "slug": "posh-paws-dog-spa",
+    "name": "Posh Paws Dog Spa",
+    "location": "Erie, PA",
+    "category": "Dog Grooming",
+    "region": "Erie",
+    "added": "2026-08-07"
   }
 ]

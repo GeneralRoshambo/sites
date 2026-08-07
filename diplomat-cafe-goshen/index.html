@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diplomat Café & Bakery | European Bakery and Café in Goshen, NY</title>
+<meta name="description" content="Diplomat Café & Bakery serves Hungarian chimney cakes, coffee flights and European pastries on Main Street in Goshen, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FDFBF6;
+    --parchment: #F2E4CC;
+    --ink: #262019;
+    --apple-red: #C31E3C;
+    --apple-red-dark: #9E1830;
+    --slate: #5C6B73;
+    --slate-light: #8A969C;
+    --honey: #C97F1E;
+    --line: #E4D9C4;
+    --menu-copy: #4E5C63;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: 'Newsreader', serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  p { margin: 0; }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--honey);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(253, 251, 246, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1160px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .brand {
+    font-family: 'Newsreader', serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+
+  .brand em {
+    font-style: italic;
+    color: var(--apple-red);
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  nav.primary-nav a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    position: relative;
+    padding: 4px 2px;
+  }
+
+  nav.primary-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--apple-red);
+    transition: width 0.2s ease;
+  }
+
+  nav.primary-nav a:hover::after,
+  nav.primary-nav a:focus-visible::after {
+    width: 100%;
+  }
+
+  .nav-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--apple-red);
+    color: var(--paper);
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .nav-call:hover { background: var(--apple-red-dark); }
+  nav.primary-nav a.nav-call,
+  nav.primary-nav a.nav-call:hover { color: var(--paper); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--slate);
+    border-radius: 4px;
+    width: 44px;
+    height: 40px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle span,
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    margin: 0 auto;
+  }
+
+  .menu-toggle span { margin: 5px auto; }
+  .menu-toggle::before { margin-top: 12px; }
+  .menu-toggle::after { margin-bottom: 12px; }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 76px 0 60px;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--apple-red);
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    font-size: 1.1rem;
+    color: var(--slate);
+    max-width: 46ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--apple-red);
+    color: var(--paper);
+  }
+
+  .btn-primary:hover { background: var(--apple-red-dark); }
+
+  .btn-secondary {
+    border-color: var(--slate);
+    color: var(--ink);
+  }
+
+  .btn-secondary:hover { border-color: var(--ink); }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-meta div { font-size: 0.88rem; color: var(--slate); }
+  .hero-meta strong {
+    display: block;
+    font-family: 'Newsreader', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* ---------- Signature spiral ---------- */
+
+  .spiral-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spiral-frame .ring-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--parchment);
+    border-radius: 50%;
+    transform: scale(1.02);
+  }
+
+  .spiral-frame svg { position: relative; z-index: 1; }
+
+  .spiral-caption {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--slate);
+    white-space: nowrap;
+  }
+
+  /* ---------- Menu section ---------- */
+
+  .section { padding: 88px 0; }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+  }
+
+  .section-head p {
+    color: var(--slate);
+    max-width: 40ch;
+    font-size: 1rem;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .menu-card {
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .menu-card .mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .menu-card p {
+    color: var(--menu-copy);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Story block (color accent) ---------- */
+
+  .story {
+    background: var(--apple-red);
+    color: var(--paper);
+  }
+
+  .story .wrap {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .story h2 {
+    color: var(--paper);
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    line-height: 1.2;
+  }
+
+  .story .quote-mark {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: rgba(253, 251, 246, 0.92);
+    margin-bottom: 8px;
+  }
+
+  .story p.body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(253, 251, 246, 0.92);
+  }
+
+  .story .signoff {
+    margin-top: 24px;
+    font-weight: 600;
+    color: rgba(253, 251, 246, 0.85);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Visit section ---------- */
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .visit-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 36px;
+  }
+
+  .visit-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.94rem;
+  }
+
+  .hours-row:last-child { border-bottom: none; }
+
+  .hours-row span:first-child { color: var(--ink); font-weight: 500; }
+  .hours-row span:last-child { color: var(--slate); }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .contact-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .contact-list .ic {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--apple-red);
+  }
+
+  .contact-list strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .contact-list span {
+    font-size: 0.9rem;
+    color: var(--slate);
+  }
+
+  .contact-list a { text-decoration: none; }
+  .contact-list a:hover { color: var(--apple-red); }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0 36px;
+  }
+
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Newsreader', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .footer-meta {
+    font-size: 0.85rem;
+    color: var(--slate);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 18px;
+  }
+
+  .footer-social a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--slate);
+  }
+
+  .footer-social a:hover { color: var(--apple-red); }
+
+  .footer-note {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    color: var(--slate);
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .spiral-frame { order: -1; max-width: 340px; margin: 0 auto; }
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .story .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .visit-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 1150px) {
+    nav.primary-nav { display: none; }
+    .menu-toggle { display: block; }
+  }
+
+  @media (max-width: 1150px) {
+    header.open nav.primary-nav {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 32px 28px;
+      gap: 18px;
+    }
+    header.open .nav-call { margin-top: 4px; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .nav-bar { padding: 16px 20px; }
+    .hero { padding: 44px 0 44px; }
+    .section { padding: 60px 0; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .hero-meta { gap: 22px; }
+    .footer-grid { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="nav-bar">
+    <a href="#top" class="brand">Diplomat <em>Café</em> &amp; Bakery</a>
+    <nav class="primary-nav" id="primary-nav">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:+18453202709" class="nav-call">Call (845) 320-2709</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>European Bakery and Café <em>in Goshen, NY</em></h1>
+        <p class="hero-sub">Hand-rolled chimney cakes cooked over an open spit, coffee flights, and a case of European pastries baked fresh each morning at 87 Main Street in Goshen.</p>
+        <div class="hero-actions">
+          <a href="tel:+18453202709" class="btn-primary">Call to Order Ahead</a>
+          <a href="#menu" class="btn-secondary">See What We Bake</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>Kürtőskalács</strong>Hungarian chimney cakes, rolled and spit-baked to order</div>
+          <div><strong>Tue&ndash;Fri, 7&ndash;3</strong>Sat&ndash;Sun 8&ndash;3, closed Monday</div>
+          <div><strong>Walk in or call</strong>No account, no app, just Main Street</div>
+        </div>
+      </div>
+      <div class="spiral-frame">
+        <div class="ring-bg"></div>
+        <svg width="360" height="360" viewBox="0 0 360 360" role="img" aria-label="Cross section of a chimney cake showing its spiral rolled layers">
+          <circle cx="180" cy="180" r="150" fill="none" stroke="#5C6B73" stroke-width="1" opacity="0.35"/>
+          <path d="M180 180 m0 -140 a140 140 0 1 1 -0.1 0" fill="none" stroke="#C31E3C" stroke-width="3"/>
+          <path d="M180 180 m0 -118 a118 118 0 1 1 -0.1 0" fill="none" stroke="#C97F1E" stroke-width="3"/>
+          <path d="M180 180 m0 -96 a96 96 0 1 1 -0.1 0" fill="none" stroke="#C31E3C" stroke-width="3"/>
+          <path d="M180 180 m0 -74 a74 74 0 1 1 -0.1 0" fill="none" stroke="#C97F1E" stroke-width="3"/>
+          <path d="M180 180 m0 -52 a52 52 0 1 1 -0.1 0" fill="none" stroke="#C31E3C" stroke-width="3"/>
+          <path d="M180 180 m0 -30 a30 30 0 1 1 -0.1 0" fill="none" stroke="#C97F1E" stroke-width="3"/>
+          <circle cx="180" cy="180" r="9" fill="#262019"/>
+          <g stroke="#262019" stroke-width="2" stroke-linecap="round" opacity="0.55">
+            <line x1="60" y1="70" x2="66" y2="82"/>
+            <line x1="300" y1="90" x2="292" y2="100"/>
+            <line x1="90" y1="290" x2="98" y2="280"/>
+            <line x1="270" y1="280" x2="262" y2="270"/>
+            <line x1="180" y1="26" x2="180" y2="40"/>
+            <line x1="180" y1="320" x2="180" y2="334"/>
+          </g>
+        </svg>
+        <span class="spiral-caption">Baked in the round, sliced fresh</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What&rsquo;s coming out of the oven</h2>
+        <p>A short menu, made properly. Everything below is baked or brewed on site, most of it before the doors open at seven.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="#C31E3C" stroke-width="2"><circle cx="20" cy="20" r="16"/><path d="M20 4 a16 16 0 0 1 0 32" opacity="0.4"/><path d="M20 10 a10 10 0 0 1 0 20" opacity="0.7"/></svg>
+          <h3>Chimney Cakes</h3>
+          <p>Kürtőskalács rolled by hand and spit-baked, finished in cinnamon sugar, walnut, or cocoa.</p>
+        </div>
+        <div class="menu-card">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="#C31E3C" stroke-width="2"><rect x="8" y="14" width="18" height="18" rx="2"/><path d="M26 18h4a3 3 0 0 1 0 6h-4"/><path d="M12 8v4M17 8v4M22 8v4"/></svg>
+          <h3>Coffee Flights</h3>
+          <p>A tasting trio of espresso drinks, built for sharing a table and comparing notes.</p>
+        </div>
+        <div class="menu-card">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="#C31E3C" stroke-width="2"><path d="M8 30c8-14 16-14 24 0" /><path d="M20 30V16"/><circle cx="20" cy="10" r="4"/></svg>
+          <h3>European Pastries</h3>
+          <p>Layered cakes, filled cookies, and seasonal specialties from a rotating case.</p>
+        </div>
+        <div class="menu-card">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="#C31E3C" stroke-width="2"><circle cx="14" cy="26" r="5"/><circle cx="26" cy="26" r="5"/><circle cx="20" cy="14" r="5"/></svg>
+          <h3>Assorted Cookies</h3>
+          <p>Baked in small batches daily, sold by the piece or boxed for the road.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story section" id="story">
+    <div class="wrap">
+      <div>
+        <span class="quote-mark">&ldquo;</span>
+        <h2>Every chimney cake starts on a wooden spit, not a conveyor belt.</h2>
+      </div>
+      <div>
+        <p class="body">Diplomat brought a Central European bakery tradition to Main Street, one spiral of dough at a time. Each kürtőskalács is rolled around a spit by hand, turned over the heat, and finished to order, the same way it has been made for generations.</p>
+        <p class="signoff">Diplomat Café &amp; Bakery &middot; Goshen, New York</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Visit us on Main Street</h2>
+        <p>Walk-ins are always welcome. Call ahead if you want a chimney cake fresh off the spit at a specific time.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h3>Hours</h3>
+          <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+          <div class="hours-row"><span>Tuesday &ndash; Friday</span><span>7:00 AM &ndash; 3:00 PM</span></div>
+          <div class="hours-row"><span>Saturday &ndash; Sunday</span><span>8:00 AM &ndash; 3:00 PM</span></div>
+        </div>
+        <div class="visit-card">
+          <h3>Find Us</h3>
+          <ul class="contact-list">
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div><strong>87 Main Street</strong><span>Goshen, NY 10924</span></div>
+            </li>
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.2-4-2.7-5-5l2-2-3-6-4 3z"/></svg>
+              <div><strong><a href="tel:+18453202709">(845) 320-2709</a></strong><span>Call for orders or questions</span></div>
+            </li>
+            <li>
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <div><strong>Facebook &amp; Instagram</strong><span>@diplomatcafeeuro / @diplomatcafeandbakery</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <span class="footer-brand">Diplomat Café &amp; Bakery</span>
+      <span class="footer-meta">87 Main Street, Goshen, NY 10924 &middot; (845) 320-2709</span>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      This is a demo site built by Modularity Networks to show Diplomat Café &amp; Bakery what a home online could look like. Not the business&rsquo;s official site.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var header = document.getElementById('site-header');
+  var toggle = document.getElementById('menu-toggle');
+  toggle.addEventListener('click', function () {
+    var isOpen = header.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('#primary-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      header.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domenick's Expert Tailoring | Custom Tailor in Providence, Scranton, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum: #4A1F35;
+    --plum-dark: #2C1120;
+    --brass: #C79B3C;
+    --brass-dark: #85661C;
+    --cream: #FBF6EE;
+    --panel: #F1E6DC;
+    --ink: #2A2024;
+    --ink-soft: #6E5C64;
+    --line: #E3D3D9;
+    --radius: 3px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    margin:0;
+    color:var(--plum);
+  }
+  a{color:inherit;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:3px solid var(--brass);outline-offset:3px;}
+
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 0;gap:24px;
+  }
+  .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--plum);
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand span{color:var(--brass-dark);font-style:italic;}
+  nav.primary-nav{display:flex;gap:32px;align-items:center;}
+  nav.primary-nav a{
+    text-decoration:none;font-weight:500;font-size:1rem;
+    letter-spacing:0.02em;
+    color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--brass-dark);}
+  .call-btn{
+    background:var(--plum);
+    color:#fff !important;
+    padding:10px 22px;
+    border-radius:var(--radius);
+    font-weight:500;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:none !important;
+  }
+  .call-btn:hover{background:var(--plum-dark);}
+  .menu-toggle{
+    display:none;background:none;border:2px solid var(--plum);
+    border-radius:var(--radius);width:44px;height:40px;cursor:pointer;
+    flex-shrink:0;position:relative;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";position:absolute;left:9px;right:9px;height:2px;background:var(--plum);
+  }
+  .menu-toggle::before{top:14px;}
+  .menu-toggle span{top:19px;}
+  .menu-toggle::after{top:24px;}
+
+  @media (max-width: 1150px){
+    nav.primary-nav{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);flex-direction:column;align-items:stretch;
+      gap:0;border-bottom:1px solid var(--line);display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{padding:16px 28px;border-bottom:1px solid var(--line);}
+    nav.primary-nav .call-btn{margin:16px 28px;text-align:center;}
+    .menu-toggle{display:block;}
+  }
+
+  .hero{padding:70px 0 56px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.75rem, 4.5vw, 3.5rem);
+    line-height:1.14;margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:1.25rem;color:var(--ink-soft);max-width:46ch;margin-bottom:30px;
+    font-weight:300;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+  .btn-primary{
+    background:var(--brass-dark);color:#fff;padding:14px 28px;
+    border-radius:var(--radius);text-decoration:none;font-weight:500;display:inline-block;
+  }
+  .btn-primary:hover{background:#7A5B18;}
+  .btn-secondary{
+    border:2px solid var(--plum);color:var(--plum);padding:12px 26px;
+    border-radius:var(--radius);text-decoration:none;font-weight:500;display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--plum);color:#fff;}
+  .hours-strip{
+    display:flex;gap:28px;flex-wrap:wrap;font-size:0.8125rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);padding-top:20px;
+  }
+  .hours-strip strong{color:var(--plum);font-weight:500;}
+
+  /* Signature: tape measure card */
+  .tape-card{
+    background:var(--plum);
+    color:#F5E9DD;
+    border-radius:6px;
+    padding:0 0 26px;
+    overflow:hidden;
+  }
+  .tape-ruler{
+    display:flex;
+    background:var(--brass);
+    height:34px;
+    align-items:flex-end;
+    position:relative;
+    padding:0 4px;
+  }
+  .tape-ruler .tick{
+    flex:1;
+    border-left:1px solid rgba(44,17,32,0.5);
+    height:12px;
+  }
+  .tape-ruler .tick.major{height:20px;border-left:2px solid var(--plum-dark);}
+  .tape-body{padding:26px 30px 0;}
+  .tape-body p.label{
+    font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--brass);font-weight:500;margin:0 0 14px;
+  }
+  .tape-row{
+    display:flex;justify-content:space-between;
+    padding:11px 0;border-bottom:1px dashed rgba(245,233,221,0.22);
+    font-size:1rem;
+  }
+  .tape-row:last-child{border-bottom:none;}
+  .tape-row .service{font-weight:400;}
+  .tape-row .note{color:var(--brass);font-size:0.8125rem;font-style:italic;}
+
+  .services-section{padding:72px 0;background:var(--panel);}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1rem;font-weight:300;}
+  .card-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:24px;}
+  .stock-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px 22px;
+    position:relative;
+  }
+  .stock-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:24px;right:24px;
+    height:3px;
+    background:var(--brass);
+  }
+  .stock-card h3{font-size:1.25rem;margin-bottom:10px;font-weight:600;}
+  .stock-card p{font-size:1rem;color:var(--ink-soft);margin:0;font-weight:300;}
+
+  .about-section{padding:80px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid h2{font-size:clamp(1.75rem, 3vw, 2rem);margin-bottom:20px;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:1rem;font-weight:300;}
+  .address-block{
+    background:var(--plum);color:#fff;padding:36px;border-radius:6px;
+  }
+  .address-block h3{color:#fff;font-size:1.25rem;margin-bottom:18px;}
+  .address-block dl{
+    margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:1rem;
+  }
+  .address-block dt{
+    color:var(--brass);font-weight:500;text-transform:uppercase;
+    font-size:0.8125rem;letter-spacing:0.1em;align-self:center;
+  }
+  .address-block dd{margin:0;font-weight:300;}
+  .address-block a{color:#fff;text-decoration:underline;}
+
+  .cta-band{background:var(--plum-dark);color:#fff;padding:64px 0;text-align:center;}
+  .cta-band h2{color:#fff;font-size:clamp(1.75rem, 3.2vw, 2.2rem);margin-bottom:16px;}
+  .cta-band p{color:#D9C4CE;max-width:52ch;margin:0 auto 30px;font-size:1rem;font-weight:300;}
+
+  footer{
+    background:var(--plum-dark);color:#A88E96;padding:28px 0 40px;
+    text-align:center;font-size:0.8125rem;border-top:1px solid rgba(255,255,255,0.08);
+    font-weight:300;
+  }
+  footer a{color:#fff;}
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .address-block{order:-1;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .hours-strip{flex-direction:column;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">Domenick's <span>Tailoring</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#services">Services</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a class="call-btn" href="tel:+15703431860">Call (570) 343-1860</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Expert Tailoring Serving Providence, Scranton, PA</h1>
+        <p class="lede">Domenick Mangiola has been custom tailoring, altering, mending, and hand-finishing garments on Boulevard Avenue in Providence, Scranton for decades, the kind of fit you cannot get off a rack.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+15703431860">Call for an Appointment</a>
+          <a class="btn-secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hours-strip">
+          <span><strong>Thu &ndash; Wed</strong> &middot; 8:00 AM &ndash; 5:00 PM</span>
+          <span><strong>1819 Boulevard Ave</strong> &middot; Scranton, PA 18509</span>
+        </div>
+      </div>
+      <div class="tape-card" aria-hidden="true">
+        <div class="tape-ruler">
+          <span class="tick major"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+          <span class="tick major"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+          <span class="tick major"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+          <span class="tick major"></span><span class="tick"></span><span class="tick"></span><span class="tick"></span>
+          <span class="tick major"></span>
+        </div>
+        <div class="tape-body">
+          <p class="label">On the Workbench</p>
+          <div class="tape-row"><span class="service">Suit &amp; Jacket Alterations</span><span class="note">Hemmed</span></div>
+          <div class="tape-row"><span class="service">Zipper Replacement</span><span class="note">Same Day</span></div>
+          <div class="tape-row"><span class="service">Leather Repair</span><span class="note">By Hand</span></div>
+          <div class="tape-row"><span class="service">Wedding &amp; Formal Fittings</span><span class="note">By Appointment</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services on the Workbench</h2>
+        <p>Same-day alterations and hand finishing for the garments worth getting right.</p>
+      </div>
+      <div class="card-grid">
+        <div class="stock-card">
+          <h3>Alterations</h3>
+          <p>Hems, waists, and sleeves taken in or let out for suits, coats, and everyday clothing.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Zipper &amp; Repair</h3>
+          <p>Zipper replacement, seam repair, and leather work handled with hand tools, not shortcuts.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Sewing Machine Repair</h3>
+          <p>Decades of experience keeping home sewing machines running right.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Formal Fittings</h3>
+          <p>Wedding party and formalwear fittings scheduled around your event date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A Needle and Thread Trusted for Decades</h2>
+        <p>Domenick Mangiola has run his tailor shop on Boulevard Avenue in the Providence section of Scranton for years, doing the kind of same-day alterations and hand repair work that keeps customers coming back generation after generation.</p>
+        <p>The shop has always run on walk-ins and referrals, no website, no online booking. That has worked for decades, but it also means the shop is invisible to anyone searching online for a tailor in Scranton today.</p>
+      </div>
+      <div class="address-block">
+        <h3>Visit the Shop</h3>
+        <dl>
+          <dt>Address</dt>
+          <dd>1819 Boulevard Ave<br>Scranton, PA 18509</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15703431860">(570) 343-1860</a></dd>
+          <dt>Hours</dt>
+          <dd>Thu&ndash;Wed 8:00 AM&ndash;5:00 PM, Sat 8:30 AM&ndash;2:30 PM</dd>
+          <dt>Neighborhood</dt>
+          <dd>Providence, Scranton, PA</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit">
+    <div class="wrap">
+      <h2>Bring It In for a Fitting</h2>
+      <p>Alterations, repairs, and hand-finished work on Boulevard Avenue, ready when you need it.</p>
+      <a class="btn-primary" href="tel:+15703431860">Call (570) 343-1860</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Domenick's Expert Tailoring &middot; 1819 Boulevard Ave, Scranton, PA 18509 &middot; <a href="tel:+15703431860">(570) 343-1860</a></p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

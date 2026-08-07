@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Ave Ice Cream | North Scranton, PA</title>
+<meta name="description" content="Hand-scooped ice cream on North Main Avenue in Scranton, PA. Hard and soft serve, shakes, sundaes and a walk-up window open all summer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,500;0,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --moss: #4A5D3A;
+    --moss-dark: #2E3B24;
+    --copper: #915117;
+    --copper-light: #E3A868;
+    --cream: #F8F7EA;
+    --ink: #2B2A25;
+    --sage: #E7EAD9;
+    --bg: var(--cream);
+    --display-font: 'Schibsted Grotesk', sans-serif;
+    --body-font: 'Lora', serif;
+    --utility-font: 'Space Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--body-font); background: var(--bg); color: var(--ink); line-height: 1.6; }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  a:focus-visible, button:focus-visible, .hamburger:focus-visible, .btn:focus-visible {
+    outline: 3px solid var(--copper); outline-offset: 3px;
+  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  header.site-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--cream);
+    border-bottom: 2px solid var(--moss);
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto; padding: 18px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; position: relative;
+  }
+  .brand {
+    font-family: var(--display-font); font-size: 1.5rem; font-weight: 700;
+    white-space: nowrap; text-decoration: none; flex-shrink: 0; color: var(--moss-dark);
+    letter-spacing: -0.01em;
+  }
+  nav.links { display: flex; gap: 30px; align-items: center; }
+  nav.links a { text-decoration: none; font-family: var(--display-font); font-size: 0.98rem; font-weight: 500; color: var(--ink); }
+  nav.links a.nav-cta {
+    padding: 10px 20px; border-radius: 2px;
+    background: var(--copper); color: #FFFFFF; font-weight: 600;
+  }
+  .hamburger { display: none; background: none; border: 2px solid var(--moss-dark); border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--moss-dark); }
+  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
+  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+
+  @media (max-width: 1150px) {
+    nav.links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--cream); flex-direction: column; align-items: flex-start;
+      padding: 16px 24px 24px; gap: 14px; border-bottom: 2px solid var(--moss);
+    }
+    #nav-toggle:checked ~ nav.links { display: flex; }
+    .hamburger { display: inline-block; }
+  }
+
+  /* HERO */
+  .hero { padding: 64px 24px 0; }
+  .hero-grid { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; padding-bottom: 56px; }
+  h1 {
+    font-family: var(--display-font); font-weight: 700; line-height: 1.15;
+    font-size: clamp(2.5rem, 5vw, 3.6rem); margin: 0 0 20px; max-width: 14ch; color: var(--moss-dark);
+  }
+  .lede { font-size: 1.15rem; max-width: 46ch; margin: 0 0 30px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-block; padding: 13px 26px; border-radius: 2px; font-family: var(--display-font);
+    text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--moss-dark); color: #FFFFFF; }
+  .btn-ghost { border-color: var(--moss-dark); color: var(--moss-dark); }
+
+  /* Flavor board */
+  .flavor-board {
+    background: var(--moss-dark); color: var(--cream); border: 6px solid var(--copper);
+    padding: 30px 28px; border-radius: 3px; position: relative;
+  }
+  .flavor-board h2 {
+    font-family: var(--display-font); font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 0 0 18px; color: var(--copper-light); border-bottom: 1px solid color-mix(in srgb, var(--cream) 30%, transparent); padding-bottom: 12px;
+  }
+  .flavor-board ul { list-style: none; margin: 0; padding: 0; }
+  .flavor-board li {
+    font-family: var(--body-font); font-style: italic; font-size: 1.15rem;
+    padding: 9px 0; border-bottom: 1px dashed color-mix(in srgb, var(--cream) 22%, transparent);
+    display: flex; justify-content: space-between; gap: 12px;
+  }
+  .flavor-board li:last-child { border-bottom: none; }
+  .flavor-board .tag { font-family: var(--utility-font); font-style: normal; font-size: 0.7rem; color: var(--sage); align-self: center; white-space: nowrap; }
+
+  /* Wafer scallop divider */
+  .wafer-divider { height: 34px; background: var(--moss); }
+  .wafer-divider svg { display: block; width: 100%; height: 34px; }
+
+  section.block-section { padding: 64px 24px; }
+  h2.section-title {
+    font-family: var(--display-font); font-size: clamp(1.9rem, 3.2vw, 2.4rem); margin: 0 0 26px; font-weight: 700; color: var(--moss-dark);
+  }
+  .about-copy { font-size: 1.08rem; max-width: 64ch; margin: 0 0 16px; }
+  .about-section { background: var(--sage); }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .menu-grid > div { padding: 22px 20px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-right: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+  .menu-grid > div:nth-child(3n) { border-right: none; }
+  .menu-grid h3 { font-family: var(--display-font); font-size: 1.1rem; margin: 0 0 8px; color: var(--copper); }
+  .menu-grid p { margin: 0; font-size: 0.98rem; }
+
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .menu-grid > div { border-right: none; }
+  }
+
+  .hours-block { background: var(--moss-dark); color: var(--cream); }
+  .hours-block h2.section-title { color: var(--cream); }
+  .hours-table { width: 100%; max-width: 480px; border-collapse: collapse; font-family: var(--utility-font); font-size: 0.95rem; }
+  .hours-table td { padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--cream) 20%, transparent); }
+  .hours-table td:last-child { text-align: right; }
+  .hours-note { font-size: 1rem; margin-top: 20px; max-width: 50ch; font-family: var(--body-font); color: var(--sage); }
+
+  footer { background: var(--copper); color: var(--cream); padding: 48px 24px 32px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
+  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.4rem; }
+  footer address { font-style: normal; font-size: 1rem; line-height: 1.8; }
+  footer a.footer-link { text-decoration: underline; color: var(--cream); font-weight: 600; }
+  .footer-bottom {
+    max-width: 1140px; margin: 32px auto 0; padding-top: 20px;
+    border-top: 1px solid rgba(248,247,234,0.3);
+    font-family: var(--utility-font); font-size: 0.72rem; color: rgba(248,247,234,0.92);
+  }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Main Ave Ice Cream</a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#hours">Hours &amp; Location</a>
+      <a class="nav-cta" href="tel:5709631810">(570) 963-1810</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Ice Cream and Soft Serve in Scranton, PA</h1>
+        <p class="lede">A walk-up window on North Main Avenue serving hand-dipped hard ice cream, soft serve, shakes and sundaes to the North Scranton neighborhood every summer.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:5709631810">Call (570) 963-1810</a>
+          <a class="btn btn-ghost" href="#hours">Get Directions</a>
+        </div>
+      </div>
+      <div class="flavor-board" role="img" aria-label="Hand-lettered flavor board">
+        <h2>On the Board Today</h2>
+        <ul>
+          <li><span>Black Raspberry</span><span class="tag">Hard</span></li>
+          <li><span>Chocolate Peanut Butter</span><span class="tag">Hard</span></li>
+          <li><span>Vanilla Twist</span><span class="tag">Soft</span></li>
+          <li><span>Orange Creamsicle Twist</span><span class="tag">Soft</span></li>
+          <li><span>Butter Pecan</span><span class="tag">Hard</span></li>
+          <li><span>Cookie Dough</span><span class="tag">Hard</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wafer-divider" aria-hidden="true">
+    <svg viewBox="0 0 400 34" preserveAspectRatio="none">
+      <path d="M0,34 L0,17 Q10,0 20,17 T40,17 T60,17 T80,17 T100,17 T120,17 T140,17 T160,17 T180,17 T200,17 T220,17 T240,17 T260,17 T280,17 T300,17 T320,17 T340,17 T360,17 T380,17 T400,17 L400,34 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+
+  <section id="about" class="block-section about-section">
+    <div class="wrap">
+      <h2 class="section-title">A North Scranton Summer Tradition</h2>
+      <p class="about-copy">Main Ave Ice Cream has been the walk-up stop for the North Scranton neighborhood, scooping hard and soft serve from a window right on North Main Avenue. No dining room, no drive-thru, just a counter, a menu board and a line that forms most evenings once the weather turns warm.</p>
+      <p class="about-copy">Stop in for a cone on the way home, or bring the whole street over for sundaes after a Little League game up the road.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="block-section">
+    <div class="wrap">
+      <h2 class="section-title">What's at the Window</h2>
+      <div class="menu-grid">
+        <div>
+          <h3>Cones &amp; Cups</h3>
+          <p>Hand-dipped hard ice cream, soft serve twist, and kiddie sizes for the little ones.</p>
+        </div>
+        <div>
+          <h3>Sundaes</h3>
+          <p>Hot fudge, caramel, and seasonal toppings built to order at the window.</p>
+        </div>
+        <div>
+          <h3>Shakes &amp; Floats</h3>
+          <p>Hand-spun milkshakes and root beer floats made fresh, no machine shortcuts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="block-section hours-block">
+    <div class="wrap">
+      <h2 class="section-title">Hours &amp; Location</h2>
+      <table class="hours-table">
+        <tr><td>Monday</td><td>Closed</td></tr>
+        <tr><td>Tuesday &ndash; Friday</td><td>2:00 PM &ndash; 9:00 PM</td></tr>
+        <tr><td>Saturday &ndash; Sunday</td><td>12:00 PM &ndash; 9:00 PM</td></tr>
+      </table>
+      <p class="hours-note">Seasonal hours, open spring through fall. Call ahead in shoulder months to confirm the window is open. 1706 N Main Ave, Scranton, PA 18508.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h3>Main Ave Ice Cream</h3>
+      <address>
+        1706 N Main Ave, Scranton, PA 18508<br>
+        <a class="footer-link" href="tel:5709631810">(570) 963-1810</a><br>
+        <a class="footer-link" href="mailto:Mainaveicecream@gmail.com">Mainaveicecream@gmail.com</a>
+      </address>
+    </div>
+    <div>
+      <h3>Find Us</h3>
+      <p>North Main Avenue, North Scranton neighborhood. Walk-up window, no dining room.</p>
+    </div>
+  </div>
+  <p class="footer-bottom wrap">&copy; 2026 Main Ave Ice Cream. Site by Modularity Networks.</p>
+</footer>
+</body>
+</html>

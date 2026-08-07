@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colurso's Market &amp; Deli | Family Market in West Scranton, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coal: #1A1A18;
+    --coal-dark: #0E0E0D;
+    --amber: #D99A2B;
+    --amber-dark: #8C6212;
+    --cream: #F5F1E8;
+    --stone: #E7DEC8;
+    --ink: #24211B;
+    --ink-soft: #5B5648;
+    --line: #DCD3BB;
+    --radius: 4px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Mulish', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Roboto Slab', serif;
+    font-weight:800;
+    margin:0;
+    color:var(--coal);
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;gap:24px;
+  }
+  .brand{
+    font-family:'Roboto Slab', serif;
+    font-weight:800;
+    font-size:1.3rem;
+    color:var(--coal);
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand span{color:var(--amber-dark);}
+  nav.primary-nav{display:flex;gap:32px;align-items:center;}
+  nav.primary-nav a{
+    text-decoration:none;font-weight:600;font-size:0.97rem;
+    color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--amber-dark);}
+  .call-btn{
+    background:var(--coal);
+    color:#fff !important;
+    padding:10px 20px;
+    border-radius:var(--radius);
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:none !important;
+  }
+  .call-btn:hover{background:var(--coal-dark);}
+  .menu-toggle{
+    display:none;background:none;border:2px solid var(--coal);
+    border-radius:var(--radius);width:44px;height:40px;cursor:pointer;
+    flex-shrink:0;position:relative;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";position:absolute;left:9px;right:9px;height:2px;background:var(--coal);
+  }
+  .menu-toggle::before{top:14px;}
+  .menu-toggle span{top:19px;}
+  .menu-toggle::after{top:24px;}
+
+  @media (max-width: 1150px){
+    nav.primary-nav{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);flex-direction:column;align-items:stretch;
+      gap:0;border-bottom:1px solid var(--line);display:none;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{padding:16px 28px;border-bottom:1px solid var(--line);}
+    nav.primary-nav .call-btn{margin:16px 28px;text-align:center;}
+    .menu-toggle{display:block;}
+  }
+
+  .hero{padding:64px 0 56px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2rem, 3.8vw, 2.9rem);
+    line-height:1.12;margin-bottom:20px;
+  }
+  .hero p.lede{
+    font-size:1.12rem;color:var(--ink-soft);max-width:46ch;margin-bottom:28px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+  .btn-primary{
+    background:var(--amber-dark);color:#fff;padding:14px 26px;
+    border-radius:var(--radius);text-decoration:none;font-weight:700;display:inline-block;
+  }
+  .btn-primary:hover{background:#9E6A15;}
+  .btn-secondary{
+    border:2px solid var(--coal);color:var(--coal);padding:12px 24px;
+    border-radius:var(--radius);text-decoration:none;font-weight:700;display:inline-block;
+  }
+  .btn-secondary:hover{background:var(--coal);color:#fff;}
+  .hours-strip{
+    display:flex;gap:28px;flex-wrap:wrap;font-size:0.92rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);padding-top:20px;
+  }
+  .hours-strip strong{color:var(--coal);}
+
+  .ledger{
+    background:var(--coal);
+    color:#F2EADA;
+    border-radius:8px;
+    padding:30px;
+  }
+  .ledger-top{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:2px solid var(--amber-dark);
+    padding-bottom:14px;margin-bottom:16px;
+  }
+  .ledger-top span{font-family:'Roboto Slab',serif;font-weight:700;font-size:1.08rem;}
+  .ledger-top small{
+    color:var(--amber);font-weight:700;font-size:0.76rem;
+    text-transform:uppercase;letter-spacing:0.08em;
+  }
+  .ledger-row{
+    display:flex;justify-content:space-between;padding:11px 0;
+    border-bottom:1px dashed rgba(242,234,218,0.2);font-size:0.98rem;
+  }
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-row .item{font-weight:500;}
+  .ledger-row .tag{color:var(--amber);font-weight:700;font-size:0.85rem;}
+
+  /* Coal seam divider - signature element */
+  .seam{
+    width:100%;
+    height:34px;
+    background:var(--coal);
+  }
+
+  .stock-section{padding:70px 0;background:#fff;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.55rem, 3vw, 2.1rem);margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem;}
+  .card-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:24px;}
+  .stock-card{
+    background:var(--stone);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:26px 22px;
+  }
+  .stock-card h3{font-size:1.06rem;margin-bottom:10px;}
+  .stock-card p{font-size:0.94rem;color:var(--ink-soft);margin:0;}
+
+  .about-section{padding:80px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid h2{font-size:clamp(1.55rem, 3vw, 2.1rem);margin-bottom:20px;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:1.05rem;}
+  .address-block{
+    background:var(--coal);color:#fff;padding:36px;border-radius:6px;
+  }
+  .address-block h3{color:#fff;font-size:1.15rem;margin-bottom:18px;}
+  .address-block dl{
+    margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:0.98rem;
+  }
+  .address-block dt{
+    color:var(--amber);font-weight:700;text-transform:uppercase;
+    font-size:0.76rem;letter-spacing:0.08em;align-self:center;
+  }
+  .address-block dd{margin:0;}
+  .address-block a{color:#fff;text-decoration:underline;}
+
+  .cta-band{background:var(--coal-dark);color:#fff;padding:64px 0;text-align:center;}
+  .cta-band h2{color:#fff;font-size:clamp(1.55rem, 3.2vw, 2.3rem);margin-bottom:16px;}
+  .cta-band p{color:#C9C1AE;max-width:52ch;margin:0 auto 30px;font-size:1.05rem;}
+
+  footer{
+    background:var(--coal-dark);color:#8E886F;padding:28px 0 40px;
+    text-align:center;font-size:0.88rem;border-top:1px solid rgba(255,255,255,0.08);
+  }
+  footer a{color:#fff;}
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .address-block{order:-1;}
+  }
+  @media (max-width: 560px){
+    .card-grid{grid-template-columns:1fr;}
+    .hours-strip{flex-direction:column;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">Colurso's <span>Market &amp; Deli</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#stock">What We Carry</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Hours &amp; Location</a>
+      <a class="call-btn" href="tel:+15703422004">Call (570) 342-2004</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Neighborhood Market &amp; Deli Serving West Scranton, PA</h1>
+        <p class="lede">A family market and deli on Luzerne Street since 1982, Colurso's has kept West Scranton stocked with hand cut deli meats, fresh produce, and grocery basics at prices that still make sense.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+15703422004">Call the Deli Counter</a>
+          <a class="btn-secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hours-strip">
+          <span><strong>Open Daily</strong> &middot; Morning &ndash; Early Evening</span>
+          <span><strong>610 Luzerne St</strong> &middot; Scranton, PA 18504</span>
+        </div>
+      </div>
+      <div class="ledger" aria-hidden="true">
+        <div class="ledger-top">
+          <span>Counter Today</span>
+          <small>Cut Fresh</small>
+        </div>
+        <div class="ledger-row"><span class="item">Hand Sliced Deli Meats</span><span class="tag">Fresh</span></div>
+        <div class="ledger-row"><span class="item">Local Produce</span><span class="tag">In Season</span></div>
+        <div class="ledger-row"><span class="item">Imported Cheeses</span><span class="tag">By the Pound</span></div>
+        <div class="ledger-row"><span class="item">House Made Sandwiches</span><span class="tag">Made to Order</span></div>
+        <div class="ledger-row"><span class="item">Pantry Staples</span><span class="tag">Everyday</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="seam" aria-hidden="true"></div>
+
+  <section class="stock-section" id="stock">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What We Carry</h2>
+        <p>A full deli case and a market's worth of essentials, run the same mom-and-pop way it has been since 1982.</p>
+      </div>
+      <div class="card-grid">
+        <div class="stock-card">
+          <h3>Deli Counter</h3>
+          <p>Hand sliced cold cuts, cheeses, and made-to-order sandwiches cut while you wait.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Fresh Produce</h3>
+          <p>Fruits and vegetables picked and priced to beat the big grocery chains.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Grocery Basics</h3>
+          <p>Bread, dairy, canned goods, and pantry staples for the everyday list.</p>
+        </div>
+        <div class="stock-card">
+          <h3>Neighborhood Orders</h3>
+          <p>Call ahead and your platter or sandwich order is ready at the counter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A West Scranton Fixture Since 1982</h2>
+        <p>Colurso's opened on Luzerne Street in 1982 and became one of West Scranton's go-to stops for deli meat and fresh produce. When longtime owners Pat and Charlotte Colurso retired, new owners stepped in to keep the counter running and the mom-and-pop feel intact.</p>
+        <p>It has always run on foot traffic and word of mouth around the neighborhood, which also means most people searching online for a West Scranton deli never find their way to this counter.</p>
+      </div>
+      <div class="address-block">
+        <h3>Visit the Market</h3>
+        <dl>
+          <dt>Address</dt>
+          <dd>610 Luzerne St<br>Scranton, PA 18504</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15703422004">(570) 342-2004</a></dd>
+          <dt>Neighborhood</dt>
+          <dd>West Scranton, PA</dd>
+          <dt>Since</dt>
+          <dd>1982</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit">
+    <div class="wrap">
+      <h2>Stop by Luzerne Street</h2>
+      <p>Fresh cut deli meat, local produce, and the everyday basics, right in the middle of West Scranton.</p>
+      <a class="btn-primary" href="tel:+15703422004">Call (570) 342-2004</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Colurso's Market &amp; Deli &middot; 610 Luzerne St, Scranton, PA 18504 &middot; <a href="tel:+15703422004">(570) 342-2004</a></p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>
