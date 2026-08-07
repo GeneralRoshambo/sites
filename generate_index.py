@@ -56,18 +56,20 @@ def card_html(s):
 '''
 
 # "Latest" is a synthetic pseudo-region, always shown first and active by
-# default, drawn from whichever sites carry the most recent "added" date.
-# Every manifest entry a daily prospecting run appends should include an
-# "added": "YYYY-MM-DD" field (in addition to slug/name/location/category/
-# region) precisely so this tab keeps working without manual upkeep; entries
-# from before this convention existed simply have no "added" field and are
-# never eligible to appear here.
+# default, drawn from the 30 most recently added sites (not just the most
+# recent date, since a 1-per-day cadence would otherwise leave this tab
+# showing a single card most days). Every manifest entry a daily prospecting
+# run appends should include an "added": "YYYY-MM-DD" field (in addition to
+# slug/name/location/category/region) precisely so this tab keeps working
+# without manual upkeep; entries from before this convention existed simply
+# have no "added" field and are never eligible to appear here.
+LATEST_TAB_SIZE = 30
 dated_sites = [s for s in sites if s.get("added")]
-latest_sites = []
-if dated_sites:
-    latest_date = max(s["added"] for s in dated_sites)
-    latest_sites = [s for s in dated_sites if s["added"] == latest_date]
-    latest_sites = list(reversed(latest_sites))
+# Stable sort by date, preserving manifest (append) order as the tiebreaker
+# for same-day entries, then take the most recent LATEST_TAB_SIZE and show
+# newest first.
+dated_sites_sorted = sorted(dated_sites, key=lambda s: s["added"])
+latest_sites = list(reversed(dated_sites_sorted[-LATEST_TAB_SIZE:]))
 
 tab_defs = []
 if latest_sites:
