@@ -1,274 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>International Deli & Grocery | South Side, Scranton</title>
-<meta name="description" content="South Side's one-stop shop for hot Latin food, groceries, and services, from a fresh plate at lunch to sending money home in the same visit.">
+<meta name="description" content="Latin deli and grocery on Cedar Avenue in South Side Scranton, PA. Hot food counter, groceries, money transfer, bill pay, and prepaid phone cards." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-      --cream: #EEEEEB;
-      --papaya: #A8451B;
-      --teal: #2F6D5C;
-      --corn: #F4C430;
-      --inkdark: #241612;
-      --bg: var(--cream);
-      --ink: var(--inkdark);
-      --accent: var(--teal);
-      --bold: var(--papaya);
-      --accent2: var(--corn);
-      --display-font: 'Baloo 2', serif;
-      --body-font: 'Nunito Sans', sans-serif;
-      --utility-font: 'Space Mono', monospace;
+    --papaya: #E8622C;
+    --papaya-deep: #A83F16;
+    --limon: #F2C230;
+    --verde: #1F6E52;
+    --berry: #C23A63;
+    --paper: #FBF6EC;
+    --ink: #22201B;
+    --display-font: 'Big Shoulders Display', sans-serif;
+    --body-font: 'Mulish', sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: var(--body-font);
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.55;
-  }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body-font); line-height: 1.55; }
   a { color: inherit; }
   img, svg { max-width: 100%; display: block; }
-  a:focus-visible, button:focus-visible, .hamburger:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-  }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--display-font); font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; margin: 0; }
+  :focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
 
-  /* NAV */
-  header.site-nav {
-    position: sticky; top: 0; z-index: 50;
-    background: var(--bg);
-    border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
-  }
-  .nav-inner {
-    max-width: 1120px; margin: 0 auto; padding: 18px 24px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; position: relative;
-  }
-  .brand {
-    display: block; text-decoration: none; flex-shrink: 0; max-width: 320px;
-  }
-  .brand-main {
-    font-family: var(--display-font); font-size: 1.625rem; font-weight: 700; line-height: 1.25;
-    display: block;
-  }
-  .brand-sub {
-    font-family: var(--utility-font); font-size: 0.75rem; font-weight: 400; line-height: 1.3;
-    display: block; margin-top: 3px; color: var(--ink);
-  }
-  nav.links { display: flex; gap: 28px; align-items: center; }
-  nav.links a { text-decoration: none; font-size: 1rem; font-weight: 500; line-height: 1.4; }
-  nav.links a.nav-cta {
-    padding: 9px 18px; border-radius: 3px;
-    background: var(--accent); color: #FFFFFF;
-    font-weight: 600;
-  }
-  .hamburger { display: none; background: none; border: 2px solid currentColor; border-radius: 4px; padding: 8px 10px; cursor: pointer; color: var(--ink); }
-  .hamburger span { display: block; width: 20px; height: 2px; background: currentColor; margin: 4px 0; }
-  #nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+  /* Awning stripe: solid alternating blocks, not a repeating gradient */
+  .awning { display: flex; height: 12px; width: 100%; }
+  .awning span { flex: 1 1 0; }
+  .awning span:nth-child(4n+1) { background: var(--verde); }
+  .awning span:nth-child(4n+2) { background: var(--papaya); }
+  .awning span:nth-child(4n+3) { background: var(--limon); }
+  .awning span:nth-child(4n+4) { background: var(--berry); }
 
-  @media (max-width: 1150px) {
-    nav.links {
-      display: none;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: var(--bg);
-      flex-direction: column; align-items: flex-start;
-      padding: 16px 24px 24px; gap: 14px;
-      border-bottom: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
-    }
-    #nav-toggle:checked ~ nav.links { display: flex; }
+  header { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid rgba(34,32,27,0.12); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1120px; margin: 0 auto; }
+  .brand { font-family: var(--display-font); font-weight: 800; font-size: 1.5rem; text-transform: uppercase; color: var(--verde); text-decoration: none; white-space: nowrap; }
+  nav.links { display: flex; align-items: center; gap: 28px; }
+  nav.links a { text-decoration: none; font-weight: 700; font-size: 1rem; color: var(--ink); }
+  nav.links a:hover { color: var(--papaya); }
+  .nav-cta { background: var(--papaya-deep); color: var(--paper) !important; padding: 10px 20px; border-radius: 3px; font-weight: 800 !important; }
+  .nav-cta:hover { background: #7e300f; }
+  #nav-toggle { display: none; }
+  .hamburger { display: none; background: none; border: 1px solid var(--ink); border-radius: 4px; padding: 9px 11px; cursor: pointer; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 4px 0; }
+  .mobile-panel { display: none; }
+  @media (max-width: 1140px) {
+    nav.links, .nav-cta.desktop-only { display: none; }
     .hamburger { display: inline-block; }
+    .mobile-panel { display: none; flex-direction: column; background: var(--paper); border-top: 1px solid rgba(34,32,27,0.12); padding: 12px 24px 24px; }
+    #nav-toggle:checked ~ .mobile-panel { display: flex; }
+    .mobile-panel a { padding: 12px 0; text-decoration: none; color: var(--ink); font-weight: 700; border-bottom: 1px solid rgba(34,32,27,0.1); }
+    .mobile-panel .nav-cta { margin-top: 14px; text-align: center; display: block; }
   }
 
-  /* HERO */
-  .hero { padding: 40px 24px 32px; }
-  h1 {
-    font-family: var(--display-font); font-weight: 700; line-height: 1.38;
-    font-size: clamp(2.15rem, 4.2vw, 3.1rem); margin: 0 0 16px; max-width: 16ch;
-  }
-  .lede { font-size: 1.125rem; max-width: 52ch; margin: 0 0 22px; line-height: 1.5; }
-  .about-copy { font-size: 1.0625rem; max-width: 62ch; margin: 0; line-height: 1.6; }
-  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-  .kicker {
-    font-family: var(--utility-font); font-size: 0.75rem; margin: 14px 0 0; color: var(--ink);
-  }
-  .btn {
-    display: inline-block; padding: 13px 26px; border-radius: 3px;
-    text-decoration: none; font-weight: 600; font-size: 1rem; line-height: 1.4;
-    border: 2px solid transparent;
-  }
-  .btn-primary { background: var(--accent); color: #FFFFFF; }
-  .btn-ghost { border-color: currentColor; }
+  .hero { padding: 52px 0 44px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+  .kicker { font-family: var(--body-font); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--verde); margin: 0 0 12px; }
+  h1 { font-size: clamp(2.4rem, 4.6vw, 3.5rem); line-height: 1.05; max-width: 13ch; margin-bottom: 16px; }
+  .lede { font-size: 1.15rem; max-width: 46ch; margin: 0 0 26px; color: #4a463c; font-family: var(--body-font); text-transform: none; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 3px; text-decoration: none; font-weight: 700; font-size: 1rem; border: 2px solid transparent; font-family: var(--body-font); }
+  .btn-primary { background: var(--verde); color: var(--paper); }
+  .btn-primary:hover { background: #17573f; }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
-  .hero-split {
-    max-width: 1120px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  /* Service stamps: passport-stamp style badges, grounded in the multi-service pitch */
+  .stamp-board { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stamp {
+    border: 2px dashed rgba(34,32,27,0.35); border-radius: 50%; aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    transform: rotate(var(--rot, 0deg)); padding: 14px;
   }
-  .hero-art { padding: 20px; }
-  .sig-svg { width: 100%; height: auto; }
+  .stamp:nth-child(1) { --rot: -4deg; border-color: var(--verde); }
+  .stamp:nth-child(2) { --rot: 3deg; border-color: var(--papaya); }
+  .stamp:nth-child(3) { --rot: 2deg; border-color: var(--berry); }
+  .stamp:nth-child(4) { --rot: -3deg; border-color: var(--limon); }
+  .stamp-label { font-family: var(--display-font); font-weight: 700; font-size: 1rem; text-transform: uppercase; line-height: 1.15; }
 
-  .hero-editorial { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
-  .hero-rule { margin: 14px 0 18px; max-width: 360px; }
+  section.block { padding: 52px 0; }
+  .band-verde { background: var(--verde); color: var(--paper); }
+  .band-verde h2 { color: #FBE9A0; }
+  h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); margin-bottom: 18px; }
+  .about-copy { font-size: 1rem; max-width: 62ch; font-family: var(--body-font); text-transform: none; font-weight: 400; }
 
-  .hero-block {
-    background: var(--bold); color: #FFFFFF;
-    margin: 0; padding: 44px 24px;
-  }
-  .hero-block .btn-ghost { border-color: #FFFFFF; }
-  .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
-  .hero-block .kicker { color: #FFFFFF; }
-  .hero-inner { max-width: 1120px; margin: 0 auto; }
-  .hero-sig { max-width: 1120px; margin: 18px auto 0; opacity: 0.95; }
+  .shelf-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid var(--ink); }
+  .shelf-list li { padding: 16px 4px; border-bottom: 2px solid var(--ink); font-size: 1rem; font-weight: 600; }
+  .shelf-list li:nth-child(odd) { border-right: 2px solid var(--ink); padding-right: 16px; }
+  .shelf-list li:nth-child(even) { padding-left: 16px; }
 
-  .hero-photo-side {
-    max-width: 1120px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center;
-  }
-  .hero-photo-card {
-    border-radius: 12px; overflow: hidden; aspect-ratio: 5/4;
-    border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
-  }
-  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .contact-item { margin-bottom: 18px; }
+  .contact-item .label { font-family: var(--display-font); font-size: 0.8125rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--paper); margin-bottom: 4px; font-weight: 700; }
+  .contact-item a, .contact-item span { color: var(--paper); font-size: 1rem; text-decoration: none; font-family: var(--body-font); }
+  .contact-item a:hover { color: #FBE9A0; }
 
-  .hero-photo-full { padding: 0 0 36px; }
-  .hero-photo-full-media { width: 100%; aspect-ratio: 3/1; overflow: hidden; }
-  .hero-photo-full-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .hero-photo-full-panel {
-    background: var(--bold); color: #FFFFFF;
-    max-width: 620px; margin: -44px 24px 0; position: relative;
-    padding: 26px 28px 24px; border-radius: 4px;
-  }
-  .hero-photo-full-panel h1 { font-size: clamp(1.7rem, 3.2vw, 2.15rem); max-width: none; }
-  .hero-photo-full-panel .btn-ghost { border-color: #FFFFFF; }
-  .hero-photo-full-panel .btn-primary { background: #FFFFFF; color: var(--bold); }
-  .hero-photo-full-panel .kicker { color: #FFFFFF; }
-  @media (max-width: 700px) {
-    .hero-photo-full-panel { margin: -32px 16px 0; padding: 20px 18px 18px; }
-  }
+  footer { background: var(--ink); color: rgba(251,246,236,0.6); padding: 24px 0; font-size: 0.85rem; text-align: center; }
+  footer a { color: var(--limon); text-decoration: none; }
 
-  .hero-photo-frame { max-width: 1120px; margin: 0 auto; padding-top: 8px; }
-  .hero-frame-media {
-    width: 100%; aspect-ratio: 3/1; border-radius: 8px; overflow: hidden;
-    margin: 16px 0 20px; border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
-  }
-  .hero-frame-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  @media (max-width: 640px) {
-    .hero-photo-side { grid-template-columns: 1fr; }
-    .hero-photo-card { aspect-ratio: 16/10; }
-    .hero-frame-media { aspect-ratio: 16/9; }
-  }
-
-  /* SECTIONS */
-  section.block-section { padding: 56px 24px; }
-  h2 {
-    font-family: var(--display-font); font-size: clamp(2.125rem, 3.6vw, 2.75rem);
-    margin: 0 0 28px; font-weight: 700;
-  }
-  .services-list {
-    list-style: none; margin: 0; padding: 0;
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
-    border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
-  }
-  .services-list li {
-    padding: 16px 4px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
-    font-size: 1rem;
-  }
-  @media (max-width: 640px) {
-    .services-list { grid-template-columns: 1fr; }
-    .hero-split { grid-template-columns: 1fr; }
-  }
-
-  .about-section { background: color-mix(in srgb, var(--accent2) 14%, var(--bg)); }
-
-  footer {
-    background: var(--ink); color: var(--bg);
-    padding: 48px 24px 32px; margin-top: 24px;
-  }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; }
-  footer h3 { font-family: var(--display-font); margin: 0 0 12px; font-size: 1.625rem; }
-  footer address { font-style: normal; font-size: 1rem; line-height: 1.7; }
-  footer a.footer-link { text-decoration: underline; color: var(--bg); }
-  .footer-bottom {
-    max-width: 1120px; margin: 32px auto 0; padding-top: 20px;
-    border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent);
-    font-family: var(--utility-font); font-size: 0.75rem; color: color-mix(in srgb, var(--bg) 80%, var(--ink) 20%);
+  @media (max-width: 780px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .stamp-board { order: -1; max-width: 320px; margin: 0 auto 8px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .shelf-list { grid-template-columns: 1fr; }
+    .shelf-list li:nth-child(odd) { border-right: none; padding-right: 4px; }
+    .shelf-list li:nth-child(even) { padding-left: 4px; }
   }
 </style>
 </head>
 <body>
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top"><span class="brand-main">International Deli</span><span class="brand-sub">& Grocery</span></a>
-    <input type="checkbox" id="nav-toggle">
-    <label class="hamburger" for="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">International Deli</a>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="tel:5703431105">(570) 343-1105</a>
+      <a class="nav-cta desktop-only" href="tel:5703431105">(570) 343-1105</a>
     </nav>
+    <input type="checkbox" id="nav-toggle" aria-hidden="true">
+    <label class="hamburger" for="nav-toggle" role="button" aria-label="Toggle menu" tabindex="0"><span></span><span></span><span></span></label>
+  </div>
+  <div class="mobile-panel">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="tel:5703431105">Call (570) 343-1105</a>
   </div>
 </header>
 
+<div class="awning" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
 <main id="top">
-
-      <section class="hero hero-photo-full">
-        <div class="hero-photo-full-media"><img src="https://images.pexels.com/photos/33628647/pexels-photo-33628647.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Shopper browsing shelves in a Latin American grocery market" loading="lazy" width="1600" height="700"></div>
-        <div class="hero-photo-full-panel">
-          <h1>Latin Deli and Grocery in South Side Scranton, PA</h1>
-          <p class="lede">South Side's one-stop shop for hot Latin food, groceries, and services, from a fresh plate at lunch to sending money home in the same visit.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="tel:5703431105">Call (570) 343-1105</a>
-            <a class="btn btn-ghost" href="#contact">Get Directions</a>
-          </div>
-          <p class="kicker">Latin Deli / Grocery, South Side, Scranton</p>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Latin Deli and Grocery in South Side Scranton, PA</h1>
+        <p class="lede">South Side's one-stop shop for hot Latin food, groceries, and services on Cedar Avenue, from a fresh plate at lunch to sending money home in the same visit.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:5703431105">Call (570) 343-1105</a>
+          <a class="btn btn-ghost" href="#contact">Get Directions</a>
         </div>
-      </section>
-
-  <section id="about" class="block-section about-section">
-    <div class="wrap">
-      <h2>About International Deli & Grocery</h2>
-      <p class="about-copy">South Side's one-stop shop for hot Latin food, groceries, and services, from a fresh plate at lunch to sending money home in the same visit. Find us at 1102 Cedar Ave, Scranton, PA 18505, serving South Side, Scranton and the surrounding area.</p>
+      </div>
+      <div class="stamp-board" aria-hidden="true">
+        <div class="stamp"><span class="stamp-label">Hot Food<br>Counter</span></div>
+        <div class="stamp"><span class="stamp-label">Groceries</span></div>
+        <div class="stamp"><span class="stamp-label">Money<br>Transfer</span></div>
+        <div class="stamp"><span class="stamp-label">Bill Pay</span></div>
+      </div>
     </div>
   </section>
 
-  <section id="services" class="block-section">
+  <div class="awning" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <section id="about" class="block">
     <div class="wrap">
-      <h2>Services</h2>
-      <ul class="services-list">
+      <h2>About the Store</h2>
+      <p class="about-copy">South Side's one-stop shop for hot Latin food, groceries, and services on Cedar Avenue, from a fresh plate at lunch to sending money home in the same visit. Find us at 1102 Cedar Ave, Scranton, PA 18505, serving South Side, Scranton and the surrounding area.</p>
+    </div>
+  </section>
+
+  <section id="services" class="block">
+    <div class="wrap">
+      <h2>What's Here</h2>
+      <ul class="shelf-list">
         <li>Hot food counter, made daily</li>
-            <li>Latin grocery staples</li>
-            <li>Money transfer services</li>
-            <li>Bill pay</li>
-            <li>Prepaid phone cards</li>
-            <li>Catering by request</li>
+        <li>Latin grocery staples</li>
+        <li>Money transfer services</li>
+        <li>Bill pay</li>
+        <li>Prepaid phone cards</li>
+        <li>Catering by request</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="block band-verde">
+    <div class="wrap">
+      <h2>Come By</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item">
+            <div class="label">Address</div>
+            <span>1102 Cedar Ave, Scranton, PA 18505</span>
+          </div>
+          <div class="contact-item">
+            <div class="label">Phone</div>
+            <a href="tel:5703431105">(570) 343-1105</a>
+          </div>
+        </div>
+        <div>
+          <div class="contact-item">
+            <div class="label">Serving</div>
+            <span>South Side, Scranton and the surrounding area</span>
+          </div>
+          <div class="contact-item">
+            <div class="label">Catering</div>
+            <span>Available by request, call ahead</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<footer id="contact">
-  <div class="wrap">
-    <div>
-      <h3>International Deli & Grocery</h3>
-      <address>
-        1102 Cedar Ave, Scranton, PA 18505<br><a class='footer-link' href='tel:5703431105'>(570) 343-1105</a><br>
-      </address>
-    </div>
-    <div>
-      <h3>Hours</h3>
-      <p>Call ahead for current hours.</p>
-    </div>
-  </div>
-  <p class="footer-bottom wrap">&copy; 2026 International Deli & Grocery. Site by Modularity Networks.</p>
+<footer>
+  <div class="wrap">International Deli &amp; Grocery &middot; 1102 Cedar Ave, Scranton, PA 18505 &middot; <a href="tel:5703431105">(570) 343-1105</a></div>
 </footer>
+
 </body>
 </html>
