@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<title>Site Review — Modularity Networks (internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06101c;
+    --bg-soft: #0b1a2e;
+    --accent: #3bb8e8;
+    --text: rgba(255,255,255,0.92);
+    --text-dim: rgba(255,255,255,0.55);
+    --border: rgba(59,184,232,0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  a { color: inherit; }
+
+  /* ---------- Top bar ---------- */
+  header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px;
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .brand {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .nav-btn {
+    background: rgba(59,184,232,0.12);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { background: rgba(59,184,232,0.22); }
+  .nav-btn:focus-visible, select:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .counter {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .meta .name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .meta .sub {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  select#jump {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    font-family: inherit;
+    max-width: 220px;
+  }
+  .hint {
+    color: var(--text-dim);
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+  .open-live {
+    font-size: 0.82rem;
+    text-decoration: underline;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* ---------- Frame area ---------- */
+  main {
+    flex: 1 1 auto;
+    position: relative;
+    background: #fff;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    background: #fff;
+  }
+  .edge-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 64px;
+    background: linear-gradient(to var(--dir, right), rgba(6,16,28,0.35), transparent);
+    border: 0;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 5;
+  }
+  main:hover .edge-btn { opacity: 1; }
+  .edge-btn:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: -4px; }
+  .edge-btn.prev { left: 0; --dir: left; }
+  .edge-btn.next { right: 0; --dir: right; }
+
+  .loading, .empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    background: var(--bg);
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  @media (max-width: 760px) {
+    header { flex-wrap: wrap; row-gap: 8px; }
+    .hint { display: none; }
+    select#jump { max-width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand">Site Review</span>
+  <button class="nav-btn" id="prevBtn" aria-label="Previous site">&larr; Prev</button>
+  <span class="counter" id="counter">– / –</span>
+  <button class="nav-btn" id="nextBtn" aria-label="Next site">Next &rarr;</button>
+  <div class="meta">
+    <span class="name" id="metaName">Loading…</span>
+    <span class="sub" id="metaSub"></span>
+  </div>
+  <select id="jump" aria-label="Jump to a specific site"></select>
+  <a class="open-live" id="openLive" href="#" target="_blank" rel="noopener">Open live ↗</a>
+  <span class="hint">← / → to navigate · Home/End for first/last</span>
+</header>
+
+<main>
+  <button class="edge-btn prev" id="edgePrev" aria-label="Previous site">&#8249;</button>
+  <iframe id="frame" title="Demo site preview"></iframe>
+  <button class="edge-btn next" id="edgeNext" aria-label="Next site">&#8250;</button>
+  <div class="loading" id="loadingMsg">Loading manifest…</div>
+</main>
+
+<script>
+(function () {
+  var STORAGE_KEY = "modularity-dev-review-index";
+  var sites = [];
+  var idx = 0;
+
+  var frame = document.getElementById("frame");
+  var counter = document.getElementById("counter");
+  var metaName = document.getElementById("metaName");
+  var metaSub = document.getElementById("metaSub");
+  var jumpSelect = document.getElementById("jump");
+  var openLive = document.getElementById("openLive");
+  var loadingMsg = document.getElementById("loadingMsg");
+
+  function render() {
+    if (!sites.length) return;
+    var s = sites[idx];
+    var url = "/" + s.slug + "/";
+    frame.src = url;
+    counter.textContent = (idx + 1) + " / " + sites.length;
+    metaName.textContent = s.name;
+    metaSub.textContent = [s.category, s.location, s.region].filter(Boolean).join(" · ");
+    openLive.href = url;
+    jumpSelect.value = String(idx);
+    try { localStorage.setItem(STORAGE_KEY, String(idx)); } catch (e) {}
+  }
+
+  function go(delta) {
+    if (!sites.length) return;
+    idx = (idx + delta + sites.length) % sites.length;
+    render();
+  }
+
+  function goTo(newIdx) {
+    if (!sites.length) return;
+    idx = Math.max(0, Math.min(sites.length - 1, newIdx));
+    render();
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", function () { go(-1); });
+  document.getElementById("nextBtn").addEventListener("click", function () { go(1); });
+  document.getElementById("edgePrev").addEventListener("click", function () { go(-1); });
+  document.getElementById("edgeNext").addEventListener("click", function () { go(1); });
+  jumpSelect.addEventListener("change", function () { goTo(parseInt(jumpSelect.value, 10)); });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.target === jumpSelect) return;
+    if (e.key === "ArrowRight") { go(1); e.preventDefault(); }
+    else if (e.key === "ArrowLeft") { go(-1); e.preventDefault(); }
+    else if (e.key === "Home") { goTo(0); e.preventDefault(); }
+    else if (e.key === "End") { goTo(sites.length - 1); e.preventDefault(); }
+  });
+
+  fetch("/manifest.json")
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      // Newest-added first, matching the main gallery's ordering convention.
+      sites = data.slice().reverse();
+      if (!sites.length) {
+        loadingMsg.textContent = "No sites found in manifest.json.";
+        return;
+      }
+      loadingMsg.style.display = "none";
+
+      jumpSelect.innerHTML = sites.map(function (s, i) {
+        return '<option value="' + i + '">' + (i + 1) + '. ' + s.name + '</option>';
+      }).join("");
+
+      var saved = 0;
+      try {
+        var stored = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+        if (!isNaN(stored) && stored >= 0 && stored < sites.length) saved = stored;
+      } catch (e) {}
+      idx = saved;
+      render();
+    })
+    .catch(function (err) {
+      loadingMsg.textContent = "Could not load manifest.json (" + err + ").";
+    });
+})();
+</script>
+
+</body>
+</html>
