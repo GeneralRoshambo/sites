@@ -126,7 +126,9 @@
   .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
   .hero-block .kicker { color: #FFFFFF; }
   .hero-inner { max-width: 1120px; margin: 0 auto; }
-  .hero-sig { max-width: 1120px; margin: 18px auto 0; opacity: 0.95; }
+  .hero-block-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+  .hero-block .hero-photo-card { border-color: rgba(255,255,255,0.3); }
+  @media (max-width: 640px) { .hero-block-grid { grid-template-columns: 1fr; } }
 
   .hero-photo-side {
     max-width: 1120px; margin: 0 auto;
@@ -222,18 +224,18 @@
 <main id="top">
 
       <section class="hero hero-block">
-        <div class="hero-inner">
-          <h1>Hair Salon in Honesdale, PA</h1>
-          <p class="lede">A calm, appointment-based salon on Willow Avenue where color and cut are treated like craft, not a rush. Honesdale's go-to for a first-time color transformation.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="tel:5702534252">Call (570) 253-4252</a>
-            <a class="btn btn-ghost" href="#contact">Get Directions</a>
+        <div class="hero-inner hero-block-grid">
+          <div>
+            <h1>Hair Salon in Honesdale, PA</h1>
+            <p class="lede">A calm, appointment-based salon on Willow Avenue where color and cut are treated like craft, not a rush. Honesdale's go-to for a first-time color transformation.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="tel:5702534252">Call (570) 253-4252</a>
+              <a class="btn btn-ghost" href="#contact">Get Directions</a>
+            </div>
+            <p class="kicker">Hair Salon, Honesdale, PA</p>
           </div>
-          <p class="kicker">Hair Salon, Honesdale, PA</p>
+          <div class="hero-photo-card"><img class="hero-img" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stylist cutting a client's hair at Mane Creations Salon" loading="lazy" width="1200" height="960"></div>
         </div>
-        <div class="hero-sig"><svg viewBox="0 0 300 80" class="sig-svg" role="img" aria-label="Flowing comb stroke line">
-      <path d="M10 40 C 60 5, 90 75, 140 40 S 220 5, 290 40" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round"/>
-    </svg></div>
       </section>
 
   <section id="about" class="block-section about-section">

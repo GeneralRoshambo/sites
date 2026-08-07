@@ -125,7 +125,9 @@
   .hero-block .btn-primary { background: #FFFFFF; color: var(--bold); }
   .hero-block .kicker { color: #FFFFFF; }
   .hero-inner { max-width: 1120px; margin: 0 auto; }
-  .hero-sig { max-width: 1120px; margin: 18px auto 0; opacity: 0.95; }
+  .hero-block-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+  .hero-block .hero-photo-card { border-color: rgba(255,255,255,0.3); }
+  @media (max-width: 640px) { .hero-block-grid { grid-template-columns: 1fr; } }
 
   .hero-photo-side {
     max-width: 1120px; margin: 0 auto;
@@ -221,25 +223,18 @@
 <main id="top">
 
       <section class="hero hero-block">
-        <div class="hero-inner">
-          <h1>Barber Shop in Green Ridge, Scranton, PA</h1>
-          <p class="lede">Green Ridge's classic corner barbershop, precise cuts and straight razor shaves in a shop that has kept the same steady hands for years.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="tel:5703461012">Call (570) 346-1012</a>
-            <a class="btn btn-ghost" href="#contact">Get Directions</a>
+        <div class="hero-inner hero-block-grid">
+          <div>
+            <h1>Barber Shop in Green Ridge, Scranton, PA</h1>
+            <p class="lede">Green Ridge's classic corner barbershop, precise cuts and straight razor shaves in a shop that has kept the same steady hands for years.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="tel:5703461012">Call (570) 346-1012</a>
+              <a class="btn btn-ghost" href="#contact">Get Directions</a>
+            </div>
+            <p class="kicker">Barber Shop, Green Ridge, Scranton</p>
           </div>
-          <p class="kicker">Barber Shop, Green Ridge, Scranton</p>
+          <div class="hero-photo-card"><img class="hero-img" src="https://images.pexels.com/photos/897251/pexels-photo-897251.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Barber giving a client a straight razor shave at Ross' Times Barber Shop" loading="lazy" width="1200" height="960"></div>
         </div>
-        <div class="hero-sig"><svg viewBox="0 0 200 200" class="sig-svg sig-clock" role="img" aria-label="Vintage clock face">
-      <circle cx="100" cy="100" r="85" fill="none" stroke="var(--accent2)" stroke-width="3"/>
-      <g stroke="var(--bg)" stroke-width="2">
-        <line x1="100" y1="20" x2="100" y2="32"/><line x1="100" y1="168" x2="100" y2="180"/>
-        <line x1="20" y1="100" x2="32" y2="100"/><line x1="168" y1="100" x2="180" y2="100"/>
-      </g>
-      <line x1="100" y1="100" x2="100" y2="50" stroke="var(--bg)" stroke-width="6" stroke-linecap="round"/>
-      <line x1="100" y1="100" x2="140" y2="115" stroke="var(--accent2)" stroke-width="5" stroke-linecap="round"/>
-      <circle cx="100" cy="100" r="5" fill="var(--accent2)"/>
-    </svg></div>
       </section>
 
   <section id="about" class="block-section about-section">
