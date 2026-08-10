@@ -1171,5 +1171,13 @@
     "category": "Dog Grooming",
     "region": "Erie",
     "added": "2026-08-07"
+  },
+  {
+    "slug": "jackelyn-home-grooming",
+    "name": "Jackelyn Home Grooming",
+    "location": "Bronx, NY",
+    "category": "Pet Grooming",
+    "region": "Bronx",
+    "added": "2026-08-10"
   }
 ]
