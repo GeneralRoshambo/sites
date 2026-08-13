@@ -1179,5 +1179,13 @@
     "category": "Pet Grooming",
     "region": "Bronx",
     "added": "2026-08-10"
+  },
+  {
+    "slug": "paws-r-us-brooklyn",
+    "name": "Paws R' Us",
+    "location": "Brooklyn, NY",
+    "category": "Pet Grooming",
+    "region": "Brooklyn",
+    "added": "2026-08-13"
   }
 ]
