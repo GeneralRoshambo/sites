@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bowles Baking Co. | Custom Cakes in Brooklyn, NY</title>
+<meta name="description" content="Handcrafted custom cakes for birthdays and celebrations, baked to order from a home kitchen in Brooklyn, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7EEF2;
+    --ink: #2B1826;
+    --berry: #922C4E;
+    --berry-dark: #741F3D;
+    --gold: #C89545;
+    --blush: #F0DCD3;
+    --blush-line: #E4C9BC;
+    --plum-dark: #341A2C;
+    --plum-darker: #26121F;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.15;
+    color: var(--plum-darker);
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--berry-dark);
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--berry);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 246, 242, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--blush-line);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--plum-darker);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .brand span { color: var(--berry); font-style: normal; }
+
+  nav.links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+  }
+
+  nav.links a.nav-link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    position: relative;
+    padding: 4px 2px;
+  }
+
+  nav.links a.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  nav.links a.nav-link:hover::after,
+  nav.links a.nav-link:focus-visible::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: var(--berry);
+    color: #fff !important;
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--berry-dark); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--plum-darker);
+    border-radius: 8px;
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--plum-darker);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 78px 0 70px;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    margin: 18px 0 22px;
+  }
+  .hero h1 em {
+    color: var(--berry);
+    font-style: italic;
+  }
+  .hero-byline {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--berry-dark);
+    margin: 16px 0 20px;
+  }
+  .hero p.lede {
+    font-size: 1.12rem;
+    color: #4A3441;
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.98rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .btn-primary {
+    background: var(--berry);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--berry-dark); }
+  .btn-secondary {
+    border-color: var(--plum-darker);
+    color: var(--plum-darker);
+  }
+  .btn-secondary:hover { background: var(--plum-darker); color: #fff; }
+
+  .hero-art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-art svg { width: 100%; max-width: 420px; height: auto; }
+
+  /* ---------- SCALLOP DIVIDER ---------- */
+  .scallop {
+    width: 100%;
+    height: 26px;
+    display: block;
+  }
+  .scallop.cream-to-blush { color: var(--blush); }
+  .scallop.blush-to-cream { color: var(--cream); }
+  .scallop.cream-to-plum { color: var(--plum-dark); }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section { padding: 84px 0; }
+  .section-head {
+    max-width: 620px;
+    margin: 0 0 48px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    margin-top: 12px;
+  }
+  .section-head p {
+    color: #4A3441;
+    margin-top: 14px;
+    font-size: 1.02rem;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    background: var(--blush);
+  }
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-card {
+    background: var(--cream);
+    border: 1px solid var(--blush-line);
+    border-radius: 18px;
+    padding: 40px 36px;
+  }
+  .about-heading { font-size: 1.5rem; margin-bottom: 16px; }
+  .about-card p { margin: 0 0 16px; color: #4A3441; }
+  .about-card p:last-child { margin-bottom: 0; }
+  .baker-name {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--berry-dark);
+    font-size: 1.1rem;
+  }
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .stat {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .stat svg { flex-shrink: 0; width: 40px; height: 40px; }
+  .stat h3 {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--plum-darker);
+    margin-bottom: 4px;
+  }
+  .stat p { margin: 0; color: #4A3441; font-size: 0.96rem; }
+
+  /* ---------- SERVICES ---------- */
+  .services { background: var(--cream); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid var(--blush-line);
+    border-radius: 18px;
+    padding: 34px 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(52, 26, 44, 0.1);
+  }
+  .service-card svg { width: 52px; height: 52px; margin-bottom: 18px; }
+  .service-card h3 {
+    font-size: 1.28rem;
+    margin-bottom: 10px;
+  }
+  .service-card p { color: #4A3441; margin: 0; font-size: 0.98rem; }
+
+  /* ---------- ORDER TICKET (how it works) ---------- */
+  .order-flow { background: var(--blush); }
+  .ticket-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .ticket {
+    background: var(--cream);
+    border: 1.5px dashed var(--berry);
+    border-radius: 14px;
+    padding: 30px 26px 26px;
+    position: relative;
+  }
+  .ticket::before, .ticket::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--blush);
+    border-radius: 50%;
+  }
+  .ticket::before { left: -10px; }
+  .ticket::after { right: -10px; }
+  .ticket .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(200, 149, 69, 0.12);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .ticket h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+  .ticket p { color: #4A3441; margin: 0; font-size: 0.96rem; }
+
+  /* ---------- CONTACT / CTA BAND ---------- */
+  .cta-band {
+    background: var(--plum-dark);
+    color: #F3E8EE;
+    padding: 90px 0;
+  }
+  .cta-band .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .cta-band .eyebrow { color: var(--gold); }
+  .cta-band h2 {
+    color: #fff;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    margin: 14px 0 18px;
+  }
+  .cta-band p { color: #E6D3DD; max-width: 44ch; margin: 0 0 30px; }
+  .cta-band .btn-primary { background: var(--gold); color: var(--plum-darker); }
+  .cta-band .btn-primary:hover { background: #DBAA5C; }
+  .cta-band .btn-secondary { border-color: #F3E8EE; color: #F3E8EE; }
+  .cta-band .btn-secondary:hover { background: #F3E8EE; color: var(--plum-darker); }
+
+  .contact-card {
+    background: var(--plum-darker);
+    border: 1px solid rgba(243, 232, 238, 0.18);
+    border-radius: 18px;
+    padding: 36px 32px;
+  }
+  .contact-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 4px;
+    border-bottom: 1px solid rgba(243, 232, 238, 0.14);
+  }
+  .contact-row:last-child { border-bottom: none; padding-bottom: 4px; }
+  .contact-row:first-child { padding-top: 4px; }
+  .contact-row svg { flex-shrink: 0; width: 26px; height: 26px; margin-top: 2px; }
+  .contact-row h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  .contact-row a, .contact-row span {
+    color: #F3E8EE;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+  .contact-row a:hover { text-decoration: underline; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--plum-darker);
+    color: #C9AFC0;
+    padding: 34px 0;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+  footer .brand { color: #F3E8EE; font-size: 1.2rem; margin-bottom: 6px; display: inline-block; }
+  footer p { margin: 6px 0 0; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1180px) {
+    nav.links { gap: 22px; }
+  }
+
+  @media (max-width: 1100px) {
+    nav.links { display: none; }
+    .menu-toggle { display: flex; }
+    .nav { padding: 16px 24px; }
+    .nav-cta.desktop-only { display: none; }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--cream);
+      border-top: 1px solid var(--blush-line);
+      padding: 10px 24px 22px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 13px 4px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 1px solid var(--blush-line);
+    }
+    .mobile-menu a.nav-cta {
+      text-align: center;
+      margin-top: 12px;
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .hero-art { order: -1; }
+    .hero-art svg { max-width: 280px; }
+    .about .wrap { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: 1fr 1fr; }
+    .ticket-row { grid-template-columns: 1fr; }
+    .cta-band .wrap { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 620px) {
+    .wrap { padding: 0 22px; }
+    section { padding: 60px 0; }
+    .hero { padding: 50px 0 44px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .about-card { padding: 30px 24px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .hero-ctas .btn-primary, .hero-ctas .btn-secondary { justify-content: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">Bowles Baking <span>Co.</span></a>
+    <nav class="links">
+      <a class="nav-link" href="#about">The Baker</a>
+      <a class="nav-link" href="#services">What I Bake</a>
+      <a class="nav-link" href="#order">Ordering</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-cta desktop-only" href="mailto:katiebowlesbaking@gmail.com">Email to Order</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">The Baker</a>
+    <a href="#services">What I Bake</a>
+    <a href="#order">Ordering</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="mailto:katiebowlesbaking@gmail.com">Email to Order</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Custom Cakes in <em>Brooklyn, NY</em></h1>
+        <p class="hero-byline">A home bakery run by Katie Bowles, one order at a time.</p>
+        <p class="lede">Handcrafted, made to order from a home kitchen. Every cake is designed around your colors, flavors, and occasion, then baked fresh for birthdays and celebrations across Brooklyn and the wider city.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="mailto:katiebowlesbaking@gmail.com">Email to Start an Order</a>
+          <a class="btn-secondary" href="https://www.instagram.com/katiebowlesbaking/" target="_blank" rel="noopener">See Cakes on Instagram</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a sliced layer cake with berry topping">
+          <ellipse cx="210" cy="360" rx="150" ry="18" fill="#E4C9BC" opacity="0.6"/>
+          <g>
+            <path d="M90 300 L90 250 Q90 236 104 236 L316 236 Q330 236 330 250 L330 300 Q330 314 316 314 L104 314 Q90 314 90 300 Z" fill="#F0DCD3"/>
+            <rect x="90" y="236" width="240" height="14" fill="#E4C9BC"/>
+            <path d="M90 230 L90 190 Q90 176 104 176 L316 176 Q330 176 330 190 L330 230 Q330 244 316 244 L104 244 Q90 244 90 230 Z" fill="#922C4E"/>
+            <rect x="90" y="176" width="240" height="14" fill="#741F3D"/>
+            <path d="M90 170 L90 130 Q90 116 104 116 L316 116 Q330 116 330 130 L330 170 Q330 184 316 184 L104 184 Q90 184 90 170 Z" fill="#F0DCD3"/>
+          </g>
+          <path d="M84 116 Q92 100 106 116 Q114 100 128 116 Q136 100 150 116 Q158 100 172 116 Q180 100 194 116 Q202 100 216 116 Q224 100 238 116 Q246 100 260 116 Q268 100 282 116 Q290 100 304 116 Q312 100 326 116 Q334 100 336 116 L336 130 L84 130 Z" fill="#FAF6F2" stroke="#C89545" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="145" cy="103" r="10" fill="#922C4E"/>
+          <circle cx="210" cy="97" r="11" fill="#741F3D"/>
+          <circle cx="278" cy="104" r="9" fill="#922C4E"/>
+          <rect x="205" y="60" width="6" height="30" rx="3" fill="#C89545"/>
+          <path d="M208 60 Q220 48 214 34 Q222 42 226 32" stroke="#C89545" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M330 250 Q356 250 356 276 Q356 302 330 302" fill="none" stroke="#341A2C" stroke-width="3" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <svg class="scallop cream-to-blush" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 26 C 20 6, 40 6, 60 26 C 80 6, 100 6, 120 26 C 140 6, 160 6, 180 26 C 200 6, 220 6, 240 26 C 260 6, 280 6, 300 26 C 320 6, 340 6, 360 26 C 380 6, 400 6, 420 26 C 440 6, 460 6, 480 26 C 500 6, 520 6, 540 26 C 560 6, 580 6, 600 26 C 620 6, 640 6, 660 26 C 680 6, 700 6, 720 26 C 740 6, 760 6, 780 26 C 800 6, 820 6, 840 26 C 860 6, 880 6, 900 26 C 920 6, 940 6, 960 26 C 980 6, 1000 6, 1020 26 C 1040 6, 1060 6, 1080 26 C 1100 6, 1120 6, 1140 26 C 1160 6, 1180 6, 1200 26 L1200 26 L0 26 Z"/>
+  </svg>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-card">
+        <h2 class="about-heading">Meet Katie Bowles</h2>
+        <p>Bowles Baking Co. is <span class="baker-name">Katie Bowles</span>, a home baker in Brooklyn who has spent the last several years turning her kitchen into a one-woman cake studio.</p>
+        <p>There is no walk-in counter and no standing menu. Every cake starts as a conversation about the occasion, then gets designed, tested, and baked from scratch around it, one order at a time.</p>
+        <p>Word has traveled mostly through Instagram and referrals from other Brooklyn parents, which is exactly the kind of trust a website can now help carry further.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19" stroke="#922C4E" stroke-width="2"/><path d="M13 22c1.5-6 5-9 7-9s5.5 3 7 9" stroke="#922C4E" stroke-width="2" stroke-linecap="round"/><rect x="11" y="22" width="18" height="4" rx="2" fill="#922C4E"/></svg>
+          <div><h3>Made from scratch</h3><p>Every layer, filling, and finish baked fresh to order, never pulled from a freezer case.</p></div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="26" height="22" rx="3" stroke="#922C4E" stroke-width="2"/><path d="M7 16h26" stroke="#922C4E" stroke-width="2"/><circle cx="14" cy="13" r="1.6" fill="#922C4E"/><circle cx="26" cy="13" r="1.6" fill="#922C4E"/></svg>
+          <div><h3>Designed around your event</h3><p>Colors, theme, and flavors worked out directly with you before anything gets baked.</p></div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6c7 6 13 10.5 13 17a13 13 0 1 1-26 0c0-6.5 6-11 13-17Z" stroke="#922C4E" stroke-width="2"/></svg>
+          <div><h3>Serving Brooklyn &amp; NYC</h3><p>Pickup from the home kitchen, with delivery available for larger celebration orders.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="scallop blush-to-cream" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 26 C 20 6, 40 6, 60 26 C 80 6, 100 6, 120 26 C 140 6, 160 6, 180 26 C 200 6, 220 6, 240 26 C 260 6, 280 6, 300 26 C 320 6, 340 6, 360 26 C 380 6, 400 6, 420 26 C 440 6, 460 6, 480 26 C 500 6, 520 6, 540 26 C 560 6, 580 6, 600 26 C 620 6, 640 6, 660 26 C 680 6, 700 6, 720 26 C 740 6, 760 6, 780 26 C 800 6, 820 6, 840 26 C 860 6, 880 6, 900 26 C 920 6, 940 6, 960 26 C 980 6, 1000 6, 1020 26 C 1040 6, 1060 6, 1080 26 C 1100 6, 1120 6, 1140 26 C 1160 6, 1180 6, 1200 26 L1200 26 L0 26 Z"/>
+  </svg>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What I Bake</p>
+        <h2>Cakes built around your occasion</h2>
+        <p>No standing flavor menu. Every order below is a starting point for a conversation, not a fixed package.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="24" width="32" height="18" rx="3" fill="#F0DCD3"/><rect x="10" y="24" width="32" height="6" fill="#922C4E"/><rect x="24" y="10" width="4" height="16" rx="2" fill="#C89545"/><path d="M26 10c4-3 2-6-1-8 3 1 6-1 5-5" stroke="#C89545" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+          <h3>Birthday Cakes</h3>
+          <p>From first birthdays to milestone ones, sized for the guest list and themed however the birthday person wants.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 40 L10 30 Q10 24 16 24 L36 24 Q42 24 42 30 L42 40" stroke="#922C4E" stroke-width="2.5" fill="none"/><path d="M10 24 L10 16 Q10 10 16 10 L36 10 Q42 10 42 16 L42 24" stroke="#922C4E" stroke-width="2.5" fill="none"/><circle cx="26" cy="17" r="3" fill="#C89545"/></svg>
+          <h3>Custom Design Cakes</h3>
+          <p>Tiered or single-layer cakes designed around a specific color palette, theme, or reference photo.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="16" fill="#F0DCD3" stroke="#922C4E" stroke-width="2"/><circle cx="20" cy="21" r="2" fill="#922C4E"/><circle cx="30" cy="20" r="2" fill="#922C4E"/><circle cx="32" cy="30" r="2" fill="#922C4E"/><circle cx="21" cy="31" r="2" fill="#922C4E"/></svg>
+          <h3>Cookies &amp; Treats</h3>
+          <p>Decorated cookies and small treats for favor tables, showers, and events that need more than just a cake.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="scallop cream-to-blush" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0 26 C 20 6, 40 6, 60 26 C 80 6, 100 6, 120 26 C 140 6, 160 6, 180 26 C 200 6, 220 6, 240 26 C 260 6, 280 6, 300 26 C 320 6, 340 6, 360 26 C 380 6, 400 6, 420 26 C 440 6, 460 6, 480 26 C 500 6, 520 6, 540 26 C 560 6, 580 6, 600 26 C 620 6, 640 6, 660 26 C 680 6, 700 6, 720 26 C 740 6, 760 6, 780 26 C 800 6, 820 6, 840 26 C 860 6, 880 6, 900 26 C 920 6, 940 6, 960 26 C 980 6, 1000 6, 1020 26 C 1040 6, 1060 6, 1080 26 C 1100 6, 1120 6, 1140 26 C 1160 6, 1180 6, 1200 26 L1200 26 L0 26 Z"/>
+  </svg>
+
+  <section class="order-flow" id="order">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ordering</p>
+        <h2>How an order comes together</h2>
+        <p>There is no online cart. Every cake is booked the same way, directly with Katie.</p>
+      </div>
+      <div class="ticket-row">
+        <div class="ticket">
+          <span class="tag">Get in touch</span>
+          <h3>Share the occasion</h3>
+          <p>Email or message on Instagram with the date, guest count, and any colors or theme in mind.</p>
+        </div>
+        <div class="ticket">
+          <span class="tag">Design together</span>
+          <h3>Pick flavors &amp; finish</h3>
+          <p>Katie works out the flavor, filling, and design details with you before anything goes in the oven.</p>
+        </div>
+        <div class="ticket">
+          <span class="tag">Pickup or delivery</span>
+          <h3>Baked fresh, ready on time</h3>
+          <p>Your cake is baked close to the date and ready for pickup in Brooklyn, with delivery available for larger orders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Get In Touch</p>
+        <h2>Let's talk about your cake</h2>
+        <p>Reach out with your date and vision. Custom orders are booked ahead, so a little lead time helps, but it never hurts to ask.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="mailto:katiebowlesbaking@gmail.com">Email katiebowlesbaking@gmail.com</a>
+          <a class="btn-secondary" href="https://www.instagram.com/katiebowlesbaking/" target="_blank" rel="noopener">@katiebowlesbaking</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="22" height="16" rx="2" stroke="#C89545" stroke-width="2"/><path d="M3 7l10 7 10-7" stroke="#C89545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><h3>Email</h3><a href="mailto:katiebowlesbaking@gmail.com">katiebowlesbaking@gmail.com</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="20" height="20" rx="5" stroke="#C89545" stroke-width="2"/><circle cx="13" cy="13" r="5" stroke="#C89545" stroke-width="2"/><circle cx="18.5" cy="7.5" r="1.4" fill="#C89545"/></svg>
+          <div><h3>Instagram</h3><a href="https://www.instagram.com/katiebowlesbaking/" target="_blank" rel="noopener">@katiebowlesbaking</a></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3c-5 0-9 4-9 9 0 6.5 9 11 9 11s9-4.5 9-11c0-5-4-9-9-9Z" stroke="#C89545" stroke-width="2"/><circle cx="13" cy="12" r="3" stroke="#C89545" stroke-width="2"/></svg>
+          <div><h3>Service Area</h3><span>Brooklyn &amp; NYC, pickup and delivery</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="brand">Bowles Baking Co.</span>
+  <p>Custom cakes, baked to order in Brooklyn, NY.</p>
+  <p>Site design by Modularity Networks</p>
+</footer>
+
+</body>
+</html>

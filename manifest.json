@@ -1187,5 +1187,13 @@
     "category": "Pet Grooming",
     "region": "Brooklyn",
     "added": "2026-08-13"
+  },
+  {
+    "slug": "bowles-baking-co",
+    "name": "Bowles Baking Co.",
+    "location": "Brooklyn, NY",
+    "category": "Custom Cakes",
+    "region": "Brooklyn",
+    "added": "2026-08-14"
   }
 ]
