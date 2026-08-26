@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkfusion Tattoo Studio | Tattoo and Piercing Studio in Astoria, Queens</title>
+<meta name="description" content="Inkfusion Tattoo Studio is a walk-in friendly tattoo and piercing studio on Steinway Street in Astoria, Queens. Black and gray realism, vibrant new school color work, and certified piercing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1712;
+    --ink-soft: #352c24;
+    --paper: #e5e1e6;
+    --paper-raised: #f1eef2;
+    --stencil: #5b3f75;
+    --stencil-soft: #c3aad9;
+    --flash-red: #a63a2e;
+    --flash-red-dark: #8a2f25;
+    --line: #cfc7d1;
+    --line-strong: #5c5560;
+    --max: 1180px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { display: block; max-width: 100%; }
+
+  a { color: inherit; }
+
+  h1, h2, h3, .brand, .nav a, .btn, .fact-num, .flash-title {
+    font-family: 'Rye', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .mono {
+    font-family: 'Space Mono', ui-monospace, monospace;
+  }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--stencil);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 0;
+  }
+
+  .brand {
+    font-size: 1.5rem;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .brand span {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--stencil);
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--flash-red);
+    border-color: var(--flash-red);
+  }
+
+  .call-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+
+  .call-pill:hover { background: var(--flash-red-dark); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    width: 42px;
+    height: 38px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle span,
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    margin: 4px auto;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 64px 0 56px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stencil);
+    margin: 0 0 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+    line-height: 1.12;
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+
+  .hero p.lead {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 30px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+
+  .btn-primary {
+    background: var(--flash-red);
+    color: var(--paper-raised);
+  }
+
+  .btn-secondary {
+    background: var(--paper-raised);
+    color: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 4px 4px 0 var(--stencil);
+  }
+  .btn-secondary:hover { box-shadow: 6px 6px 0 var(--stencil); }
+
+  .trust-line {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .hero-art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-art svg {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .hero-art .pin {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--flash-red);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+  }
+
+  .hero-art figcaption {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stencil);
+    margin-top: 10px;
+  }
+
+  /* ---------- Facts strip ---------- */
+  .facts {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper-raised);
+    padding: 8px 0;
+  }
+
+  .facts-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fact {
+    padding: 26px 20px;
+    text-align: center;
+    border-left: 1px solid var(--line);
+  }
+
+  .fact:first-child { border-left: none; }
+
+  .fact p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--ink-soft);
+  }
+
+  .fact strong {
+    display: block;
+    font-family: 'Rye', serif;
+    font-size: 1.5rem;
+    color: var(--flash-red);
+    margin-bottom: 4px;
+  }
+
+  /* ---------- About ---------- */
+  .about {
+    padding: 84px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .about-icon svg { width: 100%; max-width: 220px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stencil);
+    margin: 0 0 14px;
+  }
+
+  .about h2, .flash h2, .visit h2 {
+    font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+    margin: 0 0 20px;
+  }
+
+  .about p { color: var(--ink-soft); max-width: 62ch; }
+  .about p + p { margin-top: 16px; }
+
+  /* ---------- Flash sheet / services ---------- */
+  .flash {
+    padding: 20px 0 90px;
+  }
+
+  .flash-head {
+    max-width: 640px;
+    margin-bottom: 46px;
+  }
+
+  .flash-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .flash-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    padding: 28px 22px 24px;
+    box-shadow: 6px 6px 0 var(--line-strong);
+    position: relative;
+  }
+
+  .flash-card:nth-child(odd) { transform: rotate(-0.6deg); }
+  .flash-card:nth-child(even) { transform: rotate(0.6deg); }
+
+  .flash-card .pin-dot {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--stencil);
+  }
+
+  .flash-card svg {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    color: var(--stencil);
+  }
+
+  .flash-title {
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+
+  .flash-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Visit (dark band) ---------- */
+  .visit {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0;
+  }
+
+  .visit .section-label { color: var(--stencil-soft); }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+  }
+
+  .visit h2 { color: var(--paper); }
+
+  .visit p { color: #c9c2b4; max-width: 52ch; }
+
+  .visit-card {
+    background: var(--ink-soft);
+    border: 1px solid #4a3f34;
+    border-radius: 8px;
+    padding: 30px;
+  }
+
+  .visit-card dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.92rem;
+  }
+
+  .visit-card dt {
+    color: var(--stencil-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    align-self: start;
+    padding-top: 3px;
+  }
+
+  .visit-card dd { margin: 0; color: var(--paper); }
+
+  .visit-card .btn-primary {
+    margin-top: 22px;
+    box-shadow: 4px 4px 0 var(--stencil);
+  }
+  .visit-card .btn-primary:hover { box-shadow: 6px 6px 0 var(--stencil); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--paper-raised);
+    border-top: 1px solid var(--line);
+    padding: 40px 0 32px;
+  }
+
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-brand { font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+
+  .footer-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  .footer-credit {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--line-strong);
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1150px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+
+    nav.primary-nav.open .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 28px 20px;
+    }
+
+    nav.primary-nav.open .nav-links a {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      width: 100%;
+    }
+
+    header { position: relative; }
+    nav.primary-nav { position: static; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { order: -1; margin-bottom: 12px; }
+    .hero-art svg { max-width: 260px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-icon { order: -1; }
+    .about-icon svg { max-width: 160px; }
+    .flash-grid { grid-template-columns: repeat(2, 1fr); }
+    .visit-grid { grid-template-columns: 1fr; }
+    .facts-row { grid-template-columns: 1fr; }
+    .fact { border-left: none; border-top: 1px solid var(--line); }
+    .fact:first-child { border-top: none; }
+  }
+
+  @media (max-width: 560px) {
+    .flash-grid { grid-template-columns: 1fr; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+    .footer-grid { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a href="#top" class="brand">Inkfusion<span>Tattoo &amp; Piercing Studio</span></a>
+    <nav class="primary-nav" id="primary-nav">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">The Work</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="call-pill" href="tel:19292479246">Call (929) 247-9246</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav"></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Tattoo and Piercing Studio in Astoria, Queens</h1>
+        <p class="lead">Inkfusion Tattoo Studio sits on Steinway Street with a clean, well-lit shop and a crew that has spent decades at the needle. Black and gray realism, vibrant new school color, and certified piercing, no appointment required.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:19292479246">Call to Book a Consult</a>
+          <a class="btn btn-secondary" href="https://maps.google.com/?q=Inkfusion+Tattoo+Studio+30-28+Steinway+St+Astoria+NY+11103" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <p class="trust-line">30-28 Steinway St, Astoria, NY 11103 &middot; Open Mon-Sat 12-9, Sun 12-7</p>
+      </div>
+      <figure class="hero-art">
+        <div style="position:relative;">
+          <span class="pin" aria-hidden="true"></span>
+          <svg viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Single line stencil illustration of a rose">
+            <g stroke="#6b4e85" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M150 40 C120 40 100 65 100 92 C100 122 128 142 150 142 C172 142 200 122 200 92 C200 65 180 40 150 40Z"/>
+              <path d="M150 40 C138 55 132 75 138 92 C144 108 128 118 118 108"/>
+              <path d="M200 92 C188 78 168 76 156 88 C146 98 156 116 172 112"/>
+              <path d="M100 92 C112 78 132 76 144 88 C154 98 144 116 128 112"/>
+              <path d="M150 142 C150 142 146 168 150 190 C154 214 146 230 150 250"/>
+              <path d="M150 175 C168 170 182 178 188 194 C176 200 160 198 150 186"/>
+              <path d="M150 215 C132 208 118 216 112 232 C126 240 142 236 150 224"/>
+              <path d="M150 250 C150 250 150 270 150 300"/>
+              <path d="M150 265 C150 265 128 258 118 268 C118 268 130 282 150 278"/>
+              <path d="M150 285 C150 285 172 280 182 292 C182 292 168 304 150 298"/>
+              <path d="M120 108 C112 112 104 110 100 102"/>
+              <path d="M180 108 C188 112 196 110 200 102"/>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Stencil study &middot; flash rose</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="facts">
+    <div class="wrap facts-row">
+      <div class="fact"><strong>25+ yrs</strong><p>Combined tattoo experience on staff</p></div>
+      <div class="fact"><strong>40+ yrs</strong><p>Combined certified piercing experience</p></div>
+      <div class="fact"><strong>Daily</strong><p>Walk-ins welcome, free consultations</p></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-icon" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#6b4e85" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <rect x="40" y="86" width="70" height="24" rx="6" transform="rotate(-18 40 86)"/>
+            <line x1="96" y1="72" x2="150" y2="46"/>
+            <circle cx="156" cy="42" r="9"/>
+            <path d="M60 104 L36 150"/>
+            <circle cx="34" cy="156" r="5"/>
+            <path d="M74 112 L58 148"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p class="section-label">The Studio</p>
+        <h2>Run by artists who work here every day</h2>
+        <p>Inkfusion has been on Steinway Street putting together custom pieces and clean piercing work for the Astoria neighborhood. Giovanni leads on black and gray realism and larger custom work, while Kiara handles piercing with the kind of patience that makes a first piercing easy.</p>
+        <p>The shop keeps its floor clean and organized and takes walk-ins every day it's open, alongside free consultations for anyone still working out placement, size, or style before committing to a piece.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flash" id="work">
+    <div class="wrap">
+      <div class="flash-head">
+        <p class="section-label">On The Sheet</p>
+        <h2>What the shop works in</h2>
+      </div>
+      <div class="flash-grid">
+
+        <div class="flash-card">
+          <span class="pin-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M32 10c-8 0-14 6-14 13 0 8 7 13 14 13s14-5 14-13c0-7-6-13-14-13Z"/>
+            <path d="M32 36c0 6-2 12 0 20"/>
+            <path d="M32 44c6-2 10 2 12 8-6 2-11-1-12-6"/>
+            <path d="M32 50c-6-2-10 2-12 8 6 2 11-1 12-6"/>
+          </svg>
+          <h3 class="flash-title">Black &amp; Gray Realism</h3>
+          <p>Portrait work, shading-heavy pieces, and fine detail built up over multiple sessions.</p>
+        </div>
+
+        <div class="flash-card">
+          <span class="pin-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 30c8-14 20-14 24-6 4-8 16-8 24 6-8 4-16 2-24-4-8 6-16 8-24-4Z"/>
+            <path d="M32 24v22"/>
+            <path d="M32 46l-6 8"/>
+            <path d="M32 46l6 8"/>
+          </svg>
+          <h3 class="flash-title">Vibrant New School</h3>
+          <p>Bold color, exaggerated line work, and graphic style pieces for statement tattoos.</p>
+        </div>
+
+        <div class="flash-card">
+          <span class="pin-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="9"/>
+            <path d="M31 31l14 14"/>
+            <circle cx="49" cy="49" r="5"/>
+          </svg>
+          <h3 class="flash-title">Body Piercing</h3>
+          <p>Lobe, cartilage, septum, and facial piercing with certified technique and sterile setup.</p>
+        </div>
+
+        <div class="flash-card">
+          <span class="pin-dot" aria-hidden="true"></span>
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 16h40v24H28l-8 8v-8h-8Z"/>
+            <line x1="20" y1="24" x2="44" y2="24"/>
+            <line x1="20" y1="32" x2="36" y2="32"/>
+          </svg>
+          <h3 class="flash-title">Free Consultations</h3>
+          <p>Talk through placement, sizing, and style before committing, no charge, no pressure.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <p class="section-label">Come By</p>
+        <h2>Find the shop on Steinway Street</h2>
+        <p>Inkfusion sits among the shops and restaurants of Steinway Street, a short walk from the N and W trains. Walk-ins are handled first come, first served, and consultations are always free.</p>
+      </div>
+      <div class="visit-card">
+        <dl>
+          <dt>Address</dt>
+          <dd>30-28 Steinway St<br>Astoria, NY 11103</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:19292479246">(929) 247-9246</a></dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:Inkfusionstudios@gmail.com">Inkfusionstudios@gmail.com</a></dd>
+          <dt>Hours</dt>
+          <dd>Mon-Sat 12pm-9pm<br>Sun 12pm-7pm</dd>
+        </dl>
+        <a class="btn btn-primary" href="tel:19292479246">Call the Studio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <a href="#top" class="footer-brand">Inkfusion Tattoo Studio</a>
+    <div class="footer-meta">
+      30-28 Steinway St, Astoria, NY 11103<br>
+      (929) 247-9246 &middot; Inkfusionstudios@gmail.com<br>
+      Mon-Sat 12-9, Sun 12-7
+    </div>
+  </div>
+  <p class="footer-credit">Demo site prepared by Modularity Networks</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menu-toggle');
+  var nav = document.getElementById('primary-nav');
+  toggle.addEventListener('click', function () {
+    var isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+</script>
+
+</body>
+</html>

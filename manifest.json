@@ -1195,5 +1195,13 @@
     "category": "Custom Cakes",
     "region": "Brooklyn",
     "added": "2026-08-14"
+  },
+  {
+    "slug": "inkfusion-tattoo-studio-astoria",
+    "name": "Inkfusion Tattoo Studio",
+    "location": "Astoria, Queens",
+    "category": "Tattoo & Piercing",
+    "region": "Queens",
+    "added": "2026-08-26"
   }
 ]
