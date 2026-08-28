@@ -1211,5 +1211,40 @@
     "category": "Barbershop",
     "region": "Manhattan",
     "added": "2026-08-28"
+  },
+  {
+    "slug": "demos/swan-and-stem",
+    "name": "Swan & Stem",
+    "location": "Lakeland, FL",
+    "category": "Florist",
+    "region": "More"
+  },
+  {
+    "slug": "demos/tiny-monster-junk-removal",
+    "name": "Tiny Monster Junk Removal",
+    "location": "Colorado Springs, CO",
+    "category": "Junk Removal",
+    "region": "More"
+  },
+  {
+    "slug": "demos/mamapreranascreation",
+    "name": "Mamaprerana's Creation",
+    "location": "Fargo, ND",
+    "category": "Custom Embroidery",
+    "region": "More"
+  },
+  {
+    "slug": "demos/devin-rotz-commercial-cleaning",
+    "name": "Devin Rotz Commercial Cleaning",
+    "location": "Fort Loudon, PA",
+    "category": "Commercial Cleaning",
+    "region": "More"
+  },
+  {
+    "slug": "demos/cmfs-gutter-services",
+    "name": "CMFS Gutter Services LLC",
+    "location": "South Lyon, MI",
+    "category": "Gutter Services",
+    "region": "More"
   }
 ]

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Junk Removal in Colorado Springs, CO | About Tiny Monster</title>
+<meta name="description" content="Meet Tiny Monster, a women-owned junk removal company serving Colorado Springs, CO with straight pricing and fast pickups.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --paper:#EDEFEF; --white:#FFFFFF; --ink:#231F1B; --muted:#5C574C;
+  --charcoal:#232323; --charcoal-d:#161616; --amber:#E07A29; --amber-d:#B85E17; --slate:#465562; --line:#DCD5C0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{max-width:100%;display:block}
+.wrap{width:min(1180px,92vw);margin:0 auto}
+h1,h2,h3{font-family:'Space Grotesk',Arial,sans-serif;font-weight:700;line-height:1.06;color:var(--charcoal-d);letter-spacing:-0.01em}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-d);font-weight:600}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+header.nav{position:sticky;top:0;z-index:60;background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,.14)}
+.navrow{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--white);text-decoration:none;white-space:nowrap;flex:0 0 auto;text-transform:uppercase;letter-spacing:.01em}
+.navlinks{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.navlinks a{color:#D9D5C8;text-decoration:none;font-size:.92rem;font-weight:500}
+.navlinks a:hover,.navlinks a.active{color:var(--amber)}
+.navcta{background:var(--amber);color:var(--charcoal-d)!important;padding:11px 20px;border-radius:2px;text-decoration:none;font-weight:700;font-size:.88rem;white-space:nowrap;flex:0 0 auto}
+.navcta:hover{background:#F09147}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex:0 0 auto}
+.burger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0}
+@media(max-width:1180px){
+  .navlinks{position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--charcoal);flex-direction:column;align-items:flex-start;padding:28px 6vw;gap:22px;transform:translateX(100%);transition:transform .25s ease;overflow-y:auto}
+  .navlinks.open{transform:translateX(0)}
+  .navlinks a{font-size:1.15rem}
+  .burger{display:block}
+  .navcta{display:none}
+}
+/* peak divider - signature element */
+.peakline{width:100%;overflow:hidden;line-height:0}
+.peakline svg{width:100%;height:56px;display:block}
+.hero{padding:60px 0 0;background:var(--charcoal);color:var(--white)}
+.herogrid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-bottom:56px}
+.hero h1{color:var(--white);font-size:clamp(2.3rem,4.6vw,3.5rem);max-width:16ch;text-transform:uppercase}
+.hero .lead{margin-top:20px;max-width:46ch;color:#C7C2B4;font-size:1.08rem}
+.herobtns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:2px;font-size:.94rem}
+.btn.p{background:var(--amber);color:var(--charcoal-d)}
+.btn.p:hover{background:#F09147}
+.btn.s{background:transparent;color:var(--white);border:1.5px solid #6B6656}
+.btn.s:hover{border-color:var(--amber);color:var(--amber)}
+.heroart{background:#2E2A24;border:1px solid #423D33;border-radius:6px;padding:30px;display:flex;align-items:center;justify-content:center;min-height:340px}
+.heroart svg{width:100%;max-width:300px;color:var(--amber)}
+section{padding:72px 0}
+.sec-head{max-width:62ch;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.9rem,3.8vw,2.6rem)}
+.sec-head p{margin-top:14px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:28px}
+.card svg{width:42px;height:42px;color:var(--amber-d);margin-bottom:16px}
+.card h3{font-size:1.3rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.95rem}
+.card a.more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--slate);text-decoration:none;border-bottom:1px solid var(--slate)}
+/* load meter - real structural device */
+.loadwrap{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:30px}
+.loadrow{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.loadrow:last-child{margin-bottom:0}
+.loadlabel{width:170px;flex:0 0 auto;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--charcoal-d);font-weight:600}
+.loadbar{flex:1;height:14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.loadfill{height:100%;background:var(--amber)}
+.loadprice{width:90px;flex:0 0 auto;text-align:right;font-weight:700;color:var(--charcoal-d)}
+.band{background:var(--slate);color:var(--white)}
+.band h2{color:var(--white)}
+.band .sec-head p{color:#D7DEE3}
+.steprow{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step .tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#F0C99A}
+.step h3{color:var(--white);font-size:1.35rem;margin-top:10px}
+.step p{color:#D7DEE3;margin-top:10px;font-size:.94rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.split h2{font-size:clamp(1.9rem,3.8vw,2.5rem);margin-bottom:16px}
+.split p{color:var(--muted);margin-bottom:12px}
+.checklist{list-style:none;margin-top:16px}
+.checklist li{padding-left:30px;position:relative;margin-bottom:12px;color:var(--muted)}
+.checklist li:before{content:"";position:absolute;left:0;top:8px;width:12px;height:12px;background:var(--amber-d)}
+.panelbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:34px;min-height:280px;display:flex;align-items:center;justify-content:center}
+.panelbox svg{width:100%;max-width:280px;color:var(--slate)}
+.quote{background:var(--charcoal);color:var(--white);border-radius:6px;padding:34px;max-width:70ch;margin:0 auto;text-align:center}
+.quote p{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;line-height:1.5}
+.quote span{display:block;margin-top:16px;font-size:.85rem;color:#C7C2B4;font-weight:600}
+.cta{background:var(--amber);color:var(--charcoal-d);text-align:center}
+.cta h2{color:var(--charcoal-d);font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px;text-transform:uppercase}
+.cta p{max-width:50ch;margin:0 auto 26px;color:#2E1F0C}
+.cta .btn.p{background:var(--charcoal-d);color:var(--white)}
+.cta .btn.p:hover{background:#000}
+.phero{background:var(--charcoal);color:var(--white);padding:52px 0}
+.phero h1{color:var(--white);font-size:clamp(2rem,4.6vw,3.1rem);max-width:22ch;text-transform:uppercase}
+.phero p{margin-top:14px;max-width:58ch;color:#C7C2B4}
+.crumbs{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#F0C99A;margin-bottom:14px}
+.crumbs a{color:#D7CBB6;text-decoration:none}
+.servrow{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:10px}
+.servcard{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:28px;display:flex;gap:18px}
+.servcard svg{width:40px;height:40px;flex:0 0 auto;color:var(--amber-d)}
+.servcard h3{font-size:1.2rem;margin-bottom:8px}
+.servcard p{color:var(--muted);font-size:.92rem}
+.servcard a{color:var(--slate);font-weight:700;font-size:.82rem;text-decoration:none;border-bottom:1px solid var(--slate)}
+.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.infobox{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:30px}
+.infobox h3{font-size:1.15rem;margin-bottom:14px;color:var(--charcoal-d)}
+.infobox p{color:var(--muted);margin-bottom:10px;font-size:.94rem}
+form{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:30px;display:grid;gap:14px}
+label{font-size:.85rem;font-weight:700;color:var(--charcoal-d);display:block;margin-bottom:6px}
+input,textarea{width:100%;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:inherit;font-size:.95rem;background:var(--paper)}
+input:focus,textarea:focus{outline:3px solid var(--amber);outline-offset:1px}
+.faq{border-top:1px solid var(--line)}
+.faqitem{border-bottom:1px solid var(--line);padding:22px 0}
+.faqitem h3{font-size:1.08rem;color:var(--charcoal-d);margin-bottom:8px}
+.faqitem p{color:var(--muted);font-size:.93rem}
+footer{background:var(--charcoal-d);color:#B7B2A2;padding:48px 0 28px}
+.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+footer h4{color:var(--white);font-family:'Space Grotesk',sans-serif;font-size:1.15rem;margin-bottom:14px;text-transform:uppercase}
+footer a{color:#B7B2A2;text-decoration:none;display:block;margin-bottom:8px;font-size:.9rem}
+footer a:hover{color:var(--amber)}
+.footbottom{margin-top:32px;padding-top:22px;border-top:1px solid #38352C;font-size:.8rem;color:#9C9686}
+.hero,.phero,.cta,.band{padding-left:5vw;padding-right:5vw}
+.foot-h{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:14px;text-transform:uppercase}
+@media(max-width:900px){
+  .herogrid,.split,.contactgrid,.footgrid{grid-template-columns:1fr}
+  .grid3,.steprow,.servrow{grid-template-columns:1fr}
+  .heroart{order:-1}
+  .loadlabel{width:120px}
+}
+
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navrow">
+<a href="index.html" class="brand">Tiny Monster</a>
+<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="services.html">Services</a><a href="same-day-junk-removal-colorado-springs-co.html">Same-Day</a><a href="garage-cleanout-colorado-springs-co.html">Garage Cleanout</a><a href="estate-cleanout-colorado-springs-co.html">Estate Cleanout</a><a href="contact.html">Contact</a></nav>
+<a href="tel:+17195550198" class="navcta">(719) 555-0198</a>
+<button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
+<main>
+<section class="phero"><div class="wrap">
+<p class="crumbs"><a href="index.html">Home</a> / About</p>
+<h1>Junk Removal in Colorado Springs, CO</h1>
+<p>Who is behind Tiny Monster, and why the name.</p>
+</div></section>
+<div class="peakline" aria-hidden="true"><svg viewBox="0 0 1200 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 56 L0 34 L120 10 L220 40 L320 4 L430 30 L520 16 L620 44 L720 12 L840 36 L940 6 L1040 32 L1120 18 L1200 40 L1200 56 Z" fill="#F5F2E9"/>
+</svg></div>
+<section><div class="wrap split">
+<div class="panelbox"><svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 180 L60 60 L100 100 L120 20 L150 90 L180 180 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+<circle cx="100" cy="150" r="6" fill="currentColor"/>
+<circle cx="130" cy="150" r="6" fill="currentColor"/>
+<path d="M20 180 h180" stroke="currentColor" stroke-width="3"/>
+</svg></div>
+<div>
+<h2>Built on efficiency and follow-through</h2>
+<p>Tiny Monster started this year after years of watching other junk removal jobs get quoted high and finished late. The idea was simple: quote it straight, show up on time, and haul it out without leaving a mess behind.</p>
+<p>Growing up around a lot of clutter taught patience for the work and a real understanding of how overwhelming it can feel to finally deal with it. That is the mindset every job gets, whether it is one bag or a full garage.</p>
+</div>
+</div></section>
+<section class="band"><div class="wrap">
+<div class="sec-head"><h2>How every job runs</h2></div>
+<div class="steprow">
+<div class="step"><h3>No surprise pricing</h3><p>You get a price based on load size before anything gets loaded onto the truck.</p></div>
+<div class="step"><h3>In and out, no mess left</h3><p>Floors and walkways get swept after every job, garage or full estate.</p></div>
+<div class="step"><h3>Donated when it can be</h3><p>Usable furniture and goods are routed to donation before anything goes to the landfill.</p></div>
+</div>
+</div></section>
+<section class="cta"><div class="wrap">
+<h2>Have something that needs to go?</h2>
+<p>Reach out and Tiny Monster will get back to you with a straight quote.</p>
+<a href="contact.html" class="btn p">Get a Free Quote</a>
+</div></section>
+</main><footer><div class="wrap footgrid">
+<div><p class="foot-h">Tiny Monster</p><p style="max-width:36ch;color:#B7B2A2;font-size:.9rem">Junk removal built for Colorado Springs. Women-owned, fully insured, and fast about it.</p></div>
+<div><p class="foot-h">Explore</p><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+<div><p class="foot-h">Contact</p><a href="tel:+17195550198">(719) 555-0198</a><a href="mailto:hello@tinymonsterjunk.com">hello@tinymonsterjunk.com</a><a href="#">Colorado Springs, CO</a></div>
+</div><div class="wrap footbottom">&copy; 2026 Tiny Monster Junk Removal. All rights reserved.</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('navlinks');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.classList.toggle('open',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+</script>
+</body></html>
