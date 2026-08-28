@@ -1203,5 +1203,13 @@
     "category": "Tattoo & Piercing",
     "region": "Queens",
     "added": "2026-08-26"
+  },
+  {
+    "slug": "jordan-mvp-barbershop-washington-heights",
+    "name": "Jordan MVP Barbershop",
+    "location": "Manhattan, NY",
+    "category": "Barbershop",
+    "region": "Manhattan",
+    "added": "2026-08-28"
   }
 ]

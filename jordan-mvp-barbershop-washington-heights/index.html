@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan MVP Barbershop | Barbershop &amp; Fades in Washington Heights, Manhattan</title>
+<meta name="description" content="Jordan MVP Barbershop (Major League Barbers) at 4411 Broadway, Washington Heights. Walk-ins welcome, open 8AM-11PM daily. Fades, kids cuts, beard trims.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --court-cream:#EDE6D3;
+    --hardwood:#CC9354;
+    --leather:#A83A15;
+    --ink-navy:#1A2530;
+    --chalk:#FFFFFF;
+    --net-gray:#5F594D;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--court-cream);
+    color:var(--ink-navy);
+    font-family:'Karla',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;}
+
+  h1,h2,h3{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    line-height:1.15;
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--leather);
+  }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--ink-navy);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--court-cream);
+    border-bottom:2px solid var(--ink-navy);
+  }
+
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:1120px;
+    margin:0 auto;
+    gap:16px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:1.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+
+  .brand-badge{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+  }
+
+  nav.main-nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+
+  nav.main-nav a{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink-navy);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+  }
+
+  nav.main-nav a:hover{
+    border-color:var(--leather);
+    color:var(--leather);
+  }
+
+  .nav-cta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    background:var(--leather);
+    color:var(--chalk);
+    padding:11px 18px;
+    border-radius:2px;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+
+  .nav-cta:hover{background:#8e310f; color:var(--chalk);}
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:2px solid var(--ink-navy);
+    border-radius:2px;
+    width:44px;
+    height:40px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    flex-direction:column;
+    gap:5px;
+  }
+
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink-navy);
+  }
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--court-cream);
+    border-top:2px solid var(--ink-navy);
+    padding:8px 24px 20px;
+  }
+
+  .mobile-menu a{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink-navy);
+    padding:14px 0;
+    border-bottom:1px solid rgba(26,37,48,0.12);
+  }
+
+  .mobile-menu .nav-cta{
+    margin-top:14px;
+    text-align:center;
+  }
+
+  @media (max-width:1150px){
+    nav.main-nav{display:none;}
+    header .nav-cta{display:none;}
+    .hamburger{display:flex;}
+    .mobile-menu.open{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:76px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 0.9fr;
+    gap:48px;
+    align-items:center;
+    padding-bottom:56px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    margin:14px 0 20px;
+    color:var(--ink-navy);
+  }
+
+  .hero h1 .accent{color:var(--leather);}
+
+  .hero p.lede{
+    font-size:1rem;
+    max-width:46ch;
+    color:var(--net-gray);
+    margin-bottom:30px;
+  }
+
+  .hero-ctas{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .btn-primary{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    background:var(--leather);
+    color:var(--chalk);
+    padding:16px 26px;
+    border-radius:2px;
+    display:inline-block;
+  }
+
+  .btn-primary:hover{background:#8e310f; color:var(--chalk);}
+
+  .btn-secondary{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    background:transparent;
+    color:var(--ink-navy);
+    padding:16px 26px;
+    border-radius:2px;
+    border:2px solid var(--ink-navy);
+    display:inline-block;
+  }
+
+  .btn-secondary:hover{background:var(--ink-navy); color:var(--chalk);}
+
+  /* Jersey patch badge */
+  .patch-wrap{
+    display:flex;
+    justify-content:center;
+  }
+
+  .patch{
+    width:min(320px, 90%);
+    aspect-ratio:1;
+  }
+
+  /* ---------- SCOREBOARD ---------- */
+  .scoreboard{
+    background:var(--ink-navy);
+    color:var(--chalk);
+    border-top:2px solid var(--ink-navy);
+    border-bottom:2px solid var(--ink-navy);
+  }
+
+  .scoreboard-inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:14px 24px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+
+  .stat{
+    padding:30px 18px;
+    text-align:center;
+    border-left:1px solid rgba(245,239,226,0.18);
+  }
+
+  .stat:first-child{border-left:none;}
+
+  .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    color:var(--hardwood);
+    letter-spacing:0.02em;
+  }
+
+  .stat .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:rgba(245,239,226,0.72);
+    margin-top:6px;
+  }
+
+  @media (max-width:640px){
+    .scoreboard-inner{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(3){border-left:none;}
+    .stat{border-bottom:1px solid rgba(245,239,226,0.18);}
+    .stat:nth-child(3), .stat:nth-child(4){border-bottom:none;}
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{
+    padding:80px 0;
+  }
+
+  section .eyebrow{margin-bottom:10px;}
+
+  .section-head{
+    max-width:60ch;
+    margin-bottom:44px;
+  }
+
+  .section-head h2{
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+  }
+
+  .section-head p{
+    color:var(--net-gray);
+    margin-top:14px;
+    font-size:1rem;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--chalk);
+    border-top:2px solid var(--ink-navy);
+    border-bottom:2px solid var(--ink-navy);
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  .about-copy p{
+    color:var(--net-gray);
+    margin-bottom:16px;
+  }
+
+  .about-copy p strong{color:var(--ink-navy);}
+
+  .fade-pattern{
+    width:100%;
+    height:auto;
+  }
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-grid .fade-pattern-wrap{order:-1;}
+  }
+
+  /* ---------- ROSTER (services) ---------- */
+  .roster-list{
+    border-top:2px solid var(--ink-navy);
+  }
+
+  .roster-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid rgba(26,37,48,0.18);
+  }
+
+  .roster-row .name{
+    font-family:'Oswald',sans-serif;
+    font-size:1.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+  }
+
+  .roster-row .desc{
+    font-size:1rem;
+    color:var(--net-gray);
+    margin-top:4px;
+  }
+
+  .roster-row .price{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.75rem;
+    color:var(--leather);
+    white-space:nowrap;
+  }
+
+  .roster-row .left-col{flex:1;}
+
+  /* ---------- HOURS / REVIEWS BAND ---------- */
+  .lineup{
+    background:var(--court-cream);
+  }
+
+  .lineup-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  }
+
+  .hours-table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'JetBrains Mono',monospace;
+    font-size:1rem;
+  }
+
+  .hours-table tr{border-bottom:1px solid rgba(26,37,48,0.15);}
+
+  .hours-table td{padding:12px 0;}
+
+  .hours-table td:last-child{
+    text-align:right;
+    font-weight:700;
+  }
+
+  .quote-card{
+    background:var(--chalk);
+    border:2px solid var(--ink-navy);
+    border-radius:2px;
+    padding:28px;
+  }
+
+  .quote-card p.quote{
+    font-size:1.75rem;
+    line-height:1.3;
+    font-style:italic;
+    margin-bottom:14px;
+  }
+
+  .quote-card .who{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--net-gray);
+  }
+
+  @media (max-width:860px){
+    .lineup-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact-band{
+    background:var(--ink-navy);
+    color:var(--chalk);
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+  }
+
+  .contact-band h2{color:var(--chalk);}
+
+  .contact-band .section-head p{color:rgba(245,239,226,0.7);}
+
+  .contact-list{
+    list-style:none;
+    margin-top:24px;
+  }
+
+  .contact-list li{
+    padding:14px 0;
+    border-bottom:1px solid rgba(245,239,226,0.18);
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+
+  .contact-list li:first-child{padding-top:0;}
+
+  .contact-list .k{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--hardwood);
+    flex:0 0 92px;
+    padding-top:2px;
+  }
+
+  .contact-list .v a{
+    text-decoration:none;
+    color:var(--chalk);
+  }
+
+  .contact-list .v a:hover{color:var(--hardwood);}
+
+  .map-card{
+    border:2px solid rgba(245,239,226,0.3);
+    border-radius:2px;
+    padding:26px;
+    background:rgba(245,239,226,0.05);
+  }
+
+  .map-card h3{
+    color:var(--chalk);
+    font-size:1.75rem;
+    margin-bottom:12px;
+  }
+
+  .map-card p{
+    color:rgba(245,239,226,0.72);
+    font-size:1rem;
+    margin-bottom:18px;
+  }
+
+  footer.site-footer{
+    background:var(--ink-navy);
+    border-top:1px solid rgba(245,239,226,0.18);
+    padding:24px 0;
+    text-align:center;
+  }
+
+  footer.site-footer p{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:rgba(245,239,226,0.55);
+    letter-spacing:0.03em;
+  }
+
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+  }
+
+  @media (max-width:640px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero{padding-top:56px;}
+    .hero-grid{padding-bottom:40px;}
+    .patch-wrap{order:-1; margin-bottom:8px;}
+    .patch{width:180px;}
+    section{padding:56px 0;}
+    .roster-row{flex-direction:column; align-items:flex-start; gap:6px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="brand">
+      <svg class="brand-badge" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#1A2530"/>
+        <circle cx="24" cy="24" r="22" stroke="#CC9354" stroke-width="2"/>
+        <text x="24" y="30" font-family="Oswald, sans-serif" font-size="16" font-weight="700" fill="#EDE6D3" text-anchor="middle">MVP</text>
+      </svg>
+      <span>Jordan MVP Barbershop</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="tel:+17184100550">Call (718) 410-0550</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="tel:+17184100550">Call (718) 410-0550</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Barbershop &amp; Fades in <span class="accent">Washington Heights</span>, Manhattan</h1>
+        <p class="lede">Jordan MVP Barbershop, known around the neighborhood as Major League Barbers, has been putting in the work on Broadway between 190th and 191st since day one. Sharp fades, patient kids' cuts, and a chair open most hours of the day.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="tel:+17184100550">Call to Book</a>
+          <a class="btn-secondary" href="#contact">Get Directions</a>
+        </div>
+      </div>
+      <div class="patch-wrap">
+        <svg class="patch" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MVP jersey patch badge">
+          <circle cx="160" cy="160" r="150" fill="#EDE6D3" stroke="#1A2530" stroke-width="6"/>
+          <circle cx="160" cy="160" r="128" fill="none" stroke="#CC9354" stroke-width="4"/>
+          <path id="patchArcTop" d="M 55 160 A 105 105 0 0 1 265 160" fill="none"/>
+          <text font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" letter-spacing="4" fill="#1A2530">
+            <textPath href="#patchArcTop" startOffset="50%" text-anchor="middle">WASHINGTON HEIGHTS</textPath>
+          </text>
+          <text x="160" y="150" font-family="Oswald, sans-serif" font-size="54" font-weight="700" fill="#1A2530" text-anchor="middle">MVP</text>
+          <text x="160" y="182" font-family="Oswald, sans-serif" font-size="15" letter-spacing="3" fill="#A83A15" text-anchor="middle">MAJOR LEAGUE BARBERS</text>
+          <path id="patchArcBottom" d="M 265 160 A 105 105 0 0 1 55 160" fill="none"/>
+          <text font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" letter-spacing="3" fill="#1A2530">
+            <textPath href="#patchArcBottom" startOffset="50%" text-anchor="middle">EST. 4411 BROADWAY</textPath>
+          </text>
+          <circle cx="160" cy="160" r="60" fill="none" stroke="#1A2530" stroke-width="2" stroke-dasharray="3 5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOREBOARD -->
+  <div class="scoreboard">
+    <div class="scoreboard-inner">
+      <div class="stat">
+        <div class="num">4.6&#9733;</div>
+        <div class="label">Avg. Rating</div>
+      </div>
+      <div class="stat">
+        <div class="num">155</div>
+        <div class="label">Reviews Logged</div>
+      </div>
+      <div class="stat">
+        <div class="num">8A&ndash;11P</div>
+        <div class="label">Open Daily</div>
+      </div>
+      <div class="stat">
+        <div class="num">Walk-Ins</div>
+        <div class="label">Always Welcome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">The Shop</p>
+        <h2 style="margin-bottom:18px;">Uptown's home team for a fresh cut</h2>
+        <p>Jordan MVP Barbershop sits right on Broadway in Washington Heights, a few steps from the 191st Street subway stop. Regulars know it as <strong>Major League Barbers</strong>, and the name fits: the chairs are almost never empty, and the shop stays open from 8AM to 11PM, seven days a week, for anyone who needs a fade before work, after school, or on a Sunday afternoon.</p>
+        <p>The barbers here have built a name on <strong>meticulous scissor work</strong> and sharp, precise fades, with plenty of patience for first haircuts and squirmy kids. No appointment required. Walk in, take a seat, and get seen.</p>
+        <p>What the shop doesn't have yet is a home online, just an Instagram page and a couple of booking-app listings. This page is a first step toward giving it one.</p>
+      </div>
+      <div class="fade-pattern-wrap">
+        <svg class="fade-pattern" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a fade haircut gradient line pattern">
+          <rect width="400" height="400" fill="#F5EFE2"/>
+          <g stroke="#1A2530" stroke-width="2" fill="none" opacity="0.9">
+            <path d="M20 380 C 120 380, 120 40, 380 20"/>
+            <path d="M20 350 C 110 350, 110 70, 380 55"/>
+            <path d="M20 320 C 100 320, 100 100, 380 90"/>
+            <path d="M20 290 C 95 290, 95 130, 380 125"/>
+            <path d="M20 260 C 90 260, 90 160, 380 160"/>
+          </g>
+          <g stroke="#C1481E" stroke-width="3" fill="none">
+            <path d="M20 230 C 85 230, 85 190, 380 195"/>
+          </g>
+          <g stroke="#B97A3D" stroke-width="2" fill="none" opacity="0.85">
+            <path d="M20 200 C 80 200, 80 220, 380 230"/>
+            <path d="M20 170 C 75 170, 75 250, 380 265"/>
+            <path d="M20 140 C 70 140, 70 280, 380 300"/>
+          </g>
+          <circle cx="70" cy="330" r="5" fill="#1A2530"/>
+          <circle cx="330" cy="70" r="5" fill="#C1481E"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / ROSTER -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On the Menu</p>
+        <h2>The Roster</h2>
+        <p>Straightforward pricing for the cuts that keep the chairs full. Walk-ins seated in order; no upcharge for a Sunday visit.</p>
+      </div>
+      <div class="roster-list">
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Signature Fade</div>
+            <div class="desc">Skin, taper, or drop fade, finished with a line-up</div>
+          </div>
+          <div class="price">$35</div>
+        </div>
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Classic Haircut</div>
+            <div class="desc">Scissor or clipper cut, wash and style included</div>
+          </div>
+          <div class="price">$30</div>
+        </div>
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Kids' Cut</div>
+            <div class="desc">Patient, unhurried, first-haircut friendly</div>
+          </div>
+          <div class="price">$25</div>
+        </div>
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Beard Trim &amp; Shape-Up</div>
+            <div class="desc">Hot towel finish, straight razor edges</div>
+          </div>
+          <div class="price">$20</div>
+        </div>
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Cut &amp; Beard Combo</div>
+            <div class="desc">Full haircut paired with a beard trim</div>
+          </div>
+          <div class="price">$45</div>
+        </div>
+        <div class="roster-row">
+          <div class="left-col">
+            <div class="name">Head Shave</div>
+            <div class="desc">Straight razor, hot towel, clean finish</div>
+          </div>
+          <div class="price">$25</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + QUOTE -->
+  <section class="lineup" id="hours">
+    <div class="wrap lineup-grid">
+      <div>
+        <p class="eyebrow">Game Time</p>
+        <h2 style="margin-bottom:22px;">Hours</h2>
+        <table class="hours-table">
+          <tr><td>Monday &ndash; Saturday</td><td>8:00 AM &ndash; 11:00 PM</td></tr>
+          <tr><td>Sunday</td><td>12:00 PM &ndash; 12:00 AM</td></tr>
+        </table>
+        <p style="margin-top:18px; color:var(--net-gray); font-size:1rem;">Walk-ins welcome any time the shop's open. No appointment needed.</p>
+      </div>
+      <div>
+        <p class="eyebrow">From the Chair</p>
+        <div class="quote-card">
+          <p class="quote">&ldquo;Brought my son in for his first haircut and the barber was fantastic, patient with all the squirming, kept him distracted the whole time.&rdquo;</p>
+          <p class="who">Google Review</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-band" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head">
+          <p class="eyebrow">Find the Shop</p>
+          <h2>Visit Jordan MVP Barbershop</h2>
+          <p>On Broadway between 190th and 191st, steps from the 1 train.</p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="k">Address</span>
+            <span class="v">4411 Broadway, New York, NY 10040</span>
+          </li>
+          <li>
+            <span class="k">Phone</span>
+            <span class="v"><a href="tel:+17184100550">(718) 410-0550</a></span>
+          </li>
+          <li>
+            <span class="k">Email</span>
+            <span class="v"><a href="mailto:contact.jordanmvpbarbershop@gmail.com">contact.jordanmvpbarbershop@gmail.com</a></span>
+          </li>
+          <li>
+            <span class="k">Hours</span>
+            <span class="v">Mon&ndash;Sat 8AM&ndash;11PM, Sun 12PM&ndash;12AM</span>
+          </li>
+        </ul>
+      </div>
+      <div class="map-card">
+        <h3>Washington Heights, Manhattan</h3>
+        <p>Just off the 191st Street A train stop, near Fort Washington Ave. Street parking is limited; the 1 and A trains are the easiest way in.</p>
+        <a class="btn-primary" href="https://maps.google.com/?q=4411+Broadway+New+York+NY+10040" target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Jordan MVP Barbershop &middot; 4411 Broadway, New York, NY 10040</p>
+</footer>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', function(){
+    var isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
