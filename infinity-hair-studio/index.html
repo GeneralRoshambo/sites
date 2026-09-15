@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Hair Studio | Curly Hair & Balayage Salon in Staten Island, NY</title>
+<meta name="description" content="Infinity Hair Studio at Riviera Plaza on Amboy Road, Staten Island. Balayage, curly and textured hair, braiding, keratin smoothing, and cuts for every age.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C2B33;
+    --bg:#EFF3F1;
+    --copper:#8B4A26;
+    --copper-line:#BD6B3C;
+    --seafoam:#3E6759;
+    --seafoam-line:#6F9C8D;
+    --stone:#E1E9E3;
+    --card:#FFFFFF;
+    --ink-soft:#3F5560;
+    --display: 'Bricolage Grotesque', sans-serif;
+    --body: 'Manrope', sans-serif;
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--display);margin:0;font-weight:600;letter-spacing:-0.01em;}
+  p{margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  a:focus-visible,button:focus-visible{
+    outline:3px solid var(--copper);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(239,243,241,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(28,43,51,0.1);
+  }
+  .loc-strip{
+    background:var(--ink);color:rgba(239,243,241,0.82);
+    font-size:0.78rem;font-weight:600;letter-spacing:0.02em;
+    padding:8px 32px;text-align:center;
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;
+    max-width:var(--max);margin:0 auto;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:var(--display);font-size:1.28rem;font-weight:600;
+    white-space:nowrap;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .brand svg{width:30px;height:20px;flex-shrink:0;}
+  nav.links{display:flex;align-items:center;gap:36px;}
+  nav.links a{
+    text-decoration:none;font-size:0.95rem;font-weight:600;color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  nav.links a:hover{color:var(--copper);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ink);color:var(--bg);
+    padding:11px 20px;border-radius:5px;
+    text-decoration:none;font-weight:700;font-size:0.9rem;
+    white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .nav-cta:hover{background:var(--copper);}
+  .nav-right{display:flex;align-items:center;gap:28px;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
+  .mobile-panel{display:none;}
+
+  @media (max-width:1150px){
+    nav.links{display:none;}
+    .nav-cta.desktop-only{display:none;}
+    .hamburger{display:block;}
+    .mobile-panel{
+      display:none;
+      flex-direction:column;
+      gap:2px;
+      padding:0 32px 20px;
+      background:var(--bg);
+      border-bottom:1px solid rgba(28,43,51,0.1);
+    }
+    .mobile-panel.open{display:flex;}
+    .mobile-panel a{
+      padding:14px 4px;text-decoration:none;color:var(--ink);
+      font-weight:600;border-top:1px solid rgba(28,43,51,0.08);
+    }
+    .mobile-panel .nav-cta{margin-top:12px;text-align:center;justify-content:center;color:var(--bg);}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 88px;
+    background:var(--bg);
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem,4.4vw,3.6rem);
+    line-height:1.08;
+    color:var(--ink);
+    max-width:14ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--copper);}
+  .hero p.lede{
+    margin-top:22px;font-size:1.1rem;color:var(--ink-soft);max-width:46ch;line-height:1.6;
+  }
+  .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:5px;
+    text-decoration:none;font-weight:700;font-size:0.95rem;
+    transition:transform .15s ease, background .15s ease;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--copper);color:var(--bg);}
+  .btn-primary:hover{background:#6E3A1F;transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:rgba(28,43,51,0.3);}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-1px);}
+
+  .hero-mark{
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-mark svg{width:100%;height:auto;max-width:420px;}
+  .loop-path{
+    fill:none;
+    stroke:var(--copper);
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-dasharray:900;
+    stroke-dashoffset:900;
+    animation:draw 2.6s ease-out forwards .3s;
+  }
+  .loop-path.secondary{stroke:var(--seafoam-line);stroke-width:2;animation-delay:.7s;opacity:0.85;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion:reduce){
+    .loop-path{animation:none;stroke-dashoffset:0;}
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;text-align:left;}
+    .hero-mark{order:-1;max-width:260px;margin:0 auto 12px;}
+    .hero{padding:56px 0 60px;}
+  }
+
+  /* ---------- DIVIDER ---------- */
+  .divider{
+    display:flex;align-items:center;justify-content:center;
+    padding:6px 0;
+  }
+  .divider svg{width:74px;height:34px;opacity:0.55;}
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);color:var(--ink);}
+  .section-head p{margin-top:16px;color:var(--ink-soft);font-size:1.05rem;line-height:1.6;}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--bg);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    background:rgba(28,43,51,0.12);
+    border:1px solid rgba(28,43,51,0.12);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .service-card{
+    background:var(--card);
+    padding:34px 30px;
+  }
+  .service-card h3{
+    font-size:1.25rem;font-weight:600;color:var(--ink);margin-bottom:10px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .service-card h3 svg{width:20px;height:20px;stroke:var(--copper-line);flex-shrink:0;}
+  .service-card p{color:var(--ink-soft);font-size:0.96rem;line-height:1.55;}
+  @media (max-width:900px){
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .service-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--stone);}
+  .about .wrap{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;
+  }
+  .about-figure{
+    position:relative;
+    aspect-ratio:1/1;
+    border-radius:50%;
+    background:var(--card);
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(28,43,51,0.12);
+  }
+  .about-figure svg{width:58%;height:58%;}
+  .about-copy h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:20px;}
+  .about-copy p{color:var(--ink-soft);font-size:1.05rem;line-height:1.7;margin-bottom:16px;}
+  .stat-row{display:flex;gap:36px;margin-top:28px;flex-wrap:wrap;}
+  .stat{}
+  .stat .num{font-family:var(--display);font-size:2.1rem;font-weight:600;color:var(--copper);display:block;}
+  .stat .label{font-size:0.85rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.06em;}
+  @media (max-width:900px){
+    .about .wrap{grid-template-columns:1fr;}
+    .about-figure{max-width:240px;margin:0 auto;}
+  }
+
+  /* ---------- SPECIALTIES BAND ---------- */
+  .specialties{background:var(--bg);}
+  .specialty-list{display:flex;flex-direction:column;border-top:1px solid rgba(28,43,51,0.15);}
+  .specialty-row{
+    display:grid;grid-template-columns:140px 1fr;gap:28px;
+    padding:26px 0;border-bottom:1px solid rgba(28,43,51,0.15);
+    align-items:baseline;
+  }
+  .specialty-row .tag{font-weight:700;color:var(--seafoam);font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .specialty-row .txt{color:var(--ink);font-size:1.08rem;line-height:1.6;}
+  .specialty-row .txt strong{color:var(--ink);}
+  @media (max-width:640px){
+    .specialty-row{grid-template-columns:1fr;gap:8px;}
+  }
+
+  /* ---------- CONTACT / FOOTER BAND ---------- */
+  .contact-band{
+    background:var(--ink);
+    color:var(--bg);
+    padding:78px 0 48px;
+  }
+  .contact-grid{
+    display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;
+  }
+  .contact-band h2{color:var(--bg);font-size:clamp(1.6rem,3vw,2.1rem);max-width:16ch;}
+  .contact-band .lede{color:rgba(239,243,241,0.75);margin-top:16px;font-size:1rem;line-height:1.6;max-width:38ch;}
+  .contact-band .btn-primary{margin-top:26px;}
+  .contact-col .col-label{
+    font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--seafoam-line);margin-bottom:14px;font-weight:700;font-family:var(--body);
+  }
+  .contact-col p, .contact-col a{
+    display:block;color:rgba(239,243,241,0.88);text-decoration:none;
+    font-size:0.98rem;line-height:1.9;
+  }
+  .contact-col a:hover{color:var(--copper);}
+  .hours-table{width:100%;border-collapse:collapse;}
+  .hours-table td{padding:3px 0;font-size:0.95rem;color:rgba(239,243,241,0.88);}
+  .hours-table td:last-child{text-align:right;color:rgba(239,243,241,0.6);}
+  .foot-bottom{
+    margin-top:56px;padding-top:24px;border-top:1px solid rgba(239,243,241,0.15);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:0.82rem;color:rgba(239,243,241,0.5);
+  }
+  @media (max-width:800px){
+    .contact-grid{grid-template-columns:1fr;gap:36px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="loc-strip">Riviera Plaza, Amboy Road &middot; Staten Island's South Shore</div>
+<header class="site-nav">
+  <div class="nav-row">
+    <a class="brand" href="#top" aria-label="Infinity Hair Studio home">
+      <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M10 12c0-5 4-8 8-4s4 8-4 8-8-3-8-8 4-8 8-4c4 4 4 8 8 8s8-3 8-8" fill="none" stroke="#BD6B3C" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Infinity Hair Studio
+    </a>
+    <div class="nav-right">
+      <nav class="links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#hours">Hours &amp; Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta desktop-only" href="tel:+17186678098">Call (718) 667-8098</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#hours">Hours &amp; Location</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="tel:+17186678098">Call (718) 667-8098</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Curly Hair &amp; Balayage <em>Salon</em> in Staten Island, NY</h1>
+        <p class="lede">Color, cutting, and texture work for every hair type, from wash-and-go curls to keratin smoothing, inside Riviera Plaza on the South Shore.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="tel:+17186678098">Call (718) 667-8098</a>
+          <a class="btn btn-ghost" href="#contact">Get Directions &amp; Hours</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 300 180">
+          <path class="loop-path" d="M75 90c0-38 30-60 60-30s30 60-30 60-60-22-60-60 30-60 60-30c30 30 30 60 60 60s60-22 60-60"/>
+          <path class="loop-path secondary" d="M75 90c0-38 30-60 60-30s30 60-30 60-60-22-60-60 30-60 60-30c30 30 30 60 60 60s60-22 60-60" transform="translate(6,10) scale(0.94)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 74 34"><path d="M6 17c0-8 6-13 13-7s6 13-7 13-13-5-13-13 6-13 13-7c7 7 7 13 13 13s13-5 13-13" fill="none" stroke="#6F9C8D" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+
+  <section class="section services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built around your hair's texture, not a template</h2>
+        <p>Every service starts with a consultation, because a wash-and-go curl routine and a keratin blowout call for different hands.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12c3-6 6-9 8-9s2 4-1 7-8 3-8 3 1-1 1-1z"/><path d="M13 15c3 3 6 3 7 1s-1-5-4-7"/></svg>Balayage &amp; Color</h3>
+          <p>Hand-painted balayage, full color, and highlights, matched to your skin tone and how much upkeep you want.</p>
+        </div>
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3c-3 3-3 6 0 9s3 6 0 9"/><path d="M8 3c-3 3-3 6 0 9s3 6 0 9"/><path d="M16 3c-3 3-3 6 0 9s3 6 0 9"/></svg>Curly &amp; Textured Hair</h3>
+          <p>Dry cutting and diffusing for coily, curly, and wavy hair, shaped to how it actually dries.</p>
+        </div>
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Braiding</h3>
+          <p>Cornrows, box braids, and protective styles for kids and adults, booked by the hour.</p>
+        </div>
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>Keratin &amp; Smoothing</h3>
+          <p>Keratin treatments and permanent straightening to cut frizz and blow-dry time.</p>
+        </div>
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg>Extensions &amp; Weaves</h3>
+          <p>Length and fullness added with extensions or a weave, blended to match your natural line.</p>
+        </div>
+        <div class="service-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6 4l6 8 6-8M8 20l4-8 4 8"/></svg>Cuts for Every Age</h3>
+          <p>Women's cuts, kids' haircuts, and perms, with a chair open for walk-ins most days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="wrap">
+      <div class="about-figure" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><path d="M50 100c0-28 22-44 44-22s22 44-22 44-44-16-44-44 22-44 44-22c22 22 22 44 44 44s44-16 44-44" fill="none" stroke="#BD6B3C" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <div class="about-copy">
+        <h2>A Riviera Plaza fixture, one chair at a time</h2>
+        <p>Infinity Hair Studio has built its client base one appointment at a time at Riviera Plaza on Amboy Road, on Staten Island's South Shore. The stylists behind the chairs bring well over a century of combined experience across color, cutting, and textured hair.</p>
+        <p>Right now that reputation lives on Facebook, Yelp, and word of mouth. This page gives it a home online.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="num">4.5</span><span class="label">Yelp Rating</span></div>
+          <div class="stat"><span class="num">150+</span><span class="label">Years Combined Experience</span></div>
+          <div class="stat"><span class="num">6</span><span class="label">Days Open Weekly</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 74 34"><path d="M6 17c0-8 6-13 13-7s6 13-7 13-13-5-13-13 6-13 13-7c7 7 7 13 13 13s13-5 13-13" fill="none" stroke="#BD6B3C" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+
+  <section class="section specialties">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why clients keep booking the same chair</h2>
+      </div>
+      <div class="specialty-list">
+        <div class="specialty-row">
+          <span class="tag">Texture</span>
+          <span class="txt">Curly and coily hair is cut dry, not guessed at wet, so the shape holds once it air-dries.</span>
+        </div>
+        <div class="specialty-row">
+          <span class="tag">Color</span>
+          <span class="txt">Balayage and highlights are hand-painted per client, not a single formula run down the line.</span>
+        </div>
+        <div class="specialty-row">
+          <span class="tag">Family</span>
+          <span class="txt">Kids' cuts and braiding are booked alongside adult color and keratin appointments, same shop, same day.</span>
+        </div>
+        <div class="specialty-row">
+          <span class="tag">Access</span>
+          <span class="txt">Ground-floor plaza parking right on Amboy Road, no stairs, no garage to navigate.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="hours">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2>Stop by Riviera Plaza, or call ahead</h2>
+          <p class="lede">Walk-ins are welcome when a chair is open. Calling first holds your spot for color or braiding services.</p>
+          <a class="btn btn-primary" href="tel:+17186678098">Call (718) 667-8098</a>
+        </div>
+        <div class="contact-col" id="contact">
+          <p class="col-label">Visit</p>
+          <p>3295 Amboy Road</p>
+          <p>Staten Island, NY 10306</p>
+          <p>Riviera Plaza</p>
+          <a href="tel:+17186678098">(718) 667-8098</a>
+          <a href="mailto:Infinityhairstudiony@gmail.com">Infinityhairstudiony@gmail.com</a>
+        </div>
+        <div class="contact-col">
+          <p class="col-label">Hours</p>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>10am&ndash;4pm</td></tr>
+            <tr><td>Tuesday</td><td>10am&ndash;6pm</td></tr>
+            <tr><td>Wednesday</td><td>Closed</td></tr>
+            <tr><td>Thursday</td><td>9am&ndash;7pm</td></tr>
+            <tr><td>Friday</td><td>9am&ndash;7pm</td></tr>
+            <tr><td>Saturday</td><td>9am&ndash;4pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 Infinity Hair Studio. South Shore, Staten Island.</span>
+        <span>Site built by Modularity Networks</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  var btn = document.getElementById('hamburgerBtn');
+  var panel = document.getElementById('mobilePanel');
+  btn.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

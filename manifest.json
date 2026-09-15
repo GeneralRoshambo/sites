@@ -1246,5 +1246,13 @@
     "location": "South Lyon, MI",
     "category": "Gutter Services",
     "region": "More"
+  },
+  {
+    "slug": "infinity-hair-studio",
+    "name": "Infinity Hair Studio",
+    "location": "Staten Island, NY",
+    "category": "Hair Salon",
+    "region": "StatenIsland",
+    "added": "2026-09-15"
   }
 ]
