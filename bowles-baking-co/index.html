@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #F7EEF2;
-    --ink: #2B1826;
-    --berry: #922C4E;
-    --berry-dark: #741F3D;
-    --gold: #C89545;
-    --blush: #F0DCD3;
-    --blush-line: #E4C9BC;
-    --plum-dark: #341A2C;
-    --plum-darker: #26121F;
+    --cream: #F5EEF1;
+    --ink: #2A1922;
+    --berry: #8C2F3F;
+    --berry-dark: #6E2433;
+    --gold: #B9873A;
+    --blush: #EEDDE4;
+    --blush-line: #DFC5D0;
+    --plum-dark: #33202B;
+    --plum-darker: #24151C;
   }
 
   * { box-sizing: border-box; }
@@ -226,7 +226,16 @@
     display: flex;
     justify-content: center;
   }
-  .hero-art svg { width: 100%; max-width: 420px; height: auto; }
+  .hero-photo {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 6px solid var(--cream);
+    box-shadow: 0 18px 40px rgba(52, 26, 44, 0.18);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* ---------- SCALLOP DIVIDER ---------- */
   .scallop {
@@ -535,23 +544,9 @@
         </div>
       </div>
       <div class="hero-art">
-        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a sliced layer cake with berry topping">
-          <ellipse cx="210" cy="360" rx="150" ry="18" fill="#E4C9BC" opacity="0.6"/>
-          <g>
-            <path d="M90 300 L90 250 Q90 236 104 236 L316 236 Q330 236 330 250 L330 300 Q330 314 316 314 L104 314 Q90 314 90 300 Z" fill="#F0DCD3"/>
-            <rect x="90" y="236" width="240" height="14" fill="#E4C9BC"/>
-            <path d="M90 230 L90 190 Q90 176 104 176 L316 176 Q330 176 330 190 L330 230 Q330 244 316 244 L104 244 Q90 244 90 230 Z" fill="#922C4E"/>
-            <rect x="90" y="176" width="240" height="14" fill="#741F3D"/>
-            <path d="M90 170 L90 130 Q90 116 104 116 L316 116 Q330 116 330 130 L330 170 Q330 184 316 184 L104 184 Q90 184 90 170 Z" fill="#F0DCD3"/>
-          </g>
-          <path d="M84 116 Q92 100 106 116 Q114 100 128 116 Q136 100 150 116 Q158 100 172 116 Q180 100 194 116 Q202 100 216 116 Q224 100 238 116 Q246 100 260 116 Q268 100 282 116 Q290 100 304 116 Q312 100 326 116 Q334 100 336 116 L336 130 L84 130 Z" fill="#FAF6F2" stroke="#C89545" stroke-width="3" stroke-linejoin="round"/>
-          <circle cx="145" cy="103" r="10" fill="#922C4E"/>
-          <circle cx="210" cy="97" r="11" fill="#741F3D"/>
-          <circle cx="278" cy="104" r="9" fill="#922C4E"/>
-          <rect x="205" y="60" width="6" height="30" rx="3" fill="#C89545"/>
-          <path d="M208 60 Q220 48 214 34 Q222 42 226 32" stroke="#C89545" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <path d="M330 250 Q356 250 356 276 Q356 302 330 302" fill="none" stroke="#341A2C" stroke-width="3" opacity="0.35"/>
-        </svg>
+        <div class="hero-photo">
+          <img src="https://images.pexels.com/photos/4252560/pexels-photo-4252560.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Round chocolate layer cake topped with fresh strawberries, blueberries, and almonds">
+        </div>
       </div>
     </div>
   </section>

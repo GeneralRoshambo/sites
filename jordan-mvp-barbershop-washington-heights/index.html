@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --court-cream:#EDE6D3;
+    --court-cream:#E3E7E6;
     --hardwood:#CC9354;
     --leather:#A83A15;
     --ink-navy:#1A2530;
@@ -94,11 +94,7 @@
     flex:0 0 auto;
   }
 
-  .brand-badge{
-    width:34px;
-    height:34px;
-    flex-shrink:0;
-  }
+  .brand .accent-mvp{ color:var(--leather); }
 
   nav.main-nav{
     display:flex;
@@ -261,15 +257,33 @@
 
   .btn-secondary:hover{background:var(--ink-navy); color:var(--chalk);}
 
-  /* Jersey patch badge */
+  /* Hero photo */
   .patch-wrap{
     display:flex;
     justify-content:center;
   }
 
-  .patch{
-    width:min(320px, 90%);
-    aspect-ratio:1;
+  .hero-photo{
+    width:100%;
+    max-width:420px;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    overflow:hidden;
+    position:relative;
+    border:2px solid var(--ink-navy);
+  }
+
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  .hero-photo figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    background:rgba(26,37,48,0.85);
+    color:var(--chalk);
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:12px 16px;
   }
 
   /* ---------- SCOREBOARD ---------- */
@@ -363,10 +377,14 @@
 
   .about-copy p strong{color:var(--ink-navy);}
 
-  .fade-pattern{
+  .fade-photo{
     width:100%;
-    height:auto;
+    aspect-ratio:1;
+    border-radius:4px;
+    overflow:hidden;
+    border:2px solid var(--ink-navy);
   }
+  .fade-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
   @media (max-width:860px){
     .about-grid{grid-template-columns:1fr;}
@@ -564,12 +582,7 @@
 <header>
   <div class="nav-row">
     <a href="#top" class="brand">
-      <svg class="brand-badge" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" fill="#1A2530"/>
-        <circle cx="24" cy="24" r="22" stroke="#CC9354" stroke-width="2"/>
-        <text x="24" y="30" font-family="Oswald, sans-serif" font-size="16" font-weight="700" fill="#EDE6D3" text-anchor="middle">MVP</text>
-      </svg>
-      <span>Jordan MVP Barbershop</span>
+      <span>Jordan <span class="accent-mvp">MVP</span> Barbershop</span>
     </a>
     <nav class="main-nav" aria-label="Primary">
       <a href="#about">About</a>
@@ -605,21 +618,10 @@
         </div>
       </div>
       <div class="patch-wrap">
-        <svg class="patch" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MVP jersey patch badge">
-          <circle cx="160" cy="160" r="150" fill="#EDE6D3" stroke="#1A2530" stroke-width="6"/>
-          <circle cx="160" cy="160" r="128" fill="none" stroke="#CC9354" stroke-width="4"/>
-          <path id="patchArcTop" d="M 55 160 A 105 105 0 0 1 265 160" fill="none"/>
-          <text font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" letter-spacing="4" fill="#1A2530">
-            <textPath href="#patchArcTop" startOffset="50%" text-anchor="middle">WASHINGTON HEIGHTS</textPath>
-          </text>
-          <text x="160" y="150" font-family="Oswald, sans-serif" font-size="54" font-weight="700" fill="#1A2530" text-anchor="middle">MVP</text>
-          <text x="160" y="182" font-family="Oswald, sans-serif" font-size="15" letter-spacing="3" fill="#A83A15" text-anchor="middle">MAJOR LEAGUE BARBERS</text>
-          <path id="patchArcBottom" d="M 265 160 A 105 105 0 0 1 55 160" fill="none"/>
-          <text font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" letter-spacing="3" fill="#1A2530">
-            <textPath href="#patchArcBottom" startOffset="50%" text-anchor="middle">EST. 4411 BROADWAY</textPath>
-          </text>
-          <circle cx="160" cy="160" r="60" fill="none" stroke="#1A2530" stroke-width="2" stroke-dasharray="3 5"/>
-        </svg>
+        <figure class="hero-photo">
+          <img src="https://images.pexels.com/photos/3998397/pexels-photo-3998397.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Barber giving a client a fresh fade haircut">
+          <figcaption>Major League Barbers</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -657,26 +659,9 @@
         <p>What the shop doesn't have yet is a home online, just an Instagram page and a couple of booking-app listings. This page is a first step toward giving it one.</p>
       </div>
       <div class="fade-pattern-wrap">
-        <svg class="fade-pattern" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a fade haircut gradient line pattern">
-          <rect width="400" height="400" fill="#F5EFE2"/>
-          <g stroke="#1A2530" stroke-width="2" fill="none" opacity="0.9">
-            <path d="M20 380 C 120 380, 120 40, 380 20"/>
-            <path d="M20 350 C 110 350, 110 70, 380 55"/>
-            <path d="M20 320 C 100 320, 100 100, 380 90"/>
-            <path d="M20 290 C 95 290, 95 130, 380 125"/>
-            <path d="M20 260 C 90 260, 90 160, 380 160"/>
-          </g>
-          <g stroke="#C1481E" stroke-width="3" fill="none">
-            <path d="M20 230 C 85 230, 85 190, 380 195"/>
-          </g>
-          <g stroke="#B97A3D" stroke-width="2" fill="none" opacity="0.85">
-            <path d="M20 200 C 80 200, 80 220, 380 230"/>
-            <path d="M20 170 C 75 170, 75 250, 380 265"/>
-            <path d="M20 140 C 70 140, 70 280, 380 300"/>
-          </g>
-          <circle cx="70" cy="330" r="5" fill="#1A2530"/>
-          <circle cx="330" cy="70" r="5" fill="#C1481E"/>
-        </svg>
+        <figure class="fade-photo">
+          <img src="https://images.pexels.com/photos/18503633/pexels-photo-18503633.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Close-up of clippers shaping a precise fade haircut">
+        </figure>
       </div>
     </div>
   </section>
