@@ -1254,5 +1254,21 @@
     "category": "Hair Salon",
     "region": "StatenIsland",
     "added": "2026-09-15"
+  },
+  {
+    "slug": "jwp-bookkeeping-services",
+    "name": "JWP Bookkeeping Services LLC",
+    "location": "Washington Heights, Manhattan",
+    "category": "Bookkeeping Services",
+    "region": "Manhattan",
+    "added": "2026-09-14"
+  },
+  {
+    "slug": "dog-n-cat-house-ozone-park",
+    "name": "The Dog 'n Cat House Salon",
+    "location": "Ozone Park, Queens",
+    "category": "Pet Grooming",
+    "region": "Queens",
+    "added": "2026-09-16"
   }
 ]

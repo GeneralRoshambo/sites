@@ -1,0 +1,613 @@
+<!-- The Dog 'n Cat House Salon — Ozone Park, Queens, NY -->
+<!-- Design: vintage claim-ticket / neighborhood awning direction -->
+<!-- Palette: cream #F6EFE0, plum #4A2142, mustard #D79B3D, terracotta #C1614A, ink #2C211D -->
+<!-- Type: Fraunces (display) + Karla (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6EFE0;
+    --cream-2:#EFE5CF;
+    --plum:#4A2142;
+    --plum-2:#5E2C53;
+    --mustard:#D79B3D;
+    --terracotta:#C1614A;
+    --terracotta-text:#9C4530;
+    --ink:#2C211D;
+    --ink-soft:#5A4C44;
+    --line: rgba(44,33,29,0.16);
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Karla', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --radius-ticket: 6px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:var(--display); margin:0; color:var(--plum); }
+  p{ margin:0; }
+  .wrap{ max-width:1180px; margin:0 auto; padding-left:28px; padding-right:28px; }
+
+  a:focus-visible,
+  button:focus-visible,
+  .nav-link:focus-visible,
+  .btn:focus-visible{
+    outline:3px solid var(--mustard);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ============ HEADER ============ */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+    gap:20px;
+  }
+  .brand{
+    display:flex; align-items:baseline; gap:2px;
+    text-decoration:none;
+    flex-shrink:0;
+    white-space:nowrap;
+  }
+  .brand-text{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.28rem;
+    color:var(--plum);
+    line-height:1.05;
+    white-space:nowrap;
+  }
+  .brand-text .accent{ color:var(--terracotta-text); font-style:italic; }
+  .brand-text small{
+    display:block;
+    font-family:var(--body);
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:0.72rem;
+    color:var(--terracotta-text);
+    margin-top:3px;
+  }
+  nav.primary{
+    display:flex; align-items:center; gap:34px;
+  }
+  .nav-link{
+    font-weight:600; font-size:0.96rem;
+    text-decoration:none; color:var(--ink);
+    position:relative; padding-bottom:4px;
+  }
+  .nav-link::after{
+    content:""; position:absolute; left:0; right:0; bottom:0;
+    height:2px; background:var(--terracotta);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .2s ease;
+  }
+  .nav-link:hover::after{ transform:scaleX(1); }
+  .nav-cta-wrap{ display:flex; align-items:center; gap:18px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--body); font-weight:700; font-size:0.94rem;
+    padding:12px 22px; border-radius:30px;
+    text-decoration:none; border:2px solid transparent;
+    cursor:pointer; white-space:nowrap;
+  }
+  .btn-primary{ background:var(--terracotta-text); color:#FFF9F0; }
+  .btn-primary:hover{ background:#7e3925; }
+  .btn-ghost{ background:transparent; border-color:var(--plum); color:var(--plum); }
+  .btn-ghost:hover{ background:var(--plum); color:var(--cream); }
+
+  .menu-toggle{
+    display:none; background:none; border:2px solid var(--plum); border-radius:8px;
+    width:44px; height:40px; padding:0; cursor:pointer;
+    align-items:center; justify-content:center;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:""; display:block; width:20px; height:2px; background:var(--plum);
+    position:relative;
+  }
+  .menu-toggle::before{ margin-bottom:5px; }
+  .menu-toggle::after{ margin-top:5px; }
+
+  @media (max-width: 1150px){
+    nav.primary{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--cream);
+      flex-direction:column; align-items:flex-start;
+      gap:0; padding:8px 28px 20px;
+      border-bottom:1px solid var(--line);
+      display:none;
+    }
+    nav.primary.open{ display:flex; }
+    nav.primary .nav-link{ padding:12px 0; width:100%; border-bottom:1px solid var(--line); }
+    .nav-cta-wrap{ display:none; }
+    nav.primary.open .nav-cta-wrap{
+      display:flex; width:100%; padding-top:14px; gap:12px;
+    }
+    nav.primary.open .btn{ flex:1; justify-content:center; }
+    .menu-toggle{ display:flex; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    padding-top:64px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.95fr;
+    gap:56px;
+    align-items:center;
+    padding-bottom:96px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-weight:700; letter-spacing:0.03em;
+    color:var(--terracotta-text);
+    font-size:0.98rem;
+    margin-bottom:18px;
+  }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--terracotta); }
+  h1.headline{
+    font-size:clamp(2.3rem, 4vw, 3.4rem);
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:15ch;
+  }
+  h1.headline em{ font-style:italic; color:var(--terracotta-text); }
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.14rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-actions{
+    display:flex; flex-wrap:wrap; gap:14px;
+    margin-top:32px;
+  }
+  .hero-facts{
+    display:flex; gap:28px; margin-top:40px; flex-wrap:wrap;
+  }
+  .hero-fact strong{
+    display:block; font-family:var(--display); font-size:1.5rem; color:var(--plum);
+  }
+  .hero-fact span{
+    font-size:0.85rem; color:var(--ink-soft);
+  }
+
+  /* --- signature element: the claim ticket --- */
+  .ticket-stage{
+    position:relative;
+    display:flex; justify-content:center; align-items:flex-start;
+    padding-top:10px;
+  }
+  .ticket{
+    position:relative;
+    width:100%;
+    max-width:340px;
+    background:#FFFBF2;
+    border:2px solid var(--ink);
+    border-radius:var(--radius-ticket);
+    padding:30px 26px 26px;
+    transform:rotate(3deg);
+    box-shadow:10px 12px 0 rgba(44,33,29,0.14);
+  }
+  .ticket::before{
+    content:"";
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    width:26px; height:26px; border-radius:50%;
+    background:var(--mustard);
+    border:2px solid var(--ink);
+  }
+  .ticket::after{
+    content:"";
+    position:absolute; top:-58px; left:50%; transform:translateX(-50%);
+    width:2px; height:52px;
+    background:repeating-linear-gradient(180deg, var(--ink) 0 6px, transparent 6px 11px);
+  }
+  .ticket-notch{
+    position:absolute; top:38px; left:-11px;
+    width:22px; height:22px; border-radius:50%;
+    background:var(--cream); border:2px solid var(--ink);
+  }
+  .ticket-notch.right{ left:auto; right:-11px; }
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    border-bottom:2px dashed var(--line);
+    padding-bottom:14px; margin-bottom:16px;
+  }
+  .ticket-head .stamp{
+    font-family:var(--display); font-style:italic; font-weight:600;
+    color:var(--terracotta-text); font-size:1.05rem; text-align:right;
+    border:2px solid var(--terracotta-text); border-radius:50%;
+    width:64px; height:64px; display:flex; align-items:center; justify-content:center;
+    transform:rotate(-8deg);
+    line-height:1.05;
+  }
+  .ticket-head h3{ font-size:1.3rem; max-width:11ch; }
+  .ticket-row{
+    display:flex; justify-content:space-between; gap:10px;
+    font-size:0.92rem; padding:7px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .ticket-row:last-of-type{ border-bottom:none; }
+  .ticket-row .k{ color:var(--ink-soft); }
+  .ticket-row .v{ font-weight:700; text-align:right; }
+  .ticket-foot{
+    margin-top:16px; padding-top:14px; border-top:2px dashed var(--line);
+    font-size:0.82rem; color:var(--ink-soft); text-align:center;
+    letter-spacing:0.04em; text-transform:uppercase; font-weight:600;
+  }
+
+  /* scalloped awning divider */
+  .awning{
+    display:block; width:100%; height:46px;
+    margin-top:-2px;
+  }
+
+  /* ============ ABOUT ============ */
+  .about{
+    background:var(--plum);
+    color:var(--cream);
+    padding:88px 0 96px;
+  }
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
+  }
+  .about h2{ color:var(--cream); font-size:clamp(1.9rem,3vw,2.5rem); font-weight:600; max-width:12ch; }
+  .about .lede{
+    margin-top:20px; font-size:1.08rem; color:var(--cream); max-width:48ch;
+  }
+  .about .lede + .lede{ margin-top:16px; }
+  .badges{
+    display:flex; flex-wrap:wrap; gap:18px;
+  }
+  .badge{
+    width:128px; height:128px; border-radius:50%;
+    border:2px dashed rgba(246,239,224,0.5);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:10px;
+    transform:rotate(-4deg);
+  }
+  .badge:nth-child(2){ transform:rotate(3deg); margin-top:22px; }
+  .badge:nth-child(3){ transform:rotate(-2deg); }
+  .badge strong{ font-family:var(--display); font-size:1.5rem; color:var(--mustard); }
+  .badge span{ font-size:0.74rem; color:#EADFEA; margin-top:4px; line-height:1.25; }
+
+  /* ============ SERVICES ============ */
+  .services{ padding:96px 0 40px; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
+    margin-bottom:48px; flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(1.9rem,3vw,2.5rem); font-weight:600; max-width:13ch; }
+  .section-head p{ max-width:38ch; color:var(--ink-soft); }
+
+  .board{
+    border-top:2px solid var(--ink);
+  }
+  .board-item{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:26px 6px;
+    border-bottom:2px solid var(--ink);
+    position:relative;
+  }
+  .board-item:nth-child(odd){ background:rgba(74,33,66,0.04); }
+  .board-tag{
+    width:52px; height:52px; border-radius:50%;
+    border:2px solid var(--plum);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .board-tag svg{ width:26px; height:26px; }
+  .board-copy h3{ font-size:1.3rem; font-weight:600; }
+  .board-copy p{ margin-top:6px; color:var(--ink-soft); font-size:0.98rem; max-width:52ch; }
+  .board-note{
+    font-family:var(--display); font-style:italic; color:var(--terracotta-text);
+    font-size:0.98rem; white-space:nowrap;
+  }
+
+  @media (max-width: 700px){
+    .board-item{ grid-template-columns:auto 1fr; }
+    .board-note{ grid-column:2; padding-left:0; }
+  }
+
+  /* ============ GALLERY STRIP ============ */
+  .strip{
+    padding:80px 0;
+  }
+  .strip-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+  }
+  .strip-card{
+    aspect-ratio:1; border-radius:14px;
+    overflow:hidden;
+    border:2px solid var(--ink);
+    position:relative;
+  }
+  .strip-card img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .strip-card figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    background:linear-gradient(0deg, rgba(44,33,29,0.82), transparent);
+    color:var(--cream); font-size:0.78rem; font-weight:700;
+    padding:8px 12px 10px;
+    letter-spacing:0.02em;
+  }
+  @media (max-width:720px){
+    .strip-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  /* ============ CONTACT / FOOTER ============ */
+  footer.site{
+    background:var(--ink);
+    color:var(--cream);
+    padding:88px 0 40px;
+  }
+  .contact-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px;
+  }
+  footer.site h2{ color:var(--cream); font-size:clamp(1.8rem,3vw,2.3rem); font-weight:600; max-width:11ch; }
+  .contact-list{ margin-top:28px; display:flex; flex-direction:column; gap:18px; }
+  .contact-list .row{ display:flex; gap:14px; align-items:flex-start; }
+  .contact-list svg{ width:22px; height:22px; flex-shrink:0; margin-top:3px; color:var(--mustard); }
+  .contact-list a{ text-decoration:none; font-weight:700; }
+  .contact-list .muted{ color:#C9BFB6; font-size:0.92rem; margin-top:2px; }
+  .hours-card{
+    background:#3A2E28; border-radius:14px; padding:30px 28px;
+    border:1px solid rgba(246,239,224,0.14);
+  }
+  .hours-card h3{ color:var(--mustard); font-family:var(--display); font-size:1.2rem; margin-bottom:16px; }
+  .hours-row{
+    display:flex; justify-content:space-between; font-size:0.94rem;
+    padding:8px 0; border-bottom:1px solid rgba(246,239,224,0.1);
+  }
+  .hours-row:last-child{ border-bottom:none; }
+  .hours-row span:first-child{ color:#D8CFC7; }
+  .foot-bottom{
+    margin-top:70px; padding-top:26px; border-top:1px solid rgba(246,239,224,0.14);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.85rem; color:#B8ADA4;
+  }
+  .foot-mark{ display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .foot-wordmark{ font-family:var(--display); font-weight:600; color:var(--cream); font-size:1rem; }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; padding-bottom:70px; }
+    .ticket-stage{ order:-1; padding-top:0; }
+    .ticket{ transform:rotate(1.5deg); margin:0 auto; }
+    .about-grid{ grid-template-columns:1fr; gap:40px; }
+    .contact-grid{ grid-template-columns:1fr; gap:40px; }
+    .badges{ justify-content:center; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .nav-link::after{ transition:none; }
+  }
+</style>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <span class="brand-text">The Dog <span class="accent">'n</span> Cat House<small>Grooming Salon &middot; Ozone Park</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=document.getElementById('primaryNav'); var open=n.classList.toggle('open'); this.setAttribute('aria-expanded', open);"></button>
+    <nav class="primary" id="primaryNav">
+      <a class="nav-link" href="#about">Our Story</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#contact">Visit Us</a>
+      <div class="nav-cta-wrap">
+        <a class="btn btn-ghost" href="tel:+17185291697">(718) 529-1697</a>
+        <a class="btn btn-primary" href="#contact">Book a Groom</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>OZONE PARK, QUEENS &middot; SINCE 1980</div>
+        <h1 class="headline">All-Breed Dog &amp; Cat Grooming in <em>Ozone Park, Queens</em></h1>
+        <p class="hero-sub">Three generations of Crossbay Boulevard pets have come through our doors for a bath, a trim, and a little extra fuss. We groom every breed, every coat, and yes, cats too, with the patience of a shop that's been doing this since before most groomers were born.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+17185291697">Call (718) 529-1697</a>
+          <a class="btn btn-ghost" href="https://maps.google.com/?q=105-15+Crossbay+Blvd+Ozone+Park+NY+11416" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <div class="hero-facts">
+          <div class="hero-fact"><strong>46 Years</strong><span>Serving Ozone Park</span></div>
+          <div class="hero-fact"><strong>All Breeds</strong><span>Dogs, big or small</span></div>
+          <div class="hero-fact"><strong>Cats Too</strong><span>A rare specialty</span></div>
+        </div>
+      </div>
+      <div class="ticket-stage">
+        <div class="ticket">
+          <div class="ticket-notch"></div>
+          <div class="ticket-notch right"></div>
+          <div class="ticket-head">
+            <h3>Claim Ticket</h3>
+            <div class="stamp">EST.<br>1980</div>
+          </div>
+          <div class="ticket-row"><span class="k">Shop</span><span class="v">Dog 'n Cat House</span></div>
+          <div class="ticket-row"><span class="k">Neighborhood</span><span class="v">Ozone Park, NY</span></div>
+          <div class="ticket-row"><span class="k">Specialty</span><span class="v">All Breeds + Cats</span></div>
+          <div class="ticket-row"><span class="k">Owner</span><span class="v">C. DiToro</span></div>
+          <div class="ticket-foot">Pick Up One Happy Pet</div>
+        </div>
+      </div>
+    </div>
+    <svg class="awning" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C50,46 100,46 150,0 C200,46 250,46 300,0 C350,46 400,46 450,0 C500,46 550,46 600,0 C650,46 700,46 750,0 C800,46 850,46 900,0 C950,46 1000,46 1050,0 C1100,46 1150,46 1200,0 L1200,46 L0,46 Z" fill="#4A2142"/>
+    </svg>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>A neighborhood fixture since 1980</h2>
+        <p class="lede">Christina DiToro has run The Dog 'n Cat House on Crossbay Boulevard for over four decades, taking in everything from nervous first-time puppies to cats who'd rather not be there at all. It's the kind of shop where the regulars don't need to give their pet's name at drop-off.</p>
+        <p class="lede">No franchise polish, no rush. Just a full-service, all-breed grooming salon that's outlasted three generations of Ozone Park's other pet businesses, and still does the job by hand.</p>
+      </div>
+      <div class="badges">
+        <div class="badge"><strong>46</strong><span>Years on Crossbay Blvd</span></div>
+        <div class="badge"><strong>NYC</strong><span>DOH Licensed Pet Handler</span></div>
+        <div class="badge"><strong>2nd</strong><span>Gen. Family Owned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What's on the board</h2>
+        <p>Every service is done by hand, sized to your pet's breed, coat, and patience level. Call ahead, walk-ins get worked in when we can.</p>
+      </div>
+      <div class="board">
+        <div class="board-item">
+          <div class="board-tag">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 14c0-3 2-5 5-5h6c3 0 5 2 5 5v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1Z" stroke="#4A2142" stroke-width="1.6"/><circle cx="9" cy="9" r="1.4" fill="#4A2142"/><circle cx="15" cy="9" r="1.4" fill="#4A2142"/></svg>
+          </div>
+          <div class="board-copy">
+            <h3>Full-Service Bath &amp; Groom</h3>
+            <p>Shampoo, blow-dry, brush-out, and a full trim, tailored to breed standard or however you like your dog looking.</p>
+          </div>
+          <div class="board-note">All breeds</div>
+        </div>
+        <div class="board-item">
+          <div class="board-tag">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4v16M18 4v16M6 12h12" stroke="#4A2142" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="board-copy">
+            <h3>Breed-Specific &amp; Scissor Cuts</h3>
+            <p>Schnauzer trims, poodle clips, terrier strips, we know the standard cuts and we'll do it your way if you'd rather.</p>
+          </div>
+          <div class="board-note">By hand</div>
+        </div>
+        <div class="board-item">
+          <div class="board-tag">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4c-4 3-7 7-7 10a7 7 0 0 0 14 0c0-3-3-7-7-10Z" stroke="#4A2142" stroke-width="1.6"/></svg>
+          </div>
+          <div class="board-copy">
+            <h3>De-Shedding Treatments</h3>
+            <p>For the double-coated breeds shedding season hits hardest. Less fur on your couch, cooler dog in summer.</p>
+          </div>
+          <div class="board-note">Seasonal</div>
+        </div>
+        <div class="board-item">
+          <div class="board-tag">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 9v12h6v-6h4v6h6V9L12 3Z" stroke="#4A2142" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="board-copy">
+            <h3>Cat Grooming</h3>
+            <p>Not every salon takes cats. We do, gently and on their schedule, not ours. Baths, de-matting, and lion cuts.</p>
+          </div>
+          <div class="board-note">Our specialty</div>
+        </div>
+        <div class="board-item">
+          <div class="board-tag">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#4A2142" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="#4A2142" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="board-copy">
+            <h3>Nail Trims &amp; Ear Cleaning</h3>
+            <p>Quick, in-and-out services for pets between full grooms. No appointment needed for nails alone.</p>
+          </div>
+          <div class="board-note">Walk-ins ok</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Regulars of the house</h2>
+        <p>A shop that's groomed thousands of Ozone Park's dogs and cats sees a little of everything.</p>
+      </div>
+      <div class="strip-grid">
+        <figure class="strip-card">
+          <img src="https://images.pexels.com/photos/21952862/pexels-photo-21952862.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="A dog getting a bath during grooming" loading="lazy">
+          <figcaption>Bath &amp; Blow-Dry</figcaption>
+        </figure>
+        <figure class="strip-card">
+          <img src="https://images.pexels.com/photos/6130999/pexels-photo-6130999.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="A cat being brushed and groomed" loading="lazy">
+          <figcaption>Cat Grooming</figcaption>
+        </figure>
+        <figure class="strip-card">
+          <img src="https://images.pexels.com/photos/6130997/pexels-photo-6130997.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="A dog getting a haircut and trim" loading="lazy">
+          <figcaption>Breed Trims</figcaption>
+        </figure>
+        <figure class="strip-card">
+          <img src="https://images.pexels.com/photos/6816842/pexels-photo-6816842.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="A cat relaxing after a grooming session" loading="lazy">
+          <figcaption>Happy Regulars</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Come by, or call ahead</h2>
+      <div class="contact-list">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <a href="https://maps.google.com/?q=105-15+Crossbay+Blvd+Ozone+Park+NY+11416" target="_blank" rel="noopener">105-15 Crossbay Blvd, Ozone Park, NY 11416</a>
+            <div class="muted">Street parking along Crossbay Blvd</div>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8.8 6.2 15 15 15l1-4-5-2-1.5 1.5A12 12 0 0 1 8.5 10L10 8.5 8 3.5 4 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <div>
+            <a href="tel:+17185291697">(718) 529-1697</a>
+            <div class="muted">Call to book or ask about drop-off</div>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <a href="mailto:Dogncathouseinc@yahoo.com">Dogncathouseinc@yahoo.com</a>
+            <div class="muted">For questions or drop-off scheduling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hours-card">
+      <h3>Shop Hours</h3>
+      <div class="hours-row"><span>Monday &ndash; Friday</span><span>9:00am &ndash; 5:30pm</span></div>
+      <div class="hours-row"><span>Saturday</span><span>9:00am &ndash; 4:00pm</span></div>
+      <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <div class="foot-mark">
+      <span class="foot-wordmark">The Dog 'n Cat House</span>
+      <span>&middot; Ozone Park, Queens, NY</span>
+    </div>
+    <span>Site preview built by Modularity Networks</span>
+  </div>
+</footer>

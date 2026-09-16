@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JWP Bookkeeping Services | Washington Heights, Manhattan</title>
+<meta name="description" content="Monthly bookkeeping, tax prep, and payroll support for small businesses and independent contractors in Washington Heights and Inwood, Manhattan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E3ECE1;
+    --paper-line:#C3D3BE;
+    --card:#F1F6EE;
+    --ink:#1C2733;
+    --ink-soft:#48545D;
+    --forest:#1C3B4A;
+    --forest-dark:#122631;
+    --brass:#AD7F35;
+    --brass-text:#7A551E;
+    --rule-red:#9C4638;
+    --border:#C3D3BE;
+    --radius:6px;
+    --max:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-weight:600;
+    margin:0 0 0.5em 0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'IBM Plex Mono', ui-monospace, monospace;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--brass);
+    outline-offset:3px;
+    border-radius:3px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(234,240,230,0.94);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:var(--max); margin:0 auto;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.3rem;
+    color:var(--forest);
+    text-decoration:none;
+    white-space:nowrap;
+    flex-shrink:0;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .brand small{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    color:var(--brass-text);
+    font-weight:600;
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:32px;
+    list-style:none; margin:0; padding:0;
+    flex-wrap:nowrap;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--forest);}
+  .nav-cta{
+    display:inline-block;
+    background:var(--forest);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-size:0.9rem;
+    font-weight:600;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .nav-cta:hover{background:var(--forest-dark); color:#fff;}
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:2px solid var(--forest);
+    border-radius:var(--radius);
+    padding:8px 10px;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    display:block; width:20px; height:2px; background:var(--forest);
+    position:relative; transition:0.2s;
+  }
+  .nav-toggle span::before, .nav-toggle span::after{content:""; position:absolute;}
+  .nav-toggle span::before{top:-6px;}
+  .nav-toggle span::after{top:6px;}
+
+  @media (max-width: 1150px){
+    .nav-links{
+      position:fixed; inset:74px 0 0 0;
+      background:var(--paper);
+      flex-direction:column;
+      align-items:flex-start;
+      padding:28px 32px;
+      gap:20px;
+      transform:translateX(100%);
+      transition:transform 0.25s ease;
+      overflow-y:auto;
+      border-top:1px solid var(--border);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:1.1rem;}
+    .nav-cta{width:100%; text-align:center;}
+    .nav-toggle{display:inline-flex; flex-direction:column; align-items:center; justify-content:center;}
+    .nav .nav-cta{display:none;}
+    .nav-links .nav-cta{display:inline-block; margin-top:8px;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:76px 0 64px;
+    border-bottom:1px solid var(--border);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4vw, 3.1rem);
+    line-height:1.12;
+    max-width:14ch;
+  }
+  .hero-sub{
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:20px 0 32px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:16px;}
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.98rem;
+    border:2px solid transparent;
+  }
+  .btn-primary{background:var(--forest); color:#fff;}
+  .btn-primary:hover{background:var(--forest-dark); color:#fff;}
+  .btn-ghost{border-color:var(--forest); color:var(--forest);}
+  .btn-ghost:hover{background:var(--forest); color:#fff;}
+
+  /* Hero photo card */
+  .hero-photo{
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:10px 10px 0 var(--card), 10px 10px 0 1px var(--border);
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:4/5;}
+  .hero-photo figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    background:rgba(28,39,51,0.86);
+    color:#F1F5EE;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem; letter-spacing:0.01em;
+    padding:12px 16px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:72px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass-text);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head h2{font-size:clamp(1.6rem, 2.6vw, 2.2rem);}
+  .section-head p{color:var(--ink-soft); font-size:1.05rem; max-width:56ch;}
+
+  /* About */
+  .about{border-bottom:1px solid var(--border);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:52px;
+    align-items:start;
+  }
+  .about-figure{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:34px;
+  }
+  .about-figure .mono{
+    display:block; font-size:0.78rem; color:var(--brass-text);
+    letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px;
+  }
+  .about-figure strong{
+    font-family:'Source Serif 4', serif;
+    font-size:1.4rem; display:block; margin-bottom:6px;
+  }
+  .about-figure span.role{color:var(--ink-soft); font-size:0.95rem;}
+  .about-stats{
+    margin-top:24px; padding-top:24px; border-top:1px dashed var(--paper-line);
+    display:grid; gap:14px;
+  }
+  .about-stats div{display:flex; justify-content:space-between; font-size:0.92rem;}
+  .about-stats dt{color:var(--ink-soft);}
+  .about-stats dd{margin:0; font-family:'IBM Plex Mono', monospace; font-weight:600;}
+  .about-copy p{margin:0 0 18px; color:var(--ink-soft);}
+  .about-copy p:first-child{
+    font-size:1.15rem; color:var(--ink); font-family:'Source Serif 4', serif; font-weight:500;
+  }
+
+  /* Services as ledger rows */
+  .services{border-bottom:1px solid var(--border);}
+  .ledger-rows{border-top:1px solid var(--border);}
+  .ledger-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:24px;
+    align-items:start;
+    padding:26px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .stamp{
+    width:46px; height:46px; border-radius:50%;
+    border:2px solid var(--brass);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--brass-text);
+    font-weight:600;
+    flex-shrink:0;
+    transform:rotate(-8deg);
+  }
+  .ledger-row h3{font-size:1.15rem; margin-bottom:6px;}
+  .ledger-row p{margin:0; color:var(--ink-soft); font-size:0.98rem; max-width:56ch;}
+  .ledger-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--forest);
+    background:rgba(31,75,55,0.08);
+    padding:6px 12px;
+    border-radius:20px;
+    height:fit-content;
+    white-space:nowrap;
+  }
+
+  /* Who I serve */
+  .serve-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .serve-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:26px 22px;
+  }
+  .serve-card .glyph{
+    width:38px; height:38px; margin-bottom:16px;
+    color:var(--forest);
+  }
+  .serve-card h3{font-size:1.02rem; margin-bottom:8px;}
+  .serve-card p{margin:0; font-size:0.92rem; color:var(--ink-soft);}
+
+  /* Contact band */
+  .contact-band{
+    background:var(--forest);
+    color:#F1F5EE;
+  }
+  .contact-band h2{color:#fff;}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:48px;
+    align-items:center;
+  }
+  .contact-grid p{color:#E7EEEC; font-size:1.05rem; max-width:50ch;}
+  .contact-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:10px;
+    padding:30px;
+  }
+  .contact-card a{
+    display:flex; justify-content:space-between; align-items:center;
+    color:#fff; text-decoration:none;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.18);
+    font-size:1rem;
+  }
+  .contact-card a:last-child{border-bottom:none;}
+  .contact-card .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#A9C7B3;
+    display:block;
+    margin-bottom:3px;
+  }
+  .contact-card .value{font-weight:600;}
+
+  footer{
+    padding:28px 0;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-sub{max-width:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .serve-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .ledger-row{grid-template-columns:auto 1fr; }
+    .ledger-tag{grid-column:2; margin-top:8px;}
+  }
+  @media (max-width: 560px){
+    .wrap, .nav{padding-left:20px; padding-right:20px;}
+    .serve-grid{grid-template-columns:1fr;}
+    section{padding:52px 0;}
+    .hero{padding:52px 0 44px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">JWP Bookkeeping <small>Est. 2020</small></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#serve">Who I Serve</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="mailto:jwpbookkeeping@gmail.com" class="nav-cta">Email Jim</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Bookkeeping Services in Washington Heights, Manhattan</h1>
+        <p class="hero-sub">Monthly books, clean categories, and taxes that make sense, handled by one dedicated bookkeeper who works out of the neighborhood, not a call center. Built for independent contractors and small businesses across Northern Manhattan.</p>
+        <div class="hero-ctas">
+          <a href="mailto:jwpbookkeeping@gmail.com" class="btn btn-primary">Email Jim</a>
+          <a href="#services" class="btn btn-ghost">See What's Included</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://images.pexels.com/photos/8296974/pexels-photo-8296974.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Bookkeeper reviewing invoices and running numbers on a calculator">
+        <figcaption>Monthly close &middot; books reconciled by hand</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-figure">
+        <span class="mono">Owner &amp; Bookkeeper</span>
+        <strong>Jim Pascale</strong>
+        <span class="role">JWP Bookkeeping Services LLC</span>
+        <dl class="about-stats">
+          <div><dt>Based in</dt><dd>Washington Heights</dd></div>
+          <div><dt>Serving</dt><dd>Northern Manhattan</dd></div>
+          <div><dt>Established</dt><dd>2020</dd></div>
+          <div><dt>Languages</dt><dd>EN / ES</dd></div>
+        </dl>
+      </div>
+      <div class="about-copy">
+        <p>One bookkeeper. One inbox. One person who actually knows your business when you call.</p>
+        <p>JWP Bookkeeping Services LLC has kept the books for independent contractors and small businesses around Washington Heights and Inwood since 2020. No account managers, no rotating staff, no software you have to learn on your own. Jim reconciles the accounts himself, categorizes every transaction by hand, and flags anything that looks off before it becomes a problem at tax time.</p>
+        <p>Work is done bilingually in English and Spanish, which matters in a neighborhood built on family-run shops, contractors, and independent tradespeople who need someone who understands both the language and the paperwork.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Services</span>
+        <h2>What's included, month over month</h2>
+        <p>Every engagement starts with a review of your current records, then settles into a steady monthly rhythm so nothing piles up before tax season.</p>
+      </div>
+      <div class="ledger-rows">
+        <div class="ledger-row">
+          <div class="stamp mono">M</div>
+          <div>
+            <h3>Monthly Bookkeeping</h3>
+            <p>Bank and card transactions categorized and reconciled every month, with a clean profit and loss statement you can actually read.</p>
+          </div>
+          <span class="ledger-tag">Ongoing</span>
+        </div>
+        <div class="ledger-row">
+          <div class="stamp mono">T</div>
+          <div>
+            <h3>Quarterly &amp; Annual Tax Prep</h3>
+            <p>Books organized and handed off ready for filing, whether that's quarterly estimates or your year end return.</p>
+          </div>
+          <span class="ledger-tag">Seasonal</span>
+        </div>
+        <div class="ledger-row">
+          <div class="stamp mono">C</div>
+          <div>
+            <h3>Cleanup &amp; New Business Setup</h3>
+            <p>Behind on your records or just starting out? Jim untangles old accounts or sets up a chart of accounts built for how your business actually runs.</p>
+          </div>
+          <span class="ledger-tag">One time</span>
+        </div>
+        <div class="ledger-row">
+          <div class="stamp mono">P</div>
+          <div>
+            <h3>Payroll &amp; 1099 Support</h3>
+            <p>Contractor payments tracked and year end 1099s prepared, so nobody is scrambling to reconstruct a year of payments in January.</p>
+          </div>
+          <span class="ledger-tag">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="serve">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Who I Serve</span>
+        <h2>Built around the small businesses of Northern Manhattan</h2>
+        <p>Washington Heights and Inwood run on independent, family owned businesses. Jim's client list looks like the neighborhood itself.</p>
+      </div>
+      <div class="serve-grid">
+        <div class="serve-card">
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10l1-6h14l1 6M4 10v9a1 1 0 001 1h14a1 1 0 001-1v-9M4 10h16M9 20v-6h6v6"/></svg>
+          <h3>Bodegas &amp; Delis</h3>
+          <p>Daily cash and card sales reconciled and rolled into a monthly picture that makes sense to a lender or an accountant.</p>
+        </div>
+        <div class="serve-card">
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c-1.5 2-2 3.5-2 5a2 2 0 004 0c0-1.5-.5-3-2-5z"/><path d="M6 21c1-4 3-6 6-6s5 2 6 6"/><circle cx="12" cy="13" r="2.5"/></svg>
+          <h3>Salons &amp; Barbershops</h3>
+          <p>Chair rental income, supply costs, and tip reporting kept straight so payroll and taxes never turn into guesswork.</p>
+        </div>
+        <div class="serve-card">
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+          <h3>Contractors &amp; Tradespeople</h3>
+          <p>Job costing, material receipts, and subcontractor payments organized by project, not just dumped into one account.</p>
+        </div>
+        <div class="serve-card">
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v12H7l-3 3V4z"/><path d="M8 9h8M8 12h5"/></svg>
+          <h3>Freelancers &amp; Contractors</h3>
+          <p>Quarterly estimates calculated ahead of time, so a big tax bill never shows up as a surprise in April.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="section-eyebrow" style="color:#E3B667;">Get Started</span>
+        <h2>Let's get your books balanced.</h2>
+        <p style="color:#E7EEEC;">Send over a note about your business and where your books currently stand. Jim replies personally, no sales team in between.</p>
+      </div>
+      <div class="contact-card">
+        <a href="mailto:jwpbookkeeping@gmail.com">
+          <span><span class="label">Email</span><span class="value">jwpbookkeeping@gmail.com</span></span>
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <a href="#top">
+          <span><span class="label">Based In</span><span class="value">Washington Heights, NY 10033</span></span>
+        </a>
+        <a href="#top">
+          <span><span class="label">Serving</span><span class="value">Washington Heights &amp; Inwood, Manhattan</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">JWP Bookkeeping Services LLC · Washington Heights, Manhattan · Est. 2020</div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
