@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L &amp; L Tailors | Custom Tailoring and Alterations in Staten Island, NY</title>
+<meta name="description" content="L and L Tailors is a mother and daughter run tailoring shop in Staten Island, NY since 1980. Custom tailoring, alterations, bridal parties, leather, furs, drapes, and linens.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12324A;
+    --seafoam:#6FA8A0;
+    --sand:#F4EFE6;
+    --coral:#D9714E;
+    --sand-deep:#EAE2D2;
+    --ink:#1C2B33;
+    --white:#FFFDF9;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Nunito Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{
+    font-family:'Libre Baskerville', serif;
+    color:var(--navy);
+    margin:0 0 0.5em;
+    font-weight:700;
+    line-height:1.2;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:3px solid var(--coral);
+    outline-offset:3px;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--sand);
+    border-bottom:1px solid rgba(18,50,74,0.12);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .wordmark{
+    font-family:'Libre Baskerville', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    letter-spacing:0.02em;
+    color:var(--navy);
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .wordmark span{color:var(--coral);}
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap:36px;
+  }
+  nav.primary-nav a{
+    font-size:0.98rem;
+    font-weight:600;
+    color:var(--navy);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color 0.2s ease;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--coral);}
+  .nav-call{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .nav-call a.phone-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--navy);
+    color:var(--white);
+    padding:10px 18px;
+    border-radius:2px;
+    font-weight:700;
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+  }
+  .nav-call a.phone-btn:hover{background:#0C2438;}
+  .hamburger{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+  }
+  .hamburger span{
+    display:block;
+    width:26px;
+    height:2px;
+    background:var(--navy);
+    margin:6px 0;
+  }
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    padding:0 32px 24px;
+    background:var(--sand);
+    border-bottom:1px solid rgba(18,50,74,0.12);
+  }
+  .mobile-menu a{
+    padding:12px 0;
+    border-top:1px solid rgba(18,50,74,0.1);
+    font-weight:600;
+    color:var(--navy);
+  }
+  .mobile-menu.open{display:flex;}
+
+  /* ---------- WAVE DIVIDER ---------- */
+  .wave-divider{
+    width:100%;
+    display:block;
+    line-height:0;
+  }
+  .wave-divider svg{width:100%;height:20px;display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--sand);
+    padding:72px 0 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:3rem;
+    margin-bottom:22px;
+  }
+  .hero-lede{
+    font-size:1.12rem;
+    max-width:46ch;
+    color:var(--ink);
+    margin-bottom:30px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 26px;
+    font-weight:700;
+    font-size:1.2rem;
+    border-radius:2px;
+    border:2px solid var(--navy);
+  }
+  .btn-primary{
+    background:var(--navy);
+    color:var(--white);
+  }
+  .btn-primary:hover{background:var(--coral);border-color:var(--coral);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--navy);
+  }
+  .btn-secondary:hover{background:var(--navy);color:var(--white);}
+  .hero-est{
+    font-size:0.9rem;
+    color:var(--navy);
+    opacity:0.75;
+    font-style:italic;
+    font-family:'Libre Baskerville', serif;
+  }
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo-frame{
+    position:relative;
+    border:1px solid rgba(18,50,74,0.18);
+    padding:14px;
+    background:var(--white);
+  }
+  .hero-photo-frame img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    object-position:center 20%;
+  }
+  .hero-tag{
+    position:absolute;
+    bottom:-18px;
+    left:-18px;
+    background:var(--navy);
+    color:var(--white);
+    padding:12px 20px;
+    font-family:'Libre Baskerville', serif;
+    font-size:0.95rem;
+    box-shadow:2px 2px 0 var(--coral);
+  }
+
+  /* ---------- RULER SPINE (signature secondary motif) ---------- */
+  .ruler-rail{
+    display:none;
+  }
+  @media (min-width:900px){
+    .ruler-rail{
+      display:block;
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:32px;
+    }
+    .section-measured{position:relative;}
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{
+    padding:76px 0;
+  }
+  .section-head{
+    max-width:640px;
+    margin-bottom:44px;
+  }
+  .section-head h2{
+    font-size:2.2rem;
+  }
+  .section-head p{
+    color:var(--ink);
+    font-size:1.05rem;
+    opacity:0.85;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--white);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-photo img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border:1px solid rgba(18,50,74,0.15);
+  }
+  .about-stats{
+    display:flex;
+    gap:36px;
+    margin-top:32px;
+    padding-top:28px;
+    border-top:1px solid rgba(18,50,74,0.15);
+  }
+  .about-stats div{flex:1;}
+  .about-stats .num{
+    font-family:'Libre Baskerville', serif;
+    font-size:2rem;
+    color:var(--navy);
+    display:block;
+  }
+  .about-stats .label{
+    font-size:0.86rem;
+    color:var(--ink);
+    opacity:0.75;
+  }
+
+  /* ---------- SERVICES (ledger style) ---------- */
+  .services{background:var(--sand-deep);}
+  .ledger{
+    border-top:2px solid var(--navy);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:1.4fr 2fr auto;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid rgba(18,50,74,0.2);
+    align-items:baseline;
+  }
+  .ledger-row .svc-name{
+    font-family:'Libre Baskerville', serif;
+    font-size:1.15rem;
+    color:var(--navy);
+  }
+  .ledger-row .svc-desc{
+    font-size:0.98rem;
+    color:var(--ink);
+    opacity:0.85;
+  }
+  .ledger-row .svc-tag{
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--navy);
+    white-space:nowrap;
+    text-align:right;
+  }
+
+  /* ---------- PHOTO BANNER ---------- */
+  .banner{
+    position:relative;
+    height:340px;
+    overflow:hidden;
+  }
+  .banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 35%;
+  }
+  .banner-overlay{
+    position:absolute;
+    inset:0;
+    background-color:var(--navy);
+    background-image:linear-gradient(90deg, rgba(18,50,74,0.82) 0%, rgba(18,50,74,0.55) 55%, rgba(18,50,74,0.3) 100%);
+    display:flex;
+    align-items:center;
+  }
+  .banner-quote{
+    max-width:560px;
+    padding:0 32px;
+    margin:0 auto;
+    width:100%;
+  }
+  .banner-quote p{
+    font-family:'Libre Baskerville', serif;
+    font-style:italic;
+    color:var(--white);
+    font-size:1.4rem;
+    line-height:1.45;
+    margin-bottom:10px;
+    max-width:640px;
+  }
+  .banner-quote span{
+    color:var(--seafoam);
+    font-size:0.85rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+
+  /* ---------- TESTIMONIALS (ticket chips) ---------- */
+  .testimonials{background:var(--white);}
+  .ticket-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .ticket{
+    position:relative;
+    background:var(--sand);
+    border:1px dashed rgba(18,50,74,0.35);
+    padding:28px 24px;
+  }
+  .ticket::before, .ticket::after{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:var(--white);
+    border-radius:50%;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .ticket::before{left:-9px;}
+  .ticket::after{right:-9px;}
+  .ticket p.quote{
+    font-family:'Libre Baskerville', serif;
+    font-size:1.05rem;
+    color:var(--navy);
+    margin-bottom:14px;
+  }
+  .ticket .stars{
+    color:var(--coral);
+    letter-spacing:2px;
+    font-size:0.95rem;
+    margin-bottom:10px;
+    display:block;
+  }
+  .ticket .src{
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink);
+    opacity:0.6;
+    font-weight:700;
+  }
+
+  /* ---------- HOURS / LOCATION ---------- */
+  .visit{background:var(--sand-deep);}
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  }
+  .info-block{
+    background:var(--white);
+    border:1px solid rgba(18,50,74,0.15);
+    padding:36px;
+  }
+  .info-row{
+    display:flex;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(18,50,74,0.12);
+    align-items:flex-start;
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-row svg{flex:0 0 auto;margin-top:3px;}
+  .info-row .info-label{
+    font-weight:700;
+    color:var(--navy);
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:4px;
+  }
+  .hours-table{width:100%;border-collapse:collapse;}
+  .hours-table td{
+    padding:10px 0;
+    border-bottom:1px solid rgba(18,50,74,0.12);
+    font-size:0.98rem;
+  }
+  .hours-table td:last-child{text-align:right;font-weight:600;color:var(--navy);}
+  .hours-table tr:last-child td{border-bottom:none;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--navy);
+    color:var(--white);
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-band h2{color:var(--white);font-size:2rem;}
+  .cta-band p{color:var(--sand);opacity:0.85;max-width:52ch;margin:0 auto 28px;}
+  .cta-band .btn-primary{background:var(--coral);border-color:var(--coral);}
+  .cta-band .btn-primary:hover{background:var(--seafoam);border-color:var(--seafoam);color:var(--navy);}
+  .cta-band .btn-secondary{color:var(--white);border-color:rgba(255,255,255,0.5);}
+  .cta-band .btn-secondary:hover{background:var(--white);color:var(--navy);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy);
+    color:var(--sand);
+    padding:48px 0 28px;
+    border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:36px;
+  }
+  footer .wordmark{color:var(--white);margin-bottom:12px;}
+  footer .wordmark span{color:var(--coral);}
+  footer p{color:var(--sand);opacity:0.75;font-size:0.95rem;}
+  footer h3{
+    font-family:'Nunito Sans', sans-serif;
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--seafoam);
+    margin-bottom:14px;
+    font-weight:700;
+  }
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer li{margin-bottom:10px;font-size:0.95rem;opacity:0.85;}
+  footer a:hover{color:var(--coral);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);
+    padding-top:22px;
+    font-size:0.85rem;
+    opacity:0.6;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1150px){
+    nav.primary-nav{display:none;}
+    .nav-call .phone-btn span.btn-label{display:none;}
+    .hamburger{display:block;}
+  }
+  @media (max-width:900px){
+    .hero h1{font-size:2.3rem;}
+    .section-head h2{font-size:1.8rem;}
+    .cta-band h2{font-size:1.6rem;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{order:-1;}
+    .hero-photo-frame img{height:280px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo img{height:260px;}
+    .ledger-row{grid-template-columns:1fr;gap:6px;}
+    .ledger-row .svc-tag{text-align:left;}
+    .ticket-grid{grid-template-columns:1fr;}
+    .visit-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+    .banner-quote p{font-size:1.15rem;}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px;}
+    .nav-row{padding:16px 20px;}
+    .wordmark{font-size:1.15rem;}
+    .nav-call{gap:6px;}
+    .nav-call a.phone-btn{padding:10px 12px;}
+    .hamburger{padding:6px;}
+    section{padding:56px 0;}
+    .hero{padding:48px 0 0;}
+    .hero h1{font-size:1.9rem;}
+    .btn{padding:13px 20px;}
+    .hero-tag{left:0;bottom:-14px;font-size:0.85rem;padding:10px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="#top" class="wordmark">L &amp; L <span>TAILORS</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav-call">
+      <a class="phone-btn" href="tel:+17185544226">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="btn-label">(718) 554-4226</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Custom Tailoring and Alterations in Staten Island, NY</h1>
+        <p class="hero-lede">A mother and daughter shop on Amboy Road, hemming, fitting, and rebuilding garments by hand for Staten Island families since 1980. Bridal parties, everyday alterations, leather, furs, drapes, and linens, all done on site.</p>
+        <div class="hero-actions">
+          <a href="tel:+17185544226" class="btn btn-primary">Call to Book a Fitting</a>
+          <a href="#services" class="btn btn-secondary">See Our Services</a>
+        </div>
+        <p class="hero-est">Appointments recommended, walk-ins welcome when the machines are quiet.</p>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-frame">
+          <img src="https://images.pexels.com/photos/6765658/pexels-photo-6765658.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A tailor taking a client's measurements with a tape measure">
+        </div>
+        <div class="hero-tag">Two generations, one shop</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 10 Q 30 0, 60 10 T 120 10 T 180 10 T 240 10 T 300 10 T 360 10 T 420 10 T 480 10 T 540 10 T 600 10 T 660 10 T 720 10 T 780 10 T 840 10 T 900 10 T 960 10 T 1020 10 T 1080 10 T 1140 10 T 1200 10" fill="none" stroke="#6FA8A0" stroke-width="1.5"/></svg>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="https://images.pexels.com/photos/6461130/pexels-photo-6461130.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Close up of a sewing machine needle stitching fabric">
+      </div>
+      <div class="about-copy">
+        <h2>Forty-five years of altering, mending, and building garments to fit</h2>
+        <p>L &amp; L Tailors has worked out of the same storefront near Pleasant Plains since 1980. It is a small operation on purpose: a mother and daughter, a few well-worn machines, and enough pins to fit half of Staten Island for a wedding on short notice.</p>
+        <p>Customers come in with a suit that needs a new life, a gown that needs to fit by Saturday, or a coat that just needs its lining fixed instead of replacing. We measure twice, we tell you honestly what a garment needs, and we do the work ourselves.</p>
+        <div class="about-stats">
+          <div>
+            <span class="num">1980</span>
+            <span class="label">Open on Amboy Road</span>
+          </div>
+          <div>
+            <span class="num">2</span>
+            <span class="label">Generations at the machines</span>
+          </div>
+          <div>
+            <span class="num">5.0</span>
+            <span class="label">Rated by Staten Island customers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 10 Q 30 0, 60 10 T 120 10 T 180 10 T 240 10 T 300 10 T 360 10 T 420 10 T 480 10 T 540 10 T 600 10 T 660 10 T 720 10 T 780 10 T 840 10 T 900 10 T 960 10 T 1020 10 T 1080 10 T 1140 10 T 1200 10" fill="none" stroke="#D9714E" stroke-width="1.5"/></svg>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services, priced by the garment</h2>
+        <p>Every piece is different, so every quote is given in person after a look and a measurement. Call ahead for bridal season, it books up fast.</p>
+      </div>
+      <div class="ledger">
+        <div class="ledger-row">
+          <div class="svc-name">Men's &amp; Women's Alterations</div>
+          <div class="svc-desc">Hems, waist and length adjustments, taking in or letting out, zippers, linings, and general repairs for everyday clothing.</div>
+          <div class="svc-tag">Most Requested</div>
+        </div>
+        <div class="ledger-row">
+          <div class="svc-name">Bridal &amp; Wedding Party</div>
+          <div class="svc-desc">Gown fittings, bustles, straps, and sizing for the bride and the whole party, timed to your wedding date.</div>
+          <div class="svc-tag">Book Early</div>
+        </div>
+        <div class="ledger-row">
+          <div class="svc-name">Custom Tailoring</div>
+          <div class="svc-desc">Suits, coats, and garments built or rebuilt to fit, with fabric selection and fittings done in the shop.</div>
+          <div class="svc-tag">By Appointment</div>
+        </div>
+        <div class="ledger-row">
+          <div class="svc-name">Leather &amp; Fur</div>
+          <div class="svc-desc">Resizing and repair for leather jackets, fur coats, and other specialty materials that most alteration shops turn away.</div>
+          <div class="svc-tag">Specialty</div>
+        </div>
+        <div class="ledger-row">
+          <div class="svc-name">Drapes &amp; Linens</div>
+          <div class="svc-desc">Hemming and fitting for curtains, drapes, tablecloths, and household linens, made to your window or table.</div>
+          <div class="svc-tag">Home</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    <img src="https://images.pexels.com/photos/5872/fashion-red-yellow-designer-5872.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Folds of colorful fabric ready for cutting">
+    <div class="banner-overlay">
+      <div class="banner-quote">
+        <p>"No muss no fuss, fair prices, lovely ladies."</p>
+        <span>Yelp Review</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="testimonials" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What neighbors say after a fitting</h2>
+      </div>
+      <div class="ticket-grid">
+        <div class="ticket">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">"Great place for alterations, reasonable prices."</p>
+          <span class="src">Yelp Review</span>
+        </div>
+        <div class="ticket">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">"Fixed my daughter's wedding gown, absolute great job."</p>
+          <span class="src">Yelp Review</span>
+        </div>
+        <div class="ticket">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="quote">"Very friendly, and they know exactly what they're doing."</p>
+          <span class="src">Yelp Review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 20" preserveAspectRatio="none"><path d="M0 10 Q 30 0, 60 10 T 120 10 T 180 10 T 240 10 T 300 10 T 360 10 T 420 10 T 480 10 T 540 10 T 600 10 T 660 10 T 720 10 T 780 10 T 840 10 T 900 10 T 960 10 T 1020 10 T 1080 10 T 1140 10 T 1200 10" fill="none" stroke="#6FA8A0" stroke-width="1.5"/></svg>
+  </div>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Visit the shop on Amboy Road</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="info-block">
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9714E" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="info-label">Address</div>
+              <div>6345 Amboy Rd, Staten Island, NY 10309</div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9714E" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <div class="info-label">Phone</div>
+              <div><a href="tel:+17185544226">(718) 554-4226</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9714E" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
+            <div>
+              <div class="info-label">Appointments</div>
+              <div>Recommended, especially for bridal fittings</div>
+            </div>
+          </div>
+        </div>
+        <div class="info-block">
+          <table class="hours-table">
+            <tr><td>Monday &ndash; Friday</td><td>9:00 AM &ndash; 3:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM &ndash; 1:00 PM</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Bring it in, we will make it fit</h2>
+      <p>Call ahead for bridal season or a fast turnaround, or just stop by the shop on Amboy Road during business hours.</p>
+      <a href="tel:+17185544226" class="btn btn-primary">(718) 554-4226</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="wordmark">L &amp; L <span>TAILORS</span></a>
+        <p>Custom tailoring and alterations in Staten Island, NY, run by a mother and daughter since 1980.</p>
+      </div>
+      <div>
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+17185544226">(718) 554-4226</a></li>
+          <li>6345 Amboy Rd</li>
+          <li>Staten Island, NY 10309</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 L &amp; L Tailors, Staten Island, NY</span>
+      <span>Site by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

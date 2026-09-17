@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Embroidery Shoppe | Custom Embroidery in Erie, PA</title>
+<meta name="description" content="Family owned custom embroidery shop in Erie, Pennsylvania since 1997. Logo embroidery, monogramming, team apparel, and patches on Cherry Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel:#2E5266;
+    --steel-dark:#1E3846;
+    --copper:#B87333;
+    --copper-btn:#8B5A28;
+    --copper-light:#CE8F55;
+    --fog:#EDEFF0;
+    --paper:#F8F6F2;
+    --charcoal:#26282B;
+    --line:#CBD3D6;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--fog);
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'IBM Plex Serif', Georgia, serif;
+    font-weight:600;
+    margin:0 0 .5em 0;
+    color:var(--steel-dark);
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:.04em;
+  }
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--copper);
+    outline-offset:3px;
+  }
+
+  /* ---------- stitched divider (signature element) ---------- */
+  .stitch-divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    margin:0 auto;
+    padding:0;
+  }
+  .stitch-divider .line{
+    flex:1 1 auto;
+    height:0;
+    border-top:2px dashed var(--steel);
+    opacity:.55;
+  }
+  .stitch-divider .dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--copper);
+    flex:0 0 auto;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .wordmark{
+    font-family:'IBM Plex Serif', serif;
+    font-weight:700;
+    font-size:1.28rem;
+    letter-spacing:.02em;
+    color:var(--steel-dark);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .wordmark span{color:var(--copper);}
+  nav.primary-nav{display:flex;align-items:center;gap:34px;}
+  nav.primary-nav a{
+    text-decoration:none;
+    color:var(--charcoal);
+    font-size:.98rem;
+    font-weight:500;
+    padding:4px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--copper);}
+  .nav-cta{
+    background:var(--steel);
+    color:#fff !important;
+    padding:10px 18px !important;
+    border-radius:2px;
+    border-bottom:none !important;
+  }
+  .nav-cta:hover{background:var(--steel-dark);border-bottom:none !important;}
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:40px;
+    height:40px;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:2px;
+    cursor:pointer;
+  }
+  .hamburger span{
+    display:block;
+    height:2px;
+    width:20px;
+    margin:0 auto;
+    background:var(--steel-dark);
+  }
+
+  .mobile-menu{
+    display:none;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{display:block;}
+  .mobile-menu a{
+    display:block;
+    padding:14px 28px;
+    text-decoration:none;
+    color:var(--charcoal);
+    border-bottom:1px solid var(--line);
+    font-size:1rem;
+  }
+  .mobile-menu a:last-child{border-bottom:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--paper);
+    padding:64px 0 48px 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:center;
+    padding-bottom:56px;
+  }
+  .ticket-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--fog);
+    border:1px solid var(--line);
+    color:var(--steel-dark);
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    margin-bottom:22px;
+  }
+  .ticket-tag .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--copper);
+  }
+  .hero h1{
+    font-size:2.6rem;
+    line-height:1.15;
+    max-width:14ch;
+  }
+  .hero .lede{
+    font-size:1.12rem;
+    max-width:46ch;
+    color:#3c3f42;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:28px;
+  }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    font-weight:600;
+    font-size:.98rem;
+    padding:13px 24px;
+    border-radius:2px;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--copper-btn);color:#fff;}
+  .btn-primary:hover{background:#6f4620;}
+  .btn-secondary{background:transparent;color:var(--steel-dark);border-color:var(--steel-dark);}
+  .btn-secondary:hover{background:var(--steel-dark);color:#fff;}
+
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .hero-photo figcaption{
+    margin-top:8px;
+    font-size:.78rem;
+    color:#5b5f63;
+  }
+
+  .hero .stitch-divider{padding:0 28px;max-width:var(--max);margin:0 auto;}
+
+  /* ---------- services / spec rail ---------- */
+  .services{
+    padding:64px 0;
+  }
+  .services-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:56px;
+    align-items:start;
+  }
+  .services-intro h2{font-size:1.9rem;max-width:12ch;}
+  .services-intro p{max-width:38ch;color:#3c3f42;}
+
+  .spec-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+  .spec-item{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:22px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+  }
+  .spec-item .code{
+    font-size:.78rem;
+    color:var(--steel);
+    font-weight:600;
+    padding-top:3px;
+  }
+  .spec-item h3{
+    font-size:1.15rem;
+    margin-bottom:.3em;
+    color:var(--charcoal);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+  .spec-item p{margin:0;color:#4a4d50;font-size:.96rem;max-width:48ch;}
+
+  /* ---------- about / split ---------- */
+  .about{
+    background:var(--paper);
+    padding:64px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-photo img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .about-copy h2{font-size:1.9rem;}
+  .about-copy p{color:#3c3f42;max-width:52ch;}
+  .about-stats{
+    display:flex;
+    gap:34px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .about-stats div{border-left:2px solid var(--copper);padding-left:14px;}
+  .about-stats .num{
+    font-family:'IBM Plex Serif', serif;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--steel-dark);
+    display:block;
+    line-height:1.1;
+  }
+  .about-stats .label{
+    font-size:.8rem;
+    color:#54585b;
+  }
+
+  /* ---------- contact ticket band ---------- */
+  .contact{
+    padding:64px 0;
+  }
+  .ticket{
+    background:var(--paper);
+    border:1px solid var(--line);
+    position:relative;
+    padding:40px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+  }
+  .ticket::before,
+  .ticket::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:0;
+    border-left:2px dashed var(--line);
+  }
+  .ticket::before{left:62%;}
+  .ticket::after{display:none;}
+  .ticket-main h2{font-size:1.8rem;max-width:16ch;}
+  .ticket-main p{color:#3c3f42;max-width:44ch;}
+  .ticket-details{padding-left:40px;}
+  .ticket-details dl{margin:0;}
+  .ticket-details dt{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--steel);
+    font-weight:600;
+    margin-top:18px;
+  }
+  .ticket-details dt:first-child{margin-top:0;}
+  .ticket-details dd{
+    margin:4px 0 0 0;
+    font-size:1rem;
+    color:var(--charcoal);
+  }
+  .ticket-details a{text-decoration:none;color:var(--charcoal);}
+  .ticket-details a:hover{color:var(--copper);}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--steel-dark);
+    color:var(--fog);
+    padding:46px 0 30px 0;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:28px;
+    padding-bottom:26px;
+    border-bottom:1px solid rgba(237,239,240,.18);
+  }
+  footer .wordmark{color:#fff;}
+  footer .wordmark span{color:var(--copper-light);}
+  .footer-addr{font-size:.92rem;color:var(--fog);line-height:1.7;}
+  .footer-addr a{color:var(--fog);text-decoration:none;}
+  .footer-addr a:hover{color:var(--copper-light);}
+  .footer-bottom{
+    padding-top:20px;
+    font-size:.82rem;
+    color:var(--fog);
+    opacity:.75;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1180px){
+    .hero h1{font-size:2.3rem;}
+  }
+
+  @media (max-width:1150px){
+    nav.primary-nav{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .hero-photo img{height:280px;}
+    .services-grid{grid-template-columns:1fr;gap:30px;}
+    .about-grid{grid-template-columns:1fr;gap:30px;}
+    .about-grid .about-photo{order:-1;}
+    .ticket{grid-template-columns:1fr;padding:30px 24px;}
+    .ticket::before{display:none;}
+    .ticket-details{padding-left:0;border-top:1px dashed var(--line);padding-top:24px;margin-top:6px;}
+    .spec-item{grid-template-columns:110px 1fr;}
+  }
+
+  @media (max-width:560px){
+    .nav-row{padding:14px 20px;}
+    .wrap{padding:0 20px;}
+    .hero{padding-top:40px;}
+    .hero h1{font-size:1.9rem;max-width:none;}
+    .hero .stitch-divider{padding:0 20px;}
+    .services,.about,.contact{padding:44px 0;}
+    .spec-item{grid-template-columns:1fr;gap:6px;}
+    .footer-bottom{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="wordmark">THE EMBROIDERY <span>SHOPPE</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Hours &amp; Location</a>
+      <a href="tel:+18144546038" class="nav-cta">(814) 454-6038</a>
+    </nav>
+    <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Hours &amp; Location</a>
+    <a href="tel:+18144546038">Call (814) 454-6038</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="ticket-tag"><span class="dot"></span>Est. 1997, family owned</span>
+        <h1>Custom Embroidery in Erie, Pennsylvania</h1>
+        <p class="lede">On Cherry Street since 1997, The Embroidery Shoppe stitches logos, monograms, and team apparel for businesses, leagues, and neighbors across Erie.</p>
+        <div class="hero-actions">
+          <a href="tel:+18144546038" class="btn btn-primary">Call (814) 454-6038</a>
+          <a href="mailto:embshoppe@hotmail.com" class="btn btn-secondary">Email the Shoppe</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="https://images.pexels.com/photos/7523526/pexels-photo-7523526.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rows of colorful embroidery thread spools sorted by color">
+        <figcaption>Thread on hand at the shop, sorted and ready to stitch.</figcaption>
+      </figure>
+    </div>
+    <div class="stitch-divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap services-grid">
+      <div class="services-intro">
+        <h2>Work done in house, on Cherry Street</h2>
+        <p>Every order runs through the same shop the DeAngios opened in 1997. No outsourcing, no minimums that shut out a small order.</p>
+      </div>
+      <div class="spec-list">
+        <div class="spec-item">
+          <div class="code mono">LOGO WORK</div>
+          <div>
+            <h3>Logo embroidery</h3>
+            <p>Business logos stitched onto shirts, jackets, hats, and uniforms, matched to your existing artwork or colors.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <div class="code mono">MONOGRAM</div>
+          <div>
+            <h3>Monogramming</h3>
+            <p>Initials and names on towels, linens, robes, and gifts for weddings, babies, and everyday keepsakes.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <div class="code mono">TEAM GEAR</div>
+          <div>
+            <h3>Team &amp; corporate apparel</h3>
+            <p>Matching gear for leagues, staff, and company events, sized and stitched to order.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <div class="code mono">PATCH &amp; AWARD</div>
+          <div>
+            <h3>Patches &amp; award wear</h3>
+            <p>Custom patches, letterman jackets, and recognition pieces for clubs, schools, and organizations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap"><div class="stitch-divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <figure class="about-photo">
+        <img src="https://images.pexels.com/photos/6660957/pexels-photo-6660957.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Close-up of a sewing machine needle stitching leather fabric">
+      </figure>
+      <div class="about-copy">
+        <h2>Run by the DeAngios since 1997</h2>
+        <p>Gary and Annette DeAngio opened The Embroidery Shoppe on Cherry Street in 1997. Three decades later, the same machines still run in the same shop, turning out logo work for local businesses, monogrammed gifts for families, and matching gear for teams across Erie County.</p>
+        <p>Walk-ins are welcome Monday through Friday, and most orders are quoted the same day.</p>
+        <div class="about-stats">
+          <div><span class="num">1997</span><span class="label">Shop opened</span></div>
+          <div><span class="num">2</span><span class="label">Owners, one location</span></div>
+          <div><span class="num">5</span><span class="label">Days a week, walk-ins welcome</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="ticket">
+        <div class="ticket-main">
+          <h2>Stop by Cherry Street</h2>
+          <p>Bring in a shirt, a logo file, or just an idea. Most quotes are ready while you wait.</p>
+        </div>
+        <div class="ticket-details">
+          <dl>
+            <dt>Address</dt>
+            <dd>3018 Cherry St, Erie, PA 16508</dd>
+            <dt>Phone</dt>
+            <dd><a href="tel:+18144546038">(814) 454-6038</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:embshoppe@hotmail.com">embshoppe@hotmail.com</a></dd>
+            <dt>Hours</dt>
+            <dd>Monday to Friday, 9 AM to 5 PM<br>Closed Saturday and Sunday</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="#top" class="wordmark">THE EMBROIDERY <span>SHOPPE</span></a>
+      <div class="footer-addr">
+        3018 Cherry St, Erie, PA 16508<br>
+        <a href="tel:+18144546038">(814) 454-6038</a><br>
+        <a href="mailto:embshoppe@hotmail.com">embshoppe@hotmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Embroidery Shoppe</span>
+      <span>Monday to Friday, 9 AM to 5 PM</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

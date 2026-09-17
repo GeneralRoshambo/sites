@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Cleaners &amp; Tailors | Dry Cleaning and Alterations in Throggs Neck, Bronx</title>
+<meta name="description" content="Family-run dry cleaning and tailoring shop serving Throggs Neck, Bronx since 1964. Alterations, wedding gown fitting, fur and leather care, and same-week turnaround.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1F3D2B;
+    --green-deep:#16301F;
+    --gold:#C9A227;
+    --cream:#F5F1E6;
+    --cream-2:#EDE6D3;
+    --brick:#8C3A2B;
+    --ink:#211E19;
+    --ink-soft:#4A453C;
+    --line:#D8CFB8;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;line-height:1.5;}
+  button, input, select, textarea{font:inherit;line-height:inherit;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Lora", Georgia, serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;}
+
+  .eyebrow{
+    font-family:"Oswald", sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.78rem;
+    font-weight:600;
+    color:var(--brick);
+  }
+
+  h1,h2,h3{
+    font-family:"Lora", Georgia, serif;
+    margin:0;
+    line-height:1.32;
+    color:var(--green-deep);
+    font-weight:600;
+  }
+
+  .underline-rule{
+    display:inline-block;
+    width:86px;
+    height:3px;
+    background:var(--gold);
+    margin-top:18px;
+    border:none;
+  }
+
+  p{line-height:1.7;color:var(--ink-soft);}
+
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  :focus-visible{
+    outline:3px solid var(--brick);
+    outline-offset:3px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 28px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .wordmark{
+    font-family:"Oswald", sans-serif;
+    font-weight:700;
+    font-size:1.28rem;
+    line-height:1.35;
+    letter-spacing:0.02em;
+    color:var(--green-deep);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .wordmark span{color:var(--brick);}
+
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap:34px;
+  }
+  nav.primary-nav a{
+    font-family:"Oswald", sans-serif;
+    font-size:0.86rem;
+    font-weight:500;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink);
+    padding:4px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom:2px solid var(--gold);}
+
+  .call-pill{
+    font-family:"Oswald", sans-serif;
+    font-weight:600;
+    font-size:0.86rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    background:var(--green);
+    color:var(--cream);
+    padding:11px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .call-pill:hover{background:var(--green-deep);}
+
+  .hamburger-btn{
+    display:none;
+    background:none;
+    border:1px solid var(--green);
+    border-radius:2px;
+    padding:9px 11px;
+    cursor:pointer;
+  }
+  .hamburger-btn svg{display:block;width:20px;height:20px;}
+
+  /* mobile off-canvas menu: base rule OUTSIDE media query, per spec */
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:80;
+    background:var(--green-deep);
+    padding:26px 28px;
+  }
+  .mobile-menu.open{display:block;}
+  .mobile-menu-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+  }
+  .mobile-menu-top .wordmark{color:var(--cream);}
+  .mobile-menu-top .wordmark span{color:var(--gold);}
+  .mobile-close{
+    background:none;
+    border:1px solid var(--cream);
+    border-radius:2px;
+    padding:8px 10px;
+    cursor:pointer;
+  }
+  .mobile-close svg{width:18px;height:18px;display:block;}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:26px;}
+  .mobile-menu nav a{
+    font-family:"Oswald", sans-serif;
+    font-size:1.4rem;
+    line-height:1.4;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--cream);
+    text-decoration:none;
+  }
+  .mobile-menu .call-pill{
+    margin-top:30px;
+    display:inline-block;
+    background:var(--gold);
+    color:var(--green-deep);
+  }
+
+  /* ---------- Hero: straight two-pane split, no diagonals ---------- */
+  .hero{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    align-items:stretch;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .hero-copy{
+    padding:60px 28px 60px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.1rem, 3.6vw, 3.05rem);
+    line-height:1.3;
+    margin-top:14px;
+  }
+  .hero-copy p.lede{
+    margin-top:26px;
+    font-size:1.08rem;
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:"Oswald", sans-serif;
+    font-weight:600;
+    font-size:0.9rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:2px;
+    display:inline-block;
+  }
+  .btn-solid{background:var(--brick);color:var(--cream);}
+  .btn-solid:hover{background:#752E22;}
+  .btn-outline{border:1.5px solid var(--green);color:var(--green-deep);}
+  .btn-outline:hover{background:var(--green);color:var(--cream);}
+
+  .hero-photo{
+    position:relative;
+    padding:60px 28px 60px 0;
+    display:flex;
+    align-items:center;
+  }
+  .hero-photo-frame{
+    border:8px solid var(--cream);
+    outline:1px solid var(--line);
+    box-shadow:0 0 0 1px var(--line);
+    overflow:hidden;
+    width:100%;
+  }
+  .hero-photo-frame img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    object-position:center 22%;
+  }
+  .est-strip{
+    margin-top:14px;
+    border:1px solid var(--green);
+    padding:10px 16px;
+    font-family:"Oswald", sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.04em;
+    color:var(--green-deep);
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background:var(--cream-2);
+  }
+  .est-strip .dot{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block;}
+
+  /* ---------- Ledger fact strip ---------- */
+  .fact-strip{
+    background:var(--green);
+    color:var(--cream);
+  }
+  .fact-row{
+    display:flex;
+    max-width:1180px;
+    margin:0 auto;
+    padding:34px 28px;
+  }
+  .fact{
+    flex:1;
+    padding:0 24px;
+    border-left:1px solid rgba(245,241,230,0.25);
+    text-align:center;
+  }
+  .fact:first-child{border-left:none;}
+  .fact .num{
+    font-family:"Oswald", sans-serif;
+    font-size:2.1rem;
+    line-height:1.35;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .fact .label{
+    font-family:"Oswald", sans-serif;
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--cream);
+    opacity:0.85;
+    display:block;
+    margin-top:6px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.3;margin-top:12px;}
+  .section-head p{margin-top:16px;font-size:1.04rem;}
+
+  /* ---------- Ledger list (services) ---------- */
+  .ledger-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 60px;
+  }
+  .ledger-row{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-row .item-name{
+    font-family:"Lora", serif;
+    font-weight:600;
+    font-size:1.08rem;
+    color:var(--green-deep);
+  }
+  .ledger-row .item-desc{
+    margin-top:6px;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    max-width:44ch;
+  }
+
+  /* ---------- Specialty panel ---------- */
+  .specialty{background:var(--cream-2);}
+  .specialty-grid{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:56px;
+    align-items:center;
+  }
+  .specialty-photo{
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .specialty-photo img{width:100%;height:380px;object-fit:cover;}
+  .specialty-panel{
+    border:1.5px solid var(--brick);
+    padding:34px;
+    background:var(--cream);
+  }
+  .specialty-panel h2{font-size:1.6rem;line-height:1.3;}
+  .specialty-list{
+    list-style:none;
+    margin:22px 0 0 0;
+    padding:0;
+  }
+  .specialty-list li{
+    display:flex;
+    gap:14px;
+    padding:13px 0;
+    border-top:1px dotted var(--line);
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  .specialty-list li:first-child{border-top:none;}
+  .specialty-list svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--brick);}
+
+  /* ---------- About / owner ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-photo{border:1px solid var(--line);overflow:hidden;}
+  .about-photo img{width:100%;height:440px;object-fit:cover;object-position:center 20%;}
+  .about-copy h2{font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.3;margin-top:12px;}
+  .about-copy p{margin-top:18px;font-size:1.02rem;}
+  .signature-line{
+    margin-top:26px;
+    font-family:"Oswald", sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--green-deep);
+  }
+
+  /* ---------- Reviews strip ---------- */
+  .review-block{
+    background:var(--cream);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .review-inner{
+    max-width:760px;
+    margin:0 auto;
+    padding:70px 28px;
+    text-align:center;
+  }
+  .review-inner p.quote{
+    font-size:1.35rem;
+    font-style:italic;
+    color:var(--green-deep);
+    line-height:1.6;
+  }
+  .review-inner .attrib{
+    margin-top:18px;
+    font-family:"Oswald", sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- CTA band (signature, thick, brick) ---------- */
+  .cta-band{
+    background:var(--brick);
+    color:var(--cream);
+    padding:70px 0;
+  }
+  .cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+  .cta-inner h2{color:var(--cream);font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.3;}
+  .cta-inner .underline-rule{background:var(--gold);}
+  .cta-inner p{color:#EFD9CF;margin-top:14px;max-width:46ch;}
+  .cta-band .btn-solid{background:var(--gold);color:var(--green-deep);}
+  .cta-band .btn-solid:hover{background:#E0B92E;}
+
+  /* ---------- Footer (deep green) ---------- */
+  footer{
+    background:var(--green-deep);
+    color:var(--cream);
+    padding:56px 0 26px 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:40px;
+  }
+  footer h3{
+    color:var(--cream);
+    font-family:"Oswald", sans-serif;
+    font-size:0.85rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  footer .wordmark{color:var(--cream);}
+  footer .wordmark span{color:var(--gold);}
+  footer p{color:#C9C2AE;font-size:0.95rem;}
+  .footer-contact{list-style:none;margin:0;padding:0;}
+  .footer-contact li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:8px 0;
+    font-size:0.95rem;
+    color:#DCD6C4;
+  }
+  .footer-contact svg{flex:none;width:17px;height:17px;margin-top:3px;color:var(--gold);}
+  .footer-contact a{text-decoration:none;color:#DCD6C4;}
+  .footer-contact a:hover{color:var(--cream);}
+  .hours-list{list-style:none;margin:0;padding:0;}
+  .hours-list li{
+    display:flex;
+    justify-content:space-between;
+    padding:7px 0;
+    font-size:0.92rem;
+    color:#DCD6C4;
+    border-bottom:1px solid rgba(245,241,230,0.1);
+  }
+  .footer-bottom{
+    margin-top:44px;
+    padding-top:22px;
+    border-top:1px solid rgba(245,241,230,0.15);
+    font-size:0.82rem;
+    color:#9A927B;
+    text-align:center;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1150px){
+    nav.primary-nav, .nav-row .call-pill{display:none;}
+    .hamburger-btn{display:inline-flex;align-items:center;justify-content:center;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{padding:0 28px 40px 28px;order:-1;}
+    .hero-photo-frame img{height:280px;}
+    .hero-copy{padding:44px 28px 40px 28px;}
+    .fact-row{flex-direction:column;gap:22px;}
+    .fact{border-left:none;padding:18px 16px 0 16px;border-top:1px solid rgba(245,241,230,0.2);}
+    .fact:first-child{border-top:none;padding-top:0;}
+    .ledger-wrap{grid-template-columns:1fr;}
+    .specialty-grid{grid-template-columns:1fr;}
+    .specialty-photo img{height:260px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo{order:-1;}
+    .about-photo img{height:280px;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+    .footer-grid{grid-template-columns:1fr;gap:34px;}
+  }
+
+  @media (max-width:520px){
+    .nav-row{padding:14px 18px;}
+    .container{padding:0 18px;}
+    section{padding:60px 0;}
+    .hero-copy{padding:36px 18px 32px 18px;}
+    .hero-photo{padding:0 18px 32px 18px;}
+    .specialty-panel{padding:24px;}
+    .cta-band{padding:50px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="wordmark">AMERICAN <span>CLEANERS</span> &amp; TAILORS</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#specialty">Specialty Work</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a href="tel:+17185973040" class="call-pill">Call (718) 597-3040</a>
+    <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" onclick="document.getElementById('mobileMenu').classList.add('open');this.setAttribute('aria-expanded','true');">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="#top" class="wordmark">AMERICAN <span>CLEANERS</span></a>
+    <button class="mobile-close" aria-label="Close menu" onclick="document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.hamburger-btn').setAttribute('aria-expanded','false');">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+    <a href="#specialty" onclick="document.getElementById('mobileMenu').classList.remove('open')">Specialty Work</a>
+    <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">Our Story</a>
+    <a href="#visit" onclick="document.getElementById('mobileMenu').classList.remove('open')">Visit Us</a>
+  </nav>
+  <a href="tel:+17185973040" class="btn call-pill">Call (718) 597-3040</a>
+</div>
+
+<main id="top">
+
+  <section class="hero" style="padding:16px 0;">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Dry Cleaning and Alterations in Throggs Neck, Bronx</h1>
+        <span class="underline-rule"></span>
+        <p class="lede">Three generations of the Zeppieri family have pressed, mended, and altered clothes for this neighborhood from the same storefront on East Tremont Avenue. Wedding gowns get the same care as a Monday morning shirt.</p>
+        <div class="hero-actions">
+          <a href="tel:+17185973040" class="btn btn-solid">Call the Shop</a>
+          <a href="#services" class="btn btn-outline">See What We Handle</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div>
+          <div class="hero-photo-frame">
+            <img src="https://images.pexels.com/photos/6765658/pexels-photo-6765658.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A tailor taking measurements for a fitting">
+          </div>
+          <div class="est-strip"><span class="dot"></span>Est. 1964 &nbsp;&middot;&nbsp; Throggs Neck, Bronx</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fact-strip">
+    <div class="fact-row">
+      <div class="fact">
+        <span class="num">62</span>
+        <span class="label">Years on Tremont Ave</span>
+      </div>
+      <div class="fact">
+        <span class="num">3</span>
+        <span class="label">Generations of the Family</span>
+      </div>
+      <div class="fact">
+        <span class="num">0</span>
+        <span class="label">Jobs Sent Out to Other Shops</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we handle: everyday cleaning and real tailoring</h2>
+        <p>Every piece that comes through the door gets cleaned, pressed, or altered by hand, then checked before it goes back on the hanger.</p>
+      </div>
+      <div class="ledger-wrap">
+        <div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">Dry &amp; Wet Cleaning</div>
+              <div class="item-desc">Suits, coats, everyday wear, and delicates cleaned and pressed with care matched to the fabric.</div>
+            </div>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">Wedding &amp; Beaded Gowns</div>
+              <div class="item-desc">Gowns and beaded dresses cleaned and preserved without stripping the detail work.</div>
+            </div>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">Alterations &amp; Resizing</div>
+              <div class="item-desc">Hems, waists, and custom resizing on everyday clothes and designer pieces alike.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">Leather &amp; Suede Care</div>
+              <div class="item-desc">Cleaning and minor repair for leather and suede jackets, bags, and garments.</div>
+            </div>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">In-Home Pickup</div>
+              <div class="item-desc">Rugs and drapes picked up from your home when they are too large to bring in.</div>
+            </div>
+          </div>
+          <div class="ledger-row">
+            <div>
+              <div class="item-name">Serving Throggs Neck and Beyond</div>
+              <div class="item-desc">Walk-ins welcome on Tremont Avenue, with service that has grown into Westchester County and Connecticut.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="specialty" class="specialty">
+    <div class="container">
+      <div class="specialty-grid">
+        <div class="specialty-photo">
+          <img src="https://images.pexels.com/photos/102129/pexels-photo-102129.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Freshly pressed shirts hanging in a row on a rack">
+        </div>
+        <div class="specialty-panel">
+          <h2>Jobs most shops turn away</h2>
+          <p>Fifty years in the same storefront means this shop has taken on work that a standard cleaner will not touch.</p>
+          <ul class="specialty-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-1 3-4 4-4 8a4 4 0 0 0 8 0c0-2-1-3-1-3s0 2-1.5 2.5C14.5 8 14 6 12 3z"/></svg>
+              <span>Fire and smoke restoration for clothing and household textiles</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9h18M9 9v10"/></svg>
+              <span>Careful cleaning for artwork and fine textiles</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4h12v6a6 6 0 0 1-12 0V4z"/><path d="M6 4v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4"/></svg>
+              <span>Fur and leather care alongside standard garments</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l6-6M14 4l6 6-8 8-6-6 8-8z"/></svg>
+              <span>Military patch and uniform work</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="https://images.pexels.com/photos/6766353/pexels-photo-6766353.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A tailor with a measuring tape around his neck">
+        </div>
+        <div class="about-copy">
+          <h2>Run by the family that started it</h2>
+          <span class="underline-rule"></span>
+          <p>Vincent Zeppieri Sr. opened the shop's doors in 1964, back when the sign out front still read One Hour Martinizing. His son Vincent Jr. grew up in the back of the store and now runs it the same way his father did: measure twice, press once, and know the customer's name.</p>
+          <p>That kind of continuity is rare on Tremont Avenue. The shop has stayed in the same family, in the same storefront, through six decades of Throggs Neck.</p>
+          <p class="signature-line">Vincent Zeppieri, Owner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="review-block">
+    <div class="review-inner">
+      <p class="quote">"They've been pressing my husband's suits for twenty years. Same family, same care, every single time."</p>
+      <p class="attrib">Longtime Customer, Throggs Neck</p>
+    </div>
+  </div>
+
+  <div class="cta-band" id="visit">
+    <div class="container cta-inner">
+      <div>
+        <h2>Bring your garments in, or call ahead</h2>
+        <span class="underline-rule"></span>
+        <p>Walk-ins are always welcome. For fittings, restorations, or pickup service, call the shop and the family will take it from there.</p>
+      </div>
+      <a href="tel:+17185973040" class="btn btn-solid">Call (718) 597-3040</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a href="#top" class="wordmark">AMERICAN <span>CLEANERS</span> &amp; TAILORS</a>
+      <p style="margin-top:16px;max-width:32ch;">Family owned and operated in Throggs Neck, Bronx since 1964.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul class="footer-contact">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.1-7-11.2A7 7 0 0 1 19 9.8C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+          <span>3727 East Tremont Ave<br>Bronx, NY 10465</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1c1 3 3 5 6 6l1-2 5 2v2c0 1-1 2-2 2C10 19 4 13 4 5z"/></svg>
+          <a href="tel:+17185973040">(718) 597-3040</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+          <a href="mailto:americancleanersbronx@gmail.com">americancleanersbronx@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <ul class="hours-list">
+        <li><span>Monday &ndash; Saturday</span><span>6:30a &ndash; 6:30p</span></li>
+        <li><span>Sunday</span><span>Closed</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">American Cleaners &amp; Tailors, Throggs Neck, Bronx. Site built by Modularity Networks.</div>
+</footer>
+
+</body>
+</html>

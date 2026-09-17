@@ -1158,9 +1158,9 @@
   },
   {
     "slug": "diplomat-cafe-goshen",
-    "name": "Diplomat Caf\u00e9 & Bakery",
+    "name": "Diplomat Café & Bakery",
     "location": "Goshen, NY",
-    "category": "European Caf\u00e9 & Bakery",
+    "category": "European Café & Bakery",
     "region": "HudsonValley",
     "added": "2026-08-07"
   },
@@ -1269,6 +1269,78 @@
     "location": "Ozone Park, Queens",
     "category": "Pet Grooming",
     "region": "Queens",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "mg-shoe-repair",
+    "name": "M & G Shoe Repair & Alterations Corp",
+    "location": "Chelsea, Manhattan, NY",
+    "category": "Shoe Repair",
+    "region": "Manhattan",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "brenmans-prime-meat-market",
+    "name": "Brenman's Prime Meat Market",
+    "location": "Gerritsen Beach, Brooklyn, NY",
+    "category": "Butcher Shop",
+    "region": "Brooklyn",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "divine-botanica-spiritual-store",
+    "name": "Divine Botanica & Spiritual Store",
+    "location": "South Richmond Hill, Queens, NY",
+    "category": "Botanica",
+    "region": "Queens",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "american-cleaners-tailors",
+    "name": "American Cleaners & Tailors",
+    "location": "Throggs Neck, Bronx, NY",
+    "category": "Dry Cleaning & Tailoring",
+    "region": "Bronx",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "l-and-l-tailors",
+    "name": "L & L Tailors",
+    "location": "Staten Island, NY",
+    "category": "Tailor",
+    "region": "StatenIsland",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "khlovans-thrift",
+    "name": "Khlovan's Thrift",
+    "location": "Scranton, PA",
+    "category": "Thrift Shop",
+    "region": "Scranton",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "wallflower-boutique",
+    "name": "Wallflower",
+    "location": "Honesdale, PA",
+    "category": "Boutique",
+    "region": "Wallenpaupack",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "milford-custom-upholstery",
+    "name": "Milford Custom Upholstery",
+    "location": "Shohola Falls, PA",
+    "category": "Upholstery",
+    "region": "DelawareValley",
+    "added": "2026-09-16"
+  },
+  {
+    "slug": "embroidery-shoppe-erie",
+    "name": "The Embroidery Shoppe",
+    "location": "Erie, PA",
+    "category": "Custom Embroidery",
+    "region": "Erie",
     "added": "2026-09-16"
   }
 ]

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Botanica &amp; Spiritual Store</title>
+<meta name="description" content="Botanica and spiritual supplies in Richmond Hill, Queens: candles, oils, cleansing baths, Puja items, statues and beads on Liberty Avenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0E6E6E;
+    --teal-deep:#0A5757;
+    --marigold:#E8A33D;
+    --off-white:#FAF6EE;
+    --plum:#3C1F3B;
+    --ink:#241A22;
+    --line:rgba(60,31,59,0.16);
+    --paper:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--off-white);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.wordmark,.eyebrow,.btn,nav a,.tag,.shelf-name,.hours-label{
+    font-family:'Poppins', 'Segoe UI', sans-serif;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  a:focus-visible,button:focus-visible,.btn:focus-visible{
+    outline:3px solid var(--marigold);
+    outline-offset:3px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--off-white);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;
+    max-width:1120px;margin:0 auto;
+    gap:16px;
+  }
+  .wordmark{
+    font-weight:800;
+    font-size:1.35rem;
+    letter-spacing:-0.01em;
+    color:var(--plum);
+    white-space:nowrap;
+    text-decoration:none;
+  }
+  .wordmark span{color:var(--teal);}
+  nav.primary-nav{display:flex;align-items:center;gap:32px;}
+  nav.primary-nav ul{
+    list-style:none;display:flex;gap:28px;margin:0;padding:0;
+  }
+  nav.primary-nav a{
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.96rem;
+    color:var(--ink);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--marigold);}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1.5px solid var(--teal);
+    color:var(--teal-deep);
+    font-weight:600;
+    font-size:0.92rem;
+    padding:9px 16px;
+    border-radius:2px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:var(--teal);color:#fff;}
+  .hamburger{
+    display:none;
+    background:none;border:1.5px solid var(--plum);
+    border-radius:2px;
+    width:44px;height:40px;
+    align-items:center;justify-content:center;
+    cursor:pointer;
+  }
+  .hamburger span,.hamburger::before,.hamburger::after{
+    content:"";display:block;width:20px;height:2px;background:var(--plum);
+  }
+  .hamburger{flex-direction:column;gap:4px;}
+
+  .mobile-menu{
+    display:none;
+    background:var(--off-white);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{display:block;}
+  .mobile-menu ul{list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px;}
+  .mobile-menu a{
+    display:block;padding:12px 4px;text-decoration:none;color:var(--ink);
+    font-weight:500;border-bottom:1px solid var(--line);font-size:1.02rem;
+  }
+  .mobile-menu .call-btn{margin-top:14px;width:max-content;}
+
+  /* ---------- woven stripe divider (signature element) ---------- */
+  .stripe-divider{
+    height:14px;
+    width:100%;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--teal) 0px, var(--teal) 10px,
+      var(--marigold) 10px, var(--marigold) 20px,
+      var(--plum) 20px, var(--plum) 30px,
+      var(--off-white) 30px, var(--off-white) 34px
+    );
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stripe-divider.thin{height:8px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 48px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  h1{
+    font-size:2.7rem;
+    line-height:1.12;
+    font-weight:800;
+    color:var(--plum);
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  .hero-sub{
+    font-size:1.12rem;
+    max-width:46ch;
+    color:#3a2c38;
+    margin:0 0 30px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:600;font-size:0.98rem;
+    padding:13px 22px;
+    border-radius:2px;
+    text-decoration:none;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--plum);color:var(--off-white);}
+  .btn-primary:hover{background:#2c1730;}
+  .btn-secondary{border-color:var(--plum);color:var(--plum);}
+  .btn-secondary:hover{background:var(--plum);color:var(--off-white);}
+
+  .hero-frame{
+    border:10px solid var(--paper);
+    outline:1px solid var(--line);
+    box-shadow:0 18px 40px -22px rgba(60,31,59,0.45);
+    background:var(--plum);
+  }
+  .hero-frame img{width:100%;height:420px;object-fit:cover;display:block;}
+
+  /* ---------- section shell ---------- */
+  section{padding:64px 0;}
+  .section-head{max-width:640px;margin:0 0 40px;}
+  h2{
+    font-size:2rem;color:var(--plum);margin:0 0 14px;font-weight:700;letter-spacing:-0.01em;
+  }
+  .section-lede{color:#3a2c38;font-size:1.05rem;margin:0;}
+
+  /* ---------- shelves (ledger directory layout) ---------- */
+  .shelves{background:var(--paper);}
+  .ledger{border-top:2px solid var(--plum);}
+  .shelf-row{
+    display:grid;
+    grid-template-columns:220px 1fr 140px;
+    gap:24px;
+    align-items:start;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .shelf-name{
+    font-weight:700;font-size:1.08rem;color:var(--plum);
+  }
+  .shelf-desc{color:#3a2c38;font-size:0.98rem;}
+  .tag{
+    justify-self:end;
+    font-size:0.74rem;font-weight:600;letter-spacing:0.05em;
+    color:var(--teal-deep);
+    background:rgba(14,110,110,0.09);
+    border:1px solid rgba(14,110,110,0.28);
+    padding:5px 10px;border-radius:2px;
+    white-space:nowrap;height:max-content;
+  }
+
+  /* ---------- intention / oils feature ---------- */
+  .feature{
+    background:var(--off-white);
+  }
+  .feature-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;
+  }
+  .feature-frame{
+    border:10px solid var(--paper);
+    outline:1px solid var(--line);
+    box-shadow:0 18px 40px -24px rgba(60,31,59,0.35);
+  }
+  .feature-frame img{width:100%;height:340px;object-fit:cover;}
+  .feature-copy h2{margin-bottom:16px;}
+  .feature-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px;}
+  .feature-list li{
+    display:flex;gap:12px;align-items:flex-start;color:#3a2c38;font-size:1rem;
+  }
+  .feature-list svg{flex-shrink:0;margin-top:4px;}
+
+  /* ---------- about / story ---------- */
+  .story{background:var(--paper);}
+  .story-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;
+  }
+  .story-copy p{color:#3a2c38;margin:0 0 16px;}
+  .story-copy p:last-child{margin-bottom:0;}
+  .story-quote{
+    font-style:italic;
+    color:var(--plum);
+    font-size:1.3rem;
+    margin:0;
+    font-family:'Source Serif 4',serif;
+  }
+  .story-quote::before{content:"\201C";color:var(--marigold);font-size:1.6em;line-height:0;vertical-align:-0.32em;margin-right:2px;}
+
+  /* ---------- visit (signboard) ---------- */
+  .visit{background:var(--off-white);}
+  .visit-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .visit-panel{padding:40px;}
+  .visit-panel.hours{border-left:1px solid var(--line);}
+  .visit-panel h3{
+    font-size:1.15rem;color:var(--plum);margin:0 0 20px;font-weight:700;
+  }
+  .contact-line{
+    display:flex;gap:12px;align-items:flex-start;margin:0 0 16px;color:#3a2c38;
+  }
+  .contact-line svg{flex-shrink:0;margin-top:3px;color:var(--teal-deep);}
+  .contact-line a{text-decoration:none;color:inherit;}
+  .contact-line a:hover{color:var(--teal-deep);}
+  table.hours-table{width:100%;border-collapse:collapse;font-family:'Poppins',sans-serif;font-size:0.95rem;}
+  table.hours-table td{padding:8px 0;border-bottom:1px solid var(--line);}
+  table.hours-table td:last-child{text-align:right;font-weight:600;color:var(--plum);}
+  table.hours-table tr:last-child td{border-bottom:none;}
+
+  /* ---------- footer (dark accent block) ---------- */
+  footer{
+    background:var(--plum);
+    color:var(--off-white);
+    padding:52px 0 30px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;
+    border-bottom:1px solid rgba(250,246,238,0.18);
+    padding-bottom:36px;margin-bottom:24px;
+  }
+  footer .wordmark{color:var(--off-white);}
+  footer .wordmark span{color:var(--marigold);}
+  .footer-tagline{color:rgba(250,246,238,0.75);margin:14px 0 0;max-width:32ch;font-size:0.96rem;}
+  .footer-col h4{
+    font-family:'Poppins',sans-serif;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--marigold);margin:0 0 14px;
+  }
+  .footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
+  .footer-col a{text-decoration:none;color:rgba(250,246,238,0.88);font-size:0.95rem;}
+  .footer-col a:hover{color:var(--marigold);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:0.85rem;color:rgba(250,246,238,0.6);
+    font-family:'Poppins',sans-serif;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1150px){
+    nav.primary-nav{display:none;}
+    .hamburger{display:flex;}
+  }
+  @media (min-width:1151px){
+    .mobile-menu{display:none !important;}
+  }
+  @media (max-width:900px){
+    .hero-grid,.feature-grid,.story-grid{grid-template-columns:1fr;}
+    .feature-grid .feature-frame{order:-1;}
+    .visit-grid{grid-template-columns:1fr;}
+    .visit-panel.hours{border-left:none;border-top:1px solid var(--line);}
+    .footer-grid{grid-template-columns:1fr;}
+    h1{font-size:2.15rem;}
+    .hero-frame img{height:300px;}
+  }
+  @media (max-width:600px){
+    .shelf-row{grid-template-columns:1fr;gap:8px;}
+    .tag{justify-self:start;}
+    .hero{padding:40px 0 32px;}
+    section{padding:44px 0;}
+    .header-inner{padding:14px 18px;}
+    .wrap{padding:0 18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="wordmark" href="#top">Divine<span> Botanica</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#shelves">Our Shelves</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+      <a class="call-btn" href="tel:+17188801858">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (718) 880-1858
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#shelves">Our Shelves</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#visit">Visit Us</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+17188801858">Call (718) 880-1858</a>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Botanica &amp; Spiritual Supplies in Richmond Hill, Queens</h1>
+      <p class="hero-sub">On Liberty Avenue since 2020: a neighborhood shelf of candles, oils, cleansing baths, Puja items, statues and beads, kept the way Liberty Avenue has always kept it, in person, by intention, and by name.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+17188801858">Call the shop</a>
+        <a class="btn btn-secondary" href="https://maps.google.com/?q=126-08+Liberty+Avenue+South+Richmond+Hill+NY+11419" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div class="hero-frame">
+      <img src="https://images.pexels.com/photos/13081588/pexels-photo-13081588.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Incense stick burning with a slow curl of smoke">
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider" role="presentation"></div>
+
+<section class="shelves" id="shelves">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What's on Our Shelves</h2>
+      <p class="section-lede">Everything is chosen for a purpose, whether that's a house blessing, a new business, or a bath before a hard week. Ask at the counter and we'll point you to the right shelf.</p>
+    </div>
+    <div class="ledger">
+      <div class="shelf-row">
+        <div class="shelf-name">Candles &amp; Oils</div>
+        <div class="shelf-desc">Novena and seven day candles, anointing and dressing oils for love, luck, protection and money, sold individually or as a set.</div>
+        <div class="tag">Best seller</div>
+      </div>
+      <div class="shelf-row">
+        <div class="shelf-name">Cleansing Baths &amp; Washes</div>
+        <div class="shelf-desc">Floor washes and spiritual baths for the home or the body, made for clearing a space before you start something new.</div>
+        <div class="tag">Made to order</div>
+      </div>
+      <div class="shelf-row">
+        <div class="shelf-name">Statues &amp; Puja Items</div>
+        <div class="shelf-desc">Deities, saints, brass diyas, incense and full Puja thalis kept in stock for weekly worship and festival days.</div>
+        <div class="tag">Deep stock</div>
+      </div>
+      <div class="shelf-row">
+        <div class="shelf-name">Beads, Malas &amp; Jewelry</div>
+        <div class="shelf-desc">Rudraksha and tulsi malas, protective beads and everyday spiritual jewelry, strung and sized in store.</div>
+        <div class="tag">Custom sizing</div>
+      </div>
+      <div class="shelf-row">
+        <div class="shelf-name">Home &amp; Business Blessings</div>
+        <div class="shelf-desc">Cleansing kits and guidance for blessing a new apartment, storefront or office on Liberty Avenue and beyond.</div>
+        <div class="tag">Ask in store</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider thin" role="presentation"></div>
+
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div class="feature-frame">
+      <img src="https://images.pexels.com/photos/6693886/pexels-photo-6693886.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Row of amber glass oil bottles on a counter">
+    </div>
+    <div class="feature-copy">
+      <h2>Oils and Baths Mixed for What You're Carrying That Week</h2>
+      <p class="section-lede">Come in with what you need, not a brand name. We'll talk through it at the counter and send you home with the right oil, candle and bath to match.</p>
+      <ul class="feature-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E6E6E" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Protection and cleansing oils for a new home or storefront
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E6E6E" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Love, luck and money candles dressed while you wait
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E6E6E" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          Puja sets built to order for festival days and weekly worship
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider" role="presentation"></div>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <h2>Our Story on Liberty Avenue</h2>
+    </div>
+    <div class="story-copy">
+      <p>Divine Botanica &amp; Spiritual Store has been part of the Liberty Avenue corridor in South Richmond Hill since 2020, stocking the candles, oils, statues and Puja goods that the neighborhood's Guyanese, Indo-Caribbean and South Asian families have always shopped for close to home.</p>
+      <p>It's a walk-in shop first. Regulars come by for a specific candle or a bath before a big week, and leave with a little more guidance than they came in for.</p>
+      <p class="story-quote">Come in with what you're dealing with. We'll help you find the right shelf.</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-divider thin" role="presentation"></div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Find Us on Liberty Avenue</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-panel">
+        <h3>Contact &amp; location</h3>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>126-08 Liberty Avenue<br>South Richmond Hill, Queens, NY 11419</span>
+        </p>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+17188801858">(718) 880-1858</a>
+        </p>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span>Walk in any day we're open, no appointment needed</span>
+        </p>
+        <a class="btn btn-secondary" style="margin-top:8px;" href="https://maps.google.com/?q=126-08+Liberty+Avenue+South+Richmond+Hill+NY+11419" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div class="visit-panel hours">
+        <h3>Store hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Tuesday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Wednesday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Thursday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Friday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Saturday</td><td>9:00 am – 8:00 pm</td></tr>
+          <tr><td>Sunday</td><td>10:00 am – 7:00 pm</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="#top">Divine<span> Botanica</span></a>
+        <p class="footer-tagline">Botanica and spiritual supplies on Liberty Avenue in South Richmond Hill, Queens.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#shelves">Our Shelves</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17188801858">(718) 880-1858</a></li>
+          <li><a href="https://maps.google.com/?q=126-08+Liberty+Avenue+South+Richmond+Hill+NY+11419" target="_blank" rel="noopener">126-08 Liberty Avenue, South Richmond Hill, Queens, NY 11419</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Divine Botanica &amp; Spiritual Store</span>
+      <span>Site built by Modularity Networks</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

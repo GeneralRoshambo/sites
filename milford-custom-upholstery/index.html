@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milford Custom Upholstery | Custom Upholstery Serving Milford &amp; Shohola Falls, PA</title>
+<meta name="description" content="Custom furniture upholstery, fabric selection, and heavy duty sewing repairs serving Milford, Shohola Falls, Matamoras, and Dingmans Ferry, PA. By appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --slate:#3A5B72;
+    --moss:#5C6E4A;
+    --cream:#F5F0E6;
+    --rust:#A85536;
+    --bg:#FBF8F1;
+    --ink:#2C2A25;
+    --ink-soft:#5B5648;
+    --line:rgba(58,91,114,0.22);
+    --line-soft:rgba(44,42,37,0.14);
+    --paper:#FFFEFB;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Mulish', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0 0 1em;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  .tag:focus-visible{
+    outline:3px solid var(--rust);
+    outline-offset:3px;
+  }
+
+  /* ---------- Contour / stitch divider ---------- */
+  .contour{
+    width:100%;
+    height:26px;
+    display:block;
+  }
+  .contour path{
+    fill:none;
+    stroke:var(--slate);
+    stroke-width:1.4;
+    stroke-dasharray:1 9;
+    stroke-linecap:round;
+    opacity:0.55;
+  }
+  .contour.on-dark path{ stroke:var(--cream); opacity:0.5;}
+  .contour.moss path{ stroke:var(--moss); }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--bg);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .wordmark{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:1.32rem;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .wordmark em{
+    font-style:italic;
+    color:var(--rust);
+    font-weight:500;
+  }
+  nav.primary{
+    display:flex;
+    align-items:center;
+    gap:36px;
+  }
+  nav.primary a{
+    text-decoration:none;
+    font-size:0.97rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding:6px 2px;
+    border-bottom:1px solid transparent;
+  }
+  nav.primary a:hover{ color:var(--slate); border-bottom-color:var(--rust); }
+  .nav-call{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--slate);
+    color:var(--cream) !important;
+    padding:10px 18px;
+    border-radius:2px;
+    font-weight:700;
+    font-size:0.92rem;
+    text-decoration:none;
+    border-bottom:none !important;
+  }
+  .nav-call:hover{ background:#2e4a5e; }
+  .nav-call svg{ width:15px; height:15px; }
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:9px 11px;
+    cursor:pointer;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+    margin:4px 0;
+  }
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--bg);
+    border-bottom:1px solid var(--line-soft);
+    padding:8px 32px 22px;
+  }
+  .mobile-menu a{
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:600;
+    padding:12px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .mobile-menu.open{ display:flex; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:64px 0 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  h1{
+    font-size:2.85rem;
+    line-height:1.14;
+    letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  .hero-lede{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:30px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:14px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.96rem;
+    border:1px solid var(--slate);
+  }
+  .btn-primary{ background:var(--slate); color:var(--cream); }
+  .btn-primary:hover{ background:#2e4a5e; }
+  .btn-ghost{ background:transparent; color:var(--slate); }
+  .btn-ghost:hover{ background:rgba(58,91,114,0.08); }
+  .btn svg{ width:16px; height:16px; }
+
+  .hero-meta{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+  .hero-meta span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .hero-meta svg{ width:14px; height:14px; flex-shrink:0; color:var(--slate); }
+
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo .frame{
+    overflow:hidden;
+    border-radius:2px;
+    aspect-ratio:4/5;
+  }
+  .hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .swatch-tag{
+    position:absolute;
+    bottom:-22px;
+    left:-26px;
+    background:var(--paper);
+    border:1px solid var(--line-soft);
+    padding:14px 18px 14px 30px;
+    box-shadow:0 10px 24px -14px rgba(44,42,37,0.4);
+    max-width:220px;
+    transform:rotate(-3deg);
+  }
+  .swatch-tag .hole{
+    position:absolute;
+    left:12px;
+    top:14px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    border:1.5px solid var(--ink-soft);
+    background:var(--bg);
+  }
+  .swatch-tag p{
+    margin:0;
+    font-family:'Spectral', serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--ink);
+    line-height:1.35;
+  }
+  .swatch-tag span{
+    display:block;
+    margin-top:6px;
+    font-family:'Mulish',sans-serif;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--rust);
+  }
+
+  section{ padding:96px 0; }
+  .section-head{
+    max-width:640px;
+    margin:0 0 52px;
+  }
+  h2{
+    font-size:2.05rem;
+    line-height:1.2;
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    margin:0;
+  }
+
+  /* ---------- Services (swatch tags) ---------- */
+  .services{ background:var(--cream); }
+  .swatch-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+  }
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line-soft);
+    padding:30px 26px 26px;
+    position:relative;
+    border-radius:2px;
+  }
+  .service-card .hole{
+    position:absolute;
+    top:16px;
+    left:16px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    border:1.5px solid var(--ink-soft);
+    background:var(--cream);
+  }
+  .service-card h3{
+    font-size:1.14rem;
+    margin:14px 0 10px 10px;
+    line-height:1.3;
+  }
+  .service-card p{
+    font-size:0.94rem;
+    color:var(--ink-soft);
+    margin:0 0 0 10px;
+  }
+
+  /* ---------- About / craftsmanship ---------- */
+  .about{ background:var(--bg); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about-photo{
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; aspect-ratio:4/5;}
+  .pull-quote{
+    font-family:'Spectral', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.5rem;
+    line-height:1.45;
+    color:var(--slate);
+    margin:0 0 26px;
+  }
+  .about-copy p{
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+  .signature-line{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:1.02rem;
+    margin-top:22px;
+  }
+  .signature-line span{
+    display:block;
+    font-family:'Mulish', sans-serif;
+    font-weight:600;
+    font-size:0.84rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+
+  /* ---------- Process (order-ticket steps) ---------- */
+  .process{ background:var(--paper); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); }
+  .ticket-row{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+  }
+  .ticket{
+    padding:8px 26px;
+    border-right:1px dashed var(--line);
+    position:relative;
+  }
+  .ticket:first-child{ padding-left:0; }
+  .ticket:last-child{ border-right:none; }
+  .ticket .num{
+    font-family:'Spectral', serif;
+    font-style:italic;
+    font-size:2.1rem;
+    color:var(--rust);
+    display:block;
+    margin-bottom:10px;
+  }
+  .ticket h3{
+    font-size:1.05rem;
+    margin-bottom:8px;
+  }
+  .ticket p{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- Photo band ---------- */
+  .band{
+    position:relative;
+    height:340px;
+    overflow:hidden;
+  }
+  .band img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+  }
+  .band-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    background:linear-gradient(0deg, rgba(44,42,37,0.62), rgba(44,42,37,0));
+    padding:26px 32px 20px;
+    color:#fff;
+  }
+  .band-caption p{
+    margin:0;
+    max-width:640px;
+    font-size:0.98rem;
+  }
+  .band-caption strong{ font-family:'Spectral', serif; font-weight:600; font-style:italic; }
+
+  /* ---------- Service area ---------- */
+  .area{ background:var(--bg); }
+  .area-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .town-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    padding:0;
+    margin:0;
+    list-style:none;
+  }
+  .town-list li{
+    border:1px solid var(--line);
+    padding:9px 16px;
+    border-radius:2px;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--slate);
+    background:var(--paper);
+  }
+  .area-note{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+  }
+  .info-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .info-list .row{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:4px 0 20px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .info-list .row:last-child{ border-bottom:none; padding-bottom:4px; }
+  .info-list svg{ width:18px; height:18px; color:var(--rust); flex-shrink:0; margin-top:3px; }
+  .info-list .label{ font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); margin-bottom:3px; }
+  .info-list a{ text-decoration:none; color:var(--ink); font-weight:600; }
+  .info-list a:hover{ color:var(--slate); }
+
+  /* ---------- CTA / Footer ---------- */
+  footer{
+    background:var(--slate);
+    color:var(--cream);
+    padding-top:8px;
+  }
+  .footer-cta{
+    padding-top:76px;
+    padding-bottom:56px;
+    text-align:center;
+  }
+  .footer-cta h2{
+    color:var(--cream);
+    max-width:680px;
+    margin:0 auto 18px;
+  }
+  .footer-cta p{
+    color:rgba(245,240,230,0.78);
+    max-width:520px;
+    margin:0 auto 34px;
+    font-size:1.04rem;
+  }
+  .footer-ctas{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .footer-ctas .btn-primary{ background:var(--rust); border-color:var(--rust); }
+  .footer-ctas .btn-primary:hover{ background:#8f4429; }
+  .footer-ctas .btn-ghost{ color:var(--cream); border-color:rgba(245,240,230,0.5); }
+  .footer-ctas .btn-ghost:hover{ background:rgba(245,240,230,0.08); }
+
+  .footer-bottom{
+    border-top:1px solid rgba(245,240,230,0.18);
+    padding-top:26px;
+    padding-bottom:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:0.85rem;
+    color:rgba(245,240,230,0.65);
+  }
+  .footer-bottom .wordmark{ color:var(--cream); font-size:1.05rem; }
+  .footer-bottom .wordmark em{ color:var(--cream); font-style:italic; font-weight:500; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1180px){
+    .swatch-grid{ grid-template-columns:repeat(2,1fr); }
+    .ticket-row{ grid-template-columns:repeat(2,1fr); row-gap:34px; }
+    .ticket{ border-right:1px dashed var(--line); }
+    .ticket:nth-child(2n){ border-right:none; }
+  }
+
+  @media (max-width:1150px){
+    nav.primary{ display:none; }
+    .hamburger{ display:inline-flex; flex-direction:column; align-items:center; justify-content:center; }
+  }
+
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo{ order:-1; max-width:420px; margin:0 auto; }
+    .swatch-tag{ left:12px; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo{ max-width:420px; margin:0 auto; }
+    .area-grid{ grid-template-columns:1fr; gap:40px; }
+  }
+
+  @media (max-width:640px){
+    .wrap{ padding-left:20px; padding-right:20px; }
+    .nav-row{ padding:16px 20px; }
+    .mobile-menu{ padding:8px 20px 20px; }
+    .wordmark{ font-size:1.05rem; }
+    h1{ font-size:2.1rem; }
+    h2{ font-size:1.6rem; }
+    section{ padding:64px 0; }
+    .swatch-grid{ grid-template-columns:1fr; }
+    .ticket-row{ grid-template-columns:1fr; }
+    .ticket{ border-right:none !important; padding:8px 8px 22px; border-bottom:1px dashed var(--line); }
+    .ticket:last-child{ border-bottom:none; }
+    .hero-ctas .btn{ width:100%; justify-content:center; }
+    .footer-ctas .btn{ width:100%; justify-content:center; }
+    .swatch-tag{ position:static; transform:none; margin-top:16px; }
+    .band{ height:240px; }
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .btn, nav.primary a, .service-card{ transition:background-color .15s ease, color .15s ease, border-color .15s ease; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#top" class="wordmark">Milford <em>Custom Upholstery</em></a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#area">Service Area</a>
+      <a href="tel:5702962222" class="nav-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        570-296-2222
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="menuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#area">Service Area</a>
+    <a href="tel:5702962222">Call 570-296-2222</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Custom Upholstery Serving Milford &amp; Shohola Falls, PA</h1>
+        <p class="hero-lede">Chairs, sofas, and family pieces recovered by hand, one seam at a time. Debi De Giorgis works with homeowners across Pike County to choose fabric, rebuild what's worn, and make an old piece worth keeping again.</p>
+        <div class="hero-ctas">
+          <a href="mailto:milfordcustomupholstery@gmail.com" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+            Email a Photo for an Estimate
+          </a>
+          <a href="tel:5702962222" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            570-296-2222
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shohola Falls, PA, by appointment
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Consultations scheduled by phone or email
+          </span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="frame">
+          <img src="https://images.pexels.com/photos/19328080/pexels-photo-19328080.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A vintage armchair with floral upholstery fabric, the kind of piece brought back to life through custom reupholstery.">
+        </div>
+        <div class="swatch-tag">
+          <span class="hole"></span>
+          <p>"Every piece has a story. Our job is to help it tell it."</p>
+          <span>Debi De Giorgis, Owner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="contour" viewBox="0 0 1180 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 13 C 150 2, 250 24, 400 13 S 650 2, 800 13 S 1030 24, 1180 13"/>
+  </svg>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Ten kinds of work, one workroom</h2>
+        <p>From a single dining chair to a full living room suite, plus the sewing repairs that don't fit anywhere else.</p>
+      </div>
+      <div class="swatch-grid">
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>Chair &amp; Dining Seat Recovering</h3>
+          <p>New fabric, fresh padding, the same frame you already love.</p>
+        </div>
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>Foam Cushion Replacement</h3>
+          <p>Sagging cushions cut and fitted to your exact frame.</p>
+        </div>
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>In-Stock &amp; Special Order Fabric</h3>
+          <p>Ready bolts on hand, plus thousands of fabrics to special order.</p>
+        </div>
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>Wood Furniture Repair &amp; Refinishing</h3>
+          <p>Loose joints, worn finishes, and frames set right again.</p>
+        </div>
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>Curtains, Pillows &amp; Table Runners</h3>
+          <p>Home furnishings sewn to match your upholstery or stand on their own.</p>
+        </div>
+        <div class="service-card">
+          <span class="hole"></span>
+          <h3>Heavy Duty Sewing Repairs</h3>
+          <p>Zipper replacements, torn seams, and patches on leather jackets or uniforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="https://images.pexels.com/photos/7147840/pexels-photo-7147840.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hands sorting through fabric samples in a workroom, the kind of fabric selection Debi walks clients through in Shohola Falls.">
+      </div>
+      <div class="about-copy">
+        <h2>A small farm upbringing, a lifetime with a needle</h2>
+        <p class="pull-quote">"Debi is available to help customers choose fabrics and finishes to make their pieces perfect."</p>
+        <p>Debi De Giorgis was born and raised on a small farm in Orange County, NY, and has worked at just about every craft since, ceramics, cake decorating, and above all textiles and home furnishings. She has sewn since childhood, starting on her mother's antique treadle machines.</p>
+        <p>Milford Custom Upholstery is a one-woman workroom based in Shohola Falls, serving clients throughout Milford, Matamoras, Dingmans Ferry, and the rest of Pike County by appointment. Every project starts with a conversation about how a piece is used, not just how it looks.</p>
+        <div class="signature-line">
+          Debi De Giorgis
+          <span>Owner, Milford Custom Upholstery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="contour moss" viewBox="0 0 1180 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 13 C 180 22, 300 4, 460 13 S 700 22, 860 13 S 1050 4, 1180 13"/>
+  </svg>
+
+  <section class="process" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Four steps from worn to finished</h2>
+      </div>
+      <div class="ticket-row">
+        <div class="ticket">
+          <span class="num">1</span>
+          <h3>Consultation</h3>
+          <p>Send a photo by email or call to talk through the piece and what it needs.</p>
+        </div>
+        <div class="ticket">
+          <span class="num">2</span>
+          <h3>Fabric &amp; Finish</h3>
+          <p>Choose from in-stock bolts or order from thousands of special order fabrics.</p>
+        </div>
+        <div class="ticket">
+          <span class="num">3</span>
+          <h3>Rebuild</h3>
+          <p>Frame repairs, new foam, and hand upholstery in the Shohola Falls workroom.</p>
+        </div>
+        <div class="ticket">
+          <span class="num">4</span>
+          <h3>Delivery</h3>
+          <p>Your piece returns home, ready for another few decades of use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <img src="https://images.pexels.com/photos/31070325/pexels-photo-31070325.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A sewing machine needle stitching fabric, the heavy duty sewing repair work Milford Custom Upholstery does alongside full reupholstery.">
+    <div class="band-caption">
+      <p><strong>Heavy duty sewing repairs</strong> and zipper replacements, done alongside every reupholstery project or on their own.</p>
+    </div>
+  </div>
+
+  <section class="area" id="area">
+    <div class="wrap area-grid">
+      <div>
+        <h2>Working throughout Pike County</h2>
+        <p class="area-note">Milford Custom Upholstery is based in Shohola Falls and meets clients by appointment across the Delaware Valley.</p>
+        <ul class="town-list">
+          <li>Milford</li>
+          <li>Shohola Falls</li>
+          <li>Matamoras</li>
+          <li>Dingmans Ferry</li>
+          <li>Milford Township</li>
+          <li>Pike County, PA</li>
+        </ul>
+      </div>
+      <div class="info-list">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <a href="tel:5702962222">570-296-2222</a>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          <div>
+            <div class="label">Email</div>
+            <a href="mailto:milfordcustomupholstery@gmail.com">milfordcustomupholstery@gmail.com</a>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <div class="label">Hours</div>
+            <div>By appointment only</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <svg class="contour on-dark" viewBox="0 0 1180 26" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 13 C 150 2, 250 24, 400 13 S 650 2, 800 13 S 1030 24, 1180 13"/>
+  </svg>
+  <div class="wrap footer-cta">
+    <h2>Have a piece that needs a second life?</h2>
+    <p>Send a photo by email or call to talk through fabric, timing, and cost. Consultations are scheduled by appointment in Shohola Falls.</p>
+    <div class="footer-ctas">
+      <a href="mailto:milfordcustomupholstery@gmail.com" class="btn btn-primary">Email milfordcustomupholstery@gmail.com</a>
+      <a href="tel:5702962222" class="btn btn-ghost">Call 570-296-2222</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <a href="#top" class="wordmark">Milford <em>Custom Upholstery</em></a>
+    <div>Shohola Falls, PA, serving Milford, Matamoras &amp; Dingmans Ferry. By appointment only.</div>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', function(){
+    var isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
