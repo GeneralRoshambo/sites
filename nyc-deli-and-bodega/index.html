@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYC Deli &amp; Bodega | Corner Deli and Bodega in Bay Ridge, Brooklyn</title>
+<meta name="description" content="NYC Deli & Bodega is a corner deli and bodega serving Bay Ridge, Brooklyn with breakfast sandwiches, made to order subs, coffee and everyday essentials, open early to midnight seven days a week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deli-blue:#0B5FA8;
+    --deli-blue-deep:#093F72;
+    --cream:#FAF3E4;
+    --cream-dim:#F1E6CE;
+    --deli-red:#C8102E;
+    --brass:#B8903F;
+    --ink:#211D18;
+    --ink-soft:#4A4238;
+    --line:#DCCFAE;
+    --focus:#0B5FA8;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Libre Franklin', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+    color:var(--ink);
+  }
+  .mono{ font-family:'Space Mono', monospace; }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  .site-nav{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .brand{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:0.03em;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .brand span{ color:var(--deli-red); }
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  .nav-links a:hover{ color:var(--deli-blue); border-bottom-color:var(--deli-blue); }
+
+  .nav-cta{
+    background:var(--deli-blue);
+    color:var(--cream);
+    text-decoration:none;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--deli-blue-deep); }
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    width:44px;
+    height:40px;
+    padding:0;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+    margin:4px auto;
+  }
+
+  .mobile-menu{
+    display:none;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--deli-blue);
+    background-image:none;
+    color:var(--cream);
+    padding:76px 0 64px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.08;
+    margin-bottom:22px;
+  }
+  .hero p{
+    color:var(--cream);
+    opacity:0.92;
+    font-size:18px;
+    max-width:46ch;
+    margin:0 0 30px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    font-family:'Oswald', sans-serif;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    font-size:14px;
+    padding:14px 26px;
+    border-radius:3px;
+    border:2px solid transparent;
+  }
+  .btn-primary{
+    background:var(--deli-red);
+    color:var(--cream);
+  }
+  .btn-primary:hover{ background:#A50D25; }
+  .btn-ghost{
+    background:transparent;
+    color:var(--cream);
+    border-color:rgba(250,243,228,0.6);
+  }
+  .btn-ghost:hover{ border-color:var(--cream); background:rgba(250,243,228,0.08); }
+
+  .hero-photo{
+    border:6px solid var(--cream);
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 18px 34px rgba(9,26,44,0.28);
+  }
+  .hero-photo img{ width:100%; height:340px; object-fit:cover; }
+
+  /* ---------- MEANDER DIVIDER (signature element) ---------- */
+  .meander{
+    height:22px;
+    width:100%;
+    background-color:var(--cream);
+    background-image:
+      linear-gradient(var(--brass), var(--brass)),
+      linear-gradient(var(--brass), var(--brass));
+    background-repeat:repeat-x;
+    background-size:44px 6px, 6px 22px;
+    background-position:0 8px, 0 0;
+  }
+  .meander-band{
+    height:20px;
+    background-color:var(--deli-blue);
+    position:relative;
+    overflow:hidden;
+  }
+  .meander-band svg{
+    position:absolute;
+    top:0; left:0;
+    height:100%;
+    width:100%;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    padding:78px 0;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:52px;
+    align-items:start;
+  }
+  .about-photo{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .about-photo img{ width:100%; height:320px; object-fit:cover; }
+  .eyebrow-label{
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    color:var(--deli-blue);
+    margin-bottom:10px;
+  }
+  .about h2{
+    font-size:32px;
+    margin-bottom:20px;
+  }
+  .about p{
+    color:var(--ink-soft);
+    font-size:17px;
+    margin:0 0 16px;
+    max-width:56ch;
+  }
+  .about-stats{
+    display:flex;
+    gap:34px;
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .about-stat .num{
+    font-family:'Oswald', sans-serif;
+    font-size:26px;
+    color:var(--deli-blue);
+    display:block;
+  }
+  .about-stat .lbl{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- MENU BOARD (services) ---------- */
+  .board{
+    background:var(--cream-dim);
+    padding:78px 0 84px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .board-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:20px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .board-head h2{ font-size:32px; }
+  .board-head p{
+    color:var(--ink-soft);
+    margin:0;
+    max-width:40ch;
+    font-size:15.5px;
+  }
+  .board-list{
+    border-top:2px solid var(--ink);
+  }
+  .board-item{
+    display:grid;
+    grid-template-columns:1.4fr 2fr auto;
+    gap:24px;
+    align-items:center;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .board-item h3{
+    font-size:19px;
+    letter-spacing:0.01em;
+  }
+  .board-item p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .board-tag{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:var(--deli-blue);
+    border:1px solid var(--deli-blue);
+    padding:6px 12px;
+    border-radius:3px;
+    white-space:nowrap;
+    justify-self:end;
+  }
+
+  /* ---------- CONTACT / HOURS ---------- */
+  .contact{
+    padding:80px 0;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:52px;
+  }
+  .contact h2{ font-size:32px; margin-bottom:18px; }
+  .contact > .wrap > p{ color:var(--ink-soft); max-width:50ch; }
+  .info-list{
+    list-style:none;
+    margin:26px 0 0;
+    padding:0;
+  }
+  .info-list li{
+    display:flex;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    align-items:flex-start;
+  }
+  .info-list li:first-child{ padding-top:0; }
+  .info-list .ico{
+    width:20px;
+    height:20px;
+    flex-shrink:0;
+    margin-top:3px;
+    color:var(--deli-blue);
+  }
+  .info-list a{ text-decoration:none; font-weight:600; }
+  .info-list a:hover{ color:var(--deli-blue); }
+  .info-list .small{
+    display:block;
+    color:var(--ink-soft);
+    font-size:14px;
+    font-weight:400;
+    margin-top:2px;
+  }
+
+  .hours-card{
+    background:var(--cream-dim);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 32px 28px;
+  }
+  .hours-card h3{
+    font-size:18px;
+    margin-bottom:18px;
+  }
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+    font-family:'Space Mono', monospace;
+    font-size:14.5px;
+  }
+  .hours-row:last-child{ border-bottom:none; }
+  .hours-row .d{ color:var(--ink); font-weight:700; }
+  .hours-row .t{ color:var(--ink-soft); }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--deli-blue-deep);
+    color:#E7EEF7;
+    padding:46px 0 30px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .footer-brand{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:0.03em;
+    color:var(--cream);
+  }
+  .footer-brand span{ color:#F2C9CF; }
+  footer address{
+    font-style:normal;
+    margin-top:10px;
+    font-size:14.5px;
+    color:#C9D8E8;
+    line-height:1.8;
+  }
+  footer a{ text-decoration:none; color:#C9D8E8; }
+  footer a:hover{ color:var(--cream); }
+  .footer-credit{
+    margin-top:32px;
+    padding-top:20px;
+    border-top:1px solid rgba(231,238,247,0.18);
+    font-size:12.5px;
+    color:#9FB4CB;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1150px){
+    .nav-links{ display:none; }
+    .nav-cta{ display:none; }
+    .hamburger{ display:block; }
+    .mobile-menu.open{
+      display:flex;
+      flex-direction:column;
+      background:var(--cream);
+      border-bottom:1px solid var(--line);
+      padding:8px 28px 20px;
+      gap:2px;
+    }
+    .mobile-menu a{
+      text-decoration:none;
+      color:var(--ink);
+      font-family:'Oswald', sans-serif;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.03em;
+      font-size:15px;
+      padding:13px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .mobile-menu .nav-cta{
+      display:inline-block;
+      margin-top:12px;
+      text-align:center;
+    }
+  }
+
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-photo img{ height:260px; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo img{ height:240px; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .board-item{
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+    .board-tag{ justify-self:start; }
+  }
+
+  @media (max-width:560px){
+    .wrap{ padding:0 20px; }
+    .hero{ padding:52px 0 44px; }
+    .hero p{ font-size:16.5px; }
+    .about, .board, .contact{ padding:56px 0; }
+    .about-stats{ gap:22px; }
+    .footer-grid{ flex-direction:column; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">NYC DELI <span>&amp;</span> BODEGA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">What We Carry</a></li>
+      <li><a href="#contact">Hours &amp; Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+13475174075">Call the Store</a>
+    <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#menu">What We Carry</a>
+    <a href="#contact">Hours &amp; Contact</a>
+    <a class="nav-cta" href="tel:+13475174075">Call the Store</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Corner Deli and Bodega Serving Bay Ridge, Brooklyn</h1>
+      <p>Breakfast sandwiches, subs built to order, coffee and the everyday stuff you ran out of. Open at 7 (7:30 on Sunday) and going until midnight, seven days a week, on 3rd Avenue.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+13475174075">(347) 517-4075</a>
+        <a class="btn btn-ghost" href="#contact">Get Directions</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.pexels.com/photos/3989434/pexels-photo-3989434.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Corner store storefront lit up and open in the evening">
+    </div>
+  </div>
+</header>
+
+<div class="meander-band" aria-hidden="true">
+  <svg viewBox="0 0 200 20" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <pattern id="meanderPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 5 H10 V15 H15 V0" fill="none" stroke="#B8903F" stroke-width="3"/>
+    </pattern>
+    <rect width="200" height="20" fill="url(#meanderPattern)"/>
+  </svg>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="https://images.pexels.com/photos/6605340/pexels-photo-6605340.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sub sandwich prepared with fresh ingredients">
+    </div>
+    <div>
+      <p class="eyebrow-label">7005 3rd Avenue</p>
+      <h2>The Corner Stop Bay Ridge Runs On</h2>
+      <p>NYC Deli &amp; Bodega holds down the corner of 3rd Avenue from early morning until close to midnight, every day of the week. It is the kind of stop that covers a lot of ground: a bacon, egg and cheese on the way to the train, a sandwich stacked to order at lunch, milk or paper towels when the store run cannot wait, and a coffee whenever the block needs one.</p>
+      <p>Behind the counter it runs the way a good neighborhood deli should, quick, familiar, and open long past when most other options have closed for the night.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="num">17 HRS</span>
+          <span class="lbl">Open Most Days</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">7</span>
+          <span class="lbl">Days a Week</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">3rd AVE</span>
+          <span class="lbl">Bay Ridge, Brooklyn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="board" id="menu">
+  <div class="wrap">
+    <div class="board-head">
+      <h2>What We Carry</h2>
+      <p>The counter, the case, and the shelves, all in one stop.</p>
+    </div>
+    <div class="board-list">
+      <div class="board-item">
+        <h3>Breakfast Sandwiches</h3>
+        <p>Bacon, egg and cheese, or build your own on a roll, hero, or bagel.</p>
+        <span class="board-tag">FROM 7AM</span>
+      </div>
+      <div class="board-item">
+        <h3>Made to Order Subs &amp; Sandwiches</h3>
+        <p>Cold cuts, hot pressed, and classic deli combinations, stacked at the counter while you wait.</p>
+        <span class="board-tag">ALL DAY</span>
+      </div>
+      <div class="board-item">
+        <h3>Coffee &amp; Fountain Drinks</h3>
+        <p>Regular or iced coffee, plus the soda, juice, and water case.</p>
+        <span class="board-tag">ALL DAY</span>
+      </div>
+      <div class="board-item">
+        <h3>Grocery &amp; Convenience</h3>
+        <p>Milk, snacks, household basics, and the essentials for a quick stop in.</p>
+        <span class="board-tag">7AM&ndash;MIDNIGHT</span>
+      </div>
+      <div class="board-item">
+        <h3>Delivery &amp; Pickup</h3>
+        <p>Order ahead through a delivery app, or call it in and grab it at the counter.</p>
+        <span class="board-tag">TAKEOUT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Hours &amp; Contact</h2>
+    <p>Find us on 3rd Avenue in Bay Ridge. Call ahead, stop by, or say hello on Instagram.</p>
+    <div class="contact-grid" style="margin-top:36px;">
+      <div>
+        <ul class="info-list">
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div>
+              <a href="https://www.google.com/maps/search/?api=1&query=7005+3rd+Ave+Brooklyn+NY+11209" target="_blank" rel="noopener">7005 3rd Avenue<span class="small">Bay Ridge, Brooklyn, NY 11209</span></a>
+            </div>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <a href="tel:+13475174075">(347) 517-4075<span class="small">Call ahead for pickup</span></a>
+            </div>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            <div>
+              <a href="https://www.instagram.com/nycdelibodega/" target="_blank" rel="noopener">@nycdelibodega<span class="small">Follow for daily specials</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="hours-card">
+        <h3>Store Hours</h3>
+        <div class="hours-row"><span class="d">Monday&ndash;Saturday</span><span class="t">7:00 AM &ndash; 12:00 AM</span></div>
+        <div class="hours-row"><span class="d">Sunday</span><span class="t">7:30 AM &ndash; 11:30 PM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="meander-band" aria-hidden="true">
+  <svg viewBox="0 0 200 20" preserveAspectRatio="xMinYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="20" fill="url(#meanderPattern)"/>
+  </svg>
+</div>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">NYC DELI <span>&amp;</span> BODEGA</div>
+      <address>
+        7005 3rd Avenue, Bay Ridge, Brooklyn, NY 11209<br>
+        <a href="tel:+13475174075">(347) 517-4075</a> &middot;
+        <a href="https://www.instagram.com/nycdelibodega/" target="_blank" rel="noopener">@nycdelibodega</a>
+      </address>
+    </div>
+    <div>
+      <address>
+        Open Monday&ndash;Saturday 7:00 AM&ndash;12:00 AM<br>
+        Open Sunday 7:30 AM&ndash;11:30 PM
+      </address>
+    </div>
+  </div>
+  <div class="wrap footer-credit">
+    Demo site preview built by Modularity Networks.
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('hamburgerBtn');
+    var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

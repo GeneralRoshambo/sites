@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sal's Bakery | Staten Island, NY</title>
+<meta name="description" content="Sal's Bakery: donuts, custom cakes, fresh bread and pastries in Staten Island, NY. Family run since day one on Richmond Valley Road.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4F5F0;
+    --cream-deep:#E7EBE4;
+    --ink:#262019;
+    --ink-soft:#4A4136;
+    --box-blue:#2B5C76;
+    --box-blue-deep:#1E4356;
+    --butter:#E7A93C;
+    --cherry:#B23B3C;
+    --sugar-pink:#E7B8C2;
+    --line:#D9CFB8;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Figtree', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    margin:0;
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--box-blue-deep);
+  }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--cherry);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Scalloped bakery-box-lid divider (signature element) ---------- */
+  .scallop{
+    width:100%;
+    height:22px;
+    display:block;
+    background:var(--cream);
+  }
+  .scallop.blue{ color:var(--box-blue); }
+  .scallop.cream-on-blue{ color:var(--cream); }
+  .scallop svg{width:100%;height:100%;display:block;}
+
+  /* ---------- Header / Nav ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max);
+    margin:0 auto;
+    gap:20px;
+  }
+  .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink);
+    flex:0 0 auto;
+  }
+  .brand em{
+    font-style:italic;
+    color:var(--cherry);
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .nav-links a:hover{
+    color:var(--box-blue-deep);
+    border-bottom-color:var(--box-blue);
+  }
+  .nav-cta{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--box-blue);
+    color:var(--cream);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+    padding:10px 18px;
+    border-radius:3px;
+    white-space:nowrap;
+    transition:background 0.15s ease;
+  }
+  .nav-cta:hover{background:var(--box-blue-deep);}
+
+  .mobile-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    width:42px;
+    height:38px;
+    cursor:pointer;
+    flex:0 0 auto;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-toggle span,
+  .mobile-toggle::before,
+  .mobile-toggle::after{
+    content:"";
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+    position:relative;
+  }
+  .mobile-toggle{flex-direction:column;gap:4px;}
+
+  .mobile-menu{
+    display:none;
+  }
+
+  /* ---------- Hero: asymmetric editorial split ---------- */
+  .hero{
+    background:var(--cream);
+  }
+  .hero-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:0;
+    align-items:stretch;
+  }
+  .hero-copy{
+    padding:76px 28px 64px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.4rem);
+    line-height:1.12;
+    font-weight:700;
+    max-width:12ch;
+  }
+  .hero h1 .accent{
+    font-style:italic;
+    color:var(--box-blue-deep);
+  }
+  .hero-sub{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:8px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:3px;
+    font-weight:700;
+    font-size:0.98rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--cherry);
+    color:var(--cream);
+  }
+  .btn-primary:hover{background:#96302f;}
+  .btn-secondary{
+    background:transparent;
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .btn-secondary:hover{
+    background:var(--ink);
+    color:var(--cream);
+  }
+  .hero-meta{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div{display:flex;flex-direction:column;gap:2px;}
+  .hero-meta .num{
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--box-blue-deep);
+  }
+  .hero-meta .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .hero-photo{
+    position:relative;
+    min-height:420px;
+    overflow:hidden;
+  }
+  .hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    min-height:420px;
+  }
+  .hero-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(38,32,25,0) 55%, rgba(38,32,25,0.35) 100%);
+    pointer-events:none;
+  }
+  .hero-photo-caption{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.03em;
+    padding:8px 12px;
+    border-radius:2px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:72px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 0 44px 0;
+  }
+  .section-head .tag{display:block;margin-bottom:12px;}
+  .section-head h2{
+    font-size:clamp(1.9rem, 3vw, 2.5rem);
+    line-height:1.2;
+  }
+  .section-head p{
+    margin-top:14px;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    max-width:56ch;
+  }
+
+  /* ---------- About: plaque layout ---------- */
+  .about{
+    background:var(--cream-deep);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:start;
+  }
+  .plaque{
+    border:1px solid var(--line);
+    background:var(--cream);
+    padding:32px 28px;
+    border-radius:3px;
+  }
+  .plaque .since{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:2.6rem;
+    color:var(--cherry);
+    line-height:1;
+  }
+  .plaque .since-lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.02em;
+    color:var(--ink-soft);
+    margin-top:8px;
+    display:block;
+  }
+  .plaque hr{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:22px 0;
+  }
+  .plaque ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .plaque li{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:0.92rem;
+  }
+  .plaque li span:first-child{color:var(--ink-soft);}
+  .plaque li span:last-child{font-weight:600;}
+
+  .about-copy p{
+    color:var(--ink-soft);
+    margin:0 0 18px 0;
+    font-size:1.03rem;
+  }
+  .about-copy p:last-child{margin-bottom:0;}
+  .about-copy strong{color:var(--ink);}
+
+  /* ---------- Case list (products/services) ---------- */
+  .case-section{background:var(--cream);}
+  .case-list{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid var(--line);
+  }
+  .case-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:24px;
+    align-items:center;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .case-tag{
+    position:relative;
+    background:var(--box-blue);
+    color:var(--cream);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    padding:10px 16px 10px 22px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .case-tag::before{
+    content:"";
+    position:absolute;
+    left:9px;
+    top:50%;
+    transform:translateY(-50%);
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--cream);
+  }
+  .case-row:nth-child(4n+2) .case-tag,
+  .case-row:nth-child(4n+3) .case-tag{
+    background:var(--cherry);
+  }
+  .case-body h3{
+    font-size:1.28rem;
+    margin-bottom:6px;
+  }
+  .case-body p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    max-width:56ch;
+  }
+  .case-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--box-blue-deep);
+    text-align:right;
+    white-space:nowrap;
+  }
+
+  /* ---------- Gallery strip ---------- */
+  .gallery{
+    background:var(--cream-deep);
+  }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:20px;
+  }
+  .gallery-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:3px;
+    min-height:260px;
+  }
+  .gallery-note{
+    margin-top:22px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Reviews ---------- */
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .review{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:26px 24px;
+  }
+  .review .stars{
+    color:var(--butter);
+    letter-spacing:2px;
+    font-size:1rem;
+    margin-bottom:12px;
+  }
+  .review p{
+    margin:0 0 16px 0;
+    color:var(--ink-soft);
+    font-size:0.96rem;
+  }
+  .review .who{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink);
+  }
+
+  /* ---------- Contact / CTA band (deliberately saturated accent) ---------- */
+  .contact{
+    background:var(--box-blue-deep);
+    color:var(--cream);
+  }
+  .contact .section-head h2{color:var(--cream);}
+  .contact .section-head p{color:#CBD9E0;}
+  .contact .tag{color:var(--sugar-pink);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .contact-card{
+    background:rgba(250,246,237,0.06);
+    border:1px solid rgba(250,246,237,0.22);
+    border-radius:3px;
+    padding:30px 26px;
+  }
+  .contact-line{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:20px;
+  }
+  .contact-line:last-child{margin-bottom:0;}
+  .contact-line svg{flex:0 0 auto;margin-top:3px;}
+  .contact-line .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--sugar-pink);
+    display:block;
+    margin-bottom:4px;
+  }
+  .contact-line a{
+    text-decoration:none;
+    font-weight:600;
+    color:var(--cream);
+  }
+  .contact-line a:hover{text-decoration:underline;}
+  .hours-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.94rem;
+  }
+  .hours-table td{
+    padding:8px 0;
+    border-bottom:1px solid rgba(250,246,237,0.14);
+  }
+  .hours-table td:last-child{
+    text-align:right;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.86rem;
+  }
+  .hours-table tr:last-child td{border-bottom:none;}
+  .contact-cta{
+    margin-top:26px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .contact .btn-primary{background:var(--cherry);}
+  .contact .btn-secondary{
+    border-color:rgba(250,246,237,0.5);
+    color:var(--cream);
+  }
+  .contact .btn-secondary:hover{
+    background:var(--cream);
+    color:var(--box-blue-deep);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#D9CFB8;
+    padding:32px 0;
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:0.85rem;
+  }
+  .footer-row a{
+    color:#D9CFB8;
+    text-decoration:none;
+  }
+  .footer-row a:hover{color:var(--cream);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1180px){
+    .wrap, .nav, .hero-grid, .about-grid{max-width:100%;}
+  }
+
+  @media (max-width: 1150px){
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .mobile-toggle{display:flex;}
+    .mobile-menu.open{
+      display:flex;
+    }
+  }
+
+  @media (min-width: 1151px){
+    .mobile-menu{display:none !important;}
+  }
+
+  .mobile-menu{
+    flex-direction:column;
+    gap:2px;
+    padding:0 28px 18px 28px;
+    background:var(--cream);
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a{
+    padding:14px 4px;
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:600;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .nav-cta{
+    display:inline-flex;
+    margin-top:14px;
+    align-self:flex-start;
+    color:var(--cream);
+    border-bottom:none;
+  }
+  .mobile-menu .nav-cta:hover{
+    color:var(--cream);
+  }
+
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{min-height:320px;order:-1;}
+    .hero-photo img{min-height:320px;}
+    .hero-copy{padding:44px 28px 48px 28px;}
+    .about-grid{grid-template-columns:1fr;gap:36px;}
+    .gallery-grid{grid-template-columns:1fr;}
+    .gallery-grid img{min-height:220px;}
+    .reviews-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;gap:32px;}
+    .case-row{grid-template-columns:auto 1fr;}
+    .case-note{
+      grid-column:1 / -1;
+      text-align:left;
+      padding-top:4px;
+    }
+  }
+
+  @media (max-width: 560px){
+    section{padding:52px 0;}
+    .wrap{padding:0 20px;}
+    .nav{padding:14px 20px;}
+    .brand{font-size:1.22rem;}
+    .hero-copy{padding:36px 20px 40px 20px;}
+    .hero h1{max-width:100%;}
+    .hero-meta{gap:20px;}
+    .footer-row{flex-direction:column;align-items:flex-start;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">Sal<em>'</em>s Bakery</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#case">The Case</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="tel:7182690494" class="nav-cta">Call (718) 269-0494</a>
+    <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+      <span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#case">The Case</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Visit</a>
+    <a href="tel:7182690494" class="nav-cta">Call (718) 269-0494</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding:0;">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Donuts and Custom Cakes in <span class="accent">Staten Island, NY</span></h1>
+        <p class="hero-sub">A family run case of donuts, celebration cakes, fresh bread and pastries on Richmond Valley Road. Baked daily, packed by hand, and open early for the first coffee run of the morning.</p>
+        <div class="hero-actions">
+          <a href="tel:7182690494" class="btn btn-primary">Call to Order</a>
+          <a href="#case" class="btn btn-secondary">See the Case</a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <span class="num">21K</span>
+            <span class="lbl">Facebook Followers</span>
+          </div>
+          <div>
+            <span class="num">100%</span>
+            <span class="lbl">Recommend, 37 Reviews</span>
+          </div>
+          <div>
+            <span class="num">6</span>
+            <span class="lbl">Mornings Open Weekly</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.pexels.com/photos/35661532/pexels-photo-35661532.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Assorted donuts and pastries in the bakery display case at Sal's Bakery">
+        <span class="hero-photo-caption">Today's case, Richmond Valley Rd</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop blue" aria-hidden="true">
+    <svg viewBox="0 0 1200 22" preserveAspectRatio="none">
+      <path d="M0,0 h1200 v10 C1170,22 1150,22 1120,10 C1090,22 1070,22 1040,10 C1010,22 990,22 960,10 C930,22 910,22 880,10 C850,22 830,22 800,10 C770,22 750,22 720,10 C690,22 670,22 640,10 C610,22 590,22 560,10 C530,22 510,22 480,10 C450,22 430,22 400,10 C370,22 350,22 320,10 C290,22 270,22 240,10 C210,22 190,22 160,10 C130,22 110,22 80,10 C50,22 30,22 0,10 Z" fill="currentColor"/>
+    </svg>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="plaque">
+          <span class="since">Since Day One</span>
+          <span class="since-lbl">Richmond Valley Road, Staten Island</span>
+          <hr>
+          <ul>
+            <li><span>Category</span><span>Bakery &amp; Cake Shop</span></li>
+            <li><span>Neighborhood</span><span>Richmond Valley</span></li>
+            <li><span>Known For</span><span>Custom Cakes</span></li>
+            <li><span>Pickup</span><span>In-Store</span></li>
+          </ul>
+        </div>
+        <div class="about-copy">
+          <span class="tag">The Bakery</span>
+          <h2 style="margin:12px 0 20px 0;">A case that stays full, and a counter that knows your order</h2>
+          <p>Sal's Bakery has built its name on Richmond Valley Road the old fashioned way, a clean, well-stocked case and a staff that remembers regulars by their usual box. <strong>Donuts and coffee cake</strong> fill the morning rush, while the back counter works through custom orders for <strong>birthday cakes, bridal showers, and family gatherings</strong> across the South Shore.</p>
+          <p>Customers keep coming back for the same reasons: fresh bread baked on site, a full pastry case with no gaps by mid-morning, and a cake team that will talk through flavors and design in person before anything gets an order slip. It is the kind of bakery neighbors send visiting family to on purpose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop cream-on-blue" style="background:var(--box-blue);" aria-hidden="true">
+    <svg viewBox="0 0 1200 22" preserveAspectRatio="none">
+      <path d="M0,22 h1200 v-10 C1170,-2 1150,-2 1120,10 C1090,-2 1070,-2 1040,10 C1010,-2 990,-2 960,10 C930,-2 910,-2 880,10 C850,-2 830,-2 800,10 C770,-2 750,-2 720,10 C690,-2 670,-2 640,10 C610,-2 590,-2 560,10 C530,-2 510,-2 480,10 C450,-2 430,-2 400,10 C370,-2 350,-2 320,10 C290,-2 270,-2 240,10 C210,-2 190,-2 160,10 C130,-2 110,-2 80,10 C50,-2 30,-2 0,10 Z" fill="var(--cream)"/>
+    </svg>
+  </div>
+
+  <section class="case-section" id="case">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">What's In the Case</span>
+        <h2>Four counters, one bakery</h2>
+        <p>Everything is baked in house and restocked through the day. Ask the counter what came out of the oven this morning.</p>
+      </div>
+      <div class="case-list">
+        <div class="case-row">
+          <span class="case-tag">Case 01</span>
+          <div class="case-body">
+            <h3>Donuts &amp; Morning Pastries</h3>
+            <p>Yeast and cake donuts, crumb buns, danish, and croissants, fried and glazed fresh starting before sunrise.</p>
+          </div>
+          <span class="case-note">Daily, from open</span>
+        </div>
+        <div class="case-row">
+          <span class="case-tag">Case 02</span>
+          <div class="case-body">
+            <h3>Custom &amp; Celebration Cakes</h3>
+            <p>Birthday, bridal shower, and occasion cakes built to order, flavor and design discussed with the cake team in person.</p>
+          </div>
+          <span class="case-note">Order ahead</span>
+        </div>
+        <div class="case-row">
+          <span class="case-tag">Case 03</span>
+          <div class="case-body">
+            <h3>Fresh Breads</h3>
+            <p>Loaves and rolls baked on site through the morning, sold by the loaf or the dozen for the table.</p>
+          </div>
+          <span class="case-note">Mid-morning bake</span>
+        </div>
+        <div class="case-row">
+          <span class="case-tag">Case 04</span>
+          <div class="case-body">
+            <h3>Cookies &amp; Individual Pastries</h3>
+            <p>Boxed cookies, eclairs, and single-serve pastries for the office run or a last-minute stop on the way home.</p>
+          </div>
+          <span class="case-note">Grab and go</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">From the Case</span>
+        <h2>Baked this week</h2>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://images.pexels.com/photos/30128890/pexels-photo-30128890.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A slice of rich chocolate layer cake with frosting, an example of Sal's custom cake work">
+        <img src="https://images.pexels.com/photos/3341067/pexels-photo-3341067.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Fresh breads and pastries arranged on the bakery shelf">
+      </div>
+      <p class="gallery-note">Case contents change daily. Call ahead for full sheet cakes or large bread orders.</p>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Neighbors Say</span>
+        <h2>Word travels around Richmond Valley</h2>
+      </div>
+      <div class="reviews-grid">
+        <div class="review">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>Spoke with Maria on the phone to place a birthday cake order, two flavors, sprinkles all over. Best cake ever, and it was our first time using Sal's for a birthday.</p>
+          <div class="who">Local customer, birthday cake order</div>
+        </div>
+        <div class="review">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>Big, very clean, and very well stocked. The artisan donuts with all the extra toppings are worth the trip on their own, and the cakes are amazing.</p>
+          <div class="who">Local customer, case pickup</div>
+        </div>
+        <div class="review">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>Best bakery on the island. Everything is always fresh, and every time I bring sweets from here to a gathering, people ask where they're from.</p>
+          <div class="who">Local customer, regular</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Visit the Bakery</span>
+        <h2>Stop in, call ahead, or order a cake</h2>
+        <p>Walk-ins are always welcome for the case. Custom cakes and large orders go faster with a day or two of notice.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <div>
+              <span class="lbl">Address</span>
+              <a href="https://maps.google.com/?q=245+Richmond+Valley+Rd+Staten+Island+NY+10309" target="_blank" rel="noopener">245 Richmond Valley Rd, Staten Island, NY 10309</a>
+            </div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0-.6.4-1 1-1h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3c0 .6-.4 1-1 1C10.5 21 3 13.5 3 6c0-.6.4-1 1-1Z"/></svg>
+            <div>
+              <span class="lbl">Phone</span>
+              <a href="tel:7182690494">(718) 269-0494</a>
+            </div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 6 8 7 8-7"/></svg>
+            <div>
+              <span class="lbl">Email</span>
+              <a href="mailto:salsbakeries@gmail.com">salsbakeries@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-cta">
+            <a href="tel:7182690494" class="btn btn-primary">Call the Bakery</a>
+            <a href="https://www.facebook.com/salsbakerySI/" target="_blank" rel="noopener" class="btn btn-secondary">Facebook</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="lbl" style="display:block;margin-bottom:14px;">Hours</span>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>Closed</td></tr>
+            <tr><td>Tuesday</td><td>8:00 AM to 6:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>8:00 AM to 6:00 PM</td></tr>
+            <tr><td>Thursday</td><td>8:00 AM to 6:00 PM</td></tr>
+            <tr><td>Friday</td><td>8:00 AM to 6:00 PM</td></tr>
+            <tr><td>Saturday</td><td>8:00 AM to 6:00 PM</td></tr>
+            <tr><td>Sunday</td><td>8:00 AM to 3:00 PM</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>&copy; 2026 Sal's Bakery, Staten Island, NY</span>
+    <a href="tel:7182690494">(718) 269-0494</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Bakery | Bronx Bakery and Custom Cakes, Intervale Avenue</title>
+<meta name="description" content="National Bakery is a family run Dominican bakery on Intervale Avenue in the Bronx, serving tres leches cake, custom cakes, breakfast, and Cubano sandwiches since morning to evening, daily.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6E7BF;
+    --card: #FFFBF3;
+    --ink: #2B1D14;
+    --awning-teal: #1F6B63;
+    --egg-yellow: #E8A83C;
+    --deep-teal: #163B38;
+    --rule: rgba(43, 29, 20, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--awning-teal);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    gap: 24px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    white-space: nowrap;
+  }
+
+  .brand-name {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(22px, 3vw, 30px);
+    letter-spacing: 0.03em;
+  }
+
+  .brand-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--awning-teal);
+    text-transform: uppercase;
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  nav.primary-nav a {
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav.primary-nav a:hover {
+    border-bottom-color: var(--awning-teal);
+  }
+
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--awning-teal);
+    color: var(--card);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 11px 18px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .call-btn:hover { background: var(--ink); }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    width: 44px;
+    height: 40px;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 64px 0 0;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--awning-teal);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 5.6vw, 66px);
+    color: var(--ink);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--awning-teal);
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    max-width: 46ch;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .hero-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 2px solid var(--ink);
+  }
+
+  .btn-solid {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-solid:hover { background: var(--awning-teal); border-color: var(--awning-teal); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  /* Hanging shop-sign, the page's signature element */
+  .hang-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6px;
+  }
+
+  .hang-string {
+    width: 2px;
+    height: 30px;
+    background: var(--ink);
+    position: relative;
+  }
+
+  .hang-string::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+  }
+
+  .sign-board {
+    background: var(--egg-yellow);
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    padding: 26px 24px;
+    text-align: center;
+    box-shadow: 0 4px 0 var(--ink);
+    width: 100%;
+  }
+
+  .sign-open {
+    display: block;
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    color: var(--deep-teal);
+  }
+
+  .sign-since {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-top: 10px;
+  }
+
+  .sign-rule {
+    display: block;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.25;
+    margin: 16px 0;
+  }
+
+  .sign-note {
+    display: block;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .hero-photo-band {
+    margin-top: 56px;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .hero-photo-band img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  /* ---------- Divider: solid awning trim band ---------- */
+  .awning-trim {
+    width: 100%;
+  }
+
+  .awning-trim .band-teal {
+    height: 12px;
+    background: var(--awning-teal);
+  }
+
+  .awning-trim .band-yellow {
+    height: 4px;
+    background: var(--egg-yellow);
+  }
+
+  /* ---------- Section shell ---------- */
+  section {
+    padding: 84px 0;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+  }
+
+  .section-head .eyebrow { margin-bottom: 6px; }
+
+  .section-head h2 {
+    font-size: clamp(28px, 4vw, 42px);
+  }
+
+  .section-head .hint {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--deep-teal);
+    max-width: 26ch;
+    text-align: right;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .about-grid p {
+    font-size: 17px;
+    max-width: 54ch;
+  }
+
+  .about-grid p + p { margin-top: 18px; }
+
+  .pull-note {
+    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    padding: 26px 24px;
+  }
+
+  .pull-note .mono {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--awning-teal);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .pull-note p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 28px;
+    margin-top: 24px;
+  }
+
+  .stat {
+    flex: 1;
+  }
+
+  .stat .num {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+  }
+
+  .stat .lbl {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+  }
+
+  /* ---------- Menu board ---------- */
+  .menu-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px 56px;
+  }
+
+  .menu-group h3 {
+    font-size: 20px;
+    color: var(--awning-teal);
+    margin-bottom: 6px;
+  }
+
+  .menu-group .group-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--deep-teal);
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .menu-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .menu-row:first-of-type { border-top: 1px solid var(--rule); }
+
+  .menu-item-name {
+    font-size: 16px;
+  }
+
+  .menu-item-desc {
+    font-size: 13px;
+    color: var(--deep-teal);
+    margin-top: 3px;
+  }
+
+  .menu-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  /* ---------- Cakes ---------- */
+  .cakes-section {
+    background: var(--card);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .cakes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .cakes-photo {
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 380px;
+  }
+
+  .cakes-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cakes-list {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+
+  .cakes-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+  }
+
+  .cakes-list li .cake-price {
+    font-family: 'Space Mono', monospace;
+    color: var(--deep-teal);
+    white-space: nowrap;
+  }
+
+  /* ---------- Visit / CTA band ---------- */
+  .visit-band {
+    background: var(--deep-teal);
+    color: var(--paper);
+  }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+  }
+
+  .visit-band h2 { color: var(--paper); }
+
+  .visit-band .section-head {
+    border-bottom-color: rgba(246, 238, 225, 0.35);
+  }
+
+  .visit-band .eyebrow { color: var(--egg-yellow); }
+
+  .visit-band .hint { color: rgba(246, 238, 225, 0.7); }
+
+  .visit-block + .visit-block { margin-top: 26px; }
+
+  .visit-block .lbl {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--egg-yellow);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .visit-block p, .visit-block a {
+    font-size: 17px;
+    text-decoration: none;
+    margin: 0;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(246, 238, 225, 0.2);
+    font-size: 15px;
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .visit-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .visit-band .btn-solid {
+    background: var(--egg-yellow);
+    color: var(--ink);
+    border-color: var(--egg-yellow);
+  }
+
+  .visit-band .btn-solid:hover {
+    background: var(--paper);
+    border-color: var(--paper);
+  }
+
+  .visit-band .btn-outline {
+    color: var(--paper);
+    border-color: var(--paper);
+  }
+
+  .visit-band .btn-outline:hover {
+    background: var(--paper);
+    color: var(--deep-teal);
+  }
+
+  .delivery-note {
+    margin-top: 22px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: rgba(246, 238, 225, 0.75);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 30px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-inner a { text-decoration: none; }
+  .footer-inner a:hover { color: var(--egg-yellow); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1150px) {
+    nav.primary-nav { display: none; }
+    .hamburger { display: flex; }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--paper);
+      border-top: 2px solid var(--ink);
+      padding: 18px 28px 26px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 16px;
+    }
+
+    .mobile-menu .call-btn {
+      margin-top: 14px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .about-grid,
+    .cakes-grid,
+    .visit-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cakes-grid { direction: ltr; }
+
+    .cakes-photo { order: -1; height: 260px; }
+
+    .hang-sign { margin-top: 30px; max-width: 280px; }
+
+    .menu-columns { grid-template-columns: 1fr; gap: 36px; }
+
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .section-head .hint { text-align: left; }
+  }
+
+  @media (max-width: 560px) {
+    .hero { padding-top: 44px; }
+    section { padding: 56px 0; }
+    .hero-photo-band { height: 220px; margin-top: 40px; }
+    .stat-row { flex-direction: column; gap: 14px; }
+    .hero-actions .btn, .visit-actions .btn { width: 100%; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-name">National Bakery</span>
+      <span class="brand-tag">Intervale Ave &middot; Bronx, NY</span>
+    </div>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#cakes">Cakes</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="call-btn" href="tel:+17188613671">Call (718) 861-3671</a>
+    <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#cakes">Cakes</a>
+    <a href="#visit">Visit</a>
+    <a class="call-btn" href="tel:+17188613671">Call (718) 861-3671</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">944 Intervale Avenue, Bronx, NY 10459</div>
+        <h1>Bronx Bakery and Custom Cakes on Intervale Avenue</h1>
+        <p class="hero-sub">National Bakery has kept the counter on Intervale Avenue warm since before sunrise, seven mornings a week. Dominican breads, tres leches soaked in dulce de leche, and cakes built to order for the birthdays and quinceaneras of Longwood and Hunts Point.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="tel:+17188613671">Call to Order</a>
+          <a class="btn btn-outline" href="https://maps.google.com/?q=944+Intervale+Ave+Bronx+NY+10459" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+      <div>
+        <div class="hang-sign">
+          <div class="hang-string"></div>
+          <div class="sign-board">
+            <span class="sign-open">Abierto &middot; Open</span>
+            <span class="sign-since">Counter opens 5:30 AM</span>
+            <span class="sign-rule"></span>
+            <span class="sign-note">Fresh tres leches daily</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="awning-trim"><div class="band-teal"></div><div class="band-yellow"></div></div>
+    <div class="hero-photo-band">
+      <img src="https://images.pexels.com/photos/12097596/pexels-photo-12097596.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fresh Latin bakery bread and pan dulce on a bakery shelf" loading="lazy">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>A Counter the Neighborhood Grew Up On</h2>
+        </div>
+        <div class="hint">Family run, Bronx owned, open every day of the week.</div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>National Bakery has been part of the Intervale Avenue block for years, the kind of shop where the line moves slow because everyone stops to talk. Neighbors come in for a small cup of oatmeal before work, a Cubano at lunch, or a full sheet cake for a christening the same week.</p>
+          <p>Everything in the case is baked on site. The tres leches is the one people drive across the Bronx for, soaked heavy and finished with a real dulce de leche, not a syrup. Regulars order it by the box for holidays, and Uber Eats and DoorDash keep it moving to those who cannot make it in.</p>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="num mono">5:30</div>
+              <div class="lbl">AM Opening, Daily</div>
+            </div>
+            <div class="stat">
+              <div class="num mono">3</div>
+              <div class="lbl">Delivery Apps Carrying It</div>
+            </div>
+            <div class="stat">
+              <div class="num mono">10459</div>
+              <div class="lbl">Longwood Zip Code</div>
+            </div>
+          </div>
+        </div>
+        <div class="pull-note">
+          <span class="mono">From the counter</span>
+          <p>Ask for the tres leches by name. It is what brings people back, and what most of the block orders first when a birthday is coming up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Menu</div>
+          <h2>Off the Counter</h2>
+        </div>
+        <div class="hint">Breakfast starts at 5:30 AM. Sandwiches run all day.</div>
+      </div>
+      <div class="menu-columns">
+        <div class="menu-group">
+          <h3>Breakfast</h3>
+          <span class="group-note mono">Served daily from open</span>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Oatmeal, Small</div>
+              <div class="menu-item-desc">Warm, made fresh each morning</div>
+            </div>
+            <div class="menu-price">$1.50</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Oatmeal, Large</div>
+              <div class="menu-item-desc">Same pot, bigger cup</div>
+            </div>
+            <div class="menu-price">$3.00</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Pancakes with Eggs and Bacon</div>
+              <div class="menu-item-desc">Griddled to order</div>
+            </div>
+            <div class="menu-price">Ask counter</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Bagel with Cream Cheese</div>
+              <div class="menu-item-desc">Toasted on request</div>
+            </div>
+            <div class="menu-price">Ask counter</div>
+          </div>
+        </div>
+        <div class="menu-group">
+          <h3>Sandwiches &amp; Bread</h3>
+          <span class="group-note mono">Cut fresh through the day</span>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Cubano Sandwich</div>
+              <div class="menu-item-desc">Pressed, served warm</div>
+            </div>
+            <div class="menu-price">$8.50</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Pan de Agua</div>
+              <div class="menu-item-desc">Baked daily, sold by the loaf</div>
+            </div>
+            <div class="menu-price">Ask counter</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Pan Dulce Basket</div>
+              <div class="menu-item-desc">Mixed sweet breads, half dozen</div>
+            </div>
+            <div class="menu-price">Ask counter</div>
+          </div>
+          <div class="menu-row">
+            <div>
+              <div class="menu-item-name">Coffee, Cafecito</div>
+              <div class="menu-item-desc">Strong, small cup</div>
+            </div>
+            <div class="menu-price">Ask counter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cakes" class="cakes-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Cakes</div>
+          <h2>Tres Leches and Cakes to Order</h2>
+        </div>
+        <div class="hint">Call two days ahead for custom writing and flavors.</div>
+      </div>
+      <div class="cakes-grid">
+        <div class="cakes-photo">
+          <img src="https://images.pexels.com/photos/998238/pexels-photo-998238.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Slice of layered cake with cream filling" loading="lazy">
+        </div>
+        <div>
+          <p>The tres leches is the house specialty, made with real dulce de leche and served by the slice or the full sheet. Birthday and wedding cakes are built to order, decorated and written to what you ask for at the counter or over the phone.</p>
+          <ul class="cakes-list">
+            <li><span>Tres Leches, by the Slice</span><span class="cake-price mono">Ask counter</span></li>
+            <li><span>Tres Leches, Full Sheet</span><span class="cake-price mono">Ask counter</span></li>
+            <li><span>Birthday Cake, Custom Written</span><span class="cake-price mono">Ask counter</span></li>
+            <li><span>Wedding &amp; Quinceanera Cakes</span><span class="cake-price mono">By order, 2 days notice</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="visit-band">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Visit</div>
+          <h2>Find the Counter</h2>
+        </div>
+        <div class="hint">Open early, closed only overnight.</div>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <div class="visit-block">
+            <span class="lbl">Address</span>
+            <p>944 Intervale Avenue<br>Bronx, NY 10459</p>
+          </div>
+          <div class="visit-block">
+            <span class="lbl">Phone</span>
+            <a href="tel:+17188613671">(718) 861-3671</a>
+          </div>
+          <div class="visit-block">
+            <span class="lbl">Instagram</span>
+            <a href="https://www.instagram.com/nationalbakery944/" target="_blank" rel="noopener">@nationalbakery944</a>
+          </div>
+          <div class="visit-actions">
+            <a class="btn btn-solid" href="tel:+17188613671">Call to Order</a>
+            <a class="btn btn-outline" href="https://maps.google.com/?q=944+Intervale+Ave+Bronx+NY+10459" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+          <p class="delivery-note">Also on Uber Eats, DoorDash, and Grubhub for delivery.</p>
+        </div>
+        <div>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Tuesday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Wednesday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Thursday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Friday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Saturday</td><td>5:30 AM &ndash; 7:30 PM</td></tr>
+            <tr><td>Sunday</td><td>Call to confirm</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="awning-trim"><div class="band-teal"></div><div class="band-yellow"></div></div>
+<footer>
+  <div class="wrap footer-inner">
+    <span>National Bakery, 944 Intervale Avenue, Bronx, NY 10459</span>
+    <a href="tel:+17188613671">(718) 861-3671</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Hammer Tattoo Studios | Custom Tattoo Studio in Milford, PA</title>
+<meta name="description" content="Custom tattoo and piercing studio in Milford, PA, doubling as a curiosity shop of antiques, jewelry, and oddities. Walk-ins welcome, established 2009.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDE7DA;
+    --paper-2: #E4DCC9;
+    --ink: #221F1C;
+    --ink-soft: #4A443D;
+    --oxblood: #6E2A2A;
+    --oxblood-dark: #591F1F;
+    --verdigris: #4C6B5E;
+    --brass: #A8792A;
+    --walnut: #2B2420;
+    --walnut-text: #EDE3D2;
+    --line: #C8BEA6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    color: var(--ink);
+    margin: 0 0 0.4em 0;
+    line-height: 1.15;
+    font-weight: 600;
+  }
+
+  a { color: var(--oxblood); }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* ---------- Nav ---------- */
+
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .brand {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .brand span {
+    color: var(--oxblood);
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  nav.primary-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  nav.primary-nav a:hover { color: var(--oxblood); }
+
+  .nav-cta {
+    background: var(--oxblood);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .nav-cta:hover { background: var(--oxblood-dark); }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: 1px solid var(--ink);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .hamburger span,
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+    margin: 5px auto;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 32px 24px;
+    gap: 4px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .mobile-menu a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 12px 0;
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 72px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 40%;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .hero-rail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--verdigris);
+    letter-spacing: 0.04em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    border-right: 1px solid var(--line);
+    padding-right: 16px;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  .hero-copy .est {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--brass);
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.1rem, 4.3vw, 3.4rem);
+    max-width: 12.5ch;
+  }
+
+  .hero-copy p.lede {
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    margin: 18px 0 28px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 26px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 2px;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--oxblood);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--oxblood-dark); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-figure {
+    position: relative;
+  }
+
+  .hero-figure img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  .tag {
+    position: absolute;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 10px 14px 10px 30px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink);
+    box-shadow: 3px 3px 0 var(--brass);
+  }
+
+  .tag::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+
+  .tag-hero {
+    left: -18px;
+    bottom: -18px;
+  }
+
+  /* ---------- Section shared ---------- */
+
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 28px;
+    margin-bottom: 44px;
+  }
+
+  .section-rail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--verdigris);
+    border-right: 1px solid var(--line);
+    padding-right: 16px;
+    padding-top: 4px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  }
+
+  .section-head p {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-top: 10px;
+  }
+
+  .section-body {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 28px;
+  }
+
+  .section-body > .rail-spacer {
+    border-right: 1px solid var(--line);
+  }
+
+  /* ---------- About ---------- */
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .about-content img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  .about-content p {
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    font-family: 'Space Mono', monospace;
+  }
+
+  .stat .num {
+    display: block;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 1.8rem;
+    color: var(--oxblood);
+    font-weight: 700;
+  }
+
+  .stat .label {
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Collections (services) ---------- */
+
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .accession-card {
+    border: 1px solid var(--line);
+    background: var(--paper-2);
+    padding: 26px 24px 24px;
+    position: relative;
+  }
+
+  .accession-card .acc-no {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--brass);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .accession-card .acc-no::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid var(--brass);
+    display: inline-block;
+  }
+
+  .accession-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .accession-card p {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    margin: 0;
+  }
+
+  .accession-card.oxblood-edge .acc-no { color: var(--oxblood); }
+  .accession-card.oxblood-edge .acc-no::before { border-color: var(--oxblood); }
+  .accession-card.verdigris-edge .acc-no { color: var(--verdigris); }
+  .accession-card.verdigris-edge .acc-no::before { border-color: var(--verdigris); }
+
+  /* ---------- Curiosities strip ---------- */
+
+  .curio {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .curio img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  .curio-copy p {
+    color: var(--ink-soft);
+  }
+
+  .curio-list {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+
+  .curio-list li {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.84rem;
+    color: var(--ink);
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  /* ---------- Artists ---------- */
+
+  .artist-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+
+  .artist {
+    border: 1px solid var(--line);
+    padding: 20px 16px;
+    text-align: left;
+  }
+
+  .artist .role {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--verdigris);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .artist h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+
+  /* ---------- Info / hours ---------- */
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .info-block h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    color: var(--verdigris);
+    margin-bottom: 14px;
+  }
+
+  .info-block p, .info-block a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin: 0 0 6px;
+    display: block;
+  }
+
+  .info-block a { color: var(--oxblood); font-weight: 600; }
+
+  .hours-table {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.88rem;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--line);
+    color: var(--ink-soft);
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    color: var(--ink);
+  }
+
+  /* ---------- Contact / CTA band ---------- */
+
+  .cta-band {
+    background: var(--walnut);
+    color: var(--walnut-text);
+    padding: 72px 0;
+    border-bottom: none;
+  }
+
+  .cta-band h2 {
+    color: var(--walnut-text);
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    max-width: 18ch;
+  }
+
+  .cta-band .rail-mono {
+    font-family: 'Space Mono', monospace;
+    color: var(--brass);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .cta-band p {
+    color: #C9BFA8;
+    max-width: 52ch;
+    margin: 16px 0 30px;
+  }
+
+  .cta-band .btn-primary {
+    background: var(--brass);
+    color: #000;
+  }
+  .cta-band .btn-primary:hover { background: #BF8C39; }
+
+  .cta-band .btn-secondary {
+    border-color: var(--walnut-text);
+    color: var(--walnut-text);
+  }
+  .cta-band .btn-secondary:hover {
+    background: var(--walnut-text);
+    color: var(--walnut);
+  }
+
+  .cta-details {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.86rem;
+  }
+
+  .cta-details a { color: var(--walnut-text); }
+
+  .cta-details .k {
+    color: #9C8F72;
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    background: var(--walnut);
+    color: #9C8F72;
+    padding: 24px 0 32px;
+    font-size: 0.82rem;
+  }
+
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  footer a { color: #C9BFA8; }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 1180px) {
+    nav.primary-nav { gap: 20px; }
+  }
+
+  @media (max-width: 1120px) {
+    nav.primary-nav { display: none; }
+    .hamburger { display: block; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 40px 1fr; }
+    .hero-figure { grid-column: 1 / -1; }
+    .hero-figure img { height: 300px; }
+    .about-content { grid-template-columns: 1fr; }
+    .about-content img { height: 260px; order: -1; }
+    .curio { grid-template-columns: 1fr; }
+    .curio img { height: 260px; order: -1; }
+    .collections { grid-template-columns: 1fr; }
+    .artist-row { grid-template-columns: repeat(2, 1fr); }
+    .info-grid { grid-template-columns: 1fr; gap: 28px; }
+    .section-head { grid-template-columns: 32px 1fr; }
+    .section-body { grid-template-columns: 32px 1fr; }
+    .cta-details { gap: 28px; }
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding-left: 20px; padding-right: 20px; }
+    .nav-bar { padding: 16px 20px; }
+    .hero { padding: 48px 0 40px; }
+    section { padding: 48px 0; }
+    .hero-rail { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .artist-row { grid-template-columns: 1fr 1fr; }
+    .curio-list { grid-template-columns: 1fr; }
+    .tag-hero { left: 10px; bottom: -16px; }
+    .cta-band { padding: 52px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="#top" class="brand">Golden <span>Hammer</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#collections">Tattoo &amp; Piercing</a>
+      <a href="#curiosities">Curiosities</a>
+      <a href="#artists">Artists</a>
+      <a href="#about">About</a>
+      <a href="#visit" class="nav-cta">Visit the Shop</a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);"></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#collections">Tattoo &amp; Piercing</a>
+    <a href="#curiosities">Curiosities</a>
+    <a href="#artists">Artists</a>
+    <a href="#about">About</a>
+    <a href="#visit">Visit the Shop</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="border-bottom:1px solid var(--line); padding-top:72px;">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-rail mono">EST. 2009 &middot; MILFORD, PA</div>
+        <div class="hero-copy">
+          <span class="est mono">315 W Harford St, Milford, PA &middot; Walk-ins welcome</span>
+          <h1>Custom Tattoo Studio &amp; Curiosity Shop in Milford, PA</h1>
+          <p class="lede">Five resident artists, two piercers, and a front room of antiques, jewelry, and oddities collected over sixteen years on Harford Street. One roof, two collections, one accession log.</p>
+          <div class="hero-actions">
+            <a href="#visit" class="btn btn-primary">Book a Consult</a>
+            <a href="https://www.instagram.com/ghs_tattoos/" class="btn btn-secondary" target="_blank" rel="noopener">See Recent Work on Instagram</a>
+          </div>
+        </div>
+        <div class="hero-figure">
+          <img src="https://images.pexels.com/photos/4125659/pexels-photo-4125659.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tattoo artist at work with gloves and machine in a studio setting">
+          <div class="tag tag-hero mono">ACC. 001<br>WORK IN PROGRESS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-rail mono">PROVENANCE</div>
+        <div>
+          <h2>Sixteen years on Harford Street</h2>
+          <p>Shaun has been tattooing since 1999 and opened Golden Hammer in Milford in 2009. What started as a tattoo studio grew a second life as a gathering point for the town's antiques, jewelry, and things nobody else knew what to do with.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="rail-spacer"></div>
+        <div class="about-content">
+          <div>
+            <p>Golden Hammer is a working tattoo and piercing studio first: custom pieces, cover-ups, fine line, black and grey, and color, built around a conversation rather than a flash wall. Five artists and two piercers cover most styles a client walks in asking for, and every session starts with a sit-down design consult, not a rush job off a printed sheet.</p>
+            <p>Past the front counter, the shop doubles as a curated stop for local antiques, estate jewelry, candles, and the kind of odd, well-made objects that Milford's older buildings tend to turn up. Regulars come in for a piece of jewelry and leave having booked a tattoo, or the other way around.</p>
+            <div class="stat-row">
+              <div class="stat"><span class="num">5</span><span class="label">Resident Artists</span></div>
+              <div class="stat"><span class="num">2</span><span class="label">Piercers on Staff</span></div>
+              <div class="stat"><span class="num">2009</span><span class="label">Opened in Milford</span></div>
+            </div>
+          </div>
+          <img src="https://images.pexels.com/photos/6593392/pexels-photo-6593392.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Tattoo artist preparing ink for a session">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collections">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-rail mono">HOLDINGS</div>
+        <div>
+          <h2>What's on the books</h2>
+          <p>Two collections, cataloged the way the shop actually runs day to day.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="rail-spacer"></div>
+        <div class="collections">
+          <div class="accession-card oxblood-edge">
+            <span class="acc-no mono">ACC. 101 &middot; TATTOO</span>
+            <h3>Custom &amp; Traditional</h3>
+            <p>Original design work, American traditional, and cover-up rebuilds, planned out with the artist before the machine ever comes out.</p>
+          </div>
+          <div class="accession-card oxblood-edge">
+            <span class="acc-no mono">ACC. 102 &middot; TATTOO</span>
+            <h3>Fine Line &amp; Color</h3>
+            <p>Fine line portraiture, botanical work, and full color pieces, handled by the artist on staff whose portfolio fits what you're after.</p>
+          </div>
+          <div class="accession-card oxblood-edge">
+            <span class="acc-no mono">ACC. 103 &middot; PIERCING</span>
+            <h3>Piercing</h3>
+            <p>Ear, facial, and body piercing with implant-grade jewelry, done by Pia or Jess. Consult first for anything more involved than a lobe.</p>
+          </div>
+          <div class="accession-card verdigris-edge">
+            <span class="acc-no mono">ACC. 104 &middot; SHOP</span>
+            <h3>Curiosities &amp; Antiques</h3>
+            <p>Estate jewelry, small antiques, candles, and rotating oddities in the front room. New pieces come in most weeks, worth a repeat visit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curiosities">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-rail mono">FRONT ROOM</div>
+        <div>
+          <h2>The front room</h2>
+          <p>Not a gift-shop afterthought. Half the building is a working curiosity shop.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="rail-spacer"></div>
+        <div class="curio">
+          <img src="https://images.pexels.com/photos/13538872/pexels-photo-13538872.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Shelf of assorted antique items and curiosities in a shop">
+          <div class="curio-copy">
+            <p>Between clients, Shaun and the artists keep the front room stocked with finds from estate sales and swaps around Pike County. It changes shop to shop, week to week, which is the point.</p>
+            <ul class="curio-list">
+              <li>Estate &amp; vintage jewelry</li>
+              <li>Small antiques &amp; oddities</li>
+              <li>Hand-poured candles</li>
+              <li>Local art &amp; prints</li>
+              <li>Trade &amp; consignment pieces</li>
+              <li>New finds weekly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="artists">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-rail mono">STAFF</div>
+        <div>
+          <h2>Who's on the floor</h2>
+          <p>Five artists, two of whom also handle piercing.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="rail-spacer"></div>
+        <div class="artist-row">
+          <div class="artist">
+            <span class="role mono">OWNER</span>
+            <h3>Shaun</h3>
+          </div>
+          <div class="artist">
+            <span class="role mono">ARTIST</span>
+            <h3>Jen</h3>
+          </div>
+          <div class="artist">
+            <span class="role mono">ARTIST / PIERCER</span>
+            <h3>Pia</h3>
+          </div>
+          <div class="artist">
+            <span class="role mono">ARTIST / PIERCER</span>
+            <h3>Jess</h3>
+          </div>
+          <div class="artist">
+            <span class="role mono">ARTIST</span>
+            <h3>Tara</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-rail mono">VISIT</div>
+        <div>
+          <h2>Hours &amp; policy</h2>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="rail-spacer"></div>
+        <div class="info-grid">
+          <div class="info-block">
+            <h3>Hours</h3>
+            <table class="hours-table">
+              <tr><td>Wednesday</td><td>11am &ndash; 6pm</td></tr>
+              <tr><td>Thursday</td><td>11am &ndash; 6pm</td></tr>
+              <tr><td>Friday</td><td>11am &ndash; 6pm</td></tr>
+              <tr><td>Saturday</td><td>11am &ndash; 6pm</td></tr>
+              <tr><td>Sun &ndash; Tue</td><td>By appointment</td></tr>
+            </table>
+          </div>
+          <div class="info-block">
+            <h3>Policy</h3>
+            <p>18 and older only, valid ID required for every tattoo and piercing.</p>
+            <p>Walk-ins welcome as schedule allows. Larger custom pieces booked by consult.</p>
+          </div>
+          <div class="info-block">
+            <h3>Location</h3>
+            <p>315 W Harford St<br>Milford, PA 18337</p>
+            <a href="tel:+15704094379">(570) 409-4379</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="cta-band">
+    <div class="wrap">
+      <span class="rail-mono mono">VISIT THE SHOP</span>
+      <h2>Come in, browse the front room, or book a consult with one of five artists.</h2>
+      <p>Golden Hammer is a short walk from Broad Street in downtown Milford. Call ahead for a consult, or message the studio directly on Instagram to see recent work and check the artist's schedule.</p>
+      <div class="hero-actions">
+        <a href="tel:+15704094379" class="btn btn-primary">Call (570) 409-4379</a>
+        <a href="https://www.instagram.com/ghs_tattoos/" class="btn btn-secondary" target="_blank" rel="noopener">Message on Instagram</a>
+      </div>
+      <div class="cta-details">
+        <div><span class="k">Address</span><a href="https://maps.google.com/?q=315+W+Harford+St+Milford+PA+18337" target="_blank" rel="noopener">315 W Harford St, Milford, PA 18337</a></div>
+        <div><span class="k">Instagram</span><a href="https://www.instagram.com/ghs_tattoos/" target="_blank" rel="noopener">@ghs_tattoos</a></div>
+        <div><span class="k">Hours</span><span>Wed &ndash; Sat, 11am &ndash; 6pm</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Golden Hammer Tattoo Studios, Milford, PA</span>
+    <span>Site by <a href="https://modularity.site/" target="_blank" rel="noopener">Modularity Networks</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

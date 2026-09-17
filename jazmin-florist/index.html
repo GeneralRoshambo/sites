@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jazmin Florist | Flowers for Every Occasion in Washington Heights, Manhattan</title>
+<meta name="description" content="Jazmin Florist is a neighborhood flower shop on Saint Nicholas Avenue in Washington Heights, Manhattan, arranging bouquets, plants, and sympathy flowers for birthdays, weddings, and memorials.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600&family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#6B1E2E;
+    --wine-deep:#4A1420;
+    --wine-soft:#8B3347;
+    --leaf:#2F4A34;
+    --gold:#B8923F;
+    --gold-light:#D9BD82;
+    --cream:#FBF0E9;
+    --cream-2:#F3E2D8;
+    --ink:#2A211D;
+    --ink-soft:#55483F;
+    --line:rgba(42,33,29,0.16);
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+
+  h1,h2,h3{
+    font-family:'Cardo', serif;
+    font-weight:700;
+    margin:0;
+    color:var(--wine-deep);
+    line-height:1.12;
+  }
+
+  p{margin:0;}
+
+  a:focus-visible,
+  button:focus-visible,
+  .tap:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- signature ribbon tag (styled after the small ribbon tag a florist
+     pins to a wrapped bouquet, carrying the occasion in hand-set capitals) ---------- */
+  .ribbon{
+    display:inline-block;
+    background:var(--wine);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:0.6em 1.5em;
+    clip-path: polygon(2.5% 0%, 97.5% 0%, 100% 50%, 97.5% 100%, 2.5% 100%, 0% 50%);
+    box-shadow:0 4px 10px rgba(42,20,26,0.28);
+  }
+  .ribbon.on-dark{background:var(--gold);color:var(--wine-deep);}
+  .ribbon.leaf{background:var(--leaf);}
+
+  /* photo tag: the ribbon pinned to the corner of a photograph, not stacked as
+     a text kicker over a heading */
+  .photo-tag{
+    position:absolute;
+    top:18px;
+    left:18px;
+    z-index:2;
+  }
+  .contact-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .contact-head h2{margin:0;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding:16px 28px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .brand{
+    font-family:'Cardo', serif;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--wine-deep);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .brand em{
+    font-style:italic;
+    color:var(--wine);
+  }
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+  nav.primary-nav a{
+    font-size:0.95rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    white-space:nowrap;
+  }
+  nav.primary-nav a:hover{
+    border-bottom:2px solid var(--gold);
+    color:var(--wine-deep);
+  }
+  .header-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+  }
+  .phone-chip{
+    font-weight:600;
+    font-size:0.92rem;
+    color:var(--wine-deep);
+    border:1px solid var(--line);
+    padding:8px 16px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .phone-chip:hover{border-color:var(--wine);}
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:2px;
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    padding:0;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--wine-deep);
+    margin:4px auto;
+  }
+
+  .mobile-menu{
+    display:none;
+  }
+  .mobile-menu.open{
+    display:block;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:8px 28px 20px;
+  }
+  .mobile-menu a{
+    display:block;
+    padding:12px 0;
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .phone-chip{
+    display:inline-block;
+    margin-top:14px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:64px 0 72px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.4rem);
+  }
+  .hero-copy p.lede{
+    margin-top:22px;
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-cta{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:32px;
+  }
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    font-weight:600;
+    font-size:0.98rem;
+    border-radius:2px;
+    border:1.5px solid var(--wine);
+  }
+  .btn-solid{
+    background:var(--wine);
+    color:var(--cream);
+  }
+  .btn-solid:hover{background:var(--wine-deep);border-color:var(--wine-deep);}
+  .btn-outline{
+    background:transparent;
+    color:var(--wine-deep);
+  }
+  .btn-outline:hover{background:var(--cream-2);}
+
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo img{
+    width:100%;
+    height:460px;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .hero-photo-caption{
+    position:absolute;
+    bottom:-18px;
+    left:24px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:10px 18px;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    max-width:78%;
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    padding:96px 0 80px;
+    border-top:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-photo{position:relative;}
+  .about-photo img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .about-copy h2{
+    font-size:clamp(1.7rem,3vw,2.3rem);
+    margin-top:18px;
+  }
+  .about-copy p{
+    margin-top:18px;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+  .fact-row{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+  }
+  .fact-row dt{
+    font-family:'Cinzel', serif;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--wine);
+    font-weight:600;
+  }
+  .fact-row dd{
+    margin:8px 0 0;
+    font-weight:500;
+    color:var(--ink);
+    font-size:0.95rem;
+  }
+
+  /* ---------- occasions ---------- */
+  .occasions{
+    padding:96px 0 40px;
+    border-top:1px solid var(--line);
+  }
+  .occasions-head{
+    max-width:60ch;
+    margin-bottom:56px;
+  }
+  .occasions-head h2{
+    font-size:clamp(1.8rem,3.2vw,2.5rem);
+    margin-top:18px;
+  }
+  .occasions-head p{
+    margin-top:18px;
+    color:var(--ink-soft);
+  }
+
+  .occasion-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+    padding:48px 0;
+    border-top:1px solid var(--line);
+  }
+  .occasion-row:last-of-type{border-bottom:1px solid var(--line);}
+  .occasion-row.reverse .occasion-photo{order:2;}
+  .occasion-row.reverse .occasion-text{order:1;}
+  .occasion-photo{position:relative;}
+  .occasion-photo img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .occasion-text h3{
+    font-size:1.5rem;
+    margin-top:16px;
+  }
+  .occasion-text p{
+    margin-top:14px;
+    color:var(--ink-soft);
+  }
+
+  .occasion-plain{
+    background:var(--wine);
+    color:var(--cream);
+    padding:56px 48px;
+    margin:48px 0 0;
+  }
+  .occasion-plain h3{
+    color:var(--cream);
+    font-size:1.5rem;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .occasion-plain p{
+    margin-top:14px;
+    color:var(--cream-2);
+    max-width:60ch;
+  }
+
+  /* ---------- contact band ---------- */
+  .contact-band{
+    background:var(--wine-deep);
+    color:var(--cream);
+    padding:88px 0 72px;
+    margin-top:72px;
+  }
+  .contact-band .ribbon{margin-bottom:22px;}
+  .contact-band h2{
+    color:var(--cream);
+    font-size:clamp(1.8rem,3.2vw,2.4rem);
+  }
+  .contact-grid{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:40px;
+  }
+  .contact-grid h3{
+    font-family:'Cinzel', serif;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .contact-grid p, .contact-grid a{
+    color:var(--cream-2);
+    font-size:1rem;
+    line-height:1.75;
+  }
+  .contact-grid a:hover{color:var(--gold-light);}
+  .contact-cta{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .contact-cta .btn-solid{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--wine-deep);
+  }
+  .contact-cta .btn-solid:hover{background:var(--gold-light);border-color:var(--gold-light);}
+  .contact-cta .btn-outline{
+    color:var(--cream);
+    border-color:var(--cream-2);
+  }
+  .contact-cta .btn-outline:hover{background:rgba(250,243,232,0.08);}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--cream-2);
+    padding:28px 0;
+  }
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+    font-size:0.85rem;
+  }
+
+  @media (max-width: 1150px){
+    nav.primary-nav{display:none;}
+    .header-actions .phone-chip{display:none;}
+    .hamburger{display:block;}
+  }
+
+  @media (max-width: 900px){
+    .hero-grid, .about-grid{
+      grid-template-columns:1fr;
+    }
+    .hero-photo{order:-1;}
+    .hero-photo img{height:320px;}
+    .about-photo img{height:300px;}
+    .fact-row{grid-template-columns:1fr;gap:16px;}
+    .occasion-row, .occasion-row.reverse{
+      grid-template-columns:1fr;
+    }
+    .occasion-row .occasion-photo,
+    .occasion-row.reverse .occasion-photo{order:1;}
+    .occasion-row .occasion-text,
+    .occasion-row.reverse .occasion-text{order:2;}
+    .occasion-photo img{height:240px;}
+    .contact-grid{grid-template-columns:1fr;gap:32px;}
+    .hero-photo-caption{position:static;margin-top:14px;max-width:100%;}
+  }
+
+  @media (max-width: 560px){
+    .wrap{padding:0 20px;}
+    .hero{padding:44px 0 56px;}
+    .occasion-plain{padding:40px 24px;}
+    .footer-bottom{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="brand" href="#top">Jazmin <em>Florist</em></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-chip" href="tel:+12129284940">(212) 928-4940</a>
+      <button class="hamburger" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#occasions">Occasions</a>
+    <a href="#contact">Visit</a>
+    <a class="phone-chip" href="tel:+12129284940">Call (212) 928-4940</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Fresh Flowers for Every Occasion in Washington Heights, Manhattan</h1>
+        <p class="lede">Jazmin Florist has kept fresh stock moving through its shop on Saint Nicholas Avenue for over a decade, putting together bouquets, plants, and arreglos para toda ocasión, birthdays, weddings, and remembrances, for neighbors who know exactly where to go.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="tel:+12129284940">Call (212) 928-4940</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/jazminflorist/" target="_blank" rel="noopener">Message on Instagram</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <span class="ribbon photo-tag">Para toda ocasión</span>
+        <img src="https://images.pexels.com/photos/4612197/pexels-photo-4612197.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A florist arranging a fresh bouquet by hand" width="900" height="600">
+        <div class="hero-photo-caption">Every order built by hand at the counter, the same way it has been for years.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <span class="ribbon photo-tag">Sobre nosotros</span>
+        <img src="https://images.pexels.com/photos/19140920/pexels-photo-19140920.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Buckets of fresh cut flowers inside a flower shop" width="800" height="600">
+      </div>
+      <div class="about-copy">
+        <h2>A flower shop that knows the neighborhood by name</h2>
+        <p>Tucked between 174th and 175th Street, Jazmin Florist keeps roses, lilies, carnations, and seasonal greens on hand for whatever the day calls for. Most orders still come in the way they always have, a phone call, a walk-in, or a message on Instagram, with no online ordering system standing between a customer and what they need.</p>
+        <p>Sympathy and memorial work makes up a steady share of the shop's business, alongside the birthdays, get-well bouquets, and quinceañera and wedding orders that keep the coolers full.</p>
+        <dl class="fact-row">
+          <div>
+            <dt>Address</dt>
+            <dd>1286 Saint Nicholas Ave, New York, NY 10033</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon–Sat 8am–8pm, Sun 8am–6pm</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+12129284940">(212) 928-4940</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="occasions" id="occasions">
+    <div class="wrap">
+      <div class="occasions-head">
+        <h2>Flowers for every occasion, from first birthdays to last goodbyes</h2>
+        <p>The shop's work breaks down into a handful of real categories that repeat all year, each one tagged the way an order actually leaves the counter. Here is what comes through the door.</p>
+      </div>
+
+      <div class="occasion-row">
+        <div class="occasion-photo">
+          <span class="ribbon photo-tag">Celebraciones</span>
+          <img src="https://images.pexels.com/photos/5996678/pexels-photo-5996678.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A bright, colorful mixed flower bouquet" width="800" height="600">
+        </div>
+        <div class="occasion-text">
+          <h3>Birthdays, newborns, and get-well wishes</h3>
+          <p>Bright, colorful arrangements for the good news, a new baby, a birthday, a friend on the mend. Walk-in orders are usually ready before you finish parking.</p>
+        </div>
+      </div>
+
+      <div class="occasion-row reverse">
+        <div class="occasion-photo">
+          <span class="ribbon photo-tag">Bodas y aniversarios</span>
+          <img src="https://images.pexels.com/photos/11166470/pexels-photo-11166470.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A bouquet of deep red roses" width="800" height="600">
+        </div>
+        <div class="occasion-text">
+          <h3>Weddings and anniversaries</h3>
+          <p>Roses and seasonal blooms built around a date that matters, from a first anniversary bouquet to a full order for a quinceañera or a wedding party.</p>
+        </div>
+      </div>
+
+      <div class="occasion-row">
+        <div class="occasion-photo">
+          <span class="ribbon photo-tag">En memoria</span>
+          <img src="https://images.pexels.com/photos/8789648/pexels-photo-8789648.jpeg?auto=compress&cs=tinysrgb&w=800" alt="White lily flowers used in a sympathy arrangement" width="800" height="600">
+        </div>
+        <div class="occasion-text">
+          <h3>Sympathy and memorial arrangements</h3>
+          <p>Arreglos fúnebres are some of the most requested work in the shop, standing sprays, casket pieces, and sympathy bouquets put together with the same care whether the order comes a week ahead or the same morning.</p>
+        </div>
+      </div>
+
+      <div class="occasion-plain">
+        <h3><span class="ribbon on-dark">Plantas</span> Plants and everyday greenery</h3>
+        <p>Potted plants and simple arrangements for no occasion at all, just something green for a front desk, a kitchen table, or a new apartment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap">
+      <div class="contact-head">
+        <span class="ribbon on-dark">Visítanos</span>
+        <h2>Visit the shop</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h3>Address</h3>
+          <p>1286 Saint Nicholas Ave<br>New York, NY 10033<br>Between 174th &amp; 175th St</p>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <p>Mon–Sat: 8am–8pm<br>Sunday: 8am–6pm</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="tel:+12129284940">(212) 928-4940</a><br><a href="https://www.instagram.com/jazminflorist/" target="_blank" rel="noopener">@jazminflorist</a></p>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=1286+Saint+Nicholas+Ave+New+York+NY+10033" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn-outline" href="tel:+12129284940">Call the shop</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom">
+    <span>Jazmin Florist, Washington Heights, Manhattan</span>
+    <span>Site by Modularity Networks</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

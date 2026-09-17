@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cottage Rose | Vintage Furnishings and Cottage Decor in Edinboro, PA</title>
+<meta name="description" content="The Cottage Rose is a vintage furnishings, home decor, and gift shop on Meadville Street in downtown Edinboro, PA, run by Gina Mussett inside a restored 1900s building with its original tin ceiling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose: #B3566A;
+    --rose-deep: #7A3245;
+    --rose-darker: #5C2434;
+    --sage: #6E7A5C;
+    --brass: #9C7A3C;
+    --plaster: #E5E1CE;
+    --paper-dim: #D6D1B3;
+    --ink: #2B2420;
+    --cream-text: #F8F3EA;
+    --max: 1180px;
+    --focus: #5C2434;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--plaster);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  h1,h2,h3{
+    font-family:'Vollkorn', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--rose-deep);
+    line-height:1.05;
+  }
+
+  em, .accent-italic{
+    font-family:'Vollkorn', serif;
+    font-style:italic;
+    font-weight:600;
+    color:var(--rose-deep);
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  a:focus-visible,
+  button:focus-visible,
+  .tap:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .tag-label{
+    font-family:'Special Elite', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    color:var(--brass);
+    text-transform:uppercase;
+  }
+
+  /* ---------- signature: pressed-tin divider ---------- */
+  .tin-divider{
+    width:100%;
+    height:22px;
+    background:var(--plaster);
+  }
+  .tin-divider svg{width:100%;height:100%;display:block;}
+  .tin-divider.on-dim{background:var(--paper-dim);}
+  .tin-divider.on-deep{background:var(--rose-deep);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--plaster);
+    border-bottom:1px solid rgba(43,36,32,0.14);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    gap:24px;
+  }
+  .brand{
+    font-family:'Vollkorn', serif;
+    font-weight:600;
+    font-size:1.5rem;
+    color:var(--rose-deep);
+    white-space:nowrap;
+    letter-spacing:0.01em;
+  }
+  .brand span{color:var(--brass);}
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap:34px;
+  }
+  nav.primary-nav a{
+    font-size:0.95rem;
+    font-weight:500;
+    color:var(--ink);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{border-bottom-color:var(--rose);}
+  .nav-cta{
+    background:var(--rose-deep);
+    color:var(--cream-text);
+    padding:11px 22px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.9rem;
+    white-space:nowrap;
+    border:1px solid var(--rose-deep);
+  }
+  .nav-cta:hover{background:var(--rose-darker);border-color:var(--rose-darker);}
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--ink);
+    border-radius:2px;
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+  }
+  .hamburger span, .hamburger span::before, .hamburger span::after{
+    content:'';
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+    position:relative;
+  }
+  .hamburger span::before{position:absolute;top:-6px;}
+  .hamburger span::after{position:absolute;top:6px;}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    padding:6px 0 20px;
+    border-top:1px solid rgba(43,36,32,0.14);
+  }
+  .mobile-menu a{
+    padding:12px 0;
+    font-weight:500;
+    border-bottom:1px solid rgba(43,36,32,0.1);
+  }
+  .mobile-menu .nav-cta{
+    margin-top:14px;
+    text-align:center;
+  }
+
+  /* ---------- hero: asymmetric editorial ---------- */
+  .hero{
+    padding:64px 0 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:0.92fr 1.08fr;
+    gap:0;
+    align-items:stretch;
+  }
+  .hero-copy{
+    padding:20px 56px 60px 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .hero-eyebrow{
+    font-family:'Special Elite', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    color:var(--brass);
+    margin-bottom:18px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 3.6vw, 3rem);
+    max-width:19ch;
+  }
+  .hero h1 em{font-style:italic;}
+  .hero-dek{
+    margin-top:22px;
+    font-size:1.08rem;
+    max-width:46ch;
+    color:#4A3F37;
+  }
+  .hero-actions{
+    margin-top:30px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--rose-deep);
+    color:var(--cream-text);
+    padding:14px 26px;
+    border-radius:2px;
+    font-weight:600;
+    border:1px solid var(--rose-deep);
+  }
+  .btn-primary:hover{background:var(--rose-darker);border-color:var(--rose-darker);}
+  .btn-ghost{
+    padding:14px 26px;
+    border-radius:2px;
+    font-weight:600;
+    border:1px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{background:var(--ink);color:var(--cream-text);}
+
+  .hero-media{
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-media img{
+    width:100%;
+    height:100%;
+    min-height:420px;
+    object-fit:cover;
+  }
+  .hero-tag{
+    position:absolute;
+    left:26px;
+    bottom:26px;
+    background:var(--plaster);
+    border:1px solid var(--brass);
+    padding:10px 16px;
+    max-width:220px;
+  }
+  .hero-tag .tag-label{display:block;margin-bottom:4px;}
+  .hero-tag strong{
+    font-family:'Vollkorn', serif;
+    font-weight:500;
+    font-size:1rem;
+    color:var(--rose-deep);
+  }
+
+  /* ---------- about, editorial two column ---------- */
+  .about{
+    padding:70px 0 76px;
+    background:var(--paper-dim);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1fr 0.7fr;
+    gap:44px;
+    align-items:start;
+  }
+  .about-media img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border:1px solid rgba(43,36,32,0.15);
+  }
+  .about-body .tag-label{margin-bottom:14px;display:block;}
+  .about-body h2{
+    font-size:clamp(1.7rem, 2.6vw, 2.3rem);
+    margin-bottom:20px;
+  }
+  .about-body p{margin:0 0 16px;}
+  .about-body p:last-child{margin-bottom:0;}
+  .pull-quote{
+    font-family:'Vollkorn', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.3rem;
+    color:var(--rose-deep);
+    border-left:3px solid var(--brass);
+    padding-left:20px;
+    line-height:1.4;
+    align-self:center;
+  }
+  .pull-quote cite{
+    display:block;
+    margin-top:14px;
+    font-family:'Work Sans', sans-serif;
+    font-style:normal;
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--ink);
+  }
+
+  /* ---------- shopping guide: asymmetric grid ---------- */
+  .guide{
+    padding:76px 0 70px;
+  }
+  .guide-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+  }
+  .guide-head h2{font-size:clamp(1.7rem, 2.6vw, 2.3rem);}
+  .guide-head p{
+    max-width:38ch;
+    color:#4A3F37;
+    margin:0;
+  }
+  .guide-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:1fr;
+    gap:22px;
+  }
+  .guide-card{
+    border:1px solid rgba(43,36,32,0.16);
+    background:var(--plaster);
+    padding:26px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .guide-card h3{
+    font-size:1.2rem;
+    font-weight:500;
+  }
+  .guide-card p{margin:0;color:#4A3F37;font-size:0.96rem;}
+  .guide-card .tag-label{margin-top:auto;padding-top:6px;}
+  .card-a{grid-column:span 3;grid-row:span 2;}
+  .card-b{grid-column:span 3;}
+  .card-c{grid-column:span 2;}
+  .card-d{grid-column:span 2;}
+  .card-e{grid-column:span 2;}
+  .card-a img{width:100%;height:180px;object-fit:cover;margin-bottom:6px;border:1px solid rgba(43,36,32,0.15);}
+
+  /* ---------- CTA band, one saturated accent ---------- */
+  .cta-band{
+    background:var(--rose-deep);
+    color:var(--cream-text);
+    padding:64px 0;
+  }
+  .cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .cta-inner h2{
+    color:var(--cream-text);
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    max-width:16ch;
+  }
+  .cta-inner .btn-primary{
+    background:var(--cream-text);
+    color:var(--rose-deep);
+    border-color:var(--cream-text);
+  }
+  .cta-inner .btn-primary:hover{
+    background:var(--plaster);
+    border-color:var(--plaster);
+  }
+
+  /* ---------- footer / ledger contact card ---------- */
+  footer{
+    padding:70px 0 50px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr 0.9fr;
+    gap:40px;
+  }
+  .ledger-card{
+    border:1px solid rgba(43,36,32,0.2);
+    padding:30px;
+    background:var(--paper-dim);
+  }
+  .ledger-card .brand{font-size:1.3rem;margin-bottom:12px;display:block;}
+  .ledger-card p{margin:0 0 10px;font-size:0.96rem;}
+  footer h3{
+    font-family:'Work Sans', sans-serif;
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--rose-deep);
+    margin-bottom:16px;
+  }
+  .footer-list{list-style:none;margin:0;padding:0;}
+  .footer-list li{margin-bottom:10px;font-size:0.96rem;}
+  .footer-list a:hover{color:var(--rose-deep);}
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-size:0.96rem;
+    padding:7px 0;
+    border-bottom:1px dashed rgba(43,36,32,0.18);
+  }
+  .hours-row:last-child{border-bottom:none;}
+  .copyright{
+    margin-top:50px;
+    font-size:0.82rem;
+    color:#6B5F55;
+    text-align:center;
+  }
+
+  /* ---------- focus / a11y ---------- */
+  .visually-hidden{
+    position:absolute;
+    width:1px;height:1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1150px){
+    nav.primary-nav{display:none;}
+    .nav-cta{display:none;}
+    .hamburger{display:flex;}
+    .mobile-menu.open{display:flex;}
+  }
+
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-copy{padding:36px 0 40px;order:2;}
+    .hero-media{order:1;}
+    .hero-media img{min-height:320px;}
+    .about-grid{grid-template-columns:1fr;}
+    .pull-quote{border-left:none;border-top:3px solid var(--brass);padding-left:0;padding-top:16px;}
+    .guide-grid{grid-template-columns:repeat(2, 1fr);}
+    .card-a{grid-column:span 2;grid-row:auto;}
+    .card-b, .card-c, .card-d, .card-e{grid-column:span 1;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+  }
+
+  @media (max-width: 560px){
+    .wrap{padding:0 20px;}
+    .hero-copy{padding-top:28px;}
+    .guide-grid{grid-template-columns:1fr;}
+    .card-a, .card-b, .card-c, .card-d, .card-e{grid-column:span 1;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">The Cottage <span>Rose</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">Our Story</a>
+      <a href="#guide">What's Inside</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="#visit" class="nav-cta">Plan a Visit</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu wrap" id="mobileMenu">
+    <a href="#about">Our Story</a>
+    <a href="#guide">What's Inside</a>
+    <a href="#visit">Visit</a>
+    <a href="#visit" class="nav-cta">Plan a Visit</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Downtown Edinboro, PA</span>
+          <h1>Vintage Furnishings and Cottage Decor in <em>Edinboro, PA</em></h1>
+          <p class="hero-dek">A found-and-restored furniture shop inside a century-old storefront, with the original pressed tin ceiling still overhead. Vintage pieces, garden accessories, candles, and gifts, picked one at a time by owner Gina Mussett.</p>
+          <div class="hero-actions">
+            <a href="#guide" class="btn-primary">See What's Inside</a>
+            <a href="#visit" class="btn-ghost">Get Directions</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.pexels.com/photos/35062504/pexels-photo-35062504.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Vintage furniture and decor displayed in a chic storefront window, similar to the Cottage Rose shopfront in Edinboro">
+          <div class="hero-tag">
+            <span class="tag-label">Est. downtown Edinboro</span>
+            <strong>Open Thursday to Saturday</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tin-divider" aria-hidden="true">
+    <svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="11" x2="400" y2="11" stroke="#9C7A3C" stroke-width="1" stroke-dasharray="1 7"/>
+      <g fill="none" stroke="#9C7A3C" stroke-width="1">
+        <path d="M10 6 L18 11 L10 16 L2 11 Z"/>
+        <path d="M50 6 L58 11 L50 16 L42 11 Z"/>
+        <path d="M90 6 L98 11 L90 16 L82 11 Z"/>
+        <path d="M130 6 L138 11 L130 16 L122 11 Z"/>
+        <path d="M170 6 L178 11 L170 16 L162 11 Z"/>
+        <path d="M210 6 L218 11 L210 16 L202 11 Z"/>
+        <path d="M250 6 L258 11 L250 16 L242 11 Z"/>
+        <path d="M290 6 L298 11 L290 16 L282 11 Z"/>
+        <path d="M330 6 L338 11 L330 16 L322 11 Z"/>
+        <path d="M370 6 L378 11 L370 16 L362 11 Z"/>
+      </g>
+    </svg>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-media">
+          <img src="https://images.pexels.com/photos/6830012/pexels-photo-6830012.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Wood furniture and decor pieces on display inside an antique shop">
+        </div>
+        <div class="about-body">
+          <span class="tag-label">Our Story</span>
+          <h2>From dry cleaner to found-treasure shop</h2>
+          <p>Gina Mussett spent years in corporate retail management with Express, Limited Express, The Bombay Company, and Pier 1 before she closed on a vacant storefront on Meadville Street the same day she sold her home. What had been a dry cleaner's cement block building became The Cottage Rose, with a restored tin ceiling and exposed brick giving the space its warmth.</p>
+          <p>Edinboro is both a university town and a lake vacation stop, so the shop is stocked for all three: students furnishing a first apartment, visitors looking for a gift to take home, and neighbors who stop in every week to see what is new.</p>
+        </div>
+        <blockquote class="pull-quote">
+          Something for everyone who walks through the door, not just the vintage collectors.
+          <cite>Gina Mussett, owner</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <div class="tin-divider on-dim" aria-hidden="true">
+    <svg viewBox="0 0 400 22" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="11" x2="400" y2="11" stroke="#9C7A3C" stroke-width="1" stroke-dasharray="1 7"/>
+      <g fill="none" stroke="#9C7A3C" stroke-width="1">
+        <path d="M10 6 L18 11 L10 16 L2 11 Z"/>
+        <path d="M50 6 L58 11 L50 16 L42 11 Z"/>
+        <path d="M90 6 L98 11 L90 16 L82 11 Z"/>
+        <path d="M130 6 L138 11 L130 16 L122 11 Z"/>
+        <path d="M170 6 L178 11 L170 16 L162 11 Z"/>
+        <path d="M210 6 L218 11 L210 16 L202 11 Z"/>
+        <path d="M250 6 L258 11 L250 16 L242 11 Z"/>
+        <path d="M290 6 L298 11 L290 16 L282 11 Z"/>
+        <path d="M330 6 L338 11 L330 16 L322 11 Z"/>
+        <path d="M370 6 L378 11 L370 16 L362 11 Z"/>
+      </g>
+    </svg>
+  </div>
+
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <div class="guide-head">
+        <h2>What's inside</h2>
+        <p>A shopping guide to the shop floor. Inventory turns over often since most pieces are one of a kind.</p>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card card-a">
+          <img src="https://images.pexels.com/photos/19229439/pexels-photo-19229439.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Close up of pink garden roses">
+          <h3>Garden and Statuary</h3>
+          <p>Planters, garden statuary, and outdoor accessories for a porch or a lake cottage.</p>
+          <span class="tag-label">New each season</span>
+        </div>
+        <div class="guide-card card-b">
+          <h3>Vintage Furniture</h3>
+          <p>Dressers, side tables, chairs, and one of a kind case pieces, refinished or left original depending on the piece.</p>
+          <span class="tag-label">Restocked weekly</span>
+        </div>
+        <div class="guide-card card-c">
+          <h3>Home Decor and Gifts</h3>
+          <p>Candles, soaps and lotions, cards, and new decor mixed in alongside the vintage finds.</p>
+        </div>
+        <div class="guide-card card-d">
+          <h3>Jewelry and Accessories</h3>
+          <p>Costume and handmade jewelry, upcycled handbags, and small trinkets near the register.</p>
+        </div>
+        <div class="guide-card card-e">
+          <h3>Custom Requests</h3>
+          <p>Looking for a specific piece or a gift for someone particular? Call ahead and Gina will keep an eye out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="visit-cta">
+    <div class="wrap cta-inner">
+      <h2>Stop by on Meadville Street this week.</h2>
+      <a href="tel:+18142502215" class="btn-primary">Call (814) 250-2215</a>
+    </div>
+  </section>
+
+</main>
+
+<footer id="visit">
+  <div class="wrap footer-grid">
+    <div class="ledger-card">
+      <span class="brand">The Cottage <span>Rose</span></span>
+      <p>121 Meadville Street<br>Edinboro, PA 16412</p>
+      <p><a href="tel:+18142502215">(814) 250-2215</a></p>
+      <p><a href="mailto:thecottagerose121@gmail.com">thecottagerose121@gmail.com</a></p>
+    </div>
+    <div>
+      <h3>Hours</h3>
+      <div class="hours-row"><span>Thursday</span><span>10am to 5pm</span></div>
+      <div class="hours-row"><span>Friday</span><span>10am to 5pm</span></div>
+      <div class="hours-row"><span>Saturday</span><span>10am to 5pm</span></div>
+      <div class="hours-row"><span>Sun to Wed</span><span>Closed</span></div>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <ul class="footer-list">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#guide">What's Inside</a></li>
+        <li><a href="tel:+18142502215">Call the Shop</a></li>
+        <li><a href="mailto:thecottagerose121@gmail.com">Email the Shop</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copyright">The Cottage Rose, Edinboro, PA. Site preview built by Modularity Networks.</p>
+</footer>
+
+</body>
+</html>

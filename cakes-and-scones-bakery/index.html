@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cakes &amp; Scones Bakery | Scratch Bakery and Custom Wedding Cakes in Greentown, PA</title>
+<meta name="description" content="Scratch-made pastries, cakes, and custom wedding cakes from Cakes & Scones Bakery in Greentown, PA, serving the Lake Wallenpaupack area since 2004.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #E3E6DF;
+    --paper-alt: #EDE2CB;
+    --white: #FFFDF7;
+    --ink: #26211C;
+    --ledger-navy: #24344A;
+    --ledger-navy-soft: #2E4460;
+    --raspberry: #96283C;
+    --brass: #B8863C;
+    --line: rgba(38,33,28,0.22);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family:'Libre Franklin', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    font-style: normal;
+    margin:0;
+    color: var(--ink);
+    line-height:1.12;
+    font-weight:600;
+  }
+  p{ margin:0; }
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width:100%; display:block; }
+  ul{ margin:0; padding:0; list-style:none; }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  .btn:focus-visible{
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Torn ticket edge (signature motif) ---------- */
+  .torn-edge{
+    height: 16px;
+    width: 100%;
+    background:
+      linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0/16px 16px repeat-x,
+      linear-gradient(-135deg, var(--paper) 50%, transparent 50%) 0 0/16px 16px repeat-x;
+    background-color: transparent;
+  }
+  .torn-edge.on-navy{
+    background:
+      linear-gradient(135deg, var(--ledger-navy) 50%, transparent 50%) 0 0/16px 16px repeat-x,
+      linear-gradient(-135deg, var(--ledger-navy) 50%, transparent 50%) 0 0/16px 16px repeat-x;
+  }
+  .torn-edge.flip{ transform: scaleY(-1); }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky;
+    top:0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    gap: 24px;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    white-space: nowrap;
+  }
+  .brand-name{
+    font-family:'Newsreader', serif;
+    font-weight:700;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .brand-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--raspberry);
+  }
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap: 32px;
+  }
+  nav.primary-nav a{
+    font-size: 0.95rem;
+    font-weight:600;
+    color: var(--ink);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  nav.primary-nav a:hover{ border-bottom-color: var(--raspberry); }
+  .nav-actions{ display:flex; align-items:center; gap:16px; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 11px 20px;
+    background: var(--raspberry);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.92rem;
+    border-radius: 2px;
+    border: 1px solid var(--raspberry);
+  }
+  .btn:hover{ background: #7C2333; }
+  .btn.ghost{
+    background: transparent;
+    color: var(--ledger-navy);
+    border: 1px solid var(--ledger-navy);
+  }
+  .btn.ghost:hover{ background: var(--ledger-navy); color: var(--white); }
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:2px;
+    width:44px;
+    height:40px;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+  }
+  .mobile-menu{
+    display:none;
+  }
+
+  /* ---------- Hero as order ticket ---------- */
+  .hero{
+    padding: 56px 0 72px;
+  }
+  .ticket{
+    background: #FFFDF7;
+    border: 1px solid var(--line);
+    box-shadow: 0 1px 0 var(--line);
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 0;
+    overflow:hidden;
+  }
+  .ticket-main{
+    padding: 44px 48px 40px;
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+    border-right: 1px dashed var(--line);
+  }
+  .ticket-no{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .ticket-no .num{
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--raspberry);
+    font-weight:600;
+  }
+  .ticket-no .since{
+    font-size: 0.78rem;
+    color: var(--ink);
+    opacity:0.65;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ledger-navy);
+  }
+  h1{
+    font-size: clamp(2.1rem, 3.6vw, 3.05rem);
+  }
+  .hero-sub{
+    font-size: 1.08rem;
+    max-width: 46ch;
+    color: var(--ink);
+    opacity: 0.88;
+  }
+  .hero-fields{
+    margin-top: 6px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 14px 24px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+  .hero-field dt{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--raspberry);
+    margin-bottom: 4px;
+  }
+  .hero-field dd{
+    margin:0;
+    font-weight:600;
+    font-size:0.96rem;
+  }
+  .hero-actions{
+    margin-top: 8px;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .ticket-photo{
+    position: relative;
+    min-height: 320px;
+  }
+  .ticket-photo img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+  }
+  .stamp{
+    position:absolute;
+    bottom: 22px;
+    right: 22px;
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    border: 2.5px solid var(--white);
+    color: var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform: rotate(-11deg);
+    background: rgba(150,40,60,0.96);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    line-height:1.4;
+    padding: 8px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 72px 0; }
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap:wrap;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+  }
+  .section-head .eyebrow{ margin-bottom: 8px; display:block; }
+  .section-head h2{ font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+  .section-head .lede{
+    max-width: 40ch;
+    font-size: 0.98rem;
+    opacity:0.8;
+  }
+
+  /* ---------- About ---------- */
+  .about{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .about-photo{
+    border: 1px solid var(--line);
+    padding: 10px;
+    background: #FFFDF7;
+  }
+  .about-photo img{ width:100%; height: 380px; object-fit: cover; }
+  .about-photo figcaption{
+    margin-top: 10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+  .about-copy p{ margin-bottom: 16px; font-size: 1.02rem; }
+  .about-copy p:last-child{ margin-bottom: 0; }
+  .about-facts{
+    margin-top: 26px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+  }
+  .about-fact{
+    border-top: 2px solid var(--raspberry);
+    padding-top: 14px;
+  }
+  .about-fact .fig{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    font-size: 1.6rem;
+  }
+  .about-fact .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity:0.75;
+  }
+
+  /* ---------- Menu ledger ---------- */
+  .menu{ background: var(--paper-alt); }
+  .ledger{
+    display:flex;
+    flex-direction:column;
+  }
+  .ledger-group{ margin-bottom: 30px; }
+  .ledger-group:last-child{ margin-bottom: 0; }
+  .ledger-group-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ledger-navy);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .ledger-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .ledger-row:last-child{ border-bottom: none; }
+  .ledger-row .item{
+    font-weight:600;
+    font-size: 1.01rem;
+  }
+  .ledger-row .desc{
+    font-size: 0.88rem;
+    opacity: 0.72;
+    margin-top: 2px;
+  }
+  .ledger-row .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--raspberry);
+    white-space:nowrap;
+    text-align:right;
+    align-self:center;
+  }
+  .menu-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 56px;
+  }
+
+  /* ---------- Custom cake callout ---------- */
+  .commission{
+    background: #FFFDF7;
+    border: 1px solid var(--line);
+    padding: 44px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items:center;
+  }
+  .commission-photo img{ width:100%; height: 260px; object-fit:cover; border:1px solid var(--line); }
+  .commission h2{ font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 14px; }
+  .commission p{ font-size: 1rem; opacity:0.86; margin-bottom: 22px; max-width: 52ch; }
+
+  /* ---------- Footer / dark band ---------- */
+  footer{
+    background: var(--ledger-navy);
+    color: var(--white);
+  }
+  .footer-inner{
+    padding-top: 56px;
+    padding-bottom: 40px;
+    display:grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 40px;
+  }
+  footer h3{
+    font-family:'Newsreader', serif;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+  footer .eyebrow{ color: #D8C79A; }
+  footer p, footer address{ font-style:normal; opacity:0.9; margin-bottom:8px; font-size:0.96rem; }
+  footer a{ color: var(--white); border-bottom: 1px solid rgba(255,253,247,0.35); }
+  footer a:hover{ border-bottom-color: var(--white); }
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,253,247,0.14);
+    font-size: 0.92rem;
+  }
+  .hours-row:last-child{ border-bottom:none; }
+  .foot-bottom{
+    border-top: 1px solid rgba(255,253,247,0.18);
+    padding-top: 20px;
+    padding-bottom: 28px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap: 10px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1150px){
+    nav.primary-nav{ display:none; }
+    .nav-actions .btn.ghost{ display:none; }
+    .hamburger{ display:flex; }
+    .mobile-menu.open{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      padding-top: 14px;
+      padding-bottom: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .mobile-menu a{
+      padding: 12px 4px;
+      font-weight:600;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 900px){
+    .ticket{ grid-template-columns: 1fr; }
+    .ticket-main{ border-right:none; border-bottom: 1px dashed var(--line); }
+    .ticket-photo{ min-height: 260px; }
+    .about{ grid-template-columns: 1fr; }
+    .about-photo img{ height: 280px; }
+    .menu-grid{ grid-template-columns: 1fr; }
+    .commission{ grid-template-columns: 1fr; padding: 30px; }
+    .commission-photo{ order: -1; }
+    .footer-inner{ grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px){
+    .nav-actions .btn:not(.hamburger){ display:none; }
+  }
+
+  @media (max-width: 560px){
+    .wrap{ padding: 0 20px; }
+    .ticket-main{ padding: 32px 24px 30px; }
+    .hero-fields{ grid-template-columns: 1fr; }
+    .about-facts{ grid-template-columns: 1fr 1fr; }
+    section{ padding: 52px 0; }
+    .stamp{ width:100px; height:100px; font-size:0.72rem; right:14px; bottom:14px; padding:6px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <div class="brand">
+      <span class="brand-name">Cakes &amp; Scones</span>
+      <span class="brand-tag">Bakery · Greentown, PA</span>
+    </div>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#custom-cakes">Custom Cakes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost" href="#contact">Visit Us</a>
+      <a class="btn" href="tel:5706764155">Call (570) 676-4155</a>
+      <button class="hamburger" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#custom-cakes">Custom Cakes</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:5706764155">Call (570) 676-4155</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="ticket">
+        <div class="ticket-main">
+          <div class="ticket-no">
+            <span class="num">ORDER NO. 0004</span>
+            <span class="since">EST. 2004</span>
+          </div>
+          <h1>Scratch Bakery and Custom Wedding Cakes in Greentown, PA</h1>
+          <p class="hero-sub">Every scone, tart, and tiered cake is made from scratch with butter, fresh ingredients, and Belgian chocolate, right on Route 507 at the Lake Wallenpaupack end of Greentown.</p>
+          <dl class="hero-fields">
+            <div class="hero-field">
+              <dt>Baker</dt>
+              <dd>Tere &amp; Andy</dd>
+            </div>
+            <div class="hero-field">
+              <dt>Serving</dt>
+              <dd>Greentown &amp; Lake Wallenpaupack</dd>
+            </div>
+            <div class="hero-field">
+              <dt>Known For</dt>
+              <dd>Wedding &amp; custom cakes</dd>
+            </div>
+            <div class="hero-field">
+              <dt>Open</dt>
+              <dd>Tuesday through Saturday</dd>
+            </div>
+          </dl>
+          <div class="hero-actions">
+            <a class="btn" href="tel:5706764155">Call (570) 676-4155</a>
+            <a class="btn ghost" href="#menu">See What We Bake</a>
+          </div>
+        </div>
+        <div class="ticket-photo">
+          <img src="https://images.pexels.com/photos/31101247/pexels-photo-31101247.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Assorted French pastries displayed in a bakery case" loading="eager">
+          <div class="stamp">Fresh<br>Daily<br>Since 2004</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <figure class="about-photo">
+          <img src="https://images.pexels.com/photos/3592423/pexels-photo-3592423.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Afternoon spread of cakes and pastries on a table">
+          <figcaption>A scratch-made spread, the kind that leaves the case empty by afternoon.</figcaption>
+        </figure>
+        <div class="about-copy">
+          <h2 style="margin: 0 0 18px;">Twenty-five years of pastry work, now on Route 507</h2>
+          <p>Tere spent twenty-five years baking professionally in restaurant kitchens around Boston and New York City before opening Cakes &amp; Scones in Greentown in 2004. She and Andy have run the counter together ever since, turning out scones, danish, eclairs, tiramisu, and Portuguese custards using only butter, fresh ingredients, and Belgian chocolate.</p>
+          <p>The bakery has become a regular stop for the Lake Wallenpaupack and Greentown crowd, with a small team hand-finishing everything from a Tuesday morning muffin order to a full wedding cake, made from scratch, in house, the same way it has been since day one.</p>
+          <div class="about-facts">
+            <div class="about-fact">
+              <div class="fig">2004</div>
+              <div class="lbl">Open Since</div>
+            </div>
+            <div class="about-fact">
+              <div class="fig">25 yrs</div>
+              <div class="lbl">Baking Experience</div>
+            </div>
+            <div class="about-fact">
+              <div class="fig">30+</div>
+              <div class="lbl">Cookie Varieties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>What comes out of the ovens</h2>
+        </div>
+        <p class="lede">A working list of what we bake most weeks. Ask what is fresh today, the case changes with the season.</p>
+      </div>
+      <div class="menu-grid">
+        <div>
+          <div class="ledger-group">
+            <div class="ledger-group-title">Morning Pastries</div>
+            <div class="ledger-row">
+              <div><div class="item">Scones</div><div class="desc">Classic and seasonal fruit varieties, baked fresh each morning</div></div>
+              <div class="tag">Daily</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Danish &amp; Muffins</div><div class="desc">Butter-laminated dough, made in house</div></div>
+              <div class="tag">Daily</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Eclairs &amp; Individual Desserts</div><div class="desc">Choux pastry, custard, and Belgian chocolate</div></div>
+              <div class="tag">Case</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Portuguese Custard Tarts</div><div class="desc">A nod to Tere's classic pastry training</div></div>
+              <div class="tag">Limited</div>
+            </div>
+          </div>
+          <div class="ledger-group">
+            <div class="ledger-group-title">Savory</div>
+            <div class="ledger-row">
+              <div><div class="item">Quiche</div><div class="desc">Whole or by the slice, ask for the day's flavor</div></div>
+              <div class="tag">Daily</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Savory Bakes</div><div class="desc">Rotating savory items alongside the sweet case</div></div>
+              <div class="tag">Rotating</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ledger-group">
+            <div class="ledger-group-title">Cakes &amp; Tarts</div>
+            <div class="ledger-row">
+              <div><div class="item">Layer Cakes &amp; Pies</div><div class="desc">Full size or made to order</div></div>
+              <div class="tag">Order Ahead</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Tarts &amp; Tiramisu</div><div class="desc">European-style, finished in house</div></div>
+              <div class="tag">Case</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Wedding &amp; Custom Cakes</div><div class="desc">Tiered and designed to order, see below</div></div>
+              <div class="tag">By Appointment</div>
+            </div>
+          </div>
+          <div class="ledger-group">
+            <div class="ledger-group-title">Cookies &amp; Bars</div>
+            <div class="ledger-row">
+              <div><div class="item">30+ Cookie Varieties</div><div class="desc">A rotating lineup, always more than one kind on hand</div></div>
+              <div class="tag">Daily</div>
+            </div>
+            <div class="ledger-row">
+              <div><div class="item">Bars &amp; Squares</div><div class="desc">Scratch-baked, sold individually or by the tray</div></div>
+              <div class="tag">Daily</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="custom-cakes">
+    <div class="wrap">
+      <div class="commission">
+        <div>
+          <h2>Planning a wedding cake or a party order</h2>
+          <p>Tere designs and bakes every wedding and celebration cake to order, from a simple two tier to a full reception centerpiece. Call ahead with your date, guest count, and flavor preferences, and she will build the order with you over the phone or at the counter.</p>
+          <a class="btn" href="tel:5706764155">Start Your Order: (570) 676-4155</a>
+        </div>
+        <div class="commission-photo">
+          <img src="https://images.pexels.com/photos/34596958/pexels-photo-34596958.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Elegant tiered white wedding cake on a gold stand">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="torn-edge on-navy" aria-hidden="true"></div>
+<footer id="contact">
+  <div class="wrap footer-inner">
+    <div>
+      <h3>Cakes &amp; Scones Bakery</h3>
+      <address>
+        <p>1543 Route 507<br>Greentown, PA 18426</p>
+        <p><a href="tel:5706764155">(570) 676-4155</a></p>
+        <p><a href="mailto:tereandandy@me.com">tereandandy@me.com</a></p>
+        <p><a href="https://www.instagram.com/cakesandsconesbakery/" target="_blank" rel="noopener">@cakesandsconesbakery</a></p>
+      </address>
+    </div>
+    <div>
+      <h3>Counter Hours</h3>
+      <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+      <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+      <div class="hours-row"><span>Tuesday</span><span>8:00am to 5:30pm</span></div>
+      <div class="hours-row"><span>Wednesday</span><span>8:00am to 5:30pm</span></div>
+      <div class="hours-row"><span>Thursday</span><span>8:00am to 5:30pm</span></div>
+      <div class="hours-row"><span>Friday</span><span>8:00am to 5:30pm</span></div>
+      <div class="hours-row"><span>Saturday</span><span>8:00am to 3:00pm</span></div>
+    </div>
+    <div>
+      <h3>Route 507, Greentown</h3>
+      <p>Sitting on Route 507 near the Lake Wallenpaupack and Greentown line, a regular stop for locals picking up scratch-made pastries and custom cakes.</p>
+      <p><a href="https://maps.google.com/?q=1543+Route+507+Greentown+PA+18426" target="_blank" rel="noopener">Get Directions</a></p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>Cakes &amp; Scones Bakery, Greentown, PA. Baking from scratch since 2004.</span>
+    <span>Demo mockup built by Modularity Networks.</span>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', function(){
+    var isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

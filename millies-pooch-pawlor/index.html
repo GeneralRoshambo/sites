@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millie's Pooch Pawlor | Dog &amp; Cat Grooming in Port Jervis, NY</title>
+<meta name="description" content="Dog and cat grooming on Front Street in Port Jervis, NY. Bath and brush, full breed grooms, nail trims, and cat grooming, one pet at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF5EC;
+    --ivory-deep:#D9AFA0;
+    --bg-page:#E7C9BE;
+    --ink:#2A2024;
+    --ink-soft:#332A2C;
+    --berry:#7C2438;
+    --berry-dark:#5E1B2A;
+    --brass:#AD7F3C;
+    --brass-text:#6E4A22;
+    --slate:#3E5765;
+    --blush:#F1DCDB;
+    --line:#C99A85;
+    --radius-stub:2px;
+    --focus:#1D5B72;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--bg-page);
+    color:var(--ink);
+    font-family:"Karla", Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{max-width:100%;display:block;}
+
+  a{color:inherit;}
+
+  h1,h2,h3{
+    font-family:"Big Shoulders Display","Arial Narrow",sans-serif;
+    font-weight:800;
+    letter-spacing:0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .mono{
+    font-family:"IBM Plex Mono", monospace;
+    letter-spacing:0.03em;
+  }
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(231,201,190,0.96);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:saturate(140%) blur(4px);
+  }
+
+  .header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px;
+    margin:0 auto;
+    gap:24px;
+  }
+
+  .brand{
+    font-family:"Big Shoulders Display",sans-serif;
+    font-weight:800;
+    font-size:1.5rem;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .brand span{color:var(--berry);}
+
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+  }
+
+  nav.primary-nav a{
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.92rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--ink-soft);
+    padding:4px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover{
+    color:var(--berry);
+    border-bottom-color:var(--berry);
+  }
+
+  .call-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--berry);
+    color:var(--ivory);
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.9rem;
+    padding:11px 18px;
+    border-radius:3px;
+    white-space:nowrap;
+    border:1px solid var(--berry);
+  }
+  .call-btn:hover{background:var(--berry-dark);border-color:var(--berry-dark);}
+
+  .header-actions{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:3px;
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    padding:0;
+    align-items:center;
+    justify-content:center;
+  }
+  .hamburger span,
+  .hamburger span::before,
+  .hamburger span::after{
+    content:"";
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+    position:relative;
+  }
+  .hamburger span::before{position:absolute;top:-6px;}
+  .hamburger span::after{position:absolute;top:6px;}
+
+  .mobile-menu{
+    display:none;
+  }
+  .mobile-menu a{
+    display:block;
+    padding:14px 32px;
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-size:0.95rem;
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu.open{
+    display:block;
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+  }
+
+  @media (max-width:1150px){
+    nav.primary-nav{display:none;}
+    .call-btn.desktop-only{display:none;}
+    .hamburger{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:76px 0 90px;
+    background:var(--ivory);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--berry);
+    font-weight:600;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--berry);display:inline-block;
+  }
+
+  .hero h1{
+    font-size:clamp(2.5rem, 4.6vw, 3.6rem);
+    line-height:1.04;
+    margin-bottom:22px;
+  }
+
+  .hero h1 em{
+    font-style:normal;
+    color:var(--berry);
+  }
+
+  .hero-sub{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+
+  .hero-ctas{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:3px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:0.98rem;
+    border:1px solid var(--berry);
+  }
+  .btn-primary{background:var(--berry);color:var(--ivory);}
+  .btn-primary:hover{background:var(--berry-dark);border-color:var(--berry-dark);}
+  .btn-secondary{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-secondary:hover{background:var(--ink);color:var(--ivory);}
+
+  .hero-stats{
+    display:flex;
+    gap:34px;
+    margin-top:44px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .stat-num{
+    font-family:"Big Shoulders Display",sans-serif;
+    font-weight:800;
+    font-size:1.9rem;
+    color:var(--berry);
+    line-height:1;
+  }
+  .stat-label{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  /* ---------- SIGNATURE: CLAIM TICKET ---------- */
+  .ticket-wrap{
+    display:flex;
+    justify-content:center;
+  }
+
+  .ticket{
+    background:var(--blush);
+    border:1.5px solid var(--ink);
+    padding:26px 26px 22px;
+    width:100%;
+    max-width:340px;
+    transform:rotate(2.2deg);
+    position:relative;
+    box-shadow:6px 6px 0 var(--brass);
+  }
+
+  .ticket::before{
+    content:"";
+    position:absolute;
+    left:-9px;
+    top:50%;
+    transform:translateY(-50%);
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--ivory);
+    border:1.5px solid var(--ink);
+  }
+  .ticket::after{
+    content:"";
+    position:absolute;
+    right:-9px;
+    top:50%;
+    transform:translateY(-50%);
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--ivory);
+    border:1.5px solid var(--ink);
+  }
+
+  .ticket-perf{
+    border-top:2px dashed var(--ink);
+    margin:16px 0;
+  }
+
+  .ticket-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+
+  .ticket-kicker{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .ticket-num{
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    background:var(--ink);
+    color:var(--ivory);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+
+  .ticket-brand{
+    font-family:"Big Shoulders Display",sans-serif;
+    font-weight:800;
+    font-size:1.5rem;
+    text-transform:uppercase;
+    line-height:1.05;
+    margin-top:10px;
+  }
+  .ticket-brand span{color:var(--berry);}
+
+  .ticket-addr{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+
+  .ticket-field{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.88rem;
+    padding:6px 0;
+    border-bottom:1px dotted var(--line);
+  }
+  .ticket-field span:first-child{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+  .ticket-field span:last-child{font-weight:700;}
+
+  .ticket-foot{
+    margin-top:16px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--brass-text);
+    text-align:center;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .ticket-wrap{margin-top:12px;}
+    .ticket{transform:rotate(0deg);max-width:100%;}
+    .hero-stats{flex-wrap:wrap;row-gap:18px;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:86px 0;}
+  .section-alt{background:var(--ivory-deep);}
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{
+    font-size:clamp(1.9rem,3.2vw,2.5rem);
+    line-height:1.08;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    margin-top:14px;
+    max-width:56ch;
+  }
+
+  /* ---------- SERVICES (stub cards) ---------- */
+  .stub-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+  }
+
+  .stub{
+    background:var(--ivory);
+    border:1.5px solid var(--ink);
+    border-top:none;
+    padding:26px 20px 22px;
+    position:relative;
+  }
+
+  .stub-perf{
+    height:14px;
+    background:
+      radial-gradient(circle, var(--ivory-deep) 3.5px, transparent 3.6px) 0 -7px / 18px 14px repeat-x,
+      var(--ink);
+    border:1.5px solid var(--ink);
+    border-bottom:none;
+  }
+  .section-alt .stub-perf{
+    background:
+      radial-gradient(circle, var(--ivory-deep) 3.5px, transparent 3.6px) 0 -7px / 18px 14px repeat-x,
+      var(--ink);
+  }
+
+  .stub h3{
+    font-size:1.35rem;
+    margin-bottom:10px;
+    line-height:1.05;
+  }
+
+  .stub p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    margin:0;
+  }
+
+  @media (max-width:920px){
+    .stub-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .stub-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+
+  .about-photo{
+    border:1.5px solid var(--ink);
+    overflow:hidden;
+  }
+  .about-photo img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+  }
+
+  .about-copy p{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+
+  .clipping{
+    background:var(--blush);
+    border:1.5px dashed var(--ink);
+    padding:22px 24px 20px;
+    margin-top:32px;
+    position:relative;
+  }
+  .clipping::before{
+    content:"";
+    position:absolute;
+    top:-11px;
+    left:28px;
+    width:58px;
+    height:20px;
+    background:rgba(251,245,236,0.8);
+    border:1px solid rgba(42,32,36,0.18);
+    transform:rotate(-3deg);
+  }
+  .clipping p{
+    font-style:normal;
+    color:var(--ink);
+    font-size:1.05rem;
+    margin:0 0 8px;
+  }
+  .clipping cite{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.75rem;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    font-style:normal;
+  }
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo img{height:300px;}
+  }
+
+  /* ---------- CAT + DOG STRIP ---------- */
+  .strip{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+  }
+  .strip-card{
+    border:1.5px solid var(--ink);
+    background:var(--ivory);
+    overflow:hidden;
+  }
+  .strip-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+  }
+  .strip-card-body{
+    padding:18px 22px 22px;
+  }
+  .strip-card-body h3{
+    font-size:1.2rem;
+    margin-bottom:6px;
+  }
+  .strip-card-body p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    margin:0;
+  }
+
+  @media (max-width:700px){
+    .strip{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CONTACT / FOOTER BAND ---------- */
+  .contact-band{
+    background:var(--berry-dark);
+    color:var(--ivory);
+    padding:80px 0 50px;
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:50px;
+  }
+
+  .contact-band h2{
+    color:var(--ivory);
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    line-height:1.08;
+    margin-bottom:18px;
+  }
+
+  .contact-band .hero-sub{
+    color:#E9D3D3;
+    max-width:44ch;
+  }
+
+  .contact-band .btn-primary{
+    background:var(--ivory);
+    color:var(--berry-dark);
+    border-color:var(--ivory);
+  }
+  .contact-band .btn-primary:hover{
+    background:var(--brass-text);
+    border-color:var(--brass-text);
+    color:var(--ivory);
+  }
+
+  .contact-card{
+    background:rgba(251,245,236,0.06);
+    border:1px solid rgba(251,245,236,0.35);
+    padding:30px 28px;
+  }
+
+  .contact-row{
+    display:flex;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px solid rgba(251,245,236,0.2);
+  }
+  .contact-row:last-child{border-bottom:none;}
+
+  .contact-row .icon{
+    flex:none;
+    width:20px;
+    height:20px;
+    margin-top:2px;
+  }
+
+  .contact-row .label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:#D9B9B9;
+    margin-bottom:3px;
+  }
+  .contact-row a{
+    text-decoration:none;
+    color:var(--ivory);
+    font-weight:700;
+  }
+  .contact-row a:hover{text-decoration:underline;}
+  .contact-row span.value{
+    color:var(--ivory);
+    font-weight:600;
+  }
+
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;gap:36px;}
+  }
+
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:22px 32px 0;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:0.82rem;
+    color:#D9B9B9;
+  }
+
+  .top-hr{
+    border:none;
+    border-top:1px solid rgba(251,245,236,0.2);
+    max-width:1180px;
+    margin:40px auto 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <a href="#top" class="brand">Millie's <span>Pooch</span> Pawlor</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:8458580608" class="call-btn desktop-only">
+        Call (845) 858-0608
+      </a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="menuToggle">
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:8458580608">Call (845) 858-0608</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Dog &amp; Cat Grooming in <em>Port Jervis, NY</em></h1>
+        <p class="hero-sub">On Front Street in Port Jervis, one pet is on the table at a time. Baths, full breed grooms, nail trims, and cat grooming, handled by hand, not on a rushed conveyor schedule.</p>
+        <div class="hero-ctas">
+          <a href="tel:8458580608" class="btn btn-primary">Call to Book</a>
+          <a href="#services" class="btn btn-secondary">See Services</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">4.7</div>
+            <div class="stat-label">Average rating<br>across local reviews</div>
+          </div>
+          <div>
+            <div class="stat-num">1-to-1</div>
+            <div class="stat-label">Pet to groomer,<br>appointment only</div>
+          </div>
+          <div>
+            <div class="stat-num">Tu&#8211;Sa</div>
+            <div class="stat-label">Open Tuesday<br>through Saturday</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-wrap">
+        <div class="ticket">
+          <div class="ticket-top">
+            <span class="ticket-kicker">Claim Ticket</span>
+            <span class="ticket-num">No. 092</span>
+          </div>
+          <div class="ticket-brand">Millie's <span>Pooch</span> Pawlor</div>
+          <p class="ticket-addr">92 Front St &middot; Port Jervis, NY</p>
+          <div class="ticket-perf"></div>
+          <div class="ticket-field"><span>Pet</span><span>Any size, dog or cat</span></div>
+          <div class="ticket-field"><span>Service</span><span>Bath, trim, or full groom</span></div>
+          <div class="ticket-field"><span>Ready by</span><span>Same visit, by appointment</span></div>
+          <div class="ticket-foot">Present this stub at pickup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-alt" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Every visit gets its own ticket</h2>
+        <p>Four ways in the door on Front Street, from a quick maintenance stop to a full breed cut. Dogs and cats both welcome, sized and priced by the visit.</p>
+      </div>
+
+      <div class="stub-grid">
+        <div>
+          <div class="stub-perf"></div>
+          <div class="stub">
+            <h3>Bath &amp; Brush</h3>
+            <p>Shampoo, conditioner, blow dry, and a full brush out for everyday coats between grooms.</p>
+          </div>
+        </div>
+        <div>
+          <div class="stub-perf"></div>
+          <div class="stub">
+            <h3>Full Groom</h3>
+            <p>Breed-specific or owner-requested cut, bath, nails, and ears, finished off with a bandana.</p>
+          </div>
+        </div>
+        <div>
+          <div class="stub-perf"></div>
+          <div class="stub">
+            <h3>Nail Trim &amp; Ear Care</h3>
+            <p>A short maintenance stop between full grooms, no appointment for a whole cut needed.</p>
+          </div>
+        </div>
+        <div>
+          <div class="stub-perf"></div>
+          <div class="stub">
+            <h3>Cat Grooming</h3>
+            <p>Bath, de-shed, and a sanitary trim for cats, handled slowly and at the cat's own pace.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAT + DOG PHOTO STRIP -->
+  <section class="section">
+    <div class="wrap">
+      <div class="strip">
+        <div class="strip-card">
+          <img src="https://images.pexels.com/photos/19145879/pexels-photo-19145879.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A dog being brushed out by a groomer indoors">
+          <div class="strip-card-body">
+            <h3>Dogs, every breed and coat</h3>
+            <p>From a quick brush out to a full show-style cut, worked through by hand.</p>
+          </div>
+        </div>
+        <div class="strip-card">
+          <img src="https://images.pexels.com/photos/6816855/pexels-photo-6816855.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A white cat being groomed by hand">
+          <div class="strip-card-body">
+            <h3>Cats welcome too</h3>
+            <p>Not every groomer in town takes cats. Front Street does, at a pace that keeps them calm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-alt" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="https://images.pexels.com/photos/6130997/pexels-photo-6130997.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A groomer styling a small dog on a grooming table">
+      </div>
+      <div class="about-copy">
+        <h2 style="margin-bottom:18px;">A one-pet-at-a-time shop on Front Street</h2>
+        <p>Millie's Pooch Pawlor keeps one pet on the table at a time instead of stacking cages and rushing through a full book. Dogs and cats of every size come through for a wash, a trim, or a full breed cut, and the shop has built a steady 4.7 star reputation on Front Street one appointment at a time.</p>
+        <p>Open Tuesday through Saturday, by appointment. Walk-ins are welcome to ask, but booking ahead holds a spot on a schedule that fills up fast around here.</p>
+        <div class="clipping">
+          <p>"Reliable, thorough, and easy on the wallet compared to other groomers in the area."</p>
+          <cite>Local review, Port Jervis pet owner</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-band" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Ready for a fresh ticket on the schedule?</h2>
+        <p class="hero-sub">Call ahead to book a bath, a full groom, or a cat appointment. Front Street fills up fast on Saturdays.</p>
+        <div class="hero-ctas">
+          <a href="tel:8458580608" class="btn btn-primary">Call (845) 858-0608</a>
+          <a href="https://www.instagram.com/millies_pooch_pawlor/" class="btn btn-secondary" style="border-color:var(--ivory);color:var(--ivory);" target="_blank" rel="noopener">Follow on Instagram</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0-1.1.9-2 2-2h2.2c.5 0 1 .3 1.1.8l1 3.3c.2.5 0 1-.4 1.3L8.4 9.8a13 13 0 0 0 5.8 5.8l1.4-1.5c.3-.4.8-.5 1.3-.4l3.3 1c.5.2.8.6.8 1.1V18c0 1.1-.9 2-2 2h-1C10.4 20 4 13.6 4 6V5Z"/></svg>
+          <div>
+            <div class="label">Phone</div>
+            <a href="tel:8458580608">(845) 858-0608</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div>
+            <div class="label">Address</div>
+            <span class="value">92 Front St, Port Jervis, NY 12771</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <div>
+            <div class="label">Hours</div>
+            <span class="value">Tuesday &ndash; Saturday, by appointment</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <div>
+            <div class="label">Instagram</div>
+            <a href="https://www.instagram.com/millies_pooch_pawlor/" target="_blank" rel="noopener">@millies_pooch_pawlor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="top-hr">
+    <footer>
+      <span>&copy; Millie's Pooch Pawlor, Port Jervis, NY</span>
+      <span>Demo build by Modularity Networks</span>
+    </footer>
+  </section>
+
+</main>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

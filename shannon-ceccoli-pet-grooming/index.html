@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shannon Ceccoli Pet Grooming | Dog &amp; Cat Grooming in Scranton, PA</title>
+<meta name="description" content="Dog and cat grooming in Scranton, PA by appointment. Shannon Ceccoli has groomed Scranton pets for more than 30 years on Pittston Avenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600;700;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #E7ECE2;
+    --linen: #D6DECB;
+    --ink: #26241F;
+    --ink-soft: #53564A;
+    --pine: #2F4A3C;
+    --pine-deep: #223A2E;
+    --brass: #8C6A2A;
+    --brass-light: #D3AC5C;
+    --rust: #A34B2E;
+    --focus: #1E5FAD;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid rgba(43,38,32,0.14);
+  }
+
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    gap: 24px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .brand-name {
+    font-family: 'Frank Ruhl Libre', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+
+  .brand-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pine);
+    margin-top: 3px;
+  }
+
+  nav.primary-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .primary-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.94rem;
+    color: var(--ink);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .primary-nav a:hover { border-bottom-color: var(--brass); }
+
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pine);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 11px 20px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .call-btn:hover { background: var(--pine-deep); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--ink);
+    border-radius: 3px;
+    width: 42px;
+    height: 38px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .menu-toggle span,
+  .menu-toggle span::before,
+  .menu-toggle span::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    height: 2px;
+    background: var(--ink);
+  }
+  .menu-toggle span { top: 18px; }
+  .menu-toggle span::before { top: -7px; }
+  .menu-toggle span::after { top: 7px; }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    padding: 64px 0 80px;
+    background: var(--paper);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 3.6vw, 3.15rem);
+    max-width: 12.5ch;
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .hero-facts {
+    display: flex;
+    gap: 28px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .hero-fact {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--pine);
+    border-left: 2px solid var(--brass);
+    padding-left: 10px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 34px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--pine);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.97rem;
+    padding: 14px 26px;
+    border-radius: 3px;
+  }
+  .btn-primary:hover { background: var(--pine-deep); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.97rem;
+    padding: 14px 26px;
+    border: 1px solid var(--ink);
+    border-radius: 3px;
+  }
+  .btn-secondary:hover { border-color: var(--pine); color: var(--pine); }
+
+  .hero-art {
+    position: relative;
+  }
+
+  .hero-photo-frame {
+    position: relative;
+    border: 1px solid rgba(43,38,32,0.16);
+    padding: 14px;
+    background: var(--linen);
+  }
+
+  .hero-photo-frame img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .stamp {
+    position: absolute;
+    bottom: -22px;
+    left: -22px;
+    width: 122px;
+    height: 122px;
+    border: 2px solid var(--rust);
+    border-radius: 50%;
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(-9deg);
+    padding: 10px;
+  }
+
+  .stamp::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px dashed var(--rust);
+    border-radius: 50%;
+  }
+
+  .stamp-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: var(--rust);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .stamp-text strong {
+    display: block;
+    font-size: 0.98rem;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--rust);
+  }
+
+  /* ---------- Section shell ---------- */
+
+  section { padding: 84px 0; }
+
+  .section-head {
+    max-width: 62ch;
+    margin-bottom: 44px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  }
+
+  /* ---------- About ---------- */
+
+  .about { background: var(--linen); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .about-body p {
+    font-size: 1.03rem;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+
+  .fact-list {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .fact-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--ink);
+  }
+
+  .fact-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--brass);
+    flex: none;
+    margin-bottom: 1px;
+  }
+
+  .about-photo {
+    border: 1px solid rgba(43,38,32,0.16);
+    padding: 12px;
+    background: var(--paper);
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+  }
+
+  .about-caption {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  /* ---------- Services ledger ---------- */
+
+  .ledger {
+    border-top: 1px solid rgba(43,38,32,0.22);
+  }
+
+  .ledger-row {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(43,38,32,0.22);
+    flex-wrap: wrap;
+  }
+
+  .ledger-name {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-weight: 600;
+    font-size: 1.12rem;
+    white-space: nowrap;
+  }
+
+  .ledger-leader {
+    flex: 1;
+    border-bottom: 1px dotted rgba(43,38,32,0.4);
+    min-width: 40px;
+    height: 1px;
+    align-self: center;
+    margin-top: -6px;
+  }
+
+  .ledger-desc {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 38ch;
+    text-align: right;
+  }
+
+  .ledger-note {
+    margin-top: 26px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    font-style: normal;
+  }
+
+  /* ---------- Cat feature band ---------- */
+
+  .cat-feature {
+    background: var(--paper);
+    border-top: 1px solid rgba(43,38,32,0.14);
+    border-bottom: 1px solid rgba(43,38,32,0.14);
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .cat-photo {
+    border: 1px solid rgba(43,38,32,0.16);
+    padding: 10px;
+    background: var(--linen);
+  }
+
+  .cat-photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .cat-copy h2 { font-size: clamp(1.5rem, 2.2vw, 2rem); margin-bottom: 16px; }
+  .cat-copy p { color: var(--ink-soft); font-size: 1.02rem; }
+
+  /* ---------- Hours ticket ---------- */
+
+  .hours { background: var(--linen); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .hours-copy p {
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    max-width: 40ch;
+  }
+
+  .ticket {
+    background: var(--paper);
+    border: 1px solid rgba(43,38,32,0.2);
+    border-top: 3px dashed var(--pine);
+    padding: 30px 30px 26px;
+    position: relative;
+  }
+
+  .ticket-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(43,38,32,0.16);
+    font-size: 0.98rem;
+  }
+
+  .hours-table td:first-child { font-weight: 600; }
+  .hours-table td:last-child { text-align: right; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; }
+
+  .hours-table tr:last-child td { border-bottom: none; }
+
+  .ticket-foot {
+    margin-top: 20px;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Footer / contact ---------- */
+
+  footer {
+    background: var(--pine-deep);
+    color: var(--paper);
+    padding: 64px 0 40px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  footer h3 {
+    color: var(--paper);
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+
+  footer p, footer a {
+    color: rgba(243,238,226,0.82);
+    text-decoration: none;
+    font-size: 0.96rem;
+  }
+
+  footer a:hover { color: var(--brass-light); }
+
+  .footer-col-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .footer-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-bottom {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(243,238,226,0.18);
+    font-size: 0.82rem;
+    color: rgba(243,238,226,0.6);
+  }
+
+  /* ---------- Motion ---------- */
+
+  .hero-copy, .hero-art { animation: rise 0.6s ease both; }
+  .hero-art { animation-delay: 0.08s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-copy, .hero-art { animation: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 1150px) {
+    nav.primary-nav { display: none; }
+    .call-btn { display: none; }
+    .menu-toggle { display: block; }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      padding: 10px 0 18px;
+      border-top: 1px solid rgba(43,38,32,0.14);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      padding: 12px 4px;
+      border-bottom: 1px solid rgba(43,38,32,0.1);
+    }
+
+    .mobile-menu .call-link {
+      color: var(--pine);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { order: -1; }
+    .hero-photo-frame img { height: 300px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { order: -1; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .cat-photo { order: -1; }
+    .hours-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stamp { width: 100px; height: 100px; left: 12px; bottom: -18px; }
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    section { padding: 60px 0; }
+    .hero { padding: 44px 0 56px; }
+    .brand-name { font-size: 1.12rem; }
+    .ledger-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .ledger-leader { display: none; }
+    .ledger-desc { text-align: left; }
+    .stamp { position: static; margin-top: -30px; margin-left: 16px; transform: rotate(-6deg); }
+    .hero-photo-frame { padding-bottom: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <span class="brand-name">Shannon Ceccoli</span>
+      <span class="brand-sub">Pet Grooming</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:5703444646">Call (570) 344-4646</a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+      <span></span>
+    </button>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+    <a class="call-link" href="tel:5703444646">Call (570) 344-4646</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Dog &amp; Cat Grooming in Scranton, PA</h1>
+        <p class="hero-sub">Shannon Ceccoli has groomed Scranton's dogs and cats from her shop on Pittston Avenue for more than 30 years, one appointment at a time. No chain shop, no rotating staff, just a certified groomer who knows your pet by name.</p>
+        <div class="hero-facts">
+          <span class="hero-fact">30+ Years Grooming</span>
+          <span class="hero-fact">Dogs &amp; Cats</span>
+          <span class="hero-fact">By Appointment Only</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:5703444646">Call (570) 344-4646</a>
+          <a class="btn-secondary" href="mailto:ruby7773@aol.com">Email Shannon</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo-frame">
+          <img src="https://images.pexels.com/photos/19145899/pexels-photo-19145899.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Groomer trimming a poodle on a grooming table" loading="eager">
+          <div class="stamp">
+            <span class="stamp-text"><strong>30+ Years</strong>Certified<br>Groomer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-body">
+        <h2 style="margin-bottom:20px; font-size: clamp(1.7rem, 2.6vw, 2.3rem);">A Certified Groomer, Not a Corporate Chain</h2>
+        <p>Shannon Ceccoli has spent more than three decades behind the grooming table, earning her grooming certification and a business degree along the way. She grooms every dog and cat herself, by appointment, at her shop on Pittston Avenue, so the groomer who answers the phone is the same one holding the clippers.</p>
+        <p>When she is not grooming, Shannon serves as president of Northeast PA Pet Fund &amp; Rescue, the local group that helps place and care for animals across Lackawanna County. Neighbors bring her their pets because they trust her, not because she is the closest listing on a map.</p>
+        <ul class="fact-list">
+          <li>One groomer, start to finish, every visit</li>
+          <li>Cats accepted, not just dogs</li>
+          <li>President, Northeast PA Pet Fund &amp; Rescue</li>
+        </ul>
+      </div>
+      <div>
+        <div class="about-photo">
+          <img src="https://images.pexels.com/photos/19145898/pexels-photo-19145898.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Groomer trimming a Shih Tzu's coat with scissors" loading="lazy">
+        </div>
+        <p class="about-caption">Grooming table, Pittston Avenue</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Services, By Appointment</h2>
+      </div>
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="ledger-name">Full Service Groom, Dog</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">Bath, cut, and finish for every breed and coat type</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-name">Cat Grooming</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">Bath, de-shedding, and trim, handled with a cat's patience in mind</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-name">Bath &amp; Brush</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">De-shedding and tidy-up between full grooms</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-name">Nail Trim &amp; Ear Cleaning</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">Quick maintenance visits, no full groom required</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-name">Breed-Specific Styling</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">Show cuts and breed-standard trims</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-name">Senior &amp; Special Needs Pets</span>
+          <span class="ledger-leader"></span>
+          <span class="ledger-desc">Gentle, unhurried handling for older or anxious pets</span>
+        </div>
+      </div>
+      <p class="ledger-note">Every appointment is one on one. Call (570) 344-4646 or email ahead for current pricing and to reserve a time.</p>
+    </div>
+  </section>
+
+  <section class="cat-feature">
+    <div class="wrap cat-grid">
+      <div class="cat-photo">
+        <img src="https://images.pexels.com/photos/6816855/pexels-photo-6816855.jpeg?auto=compress&cs=tinysrgb&w=700" alt="A white cat being groomed and brushed" loading="lazy">
+      </div>
+      <div class="cat-copy">
+        <h2>Cats Get the Same Care</h2>
+        <p>Plenty of grooming shops only take dogs. Shannon grooms cats too, with the slow, low-stress handling that makes a real difference for a nervous cat and for the owner who has been putting it off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hours" id="hours">
+    <div class="wrap hours-grid">
+      <div class="hours-copy">
+        <h2 style="margin-bottom:18px; font-size: clamp(1.7rem, 2.6vw, 2.3rem);">Book an Appointment</h2>
+        <p>Grooming is by appointment only, one pet at a time, so every visit gets Shannon's full attention. Call or email ahead to find a time that works.</p>
+      </div>
+      <div class="ticket">
+        <span class="ticket-label">Appointment Hours</span>
+        <table class="hours-table">
+          <tr><td>Monday &amp; Tuesday</td><td>8:00 AM to 8:00 PM</td></tr>
+          <tr><td>Wednesday &amp; Sunday</td><td>8:00 AM to 4:00 PM</td></tr>
+          <tr><td>Thursday to Saturday</td><td>Closed</td></tr>
+        </table>
+        <p class="ticket-foot">Hours are by appointment. Please call ahead before stopping by.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <h3>Shannon Ceccoli Pet Grooming</h3>
+      <p>Dog and cat grooming on Pittston Avenue, serving Scranton and South Side neighbors by appointment.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Visit</span>
+      <ul class="footer-list">
+        <li>1929 Pittston Ave</li>
+        <li>Scranton, PA 18505</li>
+        <li>South Side Scranton</li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <ul class="footer-list">
+        <li><a href="tel:5703444646">(570) 344-4646</a></li>
+        <li><a href="mailto:ruby7773@aol.com">ruby7773@aol.com</a></li>
+        <li><a href="https://www.facebook.com/p/Shannon-Ceccoli-Pet-Grooming-100063691204286/" target="_blank" rel="noopener">Find us on Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    Shannon Ceccoli Pet Grooming, Scranton, PA. Grooming by appointment only.
+  </div>
+</footer>
+
+</body>
+</html>

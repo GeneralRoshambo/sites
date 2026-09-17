@@ -1350,5 +1350,85 @@
     "category": "Dressmaking & Alterations",
     "region": "Brooklyn",
     "added": "2026-09-17"
+  },
+  {
+    "slug": "jazmin-florist",
+    "name": "Jazmin Florist",
+    "location": "Washington Heights, Manhattan, NY",
+    "category": "Florist",
+    "region": "Manhattan",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "nyc-deli-and-bodega",
+    "name": "NYC Deli & Bodega",
+    "location": "Bay Ridge, Brooklyn, NY",
+    "category": "Deli & Bodega",
+    "region": "Brooklyn",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "bakery-boys-of-new-york",
+    "name": "Bakery Boys of New York",
+    "location": "Corona, Queens, NY",
+    "category": "Bakery",
+    "region": "Queens",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "national-bakery-bronx",
+    "name": "National Bakery",
+    "location": "Longwood, Bronx, NY",
+    "category": "Bakery",
+    "region": "Bronx",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "sals-bakery",
+    "name": "Sal's Bakery",
+    "location": "Staten Island, NY",
+    "category": "Bakery",
+    "region": "StatenIsland",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "shannon-ceccoli-pet-grooming",
+    "name": "Shannon Ceccoli Pet Grooming",
+    "location": "Scranton, PA",
+    "category": "Pet Grooming",
+    "region": "Scranton",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "cakes-and-scones-bakery",
+    "name": "Cakes & Scones Bakery",
+    "location": "Greentown, PA",
+    "category": "Bakery",
+    "region": "Wallenpaupack",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "golden-hammer-tattoo-studio",
+    "name": "Golden Hammer Tattoo Studios",
+    "location": "Milford, PA",
+    "category": "Tattoo Studio",
+    "region": "DelawareValley",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "millies-pooch-pawlor",
+    "name": "Millie's Pooch Pawlor",
+    "location": "Port Jervis, NY",
+    "category": "Pet Grooming",
+    "region": "HudsonValley",
+    "added": "2026-09-17"
+  },
+  {
+    "slug": "cottage-rose-edinboro",
+    "name": "The Cottage Rose",
+    "location": "Edinboro, PA",
+    "category": "Vintage & Home Decor",
+    "region": "Erie",
+    "added": "2026-09-17"
   }
 ]
