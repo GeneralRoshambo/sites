@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sew Melodee | Custom Dressmaking &amp; Alterations in Park Slope, Brooklyn</title>
+<meta name="description" content="Sew Melodee is a custom dressmaking, alterations, and sewing instruction studio in Park Slope, Brooklyn. Bridal, formal wear, Indian regalia, children's wear, costume, and home decor, by appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kraft: #EFE6D0;
+    --kraft-deep: #E2D5AF;
+    --muslin: #FBF7EC;
+    --ink: #2B2A28;
+    --ink-soft: #55514A;
+    --ink-soft-deep: #433D33;
+    --berry: #8F1F30;
+    --berry-bright: #A32638;
+    --marigold: #B5711A;
+    --chalk: #33506B;
+    --line: rgba(43,42,40,0.28);
+    --radius: 2px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--kraft);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+
+  a{color:var(--berry);}
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  .navlink:focus-visible{
+    outline:3px solid var(--chalk);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- background texture: faint pattern-paper grid ---------- */
+  body{
+    background-image:
+      linear-gradient(rgba(43,42,40,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,42,40,0.05) 1px, transparent 1px);
+    background-size: 34px 34px;
+    background-position: -1px -1px;
+  }
+
+  /* ---------- eyebrow / mono labels ---------- */
+  .mono-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.11em;
+    text-transform:uppercase;
+    color:var(--berry);
+  }
+
+  .grain-arrow{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    vertical-align:middle;
+  }
+  .grain-arrow svg{display:block;}
+
+  h1,h2,h3{
+    font-family:'Spectral', Georgia, serif;
+    font-weight:600;
+    font-style:normal;
+    color:var(--ink);
+    margin:0;
+    line-height:1.08;
+  }
+
+  /* ---------- dashed cutting-line rules ---------- */
+  .cut-line{
+    border:none;
+    border-top:2px dashed var(--line);
+    margin:0;
+    width:100%;
+  }
+  .cut-line.vertical{
+    border-top:none;
+    border-left:2px dashed var(--line);
+    height:100%;
+    width:0;
+  }
+
+  /* ================= HEADER / NAV ================= */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--kraft);
+    border-bottom:2px dashed var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    gap:20px;
+  }
+  .brand{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:22px;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    text-decoration:none;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .brand em{
+    font-style:normal;
+    color:var(--berry);
+  }
+  nav.primary{
+    display:flex;
+    align-items:center;
+    gap:34px;
+  }
+  .navlink{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:3px;
+    white-space:nowrap;
+  }
+  .navlink:hover{border-bottom-color:var(--berry);}
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--muslin);
+    background:var(--berry-bright);
+    padding:10px 18px;
+    text-decoration:none;
+    border:2px solid var(--ink);
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .nav-cta:hover{background:var(--berry);}
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:none;
+    border:2px solid var(--ink);
+    width:44px;
+    height:40px;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .hamburger span{
+    display:block;
+    height:2px;
+    width:20px;
+    margin:0 auto;
+    background:var(--ink);
+  }
+
+  #nav-toggle{display:none;}
+
+  /* ================= HERO ================= */
+  .hero{
+    padding:64px 0 56px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-copy .mono-label{margin-bottom:18px;display:block;}
+  .hero h1{
+    font-size:clamp(2.1rem, 4.1vw, 3.35rem);
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .accent{color:var(--berry);}
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.09rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    align-items:center;
+  }
+  .btn-primary{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--muslin);
+    background:var(--berry-bright);
+    border:2px solid var(--ink);
+    padding:15px 26px;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--berry);}
+  .btn-secondary{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink);
+    background:transparent;
+    border:2px dashed var(--ink);
+    padding:15px 26px;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .btn-secondary:hover{border-style:solid;}
+
+  .hero-figure{
+    position:relative;
+    border:2px solid var(--ink);
+    background:var(--muslin);
+    padding:14px;
+  }
+  .hero-figure img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    filter:sepia(8%) saturate(92%);
+  }
+  .hero-figure figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:12px;
+    display:flex;
+    justify-content:space-between;
+  }
+
+  .stat-strip{
+    margin-top:52px;
+    border-top:2px dashed var(--line);
+    border-bottom:2px dashed var(--line);
+    padding:22px 0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .stat{
+    text-align:left;
+  }
+  .stat .num{
+    font-family:'Spectral', serif;
+    font-weight:600;
+    font-size:1.7rem;
+    color:var(--berry);
+    display:block;
+  }
+  .stat .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  /* ================= SECTION HEADERS ================= */
+  section{padding:76px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:48px;
+  }
+  .section-head .mono-label{margin-bottom:14px;display:block;}
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+
+  /* ================= ABOUT ================= */
+  .about{background:var(--kraft-deep);}
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-figure{
+    border:2px solid var(--ink);
+    background:var(--muslin);
+    padding:12px;
+  }
+  .about-figure img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    filter:sepia(8%) saturate(92%);
+  }
+  .about-copy p{
+    margin:0 0 18px;
+    color:var(--ink-soft-deep);
+    font-size:1.03rem;
+  }
+  .about-copy p:first-of-type{
+    color:var(--ink);
+    font-size:1.12rem;
+  }
+  .specialty-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    border:1.5px dashed var(--ink);
+    padding:7px 12px;
+    color:var(--ink);
+  }
+
+  /* ================= SERVICES: pattern-piece cards ================= */
+  .pieces{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:38px 30px;
+    margin-top:10px;
+  }
+  .piece{
+    position:relative;
+    background:var(--muslin);
+    border:2px dashed var(--ink);
+    padding:28px 24px 24px;
+    transform:rotate(var(--rot,0deg));
+  }
+  .piece:nth-child(1){--rot:-1.4deg;}
+  .piece:nth-child(2){--rot:1deg;}
+  .piece:nth-child(3){--rot:-0.6deg;}
+  .piece:nth-child(4){--rot:1.6deg;}
+  .piece:nth-child(5){--rot:-1.1deg;}
+  .piece:nth-child(6){--rot:0.7deg;}
+
+  .piece::before{
+    content:"";
+    position:absolute;
+    top:-9px;
+    left:26px;
+    width:16px;
+    height:16px;
+    background:var(--berry-bright);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  .piece .mono-label{
+    display:block;
+    margin-bottom:10px;
+  }
+  .piece h3{
+    font-size:1.22rem;
+    margin-bottom:10px;
+  }
+  .piece p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.98rem;
+  }
+
+  /* ================= PROCESS ================= */
+  .process{background:var(--kraft-deep);}
+  .process .section-head p{color:var(--ink-soft-deep);}
+  .process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:2px dashed var(--line);
+    border-left:2px dashed var(--line);
+  }
+  .process-step{
+    padding:28px 24px;
+    border-right:2px dashed var(--line);
+    border-bottom:2px dashed var(--line);
+  }
+  .process-step .mono-label{display:block;margin-bottom:12px;}
+  .process-step h3{font-size:1.08rem;margin-bottom:8px;color:var(--ink);}
+  .process-step p{margin:0;color:var(--ink-soft-deep);font-size:0.94rem;}
+
+  /* ================= LESSONS BAND ================= */
+  .lessons{
+    background:var(--ink);
+    color:var(--muslin);
+  }
+  .lessons .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .lessons .mono-label{color:var(--marigold);}
+  .lessons h2{color:var(--muslin);font-size:clamp(1.6rem,2.8vw,2.1rem);}
+  .lessons p{color:#D9D2C2;font-size:1.02rem;margin-top:16px;max-width:52ch;}
+  .lessons-card{
+    border:2px dashed #6B655A;
+    padding:26px;
+  }
+  .lessons-card .mono-label{color:var(--marigold);display:block;margin-bottom:10px;}
+  .lessons-card ul{
+    margin:0;
+    padding-left:18px;
+    color:#D9D2C2;
+  }
+  .lessons-card li{margin-bottom:10px;}
+
+  /* ================= CONTACT ================= */
+  .contact{
+    padding-top:76px;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .contact-card{
+    background:var(--muslin);
+    border:2px solid var(--ink);
+    padding:34px;
+  }
+  .contact-line{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:16px 0;
+    border-bottom:2px dashed var(--line);
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .contact-line:last-child{border-bottom:none;}
+  .contact-line .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .contact-line .v{
+    font-family:'Spectral', serif;
+    font-weight:500;
+    font-size:1.14rem;
+    color:var(--ink);
+    text-align:right;
+  }
+  .contact-line a.v{text-decoration:none;color:var(--berry);}
+  .contact-note{
+    margin-top:26px;
+    padding-top:22px;
+    border-top:2px dashed var(--line);
+    font-size:0.93rem;
+    color:var(--ink-soft);
+  }
+
+  .contact-copy h2{font-size:clamp(1.7rem,3vw,2.25rem);}
+  .contact-copy p{color:var(--ink-soft);margin-top:18px;font-size:1.02rem;max-width:44ch;}
+  .contact-copy .mono-label{display:block;margin-bottom:14px;}
+
+  /* ================= FOOTER ================= */
+  footer{
+    margin-top:60px;
+    border-top:2px dashed var(--line);
+    padding:32px 0 40px;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .footer-inner .mono-label{color:var(--ink-soft);}
+  .footer-inner a{color:var(--ink-soft);text-decoration:none;}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1180px){
+    .wrap{padding:0 24px;}
+  }
+
+  @media (max-width: 1120px){
+    nav.primary{gap:22px;}
+  }
+
+  @media (max-width: 980px){
+    nav.primary{
+      position:fixed;
+      top:0;
+      right:0;
+      height:100vh;
+      width:min(78vw, 320px);
+      background:var(--muslin);
+      border-left:2px solid var(--ink);
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      padding:96px 28px 28px;
+      gap:26px;
+      transform:translateX(100%);
+      transition:transform 0.25s ease;
+      z-index:60;
+    }
+    #nav-toggle:checked ~ .nav-inner nav.primary{
+      transform:translateX(0);
+    }
+    .nav-cta{order:2;}
+    .hamburger{display:flex;}
+    #nav-toggle:checked ~ .nav-inner .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    #nav-toggle:checked ~ .nav-inner .hamburger span:nth-child(2){opacity:0;}
+    #nav-toggle:checked ~ .nav-inner .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-figure{order:-1;}
+    .hero-figure img{height:260px;}
+    .stat-strip{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-figure img{height:280px;}
+    .pieces{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .lessons .wrap{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+
+  @media (max-width: 600px){
+    .brand{font-size:19px;}
+    .hero{padding:44px 0 40px;}
+    .pieces{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .stat-strip{grid-template-columns:repeat(2,1fr);}
+    section{padding:56px 0;}
+    .contact-card{padding:24px;}
+    .contact-line{flex-direction:column;align-items:flex-start;gap:6px;}
+    .contact-line .v{text-align:left;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    nav.primary{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">SEW <em>MELODEE</em></a>
+    <input type="checkbox" id="nav-toggle">
+    <nav class="primary">
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#lessons">Lessons</a>
+      <a class="navlink nav-cta" href="#contact">Book a Fitting</a>
+    </nav>
+    <label class="hamburger" for="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="mono-label">
+            <span class="grain-arrow">
+              <svg width="34" height="10" viewBox="0 0 34 10" fill="none"><line x1="2" y1="5" x2="32" y2="5" stroke="#8F1F30" stroke-width="1.6"/><path d="M2 5L6 2M2 5L6 8" stroke="#8F1F30" stroke-width="1.6"/><path d="M32 5L28 2M32 5L28 8" stroke="#8F1F30" stroke-width="1.6"/></svg>
+              Custom Dressmaking Studio
+            </span>
+          </span>
+          <h1>Custom Dressmaking &amp; Alterations in <span class="accent">Park Slope, Brooklyn</span></h1>
+          <p class="hero-sub">Twenty-five years of pattern-making, draping, and fine hand-finishing for the people of Brooklyn. Every piece is cut, fitted, and sewn by Melodee herself, from a first muslin to the final hem.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:+13476832904">Call (347) 683-2904</a>
+            <a class="btn-secondary" href="mailto:melodee1227@yahoo.com">Email for a Quote</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img src="https://images.pexels.com/photos/3965543/pexels-photo-3965543.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bolts of fabric and hanging dress patterns inside a dressmaking studio">
+          <figcaption><span>FABRIC &amp; PATTERN WALL</span><span>PARK SLOPE STUDIO</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="stat-strip">
+        <div class="stat"><span class="num">25+</span><span class="lbl">Years Sewing</span></div>
+        <div class="stat"><span class="num">6</span><span class="lbl">Garment Specialties</span></div>
+        <div class="stat"><span class="num">1:1</span><span class="lbl">Private Fittings</span></div>
+        <div class="stat"><span class="num">BK</span><span class="lbl">Park Slope Studio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <figure class="about-figure">
+          <img src="https://images.pexels.com/photos/3738096/pexels-photo-3738096.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A dressmaker guiding fabric through a sewing machine">
+        </figure>
+        <div class="about-copy">
+          <span class="mono-label">About the Studio</span>
+          <p>Sew Melodee is the dressmaking and alterations studio of Susanne &quot;Melodee&quot; Smith, built on more than twenty-five years of pattern-making, draping, and construction. There is no shop window and no rack of ready-made stock. Every order starts with a conversation, a measurement, and a plan for how the garment needs to move.</p>
+          <p>Most clients find Melodee the way Park Slope has always found its best tailors and dressmakers: word of mouth, one finished gown or one perfectly re-hemmed pair of trousers at a time. She also teaches, running private sewing lessons for beginners and advanced students, and has taught a fashion design class to local high school students.</p>
+          <div class="specialty-tags">
+            <span class="tag">Bridal &amp; Formal</span>
+            <span class="tag">Indian Regalia</span>
+            <span class="tag">Children&#39;s Wear</span>
+            <span class="tag">Costume</span>
+            <span class="tag">Everyday Alterations</span>
+            <span class="tag">Home Decor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono-label">What Gets Made Here</span>
+        <h2>Six kinds of garments, one dressmaker</h2>
+        <p>Each project is cut and fitted individually. Nothing here comes off a rack, and nothing is outsourced.</p>
+      </div>
+      <div class="pieces">
+        <article class="piece">
+          <span class="mono-label">Bridal &amp; Formal</span>
+          <h3>Bridal &amp; Formal Wear</h3>
+          <p>Gowns, bridal party dresses, and formalwear built from a first muslin through final fitting, with hand-finished seams and boning where the design calls for it.</p>
+        </article>
+        <article class="piece">
+          <span class="mono-label">Regalia</span>
+          <h3>Indian Regalia</h3>
+          <p>Custom draping and construction for saris, lehengas, and other regalia, fitted to the wearer and finished with the detail the fabric deserves.</p>
+        </article>
+        <article class="piece">
+          <span class="mono-label">Children</span>
+          <h3>Children&#39;s Wear &amp; Costume</h3>
+          <p>Recital costumes, holiday outfits, and growing-room garments built to survive an active kid and still look sharp on stage.</p>
+        </article>
+        <article class="piece">
+          <span class="mono-label">Everyday</span>
+          <h3>Everyday Alterations</h3>
+          <p>Hems, takes-in, let-outs, and zipper repairs for the clothes already in your closet, fitted properly instead of just shortened.</p>
+        </article>
+        <article class="piece">
+          <span class="mono-label">Home</span>
+          <h3>Home Decor Sewing</h3>
+          <p>Curtains, pillow covers, and slipcovers cut and sewn to the exact dimensions of your windows and furniture.</p>
+        </article>
+        <article class="piece">
+          <span class="mono-label">Teaching</span>
+          <h3>Private Sewing Lessons</h3>
+          <p>One-on-one instruction in pattern-making, draping, and construction for beginners through advanced students.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono-label">How a Project Runs</span>
+        <h2>From first measurement to finished seam</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="mono-label">Consult</span>
+          <h3>Talk it through</h3>
+          <p>A call or email to discuss the garment, the occasion, and the fabric.</p>
+        </div>
+        <div class="process-step">
+          <span class="mono-label">Measure</span>
+          <h3>Fit the pattern</h3>
+          <p>An in-studio fitting to take measurements and build or adjust the pattern.</p>
+        </div>
+        <div class="process-step">
+          <span class="mono-label">Construct</span>
+          <h3>Cut and sew</h3>
+          <p>The garment is cut, sewn, and hand-finished at the Park Slope studio.</p>
+        </div>
+        <div class="process-step">
+          <span class="mono-label">Fit &amp; Deliver</span>
+          <h3>Final fitting</h3>
+          <p>A last fitting for adjustments before the finished piece goes home with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lessons" id="lessons">
+    <div class="wrap">
+      <div>
+        <span class="mono-label">Sewing Lessons</span>
+        <h2>Learn to build a garment, not just follow a pattern</h2>
+        <p>Melodee teaches private lessons out of the same studio where she works, for anyone who wants to actually understand construction, from a first straight seam to draping a bodice.</p>
+      </div>
+      <div class="lessons-card">
+        <span class="mono-label">Who It&#39;s For</span>
+        <ul>
+          <li>Complete beginners who have never touched a machine</li>
+          <li>Hobbyists ready to move past patterns and into draping</li>
+          <li>Students, including past high school fashion design classes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <span class="mono-label">Get In Touch</span>
+          <h2>Bring your idea, your measurements, or your mending pile</h2>
+          <p>Sew Melodee works by appointment out of a private studio in Park Slope, Brooklyn. Call or email to describe the project and set up a first fitting.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-line">
+            <span class="k">Phone</span>
+            <a class="v" href="tel:+13476832904">(347) 683-2904</a>
+          </div>
+          <div class="contact-line">
+            <span class="k">Email</span>
+            <a class="v" href="mailto:melodee1227@yahoo.com">melodee1227@yahoo.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="k">Studio</span>
+            <span class="v">Park Slope, Brooklyn, NY</span>
+          </div>
+          <div class="contact-line">
+            <span class="k">Booking</span>
+            <span class="v">By Appointment</span>
+          </div>
+          <p class="contact-note">Exact studio address is shared once a fitting is scheduled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="mono-label">Park Slope, Brooklyn</span>
+    <a class="mono-label" href="mailto:melodee1227@yahoo.com">melodee1227@yahoo.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

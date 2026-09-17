@@ -1158,9 +1158,9 @@
   },
   {
     "slug": "diplomat-cafe-goshen",
-    "name": "Diplomat Café & Bakery",
+    "name": "Diplomat Caf\u00e9 & Bakery",
     "location": "Goshen, NY",
-    "category": "European Café & Bakery",
+    "category": "European Caf\u00e9 & Bakery",
     "region": "HudsonValley",
     "added": "2026-08-07"
   },
@@ -1342,5 +1342,13 @@
     "category": "Custom Embroidery",
     "region": "Erie",
     "added": "2026-09-16"
+  },
+  {
+    "slug": "sew-melodee",
+    "name": "Sew Melodee",
+    "location": "Park Slope, Brooklyn, NY",
+    "category": "Dressmaking & Alterations",
+    "region": "Brooklyn",
+    "added": "2026-09-17"
   }
 ]
