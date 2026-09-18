@@ -1430,5 +1430,21 @@
     "category": "Vintage & Home Decor",
     "region": "Erie",
     "added": "2026-09-17"
+  },
+  {
+    "slug": "cafe-7-10-erie",
+    "name": "Cafe 7-10",
+    "location": "Erie, PA",
+    "category": "Bakery Cafe",
+    "region": "Erie",
+    "added": "2026-09-18"
+  },
+  {
+    "slug": "lap-of-luxury-pet-grooming-queens",
+    "name": "Lap Of Luxury Pet Grooming",
+    "location": "Queens, NY",
+    "category": "Pet Grooming",
+    "region": "Queens",
+    "added": "2026-09-18"
   }
 ]

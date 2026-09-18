@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cafe 7-10 | Bakery Cafe in Erie, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F0D9D3;
+    --card: #FBF1EE;
+    --ink: #1F2A3C;
+    --stamp: #B23A2E;
+    --mustard: #D9A23B;
+    --wine: #4A1F2B;
+    --sage: #6F8D6B;
+    --line: #DDB6AC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Public Sans', Arial, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Big Shoulders Display', Arial, sans-serif;
+    font-weight:700;
+    line-height:1.08;
+    letter-spacing:-0.005em;
+  }
+  h2{ font-size:2rem; }
+  h3{ font-size:1.3rem; }
+  .mono{
+    font-family:'JetBrains Mono', 'Courier New', monospace;
+  }
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--stamp);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 28px;
+    max-width:1140px;
+    margin:0 auto;
+    gap:20px;
+  }
+  .brand{
+    font-family:'Big Shoulders Display', Arial, sans-serif;
+    font-weight:700;
+    font-size:1.4rem;
+    white-space:nowrap;
+    text-decoration:none;
+    display:flex;
+    align-items:baseline;
+    gap:4px;
+  }
+  .brand .num{ color:var(--stamp); }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
+    white-space:nowrap;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.98rem;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  .nav-links a:hover{ border-bottom-color:var(--stamp); }
+  .nav-cta{
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px 20px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--wine); }
+  .hamburger{
+    display:none;
+    background:none;
+    border:1px solid var(--ink);
+    border-radius:3px;
+    width:42px;
+    height:38px;
+    cursor:pointer;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+  }
+  .hamburger span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:var(--ink);
+  }
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    padding:8px 28px 20px;
+    border-top:1px solid var(--line);
+    background:var(--paper);
+  }
+  .mobile-menu a{
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:500;
+    padding:12px 4px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{ display:flex; }
+
+  @media (max-width: 1100px){
+    .nav-links, .nav-cta.desktop-only{ display:none; }
+    .hamburger{ display:flex; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:72px 0 88px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.2vw, 3.15rem);
+    margin-bottom:20px;
+    color:var(--ink);
+  }
+  .hero p.lede{
+    font-size:1.12rem;
+    max-width:46ch;
+    color:#3B3226;
+    margin-bottom:32px;
+  }
+  .hero-buttons{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--stamp);
+    color:#FFFCF5;
+    padding:14px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+    border:2px solid var(--stamp);
+  }
+  .btn-primary:hover{ background:#8f2c22; border-color:#8f2c22; }
+  .btn-secondary{
+    padding:14px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+    border:2px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn-secondary:hover{ background:var(--ink); color:var(--paper); }
+
+  /* ---------- TICKET (signature element) ---------- */
+  .ticket-wrap{
+    display:flex;
+    justify-content:center;
+  }
+  .ticket{
+    background:var(--card);
+    width:100%;
+    max-width:340px;
+    padding:28px 26px 32px;
+    transform:rotate(-3deg);
+    box-shadow:0 14px 0 rgba(31,42,60,0.10);
+    position:relative;
+  }
+  .ticket::before{
+    content:"";
+    position:absolute;
+    top:-1px; left:0; right:0;
+    height:14px;
+    background-image: radial-gradient(circle at 10px 0, transparent 9px, var(--paper) 9.5px);
+    background-size:20px 20px;
+    background-position:0 -7px;
+    background-repeat:repeat-x;
+  }
+  .ticket-head{
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    color:#6b6151;
+    text-transform:uppercase;
+    border-bottom:1px dashed var(--line);
+    padding-bottom:14px;
+    margin-bottom:14px;
+  }
+  .ticket-head strong{
+    display:block;
+    font-family:'Big Shoulders Display', Arial, sans-serif;
+    font-size:1.3rem;
+    color:var(--ink);
+    letter-spacing:0;
+    margin-top:4px;
+  }
+  .ticket-row{
+    display:flex;
+    justify-content:space-between;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+    padding:6px 0;
+    color:#4A4032;
+  }
+  .ticket-row span:last-child{ color:var(--ink); font-weight:600; }
+  .ticket-stamp{
+    margin:18px auto 4px;
+    width:118px;
+    height:118px;
+    border:3px solid var(--stamp);
+    border-radius:50%;
+    color:var(--stamp);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    transform:rotate(7deg);
+    line-height:1.35;
+    padding:8px;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{ padding:76px 0; }
+  .section-head{
+    margin-bottom:44px;
+    max-width:62ch;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+  }
+  .section-alt{ background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+
+  /* ---------- STORY ---------- */
+  .story-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .story-photo{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .story-photo img{ width:100%; height:100%; object-fit:cover; }
+  .story-text p{ margin-bottom:16px; color:#3B3226; }
+  .story-names{
+    margin-top:24px;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .story-name{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+  }
+  .story-name strong{
+    display:block;
+    font-family:'Big Shoulders Display', Arial, sans-serif;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+
+  /* ---------- MENU LEDGER ---------- */
+  .ledger{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:12px 32px;
+  }
+  .ledger-item{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    padding:22px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .ledger-item:last-child{ border-bottom:none; }
+  .ledger-name{
+    font-family:'Big Shoulders Display', Arial, sans-serif;
+    font-weight:600;
+    font-size:1.08rem;
+    white-space:nowrap;
+  }
+  .ledger-dots{
+    flex:1;
+    border-bottom:2px dotted var(--line);
+    height:0.6em;
+  }
+  .ledger-desc{
+    font-size:0.94rem;
+    color:#5B5142;
+    max-width:34ch;
+    text-align:right;
+  }
+  @media (max-width: 640px){
+    .ledger-item{ flex-wrap:wrap; }
+    .ledger-dots{ display:none; }
+    .ledger-name{ white-space:normal; }
+    .ledger-desc{ text-align:left; max-width:100%; }
+  }
+
+  /* ---------- VISIT / CONTACT ---------- */
+  .visit-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+  }
+  .info-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:30px 32px;
+    min-width:0;
+  }
+  .info-card h3{
+    font-size:1.15rem;
+    margin-bottom:18px;
+  }
+  .info-row{
+    display:flex;
+    gap:14px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.98rem;
+    min-width:0;
+  }
+  .info-row:last-child{ border-bottom:none; }
+  .info-row span:last-child{
+    min-width:0;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+  .info-row .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--stamp);
+    min-width:74px;
+    padding-top:2px;
+  }
+  .hours-table{ width:100%; border-collapse:collapse; }
+  .hours-table td{
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.96rem;
+  }
+  .hours-table tr:last-child td{ border-bottom:none; }
+  .hours-table td:first-child{ font-weight:600; }
+  .hours-table td:last-child{ text-align:right; font-family:'JetBrains Mono', monospace; font-size:0.9rem; }
+
+  /* ---------- CTA BAND (deep accent block) ---------- */
+  .cta-band{
+    background:var(--wine);
+    color:var(--paper);
+    padding:64px 0;
+    text-align:center;
+  }
+  .cta-band h2{
+    color:#FFFCF5;
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    margin-bottom:16px;
+  }
+  .cta-band p{
+    max-width:52ch;
+    margin:0 auto 30px;
+    color:#E7DCCB;
+  }
+  .cta-band .btn-primary{
+    border-color:var(--mustard);
+    background:var(--mustard);
+    color:var(--wine);
+    font-weight:700;
+  }
+  .cta-band .btn-primary:hover{ background:#c9932f; border-color:#c9932f; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:#D9D2C3;
+    padding:44px 0 32px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    padding-bottom:28px;
+    border-bottom:1px solid #33405A;
+    margin-bottom:22px;
+  }
+  footer .brand{ color:#FFFCF5; }
+  footer .brand .num{ color:var(--mustard); }
+  .footer-links{
+    display:flex;
+    gap:24px;
+    list-style:none;
+    flex-wrap:wrap;
+  }
+  .footer-links a{ text-decoration:none; color:#D9D2C3; font-size:0.94rem; }
+  .footer-links a:hover{ color:#FFFCF5; }
+  .footer-fine{
+    font-size:0.85rem;
+    color:#9CA3B5;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .ticket-wrap{ order:-1; margin-bottom:12px; }
+    .ticket{ max-width:280px; }
+    .story-grid{ grid-template-columns:1fr; }
+    .visit-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="#top" class="brand">Cafe<span class="num">&nbsp;7-10</span></a>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#visit" class="nav-cta desktop-only">Get Directions</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="var m=document.getElementById('mobileMenu'); var open=m.classList.toggle('open'); this.setAttribute('aria-expanded', open);">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#story">Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#visit">Visit</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Scratch-Made Bakery Cafe in Downtown Erie, PA</h1>
+        <p class="lede">Cafe 7-10 bakes sweet potato pie, cheesecake, and peanut butter banana chocolate bread from scratch every morning, a mother-and-daughter kitchen serving downtown Erie coffee, pastries, and lunch.</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn-primary">See What's Baking</a>
+          <a href="#visit" class="btn-secondary">Visit Us</a>
+        </div>
+      </div>
+      <div class="ticket-wrap">
+        <div class="ticket">
+          <div class="ticket-head">Check No. 0710<br><strong>Cafe 7-10</strong></div>
+          <div class="ticket-row"><span>Table</span><span>7-10</span></div>
+          <div class="ticket-row"><span>Party</span><span>You</span></div>
+          <div class="ticket-row"><span>Server</span><span>Mabel</span></div>
+          <div class="ticket-row"><span>Kitchen</span><span>Thelma</span></div>
+          <div class="ticket-stamp">Family Made</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="story">
+    <div class="wrap story-grid">
+      <div class="story-photo">
+        <img src="https://images.pexels.com/photos/31332192/pexels-photo-31332192.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Assorted pastries and cakes on display in a bakery showcase">
+      </div>
+      <div class="story-text">
+        <h2>Two generations, one kitchen</h2>
+        <p>Thelma Mae Blanks has been baking from her own recipes for years, sweet potato pie, pound cake, cheesecake, and the fruit and nut breads regulars come back for. Her daughter Mabel Howard opened the storefront on 10th Street so the whole neighborhood could pull up a stool.</p>
+        <p>Everything at Cafe 7-10 is made in house, the same way it was made at the kitchen table before there was a shop to put it in. Walk-ins are welcome for coffee, a slice, or a full lunch.</p>
+        <div class="story-names">
+          <div class="story-name"><strong>Thelma Mae Blanks</strong>the maker</div>
+          <div class="story-name"><strong>Mabel Howard</strong>the marketer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Today's bakes and staples</h2>
+      </div>
+      <div class="ledger">
+        <div class="ledger-item">
+          <span class="ledger-name">Peanut Butter Banana Chocolate Bread</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">The signature loaf, baked fresh daily</span>
+        </div>
+        <div class="ledger-item">
+          <span class="ledger-name">Sweet Potato Pie</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">Thelma's original recipe</span>
+        </div>
+        <div class="ledger-item">
+          <span class="ledger-name">7-Up Pound Cake</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">Dense, buttery, a house classic</span>
+        </div>
+        <div class="ledger-item">
+          <span class="ledger-name">Cheesecake, by the slice</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">Rotating flavors, ask what's up today</span>
+        </div>
+        <div class="ledger-item">
+          <span class="ledger-name">The Brookie</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">Mabel's brownie-cookie hybrid</span>
+        </div>
+        <div class="ledger-item">
+          <span class="ledger-name">Coffee, Tea &amp; Lunch</span>
+          <span class="ledger-dots"></span>
+          <span class="ledger-desc">Served daily, catering available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="visit">
+    <div class="wrap visit-grid">
+      <div class="info-card">
+        <h3>Find Us</h3>
+        <div class="info-row"><span class="label">Address</span><span>7 West 10th Street, Erie, PA 16501</span></div>
+        <div class="info-row"><span class="label">Phone</span><span>(814) 572-0985</span></div>
+        <div class="info-row"><span class="label">Email</span><span>mabel.cafe710@gmail.com</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday &ndash; Saturday</td><td>7:15 AM &ndash; 7:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Walk-ins welcome, catering by request</h2>
+      <p>Coffee, cheesecake, and a full lunch menu on 10th Street, downtown Erie. Come taste what Thelma and Mabel have been baking.</p>
+      <a href="#visit" class="btn-primary">Plan Your Visit</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="#top" class="brand">Cafe<span class="num">&nbsp;7-10</span></a>
+      <ul class="footer-links">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </div>
+    <div class="footer-fine">
+      <span>7 West 10th Street, Erie, PA 16501</span>
+      <span>(814) 572-0985</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
