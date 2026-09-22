@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&amp;D's Collectables | Antiques and Collectibles Shop in Scranton, PA</title>
+<meta name="description" content="Antiques, coins, comics, vintage paper, and collectibles bought and sold in Scranton, PA. Known locally as The NEPA Pickers, family owned since 2005.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Archivo:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #e2dcb8;
+    --cream-dim: #d5cc9e;
+    --forest: #2f4a3c;
+    --forest-dark: #23392e;
+    --oxblood: #8a3324;
+    --ink: #2e2013;
+    --gold: #b98f3f;
+    --paper: #f5f0dc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Archivo', Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Bitter', Georgia, serif;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  a:focus-visible,
+  button:focus-visible,
+  .nav-link:focus-visible {
+    outline: 3px solid var(--oxblood);
+    outline-offset: 3px;
+  }
+
+  .label-tag {
+    font-family: 'Special Elite', 'Courier New', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+  }
+
+  .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 3px solid var(--forest);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1140px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .brand {
+    font-family: 'Bitter', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--forest-dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .brand span {
+    display: block;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--oxblood);
+    margin-top: 2px;
+  }
+
+  nav.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 1;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-link:hover { border-bottom-color: var(--oxblood); }
+
+  .cta-btn {
+    background: var(--oxblood);
+    color: var(--paper);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .cta-btn:hover { background: #6f2a1d; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--forest-dark);
+    border-radius: 2px;
+  }
+
+  .mobile-menu {
+    display: none;
+    background: var(--paper);
+    border-top: 1px solid var(--cream-dim);
+    padding: 12px 24px 20px;
+  }
+
+  .mobile-menu.open { display: flex; flex-direction: column; gap: 16px; }
+
+  .mobile-menu a { font-weight: 600; font-size: 1.02rem; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background: linear-gradient(rgba(20, 30, 24, 0.62), rgba(20, 30, 24, 0.62)), url('https://images.pexels.com/photos/13538872/pexels-photo-13538872.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+    color: var(--paper);
+    padding: 110px 24px 100px;
+  }
+
+  .hero-inner { max-width: 1140px; margin: 0 auto; }
+
+  .hero .label-tag { color: var(--gold); display: inline-block; margin-bottom: 18px; }
+
+  .hero h1 {
+    color: #fff;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    max-width: 760px;
+    margin-bottom: 20px;
+  }
+
+  .hero p.sub {
+    max-width: 560px;
+    font-size: 1.15rem;
+    color: #ece3d0;
+    margin-bottom: 34px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-outline {
+    border: 2px solid var(--paper);
+    color: var(--paper);
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+  /* Ticket tags */
+  .tags-strip {
+    background: var(--forest);
+    padding: 34px 24px;
+  }
+
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .ticket {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 10px 20px 10px 16px;
+    border-radius: 2px;
+    position: relative;
+    font-weight: 600;
+    font-size: 0.92rem;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.18);
+    transform: rotate(-1.2deg);
+  }
+
+  .tags-row .ticket:nth-child(even) { transform: rotate(1deg); }
+
+  .ticket::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--forest);
+    border-radius: 50%;
+    border: 2px solid var(--paper);
+  }
+
+  /* About / what we do */
+  .section { padding: 90px 24px; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    color: var(--oxblood);
+    margin-bottom: 12px;
+  }
+
+  .about-grid h2 { font-size: 2rem; margin-bottom: 20px; }
+
+  .about-grid p { max-width: 540px; margin-bottom: 16px; color: #443626; }
+
+  .ledger {
+    background: var(--paper);
+    border: 1px solid var(--cream-dim);
+    border-radius: 4px;
+    padding: 30px 30px 10px;
+  }
+
+  .ledger h3 {
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+  }
+
+  .ledger-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--cream-dim);
+    gap: 12px;
+  }
+
+  .ledger-line:last-child { border-bottom: none; }
+
+  .ledger-line .item { font-weight: 600; }
+
+  .ledger-line .note {
+    font-size: 0.88rem;
+    color: #6b5c46;
+    text-align: right;
+  }
+
+  /* Story band */
+  .story-band {
+    background: var(--forest-dark);
+    color: var(--paper);
+    padding: 80px 24px;
+  }
+
+  .story-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-inner .label-tag { color: var(--gold); }
+
+  .story-inner h2 { color: #fff; margin: 14px 0 20px; font-size: 1.9rem; }
+
+  .story-inner p { color: #d9d0bc; font-size: 1.08rem; }
+
+  /* Visit / hours */
+  .visit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .visit-card {
+    background: var(--paper);
+    border: 1px solid var(--cream-dim);
+    border-radius: 4px;
+    padding: 30px;
+  }
+
+  .visit-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: var(--forest-dark);
+  }
+
+  .visit-card p { color: #443626; font-size: 0.96rem; }
+  .visit-card p + p { margin-top: 6px; }
+
+  /* Footer CTA */
+  footer {
+    background: var(--oxblood);
+    color: var(--paper);
+    padding: 70px 24px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  footer h2 { color: #fff; font-size: 1.9rem; margin-bottom: 14px; max-width: 480px; }
+  footer p { color: #f1ded4; max-width: 440px; margin-bottom: 22px; }
+
+  .footer-contact { font-size: 0.98rem; }
+  .footer-contact div { margin-bottom: 8px; }
+
+  .btn-cream {
+    background: var(--paper);
+    color: var(--oxblood);
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .btn-cream:hover { background: #fff; }
+
+  .fine-print {
+    max-width: 1140px;
+    margin: 50px auto 0;
+    border-top: 1px solid rgba(250,245,233,0.3);
+    padding-top: 24px;
+    font-size: 0.82rem;
+    color: #f1ded4;
+  }
+
+  @media (max-width: 1150px) {
+    nav.main-nav { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 34px; }
+    .visit-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 90px 20px 70px; }
+    .section { padding: 60px 20px; }
+    .footer-inner { flex-direction: column; }
+    .ticket { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">D&amp;D's Collectables<span>THE NEPA PICKERS &middot; EST. 2005</span></a>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#buy-sell">What We Buy</a></li>
+        <li><a class="nav-link" href="#visit">Visit</a></li>
+      </ul>
+      <a href="#visit" class="cta-btn">Get Directions</a>
+    </nav>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mmenu').classList.toggle('open'); this.setAttribute('aria-expanded', document.getElementById('mmenu').classList.contains('open'))">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mmenu">
+    <a href="#about">About</a>
+    <a href="#buy-sell">What We Buy</a>
+    <a href="#visit">Visit</a>
+    <a href="#visit" class="cta-btn" style="text-align:center;">Get Directions</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <h1>Antiques and Collectibles Shop in Scranton, PA</h1>
+    <p class="sub">Twenty years of picking through northeast Pennsylvania's attics, estates, and flea markets, so you can find something worth keeping. Coins, comics, vintage paper, cards, and memorabilia, under one roof on North Main Ave.</p>
+    <div class="hero-actions">
+      <a href="#buy-sell" class="cta-btn">See What We Buy &amp; Sell</a>
+      <a href="#visit" class="btn-outline">Visit the Shop</a>
+    </div>
+  </div>
+</section>
+
+<div class="tags-strip">
+  <div class="tags-row">
+    <span class="ticket">Coins &amp; Currency</span>
+    <span class="ticket">Comics (Pre-1980)</span>
+    <span class="ticket">Vintage Paper &amp; Ads</span>
+    <span class="ticket">Trading Cards</span>
+    <span class="ticket">Sports Memorabilia</span>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="about-grid">
+    <div>
+      <h2>Started at a table. Grew into a storefront.</h2>
+      <p>D&amp;D's Collectables began in 2005 as a single table at a flea market in Exeter. Word got around about the finds, and the table grew into a full storefront on North Main Ave, known to regulars simply as The NEPA Pickers.</p>
+      <p>Owner Dan Kosloski and the team still do the legwork themselves, sourcing estate finds, old collections, and forgotten boxes from across northeast Pennsylvania, then sorting it all out for the next collector to discover.</p>
+      <p>If you've got a collection to sell, coins to appraise, or an afternoon to spend digging through history, this is the shop for it.</p>
+    </div>
+    <div class="ledger">
+      <h3 class="label-tag">The Ledger</h3>
+      <div class="ledger-line"><span class="item">Buying Collections</span><span class="note">Coins, cards, comics &amp; more</span></div>
+      <div class="ledger-line"><span class="item">Appointments Available</span><span class="note">For larger collections</span></div>
+      <div class="ledger-line"><span class="item">Walk-Ins Welcome</span><span class="note">Browse the full shop floor</span></div>
+      <div class="ledger-line"><span class="item">Fair Appraisals</span><span class="note">Straightforward, no pressure</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="story-band" id="buy-sell">
+  <div class="story-inner">
+    <h2>What We Buy &amp; Sell: Vintage Advertising, Old Magazines, and Local Memorabilia</h2>
+    <p>Beyond coins and comics, the shelves carry matchbook collections, vintage newspapers, sports cards, and one-of-a-kind pieces of NEPA history. Looking to sell a collection instead of buy one? Bring it in, or call ahead to set up a time to have it looked over.</p>
+  </div>
+</div>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div style="text-align:center; margin-bottom: 44px;">
+      <h2>Plan a Visit to North Main Ave</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>Location</h3>
+        <p>1808 North Main Ave</p>
+        <p>Scranton, PA 18508</p>
+      </div>
+      <div class="visit-card">
+        <h3>Hours</h3>
+        <p>Monday, Wednesday, Thursday</p>
+        <p>11:00am &ndash; 1:00pm &amp; 2:00pm &ndash; 6:30pm</p>
+      </div>
+      <div class="visit-card">
+        <h3>Follow Along</h3>
+        <p>New finds get posted first on Instagram</p>
+        <p>@dndscollectables</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h2>Have a collection to sell, or something specific you're hunting for?</h2>
+      <p>Stop by the shop on North Main Ave, or send a message on Instagram. This preview site is free to look at, no obligation either way. If you like it, it's yours to keep once hosting is set up.</p>
+      <a href="https://www.instagram.com/dndscollectables/" class="btn-cream" target="_blank" rel="noopener">Message on Instagram</a>
+    </div>
+    <div class="footer-contact">
+      <div><strong>D&amp;D's Collectables</strong></div>
+      <div>1808 North Main Ave</div>
+      <div>Scranton, PA 18508</div>
+      <div>(570) 703-0411</div>
+      <div>Instagram: @dndscollectables</div>
+    </div>
+  </div>
+  <div class="fine-print">Demo site built by Modularity Networks. Not the official website of D&amp;D's Collectables.</div>
+</footer>
+
+</body>
+</html>

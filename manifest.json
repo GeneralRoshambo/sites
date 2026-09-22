@@ -1158,9 +1158,9 @@
   },
   {
     "slug": "diplomat-cafe-goshen",
-    "name": "Diplomat Caf\u00e9 & Bakery",
+    "name": "Diplomat Café & Bakery",
     "location": "Goshen, NY",
-    "category": "European Caf\u00e9 & Bakery",
+    "category": "European Café & Bakery",
     "region": "HudsonValley",
     "added": "2026-08-07"
   },
@@ -1446,5 +1446,21 @@
     "category": "Pet Grooming",
     "region": "Queens",
     "added": "2026-09-18"
+  },
+  {
+    "slug": "dnds-collectables-scranton",
+    "name": "D&D's Collectables",
+    "location": "Scranton, PA",
+    "category": "Antiques & Collectibles",
+    "region": "Scranton",
+    "added": "2026-09-22"
+  },
+  {
+    "slug": "yammis-bakery-middletown",
+    "name": "Yammi's Bakery",
+    "location": "Middletown, NY",
+    "category": "Bakery",
+    "region": "HudsonValley",
+    "added": "2026-09-22"
   }
 ]
