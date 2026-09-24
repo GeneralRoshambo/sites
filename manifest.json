@@ -1462,5 +1462,21 @@
     "category": "Bakery",
     "region": "HudsonValley",
     "added": "2026-09-22"
+  },
+  {
+    "slug": "floritas-bakery-scranton",
+    "name": "Florita's Bakery",
+    "location": "Scranton, PA",
+    "category": "Mexican Bakery",
+    "region": "Scranton",
+    "added": "2026-09-24"
+  },
+  {
+    "slug": "bronx-barber-shop-hunts-point",
+    "name": "The Bronx Barber Shop",
+    "location": "Bronx, NY",
+    "category": "Barber Shop",
+    "region": "Bronx",
+    "added": "2026-09-24"
   }
 ]

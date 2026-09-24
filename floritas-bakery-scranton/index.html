@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florita's Bakery | Mexican Bakery in Scranton, PA</title>
+<meta name="description" content="Florita's Bakery on Cedar Ave in Scranton, PA: conchas, pan dulce, flan and custom tres leches cakes baked fresh every day on the South Side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Schibsted+Grotesk:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#FCE4EA;
+  --rosa:#C4145A;
+  --piloncillo:#6A3718;
+  --concha:#F4C95D;
+  --ink:#2B1A12;
+  --nopal:#2E6B4F;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--papel);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--nopal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{background:var(--papel);border-bottom:2px solid var(--rosa);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.wordmark{font-family:"Bagel Fat One",sans-serif;font-size:30px;color:var(--rosa);text-decoration:none;white-space:nowrap;letter-spacing:.5px;line-height:1}
+.wordmark span{color:var(--piloncillo);font-size:17px;font-family:"Schibsted Grotesk",sans-serif;font-weight:600;margin-left:8px;letter-spacing:0}
+nav.links{display:flex;align-items:center;gap:28px}
+nav.links a{text-decoration:none;font-weight:600;color:var(--piloncillo)}
+nav.links a:hover{color:var(--rosa)}
+.call{background:var(--rosa);color:var(--white)!important;padding:10px 18px;border-radius:999px;white-space:nowrap}
+.call:hover{background:var(--piloncillo)}
+.menu-btn{display:none;background:none;border:2px solid var(--piloncillo);border-radius:8px;width:46px;height:42px;cursor:pointer;color:var(--piloncillo)}
+.mobile-menu{display:none}
+@media (max-width:1100px){
+  nav.links{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  .mobile-menu.open{display:block;border-top:1px solid #F0CFD9;background:var(--papel)}
+  .mobile-menu a{display:block;padding:14px 24px;text-decoration:none;font-weight:600;color:var(--piloncillo);border-bottom:1px solid #F0CFD9}
+}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:560px}
+.hero-text{padding:72px 56px 64px max(24px,calc((100vw - 1180px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
+.hero-kicker{font-family:"Courier Prime",monospace;font-size:16px;color:var(--nopal);font-weight:700;margin-bottom:14px}
+h1{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:1.02;color:var(--rosa);margin-bottom:22px}
+h1 .loc{display:block;color:var(--piloncillo);font-size:clamp(28px,3.8vw,48px);margin-top:8px}
+.hero-text p{max-width:470px;font-size:19px;margin-bottom:30px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;border:2px solid var(--rosa)}
+.btn.solid{background:var(--rosa);color:var(--white)}
+.btn.solid:hover{background:var(--piloncillo);border-color:var(--piloncillo)}
+.btn.line{color:var(--rosa)}
+.btn.line:hover{background:var(--white)}
+.hero-photo{position:relative;background:var(--concha)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+/* tray of tags */
+.vitrina{padding:96px 0 88px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:54px}
+h2{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:clamp(34px,4vw,50px);line-height:1.05;color:var(--piloncillo)}
+.sec-head p{max-width:440px}
+.line-rail{position:relative;padding-top:10px;border-top:2px solid var(--piloncillo)}
+.tags{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px;list-style:none}
+.tag{position:relative;padding-top:34px}
+.tag::before{content:"";position:absolute;top:-10px;left:50%;width:2px;height:44px;background:var(--piloncillo);transform:translateX(-50%)}
+.tag-card{position:relative;background:var(--white);border:2px solid var(--piloncillo);border-radius:14px 14px 10px 10px;padding:34px 18px 20px;text-align:center;transition:transform .25s}
+.tag:nth-child(odd) .tag-card{transform:rotate(-2deg)}
+.tag:nth-child(even) .tag-card{transform:rotate(1.5deg)}
+.tag:hover .tag-card{transform:rotate(0)}
+.tag-card::before{content:"";position:absolute;top:12px;left:50%;width:14px;height:14px;border:2px solid var(--piloncillo);border-radius:50%;background:var(--papel);transform:translateX(-50%)}
+.tag-name{font-family:"Bagel Fat One",sans-serif;font-size:27px;color:var(--rosa);line-height:1.1;margin:8px 0 6px}
+.tag-en{font-family:"Courier Prime",monospace;font-size:15px;color:var(--piloncillo)}
+.tag.gold .tag-card{background:var(--concha)}
+.tag.gold .tag-name{color:var(--ink)}
+
+/* cakes */
+.pasteles{background:var(--white);border-top:2px solid var(--rosa);border-bottom:2px solid var(--rosa)}
+.cake-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:96px 24px}
+.cake-grid img{border-radius:22px;aspect-ratio:4/3.4;object-fit:cover;width:100%}
+.cake-copy h2{margin-bottom:20px}
+.cake-copy p{margin-bottom:18px}
+.cake-list{list-style:none;margin:26px 0 30px;border-top:1px dashed var(--piloncillo)}
+.cake-list li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--piloncillo)}
+.cake-list b{color:var(--rosa)}
+.cake-list span{font-family:"Courier Prime",monospace;color:var(--piloncillo);text-align:right}
+
+/* about */
+.about{padding:96px 0}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.about-grid img{border-radius:22px;aspect-ratio:1/1;object-fit:cover;width:100%}
+.about h2{margin-bottom:22px}
+.about p{margin-bottom:18px;max-width:560px}
+.note{display:inline-block;margin-top:8px;background:var(--concha);padding:10px 16px;border-radius:10px;font-weight:600}
+
+/* visit */
+.visit{padding:0 0 100px}
+.visit-card{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:2px solid var(--piloncillo);border-radius:22px;background:var(--white);overflow:hidden}
+.visit-col{padding:36px 32px}
+.visit-col + .visit-col{border-left:2px dashed var(--piloncillo)}
+.visit h3{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:26px;color:var(--rosa);margin-bottom:14px}
+.visit-col p{margin-bottom:8px}
+.visit-col a{font-weight:700;color:var(--rosa)}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px solid #F0CFD9}
+.hours li.closed span{color:var(--rosa);font-weight:700}
+.ico{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:6px}
+
+footer{background:var(--rosa);color:var(--white);padding:44px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .wordmark{color:var(--white)}
+.foot p{font-size:15px}
+.foot a{color:var(--white)}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-text{padding:56px 24px 48px}
+  .hero-photo{height:340px}
+  .tags{grid-template-columns:repeat(2,1fr)}
+  .cake-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+  .cake-grid{padding:72px 24px}
+  .visit-card{grid-template-columns:1fr}
+  .visit-col + .visit-col{border-left:0;border-top:2px dashed var(--piloncillo)}
+}
+@media (max-width:520px){
+  .wordmark{font-size:25px}
+  .wordmark span{display:none}
+  .tags{grid-template-columns:1fr 1fr;gap:24px 14px}
+  .tag-name{font-size:22px}
+  .vitrina,.about{padding:72px 0}
+  .cake-list li{flex-direction:column;gap:2px}
+  .cake-list span{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#top">Florita's<span>Bakery</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#pan">Pan dulce</a>
+      <a href="#pasteles">Tres leches cakes</a>
+      <a href="#about">About</a>
+      <a href="#visit">Hours and directions</a>
+      <a class="call" href="tel:+15703417396">Call (570) 341-7396</a>
+    </nav>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg width="22" height="16" viewBox="0 0 22 16" aria-hidden="true"><path d="M0 1h22M0 8h22M0 15h22" stroke="currentColor" stroke-width="2.4"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="#pan">Pan dulce</a>
+    <a href="#pasteles">Tres leches cakes</a>
+    <a href="#about">About</a>
+    <a href="#visit">Hours and directions</a>
+    <a href="tel:+15703417396">Call (570) 341-7396</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-kicker">Panadería mexicana, 618 Cedar Ave</p>
+      <h1>Mexican Bakery<span class="loc">on Scranton's South Side</span></h1>
+      <p>Conchas, cuernitos, flan and tres leches cakes, baked fresh every morning. Grab a tray, pick your pan, and take a pink box home.</p>
+      <div class="btns">
+        <a class="btn solid" href="#pasteles">Order a tres leches cake</a>
+        <a class="btn line" href="#visit">See today's hours</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.pexels.com/photos/34611831/pexels-photo-34611831.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Tiered display of fresh Mexican conchas in pink, yellow and chocolate">
+    </div>
+  </section>
+
+  <section class="vitrina" id="pan">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>From the case this morning</h2>
+        <p>The pan dulce changes with the day and the season. These are the favorites people come back for.</p>
+      </div>
+      <div class="line-rail">
+        <ul class="tags">
+          <li class="tag"><div class="tag-card"><p class="tag-name">Conchas</p><p class="tag-en">sugar shell sweet bread</p></div></li>
+          <li class="tag gold"><div class="tag-card"><p class="tag-name">Cuernitos</p><p class="tag-en">buttery little horns</p></div></li>
+          <li class="tag"><div class="tag-card"><p class="tag-name">Flan</p><p class="tag-en">silky caramel custard</p></div></li>
+          <li class="tag"><div class="tag-card"><p class="tag-name">Danish de queso</p><p class="tag-en">cheese danish</p></div></li>
+          <li class="tag"><div class="tag-card"><p class="tag-name">Galletas</p><p class="tag-en">cookies by the dozen</p></div></li>
+          <li class="tag"><div class="tag-card"><p class="tag-name">Bolillos</p><p class="tag-en">crusty rolls for tortas</p></div></li>
+          <li class="tag gold"><div class="tag-card"><p class="tag-name">Rosca de reyes</p><p class="tag-en">January, by order</p></div></li>
+          <li class="tag"><div class="tag-card"><p class="tag-name">Pan de muerto</p><p class="tag-en">late October into November</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pasteles" id="pasteles">
+    <div class="wrap cake-grid">
+      <img src="https://images.pexels.com/photos/3791088/pexels-photo-3791088.jpeg?auto=compress&cs=tinysrgb&w=900" alt="White frosted celebration cake topped with fresh strawberries and berries" loading="lazy">
+      <div class="cake-copy">
+        <h2>Tres leches cakes, made for your party</h2>
+        <p>Florita's is known around Scranton for its tres leches: a sponge soaked in three milks, light, cold and never heavy. Every one can be decorated to match the occasion.</p>
+        <ul class="cake-list">
+          <li><b>Birthdays and quinceañeras</b><span>names, colors, fresh fruit</span></li>
+          <li><b>Baptisms and communions</b><span>white and pastel designs</span></li>
+          <li><b>Showers and anniversaries</b><span>sheet or round, any size</span></li>
+        </ul>
+        <a class="btn solid" href="tel:+15703417396">Call to order a cake</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <img src="https://images.pexels.com/photos/12097596/pexels-photo-12097596.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trays of conchas and pan dulce on bakery shelves" loading="lazy">
+      <div>
+        <h2>A neighborhood panadería</h2>
+        <p>Florita's Bakery sits on Cedar Avenue in South Side Scranton, baking the breads and sweets that fill a Mexican bakery case: pan dulce and pastries, danishes, breads and cookies, made daily.</p>
+        <p>It works the way a panadería should. Walk in, grab a tray and tongs, choose what looks best, and the counter boxes it up. Stop in for a concha with your morning coffee, or pick up a dozen for the office.</p>
+        <p class="note">Hablamos español. Pedidos especiales por teléfono.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <h2 style="margin-bottom:34px">Come by the bakery</h2>
+      <div class="visit-card">
+        <div class="visit-col">
+          <h3>Find us</h3>
+          <p><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.5"/></svg>618 Cedar Ave<br>Scranton, PA 18505</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=618+Cedar+Ave+Scranton+PA+18505">Get directions</a></p>
+        </div>
+        <div class="visit-col">
+          <h3>Call or write</h3>
+          <p><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+15703417396">(570) 341-7396</a></p>
+          <p><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:floritasbakery618@gmail.com">floritasbakery618@gmail.com</a></p>
+          <p><a href="https://www.facebook.com/floritasbakery/">Follow on Facebook</a></p>
+        </div>
+        <div class="visit-col">
+          <h3>Hours</h3>
+          <ul class="hours">
+            <li><b>Monday</b><span>7am to 5pm</span></li>
+            <li><b>Tuesday</b><span>7am to 5pm</span></li>
+            <li class="closed"><b>Wednesday</b><span>Closed</span></li>
+            <li><b>Thursday</b><span>7am to 5pm</span></li>
+            <li><b>Friday</b><span>7am to 5pm</span></li>
+            <li><b>Saturday</b><span>7am to 2pm</span></li>
+            <li><b>Sunday</b><span>Call ahead</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="wordmark" href="#top">Florita's</a>
+    <p>Mexican bakery at 618 Cedar Ave, Scranton, PA 18505. <a href="tel:+15703417396">(570) 341-7396</a></p>
+  </div>
+</footer>
+
+<script>
+const btn=document.querySelector('.menu-btn'),mm=document.getElementById('mobile-menu');
+btn.addEventListener('click',()=>{const o=mm.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mm.classList.remove('open');btn.setAttribute('aria-expanded','false');}));
+</script>
+</body>
+</html>
