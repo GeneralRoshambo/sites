@@ -1478,5 +1478,21 @@
     "category": "Barber Shop",
     "region": "Bronx",
     "added": "2026-09-24"
+  },
+  {
+    "slug": "byte-bakery-milford",
+    "name": "Byte Bakery",
+    "location": "Milford, PA",
+    "category": "Custom Cakes",
+    "region": "DelawareValley",
+    "added": "2026-09-30"
+  },
+  {
+    "slug": "annadale-bakery-staten-island",
+    "name": "Annadale Bakery",
+    "location": "Staten Island, NY",
+    "category": "Italian Bakery",
+    "region": "StatenIsland",
+    "added": "2026-09-30"
   }
 ]

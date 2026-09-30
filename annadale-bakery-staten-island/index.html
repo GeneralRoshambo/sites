@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annadale Bakery | Italian Bakery in Annadale, Staten Island</title>
+<meta name="description" content="Annadale Bakery at 821 Annadale Road is a family run Italian bakery on Staten Island: cannoli, rainbow cookies, lobster tails, donuts and custom cakes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sansita:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sugar:#FBFAF6;
+  --glass:#EEF2EC;
+  --cocoa:#3A2419;
+  --cocoa-soft:#5E4638;
+  --pistachio:#3F7A4E;
+  --cherry:#B8352C;
+  --almond:#F1D58E;
+  --display:"Sansita",Georgia,sans-serif;
+  --body:"Hanken Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--sugar);color:var(--cocoa);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pistachio);outline-offset:3px;border-radius:3px}
+.wrap{width:min(1180px,100%);margin-inline:auto}
+.top .wrap{padding:0 20px}
+
+/* rainbow cookie band, the signature */
+.cookie{display:grid;grid-template-rows:6px 1fr 1fr 1fr 6px;height:46px;width:100%}
+.cookie i{display:block}
+.cookie i:nth-child(1),.cookie i:nth-child(5){background:var(--cocoa)}
+.cookie i:nth-child(2){background:var(--pistachio)}
+.cookie i:nth-child(3){background:var(--almond)}
+.cookie i:nth-child(4){background:var(--cherry)}
+.cookie.thin{height:22px;grid-template-rows:3px 1fr 1fr 1fr 3px}
+
+/* header */
+.top{background:var(--sugar)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px}
+.brand{font-family:var(--display);font-weight:900;font-size:1.7rem;text-decoration:none;white-space:nowrap;letter-spacing:.005em}
+.brand span{color:var(--cherry)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;font-weight:700}
+.nav a:not(.btn):hover{color:var(--cherry)}
+.btn{display:inline-block;background:var(--cherry);color:#fff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:6px;border:2px solid var(--cherry);transition:background .2s,border-color .2s,color .2s}
+.btn:hover{background:var(--cocoa);border-color:var(--cocoa)}
+.btn.line{background:transparent;color:var(--cocoa);border-color:var(--cocoa)}
+.btn.line:hover{background:var(--cocoa);color:var(--sugar)}
+.menu-toggle{display:none;background:none;border:2px solid var(--cocoa);border-radius:6px;padding:8px 10px;cursor:pointer;color:var(--cocoa)}
+.mobile-menu{display:none}
+@media (max-width:1150px){
+  .nav{display:none}
+  .menu-toggle{display:inline-flex}
+  .mobile-menu.open{display:block;border-top:1px solid #DCD6CC}
+  .mobile-menu a{display:block;padding:14px 20px;text-decoration:none;font-weight:700;border-bottom:1px solid #DCD6CC}
+}
+
+/* hero */
+.hero{padding:56px 20px 64px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.kicker{font-weight:700;color:var(--pistachio);margin-bottom:14px}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,5.6vw,4.6rem);line-height:1;letter-spacing:-.01em;margin-bottom:22px}
+h1 span{color:var(--cherry)}
+.lede{font-size:1.15rem;color:var(--cocoa-soft);max-width:32em;margin-bottom:30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-img{position:relative}
+.hero-img img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:10px}
+.hero-img .cookie{position:absolute;left:24px;right:24px;bottom:-23px;width:auto;border-radius:4px;overflow:hidden}
+
+/* case: ledger of counter favorites */
+.case{background:var(--glass);padding:88px 20px}
+.case .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,3.8vw,3rem);line-height:1.3;margin-bottom:14px}
+.sub{color:var(--cocoa-soft);max-width:34em}
+.case-photo{margin-top:30px;border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.ledger{list-style:none;border-top:1px solid var(--cocoa)}
+.ledger li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid #CFD6CC}
+.ledger b{font-family:var(--display);font-weight:800;font-size:1.35rem}
+.ledger .dots{border-bottom:2px dotted #A79A8E;transform:translateY(-6px)}
+.ledger .what{font-weight:700;color:var(--pistachio);font-size:.95rem;white-space:nowrap}
+.ledger p{grid-column:1/-1;color:var(--cocoa-soft);margin-top:2px}
+
+/* cakes */
+.cakes{padding:92px 20px}
+.cakes .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.cakes img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.order-list{list-style:none;margin:24px 0 30px;display:grid;gap:10px}
+.order-list li{display:flex;gap:12px;align-items:flex-start}
+.order-list svg{flex:none;width:20px;height:20px;margin-top:4px;color:var(--pistachio)}
+
+/* visit */
+.visit{background:var(--almond);padding:88px 20px 0}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;padding-bottom:88px}
+.hours{background:var(--sugar);border:2px solid var(--cocoa);border-radius:10px;overflow:hidden}
+.hours h3{font-family:var(--display);font-weight:800;font-size:1.5rem;padding:22px 26px 6px}
+.hours table{width:100%;border-collapse:collapse;margin-bottom:10px}
+.hours td{padding:12px 26px;border-top:1px solid #E4DDD0}
+.hours td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.hours .note{font-size:.9rem;color:var(--cocoa-soft);padding:0 26px 20px}
+.addr{margin:22px 0 28px;display:grid;gap:14px}
+.addr div{display:flex;gap:12px;align-items:flex-start}
+.addr svg{flex:none;width:22px;height:22px;margin-top:3px}
+.addr a{font-weight:700;text-decoration:none}
+.addr a:hover{text-decoration:underline}
+
+footer{background:var(--cocoa);color:var(--sugar);padding:34px 20px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+footer .brand span{color:var(--almond)}
+footer p{color:#E6DCD2;font-size:.95rem}
+footer a{color:var(--almond)}
+
+@media (max-width:980px){
+  .hero .wrap,.case .wrap,.cakes .wrap,.visit .wrap{grid-template-columns:1fr}
+  .cakes img{order:-1}
+}
+@media (max-width:600px){
+  .hero{padding:36px 20px 56px}
+  .case,.cakes{padding:64px 20px}
+  .visit{padding:64px 20px 0}
+  .visit .wrap{padding-bottom:64px}
+  .brand{font-size:1.4rem}
+  .ledger li{grid-template-columns:1fr auto}
+  .ledger .dots{display:none}
+  .hours td{padding:12px 18px}
+  .hours h3,.hours .note{padding-left:18px;padding-right:18px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Annadale <span>Bakery</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#case">In the case</a>
+      <a href="#cakes">Custom cakes</a>
+      <a href="#visit">Hours and directions</a>
+      <a class="btn" href="tel:+19292843400">Call (929) 284-3400</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#case">In the case</a>
+    <a href="#cakes">Custom cakes</a>
+    <a href="#visit">Hours and directions</a>
+    <a href="tel:+19292843400">Call (929) 284-3400</a>
+  </div>
+  <div class="cookie thin" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">821 Annadale Road, Staten Island</p>
+        <h1>Italian Bakery in <span>Annadale,</span> Staten Island</h1>
+        <p class="lede">A family run bakery turning out cannoli filled while you wait, rainbow cookies, lobster tails, fresh donuts and custom cakes for every celebration on the South Shore.</p>
+        <div class="cta-row">
+          <a class="btn" href="#cakes">Order a custom cake</a>
+          <a class="btn line" href="#visit">Today's hours</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.pexels.com/photos/7474117/pexels-photo-7474117.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Fresh cannoli filled with ricotta cream and dusted with powdered sugar">
+        <div class="cookie" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="case">
+    <div class="wrap">
+      <div>
+        <h2>What's in the case</h2>
+        <p class="sub">The counter changes with the day and the season, but these are the ones regulars come in asking for by name.</p>
+        <img class="case-photo" src="https://images.pexels.com/photos/35661532/pexels-photo-35661532.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Donuts and pastries lined up in a glass bakery display case">
+      </div>
+      <ul class="ledger">
+        <li><b>Cannoli</b><span class="dots"></span><span class="what">Filled to order</span><p>Crisp shells piped with sweet ricotta cream when you ask, so the shell stays crunchy. Cannoli horns too.</p></li>
+        <li><b>Rainbow cookies</b><span class="dots"></span><span class="what">By the pound</span><p>Almond sponge in green, white and red, layered with jam and finished in dark chocolate.</p></li>
+        <li><b>Lobster tails</b><span class="dots"></span><span class="what">Pastry classic</span><p>Flaky sfogliatella shells stuffed with cream.</p></li>
+        <li><b>Donuts</b><span class="dots"></span><span class="what">Fresh daily</span><p>Glazed, filled and specialty donuts, including the PB&amp;J donut people drive over for.</p></li>
+        <li><b>Cheesecake cones</b><span class="dots"></span><span class="what">House favorite</span><p>Cheesecake filling piped into a crisp cone. Easy to eat on the walk back to the car.</p></li>
+        <li><b>Cookies, buns and breads</b><span class="dots"></span><span class="what">Trays available</span><p>Italian butter cookies, sweet buns and bread for the table, boxed and tied for holidays and visits.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cakes" id="cakes">
+    <div class="wrap">
+      <div>
+        <h2>Custom cakes for every occasion</h2>
+        <p class="sub">Birthdays, communions, showers and anniversaries. Bring a photo, a theme or just a flavor and the team will design a cake around it, from classic cannoli cream cakes to an espresso martini cake.</p>
+        <ul class="order-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Call or stop in with your date, size and design idea</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Pick your cake, filling and finish</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Pick it up boxed and ready at 821 Annadale Road</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" href="tel:+19292843400">Call to order</a>
+          <a class="btn line" href="mailto:annadalebakery@gmail.com?subject=Custom%20cake%20order">Email the bakery</a>
+        </div>
+      </div>
+      <img src="https://images.pexels.com/photos/29170275/pexels-photo-29170275.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Glass bakery case with trays of fresh donuts and labeled pastries">
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div>
+        <h2>Come see the counter</h2>
+        <p class="sub">You will find us on Annadale Road, an easy stop on the way home or on the way to a party.</p>
+        <div class="addr">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Annadale+Bakery+821+Annadale+Rd+Staten+Island+NY+10312" rel="noopener">821 Annadale Rd, Staten Island, NY 10312</a></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+19292843400">(929) 284-3400</a></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:annadalebakery@gmail.com">annadalebakery@gmail.com</a></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><a href="https://www.instagram.com/annadalebakery/" rel="noopener">@annadalebakery on Instagram</a></div>
+        </div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Annadale+Bakery+821+Annadale+Rd+Staten+Island+NY+10312" rel="noopener">Get directions</a>
+      </div>
+      <div class="hours">
+        <h3>Bakery hours</h3>
+        <table>
+          <tr><td>Monday to Thursday</td><td>8:00 am to 6:30 pm</td></tr>
+          <tr><td>Friday and Saturday</td><td>8:00 am to 7:00 pm</td></tr>
+          <tr><td>Sunday</td><td>8:00 am to 5:00 pm</td></tr>
+        </table>
+        <p class="note">Holiday hours can change. Give us a call before a big order.</p>
+        <div class="cookie" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">Annadale <span>Bakery</span></span>
+    <p>Family run Italian bakery at 821 Annadale Rd, Staten Island, NY 10312. <a href="tel:+19292843400">(929) 284-3400</a></p>
+  </div>
+</footer>
+
+<script>
+const t=document.querySelector('.menu-toggle'),m=document.getElementById('mobile-menu');
+t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>

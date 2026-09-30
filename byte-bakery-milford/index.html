@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Byte Bakery | Custom Cakes, Cookies and Cupcakes in Milford, PA</title>
+<meta name="description" content="Byte Bakery, LLC bakes custom tiered cakes, decorated cookies and themed cupcakes from scratch in Milford, PA, serving the PA, NY and NJ tri-state area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mint:#E6F2EC;
+  --icing:#FFFFFF;
+  --indigo:#25224A;
+  --indigo-soft:#4A4670;
+  --lilac:#5E4290;
+  --strawberry:#B8325A;
+  --pistachio:#A8CDB2;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+  --pixel:"Silkscreen",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--mint);color:var(--indigo);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--strawberry);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1160px,100%);margin-inline:auto}
+.top{padding:0 20px}
+
+/* header */
+.top{background:var(--icing);border-bottom:2px solid var(--indigo)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:74px}
+.brand{font-family:var(--pixel);font-weight:700;font-size:1.35rem;letter-spacing:.02em;text-decoration:none;white-space:nowrap;color:var(--indigo)}
+.brand span{color:var(--strawberry)}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{text-decoration:none;font-weight:700;font-size:.98rem}
+.nav a:not(.btn):hover{color:var(--lilac)}
+.btn{display:inline-block;background:var(--lilac);color:var(--icing);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;border:2px solid var(--lilac);transition:background .2s,color .2s}
+.btn:hover{background:var(--indigo);border-color:var(--indigo)}
+.btn.ghost{background:transparent;color:var(--indigo);border-color:var(--indigo)}
+.btn.ghost:hover{background:var(--indigo);color:var(--icing)}
+.menu-toggle{display:none;background:none;border:2px solid var(--indigo);border-radius:8px;padding:8px 10px;cursor:pointer;color:var(--indigo)}
+.mobile-menu{display:none}
+@media (max-width:1100px){
+  .nav{display:none}
+  .menu-toggle{display:inline-flex}
+  .mobile-menu.open{display:block;background:var(--icing);border-bottom:2px solid var(--indigo)}
+  .mobile-menu a{display:block;padding:14px 20px;text-decoration:none;font-weight:700;border-top:1px solid var(--pistachio)}
+}
+
+/* bite mask, the signature */
+.bitten{
+  -webkit-mask:radial-gradient(circle var(--bite,64px) at calc(100% - var(--bx,18px)) var(--by,18px),#0000 97%,#000 100%),radial-gradient(circle calc(var(--bite,64px) * .62) at calc(100% - var(--bx,18px) - var(--bite,64px) * 1.05) calc(var(--by,18px) - var(--bite,64px) * .15),#0000 97%,#000 100%);
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(circle var(--bite,64px) at calc(100% - var(--bx,18px)) var(--by,18px),#0000 97%,#000 100%),radial-gradient(circle calc(var(--bite,64px) * .62) at calc(100% - var(--bx,18px) - var(--bite,64px) * 1.05) calc(var(--by,18px) - var(--bite,64px) * .15),#0000 97%,#000 100%);
+  mask-composite:intersect;
+}
+
+/* hero */
+.hero{padding:64px 20px 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.tag{font-family:var(--pixel);font-size:.9rem;color:var(--lilac);margin-bottom:18px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--lilac)}
+.lede{font-size:1.15rem;max-width:34em;color:var(--indigo-soft);margin-bottom:30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;--bite:92px;--bx:6px;--by:10px}
+.hero-note{position:absolute;left:-22px;bottom:34px;background:var(--icing);border:2px solid var(--indigo);border-radius:14px;padding:12px 16px;font-weight:700;font-size:.95rem;max-width:230px}
+.hero-note b{display:block;font-family:var(--pixel);font-weight:400;font-size:.78rem;color:var(--strawberry);margin-bottom:2px}
+
+/* sections */
+section{padding:84px 20px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.36;letter-spacing:-.015em;margin-bottom:14px}
+.sub{color:var(--indigo-soft);max-width:38em}
+
+.bakes{background:var(--icing);border-block:2px solid var(--indigo)}
+.bakes-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.bake-list{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:28px}
+.bake img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px;--bite:48px;--bx:4px;--by:6px;margin-bottom:18px}
+.bake:first-child img{aspect-ratio:auto;height:100%;max-height:430px}
+.bake h3{font-family:var(--display);font-weight:700;font-size:1.45rem;margin-bottom:6px}
+.bake p{color:var(--indigo-soft)}
+.bake .kind{font-family:var(--pixel);font-size:.78rem;color:var(--lilac);display:block;margin-bottom:6px}
+
+/* promise strip */
+.promise .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.promise blockquote{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.42;border-left:6px solid var(--strawberry);padding-left:24px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--indigo);border-radius:20px;background:var(--icing);overflow:hidden}
+.facts div{padding:22px 24px;border-bottom:2px solid var(--indigo)}
+.facts div:nth-child(odd){border-right:2px solid var(--indigo)}
+.facts div:nth-last-child(-n+2){border-bottom:0}
+.facts dt{font-family:var(--pixel);font-size:.78rem;color:var(--lilac);margin-bottom:4px}
+.facts dd{font-weight:700}
+
+/* order steps: a real sequence */
+.order{background:var(--indigo);color:var(--icing)}
+.order .sub{color:#D6D3EE}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--pistachio);padding-top:20px}
+.steps li::before{content:"Step " counter(s);font-family:var(--pixel);font-size:.82rem;color:var(--pistachio);display:block;margin-bottom:10px}
+.steps h3{font-family:var(--display);font-size:1.35rem;margin-bottom:6px}
+.steps p{color:#D6D3EE}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.card{background:var(--icing);border:2px solid var(--indigo);border-radius:24px;padding:34px}
+.line{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--pistachio)}
+.line:last-of-type{border-bottom:0}
+.line svg{flex:none;width:22px;height:22px;margin-top:3px;color:var(--lilac)}
+.line small{display:block;font-family:var(--pixel);font-size:.74rem;color:var(--lilac)}
+.line a{font-weight:700;text-decoration:none;word-break:break-word}
+.line a:hover{text-decoration:underline}
+.contact .cta-row{margin-top:22px}
+
+footer{background:var(--icing);border-top:2px solid var(--indigo);padding:30px 20px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.95rem;color:var(--indigo-soft)}
+footer .brand{font-size:1rem}
+
+@media (max-width:980px){
+  .hero .wrap,.promise .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-photo{max-width:520px}
+  .hero-note{left:12px}
+  .bake-list{grid-template-columns:1fr 1fr}
+  .bake:first-child{grid-column:1/-1}
+  .bake:first-child img{aspect-ratio:16/10;max-height:none}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  section{padding:64px 20px}
+  .hero{padding:40px 20px 56px}
+  .bake-list{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .facts div:nth-child(odd){border-right:0}
+  .facts div:nth-last-child(2){border-bottom:2px solid var(--indigo)}
+  .brand{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">BYTE <span>BAKERY</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#bakes">What we bake</a>
+      <a href="#about">About</a>
+      <a href="#order">How to order</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="mailto:bytebakery@yahoo.com">Email an order</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#bakes">What we bake</a>
+    <a href="#about">About</a>
+    <a href="#order">How to order</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="tag">Make every byte count</p>
+        <h1>Custom Cakes and <em>Cupcakes</em> in Milford, PA</h1>
+        <p class="lede">Byte Bakery makes tiered celebration cakes, hand decorated cookies and themed cupcakes from scratch, built around your party and baked for pickup or delivery across the PA, NY and NJ tri-state area.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:bytebakery@yahoo.com?subject=Custom%20order%20request">Start a custom order</a>
+          <a class="btn ghost" href="#bakes">See what we bake</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img class="bitten" src="https://images.pexels.com/photos/8874015/pexels-photo-8874015.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cupcakes piped with red and pink buttercream and topped with sprinkles">
+        <p class="hero-note"><b>Baked to order</b>Every order is made from scratch for your date.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bakes" id="bakes">
+    <div class="wrap">
+      <div class="bakes-head">
+        <div>
+          <h2>What comes out of our ovens</h2>
+          <p class="sub">Three things we do best. Tell us the theme, colors and head count and we will design around it.</p>
+        </div>
+        <a class="btn ghost" href="https://www.instagram.com/bytebakery/" rel="noopener">More on Instagram</a>
+      </div>
+      <div class="bake-list">
+        <article class="bake">
+          <img class="bitten" src="https://images.pexels.com/photos/34833094/pexels-photo-34833094.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Two tier pink birthday cake decorated with sugar roses and pearls">
+          <span class="kind">Showpiece</span>
+          <h3>Custom tiered cakes</h3>
+          <p>Birthdays, showers, milestones and weddings. Stacked tiers finished in buttercream or fondant with flowers, toppers and piping matched to your party.</p>
+        </article>
+        <article class="bake">
+          <img class="bitten" src="https://images.pexels.com/photos/7167286/pexels-photo-7167286.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Hand iced decorated cookies with pastel flowers on a pink plate">
+          <span class="kind">By the dozen</span>
+          <h3>Homemade cookies</h3>
+          <p>Royal iced sugar cookies cut and painted to your theme, plus classic homemade cookies for trays and favors.</p>
+        </article>
+        <article class="bake">
+          <img class="bitten" src="https://images.pexels.com/photos/4099124/pexels-photo-4099124.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Assorted cupcakes with cream frosting, lemon slices and berries">
+          <span class="kind">Party ready</span>
+          <h3>Themed cupcakes</h3>
+          <p>Swirled, filled and topped to match the cake or stand on their own. Easy to hand out at school parties and showers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="promise" id="about">
+    <div class="wrap">
+      <blockquote>Everything that comes out of our ovens is homemade from scratch with the best ingredients we can find.</blockquote>
+      <div>
+        <h2>A small bakery with a big order book</h2>
+        <p class="sub" style="margin-bottom:28px">Byte Bakery, LLC is a custom order bakery based in Milford, Pennsylvania. There is no storefront counter. Every cake, cookie and cupcake is planned with you and baked for your date, so nothing sits in a case.</p>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Milford, PA 18337</dd></div>
+          <div><dt>Serving</dt><dd>PA, NY and NJ tri-state area</dd></div>
+          <div><dt>Orders by</dt><dd>Email, phone or Instagram DM</dd></div>
+          <div><dt>Made</dt><dd>From scratch, to order</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="wrap">
+      <h2>How a custom order works</h2>
+      <p class="sub">Three simple steps from first message to party table.</p>
+      <ol class="steps">
+        <li><h3>Send the details</h3><p>Email or DM your date, what you are celebrating, how many people you are feeding and any photos or colors you love.</p></li>
+        <li><h3>Settle the design</h3><p>We reply with ideas, flavors and a price, and adjust until the design is exactly right.</p></li>
+        <li><h3>Pick up and celebrate</h3><p>Your order is baked fresh for the day and ready for pickup, or delivery can be arranged in the tri-state area.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Tell us what you are celebrating</h2>
+        <p class="sub">The fastest way to get on the calendar is an email with your date and a few inspiration photos. Prefer to talk it through? Give us a call.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:bytebakery@yahoo.com?subject=Custom%20order%20request">Email your order</a>
+          <a class="btn ghost" href="tel:+15708327002">Call 570 832 7002</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><small>Email</small><a href="mailto:bytebakery@yahoo.com">bytebakery@yahoo.com</a></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <div><small>Phone</small><a href="tel:+15708327002">(570) 832-7002</a></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <div><small>Instagram</small><a href="https://www.instagram.com/bytebakery/" rel="noopener">@bytebakery</a></div>
+        </div>
+        <div class="line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <div><small>Based in</small>Milford, PA. Pickup details shared when your order is confirmed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">BYTE <span>BAKERY</span></span>
+    <span>Byte Bakery, LLC. Custom cakes, cookies and cupcakes in Milford, PA.</span>
+  </div>
+</footer>
+
+<script>
+const t=document.querySelector('.menu-toggle'),m=document.getElementById('mobile-menu');
+t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>
