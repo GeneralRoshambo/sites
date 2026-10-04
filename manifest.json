@@ -1494,5 +1494,21 @@
     "category": "Italian Bakery",
     "region": "StatenIsland",
     "added": "2026-09-30"
+  },
+  {
+    "slug": "earthly-treasures-milford",
+    "name": "Earthly Treasures",
+    "location": "Milford, PA",
+    "category": "Crystal & Metaphysical Shop",
+    "region": "DelawareValley",
+    "added": "2026-10-04"
+  },
+  {
+    "slug": "breathless-juice-bar-port-jervis",
+    "name": "Breathless Raw Live Juice Bar",
+    "location": "Port Jervis, NY",
+    "category": "Juice Bar & Vegan Cafe",
+    "region": "HudsonValley",
+    "added": "2026-10-04"
   }
 ]
