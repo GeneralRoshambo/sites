@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cosmik Gifts | Hippie Shop, Vinyl and Vintage in Scranton, PA</title>
+<meta name="description" content="Cosmik Gifts is Scranton's local hippie shop on Sanderson Ave: vinyl records, vintage books and comics, crystals, vintage apparel, handmade jewelry, tapestries and fair trade gifts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Kumbh+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lilac:#F2EDF7;
+    --plum:#2E1A3B;
+    --marigold:#E9A21B;
+    --orange:#D2581F;
+    --rose:#C9577A;
+    --moss:#4A6630;
+    --orange-deep:#B04412;
+    --paper:#FFFFFF;
+    --muted:#5B4A66;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--lilac);color:var(--plum);font-family:"Kumbh Sans",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:var(--lilac);border-bottom:2px solid var(--plum)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+  .brand{font-family:"Shrikhand",serif;font-size:1.7rem;text-decoration:none;white-space:nowrap;color:var(--plum)}
+  .brand span{color:var(--orange)}
+  nav.main{display:flex;align-items:center;gap:28px}
+  nav.main a{text-decoration:none;font-weight:600}
+  nav.main a:hover{color:var(--orange)}
+  .btn{display:inline-block;background:var(--plum);color:var(--lilac);text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;border:2px solid var(--plum)}
+  .btn:hover{background:var(--orange-deep);border-color:var(--orange-deep);color:var(--paper)}
+  .btn.ghost{background:transparent;color:var(--plum)}
+  .btn.ghost:hover{background:var(--plum);color:var(--lilac);border-color:var(--plum)}
+  nav.main .btn{color:var(--lilac)}
+  nav.main .btn:hover{color:var(--paper)}
+  .menu-toggle{display:none;background:none;border:2px solid var(--plum);border-radius:8px;padding:8px 10px;cursor:pointer;color:var(--plum)}
+  .mobile-menu{display:none}
+  @media (max-width:1150px){
+    nav.main{display:none}
+    .menu-toggle{display:inline-flex;align-items:center;gap:8px;font:600 1rem "Kumbh Sans",sans-serif}
+    .mobile-menu.open{display:block;border-top:2px solid var(--plum);background:var(--lilac)}
+    .mobile-menu a{display:block;padding:14px 24px;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(46,26,59,.15)}
+  }
+
+  /* hero */
+  .hero{padding:64px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .kicker{font-weight:600;color:var(--moss);margin:0 0 14px}
+  h1{font-family:"Shrikhand",serif;font-weight:400;font-size:clamp(2.4rem,5.2vw,4.3rem);line-height:1.04;margin:0 0 22px;letter-spacing:.005em}
+  h1 .loc{display:block;color:var(--orange)}
+  .lede{font-size:1.2rem;max-width:34ch;margin:0 0 30px;color:var(--muted)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* signature: record sleeve with 70s stripe bands */
+  .sleeve{position:relative;aspect-ratio:1/1;background:var(--paper);border:2px solid var(--plum);border-radius:6px;overflow:hidden}
+  .sleeve img{width:100%;height:62%;object-fit:cover}
+  .bands{height:38%;display:flex;flex-direction:column}
+  .bands i{flex:1;display:block}
+  .bands i:nth-child(1){background:var(--marigold)}
+  .bands i:nth-child(2){background:var(--orange)}
+  .bands i:nth-child(3){background:var(--rose)}
+  .bands i:nth-child(4){background:var(--plum)}
+  .sleeve-label{position:absolute;right:18px;bottom:18px;background:var(--lilac);border:2px solid var(--plum);border-radius:6px;padding:10px 14px;font-weight:700;line-height:1.4;font-size:.95rem}
+  .sleeve-label small{display:block;font-weight:500;color:var(--muted)}
+
+  /* tracklist */
+  section{padding:80px 0}
+  h2{font-family:"Shrikhand",serif;font-weight:400;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.1;margin:0 0 14px}
+  .intro{max-width:56ch;color:var(--muted);margin:0 0 40px}
+  .tracks{background:var(--paper);border:2px solid var(--plum);border-radius:6px;padding:10px}
+  .sides{display:grid;grid-template-columns:1fr 1fr}
+  .side{padding:32px 36px}
+  .side + .side{border-left:2px solid var(--plum)}
+  .side h3{font-family:"Shrikhand",serif;font-weight:400;font-size:1.6rem;margin:0 0 18px}
+  .side.a h3{color:var(--orange)}
+  .side.b h3{color:var(--rose)}
+  .side ol{list-style:none;margin:0;padding:0}
+  .side li{display:grid;grid-template-columns:2.6rem 1fr;gap:4px 12px;padding:0 0 16px}
+  .side li + li{padding-top:16px;border-top:1px dashed rgba(46,26,59,.35)}
+  .side .n{font-weight:700;color:var(--moss)}
+  .side strong{display:block;font-size:1.1rem}
+  .side p{margin:2px 0 0;color:var(--muted);font-size:.98rem}
+
+  /* photo strip */
+  .strip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:40px}
+  .strip figure{margin:0;border:2px solid var(--plum);border-radius:6px;overflow:hidden;background:var(--paper)}
+  .strip img{width:100%;height:260px;object-fit:cover}
+  .strip figcaption{padding:10px 14px;font-weight:600;font-size:.95rem}
+
+  /* liner notes */
+  .notes{background:var(--paper);border-top:2px solid var(--plum);border-bottom:2px solid var(--plum)}
+  .notes-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+  .notes-grid p{margin:0 0 18px}
+  .pull{font-family:"Shrikhand",serif;font-size:1.6rem;line-height:1.35;color:var(--moss);margin:0}
+  .values{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding:0;list-style:none}
+  .values li{border:2px solid var(--plum);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.95rem}
+
+  /* visit */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .card{background:var(--paper);border:2px solid var(--plum);border-radius:6px;padding:32px}
+  .card h3{margin:0 0 16px;font-size:1.25rem}
+  .row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-top:1px solid rgba(46,26,59,.15)}
+  .row:first-of-type{border-top:0}
+  .row svg{flex:none;margin-top:3px}
+  .row a{font-weight:600}
+  .map{border:2px solid var(--plum);border-radius:6px;overflow:hidden;min-height:340px}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+  footer{background:var(--plum);color:var(--lilac);padding:48px 0}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+  .foot .brand{color:var(--lilac)}
+  .foot .brand span{color:var(--marigold)}
+  .foot p{margin:0;opacity:.85}
+
+  @media (max-width:900px){
+    .hero-grid,.notes-grid,.visit-grid{grid-template-columns:1fr}
+    .sides{grid-template-columns:1fr}
+    .side + .side{border-left:0;border-top:2px solid var(--plum)}
+    .strip{grid-template-columns:1fr}
+    .strip img{height:220px}
+    .hero{padding:40px 0 56px}
+    section{padding:60px 0}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 18px}
+    .side{padding:26px 22px}
+    .card{padding:24px}
+    .brand{font-size:1.45rem}
+    .sleeve-label{right:12px;bottom:12px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Cosmik <span>Gifts</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="#tracklist">What's in the shop</a>
+      <a href="#notes">About</a>
+      <a href="#visit">Visit</a>
+      <a class="btn" href="https://www.instagram.com/cosmikgifts/" target="_blank" rel="noopener">See new arrivals</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Menu
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#tracklist">What's in the shop</a>
+    <a href="#notes">About</a>
+    <a href="#visit">Visit</a>
+    <a href="https://www.instagram.com/cosmikgifts/" target="_blank" rel="noopener">See new arrivals on Instagram</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Your local hippie shop on Sanderson Ave</p>
+        <h1 id="hero-title">Hippie Shop and Vintage Goods <span class="loc">in Scranton, PA</span></h1>
+        <p class="lede">Vinyl, books, crystals, vintage clothes and handmade jewelry, all under one roof in North Scranton. The stock turns over constantly, so every visit digs up something new.</p>
+        <div class="cta-row">
+          <a class="btn" href="#visit">Plan a visit</a>
+          <a class="btn ghost" href="tel:+15707803513">Call (570) 780-3513</a>
+        </div>
+      </div>
+      <div class="sleeve">
+        <img src="https://images.pexels.com/photos/6131931/pexels-photo-6131931.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Rows of vintage vinyl records filed by genre in a record shop">
+        <div class="bands" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="sleeve-label">1827 Sanderson Ave<small>Scranton, PA 18509</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracklist" aria-labelledby="tracks-title">
+    <div class="wrap">
+      <h2 id="tracks-title">What's in the shop</h2>
+      <p class="intro">Laid out like the back of a record sleeve. Side A is for the collectors, Side B is for wearing and living with.</p>
+      <div class="tracks">
+        <div class="sides">
+          <div class="side a">
+            <h3>Side A</h3>
+            <ol>
+              <li><span class="n">A1</span><div><strong>Vinyl records</strong><p>Used and classic LPs in the bins, from rock and soul to whatever just came in.</p></div></li>
+              <li><span class="n">A2</span><div><strong>Books and comics</strong><p>New and used books, vintage paperbacks and classic comic books.</p></div></li>
+              <li><span class="n">A3</span><div><strong>Crystals</strong><p>Stones and crystals to hold, give or keep on the windowsill.</p></div></li>
+            </ol>
+          </div>
+          <div class="side b">
+            <h3>Side B</h3>
+            <ol>
+              <li><span class="n">B1</span><div><strong>Vintage and second-hand apparel</strong><p>Pre-loved clothing picked for character, sustainable by design.</p></div></li>
+              <li><span class="n">B2</span><div><strong>Handmade and upcycled jewelry</strong><p>Pieces crafted locally and made from reclaimed materials.</p></div></li>
+              <li><span class="n">B3</span><div><strong>Tapestries and home goods</strong><p>Wall hangings, decor and the little things that make a room yours.</p></div></li>
+              <li><span class="n">B4</span><div><strong>Fair trade gifts</strong><p>Fair trade finds, playful accessories and a solid sock wall.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="strip">
+        <figure><img src="https://images.pexels.com/photos/19938757/pexels-photo-19938757.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Colorful vintage clothing hanging on a rack in a small boutique" loading="lazy"><figcaption>Vintage racks</figcaption></figure>
+        <figure><img src="https://images.pexels.com/photos/4040611/pexels-photo-4040611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="An assortment of crystals in different colors and textures" loading="lazy"><figcaption>Crystals</figcaption></figure>
+        <figure><img src="https://images.pexels.com/photos/7831333/pexels-photo-7831333.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A vintage shop corner with classic albums and a record player" loading="lazy"><figcaption>Records and retro finds</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes" aria-labelledby="notes-title">
+    <div class="wrap notes-grid">
+      <div>
+        <h2 id="notes-title">Liner notes</h2>
+        <p class="pull">Handmade, vintage and fair trade, picked with care.</p>
+      </div>
+      <div>
+        <p>Cosmik Gifts is a locally owned shop in North Scranton built around one idea: the best things already exist. Second-hand clothes, records with a few decades on them and books that have been read before sit right next to work from local makers.</p>
+        <p>Shoppers describe it as a chill, kind place to browse, and the selection is refreshed often, so the crate you flipped through last month is not the crate you will find today. If you are hunting for a gift nobody else will think of, this is a good place to start.</p>
+        <ul class="values" aria-label="What the shop stands for">
+          <li>Locally made</li>
+          <li>Vintage and second-hand</li>
+          <li>Fair trade</li>
+          <li>Upcycled</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <h2 id="visit-title">Come dig through the bins</h2>
+      <p class="intro">Hours shift with the season, so give a call or check Instagram before you head over.</p>
+      <div class="visit-grid">
+        <div class="card">
+          <h3>Find us</h3>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
+            <div>1827 Sanderson Ave<br>Scranton, PA 18509</div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <div><a href="tel:+15707803513">(570) 780-3513</a></div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+            <div><a href="https://www.instagram.com/cosmikgifts/" target="_blank" rel="noopener">@cosmikgifts</a> for new arrivals and current hours</div>
+          </div>
+          <div class="row">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div>Open midweek, typically Wednesday and Thursday, 11am to 4pm. Call ahead for weekend hours.</div>
+          </div>
+        </div>
+        <div class="map">
+          <iframe title="Map to Cosmik Gifts, 1827 Sanderson Ave, Scranton" loading="lazy" src="https://www.google.com/maps?q=1827+Sanderson+Ave,+Scranton,+PA+18509&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">Cosmik <span>Gifts</span></a>
+    <p>1827 Sanderson Ave, Scranton, PA 18509 &nbsp;|&nbsp; <a href="tel:+15707803513">(570) 780-3513</a></p>
+  </div>
+</footer>
+
+<script>
+  const t=document.querySelector('.menu-toggle'),m=document.getElementById('mobile-menu');
+  t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>

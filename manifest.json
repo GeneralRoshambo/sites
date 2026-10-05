@@ -1510,5 +1510,21 @@
     "category": "Juice Bar & Vegan Cafe",
     "region": "HudsonValley",
     "added": "2026-10-04"
+  },
+  {
+    "slug": "cosmik-gifts-scranton",
+    "name": "Cosmik Gifts",
+    "location": "Scranton, PA",
+    "category": "Hippie & Vintage Shop",
+    "region": "Scranton",
+    "added": "2026-10-05"
+  },
+  {
+    "slug": "seasons-nursery-bed-stuy",
+    "name": "Seasons Nursery & Garden",
+    "location": "Brooklyn, NY",
+    "category": "Plant Nursery",
+    "region": "Brooklyn",
+    "added": "2026-10-05"
   }
 ]
